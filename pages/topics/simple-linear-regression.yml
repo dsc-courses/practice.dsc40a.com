@@ -1,0 +1,5 @@
+title: 'Simple Linear Regression'
+context: This page contains all problems about Simple Linear Regression.
+show_solution: true
+problems:
+  - fa21-final/q05

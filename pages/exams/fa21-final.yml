@@ -1,0 +1,10 @@
+title: 'Fall 2021 Final Exam'
+instructors: Suraj Rampure
+context: This exam was administered online. The exam was open-notes, open-book. Students had **180 minutes** to take this exam.
+show_solution: true
+problems:
+  - fa21-final/q01
+  - fa21-final/q02
+  - fa21-final/q03
+  - fa21-final/q04
+  - fa21-final/q05
