@@ -1,12 +1,14 @@
 # practice.dsc40a.com
 
-Repository containing practice problems for DSC 10 (past exams and discussion). Hosted at practice.dsc10.com. Before using the repo, make sure you have the following packages installed:
+Repository containing practice problems for DSC 40A (past exams and discussion). Hosted at practice.dsc40a.com. Before using the repo, make sure you have the following packages installed:
 
 ```
 - BeautifulSoup4
 - pandoc
 - lxml
 ```
+
+### [Here is a walkthrough video](https://www.loom.com/share/cdbc8dcc026c43d6ac48cc2df3f57ea8?sid=202e8678-b073-46ff-91d0-afe775bb2541) of how to edit the site, and [here's another walkthrough video](https://www.loom.com/share/4fb2816102034b14b4b0cd6476091ec3?sid=6529b884-e4c0-4460-8baa-1051c55a4a5f) of how to use the latex-to-practice-site script!
 
 Style guide for writing up problems:
 
