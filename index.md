@@ -1,5 +1,5 @@
 ---
-title: Home – DSC 80 Practice
+title: Home – DSC 40A Practice
 ---
 
 <h1><a href=''>Practice Problems</a></h1>
