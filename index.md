@@ -12,7 +12,7 @@ title: Home – DSC 40A Practice
 This site contains practice problems taken from old DSC 40A exams. We’ve organized problems in two ways:
 
 1. By **topic**. This makes it easy to practice old exam problems by topic.
-1. By **old exam**. This makes it easy to simulate taking an entire exam.
+1. By **past exam**. This makes it easy to simulate taking an entire exam.
 
 In all cases, you should work on these problems on paper, since your exams will also be on paper. Even though you will see some multiple choice bubbles, you intentionally cannot select them.
 
@@ -24,6 +24,7 @@ In all cases, you should work on these problems on paper, since your exams will 
 
 - [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
 - [Simple Linear Regression](simple-linear-regression/index.html)
+- [Gradient Descent](gradient-descent/index.html)
 
 ---
 
@@ -48,6 +49,12 @@ In all cases, you should work on these problems on paper, since your exams will 
       <th scope="row">Fall 2021</th>
       <td>Suraj Rampure</td>
       <td><a href='fa21-final/index.html'>Final</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Spring 2021</th>
+      <td>Janine Tiefenbruck</td>
+      <td><a href='sp21-midterm1/index.html'>Midterm 1</a>
       </td>
     </tr>
   </tbody>
