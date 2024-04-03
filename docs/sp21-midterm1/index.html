@@ -134,58 +134,6 @@ true minimizer at <span class="math inline">h = 3</span>.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
-<p><i>Originally Problem 2 on the Fall 2021 Final Exam.</i></p>
-<p>Consider a set of 8 data points, <span class="math inline">y_1, y_2,
-..., y_8</span> that are in sorted order, i.e. <span
-class="math inline">y_1 &lt; y_2 &lt; ... &lt; y_8</span>. Suppose that
-<span class="math inline">y_4 = 10</span>, <span class="math inline">y_5
-= 14</span>, and <span class="math inline">y_6 = 22</span>. Recall that
-mean absolute error, <span class="math inline">R_{abs}(h)</span>, is
-defined as <span class="math inline">R_{abs}(h) = \frac{1}{n} \sum_{i =
-1}^n |y_i - h|</span>. Suppose that <span
-class="math inline">R_{abs}(11) = 9</span>.</p>
-<p>What is <span class="math inline">R_{abs}(22)</span>? Show your
-work.</p>
-<p><em>Hint: Use the formula for the slope of <span
-class="math inline">R</span> at <span
-class="math inline">h</span>.</em></p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse2" class="accordion-collapse collapse"
-aria-labelledby="heading2" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>We can write the points given to us as</p>
-<p><span class="math display">y_1, y_2, y_3, 10, 14, 22, y_7,
-y_8</span></p>
-<p>Since there are an even number of data points, all values of <span class="math inline">h</span> between the middle two points minimize
-<span class="math inline">R_{abs}(h)</span>. In this case, all values of
-<span class="math inline">h</span> in the interval [10, 14] minimize
-<span class="math inline">R_{abs}(h)</span> and, as a result, have the
-same value of <span class="math inline">R_{abs}(h)</span>. Thus, <span class="math inline">R_{abs}(14) = R_{abs}(11) = 9</span>.</p>
-<p>From lecture, we know that</p>
-<p><span class="math display">\text{slope of R at h} = \frac{1}{n}
-\left( \left(\text{\# points } &lt; h\right) - \left(\text{\# points }
-&gt; h\right)\right)</span></p>
-<p>We can use this formula to determine what to add to <span class="math inline">R_{abs}(14)</span> to get <span class="math inline">R_{abs}(22)</span>. Note that for values of <span class="math inline">h</span> in the interval (14, 22), the slope of
-<span class="math inline">R</span> at <span class="math inline">h</span>
-is <span class="math inline">\frac{1}{8} (5 - 3) = \frac{1}{4}</span>.
-This means that for every 1 unit we move to the right from <span class="math inline">h = 14</span> until we get to <span class="math inline">h = 22</span>, <span class="math inline">R_{abs}(h)</span> increases by <span class="math inline">\frac{1}{4}</span>. So,</p>
-<p><span class="math display">R_{abs}(22) = R_{abs}(14) + (22 - 14)
-\cdot \frac{1}{4} = 9 + 2 = 11</span></p>
-</div>
-</div>
-</div>
-</div>
-<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
