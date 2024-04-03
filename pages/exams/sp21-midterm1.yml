@@ -4,4 +4,3 @@ context: This exam was administered online. The exam was open-notes, open-book. 
 show_solution: true
 problems:
   - sp21-midterm1/q01
-  - fa21-final/q02
