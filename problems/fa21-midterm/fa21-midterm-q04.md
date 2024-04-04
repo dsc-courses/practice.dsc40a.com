@@ -2,6 +2,8 @@
 
 \[**Dirty Bird Gets The Worm**\]
 
+<!-- Simple Linear Regression -->
+
 Billy, the avocado farmer from Homework 3, wasn't making enough money
 growing avocados and decided to take on a part-time job as a waiter at
 the restaurant Dirty Birds on campus. For two months, he kept track of

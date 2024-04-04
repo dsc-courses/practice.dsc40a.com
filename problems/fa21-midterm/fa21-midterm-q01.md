@@ -2,6 +2,8 @@
 
 \[**Instagram Chronicles**\]
 
+<!-- Loss/Risk Minimization -->
+
 King Triton just made an Instagram account and has been keeping track of
 the number of likes his posts have received so far.
 

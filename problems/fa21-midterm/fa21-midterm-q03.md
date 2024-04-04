@@ -2,6 +2,8 @@
 
 \[**Descending Gradiently**\]
 
+<!-- Gradient Descent -->
+
 Remember to show your work and justify your answers.
 
 Suppose we want to minimize the function
@@ -70,6 +72,8 @@ $$-\alpha \cdot 2e = -1 \implies \alpha = \frac{1}{2e}$$
 # BEGIN SUBPROB
 
 Below is a graph of $R(h)$ with no axis labels.
+
+<!-- TODO -->
 
 ::: center
 ![image](pics/midterm/grad-desc.png){width="2in"}

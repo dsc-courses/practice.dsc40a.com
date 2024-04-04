@@ -2,6 +2,8 @@
 
 \[**Seeing Double**\]
 
+<!-- Loss/Risk Minimization -->
+
 Consider a set of 23 data points $y_1, y_2, y_3, ..., y_{23}$ such that
 $y_1 < y_2 < ... < y_{23}$. Let's call this Dataset A.
 
