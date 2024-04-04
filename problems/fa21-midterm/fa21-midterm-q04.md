@@ -11,9 +11,7 @@ and total bills.
 
 <!-- TODO -->
 
-::: center
-![image](assets/fa21-midterm/dirtybirds.png){width="3in"}
-:::
+<center><img src="../assets/fa21-midterm/dirtybirds.png"></center>
 
 Throughout this question, assume we are trying to fit a linear
 prediction rule $H(x) = w_0 + w_1x$ that uses total bills to predict
