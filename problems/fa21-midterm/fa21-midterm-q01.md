@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[**Instagram Chronicles**\]\[9 Points\]
+\[**Instagram Chronicles**\]
 
 King Triton just made an Instagram account and has been keeping track of
 the number of likes his posts have received so far.
@@ -20,7 +20,7 @@ brief justification for each answer.**
 
 # BEGIN SUBPROB
 
-\[1 Point\] $L(h, y) = |y - h|$
+$L(h, y) = |y - h|$
 
 # BEGIN SOLUTION
 
@@ -29,15 +29,11 @@ of mean absolute error, which is the median, 15.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[1 Point\] $L(h, y) = (y - h)^2$
+$L(h, y) = (y - h)^2$
 
 # BEGIN SOLUTION
 
@@ -46,15 +42,11 @@ of mean squared error, which is the mean, 16.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[1.5 Points\] $L(h, y) = 4(y - h)^2$
+$L(h, y) = 4(y - h)^2$
 
 # BEGIN SOLUTION
 
@@ -81,15 +73,10 @@ $$\begin{aligned}
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[1.5 Points\]
 $L(h, y) = \begin{cases} 0 & h = y \\ 100 & h \neq y \end{cases}$
 
 # BEGIN SOLUTION
@@ -102,15 +89,11 @@ i.e. the most common value, is 12.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[2.5 Points\] $L(h, y) = (3y - 4h)^2$
+$L(h, y) = (3y - 4h)^2$
 
 # BEGIN SOLUTION
 
@@ -125,15 +108,11 @@ $$\frac{4}{3} h^* = \bar{x} \implies h^* = \frac{3}{4} \bar{x} = \frac{3}{4} \cd
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[1.5 Points\] $L(h, y) = (y - h)^3$
+$L(h, y) = (y - h)^3$
 
 *Hint: Do not spend too long on this subpart.*
 
@@ -147,10 +126,6 @@ having a minimum output of 0. This means that there is no $h$ that
 minimizes $\frac{1}{n} \sum_{i = 1}^n (y_i - h)^3$; the larger we make
 $h$, the more negative (and hence "smaller\") this empirical risk
 becomes.
-
-# END SOLUTION
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 

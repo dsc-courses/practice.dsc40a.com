@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[**Descending Gradiently**\]\[8 Points\]
+\[**Descending Gradiently**\]
 
 Remember to show your work and justify your answers.
 
@@ -10,7 +10,7 @@ $$R(h) = e^{(h + 1)^2}$$
 
 # BEGIN SUBPROB
 
-\[1.5 Points\] Without using gradient descent or calculus, what is the
+Without using gradient descent or calculus, what is the
 value $h^*$ that minimizes $R(h)$?
 
 # BEGIN SOLUTION
@@ -22,15 +22,11 @@ minimizing input $h^*$ is $-1$.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[4 Points\] Now, suppose we want to use gradient descent to minimize
+Now, suppose we want to use gradient descent to minimize
 $R(h)$. Assume we use an initial guess of $h_0 = 0$. What is $h_1$? Give
 your answer in terms of a generic step size, $\alpha$, and other
 constants. ($e$ is a constant.)
@@ -51,15 +47,11 @@ $$h_1 = -\alpha \cdot 2e$$
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[1.5 Point\] Using your answers from the previous two parts, what
+Using your answers from the previous two parts, what
 should we set the value of $\alpha$ to be if we want to ensure that
 gradient descent finds $h^*$ after just one iteration?
 
@@ -73,15 +65,11 @@ $$-\alpha \cdot 2e = -1 \implies \alpha = \frac{1}{2e}$$
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[1 Point\] Below is a graph of $R(h)$ with no axis labels.
+Below is a graph of $R(h)$ with no axis labels.
 
 ::: center
 ![image](pics/midterm/grad-desc.png){width="2in"}
@@ -97,10 +85,6 @@ be proved that $R(h)$ is convex using the second derivative test.) It is
 also differentiable, as we saw in part (b). As a result, since it's both
 convex and differentiable, gradient descent is guaranteed to be able to
 minimize it given an appropriate choice of step size.
-
-# END SOLUTION
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 

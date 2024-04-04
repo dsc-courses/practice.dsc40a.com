@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2021 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2021 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Suraj Rampure</p>
+<p>This exam was administered online. The exam was open-notes,
+open-book. Students had <strong>TODO</strong> to take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>[<strong>Instagram Chronicles</strong>]</p>
+<p>King Triton just made an Instagram account and has been keeping track
+of the number of likes his posts have received so far.</p>
+<p>His first 7 posts have received a mean of 16 likes; the specific like
+counts in sorted order are</p>
+<p><span class="math display">8, 12, 12, 15, 18, 20, 27</span></p>
+<p>King Triton wants to predict the number of likes his next post will
+receive, using a constant prediction rule <span
+class="math inline">h</span>. For each loss function <span
+class="math inline">L(h, y)</span>, determine the constant prediction
+<span class="math inline">h^*</span> that minimizes empirical risk. If
+you believe there are multiplie minimizers, specify them all. If you
+believe you need more information to answer the question or that there
+is no minimizer, state that clearly. <strong>Give a brief justification
+for each answer.</strong></p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p><span class="math inline">L(h, y) = |y - h|</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>15</strong>. This is squared loss, and hence we’re looking
+for the minimizer of mean absolute error, which is the median, 15.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p><span class="math inline">L(h, y) = (y - h)^2</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>16</strong>. This is squared loss, and hence we’re looking
+for the minimizer of mean squared error, which is the mean, 16.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p><span class="math inline">L(h, y) = 4(y - h)^2</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>16</strong>. This is squared loss, multiplied by a constant.
+Note that when we go to minimize empirical risk for this loss function,
+we will take the derivative of empirical risk and set it equal to 0; at
+that point the constant factor of 4 can be divided from both sides, so
+this problem boils down to minimizing ordinary mean squared error. The
+only difference is that the graph of mean squared error will be
+stretched vertically by a factor of 4; the minimizing value will be in
+the same place.</p>
+<p>For more justification, here we consider any general re-scaling <span class="math inline">\alpha (y-h)^2</span>:</p>
+<p><span class="math display">\begin{aligned}
+    R_{sq}(h) &amp;= \frac{1}{n} \sum_{i = 1}^n \alpha (y_i - h)^2 \\
+              &amp;= \alpha \cdot \frac{1}{n} \sum_{i = 1}^n (y_i - h)^2
+\\
+  \frac{d}{dh} R_{sq}(h) &amp;= \alpha \cdot \frac{1}{n} \sum_{i = 1}^n
+2(y_i - h)(-1) = 0\\
+  &amp;\implies -\frac{2\alpha}{n}\sum_{i = 1}^n (y_i - h) = 0 \\
+  &amp;\implies \sum_{i = 1}^n (y_i - h) = 0 \\
+  &amp;\implies h^* = \frac{1}{n} \sum_{i = 1}^n y_i
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p><span class="math inline">L(h, y) = \begin{cases} 0 &amp; h = y \\
+100 &amp; h \neq y \end{cases}</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>12</strong>.</p>
+<p>This is a scaled version of 0-1 loss. We know that empirical risk for
+0-1 loss is minimized at the mode, so that also applies here. The mode,
+i.e. the most common value, is 12.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p><span class="math inline">L(h, y) = (3y - 4h)^2</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>12</strong>.</p>
+<p>Note that we can write <span class="math inline">(3y - 4h)^2</span>
+as <span class="math inline">\left( 3 \left( y - \frac{4}{3}h \right)
+\right)^2 = 9 \left( y - \frac{4}{3}h \right)^2</span>. As we’ve seen,
+the constant factor out front has no impact on the minimizing value.
+Using the same principle as in the last part, we can say that <span class="math display">\frac{4}{3} h^* = \bar{x} \implies h^* =
+\frac{3}{4} \bar{x} = \frac{3}{4} \cdot 16 = 12</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.6">Problem 1.6</h3>
+<p><span class="math inline">L(h, y) = (y - h)^3</span></p>
+<p><em>Hint: Do not spend too long on this subpart.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_6" aria-expanded="true" aria-controls="collapse1_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_6" class="accordion-collapse collapse"
+aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>No minimizer</strong>.</p>
+<p>Note that unlike <span class="math inline">|y - h|</span>, <span class="math inline">(y - h)^2</span>, and all of the other loss
+functions we’ve seen, <span class="math inline">(y - h)^3</span> tends
+towards <span class="math inline">-\infty</span>, rather than having a
+minimum output of 0. This means that there is no <span class="math inline">h</span> that minimizes <span class="math inline">\frac{1}{n} \sum_{i = 1}^n (y_i - h)^3</span>; the
+larger we make <span class="math inline">h</span>, the more negative
+(and hence “smaller") this empirical risk becomes.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>[<strong>Seeing Double</strong>]</p>
+<p>Consider a set of 23 data points <span class="math inline">y_1, y_2,
+y_3, ..., y_{23}</span> such that <span class="math inline">y_1 &lt; y_2
+&lt; ... &lt; y_{23}</span>. Let’s call this Dataset A.</p>
+<p>We create a new dataset, Dataset B, by repeating each point in
+Dataset A once. That is, Dataset B is the set of 46 points <span
+class="math inline">y_1, y_1, y_2, y_2, ..., y_{23}, y_{23}</span>.</p>
+<p>Answer the following questions regarding the relationship between
+Dataset A and Dataset B. <strong>Justify your answers.</strong></p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Suppose the minimizer of mean absolute error <span
+class="math inline">R_{abs}(h)</span> for Dataset A is 5. What is the
+minimizer of mean absolute error for Dataset B? If you believe there are
+multiple minimizers, specify them all. If you believe you need more
+information to answer the question, state that clearly.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The minimizer of MAE for Dataset B is still 5. Note that when we
+repeat each data point, we go from having an odd number of data points
+(23) to an even number (46). This means the minimizer is the set of all
+values between the middle two values. But the middle two values will now
+both be <span class="math inline">y_{12}</span>, and so there are no
+numbers “in between" them – only <span class="math inline">y_{12}</span>
+minimizes MAE.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Suppose the <em>mean absolute deviation from the median</em> for
+Dataset A is 17. What is the <em>mean absolute deviation from the
+median</em> for Dataset B? If you believe you need more information to
+answer the question, state that clearly.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The mean absolute deviation from the median for Dataset B is still
+17. As we saw in part a, the median itself does not change. When adding
+together the deviations from the median, each point is repeated twice,
+so the sum of all deviations from the median is doubled. However, there
+are twice as many data points in Dataset B than there are in Dataset A,
+so we divide by <span class="math inline">2n</span> (46) instead of
+<span class="math inline">n</span> (23) in our average.</p>
+<p>In short, for Dataset B both the numerator and denominator in the
+calculation of mean absolute deviation from the median <span class="math inline">\frac{\sum_{i = 1}^n |y_i -
+\text{Median}(y)|}{n}</span> are double what they were for Dataset A, so
+the end result is the same as for Dataset A.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Suppose the function <span class="math inline">R_A(h)</span>
+represents mean absolute error for Dataset A and <span
+class="math inline">R_B(h)</span> represents mean absolute error for
+Dataset B.</p>
+<p>Is it true that <span class="math inline">R_A(h) = R_B(h)</span> for
+any real number <span class="math inline">h</span>? (In other words, are
+the graphs of <span class="math inline">R_A(h)</span> and <span
+class="math inline">R_B(h)</span> identical?) Explain your
+reasoning.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Yes they are.</p>
+<p>Recall that the definition of <span class="math inline">R_{abs}(h)</span> is</p>
+<p><span class="math display">R_{abs}(h) = \frac{1}{n} \sum_{i = 1}^n
+|y_i - h|</span></p>
+<p>For the first dataset, we have</p>
+<p><span class="math display">R_{A}(h) = \frac{1}{23} \sum_{i = 1}^{23}
+|y_i - h|</span></p>
+<p>and for the second dataset, we have</p>
+<p><span class="math display">\begin{aligned}
+R_{B}(h) &amp;= \frac{1}{46} \sum_{i = 1}^{46} \left( |y_1 - h| + |y_1 -
+h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right)
+\\
+&amp;= \frac{1}{46} \left( 2 \sum_{i = 1}^{23} |y_i - h| \right) \\
+&amp;= \frac{1}{23} \sum_{i = 1}^{23} |y_i - h| \\ &amp;= R_{A}(h)
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>[<strong>Descending Gradiently</strong>]</p>
+<p>Remember to show your work and justify your answers.</p>
+<p>Suppose we want to minimize the function</p>
+<p><span class="math display">R(h) = e^{(h + 1)^2}</span></p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Without using gradient descent or calculus, what is the value <span
+class="math inline">h^*</span> that minimizes <span
+class="math inline">R(h)</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The minimum possible value of the exponent is <span class="math inline">0</span>, since anything squared is non-negative.
+The exponent is 0 when <span class="math inline">(x+1)^2 = 0</span>,
+i.e. when <span class="math inline">x = -1</span>. Since <span class="math inline">e^{(x+1)^2}</span> gets larger as <span class="math inline">(x+1)^2</span> gets larger, the minimizing input
+<span class="math inline">h^*</span> is <span class="math inline">-1</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Now, suppose we want to use gradient descent to minimize <span
+class="math inline">R(h)</span>. Assume we use an initial guess of <span
+class="math inline">h_0 = 0</span>. What is <span
+class="math inline">h_1</span>? Give your answer in terms of a generic
+step size, <span class="math inline">\alpha</span>, and other constants.
+(<span class="math inline">e</span> is a constant.)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>First, we find <span class="math inline">\frac{dR}{dh}(h)</span>:</p>
+<p><span class="math display">\frac{dR}{dh}(h) = 2(x+1)
+e^{(x+1)^2}</span></p>
+<p>Then, we know that</p>
+<p><span class="math display">h_1 = h_0 - \alpha \frac{dR}{dh}(h_0) = 0
+- \alpha \frac{dR}{dh}(0)</span></p>
+<p>In our case, <span class="math inline">\frac{dR}{dh}(0) = 2(0 + 1)
+e^{(0+1)^2} = 2e</span>, so</p>
+<p><span class="math display">h_1 = -\alpha \cdot 2e</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Using your answers from the previous two parts, what should we set
+the value of <span class="math inline">\alpha</span> to be if we want to
+ensure that gradient descent finds <span class="math inline">h^*</span>
+after just one iteration?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We know from part b that <span class="math inline">h_1 = -\alpha
+\cdot 2e</span>, and we know from part a that <span class="math inline">h^* = -1</span>. If gradient descent converges in
+one iteration, that means that <span class="math inline">h_1 =
+h^*</span>; solving this yields</p>
+<p><span class="math display">-\alpha \cdot 2e = -1 \implies \alpha =
+\frac{1}{2e}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.4">Problem 3.4</h3>
+<p>Below is a graph of <span class="math inline">R(h)</span> with no
+axis labels.</p>
+<div class="center">
+<figure>
+<img src="pics/midterm/grad-desc.png" style="width:2in" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+</div>
+<p>True or False: Given an appropriate choice of step size, <span
+class="math inline">\alpha</span>, gradient descent is guaranteed to
+find the minimizer of <span class="math inline">R(h)</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>True</strong>. <span class="math inline">R(h)</span> is
+convex, since the graph is bowl shaped. (It can also be proved that
+<span class="math inline">R(h)</span> is convex using the second
+derivative test.) It is also differentiable, as we saw in part (b). As a
+result, since it’s both convex and differentiable, gradient descent is
+guaranteed to be able to minimize it given an appropriate choice of step
+size.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>[<strong>Dirty Bird Gets The Worm</strong>]</p>
+<p>Billy, the avocado farmer from Homework 3, wasn’t making enough money
+growing avocados and decided to take on a part-time job as a waiter at
+the restaurant Dirty Birds on campus. For two months, he kept track of
+all of the total bills he gave out to customers along with the tips they
+then gave him, all in dollars. Below is a scatter plot of Billy’s tips
+and total bills.</p>
+<!-- TODO -->
+<div class="center">
+<figure>
+<img src="pics/midterm/dirtybirds.png" style="width:3in" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+</div>
+<p>Throughout this question, assume we are trying to fit a linear
+prediction rule <span class="math inline">H(x) = w_0 + w_1x</span> that
+uses total bills to predict tips, and assume we are finding optimal
+parameters by minimizing mean squared error.</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Which of these is the most likely value for <span
+class="math inline">r</span>, the correlation between total bill and
+tips? Why?</p>
+<div class="center">
+<p><span class="math display">-1 \qquad -0.75 \qquad -0.25 \qquad 0
+\qquad 0.25 \qquad 0.75 \qquad 1</span></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>0.75. It seems like there is a pretty strong, but not perfect, linear
+association between total bills and tips.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>The variance of the tip amounts is 2.1. Let M be the mean squared
+error of the best linear prediction rule on this dataset (under squared
+loss). Is <span class="math inline">M</span> less than, equal to, or
+greater than 2.1? How can you tell?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">M</span> is less than 2.1. The variance is
+equal to the MSE of the constant prediction rule.</p>
+<p>Note that the MSE of the best linear prediction rule will always be
+less than or equal to the MSE of the best constant prediction rule <span class="math inline">h</span>. The only case in which these two MSEs are
+the same is when the best linear prediction rule is a flat line with
+slope 0, which is the same as a constant prediction. In all other cases,
+the linear prediction rule will make better predictions and hence have a
+lower MSE than the constant prediction rule.</p>
+<p>In this case, the best linear prediction rule is clearly not flat, so
+<span class="math inline">M &lt; 2.1</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>Suppose we use the formulas from class on Billy’s dataset and
+calculate the optimal slope <span class="math inline">w_1^*</span> and
+intercept <span class="math inline">w_0^*</span> for this prediction
+rule.</p>
+<p>Suppose we add the value of 1 to every total bill <span
+class="math inline">x</span>, effectively shifting the scatter plot 1
+unit to the right. <strong>Note that doing this does not change the
+value of <span class="math inline">w_1^*</span>.</strong> What amount
+should we add to each tip <span class="math inline">y</span> so that the
+value of <span class="math inline">w_0^*</span> also does not change?
+Your answer should involve one or more of <span
+class="math inline">\bar{x}, \bar{y}, w_0^*, w_1^*,</span> and any
+constants.</p>
+<p><em>Note: To receive full points, you must provide a rigorous
+explanation, though this explanation only takes a few lines. However, we
+will award partial credit to solutions with the correct answer, and it’s
+possible to arrive at the correct answer by drawing a picture and
+thinking intuitively about what happens.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>First, we present the rigorous solution.</p>
+<p>Let <span class="math inline">\bar{x_\text{old}}</span> represent the
+previous mean of the <span class="math inline">x</span>’s and <span class="math inline">\bar{x_\text{new}}</span> represent the new mean of
+the <span class="math inline">x</span>’s. Then, we know that <span class="math inline">\bar{x_\text{new}} = \bar{x_\text{old}} +
+1</span>.</p>
+<p>Also, let <span class="math inline">\bar{y_\text{old}}</span> and
+<span class="math inline">\bar{_\text{new}}</span> represent the old and
+new mean of the <span class="math inline">y</span>’s. We will try and
+find a relationship between these two quantities.</p>
+<p>We want the two intercepts to be the same. The intercept for the old
+line is <span class="math inline">\bar{y_\text{old}} - w_1^*
+\bar{x_\text{old}}</span> and the intercept for the new line is <span class="math inline">\bar{y_\text{new}} - w_1^*
+\bar{x_\text{new}}</span>. Setting these equal yields</p>
+<p><span class="math display">\begin{aligned}
+    \bar{y_\text{new}} - w_1^* \bar{x_\text{new}} &amp;=
+\bar{y_\text{old}} - w_1^* \bar{x_\text{old}} \\
+     \bar{y_\text{new}} - w_1^* (\bar{x_\text{old}} + 1) &amp;=
+\bar{y_\text{old}} - w_1^* \bar{x_\text{old}} \\
+     \bar{y_\text{new}} &amp;= \bar{y_\text{old}} - w_1^*
+\bar{x_\text{old}} + w_1^* (\bar{x_\text{old}} + 1) \\
+     \bar{y_{\text{new}}} &amp;= \bar{y_\text{old}} + w_1^*
+\end{aligned}</span></p>
+<p>Thus, in order for the intercepts to be equal, we need the mean of
+the new <span class="math inline">y</span>’s to be <span class="math inline">w_1^*</span> greater than the mean of the old <span class="math inline">y</span>’s. Since we’re told we’re adding the same
+constant to each <span class="math inline">y</span>, that constant is
+<span class="math inline">w_1^*</span>.</p>
+<p>Another way to approach the question is as follows: consider any
+point that lies directly on a line with slope <span class="math inline">w_1^*</span> and intercept <span class="math inline">w_0^*</span>. Consider how the slope between two
+points on a line is calculated: <span class="math inline">\text{slope} =
+\frac{y_2 - y_1}{x_2 - x_1}</span>. If <span class="math inline">x_2 -
+x_1 = 1</span>, in order for the slope to remain fixed we must have that
+<span class="math inline">y_2 - y_1 = \text{slope}</span>. For a
+concrete example, think of the line <span class="math inline">y = 5x +
+2</span>. The point <span class="math inline">(1, 7)</span> is on the
+line, as is the point <span class="math inline">(1 + 1, 7 + 5) = (2,
+12)</span>.</p>
+<p>In our case, none of our points are guaranteed to be
+<strong>on</strong> the line defined by slope <span class="math inline">w_1^*</span> and intercept <span class="math inline">w_0^*</span>. Instead, we just want to be guaranteed
+that the points have the same regression line after being shifted. If we
+follow the same principle, though, and add 1 to every <span class="math inline">x</span> and <span class="math inline">w_1^*</span>
+to every <span class="math inline">y</span>, the points’ relative
+positions to the line will not change (i.e. the vertical distance from
+each point to the line will not change), and so that will remain the
+line with the lowest MSE, and hence <span class="math inline">w_0^*</span> and <span class="math inline">w_1^*</span> won’t change.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>

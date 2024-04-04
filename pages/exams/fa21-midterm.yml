@@ -1,0 +1,9 @@
+title: 'Fall 2021 Midterm Exam'
+instructors: Suraj Rampure
+context: This exam was administered online. The exam was open-notes, open-book. Students had **TODO** to take this exam.
+show_solution: true
+problems:
+  - fa21-midterm/fa21-midterm-q01
+  - fa21-midterm/fa21-midterm-q02
+  - fa21-midterm/fa21-midterm-q03
+  - fa21-midterm/fa21-midterm-q04

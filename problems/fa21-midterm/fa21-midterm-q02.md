@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[**Seeing Double**\]\[9 Points\]
+\[**Seeing Double**\]
 
 Consider a set of 23 data points $y_1, y_2, y_3, ..., y_{23}$ such that
 $y_1 < y_2 < ... < y_{23}$. Let's call this Dataset A.
@@ -14,7 +14,7 @@ Dataset A and Dataset B. **Justify your answers.**
 
 # BEGIN SUBPROB
 
-\[3 Points\] Suppose the minimizer of mean absolute error $R_{abs}(h)$
+Suppose the minimizer of mean absolute error $R_{abs}(h)$
 for Dataset A is 5. What is the minimizer of mean absolute error for
 Dataset B? If you believe there are multiple minimizers, specify them
 all. If you believe you need more information to answer the question,
@@ -31,15 +31,11 @@ $y_{12}$ minimizes MAE.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[3 Points\] Suppose the *mean absolute deviation from the median* for
+Suppose the *mean absolute deviation from the median* for
 Dataset A is 17. What is the *mean absolute deviation from the median*
 for Dataset B? If you believe you need more information to answer the
 question, state that clearly.
@@ -60,15 +56,11 @@ were for Dataset A, so the end result is the same as for Dataset A.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[3 Points\] Suppose the function $R_A(h)$ represents mean absolute
+Suppose the function $R_A(h)$ represents mean absolute
 error for Dataset A and $R_B(h)$ represents mean absolute error for
 Dataset B.
 
@@ -94,10 +86,6 @@ $$\begin{aligned}
 R_{B}(h) &= \frac{1}{46} \sum_{i = 1}^{46} \left( |y_1 - h| + |y_1 - h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right) \\
 &= \frac{1}{46} \left( 2 \sum_{i = 1}^{23} |y_i - h| \right) \\ &= \frac{1}{23} \sum_{i = 1}^{23} |y_i - h| \\ &= R_{A}(h) 
 \end{aligned}$$
-
-# END SOLUTION
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 

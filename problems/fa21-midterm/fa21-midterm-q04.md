@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[**Dirty Bird Gets The Worm**\]\[9 Points\]
+\[**Dirty Bird Gets The Worm**\]
 
 Billy, the avocado farmer from Homework 3, wasn't making enough money
 growing avocados and decided to take on a part-time job as a waiter at
@@ -8,6 +8,8 @@ the restaurant Dirty Birds on campus. For two months, he kept track of
 all of the total bills he gave out to customers along with the tips they
 then gave him, all in dollars. Below is a scatter plot of Billy's tips
 and total bills.
+
+<!-- TODO -->
 
 ::: center
 ![image](pics/midterm/dirtybirds.png){width="3in"}
@@ -20,11 +22,11 @@ squared error.
 
 # BEGIN SUBPROB
 
-\[2 Points\] Which of these is the most likely value for $r$, the
+Which of these is the most likely value for $r$, the
 correlation between total bill and tips? Why?
 
 ::: center
-$$-1 \qquoad -0.75 \qquad -0.25 \qquad 0 \qquad 0.25 \qquad 0.75 \qquad 1$$
+$$-1 \qquad -0.75 \qquad -0.25 \qquad 0 \qquad 0.25 \qquad 0.75 \qquad 1$$
 :::
 
 # BEGIN SOLUTION
@@ -34,15 +36,11 @@ association between total bills and tips.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[3 Points\] The variance of the tip amounts is 2.1. Let M be the mean
+The variance of the tip amounts is 2.1. Let M be the mean
 squared error of the best linear prediction rule on this dataset (under
 squared loss). Is $M$ less than, equal to, or greater than 2.1? How can
 you tell?
@@ -65,15 +63,11 @@ $M < 2.1$.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[4 Points\] Suppose we use the formulas from class on Billy's dataset
+Suppose we use the formulas from class on Billy's dataset
 and calculate the optimal slope $w_1^*$ and intercept $w_0^*$ for this
 prediction rule.
 
@@ -137,10 +131,6 @@ and $w_1^*$ to every $y$, the points' relative positions to the line
 will not change (i.e. the vertical distance from each point to the line
 will not change), and so that will remain the line with the lowest MSE,
 and hence $w_0^*$ and $w_1^*$ won't change.
-
-# END SOLUTION
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 
