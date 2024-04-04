@@ -74,7 +74,7 @@ Below is a graph of $R(h)$ with no axis labels.
 <!-- TODO -->
 
 ::: center
-![image](pics/midterm/grad-desc.png){width="2in"}
+![image](assets/fa21-midterm/grad-desc.png){width="2in"}
 :::
 
 True or False: Given an appropriate choice of step size, $\alpha$,

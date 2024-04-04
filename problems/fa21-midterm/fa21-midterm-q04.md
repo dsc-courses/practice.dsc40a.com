@@ -12,7 +12,7 @@ and total bills.
 <!-- TODO -->
 
 ::: center
-![image](pics/midterm/dirtybirds.png){width="3in"}
+![image](assets/fa21-midterm/dirtybirds.png){width="3in"}
 :::
 
 Throughout this question, assume we are trying to fit a linear
