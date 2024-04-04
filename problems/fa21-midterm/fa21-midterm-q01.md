@@ -26,7 +26,9 @@ $L(h, y) = |y - h|$
 
 # BEGIN SOLUTION
 
-**15**. This is squared loss, and hence we're looking for the minimizer
+15.
+
+This is squared loss, and hence we're looking for the minimizer
 of mean absolute error, which is the median, 15.
 
 # END SOLUTION
@@ -39,7 +41,9 @@ $L(h, y) = (y - h)^2$
 
 # BEGIN SOLUTION
 
-**16**. This is squared loss, and hence we're looking for the minimizer
+16.
+
+This is squared loss, and hence we're looking for the minimizer
 of mean squared error, which is the mean, 16.
 
 # END SOLUTION
@@ -52,7 +56,9 @@ $L(h, y) = 4(y - h)^2$
 
 # BEGIN SOLUTION
 
-**16**. This is squared loss, multiplied by a constant. Note that when
+16.
+
+This is squared loss, multiplied by a constant. Note that when
 we go to minimize empirical risk for this loss function, we will take
 the derivative of empirical risk and set it equal to 0; at that point
 the constant factor of 4 can be divided from both sides, so this problem
@@ -83,7 +89,7 @@ $L(h, y) = \begin{cases} 0 & h = y \\ 100 & h \neq y \end{cases}$
 
 # BEGIN SOLUTION
 
-**12**.
+12.
 
 This is a scaled version of 0-1 loss. We know that empirical risk for
 0-1 loss is minimized at the mode, so that also applies here. The mode,
@@ -99,7 +105,7 @@ $L(h, y) = (3y - 4h)^2$
 
 # BEGIN SOLUTION
 
-**12**.
+12.
 
 Note that we can write $(3y - 4h)^2$ as
 $\left( 3 \left( y - \frac{4}{3}h \right) \right)^2 = 9 \left( y - \frac{4}{3}h \right)^2$.
@@ -120,7 +126,7 @@ $L(h, y) = (y - h)^3$
 
 # BEGIN SOLUTION
 
-**No minimizer**.
+No minimizer.
 
 Note that unlike $|y - h|$, $(y - h)^2$, and all of the other loss
 functions we've seen, $(y - h)^3$ tends towards $-\infty$, rather than
