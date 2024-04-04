@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[**Descending Gradiently**\]
-
 <!-- Gradient Descent -->
 
 Remember to show your work and justify your answers.
@@ -84,7 +82,8 @@ gradient descent is guaranteed to find the minimizer of $R(h)$.
 
 # BEGIN SOLUTION
 
-**True**. $R(h)$ is convex, since the graph is bowl shaped. (It can also
+True.
+$R(h)$ is convex, since the graph is bowl shaped. (It can also
 be proved that $R(h)$ is convex using the second derivative test.) It is
 also differentiable, as we saw in part (b). As a result, since it's both
 convex and differentiable, gradient descent is guaranteed to be able to

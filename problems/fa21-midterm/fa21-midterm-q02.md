@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[**Seeing Double**\]
-
 <!-- Loss/Risk Minimization -->
 
 Consider a set of 23 data points $y_1, y_2, y_3, ..., y_{23}$ such that

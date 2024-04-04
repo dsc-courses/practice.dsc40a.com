@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[**Instagram Chronicles**\]
-
 <!-- Loss/Risk Minimization -->
 
 King Triton just made an Instagram account and has been keeping track of

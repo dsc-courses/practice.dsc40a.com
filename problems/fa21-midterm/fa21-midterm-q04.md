@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[**Dirty Bird Gets The Worm**\]
-
 <!-- Simple Linear Regression -->
 
 Billy, the avocado farmer from Homework 3, wasn't making enough money
