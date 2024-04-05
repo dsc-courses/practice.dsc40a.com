@@ -26,7 +26,7 @@ $L(h, y) = |y - h|$
 
 15.
 
-This is squared loss, and hence we're looking for the minimizer
+This is absolute loss, and hence we're looking for the minimizer
 of mean absolute error, which is the median, 15.
 
 # END SOLUTION
