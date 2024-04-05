@@ -29,7 +29,9 @@ $$-1 \qquad -0.75 \qquad -0.25 \qquad 0 \qquad 0.25 \qquad 0.75 \qquad 1$$
 
 # BEGIN SOLUTION
 
-0.75. It seems like there is a pretty strong, but not perfect, linear
+0.75.
+
+It seems like there is a pretty strong, but not perfect, linear
 association between total bills and tips.
 
 # END SOLUTION
