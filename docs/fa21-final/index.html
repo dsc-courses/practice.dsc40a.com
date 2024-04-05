@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../assets/theme.css" />
+  <link rel="stylesheet" href="..\assets\theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -40,9 +40,6 @@
   </script>
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -424,13 +421,20 @@ centimeters</li>
 <li><strong>price</strong>: the value of the diamond, in dollars</li>
 </ul>
 <p>The first 5 rows of the 5000-row dataset are shown below:</p>
+<div>
 <table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 27%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th>carat</th>
-<th>length</th>
-<th>width</th>
-<th>price</th>
+<th>carat   </th>
+<th>length   </th>
+<th>width   </th>
+<th>price   </th>
 </tr>
 </thead>
 <tbody>
@@ -466,6 +470,7 @@ centimeters</li>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Billy has enlisted our help in predicting the price of a diamond
 given various other features.</p>
 <p><br></p>
@@ -640,25 +645,751 @@ there.</li>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
 <p><em>Originally Problem 7 on the Fall 2021 Final Exam.</em></p>
-<p>test</p>
+<p>Consider the following dataset of 7 points.</p>
+<center><img src="../assets/images/fa21-final/k-means.png" width="500"></center>
+<p>Suppose we want to identify <span class="math inline">k=2</span>
+clusters in this dataset using <span class="math inline">k</span>-Means
+Clustering.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Determine the centroids <span class="math inline">\vec{\mu}_1</span>
+and <span class="math inline">\vec{\mu}_2</span> that minimize inertia.
+(Let <span class="math inline">\vec{\mu}_1</span> be the centroid with a
+smaller <span class="math inline">x_1</span> coordinate.) Justify your
+answers.</p>
+<p><em>Note: You don’t have to run the k-Means Clustering algorithm to
+answer this question.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7" class="accordion-collapse collapse"
-aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<center><img src="../assets/images/fa21-final/k-means.png"/></center>
+<p>It’s clear that there are two clusters — one in the top left, and one
+in the bottom right.</p>
+<p>To find <span class="math inline">\vec{\mu}_1</span>, the centroid
+for the top-left cluster, we take the mean of four points assigned to
+cluster 1, giving</p>
+<p><span class="math display">\vec{\mu}_1 = \frac{1}{4} \left(
+\begin{bmatrix} 2 \\ 8 \end{bmatrix} + \begin{bmatrix} 4 \\ 8
+\end{bmatrix} + \begin{bmatrix} 2 \\ 10 \end{bmatrix} + \begin{bmatrix}
+4 \\ 10 \end{bmatrix} \right) = \begin{bmatrix} 3 \\ 9
+\end{bmatrix}</span></p>
+<p>You can also arrive at this result without any algebra by taking the
+middle of the ‘square’.</p>
+<p>To find <span class="math inline">\vec{\mu}_2</span>, the centroid
+for the bottom-right cluster, we take the mean of three points assigned
+to cluster 2, giving</p>
+<p><span class="math display">\vec{\mu}_2 = \frac{1}{3} \left(
+\begin{bmatrix} 7 \\ 1 \end{bmatrix} + \begin{bmatrix} 8 \\ 4
+\end{bmatrix} + \begin{bmatrix} 9 \\ 1 \end{bmatrix}  \right) =
+\begin{bmatrix} 8 \\ 2 \end{bmatrix}</span></p>
+<p>Thus,</p>
+<p><span class="math display">\vec{\mu}_1 = \begin{bmatrix} 3 \\ 9
+\end{bmatrix}, \vec{\mu}_2 = \begin{bmatrix} 8 \\ 2
+\end{bmatrix}</span></p>
 </div>
 </div>
 </div>
 </div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>What is the total inertia for the centroids you chose in part (a)?
+Show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We’ll proceed by determining the inertia of each cluster individually
+and adding the results together.</p>
+<p>First, let’s consider the top-left cluster, whose centroid is at
+<span class="math inline">\begin{bmatrix} 3 \\ 9 \end{bmatrix}</span>.
+The squared distance between the centroid and each of the four points in
+the cluster individually is <span class="math inline">1^2 + 1^2 =
+2</span>. It’s easiest to see this by drawing a picture, but we can
+calculate all squared distances algebraically as well:</p>
+<ul>
+<li><p><span class="math inline">\begin{bmatrix} 2 \\ 8 \end{bmatrix} -
+\begin{bmatrix} 3 \\ 9 \end{bmatrix} =
+\begin{bmatrix} -1 \\ -1 \end{bmatrix} \implies \text{squared distance}
+= (-1)^2 + (-1)^2 = 2</span></p></li>
+<li><p><span class="math inline">\begin{bmatrix} 4 \\ 8 \end{bmatrix} -
+\begin{bmatrix} 3 \\ 9 \end{bmatrix} =
+\begin{bmatrix} 1 \\ -1 \end{bmatrix} \implies \text{squared distance} =
+(1)^2 + (-1)^2 = 2</span></p></li>
+<li><p><span class="math inline">\begin{bmatrix} 2 \\ 10 \end{bmatrix} -
+\begin{bmatrix} 3 \\ 9 \end{bmatrix} =
+\begin{bmatrix} -1 \\ 1 \end{bmatrix} \implies \text{squared distance} =
+(-1)^2 + (1)^2 = 2</span></p></li>
+<li><p><span class="math inline">\begin{bmatrix} 4 \\ 10 \end{bmatrix} -
+\begin{bmatrix} 3 \\ 9 \end{bmatrix} =
+\begin{bmatrix} 1 \\ 1 \end{bmatrix} \implies \text{squared distance} =
+(1)^2 + (1)^2 = 2</span></p></li>
+</ul>
+<p>Thus, the inertia for cluster 1 is <span class="math inline">2 + 2 +
+2 + 2 = 8</span>.</p>
+<p>We follow a similar procedure for cluster 2:</p>
+<ul>
+<li><p><span class="math inline">\begin{bmatrix} 7 \\ 1 \end{bmatrix} -
+\begin{bmatrix} 8 \\ 2 \end{bmatrix} =
+\begin{bmatrix} -1 \\ -1 \end{bmatrix} \implies \text{squared distance}
+= (-1)^2 + (-1)^2 = 2</span></p></li>
+<li><p><span class="math inline">\begin{bmatrix} 8 \\ 4 \end{bmatrix} -
+\begin{bmatrix} 8 \\ 2 \end{bmatrix} =
+\begin{bmatrix} 0 \\ 2 \end{bmatrix} \implies \text{squared distance} =
+(0)^2 + (2)^2 = 4</span></p></li>
+<li><p><span class="math inline">\begin{bmatrix} 9 \\ 1 \end{bmatrix} -
+\begin{bmatrix} 8 \\ 2 \end{bmatrix} =
+\begin{bmatrix} 1 \\ -1 \end{bmatrix} \implies \text{squared distance} =
+(-1)^2 + (1)^2 = 2</span></p></li>
+</ul>
+<p>Thus, the inertia for cluster 2 is <span class="math inline">2 + 4 +
+2 = 8</span>.</p>
+<p>This means that the total inertia for the whole dataset is <span class="math inline">8 + 8 = 16</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p><em>Originally Problem 8 on the Fall 2021 Final Exam.</em></p>
+<p>Billy brings you back to Dirty Birds, the restaurant where he is a
+waiter. He tells you that Dirty Birds has 30 different flavors of
+chicken wings, 18 of which are ‘wet’ (e.g. honey garlic) and 12 of which
+are ‘dry’ (e.g. lemon pepper).</p>
+<p>Each time you place an order at Dirty Birds, you get to pick 4
+different flavors. The order in which you pick your flavors does not
+matter.</p>
+<p><strong>Note:</strong> In this problem, you may leave your answers in
+terms of <span class="math inline">{n \choose k}</span>, <span
+class="math inline">P(n, k)</span>, and/or factorials. However, you must
+provide a one-sentence explanation for your answer in each subpart.</p>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>How many ways can we select 4 flavors in total?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">{30 \choose 4}</span></p>
+<p>There are 30 total flavors and we want to select 4 such that order
+does not matter. In this subpart we don’t care about whether our flavors
+are dry or wet.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>How many ways can we select 4 flavors such that we select an equal
+number of wet and dry flavors?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">{18 \choose 2}{12 \choose 2}</span></p>
+<p>To select an equal number of wet and dry flavors, we need to select 2
+wet flavors and 2 dry flavors. There are 18 wet flavors, so there are
+<span class="math inline">{18 \choose 2}</span> ways to select 2 of
+them. Similarly, there are <span class="math inline">{12 \choose
+2}</span> ways to select 2 of the 12 dry flavors. We need to select 18
+wet flavors AND 12 dry flavors, so we multiply these numbers.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>Billy tells you he’ll surprise you with 4 different flavors, randomly
+selected from the 30 flavors available. What’s the probability that he
+brings you at least one wet flavor and and least one dry flavor?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">1 - \frac{{18 \choose 4}}{{30 \choose 4}}
+- \frac{{12 \choose 4}}{{30 \choose 4}}</span></p>
+<p>Note that the event “Billy brings you at least one wet flavor and at
+least one dry flavor” is the complement of the event “Billy brings you
+only wet flavors or only dry flavors”. Thus, we can find the probability
+that Billy brings you only wet flavors or only dry flavors and subtract
+it from 1, using the complement rule.</p>
+<p>To find the probability that Billy brings you only wet flavors, we
+first count the number of ways to select 4 wet flavors from 18; this is
+<span class="math inline">{18 \choose 4}</span>. The total number of
+ways of selecting 4 flavors is <span class="math inline">{30 \choose
+4}</span>, hence the probability that he brings you only wet flavors is
+<span class="math inline">\frac{{18 \choose 4}}{{30 \choose 4}}</span>.
+Similarly, the probability he brings you only dry flavors is <span class="math inline">\frac{{18 \choose 4}}{{30 \choose 4}}</span>. Since
+the events “Billy brings you only wet flavors” and “Billy brings you
+only dry flavors” are mutually exclusive, we can add these probabilities
+to find the probability of the event “Billy brings you only wet flavors
+or only dry flavors”, yielding <span class="math inline">\frac{{18
+\choose 4}}{{30 \choose 4}} + \frac{{12 \choose 4}}{{30 \choose
+4}}</span>. We subtract this number from 1 to get the desired
+result.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.4">Problem 8.4</h3>
+<p>Suppose you go to Dirty Birds once a day for 7 straight days. Each
+time you go there, Billy brings you 4 different flavors, randomly
+selected from the 30 flavors available. What’s the probability that on
+at least one of the 7 days, he brings you all wet flavors or all dry
+flavors? (<em>Note: All 4 flavors for a particular day must be
+different, but it is possible to get the same flavor on multiple
+days.</em>)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_4" aria-expanded="true" aria-controls="collapse8_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_4" class="accordion-collapse collapse"
+aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">1 - \left[1 - \frac{{18 \choose 4}}{{30
+\choose 4}} - \frac{{12 \choose 4}}{{30 \choose 4}} \right]^7</span></p>
+<p>Note that the event “at least once, Billy brings you all wet or all
+dry wings” is the complement of the event “Billy never brings you all
+wet or all dry wings.” This new event is equivalent to “Billy always
+brings you at least one wet flavor and at least one dry flavor.”</p>
+<p>In part (c), we found that for one particular day, the probability
+that Billy brings you at least one wet flavor and at least one dry
+flavor is <span class="math display">1 - \frac{{18 \choose 4}}{{30
+\choose 4}} - \frac{{12 \choose 4}}{{30 \choose 4}}.</span> Each day the
+flavors “reset” (we are told that flavors can be chosen on multiple
+days), and so this probability is the same for each of the 7 days. This
+makes the probability that he brings us at least one wet flavor and at
+least one dry flavor on all 7 days <span class="math inline">\left[1 -
+\frac{{18 \choose 4}}{{30 \choose 4}} - \frac{{12 \choose 4}}{{30
+\choose 4}} \right]^7</span>, and so the desired probability — the
+probability that he brings us all wet flavors or all dry flavors on at
+least one of the 7 days — is</p>
+<p><span class="math display">1 - \left[1 - \frac{{18 \choose 4}}{{30
+\choose 4}} - \frac{{12 \choose 4}}{{30 \choose 4}} \right]^7</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p><em>Originally Problem 9 on the Fall 2021 Final Exam.</em></p>
+<p>In this question, we’ll consider the phone number 6789998212
+(mentioned in Soulja Boy’s 2008 classic, “Kiss Me thru the Phone”).</p>
+<p><strong>Note:</strong> In this problem, you may leave your answers in
+terms of <span class="math inline">{n \choose k}</span>, <span
+class="math inline">P(n, k)</span>, and/or factorials. However, you must
+provide a one-sentence explanation for your answer in each subpart.</p>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>How many permutations of 6789998212 are there?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>If all digits in 6789998212 were unique, there would be <span class="math inline">10!</span> permutations. However, some of the digits
+are repeated; for each repeated digit, we need to divide by the number
+of ways to re-arrange the repeated digits amongst themselves.</p>
+<p>Let’s count the number of occurrences of each digit.</p>
+<ul>
+<li>6: 1 occurrence</li>
+<li>7: 1 occurrence</li>
+<li>8: 2 occurrences</li>
+<li>9: 3 occurrences</li>
+<li>2: 2 occurrences</li>
+<li>1: 1 occurrence</li>
+</ul>
+<p>Thus, the number of permutations of 6789998212 is</p>
+<p><span class="math display">\frac{10!}{2! 3! 2!}</span></p>
+<p>Another way to arrive at this result is by saying first, we need to
+choose 1 of the 10 positions to contain a 1. Then, we need to choose 1
+of the remaining 9 positions to contain a 7. Then, we need to choose 2
+of the remaining 8 positions to contain a 8, and so on and so forth.
+This method yields</p>
+<p><span class="math display">{10 \choose 1}{9 \choose 1}{8 \choose 2}{6
+\choose 3}{3 \choose 2}{1 \choose 1}</span></p>
+<p>If you expand out this result, you’ll see that it’s equal to the
+first result. You may also notice that this is equivalent to <span class="math inline">{10 \choose 3}{7 \choose 2}{5 \choose 2}{3 \choose
+1}{2 \choose 1}{1 \choose 1}</span>, which follows the same approach but
+chooses locations for the repeated characters first.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>How many permutations of 6789998212 have all three 9s next to each
+other?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The key insight here is that we can treat all three 9s as being just
+a single character, X, and determine the number of permutations of the
+8-character string 678X8212. To do so, we again count the number of
+occurrences of each digit:</p>
+<ul>
+<li>6: 1 occurrence</li>
+<li>7: 1 occurrence</li>
+<li>8: 2 occurrences</li>
+<li>X: 1 occurrence</li>
+<li>2: 2 occurrences</li>
+<li>1: 1 occurrence</li>
+</ul>
+<p>Thus, the number of permutations of 6789998212 with all 3 9s
+appearing together is</p>
+<p><span class="math display">\frac{8!}{2!2!}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>How many permutations of 6789998212 end with a 1 and start with a
+6?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Similarly to the previous part, we can “fix” the 1 at the start and 6
+at the end. All we really need to determine is the number of
+permutations of 78999822, which is</p>
+<p><span class="math display">\frac{8!}{2! 3! 2!}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>How many different 3 digit numbers with unique digits can we create
+by selecting digits from 6789998212?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The key here is that the 3 digit numbers that we’re creating must
+have unique digits. There are 6 unique digits in 6789998212: 6, 7, 8, 9,
+2, 1.</p>
+<p>There are 6 options for the first digit of our 3 digit number, 5
+options for the second digit, and 4 options for the third digit. Thus,
+the number of 3 digit numbers we can create in this way is <span class="math inline">6 \cdot 5 \cdot 4 = 120</span>. This is also <span class="math inline">P(6, 3)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p><em>Originally Problem 10 on the Fall 2021 Final Exam.</em></p>
+<p>Suppose you’re given the following probabilities:</p>
+<ul>
+<li><span class="math inline">P(A | B) = \frac{2}{5}</span></li>
+<li><span class="math inline">P(B | A) = \frac{1}{4}</span></li>
+<li><span class="math inline">P(A | C) = \frac{2}{3}</span></li>
+</ul>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>If <span class="math inline">A</span> and <span
+class="math inline">C</span> are independent, what is <span
+class="math inline">P(B)</span>? Show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>If <span class="math inline">A</span> and <span class="math inline">C</span> are independent, then <span class="math inline">P(A) = P(A | C) = \frac{2}{3}</span>. Then, from
+Bayes’ rule, we have</p>
+<p><span class="math display">P(A | B) = \frac{P(A) P(B|A)}{P(B)}
+\implies P(B) = \frac{P(A) P(B|A)}{P(A|B)} = \frac{\frac{2}{3} \cdot
+\frac{1}{4}}{\frac{2}{5}} = \frac{5}{12}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>Suppose <span class="math inline">A</span> and <span
+class="math inline">C</span> are not independent, and now suppose that
+<span class="math inline">P(A | \overline{C}) = \frac{1}{5}</span>.
+Given that <span class="math inline">A</span> and <span
+class="math inline">B</span> are independent, what is <span
+class="math inline">P(C)</span>? Show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Since we’re given that <span class="math inline">A</span> and <span class="math inline">B</span> are independent, <span class="math inline">P(A) = P(A | B) = \frac{2}{5}</span>. By the Law of
+Total Probability, we have</p>
+<p><span class="math display">P(A) = P(A \cap C) + P(A \cap
+\overline{C}) = P(C) P(A | C) + P(\overline{C}) P(A |
+\overline{C})</span></p>
+<p>For simplicity, let <span class="math inline">p = P(C)</span>. Then,
+substituting in our known values <span class="math inline">P(A)</span>,
+<span class="math inline">P(A | C)</span>, and <span class="math inline">P(A | \overline{C})</span> and solving for <span class="math inline">p</span> yields</p>
+<p><span class="math display">\begin{align*}
+    P(A) &amp;= P(A \cap C) + P(A \cap \overline{C}) = P(C) P(A | C) +
+P(\overline{C}) P(A | \overline{C}) \\
+    \frac{2}{5} &amp;= \frac{2}{3} p + \frac{1}{5} (1 - p) \\
+    \frac{2}{5} &amp;= \left(\frac{10}{15} - \frac{3}{15} \right)p +
+\frac{1}{5} \\
+    \frac{1}{5} &amp;= \frac{7}{15} p \\
+    p &amp;= \frac{15}{7} \cdot \frac{1}{5} = \frac{3}{7}
+\end{align*}</span></p>
+<p>Thus, <span class="math inline">P(C) = \frac{3}{7}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-11">Problem 11</h2>
+<p><em>Originally Problem 11 on the Fall 2021 Final Exam.</em></p>
+<p>Below, we have a (real) sample of 12 passengers on the RMS Titanic, a
+British cruise ship that tragically sank in 1912. For each passenger in
+our sample, we have the following information:</p>
+<ul>
+<li><strong>survived</strong>: 1 if they survived the sinking of the
+Titanic, 0 if they did not</li>
+<li><strong>sex</strong>: either Male or Female</li>
+<li><strong>class</strong>: the cabin class they were in, either First,
+Second, or Third (with First being the most luxurious)</li>
+<li><strong>age</strong>: either child (for those under 18) or adult
+(for those 18 and older)</li>
+</ul>
+<!-- \begin{center}
+\begin{tabular}{rlll}
+\toprule
+ survived &    sex &  class &   age \\
+\midrule
+        0 & female &  Third & adult \\
+        0 &   male &  First & adult \\
+        0 &   male &  Third & adult \\
+        1 & female &  First & adult \\
+        1 & female &  First & adult \\
+        1 & female &  First & child \\
+        1 & female & Second & adult \\
+        1 & female & Second & adult \\
+        1 & female &  Third & adult \\
+        1 & female &  Third & child \\
+        1 &   male &  First & child \\
+        1 &   male & Second & adult \\
+\bottomrule
+\end{tabular}
+\end{center} -->
+<div>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>survived   </th>
+<th>sex   </th>
+<th>class   </th>
+<th>age   </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>female</td>
+<td>Third</td>
+<td>adult</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>male</td>
+<td>First</td>
+<td>adult</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>male</td>
+<td>Third</td>
+<td>adult</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>female</td>
+<td>First</td>
+<td>adult</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>female</td>
+<td>First</td>
+<td>adult</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>female</td>
+<td>First</td>
+<td>child</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>female</td>
+<td>Second</td>
+<td>adult</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>female</td>
+<td>Second</td>
+<td>adult</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>female</td>
+<td>Third</td>
+<td>adult</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>female</td>
+<td>Third</td>
+<td>child</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>male</td>
+<td>First</td>
+<td>child</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>male</td>
+<td>Second</td>
+<td>adult</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="problem-11.1">Problem 11.1</h3>
+<p>Selma Augusta Emilia was a 38 year old female in Third class. Using
+the Naive Bayes classification algorithm with no smoothing, predict
+whether Selma Augusta Emilia survived the sinking of the Titanic. You
+must show all intermediate steps, including the probabilities you used
+to make your classification, and you must clearly state what your
+prediction is.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We want to determine which is larger, <span class="math inline">P(\text{1 | female, Third, adult})</span> or <span class="math inline">P(\text{0 | female, Third, adult})</span>, where 1
+means the passenger survived and 0 means the passenger did not survive.
+The Naive Bayes algorithm works by re-writing these two probabilities
+using Bayes’ theorem, recognizing that we can determine which is larger
+by comparing their numerators, and using an assumption of conditional
+independence on their numerators.</p>
+<p>Let’s first consider <span class="math inline">P(1 | \text{female,
+Third, adult})</span>. By Bayes’ rule, the numerator of this probability
+is <span class="math display">P(1) P(\text{female, Third, adult} |
+1)</span> and by the assumption of conditional independence given a
+class, this is equal to</p>
+<p><span class="math display">P(1) P(\text{female} | 1) P(\text{Third} |
+1) P(\text{adult} | 1)</span></p>
+<p>We can estimate these four probabilities using our training set.</p>
+<ul>
+<li><span class="math inline">P(1) = \frac{9}{12} = \frac{3}{4}</span>,
+because 9 of the 12 people in our training dataset are survivors
+(survived = 1).</li>
+<li><span class="math inline">P(\text{female} | 1) = \frac{7}{9}</span>,
+because 7 of the 9 survivors in our dataset are female.</li>
+<li><span class="math inline">P(\text{Third} | 1) = \frac{2}{9}</span>,
+because 2 of the 9 survivors in our dataset are in Third class.</li>
+<li><span class="math inline">P(\text{adult} | 1) = \frac{6}{9} =
+\frac{2}{3}</span>, because 6 of the 9 survivors in our dataset are
+adults.</li>
+</ul>
+<p>So, this numerator becomes</p>
+<p><span class="math display">P(1) P(\text{female} | 1) P(\text{Third} |
+1) P(\text{adult} | 1) = \frac{3}{4} \cdot \frac{7}{9} \cdot \frac{2}{9}
+\cdot \frac{2}{3} = \frac{7}{81}</span></p>
+<p>Similarly, we must estimate <span class="math inline">P(0)
+P(\text{female} | 0) P(\text{Third} | 0) P(\text{adult} | 0)</span>:</p>
+<ul>
+<li><span class="math inline">P(0) = \frac{3}{12} = \frac{1}{4}</span>,
+because 3 of the 12 people in our training dataset are not survivors
+(survived = 0).</li>
+<li><span class="math inline">P(\text{female} | 0) = \frac{1}{3}</span>,
+because 1 of the 3 non-survivors in our dataset are female.</li>
+<li><span class="math inline">P(\text{Third} | 0) = \frac{2}{3}</span>,
+because 2 of the 3 non-survivors in our dataset are in Third class.</li>
+<li><span class="math inline">P(\text{adult} | 0) = \frac{3}{3} =
+1</span>, because all 3 of the non-survivors in our dataset are
+adults.</li>
+</ul>
+<p>Then, we have</p>
+<p><span class="math display">P(0) P(\text{female} | 0) P(\text{Third} |
+0) P(\text{adult} | 0) = \frac{1}{4} \cdot \frac{1}{3} \cdot \frac{2}{3}
+\cdot 1 = \frac{1}{18}</span></p>
+<p>Note that <span class="math inline">\frac{1}{18} =
+\frac{4.5}{81}</span>. Since this is smaller than <span class="math inline">\frac{7}{81}</span>, the numerator for class 1, we
+predict that Selma Augusta Emilia survived the Titanic.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.2">Problem 11.2</h3>
+<p>If you try to use Naive Bayes to classify whether Selma Augusta
+Emilia’s 8 year old daughter (who also sat with her in Third class)
+survived the Titanic, one of the two probabilities that you’d compare
+would turn out to be 0.</p>
+<p>Using smoothing, compute <span class="math inline">P(\text{child } |
+\text{ survived})</span> and <span class="math inline">P(\text{child } |
+\text{ didn&#39;t survive})</span>. Show your work. Note that all you
+need to do is find these two probabilities; you don’t need to make any
+predictions.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Note that this subpart uses the notation <span class="math inline">P(\text{child } | \text{ survived})</span> and <span class="math inline">P(\text{child } | \text{ didn't
+survive})</span>; these are equivalent to <span class="math inline">P(\text{child} | 1)</span> and <span class="math inline">P(\text{child} | 0)</span> using the notation in the
+previous subpart’s solution.</p>
+<p><span class="math display">P(\text{child } | \text{ survived}) =
+\frac{(\text{\# children that survived} + 1)}{(\text{\# children that
+survived} + 1) + \text{(\# adults that survived} + 1)}</span> <span class="math display">= \frac{3 + 1}{(3 + 1) + (6 + 1)} =
+\frac{4}{11}</span></p>
+<p><span class="math display">P(\text{child } | \text{ didn't
+survive}) = \frac{(\text{\# children that didn't survive} +
+1)}{(\text{\# children that didn't survive} + 1) + \text{(\# adults
+that didn't survive} + 1)}</span> <span class="math display">=
+\frac{0 + 1}{(0 + 1) + (3 + 1)} = \frac{1}{5}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
