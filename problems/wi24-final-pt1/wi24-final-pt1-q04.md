@@ -24,7 +24,9 @@ correlaton of two terms:
 feature to obtain the true energy (i.e. $y = w_0+w_1 x$). Which feature
 should he choose as $x$ to get the lowest mean square error?
 
-( ) A ( ) B ( ) C
+( ) A
+( ) B
+( ) C
 
 # BEGIN SOLUTION
 
@@ -35,18 +37,18 @@ weight.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
+# END SUBPROB
 
-# END SOLUTION
-
-# END SUBPROB # BEGIN SUBPROB
+# BEGIN SUBPROB
 
 (2pt) Albert want to add another feature into his linear regression in
 part a) to further boost the model's performance. (i.e.
 $y = w_0+w_1 x + +w_2 x_2$) Which feature should he choose as $x_2$ to
 make additional improvements?
 
-( ) A ( ) B ( ) C
+( ) A
+( ) B
+( ) C
 
 # BEGIN SOLUTION
 
@@ -57,23 +59,27 @@ provides almost the same information as B.
 
 # END SOLUTION
 
+# END SUBPROB
+
+# BEGIN SUBPROB
+
 Albert further refine his algorithm by fitting a prediction rule of the
 form: $$\begin{aligned}
 H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
-\end{aligned}$$ # BEGIN SUBPROB
+\end{aligned}$$
 
 (3pt)Given this prediction rule, What are the dimensions of the design
-matrix X?
+matrix X? AKA what is $r$ and $c$?
+
+$r \text{rows} \times c \text{columns}$
 
 # BEGIN SOLUTION
+
+$400 \text{rows} \times 3 \text{columns}$
 
 # END SOLUTION
 
 # END SUBPROB
-
-::: center
-rows $\times$ columns
-:::
 
 # BEGIN SUBPROB
 
@@ -95,18 +101,10 @@ $$\vec{w_a}^* = \begin{bmatrix} \phantom{XXX} \\ \phantom{XXX} \\ \phantom{XXX} 
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB # BEGIN SOLUTION
-
 $$\vec{w}^* = \begin{bmatrix} w_0^*/2 \\ w_2^* \\ w_1^*  \end{bmatrix}$$
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB

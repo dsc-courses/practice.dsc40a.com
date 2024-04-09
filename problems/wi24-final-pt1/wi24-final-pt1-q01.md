@@ -8,24 +8,29 @@ of them are 9.
 
 (4 points) Calculate the median of this dataset.
 
-::: center
-:::
-
 # BEGIN SOLUTION
+
+$6$
+
+TODO
 
 # END SOLUTION
 
-# END SUBPROB # BEGIN SUBPROB
+# END SUBPROB
+
+# BEGIN SUBPROB
 
 (4 points) How does the mean of this dataset compared to its median?
 
 ( ) The mean is larger than the median
-
 ( ) The mean is smaller than the median
-
 ( ) The mean and the median are equal
 
 # BEGIN SOLUTION
+
+The mean is smaller than the median
+
+TODO
 
 # END SOLUTION
 

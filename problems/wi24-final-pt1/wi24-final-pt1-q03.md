@@ -9,13 +9,19 @@ error over this dataset.
 (2 points) Write down the expression of mean square error and its
 derivative given this dataset
 
-::: center
 $R_{sq}(h)$ =
 
 $\frac{dR_{sq}(h)}{dh}$ =
-:::
 
 # BEGIN SOLUTION
+
+$R_{sq}(h) = \frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2$
+
+TODO
+
+$\frac{dR_{sq}(h)}{dh} = \frac{1}{2}\sum_{i=1}^{4}(h-y_i)$
+
+TODO
 
 # END SOLUTION
 
@@ -27,9 +33,7 @@ $\frac{dR_{sq}(h)}{dh}$ =
 learning rate to be $\frac{1}{4}$. After two gradient descent steps,
 $h_2=\frac{1}{4}$. What is the value of $h_0$?
 
-::: center
 $h_0$ =
-:::
 
 # BEGIN SOLUTION
 
@@ -52,17 +56,20 @@ $h_{0} = -\frac{5}{4}$.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
+# END SUBPROB
 
-# END SOLUTION
-
-# END SUBPROB # BEGIN SUBPROB
+# BEGIN SUBPROB
 
 (4 points) Given that we set the tolerance of gradient descent to be
 0.1. How many **additional steps** beyond $h_2$ do we need to take to
 reach convergence?
 
-( ) 0 ( ) 1 ( ) 2 ( ) 3 ( ) 4 ( ) It will never converge
+( ) 0
+( ) 1
+( ) 2
+( ) 3
+( ) 4
+( ) It will never converge
 
 # BEGIN SOLUTION
 
@@ -87,11 +94,7 @@ $i=2$, in that case we obtain: $$\begin{aligned}
 \end{aligned}$$ from $h_4$ to $h_5$, the change is smaller than the
 tolerance. That means we need additional 2 or 3 steps to reach
 convergence (depending on if you actually perform $h_4$ to $h_5$, so
-both 2 and 3 are considered correct answer.
-
-# END SOLUTION
-
-# BEGIN SOLUTION
+both 2 and 3 are considered correct answer).
 
 # END SOLUTION
 
