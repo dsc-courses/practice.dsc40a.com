@@ -29,6 +29,10 @@ apply.**
 
 # BEGIN SOLUTION
 
+$A$ and $B$ are conditionally independent given $C$.
+
+TODO
+
 # END SOLUTION
 
 # END SUBPROB # BEGIN SUBPROB
@@ -41,12 +45,7 @@ step.**
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-:::: responsebox
-4in There are several correct approaches to this problem. The simplest
+There are several correct approaches to this problem. The simplest
 one comes from using the definition of conditional probability to write
 $$\begin{aligned}
             P(\overline{A}|(A \cup B)) &= \dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}.\\
@@ -62,9 +61,10 @@ In the Venn Diagram below, $\overline{A}$ is shaded in yellow, and
 $A \cup B$ is shaded in blue. Their overlap,
 $\overline{A}\cap (A \cup B))$, is shaded in green, which is just $B$.
 
-::: center
-![image](pics/venn.jpg)
-:::
-::::
+<center><img src="../assets/images/sp23-midterm2/venn.jpg" width="600" height="330"></center>
+
+# END SOLUTION
+
+# END SUBPROB
 
 # END PROB

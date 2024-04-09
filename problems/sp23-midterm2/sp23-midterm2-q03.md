@@ -11,14 +11,13 @@ Remember, some pieces look the same.
 
 # BEGIN SOLUTION
 
+$\dfrac{16!}{8!2!2!2!} = \dfrac{P(16,8)}{2^3} = C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1)$
+
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
-
-::: responsebox
-1in
-$\dfrac{16!}{8!2!2!2!} = \dfrac{P(16,8)}{2^3} = C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1)$
-:::
 
 # BEGIN SUBPROB
 
@@ -27,13 +26,13 @@ chess pieces. How many lineups have white pawns on both ends?
 
 # BEGIN SOLUTION
 
+$C(14, 6) = C(14, 8) = \dfrac{14!}{8!6!}$
+
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
-
-::: responsebox
-1in $C(14, 6) = C(14, 8) = \dfrac{14!}{8!6!}$
-:::
 
 # BEGIN SUBPROB
 
@@ -41,12 +40,6 @@ chess pieces. How many lineups have white pawns on both ends?
 chess pieces. Assuming that each different-looking lineup is equally
 likely, what is the probability that the lineup has two of the
 same-colored pawns on both ends (both black or both white)?
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 ( ) $\frac{1}{4}$
 
@@ -57,5 +50,15 @@ same-colored pawns on both ends (both black or both white)?
 ( ) $\frac{7}{15}$
 
 ( ) None of the above.
+
+# BEGIN SOLUTION
+
+$\frac{7}{15}$
+
+TODO
+
+# END SOLUTION
+
+# END SUBPROB
 
 # END PROB

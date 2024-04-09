@@ -28,6 +28,10 @@ How many results are possible for this experiment with $n$ people?
 
 # BEGIN SOLUTION
 
+$12^n$.
+
+TODO
+
 # END SOLUTION
 
 # END PROB

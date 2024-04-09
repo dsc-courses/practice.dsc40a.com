@@ -29,6 +29,8 @@ the tournament?
 
 # BEGIN SOLUTION
 
+$67 \%$
+
 # END SOLUTION
 
 # END SUBPROB # BEGIN SUBPROB
@@ -37,12 +39,6 @@ the tournament?
 first round. What is the probability that Avi's opponent is an advanced
 player? Choose the **closest answer** among the choices listed.
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
-
 ( ) $15 \%$
 
 ( ) $25 \%$
@@ -50,5 +46,15 @@ player? Choose the **closest answer** among the choices listed.
 ( ) $35 \%$
 
 ( ) $45 \%$
+
+# BEGIN SOLUTION
+
+$25 \%$
+
+TODO
+
+# END SOLUTION
+
+# END SUBPROB
 
 # END PROB

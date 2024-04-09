@@ -10,14 +10,11 @@ pieces are white. What is the probability that you have 2 pawns?
 
 # BEGIN SOLUTION
 
+$\dfrac{8}{16}*\dfrac{7}{15} = \dfrac{C(8,2)}{C(16, 2)} = \dfrac{\frac{8}{32}*\frac{7}{31}}{\frac{16}{32}*\frac{15}{31}} = \dfrac{7}{30}$
+
 # END SOLUTION
 
 # END SUBPROB
-
-::: responsebox
-1in
-$\dfrac{8}{16}*\dfrac{7}{15} = \dfrac{C(8,2)}{C(16, 2)} = \dfrac{\frac{8}{32}*\frac{7}{31}}{\frac{16}{32}*\frac{15}{31}} = \dfrac{7}{30}$
-:::
 
 # BEGIN SUBPROB
 
@@ -29,6 +26,8 @@ two white pieces.
 ( ) False
 
 # BEGIN SOLUTION
+
+True.
 
 # END SOLUTION
 

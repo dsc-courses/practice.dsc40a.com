@@ -34,6 +34,10 @@ winners.
 
 # BEGIN SOLUTION
 
+Because it uses a dataset where there are many more non-winners than winners.
+
+TODO
+
 # END SOLUTION
 
 # END PROB
