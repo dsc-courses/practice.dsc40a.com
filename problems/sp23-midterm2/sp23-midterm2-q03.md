@@ -1,7 +1,17 @@
 # BEGIN PROB
 
-In this problem, a **lineup** is a way of arranging items
-in a straight line.
+A set of chess pieces has 32 pieces. 16 of these are black and 16 of these are white. **In each color**, the 16 pieces are:
+
+- 8 pawns,
+- 2 bishops,
+- 2 knights,
+- 2 rooks,
+- 1 queen, and 
+- 1 king.
+
+When there are multiple pieces of a given color and type (for example, 8 white pawns), we will assume they are **indistinguishable** from one another.
+
+In this problem, a **lineup** is a way of arranging items in a straight line.
 
 # BEGIN SUBPROB
 
