@@ -21,8 +21,7 @@ In other words, this is yet another formula for $w_1^*$.
 
 We'll show the equivalence to the middle formula above. Since the
 denominators are the same, we just need to show $$\begin{aligned}
-     \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i.
-     \intertext{We'll do this by expanding the sum on the left and simplifying as follows.}
+     \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i.\\
      \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + \displaystyle\sum_{i=1}^n (x_i - \overline x)\cdot2 \\
      &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + 2\cdot\displaystyle\sum_{i=1}^n (x_i - \overline x) \\
     &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + 2\cdot0 \\

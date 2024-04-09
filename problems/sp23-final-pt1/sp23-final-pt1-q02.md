@@ -9,6 +9,8 @@ error, $R_{abs}(h)$.
 
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 
+<br>
+
 $\{4, 7, 9, 10, 11\}$
 
 ( ) Graph 1
@@ -29,6 +31,8 @@ TODO
 # BEGIN SUBPROB
 
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
+
+<br>
 
 $\{-3, 1, 9, 11, 20\}$
 
@@ -51,6 +55,8 @@ TODO
 
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 
+<br>
+
 $\{8, 9, 12, 13, 15\}$
 
 ( ) Graph 1
@@ -71,6 +77,8 @@ TODO
 # BEGIN SUBPROB
 
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
+
+<br>
 
 $\{11, 12, 12, 13, 14\}$
 
