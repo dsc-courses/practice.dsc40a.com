@@ -17,6 +17,8 @@ Zoe: Spring 2023 midterm 2 (midterm 2A.tex)
     - Need explanations
 
 Zoe: Spring 2023 final part 1 (final1A.tex)
+- Added in solutions
+    - Need explanations
 
 Javier: Spring 2023 final part 2 (final2A.tex)
 
