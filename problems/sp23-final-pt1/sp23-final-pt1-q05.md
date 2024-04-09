@@ -28,7 +28,7 @@ $r$ rows $\times$ $c$ columns
 
 # BEGIN SOLUTION
 
-$100 \text{rows} \times 3 \text{columns}$
+$100 \text{ rows} \times 3 \text{ columns}$
 
 # END SOLUTION
 
