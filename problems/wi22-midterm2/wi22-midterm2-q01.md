@@ -12,7 +12,7 @@ Players input a guess, which can be any six-letter string, and get feedback on t
 
 Based on this feedback, they can guess again, an **unlimited** number of times, until they guess the string correctly, at which point the game is over. Here's an example of what happens when someone plays Stringle and guesses the string on their fifth guess:
 
-<center><img src="../assets/images/wi22-midterm2/stringlewin.png" width="600" height="330"></center>
+<center><img src="../assets/images/wi22-midterm2/stringlewin.png" width="330" height="330"></center>
 
 A player's Stringle **score** is the number of guesses it took them to guess the word correctly. In the example above, the player's score is 5.
 

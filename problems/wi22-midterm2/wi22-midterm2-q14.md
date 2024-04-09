@@ -51,6 +51,7 @@ questions as follows:
 -   *Have you ever recommended Stringle to someone you know?* "No"
 
 **Hint**: It's not necessary to do lots of arithmetic.
+
 ( ) This person would pay \$0 for a Stringle subscription.
 ( ) This person would pay \$10 for a Stringle subscription.
 ( ) This person would pay \$20 for a Stringle subscription.
