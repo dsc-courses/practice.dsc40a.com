@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(6 points)\] Suppose that there are three possible experience levels
+Suppose that there are three possible experience levels
 in chess (beginner, intermediate, advanced). Only **10%** of beginner
 players beat Avi at a game of chess, while **50%** of intermediate
 players and **80%** of advanced players do.
@@ -14,7 +14,7 @@ players are **randomly paired up** for a game of chess.
 
 # BEGIN SUBPROB
 
-(3 points) What is the probability that Avi wins in the first round of
+What is the probability that Avi wins in the first round of
 the tournament?
 
 ( ) $33 \%$
@@ -27,11 +27,15 @@ the tournament?
 
 $67 \%$
 
+TODO
+
 # END SOLUTION
 
-# END SUBPROB # BEGIN SUBPROB
+# END SUBPROB
 
-(3 points) It turns out that, sadly, Avi loses to his opponent in the
+# BEGIN SUBPROB
+
+It turns out that, sadly, Avi loses to his opponent in the
 first round. What is the probability that Avi's opponent is an advanced
 player? Choose the **closest answer** among the choices listed.
 

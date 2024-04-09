@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(6 points)\] The Avocado Cup is organized into rounds. In each round,
+The Avocado Cup is organized into rounds. In each round,
 players who win advance to the next round, and players who lose are
 eliminated. Rounds continue on like this until there is a single
 tournament winner.
@@ -16,7 +16,7 @@ the Avocado Cup:
 
 # BEGIN SUBPROB
 
-(3 points) Which of the following statements is true? **Select all that
+Which of the following statements is true? **Select all that
 apply.**
 
 [ ] $A$ and $B$ are independent.
@@ -34,7 +34,7 @@ TODO
 
 # END SUBPROB # BEGIN SUBPROB
 
-(3 points) The events $A$ and $B$ are mutually exclusive, or disjoint.
+The events $A$ and $B$ are mutually exclusive, or disjoint.
 More generally, for **any** two disjoint events $A$ and $B$, show how to
 express $P(\overline{A}|(A \cup B))$ in terms of $P(A)$ and $P(B)$
 **only**. For this problem only, **show your work and justify each

@@ -1,11 +1,11 @@
 # BEGIN PROB
 
-\[(9 points)\] In this problem, a **lineup** is a way of arranging items
+In this problem, a **lineup** is a way of arranging items
 in a straight line.
 
 # BEGIN SUBPROB
 
-(3 points) A chess player lines up all 16 **white pieces** from the set
+A chess player lines up all 16 **white pieces** from the set
 of chess pieces. How many different-looking lineups can be created?
 Remember, some pieces look the same.
 
@@ -21,7 +21,7 @@ TODO
 
 # BEGIN SUBPROB
 
-(3 points) A chess player lines up all 16 **pawns** from the set of
+A chess player lines up all 16 **pawns** from the set of
 chess pieces. How many lineups have white pawns on both ends?
 
 # BEGIN SOLUTION
@@ -36,7 +36,7 @@ TODO
 
 # BEGIN SUBPROB
 
-(3 points) A chess player lines up all 16 **pawns** from the set of
+A chess player lines up all 16 **pawns** from the set of
 chess pieces. Assuming that each different-looking lineup is equally
 likely, what is the probability that the lineup has two of the
 same-colored pawns on both ends (both black or both white)?

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(3 points)\] You have a large historical dataset of all competitors in
+You have a large historical dataset of all competitors in
 past years of the Avocado Cup chess tournament. Each year, hundreds of
 chess players compete in the tournament, and one person is crowned the
 winner. For each competitor in each year of the competition's history,

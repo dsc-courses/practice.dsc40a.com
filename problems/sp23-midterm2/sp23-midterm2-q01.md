@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(3 points)\] Consider an experiment where each of $n$ people selects
+Consider an experiment where each of $n$ people selects
 one piece from their own set of 32 chess pieces, uniformly at random.
 The **result** of the experiment is a description of the **colors and
 types** of the pieces each person selected. For example, if $n=3$, one
