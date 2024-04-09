@@ -8,17 +8,23 @@ what the clusters represent?
 
 ( ) One cluster represents the Stringle strings that were easier to
 guess, and the other represents the Stringle strings that were harder to
-guess.\
+guess.
 ( ) One cluster represents the family members who are better Stringle
-players, and the other represents the family members who not as good.\
+players, and the other represents the family members who not as good.
 ( ) One cluster represents the Stringle strings that had duplicated
 letters, and the other represents the Stringle strings that had distinct
-letters.\
+letters.
 ( ) One cluster represents the family members who play Stringle more
 often, and the other represents the family members who do not play as
 often.
 
 # BEGIN SOLUTION
+
+One cluster represents the Stringle strings that were easier to
+guess, and the other represents the Stringle strings that were harder to
+guess.
+
+TODO
 
 # END SOLUTION
 

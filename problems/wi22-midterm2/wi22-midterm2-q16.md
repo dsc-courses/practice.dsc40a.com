@@ -7,13 +7,17 @@ Quadringle puzzle is determined by which four six-letter strings it
 includes, and the order of those four strings does not matter. How many
 Quadringle puzzles are possible?
 
-( ) $(26^6)^4$\
-( ) $C(26^6,4)$\
-( ) $P(26^6, 4)$\
-( ) $4^{C(26,6)}$\
+( ) $(26^6)^4$
+( ) $C(26^6,4)$
+( ) $P(26^6, 4)$
+( ) $4^{C(26,6)}$
 ( ) None of the above.
 
 # BEGIN SOLUTION
+
+$C(26^6,4)$
+
+TODO
 
 # END SOLUTION
 

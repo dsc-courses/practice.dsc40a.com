@@ -23,13 +23,10 @@ classifier is ineffective** in identifying the winner?
 
 ( ) Because it uses a variable (birth month) that likely has nothing to
 do with a person's chances of winning the tournament.
-
 ( ) Because it uses a variable (experience level) that likely has a
 strong connection with a person's chances of winning the tournament.
-
 ( ) Because it uses a dataset where there are many more non-winners than
 winners.
-
 ( ) Because it uses a categorical response variable.
 
 # BEGIN SOLUTION

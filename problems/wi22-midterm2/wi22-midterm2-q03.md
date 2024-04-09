@@ -11,6 +11,10 @@ exactly one duplicate letter, like SYSTEM, BEFORE, or YELLOW?
 
 # BEGIN SOLUTION
 
+$\dfrac{C(6,2)*P(26, 5)}{26^6}$
+
+TODO
+
 # END SOLUTION
 
 # END PROB

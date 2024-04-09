@@ -6,10 +6,7 @@ much they would be willing to pay if Stringle were to switch to a paid
 annual subscription. All of the questions are yes or no questions,
 except for
 
-::: center
-*"What's the maximum amount you would pay for a year's subscription to
-Stringle?\"*
-:::
+*"What's the maximum amount you would pay for a year's subscription to Stringle?"*
 
 which has options \$0, \$10, or \$20. Of the 250 participants,
 
@@ -51,14 +48,18 @@ questions as follows:
 
 -   *Do you record your Stringle scores anywhere?* "No"
 
--   *Have you ever recommended Stringle to someone you know?* "No"\
+-   *Have you ever recommended Stringle to someone you know?* "No"
 
-**Hint**: It's not necessary to do lots of arithmetic.\
-( ) This person would pay \$0 for a Stringle subscription.\
-( ) This person would pay \$10 for a Stringle subscription.\
+**Hint**: It's not necessary to do lots of arithmetic.
+( ) This person would pay \$0 for a Stringle subscription.
+( ) This person would pay \$10 for a Stringle subscription.
 ( ) This person would pay \$20 for a Stringle subscription.
 
 # BEGIN SOLUTION
+
+This person would pay \$0 for a Stringle subscription.\
+
+TODO
 
 # END SOLUTION
 

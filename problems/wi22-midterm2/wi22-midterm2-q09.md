@@ -15,6 +15,8 @@ letters, and 2 gray letters?
 
 # BEGIN SOLUTION
 
+$C(6,2)*C(4,2)$
+
 # END SOLUTION
 
 # END PROB

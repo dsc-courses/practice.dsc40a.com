@@ -12,13 +12,17 @@
 
 Which of the following is true?
 
-\
-\
-\
-\
+( ) $A$ and $B$ are independent. $A$ and $C$ are independent. $B$ and $C$ are dependent.
+( ) $A$ and $B$ are dependent. $A$ and $C$ are independent. $B$ and $C$ are independent.
+( ) $A$ and $B$ are independent. $A$ and $C$ are dependent. $B$ and $C$ are dependent.
+( ) $A$ and $B$ are dependent. $A$ and $C$ are dependent. $B$ and $C$ are independent.
 ( ) None of the above.
 
 # BEGIN SOLUTION
+
+None of the above.
+
+TODO
 
 # END SOLUTION
 

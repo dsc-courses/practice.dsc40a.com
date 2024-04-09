@@ -18,13 +18,9 @@ players are **randomly paired up** for a game of chess.
 the tournament?
 
 ( ) $33 \%$
-
 ( ) $50 \%$
-
 ( ) $67 \%$
-
 ( ) $83 \%$
-
 ( ) None of the above.
 
 # BEGIN SOLUTION
@@ -40,11 +36,8 @@ first round. What is the probability that Avi's opponent is an advanced
 player? Choose the **closest answer** among the choices listed.
 
 ( ) $15 \%$
-
 ( ) $25 \%$
-
 ( ) $35 \%$
-
 ( ) $45 \%$
 
 # BEGIN SOLUTION

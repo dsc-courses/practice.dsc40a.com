@@ -1,7 +1,6 @@
 # BEGIN PROB
 
-(1 point) For this problem, we'll say that there are six vowels: A, E,
-I, O, U, and Y. Consider the following three events:
+(1 point) For this problem, we'll say that there are six vowels: A, E, I, O, U, and Y. Consider the following three events:
 
 -   $A$ is the event that today's Stringle string starts with a vowel.
 
@@ -24,6 +23,8 @@ given $C$.\
 ( ) None of the above.
 
 # BEGIN SOLUTION
+
+$A$ and $B$ are independent. $A$ and $B$ are conditionally dependent given $C$.
 
 # END SOLUTION
 

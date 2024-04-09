@@ -12,6 +12,10 @@ GOOGOO, if we know that the first letter matches the fourth letter?
 
 # BEGIN SOLUTION
 
+$\dfrac{1}{26^2}$
+
+TODO
+
 # END SOLUTION
 
 # END PROB

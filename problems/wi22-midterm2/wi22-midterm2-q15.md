@@ -10,14 +10,17 @@ prediction using only three of the four survey questions. For this data,
 which survey question can you safely remove, without changing the
 results of your naive Bayes classifier?
 
-( ) Do you play Stringle every day?\
-( ) Do you share your Stringle results with friends or family?\
-( ) Do you record your Stringle scores anywhere?\
-( ) Have you ever recommended Stringle to someone you know?\
-( ) None of the above. Removing any question will change the results of
-the naive Bayes classifier.
+( ) Do you play Stringle every day?
+( ) Do you share your Stringle results with friends or family?
+( ) Do you record your Stringle scores anywhere?
+( ) Have you ever recommended Stringle to someone you know?
+( ) None of the above. Removing any question will change the results of the naive Bayes classifier.
 
 # BEGIN SOLUTION
+
+Do you share your Stringle results with friends or family?
+
+TODO
 
 # END SOLUTION
 

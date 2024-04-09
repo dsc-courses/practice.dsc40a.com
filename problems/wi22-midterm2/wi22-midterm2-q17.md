@@ -15,13 +15,17 @@ chosen.
 It turns out that you picked an L. What is the probability that your L
 came from the word SALADS?
 
-( ) $\dfrac{1}{24}$\
-( ) $\dfrac{1}{6}$\
-( ) $\dfrac15$\
-( ) $\dfrac14$\
+( ) $\dfrac{1}{24}$
+( ) $\dfrac{1}{6}$
+( ) $\dfrac{1}{5}$
+( ) $\dfrac{1}{4}$
 ( ) None of the above.
 
 # BEGIN SOLUTION
+
+$\dfrac{1}{5}$
+
+TODO
 
 # END SOLUTION
 

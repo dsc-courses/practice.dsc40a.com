@@ -15,15 +15,10 @@ possible result is:
 How many results are possible for this experiment with $n$ people?
 
 ( ) $2^n$
-
 ( ) $6^n$
-
 ( ) $12^n$
-
 ( ) $16^n$
-
 ( ) $32^n$
-
 ( ) None of the above.
 
 # BEGIN SOLUTION

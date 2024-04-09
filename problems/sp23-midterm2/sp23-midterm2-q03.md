@@ -42,13 +42,9 @@ likely, what is the probability that the lineup has two of the
 same-colored pawns on both ends (both black or both white)?
 
 ( ) $\frac{1}{4}$
-
 ( ) $\frac{1}{2}$
-
 ( ) $\frac{7}{30}$
-
 ( ) $\frac{7}{15}$
-
 ( ) None of the above.
 
 # BEGIN SOLUTION

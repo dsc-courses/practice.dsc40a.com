@@ -22,7 +22,6 @@ $\dfrac{8}{16}*\dfrac{7}{15} = \dfrac{C(8,2)}{C(16, 2)} = \dfrac{\frac{8}{32}*\f
 two white pieces.
 
 ( ) True
-
 ( ) False
 
 # BEGIN SOLUTION

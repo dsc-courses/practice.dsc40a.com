@@ -20,11 +20,8 @@ the Avocado Cup:
 apply.**
 
 [ ] $A$ and $B$ are independent.
-
 [ ] $A$ and $B$ are conditionally independent given $C$.
-
 [ ] $A$, $B$, and $C$ form a partition of the sample space.
-
 [ ] None of the above.
 
 # BEGIN SOLUTION

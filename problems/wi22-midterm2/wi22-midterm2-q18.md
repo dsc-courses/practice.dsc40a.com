@@ -15,13 +15,15 @@ an equal probability of being chosen.
 It turns out that you picked an E. What is the probability that your E
 came from the word DEALER?
 
-( ) $\dfrac{1}{24}$\
-( ) $\dfrac{1}{6}$\
-( ) $\dfrac15$\
-( ) $\dfrac14$\
+( ) $\dfrac{1}{24}$
+( ) $\dfrac{1}{6}$
+( ) $\dfrac{1}{5}$
+( ) $\dfrac{1}{4}$
 ( ) None of the above.
 
 # BEGIN SOLUTION
+
+None of the above
 
 # END SOLUTION
 
