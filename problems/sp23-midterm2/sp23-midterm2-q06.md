@@ -44,14 +44,14 @@ step.**
 
 There are several correct approaches to this problem. The simplest
 one comes from using the definition of conditional probability to write
-$$\begin{aligned}
-            P(\overline{A}|(A \cup B)) &= \dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}.\\
-            \intertext {To evaluate the numerator, notice that since $A$ and $B$ are disjoint, any outcome that is not in $A$ but is in the union of $A$ and $B$ ($A$ or $B$) must be in $B$. The Venn diagram shown below illustrates this. Therefore, we can simplify this as}
-            &= \dfrac{P(B)}{P(A \cup B)} \\
-            \intertext{ and because we know $A$ and $B$ are disjoint, we can use the addition rule to expand the denominator as}
-            &= \dfrac{P(B)}{P(A)+P(B)}. \\
-            
-\end{aligned}$$ This is the desired final expression because it uses
+
+$$P(\overline{A}|(A \cup B)) = \dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}$$
+To evaluate the numerator, notice that since $A$ and $B$ are disjoint, any outcome that is not in $A$ but is in the union of $A$ and $B$ ($A$ or $B$) must be in $B$. The Venn diagram shown below illustrates this. Therefore, we can simplify this as
+$$= \dfrac{P(B)}{P(A \cup B)} $$
+and because we know $A$ and $B$ are disjoint, we can use the addition rule to expand the denominator as
+$$= \dfrac{P(B)}{P(A)+P(B)}$$
+
+This is the desired final expression because it uses
 $P(A)$ and $P(B)$ only.
 
 In the Venn Diagram below, $\overline{A}$ is shaded in yellow, and

@@ -448,31 +448,24 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-There are several correct approaches to this problem. The simplest one
-comes from using the definition of conditional probability to write $$
-<span class="math display">
-<span class="math display">\begin{aligned}
-            P(\overline{A}|(A \cup B)) &amp;amp;=
-\dfrac{P(\overline{A}\cap
-(A \cup B))}{P(A \cup B)}.\\
-            \intertext {To evaluate the numerator, notice that since $A$
-and $B$ are disjoint, any outcome that is not in $A$ but is in the union
-of $A$ and $B$ ($A$ or $B$) must be in $B$. The Venn diagram shown below
-illustrates this. Therefore, we can simplify this as}
-            &amp;amp;= \dfrac{P(B)}{P(A \cup B)} \\
-            \intertext{ and because we know $A$ and $B$ are disjoint, we
-can use the addition rule to expand the denominator as}
-            &amp;amp;= \dfrac{P(B)}{P(A)+P(B)}. \\
-            
-\end{aligned}</span>
-<p></span> <p>$$ This is the desired final expression because it uses
-<span class="math inline">P(A)</span> and <span
-class="math inline">P(B)</span> only.</p> <p>In the Venn Diagram below,
-<span class="math inline"></span> is shaded in yellow, and <span
-class="math inline">A B</span> is shaded in blue. Their overlap, <span
-class="math inline">(A B))</span>, is shaded in green, which is just
-<span class="math inline">B</span>.</p>
-<center><img height="330" src="../assets/images/sp23-midterm2/venn.jpg" width="600"/></center></p>
+<p>There are several correct approaches to this problem. The simplest
+one comes from using the definition of conditional probability to
+write</p>
+<p><span class="math display">P(\overline{A}|(A \cup B)) =
+\dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}</span> To evaluate
+the numerator, notice that since <span class="math inline">A</span> and
+<span class="math inline">B</span> are disjoint, any outcome that is not
+in <span class="math inline">A</span> but is in the union of <span class="math inline">A</span> and <span class="math inline">B</span>
+(<span class="math inline">A</span> or <span class="math inline">B</span>) must be in <span class="math inline">B</span>. The Venn diagram shown below illustrates
+this. Therefore, we can simplify this as <span class="math display">=
+\dfrac{P(B)}{P(A \cup B)} </span> and because we know <span class="math inline">A</span> and <span class="math inline">B</span> are
+disjoint, we can use the addition rule to expand the denominator as
+<span class="math display">= \dfrac{P(B)}{P(A)+P(B)}</span></p>
+<p>This is the desired final expression because it uses <span class="math inline">P(A)</span> and <span class="math inline">P(B)</span> only.</p>
+<p>In the Venn Diagram below, <span class="math inline">\overline{A}</span> is shaded in yellow, and <span class="math inline">A \cup B</span> is shaded in blue. Their overlap,
+<span class="math inline">\overline{A}\cap (A \cup B))</span>, is shaded
+in green, which is just <span class="math inline">B</span>.</p>
+<center><img height="330" src="../assets/images/sp23-midterm2/venn.jpg" width="600"/></center>
 </div>
 </div>
 </div>
