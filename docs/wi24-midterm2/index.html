@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Winter 2024 Midterm Exam 2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Winter 2024 Midterm Exam 2</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Undetermined</p>
+<p>This exam was administered in person. The exam was open-notes,
+open-book. Students had <strong>50 Minutes</strong> to take this
+exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>[(6 points)] Quarks is one of the smallest fundamental particles in
+physics. There are 6 types of quarks: up, down, top, bottom, strange,
+charm. Each one of the 6 quarks can be in two state: quark or
+antiquark.</p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Consider an experiment where we select n quarks uniformly at random.
+The <strong>result</strong> of the experiment is a description of the
+<strong>type and state</strong> of the quark selected. For example, if
+<span class="math inline">n=3</span>, one possible result is:</p>
+<ul>
+<li><p>Selected quark 1 is a top quark.</p></li>
+<li><p>Selected quark 2 is a charm antiquark.</p></li>
+<li><p>Selected quark 3 is a top antiquark.</p></li>
+</ul>
+<p>How many results are possible for this experiment with <span
+class="math inline">n</span> quarks?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">6^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">9^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">18^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">36^n</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>A meson is formed by combining two quarks. In order to form a meson,
+the two quarks must satisfy the following rules:</p>
+<ul>
+<li><p>They must be in <strong>different state</strong>: one must be
+quark and the other one must be anti-quark</p></li>
+<li><p>The two quarks can be the <strong>same type</strong>: i.e. top
+quark and top antiquark can form a meson</p></li>
+<li><p>The <strong>order</strong> of quark and antiquark does
+matter.</p></li>
+</ul>
+<p>Consider an experiment where we select n mesons uniformly at random.
+How many results are possible for this experiment?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">2^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">18^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">36^n</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>[(12 points)] A special poker card deck contains the 52 standard
+card:</p>
+<div class="center">
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Heart: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q,
+K, A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diamond: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q,
+K, A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Club: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,
+A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spade: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q,
+K, A</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</div>
+<p>Plus two wildcard: Red Joker and Black Joker. The total numbers of
+card in this card deck is 54. <br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>(2 points) How many ways to select a 4 card hand from this card deck?
+(Note: order does not matter in a card hand.)</p>
+<div class="center">
+
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>CAN NEVER BE EMOTY</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>(4 points) For this deck, how many 5 card hands are there that
+include a four-of-a-kind (four cards of the same value)? Show your
+work.</p>
+<div class="mdframed">
+<p><strong>Proof:</strong></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Since the first 4 cards are four-of-a-kind (same number), there are
+13 ways to select four-of-a-kind. For the 5th card, there are 50 total
+choices (12 values <span class="math inline">\times</span> 4 suits <span class="math inline">\times</span> + 2 wildcards). So there are total
+13*50=650 options.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>(6 points) In certain poker rules, a bomb is defined as either
+four-of-a-kind, or two wildcards (red joker and black joker). Suppose
+you randomly draw 4 card hand and you found a bomb in it, what is the
+probability that the bomb is four-of-a-kind? Show your work.</p>
+<div class="mdframed">
+<p><strong>Proof:</strong></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The number of sequences that containing two jokers (the other two
+cards are arbitrary) is given by: <span class="math display">\begin{aligned}
+\underbrace{C(4,2)}_{\mbox{Joker Locations}} \times P(2,2) \times C(52,
+2) \times P(2,2) = 4 \times 3 \times 52 \times 51
+\end{aligned}</span> The number of sequences that form four of a kind is
+<span class="math display">\begin{aligned}
+C(13,1) P(4,4) = 13 \times 4 \times 3 \times 2
+\end{aligned}</span> The two events are exclusive. And for a bomb to
+occur, the four cards either contains two jokers or form four of a kind.
+Hence, <span class="math display">\begin{aligned}
+    P(\mbox{Four of a kind} | \mbox{Bomb}) = \frac{13 \times 4 \times 3
+\times 2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51
+} = \frac{1}{103}
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Schrödinger’s cat is a famous thought experiment in quantum mechanics
+proposed by physicist Erwin Schrödinger in 1935. The experiment is
+described below:</p>
+<p>“Imagine there’s a hypothetical cat in a closed box with a toxic
+radioactive element that might decay. If it decays, the cat dies; if it
+doesn’t, the cat lives.”</p>
+<p>Please note that Schrödinger’s Cat is a purely theoretical concept—a
+thought experiment. It has never been executed in the real world, and no
+cats have ever been harmed as a result of it.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>(6 points) Suppose the cat has 90% of the chance to die if the decay
+happens. The cat also has 10% chance to die even if the decay does not
+happen. Suppose the decay happens with a 20% probability. After you open
+the box, you find the cat dead. What is the probability that the decay
+happened?</p>
+<div class="mdframed">
+<p><strong>Proof:</strong></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The probability we are looking for is <span class="math inline">P(Decay|Dead)</span>. Using Baye’s equation, we can
+write: <span class="math display">\begin{aligned}
+P(Decay|Dead) = \frac{P(Dead|Decay)P(Decay)}{P(Dead)}
+\end{aligned}</span> Using the Law of Total Probability, we can rewrite
+the denominator: <span class="math display">\begin{aligned}
+P(Decay|Dead) = \frac{P(Dead|Decay)P(Decay)}{P(Dead|Decay)P(Decay) +
+P(Dead|Not Decay)P(Not Decay)}
+\end{aligned}</span> We know that: <span class="math display">\begin{aligned}
+    P(Dead|Decay) &amp;= 90\% = 0.9\\
+    P(Dead|Not Decay) &amp;= 10\% = 0.1\\
+    P(Decay) &amp;= 20\% = 0.2
+\end{aligned}</span> Plugging these numbers, we have: <span class="math display">\begin{aligned}
+P(Decay|Dead) &amp;= \frac{0.9\times 0.2}{0.9 \times 0.2 + 0.1 \times
+(1-0.2)}\\
+=\frac{18}{26}
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br> Quantum superposition is a mind-bending and counter-intuitive
+concept in physics. In Schrödinger’s cat scenario, when the box is
+closed, the cat can be <strong>both dead and alive</strong>
+simultaneously. However, once we open the box and observe, the
+superposition collapses, and the cat must be either dead or alive, not
+both.</p>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>(4 points) The Venn Diagram below depicts Schrödinger’s cat scenario
+with the box closed. In this diagram, the black dotted line is the event
+of cat dead, the red dashed line denotes the event of cat being alive,
+and the shaded region is the event of decay.</p>
+<center><img src="../assets/images/wi24-midterm2/venn_diag.png" width="630" height="330"></center>
+<p>Based on this Venn diagram, which of the following is true? Select
+all that applies:</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> Decay is independent of Cat Dead</p></li>
+<li><p><input type="checkbox" disabled="" /> Decay is independent of Cat Alive</p></li>
+<li><p><input type="checkbox" disabled="" /> Cat Dead and Cat Alive are mutually exclusive.</p></li>
+<li><p><input type="checkbox" disabled="" /> Cat Dead, Cat Alive, and Decay form a partition of the sample</p></li>
+<li><p><input type="checkbox" disabled="" /> None of Above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>NO EMPTY SOLNS</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>(6 points) Given the following probabilities:</p>
+<ul>
+<li><p>P(Cat Dead <span class="math inline">\cup</span> Decay) = <span
+class="math inline">\frac{4}{5}</span></p></li>
+<li><p>P(Cat Alive <span class="math inline">\cup</span> Decay) = <span
+class="math inline">\frac{1}{2}</span></p></li>
+<li><p>P(Cat Alive <span class="math inline">\cup</span> Cat Dead) =
+1</p></li>
+<li><p>P(Decay) = <span class="math inline">\frac{1}{5}</span></p></li>
+</ul>
+<p>Using the Venn diagram in part b), calculate the probability for
+Schrodinger’s cat to be in superposition state (i.e. both dead and
+alive):</p>
+<div class="mdframed">
+<p><strong>Proof:</strong></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Since we know that the decay is independent to cat’s state, we have
+<span class="math display">\begin{aligned}
+    P(Dead \cup Decay) &amp;= P(Dead) + P(Decay) - P(Dead \cap Decay)\\
+    &amp;=P(Dead) + P(Decay) - P(Dead)\cdot P(Decay) = \frac{4}{5}
+\end{aligned}</span> Similarly, we have: <span class="math display">\begin{aligned}
+    P(Alive \cup Decay) &amp;= P(Alive) + P(Decay) - P(Alive \cap
+Decay)\\
+    &amp;=P(Alive) + P(Decay) - P(Alive)\cdot P(Decay) = \frac{1}{2}
+\end{aligned}</span> Plugging in P(Decay) = <span class="math inline">\frac{1}{5}</span>, we have: <span class="math display">\begin{aligned}
+&amp;P(Dead) + \frac{1}{5} - \frac{1}{5} P(Dead) = \frac{4}{5}\\
+&amp;P(Alive) + \frac{1}{5} - \frac{1}{5} P(Alive) = \frac{1}{2}\\
+\end{aligned}</span> Solving these two equations, we have: <span class="math display">\begin{aligned}
+&amp;P(Dead) = \frac{3}{4}\\
+&amp;P(Alive) = \frac{3}{8}\\
+\end{aligned}</span> The probability of superposition state is P(Alive
+<span class="math inline">\cap</span> Dead). Since we know that P(Alive
+<span class="math inline">\cup</span> Dead) = 1 we have: <span class="math display">\begin{aligned}
+P(Alive \cup Dead) &amp;= P(Alive) + P(Dead) - P(Alive \cap Dead)\\
+\end{aligned}</span> Rearranging terms, we have: <span class="math display">\begin{aligned}
+P(Alive \cap Dead) &amp;= P(Alive) + P(Dead) - P(Alive \cup Dead)\\
+&amp;= \frac{3}{4} + \frac{3}{8} - 1\\
+&amp;= \frac{6}{8} + \frac{3}{8} - 1\\
+&amp;=\frac{1}{8}
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>The standard acceleration of gravity <span
+class="math inline">g</span> is a universal constant of nature. That
+means <span class="math inline">g=9.80665</span> across the entire
+universe. It is also known that:</p>
+<pre><code>$$G = m \times g$$</code></pre>
+<p>Where <span class="math inline">G</span> is the weight of an object
+and m is the mass of an object. Issac is interested in measuring g. He
+prepared a dumbbell with mass 10 in his garage and measured the weight
+of it 3 times. The measured weight is 102, 98, 100</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Calculate the mean value of <span class="math inline">g</span> Issac
+measured. <!-- \begin{center}
+\inlineresponsebox[1.5in]{10}
+\end{center} --></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>NO EMPTY SOLUTIONS</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>After his measurement, an alien from the Frequentist Galaxy visited
+Issac’s garage. Alien from Frequentist Galaxy could only understand
+frequentist statistics. Explain to the alien why Issac’s measurement
+deviates from <span class="math inline">g=9.80665</span> (Hint: verbal
+explanation is enough, no equation is needed).</p>
+<p><!-- \begin{mdframed}
+**Explanation:**
+\vspace*{2in}    
+\end{mdframed} --></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Frequentist does not assign probability to hypothesis, so g is always
+equal to 9.80665 and it does not change. Issac’s measurement deviate
+from the actual g value because of uncertainties in the measurement.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>After the first alien left, another alien from the Bayesian galaxy
+arrived. This alien told Issac: “I think g could take any value: it
+could be 1, could be 10, could be 100”. Using the Bayes equation and
+Issac’s measurement, convince the alien that g should be close to 10.
+<!-- \begin{mdframed}
+**Explanation:**
+\vspace*{2in}    
+\end{mdframed} --></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The Bayes equation reads:</p>
+<p><span class="math display">Posterior = \frac{Prior\times
+Likelihood}{Evidence}</span></p>
+<p>The alien provides a uniform prior, or P(Hypothesis). They assume g
+could take many different possible values. However, the likelihood term
+is P(Data|Hypothesis). For the hypothesis of g = 1, since it does not
+agree with data, the likelihood is very low and thereby does not
+contribute to posterior; the same argument hold for g = 100. Only when
+g=10 will the likelihood be high.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>Which explanation do you prefer? (Note: both answers are correct,
+enjoy your one free point).</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Frequentist</p></li>
+<li><p><input type="radio" disabled="" /> Bayesian</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<pre><code>Both are correct.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
