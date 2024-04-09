@@ -1,0 +1,20 @@
+# BEGIN PROB
+
+(1 point) Your first guess for today's Stringle has six distinct
+letters. There are $3^6$ possible colored feedback sequences for this
+first guess, since each of the six letters could be colored one of three
+colors: green, yellow, or gray. How many of the $3^6$ possible feedback
+sequences for your first guess include 2 green letters, 2 yellow
+letters, and 2 gray letters?
+
+( ) $6!$\
+( ) $C(6.3)$\
+( ) $(C(6,2))^3$\
+( ) $C(6,2)*C(4,2)$\
+( ) None of the above.
+
+# BEGIN SOLUTION
+
+# END SOLUTION
+
+# END PROB

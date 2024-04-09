@@ -1,0 +1,36 @@
+# BEGIN PROB
+
+\[(8 points)\] In simple linear regression, our goal was to fit a
+prediction rule of the form $H(x) = w_0 + w_1x$. We found many
+equivalent formulas for the slope of the regression line:
+
+$$w_1^* =\displaystyle\frac{\displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i - \overline y)}{\displaystyle\sum_{i=1}^n (x_i - \overline x)^2}
+= \displaystyle\frac{\displaystyle\sum_{i=1}^n (x_i - \overline x)y_i}{\displaystyle\sum_{i=1}^n (x_i - \overline x)^2}
+= r \cdot \displaystyle\frac{\sigma_y}{\sigma_x}$$
+
+Show that any one of the above formulas is equivalent to the formula
+below.
+
+$$\displaystyle\frac{\displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2)}{\displaystyle\sum_{i=1}^n (x_i - \overline x)^2}$$
+
+In other words, this is yet another formula for $w_1^*$.
+
+::: responsebox
+5in We'll show the equivalence to the middle formula above. Since the
+denominators are the same, we just need to show $$\begin{aligned}
+     \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i.
+\intertext{We'll do this by expanding the sum on the left and simplifying as follows.}
+     \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + \displaystyle\sum_{i=1}^n (x_i - \overline x)\cdot2 \\
+     &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + 2\cdot\displaystyle\sum_{i=1}^n (x_i - \overline x) \\
+    &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + 2\cdot0 \\
+    &= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i\\
+\end{aligned}$$ This proof uses a fact we've already seen, that
+$\displaystyle\sum_{i=1}^n (x_i - \overline x) = 0$. It is not necesary
+to re-prove this fact when answering this question.
+:::
+
+# BEGIN SOLUTION
+
+# END SOLUTION
+
+# END PROB

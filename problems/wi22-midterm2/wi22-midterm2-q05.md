@@ -1,0 +1,17 @@
+# BEGIN PROB
+
+(1 point) What is the probability that today's String string has the
+last three letters matching the first three letters, like BAMBAM or
+GOOGOO, if we know that the first letter matches the fourth letter?
+
+( ) $\dfrac{1}{26^2}$\
+( ) $\dfrac{1}{26^3}$\
+( ) $\dfrac{P(26,3)}{P(26,5)}$\
+( ) $\dfrac{P(26,3)}{26^6}$\
+( ) None of the above.
+
+# BEGIN SOLUTION
+
+# END SOLUTION
+
+# END PROB
