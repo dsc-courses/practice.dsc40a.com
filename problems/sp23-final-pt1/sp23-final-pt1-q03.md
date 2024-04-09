@@ -2,7 +2,7 @@
 
 <i>Originally Problem 3 on the Spring 2023 Final Part 1</i>
 
-\[(8 points)\] You and a friend independently perform gradient descent
+You and a friend independently perform gradient descent
 on the same function, but after 100 iterations, you have different
 results. Which of the following is sufficient **on its own** to explain
 the difference in your results? **Select all that apply.**

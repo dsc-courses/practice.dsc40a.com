@@ -2,12 +2,12 @@
 
 <i>Originally Problem 2 on the Spring 2023 Final Part 1</i>
 
-\[(4 points)\] Match each dataset with the graph of its mean absolute
+Match each dataset with the graph of its mean absolute
 error, $R_{abs}(h)$.
 
-<center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
-
 # BEGIN SUBPROB
+
+<center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 
 $\{4, 7, 9, 10, 11\}$
 
@@ -28,6 +28,8 @@ TODO
 
 # BEGIN SUBPROB
 
+<center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
+
 $\{-3, 1, 9, 11, 20\}$
 
 ( ) Graph 1
@@ -47,6 +49,8 @@ TODO
 
 # BEGIN SUBPROB
 
+<center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
+
 $\{8, 9, 12, 13, 15\}$
 
 ( ) Graph 1
@@ -65,6 +69,8 @@ TODO
 # END SUBPROB
 
 # BEGIN SUBPROB
+
+<center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 
 $\{11, 12, 12, 13, 14\}$
 

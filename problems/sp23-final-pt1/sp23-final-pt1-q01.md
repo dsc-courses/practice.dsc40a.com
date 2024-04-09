@@ -2,7 +2,7 @@
 
 <i>Originally Problem 1 on the Spring 2023 Final Part 1</i>
 
-\[(9 points)\] For a given dataset $\{y_1, y_2, \dots, y_n\}$, let
+For a given dataset $\{y_1, y_2, \dots, y_n\}$, let
 $M_{abs}(h)$ represent the **median** absolute error of the constant
 prediction $h$ on that dataset (as opposed to the mean absolute error
 $R_{abs}(h)$).
@@ -25,7 +25,7 @@ TODO
 
 # BEGIN SUBPROB
 
-(3 points) For the same dataset $\{4, 9, 10, 14, 15\}$, find another
+For the same dataset $\{4, 9, 10, 14, 15\}$, find another
 integer $h$ such that $M_{abs}(9) = M_{abs}(h)$.
 
 $h =$
@@ -42,7 +42,7 @@ TODO
 
 # BEGIN SUBPROB
 
-(3 points) Based on your answers to parts (a) and (b), discuss in **at
+Based on your answers to parts (a) and (b), discuss in **at
 most two sentences** what is problematic about using the median absolute
 error to make predictions.
 
