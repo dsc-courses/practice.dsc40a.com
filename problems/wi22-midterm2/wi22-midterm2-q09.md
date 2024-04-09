@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) Your first guess for today's Stringle has six distinct
+Your first guess for today's Stringle has six distinct
 letters. There are $3^6$ possible colored feedback sequences for this
 first guess, since each of the six letters could be colored one of three
 colors: green, yellow, or gray. How many of the $3^6$ possible feedback

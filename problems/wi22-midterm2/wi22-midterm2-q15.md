@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) This problem is a continuation of the previous problem, using
+This problem is a continuation of the previous problem, using
 the same survey results.
 
 After making predictions for various individuals based on their answers

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) In today's Quadringle puzzle, the four strings are all very
+In today's Quadringle puzzle, the four strings are all very
 similar:
 
 ::: center

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) You survey 250 Stringle players and ask them several questions
+You survey 250 Stringle players and ask them several questions
 about their Stringle-playing behavior, with the goal of figuring out how
 much they would be willing to pay if Stringle were to switch to a paid
 annual subscription. All of the questions are yes or no questions,

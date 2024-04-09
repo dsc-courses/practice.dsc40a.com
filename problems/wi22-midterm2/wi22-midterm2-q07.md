@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) For this problem, we'll say that there are six vowels: A, E, I, O, U, and Y. Consider the following three events:
+For this problem, we'll say that there are six vowels: A, E, I, O, U, and Y. Consider the following three events:
 
 -   $A$ is the event that today's Stringle string starts with a vowel.
 

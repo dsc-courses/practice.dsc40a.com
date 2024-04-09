@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) For this problem, we'll say that there are six vowels: A, E, I, O, U, and Y. What is the probability that today's Stringle string satisfies at least one of the following conditions?
+For this problem, we'll say that there are six vowels: A, E, I, O, U, and Y. What is the probability that today's Stringle string satisfies at least one of the following conditions?
 
 -   starts with a vowel
 

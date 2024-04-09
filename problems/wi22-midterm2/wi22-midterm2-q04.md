@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) What is the probability of today's Stringle string having at least one duplicate letter, like SYSTEM, GOOGLE, or WAHOOO?
+What is the probability of today's Stringle string having at least one duplicate letter, like SYSTEM, GOOGLE, or WAHOOO?
 
 # BEGIN SOLUTION
 

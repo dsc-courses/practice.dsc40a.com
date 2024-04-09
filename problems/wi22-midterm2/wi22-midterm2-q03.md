@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) What is the probability of today's Stringle string having
+What is the probability of today's Stringle string having
 exactly one duplicate letter, like SYSTEM, BEFORE, or YELLOW?
 
 ( ) $\dfrac{P(26,5)*5!}{26^6}$\

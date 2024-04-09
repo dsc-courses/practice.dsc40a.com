@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) Stringle has become such a popular game that many spin-offs
+Stringle has become such a popular game that many spin-offs
 have been created. In a variant called Quadringle, players have to solve
 four different Stringle puzzles at the same time. We'll say that a
 Quadringle puzzle is determined by which four six-letter strings it

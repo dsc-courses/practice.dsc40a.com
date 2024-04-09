@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) Consider the following three events:
+Consider the following three events:
 
 -   $A$ is the event that today's Stringle string has a duplicate
     letter.

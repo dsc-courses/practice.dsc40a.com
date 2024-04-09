@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) What is the probability that today's String string has the
+What is the probability that today's String string has the
 last three letters matching the first three letters, like BAMBAM or
 GOOGOO, if we know that the first letter matches the fourth letter?
 

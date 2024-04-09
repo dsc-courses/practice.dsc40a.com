@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(1 point) Suppose that every day, the Stringle string is chosen without replacement from among the set of all possible valid strings. What is the probability that DSCTEN was the Stringle string for one of the first 100 days after the game's release?
+Suppose that every day, the Stringle string is chosen without replacement from among the set of all possible valid strings. What is the probability that DSCTEN was the Stringle string for one of the first 100 days after the game's release?
 
 # BEGIN SOLUTION
 
