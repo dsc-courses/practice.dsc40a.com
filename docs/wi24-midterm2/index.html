@@ -70,10 +70,10 @@ open-book. Students had <strong>50 Minutes</strong> to take this
 exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>[(6 points)] Quarks is one of the smallest fundamental particles in
-physics. There are 6 types of quarks: up, down, top, bottom, strange,
-charm. Each one of the 6 quarks can be in two state: quark or
-antiquark.</p>
+<p>Quarks is one of the smallest fundamental particles in physics. There
+are 6 <strong>types</strong> of quarks: up, down, top, bottom, strange,
+charm. Each one of the 6 types of quarks can be in two
+<strong>states</strong>: quark or antiquark.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>Consider an experiment where we select n quarks uniformly at random.
@@ -108,19 +108,26 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">12^n</span></p>
+<p>For each quark there are <span class="math inline">6</span> possible
+types <span class="math inline">\times 2</span> possible states <span class="math inline">= 12</span> possibilities. Since our experiment
+involves independently picking one of these 12 possibilities for each of
+our <span class="math inline">n</span> quarks, the total number of
+results for the experiment is <span class="math inline">12^n</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<p><br> <br></p>
+<p><br></p>
+<p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
 <p>A meson is formed by combining two quarks. In order to form a meson,
 the two quarks must satisfy the following rules:</p>
 <ul>
-<li><p>They must be in <strong>different state</strong>: one must be
-quark and the other one must be anti-quark</p></li>
+<li><p>They must be in <strong>different states</strong>: one must be a
+quark and the other one must be an anti-quark.</p></li>
 <li><p>The two quarks can be the <strong>same type</strong>: i.e. top
-quark and top antiquark can form a meson</p></li>
+quark and top antiquark can form a meson.</p></li>
 <li><p>The <strong>order</strong> of quark and antiquark does
 matter.</p></li>
 </ul>
@@ -147,6 +154,14 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>None of the above (<span class="math inline">72^n</span>).</p>
+<p>For making a meson, we need to choose two quarks. The first quark we
+choose has <span class="math inline">6</span> possible types <span class="math inline">\times 2</span> possible states <span class="math inline">= 12</span> possibilities. However, our second quark
+cannot have the same state as our first; so the second quark has <span class="math inline">6</span> possible types <span class="math inline">\times 1</span> possible state <span class="math inline">= 6</span> possibilities.</p>
+<p>This means a single meson has <span class="math inline">12 \times 6 =
+72</span> possibilities. (If the order of the quark and antiquark did
+not matter, it would instead be <span class="math inline">\frac{72}{2} =
+36</span> possibilities). So, an experiment where we select <span class="math inline">n</span> mesons uniformly at random is <span class="math inline">72^n</span>.</p>
 </div>
 </div>
 </div>
@@ -154,9 +169,7 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p>[(12 points)] A special poker card deck contains the 52 standard
-card:</p>
-<div class="center">
+<p>A special poker card deck contains the 52 standard cards:</p>
 <table>
 <tbody>
 <tr class="odd">
@@ -177,17 +190,13 @@ K, A</td>
 </tr>
 </tbody>
 </table>
-<p><br />
-</p>
-</div>
-<p>Plus two wildcard: Red Joker and Black Joker. The total numbers of
-card in this card deck is 54. <br></p>
+<p><br></p>
+<p>…plus two wildcards: Red Joker and Black Joker. The total number of
+cars in this card deck is 54.</p>
+<p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
-<p>(2 points) How many ways to select a 4 card hand from this card deck?
+<p>How many different four-card hands can be selected from this deck?
 (Note: order does not matter in a card hand.)</p>
-<div class="center">
-
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_1">
@@ -201,7 +210,20 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>CAN NEVER BE EMOTY</p>
+<p><span class="math inline">C(54, 4) = 316251</span> <em>Note: this
+means “54 Choose 4”</em></p>
+<p>Since order does not matter, we would use a combination instead of a
+permutation here. From 54 unique cards in our poker deck, we can
+<em>choose</em> 4 at random to get a card hand.</p>
+<p>An alternative way to think about it: there are 54 options for the
+first card we pick, 53 for the second card, 52 for the third card, etc.
+For four cards, we have <span class="math inline">54 \times 53 \times 52
+\times 51</span> hands. However this will count the same hand in
+different card orders as different hands, which we don’t want. To
+correct this, we divide by <span class="math inline">4!</span> (<span class="math inline">4 \times 3 \times 2 \times 1</span>), because each
+unique hand will appear 24 times but in different orders.</p>
+<p><span class="math display">\frac{54 \times 53 \times 52 \times 51}{4
+\times 3 \times 2 \times 1} = C(54, 4) = 316251.</span></p>
 </div>
 </div>
 </div>
@@ -209,12 +231,9 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
-<p>(4 points) For this deck, how many 5 card hands are there that
-include a four-of-a-kind (four cards of the same value)? Show your
+<p>For this deck, how many 5 card hands are there that include
+four-of-a-kind (four cards of the same <em>value</em>)? Show your
 work.</p>
-<div class="mdframed">
-<p><strong>Proof:</strong></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_2">
@@ -229,22 +248,21 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Since the first 4 cards are four-of-a-kind (same number), there are
-13 ways to select four-of-a-kind. For the 5th card, there are 50 total
-choices (12 values <span class="math inline">\times</span> 4 suits <span class="math inline">\times</span> + 2 wildcards). So there are total
-13*50=650 options.</p>
+13 ways to select a four-of-a-kind. For the 5th card, there are 50 total
+choices (12 remaining values <span class="math inline">\times</span> 4
+suits <span class="math inline">\times</span> + 2 wildcards). So there
+are a total <span class="math inline">13 \times 50 = 650</span>
+options.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
-<p>(6 points) In certain poker rules, a bomb is defined as either
-four-of-a-kind, or two wildcards (red joker and black joker). Suppose
-you randomly draw 4 card hand and you found a bomb in it, what is the
-probability that the bomb is four-of-a-kind? Show your work.</p>
-<div class="mdframed">
-<p><strong>Proof:</strong></p>
-</div>
+<p>In certain poker rules, a bomb is defined as either four-of-a-kind,
+or two wildcards (red joker and black joker). Suppose you randomly draw
+4 card hand and you found a bomb in it, what is the probability that the
+bomb is four-of-a-kind? Show your work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_3">
@@ -258,9 +276,9 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The number of sequences that containing two jokers (the other two
-cards are arbitrary) is given by: <span class="math display">\begin{aligned}
-\underbrace{C(4,2)}_{\mbox{Joker Locations}} \times P(2,2) \times C(52,
+<!-- Need to edit this one -->
+<p><span class="math display">\begin{aligned}
+\underbrace{C(4,2)}_{\text{Joker Locations}} \times P(2,2) \times C(52,
 2) \times P(2,2) = 4 \times 3 \times 52 \times 51
 \end{aligned}</span> The number of sequences that form four of a kind is
 <span class="math display">\begin{aligned}
@@ -268,9 +286,9 @@ C(13,1) P(4,4) = 13 \times 4 \times 3 \times 2
 \end{aligned}</span> The two events are exclusive. And for a bomb to
 occur, the four cards either contains two jokers or form four of a kind.
 Hence, <span class="math display">\begin{aligned}
-    P(\mbox{Four of a kind} | \mbox{Bomb}) = \frac{13 \times 4 \times 3
-\times 2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51
-} = \frac{1}{103}
+    P(\text{Four of a kind | Bomb}) = \frac{13 \times 4 \times 3 \times
+2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51 } =
+\frac{1}{103}
 \end{aligned}</span></p>
 </div>
 </div>

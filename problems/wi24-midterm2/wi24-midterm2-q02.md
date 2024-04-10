@@ -1,8 +1,8 @@
 # BEGIN PROB
 
-\[(12 points)\] A special poker card deck contains the 52 standard card:
+A special poker card deck contains the 52 standard cards:
 
-::: center
+
   -------------------------------------------------
   Heart: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
   Diamond: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
@@ -10,21 +10,25 @@
   Spade: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A
   -------------------------------------------------
 
-\
-:::
+<br>
 
-Plus two wildcard: Red Joker and Black Joker. The total numbers of card
-in this card deck is 54. # BEGIN SUBPROB
+...plus two wildcards: Red Joker and Black Joker. 
+The total number of cars in this card deck is 54. 
 
-(2 points) How many ways to select a 4 card hand from this card deck?
+# BEGIN SUBPROB
+
+How many different four-card hands can be selected from this deck?
 (Note: order does not matter in a card hand.)
-
-::: center
-:::
 
 # BEGIN SOLUTION
 
-CAN NEVER BE EMOTY
+$C(54, 4) = 316251$ _Note: this means "54 Choose 4"_
+
+Since order does not matter, we would use a combination instead of a permutation here. From 54 unique cards in our poker deck, we can _choose_ 4 at random to get a card hand.
+
+An alternative way to think about it: there are 54 options for the first card we pick, 53 for the second card, 52 for the third card, etc. For four cards, we have $54 \times 53 \times 52 \times 51$ hands. However this will count the same hand in different card orders as different hands, which we don't want. To correct this, we divide by $4!$ ($4 \times 3 \times 2 \times 1$), because each unique hand will appear 24 times but in different orders.
+
+$$\frac{54 \times 53 \times 52 \times 51}{4 \times 3 \times 2 \times 1} = C(54, 4) = 316251.$$
 
 # END SOLUTION
 
@@ -32,19 +36,13 @@ CAN NEVER BE EMOTY
 
 # BEGIN SUBPROB
 
-(4 points) For this deck, how many 5 card hands are there that include a
-four-of-a-kind (four cards of the same value)? Show your work.
-
-::: mdframed
-**Proof:**
-:::
+For this deck, how many 5 card hands are there that include four-of-a-kind (four cards of the same _value_)? Show your work.
 
 # BEGIN SOLUTION
 
 Since the first 4 cards are four-of-a-kind (same number), there are 13
-ways to select four-of-a-kind. For the 5th card, there are 50 total
-choices (12 values $\times$ 4 suits $\times$ + 2 wildcards). So there
-are total 13\*50=650 options.
+ways to select a four-of-a-kind. For the 5th card, there are 50 total
+choices (12 remaining values $\times$ 4 suits $\times$ + 2 wildcards). So there are a total $13 \times 50 = 650$ options.
 
 # END SOLUTION
 
@@ -52,27 +50,25 @@ are total 13\*50=650 options.
 
 # BEGIN SUBPROB
 
-(6 points) In certain poker rules, a bomb is defined as either
+In certain poker rules, a bomb is defined as either
 four-of-a-kind, or two wildcards (red joker and black joker). Suppose
 you randomly draw 4 card hand and you found a bomb in it, what is the
 probability that the bomb is four-of-a-kind? Show your work.
 
-::: mdframed
-**Proof:**
-:::
 
 # BEGIN SOLUTION
 
-The number of sequences that containing two jokers (the other two cards
-are arbitrary) is given by: $$\begin{aligned}
-\underbrace{C(4,2)}_{\mbox{Joker Locations}} \times P(2,2) \times C(52, 2) \times P(2,2) = 4 \times 3 \times 52 \times 51
+<!-- Need to edit this one -->
+
+$$\begin{aligned}
+\underbrace{C(4,2)}_{\text{Joker Locations}} \times P(2,2) \times C(52, 2) \times P(2,2) = 4 \times 3 \times 52 \times 51
 \end{aligned}$$ The number of sequences that form four of a kind is
 $$\begin{aligned}
 C(13,1) P(4,4) = 13 \times 4 \times 3 \times 2
 \end{aligned}$$ The two events are exclusive. And for a bomb to occur,
 the four cards either contains two jokers or form four of a kind. Hence,
 $$\begin{aligned}
-    P(\mbox{Four of a kind} | \mbox{Bomb}) = \frac{13 \times 4 \times 3 \times 2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51 } = \frac{1}{103}
+    P(\text{Four of a kind | Bomb}) = \frac{13 \times 4 \times 3 \times 2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51 } = \frac{1}{103}
 \end{aligned}$$
 
 # END SOLUTION
