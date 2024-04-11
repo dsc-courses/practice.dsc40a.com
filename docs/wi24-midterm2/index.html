@@ -66,10 +66,11 @@
 <hr />
 <p><strong>Instructor(s):</strong> Undetermined</p>
 <p>This exam was administered in person. The exam was open-notes,
-open-book. Students had <strong>50 Minutes</strong> to take this
+open-book. Students had <strong>50 minutes</strong> to take this
 exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Originally Problem 1 on the Second Winter 2024 Midterm.</i></p>
 <p>Quarks is one of the smallest fundamental particles in physics. There
 are 6 <strong>types</strong> of quarks: up, down, top, bottom, strange,
 charm. Each one of the 6 types of quarks can be in two
@@ -161,7 +162,7 @@ cannot have the same state as our first; so the second quark has <span class="ma
 <p>This means a single meson has <span class="math inline">12 \times 6 =
 72</span> possibilities. (If the order of the quark and antiquark did
 not matter, it would instead be <span class="math inline">\frac{72}{2} =
-36</span> possibilities). So, an experiment where we select <span class="math inline">n</span> mesons uniformly at random is <span class="math inline">72^n</span>.</p>
+36</span> possibilities). So, an experiment where we select <span class="math inline">n</span> mesons uniformly at random has <span class="math inline">72^n</span> unique results.</p>
 </div>
 </div>
 </div>
@@ -169,6 +170,7 @@ not matter, it would instead be <span class="math inline">\frac{72}{2} =
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 2 on the Second Winter 2024 Midterm.</i></p>
 <p>A special poker card deck contains the 52 standard cards:</p>
 <table>
 <tbody>
@@ -192,7 +194,7 @@ K, A</td>
 </table>
 <p><br></p>
 <p>…plus two wildcards: Red Joker and Black Joker. The total number of
-cars in this card deck is 54.</p>
+cards in this card deck is 54.</p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>How many different four-card hands can be selected from this deck?
@@ -250,9 +252,8 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <p>Since the first 4 cards are four-of-a-kind (same number), there are
 13 ways to select a four-of-a-kind. For the 5th card, there are 50 total
 choices (12 remaining values <span class="math inline">\times</span> 4
-suits <span class="math inline">\times</span> + 2 wildcards). So there
-are a total <span class="math inline">13 \times 50 = 650</span>
-options.</p>
+suits + 2 wildcards). So there are a total <span class="math inline">13
+\times 50 = 650</span> options.</p>
 </div>
 </div>
 </div>
@@ -261,8 +262,8 @@ options.</p>
 <h3 id="problem-2.3">Problem 2.3</h3>
 <p>In certain poker rules, a bomb is defined as either four-of-a-kind,
 or two wildcards (red joker and black joker). Suppose you randomly draw
-4 card hand and you found a bomb in it, what is the probability that the
-bomb is four-of-a-kind? Show your work.</p>
+a 4 card hand and you found a bomb in it, what is the probability that
+the bomb is four-of-a-kind? Show your work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_3">
@@ -277,19 +278,31 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <!-- Need to edit this one -->
-<p><span class="math display">\begin{aligned}
-\underbrace{C(4,2)}_{\text{Joker Locations}} \times P(2,2) \times C(52,
-2) \times P(2,2) = 4 \times 3 \times 52 \times 51
-\end{aligned}</span> The number of sequences that form four of a kind is
-<span class="math display">\begin{aligned}
-C(13,1) P(4,4) = 13 \times 4 \times 3 \times 2
-\end{aligned}</span> The two events are exclusive. And for a bomb to
-occur, the four cards either contains two jokers or form four of a kind.
-Hence, <span class="math display">\begin{aligned}
-    P(\text{Four of a kind | Bomb}) = \frac{13 \times 4 \times 3 \times
-2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51 } =
+<p>The number of hands containing two jokers (the other two cards are
+arbitrary) is given by: <span class="math display">\begin{aligned}
+\underbrace{C(2,2)}_{\text{Two Jokers}} \times \underbrace{C(52,
+2)}_{\text{Other Two Cards}} = \frac{52 \times 51}{2} = 1326.
+\end{aligned}</span> The number of hands that form four of a kind is 13,
+one for each of the 13 unique values in a deck.</p>
+<p><br/></p>
+<p>For a bomb to occur, the four cards either contain two jokers or form
+four of a kind. Hence, <span class="math display">\begin{aligned}
+    P(\text{Four of a kind | Bomb}) = \frac{13}{13 + 1326} =
 \frac{1}{103}
 \end{aligned}</span></p>
+<!-- OLD SOLUTION -->
+<!-- 
+The number of sequences that containing two jokers (the other two cards are arbitrary) is given by:
+$$\begin{aligned}
+\underbrace{C(4,2)}_{\text{Joker Locations}} \times P(2,2) \times C(52, 2) \times P(2,2) = 4 \times 3 \times 52 \times 51
+\end{aligned}$$ The number of sequences that form four of a kind is
+$$\begin{aligned}
+C(13,1) P(4,4) = 13 \times 4 \times 3 \times 2
+\end{aligned}$$ The two events are exclusive. And for a bomb to occur,
+the four cards either contains two jokers or form four of a kind. Hence,
+$$\begin{aligned}
+    P(\text{Four of a kind | Bomb}) = \frac{13 \times 4 \times 3 \times 2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51 } = \frac{1}{103}
+\end{aligned}$$ -->
 </div>
 </div>
 </div>
@@ -297,6 +310,7 @@ Hence, <span class="math display">\begin{aligned}
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<p><i>Originally Problem 3 on the Second Winter 2024 Midterm.</i></p>
 <p>Schrödinger’s cat is a famous thought experiment in quantum mechanics
 proposed by physicist Erwin Schrödinger in 1935. The experiment is
 described below:</p>
@@ -308,14 +322,11 @@ thought experiment. It has never been executed in the real world, and no
 cats have ever been harmed as a result of it.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>(6 points) Suppose the cat has 90% of the chance to die if the decay
-happens. The cat also has 10% chance to die even if the decay does not
-happen. Suppose the decay happens with a 20% probability. After you open
-the box, you find the cat dead. What is the probability that the decay
+<p>Suppose the cat has 90% of the chance to die if the decay happens.
+The cat also has 10% chance to die even if the decay does not happen.
+Suppose the decay happens with a 20% probability. After you open the
+box, you find the cat dead. What is the probability that the decay
 happened?</p>
-<div class="mdframed">
-<p><strong>Proof:</strong></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_1">
@@ -329,41 +340,44 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The probability we are looking for is <span class="math inline">P(Decay|Dead)</span>. Using Baye’s equation, we can
-write: <span class="math display">\begin{aligned}
-P(Decay|Dead) = \frac{P(Dead|Decay)P(Decay)}{P(Dead)}
+<p>The probability we are looking for is <span class="math inline">P(\text{Decay|Dead})</span>. Using Baye’s equation,
+we can write: <span class="math display">\begin{aligned}
+P(\text{Decay|Dead}) =
+\frac{P(\text{Dead|Decay})P(\text{Decay})}{P(\text{Dead})}
 \end{aligned}</span> Using the Law of Total Probability, we can rewrite
 the denominator: <span class="math display">\begin{aligned}
-P(Decay|Dead) = \frac{P(Dead|Decay)P(Decay)}{P(Dead|Decay)P(Decay) +
-P(Dead|Not Decay)P(Not Decay)}
+P(\text{Decay|Dead}) =
+\frac{P(\text{Dead|Decay})P(\text{Decay})}{P(\text{Dead|Decay})P(\text{Decay})
++ P(\text{Dead|Not Decay})P(\text{Not Decay})}
 \end{aligned}</span> We know that: <span class="math display">\begin{aligned}
-    P(Dead|Decay) &amp;= 90\% = 0.9\\
-    P(Dead|Not Decay) &amp;= 10\% = 0.1\\
-    P(Decay) &amp;= 20\% = 0.2
+    P(\text{Dead|Decay}) &amp;= 90\% = 0.9\\
+    P(\text{Dead|Not Decay}) &amp;= 10\% = 0.1\\
+    P(\text{Decay}) &amp;= 20\% = 0.2
 \end{aligned}</span> Plugging these numbers, we have: <span class="math display">\begin{aligned}
-P(Decay|Dead) &amp;= \frac{0.9\times 0.2}{0.9 \times 0.2 + 0.1 \times
-(1-0.2)}\\
+P(\text{Decay|Dead}) &amp;= \frac{0.9\times 0.2}{0.9 \times 0.2 + 0.1
+\times (1-0.2)}\\
 =\frac{18}{26}
 \end{aligned}</span></p>
 </div>
 </div>
 </div>
 </div>
-<p><br> Quantum superposition is a mind-bending and counter-intuitive
-concept in physics. In Schrödinger’s cat scenario, when the box is
-closed, the cat can be <strong>both dead and alive</strong>
-simultaneously. However, once we open the box and observe, the
-superposition collapses, and the cat must be either dead or alive, not
-both.</p>
+<p><br></p>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>(4 points) The Venn Diagram below depicts Schrödinger’s cat scenario
-with the box closed. In this diagram, the black dotted line is the event
-of cat dead, the red dashed line denotes the event of cat being alive,
-and the shaded region is the event of decay.</p>
+<p>Quantum superposition is a mind-bending and counter-intuitive concept
+in physics. In Schrödinger’s cat scenario, when the box is closed, the
+cat can be <strong>both dead and alive</strong> simultaneously. However,
+once we open the box and observe, the superposition collapses, and the
+cat must be either dead or alive, not both.</p>
+<p>The Venn Diagram below depicts Schrödinger’s cat scenario with the
+box closed. In this diagram, the black dotted line is the event of cat
+dead, the red dashed line denotes the event of cat being alive, and the
+shaded region is the event of decay.</p>
 <center><img src="../assets/images/wi24-midterm2/venn_diag.png" width="630" height="330"></center>
+<p><br></p>
 <p>Based on this Venn diagram, which of the following is true? Select
-all that applies:</p>
+all that apply:</p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> Decay is independent of Cat Dead</p></li>
 <li><p><input type="checkbox" disabled="" /> Decay is independent of Cat Alive</p></li>
@@ -384,29 +398,58 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>NO EMPTY SOLNS</p>
+<p>Statements 1 and 2 are true. Statements 3, 4, and 5 are false.</p>
+<p><br/></p>
+<p>When two events are independent, the following statement is true:
+<span class="math inline">P(\text{Event 1}) = P(\text{Event 1} |
+\text{Event 2})</span>. So for statement 1, we need to show: <span class="math inline">P(\text{Decay}) = P(\text{Decay} | \text{Cat
+Dead})</span></p>
+<ul>
+<li><span class="math inline">P(\text{Decay})</span> is the fraction of
+the <strong>total Venn Diagram</strong> that is green.</li>
+<li><span class="math inline">P(\text{Decay}|\text{Cat Dead})</span> is
+the fraction of the <strong>“Cat Dead” region</strong> that is
+green.</li>
+</ul>
+<p>These two fractions look the same. So that means the independence
+equation holds, and statement 1 is true.</p>
+<p>We can do the same thing but instead with the “Cat Alive” region to
+also show that statement 2 is true.</p>
+<p>The “Cat Alive” and “Cat Dead” regions intersect, implying those two
+events can occur at the same time. If two events can occur at the same
+time, they are not mutually exclusive, so statement 3 is false.</p>
+<p>A partition of a sample is a <em>perfect division</em> the sample
+space into a bunch of little pieces, without any overlap or empty space.
+For this problem, it would mean finding a way to perfectly divide the
+Venn Diagram. You cannot divide the Venn Diagram into the regions “Cat
+Dead”, “Cat Alive”, and “Decay”; go ahead and try, no matter how you
+slice it the overlaps will mess up the division. This means that “Cat
+Dead”, “Cat Alive”, and “Decay” do not form a partition of the sample,
+so statement 4 is false.</p>
+<p>Since statements one and two were true, the answer cannot be none of
+the above, so statement 5 is false.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>(6 points) Given the following probabilities:</p>
+<p>You’re given the following probabilities:</p>
 <ul>
-<li><p>P(Cat Dead <span class="math inline">\cup</span> Decay) = <span
+<li><p><span class="math inline">P</span>(Cat Dead <span
+class="math inline">\cup</span> Decay) = <span
 class="math inline">\frac{4}{5}</span></p></li>
-<li><p>P(Cat Alive <span class="math inline">\cup</span> Decay) = <span
+<li><p><span class="math inline">P</span>(Cat Alive <span
+class="math inline">\cup</span> Decay) = <span
 class="math inline">\frac{1}{2}</span></p></li>
-<li><p>P(Cat Alive <span class="math inline">\cup</span> Cat Dead) =
-1</p></li>
-<li><p>P(Decay) = <span class="math inline">\frac{1}{5}</span></p></li>
+<li><p><span class="math inline">P</span>(Cat Alive <span
+class="math inline">\cup</span> Cat Dead) = 1</p></li>
+<li><p><span class="math inline">P</span>(Decay) = <span
+class="math inline">\frac{1}{5}</span></p></li>
 </ul>
-<p>Using the Venn diagram in part b), calculate the probability for
+<p>Using the Venn diagram in Problem 3.2, calculate the probability for
 Schrodinger’s cat to be in superposition state (i.e. both dead and
 alive):</p>
-<div class="mdframed">
-<p><strong>Proof:</strong></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_3">
@@ -420,29 +463,46 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Since we know that the decay is independent to cat’s state, we have
+<p>Since we know that the decay is independent to cat’s state, we have:
 <span class="math display">\begin{aligned}
-    P(Dead \cup Decay) &amp;= P(Dead) + P(Decay) - P(Dead \cap Decay)\\
-    &amp;=P(Dead) + P(Decay) - P(Dead)\cdot P(Decay) = \frac{4}{5}
-\end{aligned}</span> Similarly, we have: <span class="math display">\begin{aligned}
-    P(Alive \cup Decay) &amp;= P(Alive) + P(Decay) - P(Alive \cap
-Decay)\\
-    &amp;=P(Alive) + P(Decay) - P(Alive)\cdot P(Decay) = \frac{1}{2}
-\end{aligned}</span> Plugging in P(Decay) = <span class="math inline">\frac{1}{5}</span>, we have: <span class="math display">\begin{aligned}
-&amp;P(Dead) + \frac{1}{5} - \frac{1}{5} P(Dead) = \frac{4}{5}\\
-&amp;P(Alive) + \frac{1}{5} - \frac{1}{5} P(Alive) = \frac{1}{2}\\
-\end{aligned}</span> Solving these two equations, we have: <span class="math display">\begin{aligned}
-&amp;P(Dead) = \frac{3}{4}\\
-&amp;P(Alive) = \frac{3}{8}\\
-\end{aligned}</span> The probability of superposition state is P(Alive
-<span class="math inline">\cap</span> Dead). Since we know that P(Alive
-<span class="math inline">\cup</span> Dead) = 1 we have: <span class="math display">\begin{aligned}
-P(Alive \cup Dead) &amp;= P(Alive) + P(Dead) - P(Alive \cap Dead)\\
-\end{aligned}</span> Rearranging terms, we have: <span class="math display">\begin{aligned}
-P(Alive \cap Dead) &amp;= P(Alive) + P(Dead) - P(Alive \cup Dead)\\
-&amp;= \frac{3}{4} + \frac{3}{8} - 1\\
-&amp;= \frac{6}{8} + \frac{3}{8} - 1\\
-&amp;=\frac{1}{8}
+    P(\text{Dead} \cup \text{Decay}) &amp;= P(\text{Dead}) +
+P(\text{Decay}) - P(\text{Dead} \cap \text{Decay})\\
+    &amp;=P(\text{Dead}) + P(\text{Decay}) - P(\text{Dead})\cdot
+P(\text{Decay}) = \frac{4}{5}
+\end{aligned}</span></p>
+<p>Similarly, we have: <span class="math display">\begin{aligned}
+    P(\text{Alive} \cup \text{Decay}) &amp;= P(\text{Alive}) +
+P(\text{Decay}) - P(\text{Alive} \cap \text{Decay})\\
+    &amp;=P(\text{Alive}) + P(\text{Decay}) - P(\text{Alive})\cdot
+P(\text{Decay}) = \frac{1}{2}
+\end{aligned}</span></p>
+<p>Plugging in <span class="math inline">P(\text{Decay})</span> = <span class="math inline">\frac{1}{5}</span>, we have: <span class="math display">\begin{aligned}
+    &amp;P(\text{Dead}) + \frac{1}{5} - \frac{1}{5} P(\text{Dead}) =
+\frac{4}{5}\\
+    \\
+    &amp;P(\text{Alive}) + \frac{1}{5} - \frac{1}{5} P(\text{Alive}) =
+\frac{1}{2}\\
+    \\
+\end{aligned}</span></p>
+<p>Solving these two equations, we have: <span class="math display">\begin{aligned}
+    &amp;P(\text{Dead}) = \frac{3}{4}\\
+    \\
+    &amp;P(\text{Alive}) = \frac{3}{8}\\
+    \\
+\end{aligned}</span></p>
+<p>The probability of superposition state is P(Alive <span class="math inline">\cap</span> Dead). Since we know that P(Alive <span class="math inline">\cup</span> Dead) = 1 we have:</p>
+<p><span class="math display">\begin{aligned}
+    P(\text{Alive} \cup \text{Dead}) &amp;= P(\text{Alive}) +
+P(\text{Dead}) - P(\text{Alive} \cap \text{Dead})\\
+\end{aligned}</span></p>
+<p>Rearranging terms, we have: <span class="math display">\begin{aligned}
+    P(\text{Alive} \cap \text{Dead}) &amp;= P(\text{Alive}) +
+P(\text{Dead}) - P(\text{Alive} \cup \text{Dead})\\
+    &amp;= \frac{3}{4} + \frac{3}{8} - 1\\
+    \\
+    &amp;= \frac{6}{8} + \frac{3}{8} - 1\\
+    \\
+    &amp;=\frac{1}{8}
 \end{aligned}</span></p>
 </div>
 </div>
@@ -451,21 +511,21 @@ P(Alive \cap Dead) &amp;= P(Alive) + P(Dead) - P(Alive \cup Dead)\\
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p><i>Originally Problem 4 on the Second Winter 2024 Midterm.</i></p>
 <p>The standard acceleration of gravity <span
 class="math inline">g</span> is a universal constant of nature. That
 means <span class="math inline">g=9.80665</span> across the entire
 universe. It is also known that:</p>
-<pre><code>$$G = m \times g$$</code></pre>
+<p><span class="math display">G = m \times g</span></p>
 <p>Where <span class="math inline">G</span> is the weight of an object
-and m is the mass of an object. Issac is interested in measuring g. He
+and <span class="math inline">m</span> is the mass of an object. Issac
+is interested in measuring <span class="math inline">g</span>. He
 prepared a dumbbell with mass 10 in his garage and measured the weight
-of it 3 times. The measured weight is 102, 98, 100</p>
+of it three times. The three measured weights were: 102, 98, 100.</p>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p>Calculate the mean value of <span class="math inline">g</span> Issac
-measured. <!-- \begin{center}
-\inlineresponsebox[1.5in]{10}
-\end{center} --></p>
+measured.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_1">
@@ -479,7 +539,20 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>NO EMPTY SOLUTIONS</p>
+<p>We can rearrange the equation and get: <span class="math display">g =
+\frac{G}{m}</span></p>
+<p>Isaac calculated these values of <span class="math inline">g</span>
+from his three trials.</p>
+<ul>
+<li><p><span class="math inline">g = \frac{102}{10} = 10.2 \\
+\\</span></p></li>
+<li><p><span class="math inline">g = \frac{98}{10} = 9.8 \\
+\\</span></p></li>
+<li><p><span class="math inline">g = \frac{100}{10} = 10</span></p></li>
+</ul>
+<p>So the mean value of <span class="math inline">g</span> Isaac
+measured is: <span class="math inline">\frac{(10.2 + 9.8 + 10)}{3} =
+10.</span></p>
 </div>
 </div>
 </div>
@@ -487,14 +560,10 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
 <p>After his measurement, an alien from the Frequentist Galaxy visited
-Issac’s garage. Alien from Frequentist Galaxy could only understand
-frequentist statistics. Explain to the alien why Issac’s measurement
-deviates from <span class="math inline">g=9.80665</span> (Hint: verbal
-explanation is enough, no equation is needed).</p>
-<p><!-- \begin{mdframed}
-**Explanation:**
-\vspace*{2in}    
-\end{mdframed} --></p>
+Issac’s garage. The alien could only understand frequentist statistics.
+Explain to the alien why Issac’s measurement deviates from <span
+class="math inline">g=9.80665</span> (Hint: verbal explanation is
+enough, no equation is needed).</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_2">
@@ -508,9 +577,9 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Frequentist does not assign probability to hypothesis, so g is always
-equal to 9.80665 and it does not change. Issac’s measurement deviate
-from the actual g value because of uncertainties in the measurement.</p>
+<p>Frequentists do not assign probability to hypotheses, so <span class="math inline">g</span> is always equal to 9.80665 and it does not
+change. Issac’s measurement deviates from the actual <span class="math inline">g</span> value because of uncertainties in the
+measurement.</p>
 </div>
 </div>
 </div>
@@ -518,13 +587,11 @@ from the actual g value because of uncertainties in the measurement.</p>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
 <p>After the first alien left, another alien from the Bayesian galaxy
-arrived. This alien told Issac: “I think g could take any value: it
-could be 1, could be 10, could be 100”. Using the Bayes equation and
-Issac’s measurement, convince the alien that g should be close to 10.
-<!-- \begin{mdframed}
-**Explanation:**
-\vspace*{2in}    
-\end{mdframed} --></p>
+arrived. This alien told Issac: “I think <span
+class="math inline">g</span> could take any value: it could be 1, could
+be 10, could be 100”. Using the Bayes equation and Issac’s measurement,
+convince the alien that <span class="math inline">g</span> should be
+close to 10.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_3">
@@ -539,45 +606,63 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The Bayes equation reads:</p>
-<p><span class="math display">Posterior = \frac{Prior\times
-Likelihood}{Evidence}</span></p>
-<p>The alien provides a uniform prior, or P(Hypothesis). They assume g
-could take many different possible values. However, the likelihood term
-is P(Data|Hypothesis). For the hypothesis of g = 1, since it does not
-agree with data, the likelihood is very low and thereby does not
-contribute to posterior; the same argument hold for g = 100. Only when
-g=10 will the likelihood be high.</p>
+<p><span class="math display">\text{Posterior} =
+\frac{\text{Prior}\times \text{Likelihood}}{\text{Evidence}}</span></p>
+<p>The alien provides a uniform prior, or <span class="math inline">P(\text{Hypothesis})</span>. They assume <span class="math inline">g</span> could take many different possible values.
+However, the likelihood term is <span class="math inline">P(\text{Data|Hypothesis})</span>. For the hypothesis
+of <span class="math inline">g = 1</span>, since it does not agree with
+data, the likelihood is very low and does not contribute to posterior;
+the same argument holds for <span class="math inline">g = 100</span>.
+Only when <span class="math inline">g</span> = 10 will the likelihood be
+high.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.4">Problem 4.4</h3>
-<p>Which explanation do you prefer? (Note: both answers are correct,
-enjoy your one free point).</p>
+<!-- BONUS PROBLEM BELOW -->
+<!-- <br>
+
+### Problem 4.4
+
+
+Which explanation do you prefer? (Note: both answers are correct, enjoy your one free point).
+
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Frequentist</p></li>
 <li><p><input type="radio" disabled="" /> Bayesian</p></li>
 </ul>
-<div id="accordionExample" class="accordion">
+
+
+
+
+
+
+<div class="accordion" id="accordionExample">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_4">
 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse"
-aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div id="collapse4_4" class="accordion-collapse collapse collapse" aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
+
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <pre><code>Both are correct.</code></pre>
+
 </div>
 </div>
 </div>
 </div>
-<p><br></p>
+
+
+
+
+    
+<br> -->
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4

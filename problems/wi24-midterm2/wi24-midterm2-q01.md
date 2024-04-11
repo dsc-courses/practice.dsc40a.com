@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 1 on the Second Winter 2024 Midterm.</i>
+
 Quarks is one of the smallest fundamental particles in
 physics. There are 6 **types** of quarks: up, down, top, bottom, strange,
 charm. Each one of the 6 types of quarks can be in two **states**: quark or antiquark.
@@ -61,7 +63,7 @@ None of the above ($72^n$).
 
 For making a meson, we need to choose two quarks. The first quark we choose has $6$ possible types $\times 2$ possible states $= 12$ possibilities. However, our second quark cannot have the same state as our first; so the second quark has $6$ possible types $\times 1$ possible state $= 6$ possibilities.
 
-This means a single meson has $12 \times 6 = 72$ possibilities. (If the order of the quark and antiquark did not matter, it would instead be $\frac{72}{2} = 36$ possibilities). So, an experiment where we select $n$ mesons uniformly at random is $72^n$.
+This means a single meson has $12 \times 6 = 72$ possibilities. (If the order of the quark and antiquark did not matter, it would instead be $\frac{72}{2} = 36$ possibilities). So, an experiment where we select $n$ mesons uniformly at random has $72^n$ unique results.
 
 # END SOLUTION
 
