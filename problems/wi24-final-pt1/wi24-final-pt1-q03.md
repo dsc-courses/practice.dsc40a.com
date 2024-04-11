@@ -1,12 +1,12 @@
 # BEGIN PROB
 
-\[(10 points)\] 3. Suppose there is a dataset contains 4 values: -2, -1,
+Suppose there is a dataset contains 4 values: -2, -1,
 2, 4. You would like to use gradient descent to minimize the mean square
 error over this dataset.
 
 # BEGIN SUBPROB
 
-(2 points) Write down the expression of mean square error and its
+Write down the expression of mean square error and its
 derivative given this dataset
 
 $R_{sq}(h)$ =
@@ -29,7 +29,7 @@ TODO
 
 # BEGIN SUBPROB
 
-(4 points) Suppose you choose the initial position to be $h_0$ and the
+Suppose you choose the initial position to be $h_0$ and the
 learning rate to be $\frac{1}{4}$. After two gradient descent steps,
 $h_2=\frac{1}{4}$. What is the value of $h_0$?
 
@@ -60,7 +60,7 @@ $h_{0} = -\frac{5}{4}$.
 
 # BEGIN SUBPROB
 
-(4 points) Given that we set the tolerance of gradient descent to be
+Given that we set the tolerance of gradient descent to be
 0.1. How many **additional steps** beyond $h_2$ do we need to take to
 reach convergence?
 

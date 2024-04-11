@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(8 points)\]Suppose there is a dataset containing 10,000 integers,
+Suppose there is a dataset containing 10,000 integers,
 2,500 of them are 3, 2,500 of them are 5, 4,500 of them are 7, and 500
 of them are 9.
 

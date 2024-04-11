@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-(14 points) Albert collected 400 data points from a radiation detector.
+Albert collected 400 data points from a radiation detector.
 Each data point contains 3 feature: feature A, feature B and feature C,
 along with the true particle energy E. Albert want to design a linear
 regression algorithm to predict the energy E of each particle, given one
@@ -20,7 +20,7 @@ correlaton of two terms:
 
 # BEGIN SUBPROB
 
-(4pt) Albert want to start with a simple model: fitting only a single
+Albert want to start with a simple model: fitting only a single
 feature to obtain the true energy (i.e. $y = w_0+w_1 x$). Which feature
 should he choose as $x$ to get the lowest mean square error?
 
@@ -41,7 +41,7 @@ weight.
 
 # BEGIN SUBPROB
 
-(2pt) Albert want to add another feature into his linear regression in
+Albert want to add another feature into his linear regression in
 part a) to further boost the model's performance. (i.e.
 $y = w_0+w_1 x + +w_2 x_2$) Which feature should he choose as $x_2$ to
 make additional improvements?
