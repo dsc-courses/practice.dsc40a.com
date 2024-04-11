@@ -78,7 +78,7 @@ $$
 $$
 Note that $\mathbb{P}(\text{not }A)$ means the probability of A not happening.
 
-
+TODO
 
 Plugging in what we know into the law of total probability equation we get:
 $$\begin{align*}
