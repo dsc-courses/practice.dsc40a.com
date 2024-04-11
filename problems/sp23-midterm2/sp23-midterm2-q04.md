@@ -27,7 +27,20 @@ the tournament?
 
 $67 \%$
 
-TODO
+We know the percentages of players that beat Avi (meaning Avi loses) and the percentages of different types of players inside the Avocado Cup.
+
+We can use the percentage of players that beat Avi to figure out the percentage of times Avi wins by doing $1 - p$!
+
+Avi wins against beginners $1 - 0.1 = 0.9\%$ of the time, against intermediate players $1 - 0.4 = 0.6\%$ of the time, and against advanced players $1 - 0.8 = 0.2 \%$ of the time.
+
+Now we can multiply the percentage of time Avi wins with the percentage of different players types to find the probability Avi will win in the first round! We can do this because you can imagine we are multiplying the probability Avi wins with the amount of people in the tournament of that level.
+
+$$\begin{align*}
+0.9 \% * 0.5 \% &= 0.45 \% \\
+0.4 \% * 0.5 \% &= 0.2 \% \\
+0.2 \% * 0.1 \% &= 0.02 \% \\
+0.45 \% + 0.2 \% + 0.02 \% &= 0.67 \%
+\end{align*}$$
 
 # END SOLUTION
 
