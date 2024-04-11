@@ -72,7 +72,7 @@ $$
 
 We are given $\mathbb{P}(A) = 0.1$ and $\mathbb{P}(B|A) = 0.8$.
 
-We can calculate $\mathbb{P}(B)$ with the equation:
+We can calculate $\mathbb{P}(B)$ with the law of total probability:
 $$
 \mathbb{P}(B) = \mathbb{P}(B|A) \cdot \mathbb{P}(A) + \mathbb{P}(B|\text{not }A)\cdot \mathbb{P}(\text{not }A)
 $$
@@ -80,7 +80,7 @@ Note that $\mathbb{P}(\text{not }A)$ means the probability of A not happening.
 
 We are able to calculate $\mathbb{P}(B|\text{not }A)$ because we know the percentage of times Avi wins against advanced players: $1 - 0.8 = 0.2$. We are also able to calculate $\mathbb{P}(\text{not }A)$ because we know the probability of Avi winning a match is $67 \% = 0.67$.
 
-Plugging in what we know in the equation we get:
+Plugging in what we know into the law of total probability equation we get:
 $$\begin{align*}
 \mathbb{P}(B) &= 0.8 \cdot 0.1 + 0.2 \cdot 0.67 \\
 &=0.08 + 0.134 \\
