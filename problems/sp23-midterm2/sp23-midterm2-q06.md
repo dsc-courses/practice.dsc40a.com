@@ -28,7 +28,13 @@ apply.**
 
 $A$ and $B$ are conditionally independent given $C$.
 
-TODO
+We know that $A$ and $B$ are not independent because winning or losing the first match could affect if Avi wins the tournament.
+
+It is helpful to think about if $C$ happens does it affect my knowledge of $A$ and $B$ happening? If $C$ happens we know that $A$ cannot happen. If $A$ cannot happen then $B$ is independent of $A$. This means $A$ and $B$ are conditionally independent given $C$.
+
+Recall a particition is a collection of non-empty, non-overlapping subsets of a sample space. We know that $A$ affects $B$, which means that this statement cannot be true.
+
+Since the third option is true the answer cannot be "None of the above."
 
 # END SOLUTION
 
