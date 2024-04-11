@@ -398,9 +398,13 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <p><span class="math inline">25 \%</span></p>
 <ul>
 <li>Let <span class="math inline">\mathbb{P}(A)</span> be the
-probability of Avi losing a match</li>
-<li>Let <span class="math inline">\mathbb{P}(B)</span> be the
 probability of Avi playing against an advanced player</li>
+<li>Let <span class="math inline">\mathbb{P}(B)</span> be the
+probability of Avi losing a match</li>
+<li>Let <span class="math inline">\mathbb{P}(C)</span> be the
+probability of Avi playing against an intermediate player</li>
+<li>Let <span class="math inline">\mathbb{P}(D)</span> be the
+probability of Avi playing against a beginner player</li>
 </ul>
 <p>We can use Bayes theorem to help us find the probability that Avi
 lost the match to an advanced player (<span class="math inline">\mathbb{P}(A|B)</span>). Recall Bayes’ theorem
@@ -409,29 +413,35 @@ is:</p>
 \mathbb{P}(A|B) = \frac{\mathbb{P}(B|A) \cdot
 \mathbb{P}(A)}{\mathbb{P}(B)}
 </span></p>
-<p>We are given <span class="math inline">\mathbb{P}(A) = 0.1</span> and
-<span class="math inline">\mathbb{P}(B|A) = 0.8</span>.</p>
-<p>We can calculate <span class="math inline">\mathbb{P}(B)</span> with
-the law of total probability: <span class="math display">
-\mathbb{P}(B) = \mathbb{P}(B|A) \cdot \mathbb{P}(A) +
-\mathbb{P}(B|\text{not }A)\cdot \mathbb{P}(\text{not }A)
-</span> Note that <span class="math inline">\mathbb{P}(\text{not
-}A)</span> means the probability of A not happening.</p>
-<p>We are able to calculate <span class="math inline">\mathbb{P}(B|\text{not }A)</span> because we know
-the percentage of times Avi wins against advanced players: <span class="math inline">1 - 0.8 = 0.2</span>. We are also able to calculate
-<span class="math inline">\mathbb{P}(\text{not }A)</span> because we
-know the probability of Avi winning a match is <span class="math inline">67 \% = 0.67</span>.</p>
+<p>We are given the probability that Avi loses the match against an
+advanced player <span class="math inline">\mathbb{P}(B|A) = 0.8</span>
+and the probability of Avi playing against an advanced player <span class="math inline">\mathbb{P}(A) = 0.1</span>.</p>
+<p>We can calculate the probability of Avi losing a match <span class="math inline">\mathbb{P}(B)</span> with the law of total
+probability: <span class="math display">
+\mathbb{P}(B) = \mathbb{P}(B|A) \cdot \mathbb{P}(A) + \mathbb{P}(B|C)
+\cdot \mathbb{P}(C) + \mathbb{P}(B|D) \cdot \mathbb{P}(D)
+</span></p>
+<p>We know the probability of Avi losing to an intermediate player:
+<span class="math inline">\mathbb{P}(B|C) = 0.5</span>, the probability
+of Avi losing to a beginner player: <span class="math inline">\mathbb{P}(B|D) = 0.1</span>, the probability of an
+intermediate player being the opponent: <span class="math inline">\mathbb{P}(C) = 0.4</span>, and the probability of a
+beginner player being the oponent: <span class="math inline">\mathbb{P}(D) = 0.5</span></p>
 <p>Plugging in what we know into the law of total probability equation
 we get: <span class="math display">\begin{align*}
-\mathbb{P}(B) &amp;= 0.8 \cdot 0.1 + 0.2 \cdot 0.67 \\
-&amp;=0.08 + 0.134 \\
-&amp;= 0.214
+\mathbb{P}(B) &amp;= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
+&amp;=0.08 + 0.2 + 0.05 \\
+&amp;= 0.33
 \end{align*}</span></p>
+<p>Or we can calculate <span class="math inline">\mathbb{P}(B)</span> by
+using what we know in part A (<span class="math inline">67 \%</span>).
+<span class="math inline">1 - 0.67 = 0.33</span>.</p>
 <p>Back to Bayes theorem we have: <span class="math display">\begin{align*}
-\mathbb{P}(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.214} \\
-&amp;= \frac{0.08}{0.214}\\
-&amp;= 0.35
+\mathbb{P}(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
+&amp;= \frac{0.08}{0.33}\\
+&amp;= 0.24
 \end{align*}</span></p>
+<p><span class="math inline">0.24</span> is closest to <span class="math inline">0.25</span>, so <span class="math inline">25
+\%</span>.</p>
 </div>
 </div>
 </div>

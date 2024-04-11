@@ -63,6 +63,8 @@ $25 \%$
 
 - Let $\mathbb{P}(A)$ be the probability of Avi playing against an advanced player
 - Let $\mathbb{P}(B)$ be the probability of Avi losing a match
+- Let $\mathbb{P}(C)$ be the probability of Avi playing against an intermediate player
+- Let $\mathbb{P}(D)$ be the probability of Avi playing against a beginner player
 
 We can use Bayes theorem to help us find the probability that Avi lost the match to an advanced player ($\mathbb{P}(A|B)$). Recall Bayes' theorem is:
 
@@ -74,20 +76,19 @@ We are given the probability that Avi loses the match against an advanced player
 
 We can calculate the probability of Avi losing a match $\mathbb{P}(B)$ with the law of total probability:
 $$
-\mathbb{P}(B) = \mathbb{P}(B|A) \cdot \mathbb{P}(A) + \mathbb{P}(B|\text{not }A)\cdot \mathbb{P}(\text{not }A)
+\mathbb{P}(B) = \mathbb{P}(B|A) \cdot \mathbb{P}(A) + \mathbb{P}(B|C) \cdot \mathbb{P}(C) + \mathbb{P}(B|D) \cdot \mathbb{P}(D)
 $$
-Note that $\mathbb{P}(\text{not }A)$ means the probability of A not happening.
 
-TODO
+We know the probability of Avi losing to an intermediate player: $\mathbb{P}(B|C) = 0.5$, the probability of Avi losing to a beginner player: $\mathbb{P}(B|D) = 0.1$, the probability of an intermediate player being the opponent: $\mathbb{P}(C) = 0.4$, and the probability of a beginner player being the oponent: $\mathbb{P}(D) = 0.5$
 
 Plugging in what we know into the law of total probability equation we get:
 $$\begin{align*}
-\mathbb{P}(B) &= 0.5 \cdot 0.1 + 0.2 \cdot 0.8 \\
-&=0.05 + 0.16 \\
+\mathbb{P}(B) &= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
+&=0.08 + 0.2 + 0.05 \\
 &= 0.33
 \end{align*}$$
 
-Or we can calculate $\mathbb{P}(B)$ by using what we know in part A ($67 \%). $1 - 0.67 = 0.33$.
+Or we can calculate $\mathbb{P}(B)$ by using what we know in part A ($67 \%$). $1 - 0.67 = 0.33$.
 
 Back to Bayes theorem we have:
 $$\begin{align*}
