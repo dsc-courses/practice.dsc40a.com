@@ -70,9 +70,9 @@ open-book, but no calculator. Students had <strong>50 minutes</strong>
 to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>[(8 points)]Suppose there is a dataset containing 10,000 integers,
-2,500 of them are 3, 2,500 of them are 5, 4,500 of them are 7, and 500
-of them are 9.</p>
+<p>Suppose there is a dataset containing 10,000 integers, 2,500 of them
+are 3, 2,500 of them are 5, 4,500 of them are 7, and 500 of them are
+9.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>(4 points) Calculate the median of this dataset.</p>
@@ -126,11 +126,10 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p>[(8 points)] You and a friend independently perform gradient descent
-on the same function, but after 200 iterations, you have different
-results. Which of the following is sufficient <strong>on its
-own</strong> to explain the difference in your results? <strong>Select
-all that apply.</strong></p>
+<p>You and a friend independently perform gradient descent on the same
+function, but after 200 iterations, you have different results. Which of
+the following is sufficient <strong>on its own</strong> to explain the
+difference in your results? <strong>Select all that apply.</strong></p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> The function is nonconvex.</p></li>
 <li><p><input type="checkbox" disabled="" /> The function is not differentiable.</p></li>
@@ -158,13 +157,13 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 </div>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p>[(10 points)] 3. Suppose there is a dataset contains 4 values: -2,
--1, 2, 4. You would like to use gradient descent to minimize the mean
-square error over this dataset.</p>
+<p>Suppose there is a dataset contains 4 values: -2, -1, 2, 4. You would
+like to use gradient descent to minimize the mean square error over this
+dataset.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>(2 points) Write down the expression of mean square error and its
-derivative given this dataset</p>
+<p>Write down the expression of mean square error and its derivative
+given this dataset</p>
 <p><span class="math inline">R_{sq}(h)</span> =</p>
 <p><span class="math inline">\frac{dR_{sq}(h)}{dh}</span> =</p>
 <div id="accordionExample" class="accordion">
@@ -192,7 +191,7 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>(4 points) Suppose you choose the initial position to be <span
+<p>Suppose you choose the initial position to be <span
 class="math inline">h_0</span> and the learning rate to be <span
 class="math inline">\frac{1}{4}</span>. After two gradient descent
 steps, <span class="math inline">h_2=\frac{1}{4}</span>. What is the
@@ -233,8 +232,8 @@ h_{0} - 4)\\
 </div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>(4 points) Given that we set the tolerance of gradient descent to be
-0.1. How many <strong>additional steps</strong> beyond <span
+<p>Given that we set the tolerance of gradient descent to be 0.1. How
+many <strong>additional steps</strong> beyond <span
 class="math inline">h_2</span> do we need to take to reach
 convergence?</p>
 <ul class="task-list">
@@ -287,14 +286,14 @@ so both 2 and 3 are considered correct answer).</p>
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p>(14 points) Albert collected 400 data points from a radiation
-detector. Each data point contains 3 feature: feature A, feature B and
-feature C, along with the true particle energy E. Albert want to design
-a linear regression algorithm to predict the energy E of each particle,
-given one or a combination(s) of feature A, B, C. As the first step,
-Albert calculated the correlation coefficients among A, B, C and E. He
-wrote it down in the following table, where each cell of the table
-represents the correlaton of two terms:</p>
+<p>Albert collected 400 data points from a radiation detector. Each data
+point contains 3 feature: feature A, feature B and feature C, along with
+the true particle energy E. Albert want to design a linear regression
+algorithm to predict the energy E of each particle, given one or a
+combination(s) of feature A, B, C. As the first step, Albert calculated
+the correlation coefficients among A, B, C and E. He wrote it down in
+the following table, where each cell of the table represents the
+correlaton of two terms:</p>
 <div class="center">
 <table>
 <thead>
@@ -340,7 +339,7 @@ represents the correlaton of two terms:</p>
 </div>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>(4pt) Albert want to start with a simple model: fitting only a single
+<p>Albert want to start with a simple model: fitting only a single
 feature to obtain the true energy (i.e. <span class="math inline">y =
 w_0+w_1 x</span>). Which feature should he choose as <span
 class="math inline">x</span> to get the lowest mean square error?</p>
@@ -372,8 +371,8 @@ sign in the weight.</p>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>(2pt) Albert want to add another feature into his linear regression
-in part a) to further boost the model’s performance. (i.e. <span
+<p>Albert want to add another feature into his linear regression in part
+a) to further boost the model’s performance. (i.e. <span
 class="math inline">y = w_0+w_1 x + +w_2 x_2</span>) Which feature
 should he choose as <span class="math inline">x_2</span> to make
 additional improvements?</p>

@@ -45,7 +45,7 @@ Frequentists do not assign probability to hypotheses, so $g$ is always equal to 
 
 # BEGIN SUBPROB
 
-After the first alien left, another alien from the Bayesian galaxy arrived. This alien told Issac: "I think $g$ could take any value: it could be 1, could be 10, could be 100". Using the Bayes equation and Issac's measurement, convince the alien that $g$ should be close to 10.
+After the first alien left, another alien from the Bayesian galaxy arrived. This alien told Issac: "I think $g$ could take any value: it could be $1$, could be $10$, could be $100$". Using the Bayes equation and Issac's measurement, convince the alien that $g$ should be close to $10$.
 
 # BEGIN SOLUTION
 The Bayes equation reads:

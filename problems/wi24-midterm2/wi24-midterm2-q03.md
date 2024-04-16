@@ -29,7 +29,7 @@ $$\begin{align*}
 \mathbb{P}(\text{Decay|Dead}) = \frac{\mathbb{P}(\text{Dead|Decay})\mathbb{P}(\text{Decay})}{\mathbb{P}(\text{Dead})}
 \end{align*}$$
 
-Using the Law of Total Probability, we can rewrite thedenominator:
+Using the Law of Total Probability, we can rewrite the denominator:
 
 $$\begin{align*}
 \mathbb{P}(\text{Decay|Dead}) = \frac{\mathbb{P}(\text{Dead|Decay})\mathbb{P}(\text{Decay})}{\mathbb{P}(\text{Dead|Decay})\mathbb{P}(\text{Decay}) + \mathbb{P}(\text{Dead|Not Decay})\mathbb{P}(\text{Not Decay})}
@@ -130,21 +130,38 @@ $$\begin{align*}
     &=\mathbb{P}(\text{Alive}) + \mathbb{P}(\text{Decay}) - \mathbb{P}(\text{Alive})\cdot \mathbb{P}(\text{Decay}) = \frac{1}{2}
 \end{align*}$$ 
 
-Plugging in $\mathbb{P}(\text{Decay})$ = $\frac{1}{5}$, we have:
+We are given $\mathbb{P}(\text{Decay})$ = $\frac{1}{5}$, so we can plug it into the equations we made for $\mathbb{P}(\text{Dead} \cup \text{Decay})$ and $\mathbb{P}(\text{Alive} \cup \text{Decay})$:
 $$\begin{align*}
-    &\mathbb{P}(\text{Dead}) + \frac{1}{5} - \frac{1}{5} \mathbb{P}(\text{Dead}) = \frac{4}{5}\\
+    &\mathbb{P}(\text{Dead} \cup \text{Decay}) = \mathbb{P}(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Dead})) = \frac{4}{5}\\
     \\
-    &\mathbb{P}(\text{Alive}) + \frac{1}{5} - \frac{1}{5} \mathbb{P}(\text{Alive}) = \frac{1}{2}\\
+    &\mathbb{P}(\text{Alive} \cup \text{Decay}) = \mathbb{P}(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Alive})) = \frac{1}{2}\\
     \\
 \end{align*}$$ 
 
 Solving these two equations, we have: 
 $$\begin{align*}
+    &\frac{4}{5} = \mathbb{P}(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Dead})) \\
+    &(\frac{4}{5}) * 5 = (\mathbb{P}(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Dead}))) * 5 \\
+    &4 = 5 * (\mathbb{P}(\text{Dead})) + 1 - \mathbb{P}(\text{Dead}) \\
+    &3 = 4 * (\mathbb{P}(\text{Dead})) \\
+    &\mathbb{P}(\text{Dead}) = \frac{3}{4}
+\end{align*}$$
+and
+$$\begin{align*}
+    &\frac{4}{5} = \mathbb{P}(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Alive})) \\
+    &(\frac{1}{2}) * 10 = (\mathbb{P}(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Alive}))) * 10 \\
+    &5 = 10 * (\mathbb{P}(\text{Alive})) + 2 - 2 * \mathbb{P}(\text{Alive}) \\
+    &3 = 8 * (\mathbb{P}(\text{Alive})) \\
+    &\mathbb{P}(\text{Alive}) = \frac{3}{8}
+\end{align*}$$
+
+<!-- This means:
+$$\begin{align*}
     &\mathbb{P}(\text{Dead}) = \frac{3}{4}\\
     \\
     &\mathbb{P}(\text{Alive}) = \frac{3}{8}\\
     \\
-\end{align*}$$ 
+\end{align*}$$  -->
 
 The probability of superposition state is P(Alive $\cap$ Dead). Since we know that P(Alive $\cup$ Dead) = 1 we have:
 

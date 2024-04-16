@@ -3,8 +3,8 @@
 <i>Originally Problem 1 on the Second Winter 2024 Midterm.</i>
 
 Quarks is one of the smallest fundamental particles in
-physics. There are 6 **types** of quarks: up, down, top, bottom, strange,
-charm. Each one of the 6 types of quarks can be in two **states**: quark or antiquark.
+physics. There are $6$ **types** of quarks: up, down, top, bottom, strange,
+charm. Each one of the $6$ types of quarks can be in two **states**: quark or antiquark.
 
 # BEGIN SUBPROB
 
@@ -29,7 +29,7 @@ How many results are possible for this experiment with $n$ quarks?
 
 $12^n$
 
-For each quark there are $6$ possible types $\times 2$ possible states $= 12$ possibilities. Since our experiment involves independently picking one of these 12 possibilities for each of our $n$ quarks, the total number of results for the experiment is $12^n$.
+Each quark has $6 * 2 = 12$ possibilities because there are $6$ possible types and $2$ possible states. Since our experiment involves independently picking one of these $12$ possibilities for each of our $n$ quarks, the total number of results for the experiment is $12^n$.
 
 # END SOLUTION
 
