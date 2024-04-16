@@ -43,7 +43,13 @@ True or False: Having two pawns is **independent** of having two white pieces.
 
 True.
 
-We know that two probabilities are independent of each other if ... TODO
+We know that two probabilities are independent of each other if $\mathbb{P}(A \cap B)=\mathbb{P}(A) \cdot \mathbb{P}(B)$.
+
+- Let $\mathbb{P}(A)$ be the probability of getting a white piece.
+- Let $\mathbb{P}(B)$ be the probability of getting a pawn.
+
+$\mathbb{P}(A)$
+
 
 # END SOLUTION
 
