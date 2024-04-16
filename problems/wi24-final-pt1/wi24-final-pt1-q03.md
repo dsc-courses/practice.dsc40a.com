@@ -1,13 +1,12 @@
 # BEGIN PROB
 
-Suppose there is a dataset contains 4 values: -2, -1,
-2, 4. You would like to use gradient descent to minimize the mean square
+Suppose there is a dataset contains four values: $-2$, $-1$,
+$2$, $4$. You would like to use gradient descent to minimize the mean square
 error over this dataset.
 
 # BEGIN SUBPROB
 
-Write down the expression of mean square error and its
-derivative given this dataset
+Write down the expression of mean square error and its derivative given this dataset.
 
 $R_{sq}(h)$ =
 
@@ -17,11 +16,23 @@ $\frac{dR_{sq}(h)}{dh}$ =
 
 $R_{sq}(h) = \frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2$
 
-TODO
+Recall the equation for $R_{sq}(h) = \frac{1}{n}\sum_{i=1}^{n}(y_i-h)^2$, so we simply need to replace $n$ with $4$ because there are $4$ elements in our dataset.
 
 $\frac{dR_{sq}(h)}{dh} = \frac{1}{2}\sum_{i=1}^{4}(h-y_i)$
 
-TODO
+Since we have the equation for $R_{sq}(h)$ we can calculate the derivative:
+
+$$
+\begin{align*}
+\frac{dR_{sq}(h)}{dh} &= \frac{dR_{sq}(h)}{dh}(\frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2) \\
+&= \frac{1}{4}\sum_{i=1}^{4}\frac{dR_{sq}(h)}{dh}((y_i-h)^2) \\
+&\text{We can use the chain rule to find the derivative of $(y_i-h)^2$.} \\
+&\text{Recall the chain rule is: $\frac{df(x)}{dx}[(f(x))^n] = n(f(x))^{n-1} * f'(x)$.} \\
+&= \frac{1}{4}\sum_{i=1}^{4}2(y_i-h) * -1 \\
+&= \frac{1}{4}\sum_{i=1}^{4} 2(h - y_i) \\
+&= \frac{1}{2}\sum_{i=1}^{4} (h-y_i)
+\end{align*}
+$$
 
 # END SOLUTION
 
@@ -47,7 +58,7 @@ in that case we obtain: $$\begin{aligned}
         &= h_{1} - \frac{1}{8}(4h_{1} -3)\\
 \end{aligned}$$ Solving this equation, we obtain that
 $h_{1} = -\frac{1}{4}$. We can then repeat this step once more to obtain
-h_0: $$\begin{aligned}
+$h_0$: $$\begin{aligned}
     -\frac{1}{4} &= h_{0} - \alpha \frac{dR_{sq}(h_{0})}{dh}\\
         &= h_{0} - \frac{1}{4}(h_{0} + 2 + h_{0} + 1 + h_{0} - 2 + h_{0} - 4)\\
         &= h_{0} - \frac{1}{8}(4h_{0} -3)\\
@@ -61,7 +72,7 @@ $h_{0} = -\frac{5}{4}$.
 # BEGIN SUBPROB
 
 Given that we set the tolerance of gradient descent to be
-0.1. How many **additional steps** beyond $h_2$ do we need to take to
+$0.1$. How many **additional steps** beyond $h_2$ do we need to take to
 reach convergence?
 
 ( ) 0
@@ -92,9 +103,9 @@ $i=2$, in that case we obtain: $$\begin{aligned}
     &= \frac{5}{8} - \frac{1}{8}(\frac{5}{2}-3)\\
     &= \frac{11}{16}\\
 \end{aligned}$$ from $h_4$ to $h_5$, the change is smaller than the
-tolerance. That means we need additional 2 or 3 steps to reach
+tolerance. That means we need additional $2$ or $3$ steps to reach
 convergence (depending on if you actually perform $h_4$ to $h_5$, so
-both 2 and 3 are considered correct answer).
+both $2$ and $3$ are considered correct answer).
 
 # END SOLUTION
 

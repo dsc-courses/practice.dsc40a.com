@@ -10,12 +10,12 @@ down in the following table, where each cell of the table represents the
 correlaton of two terms:
 
 ::: center
-                  **Feature A**   **Feature B**   **Feature C**   **Energy E**
+                  Feature A   Feature B   Feature C   Energy E
   --------------- --------------- --------------- --------------- --------------
-  **Feature A**   1               -0.99           0.13            0.8
-  **Feature B**   -0.99           1               0.25            -0.95
-  **Feature C**   0.13            0.25            1               0.72
-  **Energy E**    0.8             -0.95           0.72            1
+  Feature A   1               -0.99           0.13            0.8
+  Feature B   -0.99           1               0.25            -0.95
+  Feature C   0.13            0.25            1               0.72
+  Energy E    0.8             -0.95           0.72            1
 :::
 
 # BEGIN SUBPROB
@@ -68,7 +68,7 @@ form: $$\begin{aligned}
 H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
 \end{aligned}$$
 
-(3pt)Given this prediction rule, What are the dimensions of the design
+Given this prediction rule, What are the dimensions of the design
 matrix X? AKA what is $r$ and $c$?
 
 $r \text{rows} \times c \text{columns}$
@@ -83,7 +83,7 @@ $400 \text{rows} \times 3 \text{columns}$
 
 # BEGIN SUBPROB
 
-(5pt) Now Albert solve the normal equations and find the solution to be:
+Now Albert solve the normal equations and find the solution to be:
 $$\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^*  \end{bmatrix}$$
 To improve on this result, Albert decides to modify his design matrix
 with the following steps:
