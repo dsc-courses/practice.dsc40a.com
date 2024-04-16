@@ -294,18 +294,27 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\dfrac{16!}{8!2!2!2!} =
-\dfrac{P(16,8)}{2^3} = C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1,
-1)</span></p>
-<p>As you can see above there are a few ways to write the answer. You
-could use permutations or combinatorics. <br/></p>
+<p><span class="math inline">\dfrac{16!}{8!2!2!2!}</span></p>
+<p>This answer can be found using combinatorics or permutations.
+<br/></p>
+<p><span class="math inline">C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2,
+1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
 <p>Here is the explanation using combinatorics:</p>
 <p>We know from the problem we are only looking at the <span class="math inline">16</span> white pieces. This means we know we are
 doing <span class="math inline">16</span> choose something. From here we
 can look at the different possible types of chess pieces (pawns,
-bishops, knights, rooks, queen, and king). This means we can write <span class="math inline">C(16, 8)</span> because from <span class="math inline">16</span> pieces we are choosing <span class="math inline">8</span> pawns. Then we can multiply it by <span class="math inline">C(8, 2)</span> because <span class="math inline">16
+bishops, knights, rooks, queen, and king). This means we can write <span class="math inline">C(16, 8)</span> because from <span class="math inline">16</span> pieces we are choosing <span class="math inline">8</span> pawns (we know there will be <span class="math inline">8!</span> many different ways to line up the <span class="math inline">8</span> pawns). Then we can multiply it by <span class="math inline">C(8, 2)</span> because <span class="math inline">16
 - 8 = 8</span> pieces left and there are <span class="math inline">2</span> bishops. Following this same logic we get
 <span class="math inline">C(8 - 2 = 6, 2)</span> for knights, <span class="math inline">C(6-2 = 4, 2)</span> for rooks, <span class="math inline">C(4 - 2, 1)</span> for the queen, and <span class="math inline">C(2 - 1 = 1, 1)</span> for the king.</p>
+<p><br/></p>
+<p><span class="math inline">\dfrac{P(16,8)}{2^3} =
+\dfrac{16!}{8!2!2!2!}</span></p>
+<p>Recall that permutations require the order matters. For the lineup
+because pieces of the same kind are <strong>indistinguishable</strong>
+from one another we say the order does not matter.</p>
+<p>TODO</p>
+<p><strong>Why is the permutation <span class="math inline">P(16,
+8)</span>?</strong></p>
 </div>
 </div>
 </div>
@@ -329,6 +338,9 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">C(14, 6) = C(14, 8) =
 \dfrac{14!}{8!6!}</span></p>
+<p>We can say <span class="math inline">C(14, 6) = C(14, 8)</span>
+because <span class="math inline">\dfrac{14!}{8!6!} =
+\dfrac{14!}{6!8!}</span>.</p>
 <p>TODO</p>
 </div>
 </div>

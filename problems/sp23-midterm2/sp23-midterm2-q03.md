@@ -20,14 +20,28 @@ Remember, some pieces look the same.
 
 # BEGIN SOLUTION
 
-$\dfrac{16!}{8!2!2!2!} = \dfrac{P(16,8)}{2^3} = C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1)$
+$\dfrac{16!}{8!2!2!2!}$
 
-As you can see above there are a few ways to write the answer. You could use permutations or combinatorics.
+This answer can be found using combinatorics or permutations.
 <br> 
+
+$C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}$
 
 Here is the explanation using combinatorics:
 
-We know from the problem we are only looking at the $16$ white pieces. This means we know we are doing $16$ choose something. From here we can look at the different possible types of chess pieces (pawns, bishops, knights, rooks, queen, and king). This means we can write $C(16, 8)$ because from $16$ pieces we are choosing $8$ pawns. Then we can multiply it by $C(8, 2)$ because $16 - 8 = 8$ pieces left and there are $2$ bishops. Following this same logic we get $C(8 - 2 = 6, 2)$ for knights, $C(6-2 = 4, 2)$ for rooks, $C(4 - 2, 1)$ for the queen, and $C(2 - 1 = 1, 1)$ for the king.
+We know from the problem we are only looking at the $16$ white pieces. This means we know we are doing $16$ choose something. From here we can look at the different possible types of chess pieces (pawns, bishops, knights, rooks, queen, and king). This means we can write $C(16, 8)$ because from $16$ pieces we are choosing $8$ pawns (we know there will be $8!$ many different ways to line up the $8$ pawns). Then we can multiply it by $C(8, 2)$ because $16 - 8 = 8$ pieces left and there are $2$ bishops. Following this same logic we get $C(8 - 2 = 6, 2)$ for knights, $C(6-2 = 4, 2)$ for rooks, $C(4 - 2, 1)$ for the queen, and $C(2 - 1 = 1, 1)$ for the king.
+
+<br>
+
+$\dfrac{P(16,8)}{2^3} = \dfrac{16!}{8!2!2!2!}$
+
+Recall that permutations require the order matters. For the lineup because pieces of the same kind are **indistinguishable** from one another we say the order does not matter.
+
+
+TODO
+
+**Why is the permutation $P(16, 8)$?**
+
 
 # END SOLUTION
 
@@ -35,12 +49,13 @@ We know from the problem we are only looking at the $16$ white pieces. This mean
 
 # BEGIN SUBPROB
 
-A chess player lines up all 16 **pawns** from the set of
-chess pieces. How many lineups have white pawns on both ends?
+A chess player lines up all 16 **pawns** from the set of chess pieces. How many lineups have white pawns on both ends?
 
 # BEGIN SOLUTION
 
 $C(14, 6) = C(14, 8) = \dfrac{14!}{8!6!}$
+
+We can say $C(14, 6) = C(14, 8)$ because $\dfrac{14!}{8!6!} = \dfrac{14!}{6!8!}$.
 
 TODO
 
