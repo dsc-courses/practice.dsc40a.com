@@ -52,7 +52,7 @@ True or False: Having two pawns is **independent** of having two white pieces.
 
 # BEGIN SOLUTION
 
-True.
+False.
 
 We know that two probabilities are independent of each other if $\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B)$.
 
@@ -75,6 +75,8 @@ We solved for $\mathbb{P}(B|A)$ in part A of the problem: $\frac{7}{30}$. We als
 $$
 \frac{15}{62} \cdot \frac{7}{30} = \frac{7}{124}
 $$
+
+We can see that $\mathbb{P}(A \cap B) \neq \mathbb{P}(A) \cdot \mathbb{P}(B)$ because $\frac{7}{124} \neq \frac{225}{3844}$, so the answer is False.
 
 # END SOLUTION
 
