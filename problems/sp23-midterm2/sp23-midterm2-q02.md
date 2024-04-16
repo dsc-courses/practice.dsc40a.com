@@ -1,15 +1,15 @@
 # BEGIN PROB
 
-A set of chess pieces has 32 pieces. 16 of these are black and 16 of these are white. **In each color**, the 16 pieces are:
+A set of chess pieces has $32$ pieces. $16$ of these are black and $16$ of these are white. **In each color**, the $16$ pieces are:
 
-- 8 pawns,
-- 2 bishops,
-- 2 knights,
-- 2 rooks,
-- 1 queen, and 
-- 1 king.
+- $8$ pawns,
+- $2$ bishops,
+- $2$ knights,
+- $2$ rooks,
+- $1$ queen, and 
+- $1$ king.
 
-When there are multiple pieces of a given color and type (for example, 8 white pawns), we will assume they are **indistinguishable** from one another.
+When there are multiple pieces of a given color and type (for example, $8$ white pawns), we will assume they are **indistinguishable** from one another.
 
 Suppose you randomly select $2$ pieces from a set of $32$ chess pieces, **without replacement**.
 
