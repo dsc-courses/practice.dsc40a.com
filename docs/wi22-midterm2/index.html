@@ -287,6 +287,13 @@ aria-labelledby="heading6" data-bs-parent="#accordionExample">
 </div>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
+<p>Recall in the game Stringle, players try to guess a randomly
+generated string. There is a new Stringle string available each day.</p>
+<p>Each day’s Stringle string is a <strong>six-letter string</strong>,
+where each letter is chosen uniformly at random, <strong>with
+replacement</strong>, from among the 26 letters of the English alphabet.
+This means Stringle strings can have repeated letters, and they do not
+need to have any meaning as an English word.</p>
 <p>For this problem, we’ll say that there are six vowels: A, E, I, O, U,
 and Y. Consider the following three events:</p>
 <ul>
@@ -296,10 +303,7 @@ Stringle string starts with a vowel.</p></li>
 Stringle string starts with a letter in the first half of the alphabet
 (A through M, inclusive).</p></li>
 <li><p><span class="math inline">C</span> is the event that today’s
-Stringle string does not start with a</p>
-<ol start="26" type="A">
-<li></li>
-</ol></li>
+Stringle string does not start with a Z.</p></li>
 </ul>
 <p>Which of the following is true?</p>
 <ul class="task-list">
@@ -327,6 +331,56 @@ aria-labelledby="heading7" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally dependent given <span class="math inline">C</span>.</p>
+<p>We can test if <span class="math inline">A</span> and <span class="math inline">B</span> are independent by using the equation:
+<span class="math inline">\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot
+\mathbb{P}(B)</span>.</p>
+<ul>
+<li>We know <span class="math inline">\mathbb{P}(A) =
+\frac{6}{26}</span> because there are six vowels the Stringle string can
+start with out of <span class="math inline">26</span> letters in the
+alphabet.</li>
+<li>We know <span class="math inline">\mathbb{P}(B) = \frac{13}{26} =
+\frac{1}{2}</span> because the letters A through M is numbered <span class="math inline">1</span> to <span class="math inline">13</span>, so
+there are <span class="math inline">13</span> possible letters out of
+<span class="math inline">26</span>.</li>
+<li>We know <span class="math inline">\mathbb{P}(A \cap B) =
+\frac{3}{26}</span> because the letters A, E, and I are between A and M
+and are also vowels out of all <span class="math inline">26</span>
+letters.</li>
+</ul>
+<p>When plugging these values into the equation we get: <span class="math display">
+\begin{align*}
+\mathbb{P}(A \cap B) &amp;= \mathbb{P}(A) \cdot \mathbb{P}(B) \\
+\frac{3}{26} &amp;= \frac{6}{26} \cdot \frac{1}{2} \\
+\frac{3}{26} &amp;= \frac{3}{26}
+\end{align*}
+</span></p>
+<p>This proves that <span class="math inline">A</span> and <span class="math inline">B</span> are independent.</p>
+<p>Recall we can test if something is conditionally independent by doing
+<span class="math inline">\mathbb{P}(A \cap B|C) = \mathbb{P}(A|C) \cdot
+\mathbb{P}(B|C)</span>.</p>
+<ul>
+<li>We know there are <span class="math inline">25</span> letters in the
+alphabet that are not equal to Z.</li>
+<li>We can calculate <span class="math inline">\mathbb{P}(A|C) =
+\frac{6}{25}</span> because there are six vowels out of the <span class="math inline">25</span> non-Z letters.</li>
+<li>We can calculate <span class="math inline">\mathbb{P}(B|C) =
+\frac{13}{25}</span> because there are <span class="math inline">13</span> letters out of the <span class="math inline">25</span> non-Z letters.</li>
+<li>We can calculate <span class="math inline">\mathbb{P}(A \cap B|C) =
+\frac{3}{25}</span> because the letters A, E, and I are between A and M
+and are also vowels out of <span class="math inline">25</span> non-Z
+letters.</li>
+</ul>
+<p>When plugging these values into the equation we get: <span class="math display">
+\begin{align*}
+\mathbb{P}(A \cap B|C) &amp;= \mathbb{P}(A|C) \cdot \mathbb{P}(B|C) \\
+\frac{3}{25} &amp;= \frac{6}{25} \cdot \frac{13}{25} \\
+\frac{3}{25} &amp;\neq \frac{78}{625}
+\end{align*}
+</span></p>
+<p>Since <span class="math inline">\mathbb{P}(A \cap B|C) \neq
+\mathbb{P}(A|C) \cdot \mathbb{P}(B|C)</span> this means that <span class="math inline">A</span> and <span class="math inline">B</span> are
 conditionally dependent given <span class="math inline">C</span>.</p>
 </div>
 </div>
