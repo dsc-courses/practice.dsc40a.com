@@ -142,7 +142,8 @@ than the median.</p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
 <p>You and a friend independently perform gradient descent on the same
-function, but after <span class="math inline">200</span> iterations, you
+function (meaning everything is the same except for the conditions
+below), but after <span class="math inline">200</span> iterations, you
 have different results. Which of the following is sufficient <strong>on
 its own</strong> to explain the difference in your results?
 <strong>Select all that apply.</strong></p>
@@ -166,8 +167,8 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>QUESTIONABLE</strong></p>
-<p><em>You and your friend chose different learning rates.</em></p>
+<p>The function is nonconvex and You and your friend chose different
+learning rates.</p>
 <p>If the function is nonconvex it is possible for you and your friend
 to end in different places if you start in different places. For example
 if you have a polynomial with a local minima and a global minimum then

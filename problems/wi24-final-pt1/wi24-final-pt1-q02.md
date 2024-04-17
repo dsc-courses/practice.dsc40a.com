@@ -1,9 +1,6 @@
 # BEGIN PROB
 
-You and a friend independently perform gradient descent
-on the same function, but after $200$ iterations, you have different
-results. Which of the following is sufficient **on its own** to explain
-the difference in your results? **Select all that apply.**
+You and a friend independently perform gradient descent on the same function (meaning everything is the same except for the conditions below), but after $200$ iterations, you have different results. Which of the following is sufficient **on its own** to explain the difference in your results? **Select all that apply.**
 
 [ ] The function is nonconvex.
 [ ] The function is not differentiable.
@@ -13,9 +10,7 @@ the difference in your results? **Select all that apply.**
 
 # BEGIN SOLUTION
 
-**QUESTIONABLE**
-
-*You and your friend chose different learning rates.*
+The function is nonconvex and You and your friend chose different learning rates.
 
 If the function is nonconvex it is possible for you and your friend to end in different places if you start in different places. For example if you have a polynomial with a local minima and a global minimum then it is possible you could find the local minima and your friend could find the global minima, which would mean you have different results.
 
