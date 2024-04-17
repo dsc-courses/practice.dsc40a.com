@@ -78,7 +78,7 @@ the <strong>median</strong> absolute error of the constant prediction
 mean absolute error <span class="math inline">R_{abs}(h)</span>).</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>(3 points) For the dataset <span class="math inline">\{4, 9, 10, 14,
+<p>For the dataset <span class="math inline">\{4, 9, 10, 14,
 15\}</span>, what is <span class="math inline">M_{abs}(9)</span>?</p>
 <p><span class="math inline">M_{abs}(9) =</span></p>
 <div id="accordionExample" class="accordion">
@@ -95,7 +95,17 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">5</span></p>
-<p>TODO</p>
+<p>The first step we need to do is calculate the absolute errors (<span class="math inline">|y_i - h|</span>).</p>
+<p><span class="math display">
+\begin{align*}
+\text{Absolute Errors} &amp;= \{|4-9|, |9-9|, |10-9|, |14-9|, |15-9|\}
+\\
+\text{Absolute Errors} &amp;= \{|-5|, |0|, |1|, |5|, |6|\} \\
+\text{Absolute Errors} &amp;= \{5, 0, 1, 5, 6\}
+\end{align*}
+</span></p>
+<p>Now we have to order the values inside of the absolute errors: <span class="math inline">\{0, 1, 5, 5, 6\}</span>. We can see the median is
+<span class="math inline">5</span>, so <span class="math inline">M_{abs}(9) =5</span>.</p>
 </div>
 </div>
 </div>
@@ -120,7 +130,38 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">5</span> or <span class="math inline">15</span></p>
-<p>TODO</p>
+<p>Our goal is to find another number that will give us the same median
+of absolute errors as in part A.</p>
+<p>One way to do this is to plug in a number and guess. Another way
+requires noticing you can modify <span class="math inline">10</span>
+(the middle element) to become <span class="math inline">5</span> in
+either direction (negative or positive) because of the absolute
+value.</p>
+<p>We can solve this equation to get <span class="math inline">|10-x| =
+5 \rightarrow x = 15 \text{ and } x = 5</span>.</p>
+<p>We can then test this by following the same steps as we did in part
+A.</p>
+<p><strong>For <span class="math inline">x = 15</span>:</strong> <span class="math display">
+\begin{align*}
+\text{Absolute Errors} &amp;= \{|4-15|, |9-15|, |10-15|, |14-15|,
+|15-15|\} \\
+\text{Absolute Errors} &amp;= \{|-11|, |-6|, |-5|, |-1|, |0|\} \\
+\text{Absolute Errors} &amp;= \{11, 6, 5, 1, 0\}
+\end{align*}
+</span></p>
+<p>Then we order the elements to get the absolute errors: <span class="math inline">\{0, 1, 5, 6, 11\}</span>. We can see the median is
+<span class="math inline">5</span>, so <span class="math inline">M_{abs}(15) =5</span>.</p>
+<p><strong>For <span class="math inline">x = 5</span>:</strong> <span class="math display">
+\begin{align*}
+\text{Absolute Errors} &amp;= \{|4-5|, |9-5|, |10-5|, |14-5|, |15-5|\}
+\\
+\text{Absolute Errors} &amp;= \{|-1|, |4|, |5|, |9|, |10|\} \\
+\text{Absolute Errors} &amp;= \{1, 4, 5, 9, 10\}
+\end{align*}
+</span></p>
+<p>We do not have to re-order the elements because they are in order
+already. We can see the median is <span class="math inline">5</span>, so
+<span class="math inline">M_{abs}(5) =5</span>.</p>
 </div>
 </div>
 </div>
@@ -143,12 +184,12 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The numbers 5 and 15 are clearly bad predictions (close to the
+<p>The numbers <span class="math inline">5</span> and <span class="math inline">15</span> are clearly bad predictions (close to the
 extreme values in the dataset), yet they are considered just as good a
-prediction by this metric as the number 9, which is roughly in the
-center of the dataset. Intuitively, 9 is a much better prediction, but
-this way of measuring the quality of a prediction does not recognize
-that.</p>
+prediction by this metric as the number <span class="math inline">9</span>, which is roughly in the center of the
+dataset. Intuitively, <span class="math inline">9</span> is a much
+better prediction, but this way of measuring the quality of a prediction
+does not recognize that.</p>
 </div>
 </div>
 </div>
