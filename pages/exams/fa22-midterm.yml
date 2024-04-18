@@ -1,0 +1,9 @@
+title: 'Fall 2022 Midterm Exam'
+instructors: Son & Mahdi
+context: This exam was administered in person. The exam was open-notes, open-book. Students had **50 minutes** to take this exam.
+show_solution: true
+problems:
+  - fa22-midterm/fa22-midterm-q01
+  - fa22-midterm/fa22-midterm-q02
+  - fa22-midterm/fa22-midterm-q03
+  - fa22-midterm/fa22-midterm-q04
