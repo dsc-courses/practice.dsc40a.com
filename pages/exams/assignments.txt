@@ -15,12 +15,12 @@ Spring 2023 midterm 1 (midterm1A.tex)
 
 Zoe: Spring 2023 midterm 2 (midterm 2A.tex)
 - Added in solutions
-    - Need explanations
+- Added explanations for all but question 3
 
 Zoe: Spring 2023 final part 1 (final1A.tex)
 - Added in solutions
     - Need explanations
-
+    
 Javier: Spring 2023 final part 2 (final2A.tex)
 
 Javier: Winter 2022 midterm 1 (mockmidterm1.tex)
@@ -28,7 +28,7 @@ Javier: Winter 2022 midterm 1 (mockmidterm1.tex)
 Zoe: Winter 2022 midterm 2 (mockmidterm2.tex)
 - Added in solutions
     - Need explanations
-- Need to fix formatting
+- Fixed Formatting
 
 Nick: the zip fa22-final.zip, attached, has the .tex for the Fall 2022 final (Final_revised.tex).
 

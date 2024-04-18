@@ -70,9 +70,14 @@ open-book, but no calculator. Students had <strong>50 minutes</strong>
 to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>[(8 points)]Suppose there is a dataset containing 10,000 integers,
-2,500 of them are 3, 2,500 of them are 5, 4,500 of them are 7, and 500
-of them are 9.</p>
+<p>Suppose there is a dataset containing <span
+class="math inline">10,000</span> integers, <span
+class="math inline">2,500</span> of them are <span
+class="math inline">3</span>, <span class="math inline">2,500</span> of
+them are <span class="math inline">5</span>, <span
+class="math inline">4,500</span> of them are <span
+class="math inline">7</span>, and <span class="math inline">500</span>
+of them are <span class="math inline">9</span>.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>(4 points) Calculate the median of this dataset.</p>
@@ -90,7 +95,15 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">6</span></p>
-<p>TODO</p>
+<p>We know there is an even number of integers in this dataset because
+<span class="math inline">10,000 \% 2 = 0</span>. We can find the middle
+of the dataset by doing <span class="math inline">\frac{10,000}{2} =
+5,000</span>. This means the element in the <span class="math inline">5,000</span> position and <span class="math inline">5,001</span> position can give us our median. The
+element at the <span class="math inline">5,000</span> position is a
+<span class="math inline">5</span> because <span class="math inline">2,500 + 2,500 = 5,000</span>. The element at the
+<span class="math inline">5,001</span> position is a <span class="math inline">7</span> because the next number after <span class="math inline">5</span> is <span class="math inline">7</span>. We
+can then plug <span class="math inline">5</span> and <span class="math inline">7</span> into the equation: <span class="math display">\frac{x_{5,000} + x_{5,001}}{2} = \frac{5 + 7}{2} =
+6</span></p>
 </div>
 </div>
 </div>
@@ -118,7 +131,9 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The mean is smaller than the median</p>
-<p>TODO</p>
+<p>We can calculate the mean by doing <span class="math display">\frac{2,500 * 3 + 2,500 * 5 + 4,500 * 7 + 500 *
+9}{10,000} = 5.6</span> Using part A we know that <span class="math inline">5.6 &lt; 6</span>, which means the mean is smaller
+than the median.</p>
 </div>
 </div>
 </div>
@@ -126,11 +141,14 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p>[(8 points)] You and a friend independently perform gradient descent
-on the same function, but after 200 iterations, you have different
-results. Which of the following is sufficient <strong>on its
-own</strong> to explain the difference in your results? <strong>Select
-all that apply.</strong></p>
+<p>You and a friend independently perform gradient descent on the same
+function, but after <span class="math inline">200</span> iterations, you
+have different results. Which of the following is sufficient <strong>on
+its own</strong> to explain the difference in your results?
+<strong>Note:</strong> When we say “same function” we assume the
+learning rate and initial predictions are the same too until said
+otherwise.</p>
+<p><strong>Select all that apply.</strong></p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> The function is nonconvex.</p></li>
 <li><p><input type="checkbox" disabled="" /> The function is not differentiable.</p></li>
@@ -151,20 +169,39 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>You and your friend chose different learning rates.</p>
+<p>“The function is nonconvex” and “You and your friend chose different
+learning rates.”</p>
+<p>If the function is nonconvex it is possible for you and your friend
+to end in different places if you start in different places. For example
+if you have a polynomial with a local minima and a global minimum then
+it is possible you could find the local minima and your friend could
+find the global minima, which would mean you have different results.</p>
+<p>If the function is not differentiable then you cannot perform
+gradient descent, so this cannot be an answer.</p>
+<p>If you and your friend chose different learning rates it is possible
+to have different results because if you have a really large learning
+rate you might be hopping over the global minimum without properly
+converging. Your friend could choose a smaller learning rate, which will
+allow you to converge to the global minimum.</p>
+<p>If you and your friend chose the same initial predictions you are
+guaranteed to end up in the same spot.</p>
+<p>Because two of the option choices are possible the answer cannot be
+“None of the above.”</p>
 </div>
 </div>
 </div>
 </div>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p>[(10 points)] 3. Suppose there is a dataset contains 4 values: -2,
--1, 2, 4. You would like to use gradient descent to minimize the mean
-square error over this dataset.</p>
+<p>Suppose there is a dataset contains four values: <span
+class="math inline">-2</span>, <span class="math inline">-1</span>,
+<span class="math inline">2</span>, <span class="math inline">4</span>.
+You would like to use gradient descent to minimize the mean square error
+over this dataset.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>(2 points) Write down the expression of mean square error and its
-derivative given this dataset</p>
+<p>Write down the expression of mean square error and its derivative
+given this dataset.</p>
 <p><span class="math inline">R_{sq}(h)</span> =</p>
 <p><span class="math inline">\frac{dR_{sq}(h)}{dh}</span> =</p>
 <div id="accordionExample" class="accordion">
@@ -182,17 +219,34 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">R_{sq}(h) =
 \frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2</span></p>
-<p>TODO</p>
+<p>Recall the equation for <span class="math inline">R_{sq}(h) =
+\frac{1}{n}\sum_{i=1}^{n}(y_i-h)^2</span>, so we simply need to replace
+<span class="math inline">n</span> with <span class="math inline">4</span> because there are <span class="math inline">4</span> elements in our dataset.</p>
 <p><span class="math inline">\frac{dR_{sq}(h)}{dh} =
 \frac{1}{2}\sum_{i=1}^{4}(h-y_i)</span></p>
-<p>TODO</p>
+<p>Since we have the equation for <span class="math inline">R_{sq}(h)</span> we can calculate the
+derivative:</p>
+<p><span class="math display">
+\begin{align*}
+\frac{dR_{sq}(h)}{dh} &amp;=
+\frac{dR_{sq}(h)}{dh}(\frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2) \\
+&amp;= \frac{1}{4}\sum_{i=1}^{4}\frac{dR_{sq}(h)}{dh}((y_i-h)^2) \\
+&amp;\text{We can use the chain rule to find the derivative of
+$(y_i-h)^2$.} \\
+&amp;\text{Recall the chain rule is: $\frac{df(x)}{dx}[(f(x))^n] =
+n(f(x))^{n-1} * f'(x)$.} \\
+&amp;= \frac{1}{4}\sum_{i=1}^{4}2(y_i-h) * -1 \\
+&amp;= \frac{1}{4}\sum_{i=1}^{4} 2(h - y_i) \\
+&amp;= \frac{1}{2}\sum_{i=1}^{4} (h-y_i)
+\end{align*}
+</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>(4 points) Suppose you choose the initial position to be <span
+<p>Suppose you choose the initial position to be <span
 class="math inline">h_0</span> and the learning rate to be <span
 class="math inline">\frac{1}{4}</span>. After two gradient descent
 steps, <span class="math inline">h_2=\frac{1}{4}</span>. What is the
@@ -221,7 +275,7 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 h_{1} - 4)\\
         &amp;= h_{1} - \frac{1}{8}(4h_{1} -3)\\
 \end{aligned}</span> Solving this equation, we obtain that <span class="math inline">h_{1} = -\frac{1}{4}</span>. We can then repeat this
-step once more to obtain h_0: <span class="math display">\begin{aligned}
+step once more to obtain <span class="math inline">h_0</span>: <span class="math display">\begin{aligned}
     -\frac{1}{4} &amp;= h_{0} - \alpha \frac{dR_{sq}(h_{0})}{dh}\\
         &amp;= h_{0} - \frac{1}{4}(h_{0} + 2 + h_{0} + 1 + h_{0} - 2 +
 h_{0} - 4)\\
@@ -233,10 +287,10 @@ h_{0} - 4)\\
 </div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>(4 points) Given that we set the tolerance of gradient descent to be
-0.1. How many <strong>additional steps</strong> beyond <span
-class="math inline">h_2</span> do we need to take to reach
-convergence?</p>
+<p>Given that we set the tolerance of gradient descent to be <span
+class="math inline">0.1</span>. How many <strong>additional
+steps</strong> beyond <span class="math inline">h_2</span> do we need to
+take to reach convergence?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> 0</p></li>
 <li><p><input type="radio" disabled="" /> 1</p></li>
@@ -277,9 +331,9 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
     &amp;= \frac{5}{8} - \frac{1}{8}(\frac{5}{2}-3)\\
     &amp;= \frac{11}{16}\\
 \end{aligned}</span> from <span class="math inline">h_4</span> to <span class="math inline">h_5</span>, the change is smaller than the
-tolerance. That means we need additional 2 or 3 steps to reach
-convergence (depending on if you actually perform <span class="math inline">h_4</span> to <span class="math inline">h_5</span>,
-so both 2 and 3 are considered correct answer).</p>
+tolerance. That means we need additional <span class="math inline">2</span> or <span class="math inline">3</span> steps
+to reach convergence (depending on if you actually perform <span class="math inline">h_4</span> to <span class="math inline">h_5</span>,
+so both <span class="math inline">2</span> and <span class="math inline">3</span> are considered correct answer).</p>
 </div>
 </div>
 </div>
@@ -287,60 +341,60 @@ so both 2 and 3 are considered correct answer).</p>
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p>(14 points) Albert collected 400 data points from a radiation
-detector. Each data point contains 3 feature: feature A, feature B and
-feature C, along with the true particle energy E. Albert want to design
-a linear regression algorithm to predict the energy E of each particle,
-given one or a combination(s) of feature A, B, C. As the first step,
-Albert calculated the correlation coefficients among A, B, C and E. He
-wrote it down in the following table, where each cell of the table
-represents the correlaton of two terms:</p>
+<p>Albert collected 400 data points from a radiation detector. Each data
+point contains 3 feature: feature A, feature B and feature C, along with
+the true particle energy E. Albert want to design a linear regression
+algorithm to predict the energy E of each particle, given one or a
+combination(s) of feature A, B, C. As the first step, Albert calculated
+the correlation coefficients among A, B, C and E. He wrote it down in
+the following table, where each cell of the table represents the
+correlaton of two terms:</p>
 <div class="center">
 <table>
 <thead>
 <tr class="header">
 <th></th>
-<th style="text-align: left;"><strong>Feature A</strong></th>
-<th style="text-align: left;"><strong>Feature B</strong></th>
-<th style="text-align: left;"><strong>Feature C</strong></th>
-<th style="text-align: left;"><strong>Energy E</strong></th>
+<th>Feature A Feat</th>
+<th>ure B Feature</th>
+<th style="text-align: left;">C Energy E</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Feature A</strong></td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">-0.99</td>
-<td style="text-align: left;">0.13</td>
+<td>Feature A 1</td>
+<td>-0.9</td>
+<td>9 0.13</td>
 <td style="text-align: left;">0.8</td>
+<td></td>
 </tr>
 <tr class="even">
-<td><strong>Feature B</strong></td>
-<td style="text-align: left;">-0.99</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">0.25</td>
-<td style="text-align: left;">-0.95</td>
+<td>Feature B -0.9</td>
+<td>9 1</td>
+<td>0.25</td>
+<td style="text-align: left;">-0.9</td>
+<td>5</td>
 </tr>
 <tr class="odd">
-<td><strong>Feature C</strong></td>
-<td style="text-align: left;">0.13</td>
-<td style="text-align: left;">0.25</td>
-<td style="text-align: left;">1</td>
+<td>Feature C 0.13</td>
+<td>0.25</td>
+<td>1</td>
 <td style="text-align: left;">0.72</td>
+<td></td>
 </tr>
 <tr class="even">
-<td><strong>Energy E</strong></td>
-<td style="text-align: left;">0.8</td>
-<td style="text-align: left;">-0.95</td>
-<td style="text-align: left;">0.72</td>
+<td>Energy E 0.8</td>
+<td>-0.9</td>
+<td>5 0.72</td>
 <td style="text-align: left;">1</td>
+<td></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>(4pt) Albert want to start with a simple model: fitting only a single
+<p>Albert want to start with a simple model: fitting only a single
 feature to obtain the true energy (i.e. <span class="math inline">y =
 w_0+w_1 x</span>). Which feature should he choose as <span
 class="math inline">x</span> to get the lowest mean square error?</p>
@@ -372,8 +426,8 @@ sign in the weight.</p>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>(2pt) Albert want to add another feature into his linear regression
-in part a) to further boost the model’s performance. (i.e. <span
+<p>Albert want to add another feature into his linear regression in part
+a) to further boost the model’s performance. (i.e. <span
 class="math inline">y = w_0+w_1 x + +w_2 x_2</span>) Which feature
 should he choose as <span class="math inline">x_2</span> to make
 additional improvements?</p>
@@ -409,9 +463,9 @@ provides almost the same information as B.</p>
 the form: <span class="math display">\begin{aligned}
 H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
 \end{aligned}</span></p>
-<p>(3pt)Given this prediction rule, What are the dimensions of the
-design matrix X? AKA what is <span class="math inline">r</span> and
-<span class="math inline">c</span>?</p>
+<p>Given this prediction rule, What are the dimensions of the design
+matrix X? AKA what is <span class="math inline">r</span> and <span
+class="math inline">c</span>?</p>
 <p><span class="math inline">r \text{rows} \times c
 \text{columns}</span></p>
 <div id="accordionExample" class="accordion">
@@ -435,10 +489,10 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <h3 id="problem-4.4">Problem 4.4</h3>
-<p>(5pt) Now Albert solve the normal equations and find the solution to
-be: <span class="math display">\vec{w}^* = \begin{bmatrix} w_0^* \\
-w_1^* \\ w_2^*  \end{bmatrix}</span> To improve on this result, Albert
-decides to modify his design matrix with the following steps:</p>
+<p>Now Albert solve the normal equations and find the solution to be:
+<span class="math display">\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \\
+w_2^*  \end{bmatrix}</span> To improve on this result, Albert decides to
+modify his design matrix with the following steps:</p>
 <ol type="1">
 <li><p>Add 1 to every entry to the first column</p></li>
 <li><p>Interchange the second and the third column</p></li>

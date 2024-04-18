@@ -7,7 +7,7 @@ The standard acceleration of gravity $g$ is a universal constant of nature. That
 
 $$G = m \times g$$
 
-Where $G$ is the weight of an object and $m$ is the mass of an object. Issac is interested in measuring $g$. He prepared a dumbbell with mass 10 in his garage and measured the weight of it three times. The three measured weights were: 102, 98, 100.
+Where $G$ is the weight of an object and $m$ is the mass of an object. Issac is interested in measuring $g$. He prepared a dumbbell with mass $10$ in his garage and measured the weight of it three times. The three measured weights were: $102$, $98$, and $100$.
 
 # BEGIN SUBPROB
 
@@ -37,7 +37,7 @@ After his measurement, an alien from the Frequentist Galaxy visited Issac's gara
 
 # BEGIN SOLUTION
 
-Frequentists do not assign probability to hypotheses, so $g$ is always equal to 9.80665 and it does not change. Issac's measurement deviates from the actual $g$ value because of uncertainties in the measurement.
+Frequentists do not assign probability to hypotheses, so $g$ is always equal to $9.80665$ and it does not change. Issac's measurement deviates from the actual $g$ value because of uncertainties in the measurement.
 
 # END SOLUTION
 
@@ -45,14 +45,14 @@ Frequentists do not assign probability to hypotheses, so $g$ is always equal to 
 
 # BEGIN SUBPROB
 
-After the first alien left, another alien from the Bayesian galaxy arrived. This alien told Issac: "I think $g$ could take any value: it could be 1, could be 10, could be 100". Using the Bayes equation and Issac's measurement, convince the alien that $g$ should be close to 10.
+After the first alien left, another alien from the Bayesian galaxy arrived. This alien told Issac: "I think $g$ could take any value: it could be $1$, could be $10$, could be $100$". Using the Bayes equation and Issac's measurement, convince the alien that $g$ should be close to $10$.
 
 # BEGIN SOLUTION
 The Bayes equation reads:
 
 $$\text{Posterior} = \frac{\text{Prior}\times \text{Likelihood}}{\text{Evidence}}$$
 
-The alien provides a uniform prior, or $P(\text{Hypothesis})$. They assume $g$ could take many different possible values. However, the likelihood term is $P(\text{Data|Hypothesis})$. For the hypothesis of $g = 1$, since it does not agree with data, the likelihood is very low and does not contribute to posterior; the same argument holds for $g = 100$. Only when $g$ = 10 will the likelihood be high.
+The alien provides a uniform prior, or $P(\text{Hypothesis})$. They assume $g$ could take many different possible values. However, the likelihood term is $P(\text{Data|Hypothesis})$. For the hypothesis of $g = 1$, since it does not agree with data, the likelihood is very low and does not contribute to posterior; the same argument holds for $g = 100$. Only when $g$ = $10$ will the likelihood be high.
 # END SOLUTION
 
 # END SUBPROB

@@ -78,7 +78,7 @@ the <strong>median</strong> absolute error of the constant prediction
 mean absolute error <span class="math inline">R_{abs}(h)</span>).</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>(3 points) For the dataset <span class="math inline">\{4, 9, 10, 14,
+<p>For the dataset <span class="math inline">\{4, 9, 10, 14,
 15\}</span>, what is <span class="math inline">M_{abs}(9)</span>?</p>
 <p><span class="math inline">M_{abs}(9) =</span></p>
 <div id="accordionExample" class="accordion">
@@ -95,7 +95,17 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">5</span></p>
-<p>TODO</p>
+<p>The first step we need to do is calculate the absolute errors (<span class="math inline">|y_i - h|</span>).</p>
+<p><span class="math display">
+\begin{align*}
+\text{Absolute Errors} &amp;= \{|4-9|, |9-9|, |10-9|, |14-9|, |15-9|\}
+\\
+\text{Absolute Errors} &amp;= \{|-5|, |0|, |1|, |5|, |6|\} \\
+\text{Absolute Errors} &amp;= \{5, 0, 1, 5, 6\}
+\end{align*}
+</span></p>
+<p>Now we have to order the values inside of the absolute errors: <span class="math inline">\{0, 1, 5, 5, 6\}</span>. We can see the median is
+<span class="math inline">5</span>, so <span class="math inline">M_{abs}(9) =5</span>.</p>
 </div>
 </div>
 </div>
@@ -120,7 +130,38 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">5</span> or <span class="math inline">15</span></p>
-<p>TODO</p>
+<p>Our goal is to find another number that will give us the same median
+of absolute errors as in part A.</p>
+<p>One way to do this is to plug in a number and guess. Another way
+requires noticing you can modify <span class="math inline">10</span>
+(the middle element) to become <span class="math inline">5</span> in
+either direction (negative or positive) because of the absolute
+value.</p>
+<p>We can solve this equation to get <span class="math inline">|10-x| =
+5 \rightarrow x = 15 \text{ and } x = 5</span>.</p>
+<p>We can then test this by following the same steps as we did in part
+A.</p>
+<p><strong>For <span class="math inline">x = 15</span>:</strong> <span class="math display">
+\begin{align*}
+\text{Absolute Errors} &amp;= \{|4-15|, |9-15|, |10-15|, |14-15|,
+|15-15|\} \\
+\text{Absolute Errors} &amp;= \{|-11|, |-6|, |-5|, |-1|, |0|\} \\
+\text{Absolute Errors} &amp;= \{11, 6, 5, 1, 0\}
+\end{align*}
+</span></p>
+<p>Then we order the elements to get the absolute errors: <span class="math inline">\{0, 1, 5, 6, 11\}</span>. We can see the median is
+<span class="math inline">5</span>, so <span class="math inline">M_{abs}(15) =5</span>.</p>
+<p><strong>For <span class="math inline">x = 5</span>:</strong> <span class="math display">
+\begin{align*}
+\text{Absolute Errors} &amp;= \{|4-5|, |9-5|, |10-5|, |14-5|, |15-5|\}
+\\
+\text{Absolute Errors} &amp;= \{|-1|, |4|, |5|, |9|, |10|\} \\
+\text{Absolute Errors} &amp;= \{1, 4, 5, 9, 10\}
+\end{align*}
+</span></p>
+<p>We do not have to re-order the elements because they are in order
+already. We can see the median is <span class="math inline">5</span>, so
+<span class="math inline">M_{abs}(5) =5</span>.</p>
 </div>
 </div>
 </div>
@@ -143,12 +184,12 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The numbers 5 and 15 are clearly bad predictions (close to the
+<p>The numbers <span class="math inline">5</span> and <span class="math inline">15</span> are clearly bad predictions (close to the
 extreme values in the dataset), yet they are considered just as good a
-prediction by this metric as the number 9, which is roughly in the
-center of the dataset. Intuitively, 9 is a much better prediction, but
-this way of measuring the quality of a prediction does not recognize
-that.</p>
+prediction by this metric as the number <span class="math inline">9</span>, which is roughly in the center of the
+dataset. Intuitively, <span class="math inline">9</span> is a much
+better prediction, but this way of measuring the quality of a prediction
+does not recognize that.</p>
 </div>
 </div>
 </div>
@@ -184,7 +225,41 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Graph 2</p>
-<p>TODO</p>
+<p>The important thing to note here is the y axis is equal to <span class="math inline">R_{abs}(h)</span> and the x axis is equal to our
+<span class="math inline">h</span>. The easiest way to figure out which
+graph belongs to which dataset is to choose some numbers for <span class="math inline">h</span> and see if a line matches up with the
+chosen points.</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">h^*</span></th>
+<th><span class="math inline">R_{abs}(h)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">0</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
+\frac{1}{5} * 41 \approx 8</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">8</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
+\frac{1}{5} * 11 = 2</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">18</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
+\frac{1}{5} * 49 \approx 10</span></td>
+</tr>
+</tbody>
+</table>
+<p>When looking at these three places we can see that this dataset
+matches Graph 2.</p>
 </div>
 </div>
 </div>
@@ -214,7 +289,38 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Graph 1</p>
-<p>TODO</p>
+<p>We will use the same approach we used in part A.</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">h^*</span></th>
+<th><span class="math inline">R_{abs}(h)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">0</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
+\frac{1}{5} * 44 \approx 9</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">8</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
+\frac{1}{5} * 34 \approx 7</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">18</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
+\frac{1}{5} * 56 \approx 11</span></td>
+</tr>
+</tbody>
+</table>
+<p>When looking at these three places we can see that this dataset
+matches Graph 1.</p>
 </div>
 </div>
 </div>
@@ -244,7 +350,38 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Graph 3</p>
-<p>TODO</p>
+<p>We will use the same approach we used in the previous parts.</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">h^*</span></th>
+<th><span class="math inline">R_{abs}(h)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">0</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
+\frac{1}{5} * 44 \approx 11</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">8</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
+\frac{1}{5} * 17 \approx 3</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">18</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
+\frac{1}{5} * 33 \approx 7</span></td>
+</tr>
+</tbody>
+</table>
+<p>When looking at these three places we can see that this dataset
+matches Graph 3.</p>
 </div>
 </div>
 </div>
@@ -274,7 +411,40 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Graph 4</p>
-<p>TODO</p>
+<p>We will use the same approach we used in the previous parts.</p>
+<table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">h^*</span></th>
+<th><span class="math inline">R_{abs}(h)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">0</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
+\frac{1}{5} * 62 \approx 12</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">8</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
+\frac{1}{5} * 22 \approx 4</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">18</span></td>
+<td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
+\frac{1}{5} * 28 \approx 6</span></td>
+</tr>
+</tbody>
+</table>
+<p>When looking at these three places we can see that this dataset
+matches Graph 4.</p>
+<p>Another way would be choosing the only option not chosen in the other
+parts yet!</p>
 </div>
 </div>
 </div>
@@ -286,7 +456,10 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <p>You and a friend independently perform gradient descent on the same
 function, but after 100 iterations, you have different results. Which of
 the following is sufficient <strong>on its own</strong> to explain the
-difference in your results? <strong>Select all that apply.</strong></p>
+difference in your results? <strong>Note:</strong> When we say “same
+function” we assume the learning rate and initial predictions are the
+same too until said otherwise.</p>
+<p><strong>Select all that apply.</strong></p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> The function is nonconvex.</p></li>
 <li><p><input type="checkbox" disabled="" /> The function is not differentiable.</p></li>
@@ -307,10 +480,24 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>You and your friend chose different learning rates.</p>
-<p>TODO</p>
-<p>You and your friend chose different initial predictions.</p>
-<p>TODO</p>
+<p>“The function is nonconvex” and “You and your friend chose different
+learning rates.”</p>
+<p>If the function is nonconvex it is possible for you and your friend
+to end in different places if you start in different places. For example
+if you have a polynomial with a local minima and a global minimum then
+it is possible you could find the local minima and your friend could
+find the global minima, which would mean you have different results.</p>
+<p>If the function is not differentiable then you cannot perform
+gradient descent, so this cannot be an answer.</p>
+<p>If you and your friend chose different learning rates it is possible
+to have different results because if you have a really large learning
+rate you might be hopping over the global minimum without properly
+converging. Your friend could choose a smaller learning rate, which will
+allow you to converge to the global minimum.</p>
+<p>If you and your friend chose the same initial predictions you are
+guaranteed to end up in the same spot.</p>
+<p>Because two of the option choices are possible the answer cannot be
+“None of the above.”</p>
 </div>
 </div>
 </div>
@@ -349,7 +536,7 @@ aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>We’ll show the equivalence to the middle formula above. Since the
-denominators are the same, we just need to show <span class="math display">\begin{aligned}
+denominators are the same, we just need to show <span class="math display">\begin{align*}
      \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &amp;=
 \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i.\\
      \displaystyle\sum_{i=1}^n (x_i - \overline x)(y_i + 2) &amp;=
@@ -359,9 +546,9 @@ denominators are the same, we just need to show <span class="math display">\begi
 2\cdot\displaystyle\sum_{i=1}^n (x_i - \overline x) \\
     &amp;= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i + 2\cdot0 \\
     &amp;= \displaystyle\sum_{i=1}^n (x_i - \overline x)y_i\\
-\end{aligned}</span> This proof uses a fact we’ve already seen, that
-<span class="math inline">\displaystyle\sum_{i=1}^n (x_i - \overline x)
-= 0</span>. It is not necesary to re-prove this fact when answering this
+\end{align*}</span></p>
+<p>This proof uses a fact we’ve already seen, that <span class="math inline">\displaystyle\sum_{i=1}^n (x_i - \overline x) =
+0</span>. It is not necesary to re-prove this fact when answering this
 question.</p>
 </div>
 </div>
@@ -410,6 +597,7 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">100 \text{ rows} \times 3 \text{
 columns}</span></p>
+<p>TODO</p>
 </div>
 </div>
 </div>

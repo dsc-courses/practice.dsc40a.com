@@ -1,15 +1,15 @@
 # BEGIN PROB
 
-A set of chess pieces has 32 pieces. 16 of these are black and 16 of these are white. **In each color**, the 16 pieces are:
+A set of chess pieces has $32$ pieces. $16$ of these are black and $16$ of these are white. **In each color**, the $16$ pieces are:
 
-- 8 pawns,
-- 2 bishops,
-- 2 knights,
-- 2 rooks,
-- 1 queen, and 
-- 1 king.
+- $8$ pawns,
+- $2$ bishops,
+- $2$ knights,
+- $2$ rooks,
+- $1$ queen, and 
+- $1$ king.
 
-When there are multiple pieces of a given color and type (for example, 8 white pawns), we will assume they are **indistinguishable** from one another.
+When there are multiple pieces of a given color and type (for example, $8$ white pawns), we will assume they are **indistinguishable** from one another.
 
 Consider an experiment where each of $n$ people selects one piece from their own set of 32 chess pieces, uniformly at random. The **result** of the experiment is a description of the **colors and types** of the pieces each person selected. For example, if $n=3$, one possible result is:
 

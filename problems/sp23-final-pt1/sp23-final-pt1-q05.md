@@ -30,6 +30,8 @@ $r$ rows $\times$ $c$ columns
 
 $100 \text{ rows} \times 3 \text{ columns}$
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -44,8 +46,7 @@ not 0).
 
 # BEGIN SOLUTION
 
-This entry represents the product of the number of cells and number
-of lines of code for the third Jupyter notebook in the training dataset.
+This entry represents the product of the number of cells and number of lines of code for the third Jupyter notebook in the training dataset.
 
 # END SOLUTION
 
