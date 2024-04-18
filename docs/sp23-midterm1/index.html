@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Spring 2023 Midterm Exam 1</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Spring 2023 Midterm Exam 1</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Janine Tiefenbruck</p>
+<p>This exam was administered in person. The only allowed resource was a
+provided reference sheet. Students had <strong>50 minutes</strong> to
+take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>Consider a dataset such that <span class="math inline">60 \leq y_1
+\leq y_2 \leq \dots \leq y_n</span>. Let <span
+class="math inline">R_{abs}(h)</span> represent the mean absolute error
+of a constant prediction <span class="math inline">h</span> on this
+dataset. Suppose we know that <span class="math inline">R_{abs}(27) =
+94.</span></p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Find <span class="math inline">\bar y</span>, or the mean of <span
+class="math inline">\{y_1, y_2, \dots, y_n\}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are several ways to do this problem. One way is to interpret
+mean absolute error of a constant prediction <span class="math inline">h</span> as the average distance of each data point
+to <span class="math inline">h</span>. So we are told that the average
+distance of each data point to <span class="math inline">27</span> is
+<span class="math inline">94</span>. That is, the data points are <span class="math inline">94</span> units away from <span class="math inline">27</span> on average. Since all the data is at least
+<span class="math inline">60</span>, they must be <span class="math inline">94</span> units <em>more</em> than <span class="math inline">27</span>, or <span class="math inline">121</span>,
+on average.</p>
+<center><img height="166" src="../../assets/images/sp23-midterm1/p1/1a.jpg" width="666"/></center>
+<p>You can also arrive at the same answer algebraically using the
+definition of <span class="math inline">R_{abs}(h)</span>. We have <span class="math display">\begin{aligned} R_{abs}(h) &amp;= \frac1n
+\sum_{i=1}^{n}|y_i - h| \\ R_{abs}(27) &amp;= \frac1n \sum_{i=1}^{n}|y_i
+- 27| \\ &amp;= \frac1n \sum_{i=1}^{n}(y_i - 27) \qquad \text{because
+each~} y_i\geq 60 \\ &amp;= \frac1n\left( \sum_{i=1}^{n}y_i -
+\sum_{i=1}^{n}27\right) \\ &amp;= \frac1n\left( n\cdot\bar y -
+n\cdot27\right) \\ &amp;= \bar y - 27 \end{aligned}</span></p>
+<p>Since we are told that <span class="math inline">R(27) = 94</span>,
+we can set <span class="math inline">\bar y - 27 = 94</span>, to find
+that <span class="math inline">\bar y = 121</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Find <span class="math inline">R_{abs}(58)</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Again, we can do this problem in multiple ways. Interpreting <span class="math inline">R_{abs}(h)</span> as the average distance of each
+data point to <span class="math inline">h</span>, we can see that since
+<span class="math inline">58</span> is <span class="math inline">31</span> units closer to each data point than <span class="math inline">27</span>, <span class="math inline">R_{abs}(58) =
+R_{abs}(27) - 31 = 94 - 31 = 63.</span></p>
+<p>Another way to do this problem uses the answer from part (a). Since
+the data points average to <span class="math inline">121</span>, their
+distance to <span class="math inline">58</span> is <span class="math inline">121-58 = 63</span>, on average.</p>
+<center><img height="166" src="../../assets/images/sp23-midterm1/p1/1b.jpg" width="666"/></center>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Which of the following <em>could</em> be the mean absolute deviation
+from the median for this dataset? There is only one correct answer
+choice.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 18</p></li>
+<li><p><input type="radio" disabled="" /> 62</p></li>
+<li><p><input type="radio" disabled="" /> 94</p></li>
+<li><p><input type="radio" disabled="" /> 102</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>One easy way to do this problem is to recognize that none of these
+values are too low, but they may be too high. For example,the mean
+absolute deviation from median can be as low as <span class="math inline">0</span>, when all the data points are the same.
+Since we are told there is only one correct answer and we know that no
+answer choice is too low, that means the correct answer must be the
+lowest option, <span class="math inline">18</span>.</p>
+<p>We can also rule out all the other answer choices to show that they
+are too high. To do that, we’ll show that <span class="math inline">62</span> is too high, and therefore, both <span class="math inline">94</span> and <span class="math inline">102</span>
+are too high as well. We are told that all data points are at least
+<span class="math inline">60</span>. By similar logic as we used in part
+(b), we can see that <span class="math inline">R_{abs}(60) = 61</span>.
+Since the minimum value of <span class="math inline">R_{abs}(h)</span>
+occurs at the median <span class="math inline">h^*\geq 60</span> and we
+already know <span class="math inline">R_{abs}(60) = 61</span>, it must
+be the case that <span class="math inline">R(h^*) \leq 61</span>.</p>
+<center><img height="166" src="../../assets/images/sp23-midterm1/p1/1c.jpg" width="666"/></center>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Let <span class="math inline">R_{sq}(h)</span> represent the mean
+squared error of a constant prediction <span
+class="math inline">h</span> for a given dataset. Find a dataset <span
+class="math inline">\{y_1, y_2\}</span> such that the graph of <span
+class="math inline">R_{sq}(h)</span> has its minimum at the point <span
+class="math inline">(7,16)</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We’ve already learned that <span class="math inline">R_{sq}(h)</span>
+is minimized at the mean of the data, and the minimum value of <span class="math inline">R_sq(h)</span> is the variance of the data. So we
+need to provide a dataset of two points with a mean of <span class="math inline">7</span> and a variance of <span class="math inline">16</span>. Recall that the variance is the average
+squared distance of each data point to the mean. Since we want a
+variance of <span class="math inline">16</span>, we can make each point
+<span class="math inline">4</span> units away from the mean. Therefore,
+our data set can be <span class="math inline">y_1 = 3, y_2 = 11.</span>
+In fact, this is the only solution.</p>
+<p>A more calculational approach uses the formulas for mean and variance
+and solves a system of two equations:</p>
+<p><span class="math display">\begin{aligned} \frac{y_1+y_2}{2} &amp;= 7
+\\ \frac12 \left((y_1 - 7)^2 + (y_2 - 7)^2 \right) &amp;= 16
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>In general, the logarithm of a convex function is not convex. Give an
+example of a function <span class="math inline">f(x)</span> such that
+<span class="math inline">f(x)</span> is convex, but <span
+class="math inline">\log_{10}(f(x))</span> is not convex.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are many correct answers to this question. Some simple answers
+are <span class="math inline">f(x) = x</span> and <span class="math inline">f(x) = x^2</span>. The logarithms of these function
+are <span class="math inline">\log_{10}(x)</span> and <span class="math inline">2\log_{10}(x)</span>, both of which are nonconvex
+because there are pairs of points such that the line connecting them
+goes below the function.</p>
+<center><img height="333" src="../../assets/images/sp23-midterm1/p3/3.jpg" width="500"/></center>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>Suppose we are given a dataset of points <span
+class="math inline">\{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}</span>
+and for some reason, we want to make predictions using a prediction rule
+of the form <span class="math display">H(x) = 17 + w_1x.</span></p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Write down an expression for the mean squared error of a prediction
+rule of this form, as a function of the parameter <span
+class="math inline">w_1</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">MSE(w_1) = \dfrac1n
+\displaystyle\sum_{i=1}^n (y_i - (17 + w_1x_i))^2</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Minimize the function <span class="math inline">MSE(w_1)</span> to
+find the parameter <span class="math inline">w_1^*</span> which defines
+the optimal prediction rule <span class="math inline">H^*(x) = 17 +
+w_1^*x</span>. Show all your work and explain your steps.</p>
+<p>Fill in your final answer below:</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong></p>
+<p><span class="math display">w_1^* = \dfrac{\displaystyle\sum_{i=1}^n
+x_i(y_i - 17)}{\displaystyle\sum_{i=1}^n x_i^2}</span></p>
+<p><strong>Proof:</strong></p>
+<p>To minimize a function of one variable, we need to take the
+derivative, set it equal to zero, and solve. <span class="math display">\begin{aligned} MSE(w_1) &amp;= \dfrac1n
+\displaystyle\sum_{i=1}^n (y_i - 17 - w_1x_i)^2 \\ MSE'(w_1) &amp;=
+\dfrac1n \displaystyle\sum_{i=1}^n -2x_i(y_i - 17 - w_1x_i)) \qquad
+\text{using the chain rule} \\ 0 &amp;= \dfrac1n
+\displaystyle\sum_{i=1}^n -2x_i(y_i - 17) + \dfrac1n
+\displaystyle\sum_{i=1}^n 2x_i^2w_1 \qquad \text{splitting up the sum}
+\\ 0 &amp;=  \displaystyle\sum_{i=1}^n -x_i(y_i - 17)
++  \displaystyle\sum_{i=1}^n x_i^2w_1 \qquad \text{multiplying through
+by } \frac{n}{2} \\ w_1 \displaystyle\sum_{i=1}^n x_i^2
+&amp;=  \displaystyle\sum_{i=1}^n x_i(y_i - 17)   \qquad
+\text{rearranging terms and pulling out } w_1 \\ w_1 &amp; =
+\dfrac{\displaystyle\sum_{i=1}^n x_i(y_i -
+17)}{\displaystyle\sum_{i=1}^n x_i^2} \end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>True or False: For an arbitrary dataset, the prediction rule <span
+class="math inline">H^*(x) = 17 + w_1^*x</span> goes through the point
+<span class="math inline">(\bar x, \bar y)</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>When we fit a prediction rule of the form <span class="math inline">H(x) = w_0+w_1x</span> using simple linear
+regression, the formula for the intercept <span class="math inline">w_0</span> is designed to make sure the regression
+line passes through the point <span class="math inline">(\bar x, \bar
+y)</span>. Here, we don’t have the freedom to control our intercept, as
+it’s forced to be <span class="math inline">17</span>. This means we
+can’t guarantee that the prediction rule <span class="math inline">H^*(x) = 17 + w_1^*x</span> goes through the point
+<span class="math inline">(\bar x, \bar y)</span>.</p>
+<p>A simple example shows that this is the case. Consider the dataset
+<span class="math inline">(-2, 0)</span> and <span class="math inline">(2, 0)</span>. The point <span class="math inline">(\bar x, \bar y)</span> is the origin, but the
+prediction rule <span class="math inline">H^*(x)</span> does not pass
+through the origin because it has an intercept of <span class="math inline">17</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>True or False: For an arbitrary dataset, the mean squared error
+associated with <span class="math inline">H^*(x)</span> is greater than
+or equal to the mean squared error associated with the regression
+line.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True ( ) False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The regression line is the prediction rule of the form <span class="math inline">H(x) = w_0+w_1x</span> with the smallest mean
+squared error (MSE). <span class="math inline">H^*(x)</span> is one
+example of a prediction rule of that form so unless it happens to be the
+regression line itself, the regression line will have lower MSE because
+it was designed to have the lowest possible MSE. This means the MSE
+associated with <span class="math inline">H^*(x)</span> is greater than
+or equal to the MSE associated with the regression line.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>Let <span class="math inline">X</span> be a design matrix with 4
+columns, such that the first column is a column of all 1’s. Let <span
+class="math inline">\vec{y}</span> be an observation vector. Let <span
+class="math inline">\vec{w}^* = (X^TX)^{-1}X^T\vec{y}.</span> We’ll name
+the components of <span class="math inline">\vec{w}^*</span> as
+follows:</p>
+<p><span class="math display">\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^*
+\\ w_2^* \\ w_3^* \end{bmatrix}</span></p>
+<p>In this problem, we’ll consider various modifications to the design
+matrix and see how they affect the solution to the normal equations.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Let <span class="math inline">X_a</span> be the design matrix that
+comes from <strong>interchanging the first two columns</strong> of X.
+Let <span class="math inline">\vec{w_a}^* =
+(X_a^TX_a)^{-1}X_a^T\vec{y}</span>. Express the components <span
+class="math inline">\vec{w_a}^*</span> in terms of <span
+class="math inline">w_0^*, w_1^*, w_2^*</span>, and <span
+class="math inline">w_3^*</span>, which were the components of <span
+class="math inline">\vec{w}^*</span>.</p>
+<p><span class="math display">\vec{w_a}^* = \begin{bmatrix} w_1^* \\
+w_0^* \\ w_2^* \\ w_3^* \end{bmatrix}</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Suppose our original prediction rule was of the form <span class="math display">H(\vec{x}) = w_0 + w_1x^{(1)}+
+w_2x^{(2)}+  w_3x^{(3)}.</span> By swapping the first two columns of our
+design matrix, this changes the prediction rule to be of the form <span class="math display">H_2(\vec{x}) = v_0x^{(1)}+ v_1 +
+v_2x^{(2)}+  v_3x^{(3)}.</span> Therefore the optimal parameters for
+<span class="math inline">H_2</span> are related to the optimal
+parameters for <span class="math inline">H</span> by <span class="math display">\begin{aligned} v_0^* &amp;= w_1^* \\ v_1^* &amp;=
+w_0^* \\ v_2^* &amp;= w_2^* \\ v_3^* &amp;= w_3^*
+\end{aligned}</span></p>
+<p>Intuitively, when we interchange two columns of our design matrix,
+all that does is interchange the terms in the prediction rule, which
+interchanges those weights in the parameter vector.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>Let <span class="math inline">X_b</span> be the design matrix that
+comes from <strong>adding one to each entry of the first column</strong>
+of X. Let <span class="math inline">\vec{w_b}^* =
+(X_b^TX_b)^{-1}X_b^T\vec{y}</span>. Express the components <span
+class="math inline">\vec{w_b}^*</span> in terms of <span
+class="math inline">w_0^*, w_1^*, w_2^*</span>, and <span
+class="math inline">w_3^*</span>, which were the components of <span
+class="math inline">\vec{w}^*</span>.</p>
+<p><span class="math display">\vec{w_b}^* = \begin{bmatrix}
+\dfrac{w_0^*}{2}  \\ w_1^* \\ w_2^* \\ w_3^*\end{bmatrix}</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Suppose our original prediction rule was of the form <span class="math display">H(\vec{x}) = w_0 + w_1x^{(1)}+
+w_2x^{(2)}+  w_3x^{(3)}.</span> By adding one to each entry of the first
+column of the design matrix, we are changing the column of 1s to be a
+column of 2s. This changes the prediction rule to be of the form <span class="math display">H_2(\vec{x}) = v_0\cdot 2+ v_1x^{(1)} +
+v_2x^{(2)}+  v_3x^{(3)}.</span> Therefore the optimal parameters for
+<span class="math inline">H_2</span> are related to the optimal
+parameters for <span class="math inline">H</span> by <span class="math display">\begin{aligned} v_0^* &amp;= \dfrac{w_0^*}{2} \\
+v_1^* &amp;= w_1^* \\ v_2^* &amp;= w_2^* \\ v_3^* &amp;= w_3^*
+\end{aligned}</span></p>
+<p>This is saying we just halve the intercept term. For example, imagine
+fitting a line to data in <span class="math inline">\mathbb{R}^2</span>
+and finding that the best-fitting line is <span class="math inline">y=12+3x</span>. If we had to write this in the form
+<span class="math inline">y=v_0\cdot 2 + v_1x</span>, we would find that
+the best choice for <span class="math inline">v_0</span> is <span class="math inline">6</span> and the best choice for <span class="math inline">v_1</span> is <span class="math inline">3</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Let <span class="math inline">X_c</span> be the design matrix that
+comes from <strong>adding one to each entry of the third column</strong>
+of X. Let <span class="math inline">\vec{w_c}^* =
+(X_c^TX_c)^{-1}X_c^T\vec{y}</span>. Express the components <span
+class="math inline">\vec{w_c}^*</span> in terms of <span
+class="math inline">w_0^*, w_1^*, w_2^*</span>, and <span
+class="math inline">w_3^*</span>, which were the components of <span
+class="math inline">\vec{w}^*</span>.</p>
+<p><span class="math display">\vec{w_c}^* = \begin{bmatrix} w_0^* -
+w_2^*  \\ w_1^* \\ w_2^* \\ w_3^* \end{bmatrix}</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Suppose our original prediction rule was of the form <span class="math display">H(\vec{x}) = w_0 + w_1x^{(1)}+
+w_2x^{(2)}+  w_3x^{(3)}.</span> By adding one to each entry of the third
+column of the design matrix, this changes the prediction rule to be of
+the form <span class="math display">\begin{aligned} H_2(\vec{x}) &amp;=
+v_0+ v_1x^{(1)} + v_2(x^{(2)}+1)+  v_3x^{(3)} \\ &amp;= (v_0+v_2)
+v_1x^{(1)} + v_2x^{(2)}+  v_3x^{(3)} \end{aligned}</span> Therefore the
+optimal parameters for <span class="math inline">H_2</span> are related
+to the optimal parameters for <span class="math inline">H</span> by
+<span class="math display">\begin{aligned} v_0^* &amp;= w_0^* - w_2^* \\
+v_1^* &amp;= w_1^* \\ v_2^* &amp;= w_2^* \\ v_3^* &amp;= w_3^*
+\end{aligned}</span></p>
+<p>One way to think about this is that if we replace <span class="math inline">x^{(2)}</span> with <span class="math inline">x^{(2)}+1</span>, then our predictions will increase
+by the coefficient of <span class="math inline">x^{(2)}</span>. In order
+to keep our predictions the same, we would need to adjust our intercept
+term by subtracting this same amount.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
