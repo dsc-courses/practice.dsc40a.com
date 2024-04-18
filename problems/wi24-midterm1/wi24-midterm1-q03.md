@@ -1,0 +1,96 @@
+# BEGIN PROB
+
+\[(10 points)\] The hyperbolic cosine function is defined as
+$cosh(x) = \frac{1}{2}(e^{x} + e^{-x})$. In this problem, we aim to
+prove the convexity of this function using power series expansion.
+
+# BEGIN SUBPROB
+
+(3 points) Prove that $f(x) = x^{n}$ is convex if n is an even integer.
+
+::: mdframed
+**Proof:**
+:::
+
+# BEGIN SOLUTION
+
+Take the second derivative of f: $$\begin{aligned}
+        f'(x) &= nx^{n-1}\\
+        f''(x) &= n(n-1)x^{n-2}
+    
+\end{aligned}$$ If n is even, then n-2 must also be even, therefore
+$f''(x) = n(n-1)x^{n-2}$ will always be a positive number. This means
+the second derivative of $f(x)$ is always larger than 0 and therefore
+passes the second derivative test.
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+(2 points) Power series expansion is a powerful tool to analyze
+complicated functions. In power series expansion, a function can be
+written as an infinite sum of polynomial functions with certain
+coefficients. For example, the exponential function can be written as:
+$$\begin{aligned}
+        \label{exp_expand}
+        e^{x} = \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....
+    
+\end{aligned}$$ where $n!$ denotes the factorial of $n$, defined as the
+product of all positive integers up to $n$, i.e.
+$n! = 1\times2\times3\times ... \times(n-1)\times n$. Given the power
+series expansion of $e^{x}$ above, write the power series expansion of
+$e^{-x}$ and explicitly specify the first 5 terms, i.e., similar to the
+format of Equation [\[exp_expand\]](#exp_expand){reference-type="ref"
+reference="exp_expand"}:
+
+::: mdframed
+$e^{-x} = \sum_{n=0}^{\infty}$$=$
+:::
+
+# BEGIN SOLUTION
+
+$e^{-x} = \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2} - \frac{x^{3}}{6}+\frac{x^{4}}{24}+.....$
+
+# END SOLUTION
+
+# END SUBPROB 
+
+# BEGIN SUBPROB
+
+(5 points) Using the conclusions you reached in **a)** and **b)**, prove
+that $cosh(x) = \frac{1}{2}(e^{x} + e^{-x})$ is convex.
+
+::: mdframed
+**Proof:**
+:::
+
+# BEGIN SOLUTION
+
+Given that: $$\begin{aligned}
+        e^{x} &= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x + \frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....\\
+        e^{-x} &= \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!} = 1 - x + \frac{x^{2}}{2} - \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....
+    
+\end{aligned}$$ We can add their power series expansion together, and we
+will obtain: $$\begin{aligned}
+        e^{x} + e^{-x} &= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} + \sum_{n=0}^{\infty}\frac{x^{n}}{n!}\\
+        &=\sum_{n=0}^{\infty}\frac{(x)^{n} + (-x)^{n}}{n!}
+    
+\end{aligned}$$ Within this infinite sum, if n is even, then the
+negative sign in $(-x)^{n}$ will disappear; if n is odd, then the
+negative sign in $(-x)^{n}$ will be kept and travel out of the
+parenthesis. Therefore we have: $$\begin{aligned}
+        e^{x} + e^{-x} &= \sum_{n=0}^{\infty}\frac{x^{n}+x^{n}}{n!} \mathrm{(for\; even\; n)} + \sum_{n=0}^{\infty}\frac{x^{n}-x^{n}}{n!}\mathrm{(for\; odd\; n)}\\
+        &=\sum_{n=0}^{\infty}\frac{2x^{n}}{n!} \mathrm{(for\; even\; n)}
+    
+\end{aligned}$$ Therefore, $cosh(x)=\frac{e^{x}+e^{-x}}{2}$ is a sum of
+$x^{n}$ where n is even. Since we have already proved in a) that $x^{n}$
+are always convex for even n, $cosh(x)$ is an infinite sum of convex
+function and therefore also convex.
+
+# END SOLUTION
+
+# END SUBPROB
+
+# END PROB
