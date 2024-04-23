@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../assets/theme.css" />
+  <link rel="stylesheet" href="..\assets\theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -190,14 +190,15 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>First, we calculate the derivative of <span class="math inline">R(h)</span>. Using the chain rule, we have <span class="math display">\begin{aligned} R(h) &amp;= \dfrac1n
-\displaystyle\sum_{i=1}^n e^{(h-y_i)^2} \\ R'(h) &amp;= \dfrac1n
-\displaystyle\sum_{i=1}^n e^{(h-y_i)^2}*2(h-y_i) \\ \intertext{To apply
-the gradient descent update rule, we next have to calculate
-$R'(h_0)$ or $R'(2)$. Plugging in $h=2$ to the derivative we
-calculated above gives} R'(2) &amp;= \dfrac1n
-\displaystyle\sum_{i=1}^n e^{(2-y_i)^2}*2(2-y_i)
-\end{aligned}</span></p>
+<p>First, we calculate the derivative of <span class="math inline">R(h)</span>. Using the chain rule, we have <span class="math display">\begin{align*} R(h) &amp;= \dfrac1n \sum_{i=1}^n
+e^{(h-y_i)^2} \\
+R'(h) &amp;= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2}*2(h-y_i) \\
+&amp;\text{To apply the gradient descent update rule, we next have to
+calculate $R'(h_0)$ or $R'(2)$.}\\
+&amp;\text{Plugging in $h=2$ to the derivative we calculated above
+gives:} \\
+R'(2) &amp;= \dfrac1n \sum_{i=1}^n e^{(2-y_i)^2}*2(2-y_i)
+\end{align*}</span></p>
 <p>The table below records the necessary information (note that we’ve
 done most of the work already).</p>
 <div class="center">
@@ -254,9 +255,9 @@ gradient descent update rule gives <span class="math display">\begin{aligned} h_
 <p>Suppose you have a dataset <span class="math display">\{(x_1, y_1),
 (x_2,y_2), \dots, (x_8, y_8)\}</span> with <span
 class="math inline">n=8</span> ordered pairs such that the variance of
-<span class="math inline">\{x_1, x_2, \dots, x_8\}</span> is 50. Let
-<span class="math inline">m</span> be the slope of the regression line
-fit to this data.</p>
+<span class="math inline">\{x_1, x_2, \dots, x_8\}</span> is <span
+class="math inline">50</span>. Let <span class="math inline">m</span> be
+the slope of the regression line fit to this data.</p>
 <p>Suppose now we fit a regression line to the dataset <span
 class="math display">\{(x_1, y_2), (x_2,y_1), \dots, (x_8, y_8)\}</span>
 where the first two <span class="math inline">y</span>-values have been
@@ -285,7 +286,31 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>Using the formula for the slope of the regression line, we have <span class="math display">
+\begin{aligned}
+m &amp;= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{\sum_{i=1}^n (x_i -
+\overline x)^2}\\
+&amp;= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{n*\sigma_x^2}\\
+&amp;= \frac{(3-\bar{x})*7 + (8 - \bar{x})*2 + \sum_{i=3}^n (x_i -
+\overline x)y_i}{8*50}. \\
+&amp;\text{Note that by switching the first two $y$-values, the terms in
+the sum from $i=3$ to $n$,} \\
+&amp;\text{the number of data points $n$, and the variance of the
+$x$-values are all unchanged.} \\
+\text{So the slope becomes:} \\
+m' &amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 + \sum_{i=3}^n (x_i
+- \overline x)y_i}{8*50} \\
+\text{and the difference between these slopes is given by} \\
+m'-m &amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - ((3-\bar{x})*7 +
+(8 - \bar{x})*2)}{8*50}\\
+&amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - (3-\bar{x})*7 - (8 -
+\bar{x})*2}{8*50}\\
+&amp;= \frac{(3-\bar{x})*(-5) + (8 - \bar{x})*5}{8*50}\\
+&amp;= \frac{ -15+5\bar{x} + 40 -5\bar{x}}{8*50}\\
+&amp;= \frac{ 25}{8*50}\\
+&amp;= \frac{ 1}{16}
+\end{aligned}
+</span></p>
 </div>
 </div>
 </div>

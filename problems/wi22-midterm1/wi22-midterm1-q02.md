@@ -35,7 +35,11 @@ For the same dataset $\{1, 3, 4\}$, perform one iteration of gradient descent on
 # BEGIN SOLUTION
 
 First, we calculate the derivative of $R(h)$. Using the chain rule, we have 
-$$\begin{aligned} R(h) &= \dfrac1n \displaystyle\sum_{i=1}^n e^{(h-y_i)^2} \\ R'(h) &= \dfrac1n \displaystyle\sum_{i=1}^n e^{(h-y_i)^2}*2(h-y_i) \\ \intertext{To apply the gradient descent update rule, we next have to calculate $R'(h_0)$ or $R'(2)$. Plugging in $h=2$ to the derivative we calculated above gives} R'(2) &= \dfrac1n \displaystyle\sum_{i=1}^n e^{(2-y_i)^2}*2(2-y_i) \end{aligned}$$ 
+$$\begin{align*} R(h) &= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2} \\
+R'(h) &= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2}*2(h-y_i) \\
+&\text{To apply the gradient descent update rule, we next have to calculate $R'(h_0)$ or $R'(2)$.}\\
+&\text{Plugging in $h=2$ to the derivative we calculated above gives:} \\
+R'(2) &= \dfrac1n \sum_{i=1}^n e^{(2-y_i)^2}*2(2-y_i) \end{align*}$$ 
 
 The table below records the necessary information (note
 that we've done most of the work already).
