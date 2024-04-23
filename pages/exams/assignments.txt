@@ -7,27 +7,24 @@ Nick: Winter 2024 midterm 2 (Midterm2_WI24.tex)
 - Added in solutions, proofreading needed
 
 Zoe: Winter 2024 final part 1 (final1_WI24.tex)
-- Added in solutions
-    - Need explanations
+COMPLETED
 
 Javier: Winter 2024 final part 2 (final2_WI24.tex)
 
 Spring 2023 midterm 1 (midterm1A.tex)
 
 Zoe: Spring 2023 midterm 2 (midterm 2A.tex)
-- Added in solutions
-- Added explanations for all but question 3
+COMPLETED (Except for Prob 3 for Javier)
 
 Zoe: Spring 2023 final part 1 (final1A.tex)
-- Added in solutions
-    - Need explanations
+COMPLETED
     
 Javier: Spring 2023 final part 2 (final2A.tex)
 
-Javier: Winter 2022 midterm 1 (mockmidterm1.tex)
+Javier/Zoe: Winter 2022 midterm 1 (mockmidterm1.tex)
 COMPLETED
 
-Zoe: Winter 2022 midterm 2 (mockmidterm2.tex)
+Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 - Added in solutions
     - Need explanations
 - Fixed Formatting
