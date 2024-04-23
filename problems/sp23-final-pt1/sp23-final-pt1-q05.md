@@ -22,15 +22,21 @@ $$H(\text{cells, lines, max iterations, variables}) =  w_0 + w_1 \cdot \text{cel
 
 <i>Originally Problem 5a on the Spring 2023 Final Part 1</i>
 
-What are the dimensions of the design matrix $X$? AKA what are $r$ and $c$?
+What are the dimensions of the design matrix $X$?
 
-$r$ rows $\times$ $c$ columns
+$$\begin{bmatrix}
+& & & \\
+& & & \\
+& & & \\
+\end{bmatrix}_{r \times c}$$
+
+So, what should $r$ and $c$ be for: $r$ rows $\times$ $c$ columns.
 
 # BEGIN SOLUTION
 
 $100 \text{ rows} \times 3 \text{ columns}$
 
-TODO
+There should be $100$ rows because there are $100$ different Jupyter notebooks with different information within them. There should be $3$ rows because there are three distinct predictor variables: "cells," "lines," and the combined effect of "max iterations" and "variables."
 
 # END SOLUTION
 
