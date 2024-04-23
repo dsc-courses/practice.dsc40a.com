@@ -316,6 +316,146 @@ m'-m &amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - ((3-\bar{x})*7 +
 </div>
 </div>
 <hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>Consider the dataset shown below.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span
+class="math inline">x^{(1)}</span></th>
+<th style="text-align: left;"><span
+class="math inline">x^{(2)}</span></th>
+<th style="text-align: left;"><span
+class="math inline">x^{(3)}</span></th>
+<th style="text-align: left;"><span class="math inline">y</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">-5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">-1</td>
+<td style="text-align: left;">-3</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>We want to use multiple regression to fit a prediction rule of the
+form <span class="math display">H(x^{(1)}, x^{(2)}, x^{(3)}) = w_0 + w_1
+x^{(1)}x^{(3)} + w_2 (x^{(2)}-x^{(3)})^2.</span> Write down the design
+matrix <span class="math inline">X</span> and observation vector <span
+class="math inline">\vec{y}</span> for this scenario. No justification
+needed.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The design matrix <span class="math inline">X</span> and observation
+vector <span class="math inline">\vec{y}</span> are given by</p>
+<p><span class="math display">
+\begin{align*}
+X &amp;=
+\begin{bmatrix}
+1 &amp; 0 &amp; 4\\
+1 &amp; 15 &amp; 1\\
+1 &amp; -15 &amp; 4\\
+1 &amp; 0 &amp; 1
+\end{bmatrix} \\
+&amp;\text{and} \\
+\vec{y} &amp;= \begin{bmatrix}
+-5\\
+7\\
+4\\
+2
+\end{bmatrix}
+\end{align*}
+</span></p>
+<p>We got <span class="math inline">\vec{y}</span> by looking at our
+dataset and seeing the <span class="math inline">y</span> column.</p>
+<p>The matrix <span class="math inline">X</span> was found by looking at
+the equation <span class="math inline">H(x)</span>. You can think of
+each row of <span class="math inline">X</span> being: <span class="math inline">\begin{bmatrix}\text{bias term} &amp; x^{(1)}x^{(3)}
+&amp; (x^{(2)}-x^{(3)})^2\end{bmatrix}</span>. Recall our bias term here
+is not affected by <span class="math inline">x^{(i)}</span>, but it
+still exists! So we will always have the first element in our row be
+<span class="math inline">1</span>. We can then easily calculate the
+other elements in the matrix.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>For the <span class="math inline">X</span> and <span
+class="math inline">\vec{y}</span> that you have written down, let <span
+class="math inline">\vec{w}</span> be the optimal parameter vector,
+which comes from solving the normal equations <span
+class="math inline">X^TX\vec{w}=X^T\vec{y}</span>. Let <span
+class="math inline">\vec{e} = \vec{y} - X \vec{w}</span> be the error
+vector, and let <span class="math inline">e_i</span> be the <span
+class="math inline">i</span>th component of this error vector. Show that
+<span class="math display">4e_1+e_2+4e_3+e_4=0.</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can rewrite the normal equations in terms of the error vector to
+get <span class="math display">\begin{aligned}
+    X^TX\vec{w}&amp;=X^T\vec{y} \\
+    \vec{0} &amp;= X^T\vec{y} -  X^TX\vec{w}  \\
+    \vec{0} &amp;= X^T( \vec{y} - X \vec{w}) \\
+    \vec{0} &amp;= X^T\vec{e}.
+\end{aligned}</span> In particular, since one row of <span class="math inline">X^T</span> is</p>
+<p><span class="math display">\begin{bmatrix}
+4 &amp; 1 &amp; 4 &amp; 1
+\end{bmatrix}</span></p>
+<p>when we multiply <span class="math inline">\vec{e}</span> by this
+row, the result is zero. This shows <span class="math inline">4e_1+e_2+4e_3+e_4=0</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
