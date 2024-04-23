@@ -1,10 +1,10 @@
 # BEGIN PROB
 
-Suppose there is a dataset containing $10,000$ integers, $2,500$ of them are $3$, $2,500$ of them are $5$, $4,500$ of them are $7$, and $500$ of them are $9$.
+Suppose there is a dataset containing $10,000$ integers, the first $2,500$ of them are $3$s, the next $2,500$ of them are $5$s, the next $4,500$ of them are $7$s, and the last $500$ of them are $9$.
 
 # BEGIN SUBPROB
 
-(4 points) Calculate the median of this dataset.
+Calculate the median of this dataset.
 
 # BEGIN SOLUTION
 
@@ -19,7 +19,7 @@ $$\frac{x_{5,000} + x_{5,001}}{2} = \frac{5 + 7}{2} = 6$$
 
 # BEGIN SUBPROB
 
-(4 points) How does the mean of this dataset compared to its median?
+How does the mean of this dataset compared to its median?
 
 ( ) The mean is larger than the median
 ( ) The mean is smaller than the median

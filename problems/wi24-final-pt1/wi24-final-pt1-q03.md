@@ -48,9 +48,11 @@ $h_0$ =
 
 # BEGIN SOLUTION
 
+$h_{0} = -\frac{5}{4}$
+
 The gradient descent equation is given by: $$\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
-\end{aligned}$$ We can plug in $\alpha = 1/4$, $h_2 = 1/4$, and $i=2$,
+\end{aligned}$$ Recall the learning rate is equal to $\alpha$. We can plug in $\alpha = \frac{1}{4}$, $h_2 = \frac{1}{4}$, and $i=2$,
 in that case we obtain: $$\begin{aligned}
     \frac{1}{4} &= h_{1} - \alpha \frac{dR_{sq}(h_{1})}{dh}\\
     &= h_{1} - \alpha \frac{1}{2}\sum_{i=1}^{4}(h_1-y_i)\\
@@ -84,9 +86,11 @@ reach convergence?
 
 # BEGIN SOLUTION
 
+2 or 3
+
 The gradient descent equation is given by: $$\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
-\end{aligned}$$ Now we start from $\alpha = 1/4$, $h_2 = 1/4$, and
+\end{aligned}$$ Now we start from $\alpha = \frac{1}{4}$, $h_2 = \frac{1}{4}$, and
 $i=2$, in that case we obtain: $$\begin{aligned}
     h_{3} &= h_{2} - \alpha \frac{dR_{sq}(h_{2})}{dh}\\
     &= h_{2} - \frac{1}{8}(4h_{2} -3)\\

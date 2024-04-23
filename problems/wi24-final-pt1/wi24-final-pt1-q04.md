@@ -9,14 +9,13 @@ calculated the correlation coefficients among A, B, C and E. He wrote it
 down in the following table, where each cell of the table represents the
 correlaton of two terms:
 
-::: center
-                  Feature A   Feature B   Feature C   Energy E
-  --------------- --------------- --------------- --------------- --------------
-  Feature A   1               -0.99           0.13            0.8
-  Feature B   -0.99           1               0.25            -0.95
-  Feature C   0.13            0.25            1               0.72
-  Energy E    0.8             -0.95           0.72            1
-:::
+|             | Feature A | Feature B | Feature C | Energy E |
+|-------------|-----------|-----------|-----------|----------|
+| Feature A   | 1         | -0.99     | 0.13      | 0.8      |
+| Feature B   | -0.99     | 1         | 0.25      | -0.95    |
+| Feature C   | 0.13      | 0.25      | 1         | 0.72     |
+| Energy E    | 0.8       | -0.95     | 0.72      | 1        |
+
 
 # BEGIN SUBPROB
 
@@ -30,6 +29,8 @@ should he choose as $x$ to get the lowest mean square error?
 
 # BEGIN SOLUTION
 
+B
+
 B is the correct answer, because it has the highest absolute correlation
 (0.95), the negative sign in front of B just means it is negatively
 correlated to energy and it can be compensated by a negative sign in the
@@ -42,7 +43,7 @@ weight.
 # BEGIN SUBPROB
 
 Albert want to add another feature into his linear regression in
-part a) to further boost the model's performance. (i.e.
+part A to further boost the model's performance. (i.e.
 $y = w_0+w_1 x + +w_2 x_2$) Which feature should he choose as $x_2$ to
 make additional improvements?
 
@@ -51,6 +52,7 @@ make additional improvements?
 ( ) C
 
 # BEGIN SOLUTION
+C
 
 C is the correct answer, because although A has a higher correlation
 with energy, it also has an extremely high correlation with B (-0.99),
@@ -69,13 +71,21 @@ H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
 \end{aligned}$$
 
 Given this prediction rule, What are the dimensions of the design
-matrix X? AKA what is $r$ and $c$?
+matrix $X$?
 
-$r \text{rows} \times c \text{columns}$
+$$\begin{bmatrix}
+& & & \\
+& & & \\
+& & & \\
+\end{bmatrix}_{r \times c}$$
+
+So, what are $r$ and $c$ in $r \text{ rows} \times c \text{ columns}$?
 
 # BEGIN SOLUTION
 
-$400 \text{rows} \times 3 \text{columns}$
+$400 \text{ rows} \times 3 \text{ columns}$
+
+Recall there are $400$ data points, which means there will be $400$ rows. There will be $3$ columns because there are $3$ features present inside of $H(A, B, C)$.
 
 # END SOLUTION
 
@@ -102,6 +112,41 @@ $$\vec{w_a}^* = \begin{bmatrix} \phantom{XXX} \\ \phantom{XXX} \\ \phantom{XXX} 
 # BEGIN SOLUTION
 
 $$\vec{w}^* = \begin{bmatrix} w_0^*/2 \\ w_2^* \\ w_1^*  \end{bmatrix}$$
+
+We should follow the steps Albert did to construct $X$. We will add $1$ to be the first element in each row and then switch the constants attatched to $w_1$ ($A \cdot B$) and $w_2$ ($B^{C-7}$):
+$$
+X_a = \begin{bmatrix}
+1 & B^{C-7} & A \\
+1 & B^{C-7} & A \\
+\vdots & \vdots & \vdots \\
+1 & B^{C-7} & A
+\end{bmatrix}
+$$
+
+We know that $X_\alpha^T X_\alpha$ is the same as an identity matrix. The inverse of an identity matrix is the same as it was before.
+
+This means we are really looking at $X_\alpha^T \vec{y}$:
+$$
+\begin{align*}
+X_\alpha^T \vec{y} &= \begin{bmatrix}
+1 & 1 & \cdots & 1 \\
+B^{C-7} & B^{C-7} & \cdots & B^{C-7} \\
+A & A & \cdots & A
+\end{bmatrix} \cdot \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_{400}
+\end{bmatrix} \\
+&= \begin{bmatrix}
+\sum_{i = 1}^{400}{y_i}\\
+\sum_{i = 1}^{400}{B^{C-7} \cdot y_i} \\
+\sum_{i = 1}^{400}{A \cdot y_i}
+\end{bmatrix}
+\end{align*}
+$$
+
+The first component of our final matrix, $sum_{i = 1}^{400}{y_i}$, is proportional to $w_0^*$. The second component of our matrix, $\sum_{i = 1}^{400}{B^{C-7} \cdot y_i}$, is proportional to $w_2^*$. Finally, the third component of our matrix, $\sum_{i = 1}^{400}{A \cdot y_i}$, is proportional to $w_1^*$.
 
 # END SOLUTION
 

@@ -71,16 +71,18 @@ to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p>Suppose there is a dataset containing <span
-class="math inline">10,000</span> integers, <span
+class="math inline">10,000</span> integers, the first <span
 class="math inline">2,500</span> of them are <span
-class="math inline">3</span>, <span class="math inline">2,500</span> of
-them are <span class="math inline">5</span>, <span
+class="math inline">3</span>s, the next <span
+class="math inline">2,500</span> of them are <span
+class="math inline">5</span>s, the next <span
 class="math inline">4,500</span> of them are <span
-class="math inline">7</span>, and <span class="math inline">500</span>
-of them are <span class="math inline">9</span>.</p>
+class="math inline">7</span>s, and the last <span
+class="math inline">500</span> of them are <span
+class="math inline">9</span>.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>(4 points) Calculate the median of this dataset.</p>
+<p>Calculate the median of this dataset.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -110,8 +112,7 @@ can then plug <span class="math inline">5</span> and <span class="math inline">7
 </div>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
-<p>(4 points) How does the mean of this dataset compared to its
-median?</p>
+<p>How does the mean of this dataset compared to its median?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> The mean is larger than the median</p></li>
 <li><p><input type="radio" disabled="" /> The mean is smaller than the median</p></li>
@@ -265,10 +266,10 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">h_{0} = -\frac{5}{4}</span></p>
 <p>The gradient descent equation is given by: <span class="math display">\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
-\end{aligned}</span> We can plug in <span class="math inline">\alpha =
-1/4</span>, <span class="math inline">h_2 = 1/4</span>, and <span class="math inline">i=2</span>, in that case we obtain: <span class="math display">\begin{aligned}
+\end{aligned}</span> Recall the learning rate is equal to <span class="math inline">\alpha</span>. We can plug in <span class="math inline">\alpha = \frac{1}{4}</span>, <span class="math inline">h_2 = \frac{1}{4}</span>, and <span class="math inline">i=2</span>, in that case we obtain: <span class="math display">\begin{aligned}
     \frac{1}{4} &amp;= h_{1} - \alpha \frac{dR_{sq}(h_{1})}{dh}\\
     &amp;= h_{1} - \alpha \frac{1}{2}\sum_{i=1}^{4}(h_1-y_i)\\
         &amp;= h_{1} - \frac{1}{8}(h_{1} + 2 + h_{1} + 1 + h_{1} - 2 +
@@ -312,10 +313,13 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>2 or 3</p>
 <p>The gradient descent equation is given by: <span class="math display">\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
 \end{aligned}</span> Now we start from <span class="math inline">\alpha
-= 1/4</span>, <span class="math inline">h_2 = 1/4</span>, and <span class="math inline">i=2</span>, in that case we obtain: <span class="math display">\begin{aligned}
+= \frac{1}{4}</span>, <span class="math inline">h_2 =
+\frac{1}{4}</span>, and <span class="math inline">i=2</span>, in that
+case we obtain: <span class="math display">\begin{aligned}
     h_{3} &amp;= h_{2} - \alpha \frac{dR_{sq}(h_{2})}{dh}\\
     &amp;= h_{2} - \frac{1}{8}(4h_{2} -3)\\
     &amp;= \frac{1}{4} - \frac{1}{8}(1 -3)\\
@@ -349,49 +353,47 @@ combination(s) of feature A, B, C. As the first step, Albert calculated
 the correlation coefficients among A, B, C and E. He wrote it down in
 the following table, where each cell of the table represents the
 correlaton of two terms:</p>
-<div class="center">
 <table>
 <thead>
 <tr class="header">
 <th></th>
-<th>Feature A Feat</th>
-<th>ure B Feature</th>
-<th style="text-align: left;">C Energy E</th>
-<th></th>
+<th>Feature A</th>
+<th>Feature B</th>
+<th>Feature C</th>
+<th>Energy E</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Feature A 1</td>
-<td>-0.9</td>
-<td>9 0.13</td>
-<td style="text-align: left;">0.8</td>
-<td></td>
+<td>Feature A</td>
+<td>1</td>
+<td>-0.99</td>
+<td>0.13</td>
+<td>0.8</td>
 </tr>
 <tr class="even">
-<td>Feature B -0.9</td>
-<td>9 1</td>
+<td>Feature B</td>
+<td>-0.99</td>
+<td>1</td>
 <td>0.25</td>
-<td style="text-align: left;">-0.9</td>
-<td>5</td>
+<td>-0.95</td>
 </tr>
 <tr class="odd">
-<td>Feature C 0.13</td>
+<td>Feature C</td>
+<td>0.13</td>
 <td>0.25</td>
 <td>1</td>
-<td style="text-align: left;">0.72</td>
-<td></td>
+<td>0.72</td>
 </tr>
 <tr class="even">
-<td>Energy E 0.8</td>
-<td>-0.9</td>
-<td>5 0.72</td>
-<td style="text-align: left;">1</td>
-<td></td>
+<td>Energy E</td>
+<td>0.8</td>
+<td>-0.95</td>
+<td>0.72</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p>Albert want to start with a simple model: fitting only a single
@@ -416,6 +418,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>B</p>
 <p>B is the correct answer, because it has the highest absolute
 correlation (0.95), the negative sign in front of B just means it is
 negatively correlated to energy and it can be compensated by a negative
@@ -427,7 +430,7 @@ sign in the weight.</p>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
 <p>Albert want to add another feature into his linear regression in part
-a) to further boost the model’s performance. (i.e. <span
+A to further boost the model’s performance. (i.e. <span
 class="math inline">y = w_0+w_1 x + +w_2 x_2</span>) Which feature
 should he choose as <span class="math inline">x_2</span> to make
 additional improvements?</p>
@@ -449,6 +452,7 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>C</p>
 <p>C is the correct answer, because although A has a higher correlation
 with energy, it also has an extremely high correlation with B (-0.99),
 that means adding A into the fit will not be too much useful, since it
@@ -464,10 +468,15 @@ the form: <span class="math display">\begin{aligned}
 H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
 \end{aligned}</span></p>
 <p>Given this prediction rule, What are the dimensions of the design
-matrix X? AKA what is <span class="math inline">r</span> and <span
-class="math inline">c</span>?</p>
-<p><span class="math inline">r \text{rows} \times c
-\text{columns}</span></p>
+matrix <span class="math inline">X</span>?</p>
+<p><span class="math display">\begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{r \times c}</span></p>
+<p>So, what are <span class="math inline">r</span> and <span
+class="math inline">c</span> in <span class="math inline">r \text{ rows}
+\times c \text{ columns}</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_3">
@@ -481,8 +490,12 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">400 \text{rows} \times 3
-\text{columns}</span></p>
+<p><span class="math inline">400 \text{ rows} \times 3 \text{
+columns}</span></p>
+<p>Recall there are <span class="math inline">400</span> data points,
+which means there will be <span class="math inline">400</span> rows.
+There will be <span class="math inline">3</span> columns because there
+are <span class="math inline">3</span> features present inside of <span class="math inline">H(A, B, C)</span>.</p>
 </div>
 </div>
 </div>
@@ -521,6 +534,44 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math display">\vec{w}^* = \begin{bmatrix} w_0^*/2 \\
 w_2^* \\ w_1^*  \end{bmatrix}</span></p>
+<p>We should follow the steps Albert did to construct <span class="math inline">X</span>. We will add <span class="math inline">1</span> to be the first element in each row and
+then switch the constants attatched to <span class="math inline">w_1</span> (<span class="math inline">A \cdot
+B</span>) and <span class="math inline">w_2</span> (<span class="math inline">B^{C-7}</span>): <span class="math display">
+X_a = \begin{bmatrix}
+1 &amp; B^{C-7} &amp; A \\
+1 &amp; B^{C-7} &amp; A \\
+\vdots &amp; \vdots &amp; \vdots \\
+1 &amp; B^{C-7} &amp; A
+\end{bmatrix}
+</span></p>
+<p>We know that <span class="math inline">X_\alpha^T X_\alpha</span> is
+the same as an identity matrix. The inverse of an identity matrix is the
+same as it was before.</p>
+<p>This means we are really looking at <span class="math inline">X_\alpha^T \vec{y}</span>: <span class="math display">
+\begin{align*}
+X_\alpha^T \vec{y} &amp;= \begin{bmatrix}
+1 &amp; 1 &amp; \cdots &amp; 1 \\
+B^{C-7} &amp; B^{C-7} &amp; \cdots &amp; B^{C-7} \\
+A &amp; A &amp; \cdots &amp; A
+\end{bmatrix} \cdot \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_{400}
+\end{bmatrix} \\
+&amp;= \begin{bmatrix}
+\sum_{i = 1}^{400}{y_i}\\
+\sum_{i = 1}^{400}{B^{C-7} \cdot y_i} \\
+\sum_{i = 1}^{400}{A \cdot y_i}
+\end{bmatrix}
+\end{align*}
+</span></p>
+<p>The first component of our final matrix, <span class="math inline">sum_{i = 1}^{400}{y_i}</span>, is proportional to
+<span class="math inline">w_0^*</span>. The second component of our
+matrix, <span class="math inline">\sum_{i = 1}^{400}{B^{C-7} \cdot
+y_i}</span>, is proportional to <span class="math inline">w_2^*</span>.
+Finally, the third component of our matrix, <span class="math inline">\sum_{i = 1}^{400}{A \cdot y_i}</span>, is
+proportional to <span class="math inline">w_1^*</span>.</p>
 </div>
 </div>
 </div>
