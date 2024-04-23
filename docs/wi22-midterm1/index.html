@@ -438,18 +438,42 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>We can rewrite the normal equations in terms of the error vector to
-get <span class="math display">\begin{aligned}
-    X^TX\vec{w}&amp;=X^T\vec{y} \\
-    \vec{0} &amp;= X^T\vec{y} -  X^TX\vec{w}  \\
-    \vec{0} &amp;= X^T( \vec{y} - X \vec{w}) \\
-    \vec{0} &amp;= X^T\vec{e}.
-\end{aligned}</span> In particular, since one row of <span class="math inline">X^T</span> is</p>
-<p><span class="math display">\begin{bmatrix}
-4 &amp; 1 &amp; 4 &amp; 1
-\end{bmatrix}</span></p>
-<p>when we multiply <span class="math inline">\vec{e}</span> by this
-row, the result is zero. This shows <span class="math inline">4e_1+e_2+4e_3+e_4=0</span>.</p>
+<p>We can rewrite the normal equation (<span class="math inline">X^TX\vec{w}=X^T\vec{y}</span>) to allow substitution
+for <span class="math inline">\vec{e} = \vec{y} - X \vec{w}</span>.</p>
+<p><span class="math display">
+\begin{align*}
+X^TX\vec{w}&amp;=X^T\vec{y} \\
+0 &amp;= X^T\vec{y} - X^TX\vec{w} \\
+0 &amp;= X^T(\vec{y}-X\vec{w}) \\
+0 &amp;= X^T\vec{e}
+\end{align*}
+</span></p>
+<p>We can also transpose <span class="math inline">X</span>: <span class="math display">
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 15 &amp; -15 &amp; 0 \\ 4 &amp; 1
+&amp; 4 &amp; 1
+\end{bmatrix}
+</span></p>
+<p>And now we can plug it into our equation: <span class="math display">
+\begin{align*}
+X^T\vec{e} &amp;=
+\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 15 &amp; -15 &amp; 0 \\ 4 &amp; 1
+&amp; 4 &amp; 1
+\end{bmatrix} \cdot \begin{bmatrix} e_1 \\ e_2 \\ e_3 \\
+e_4\end{bmatrix} \\
+&amp;= \begin{bmatrix} e_1 + e_2 + e_3 + e_4 \\
+15e_2 - 15e_3 \\ 4e_1 + e_2 + 4e_3 + e_4\end{bmatrix}
+\end{align*}
+</span></p>
+<p>Now we can set it equal to zero! <span class="math display">
+\begin{align*}
+0 &amp;= e_1 + e_2 + e_3 + e_4 \\
+0 &amp;= 15e_2 - 15e_3 \\
+0 &amp;= 4e_1 + e_2 + 4e_3 + e_4
+\end{align*}
+</span></p>
+<p>With this we have proved that <span class="math inline">4e_1+e_2+4e_3+e_4=0</span>.</p>
 </div>
 </div>
 </div>

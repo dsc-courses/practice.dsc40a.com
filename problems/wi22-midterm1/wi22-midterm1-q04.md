@@ -52,28 +52,50 @@ The matrix $X$ was found by looking at the equation $H(x)$. You can think of eac
 
 # BEGIN SUBPROB
 
-For the $X$ and $\vec{y}$ that you have written down, let
-$\vec{w}$ be the optimal parameter vector, which comes from solving the
-normal equations $X^TX\vec{w}=X^T\vec{y}$. Let
-$\vec{e} = \vec{y} - X \vec{w}$ be the error vector, and let $e_i$ be
-the $i$th component of this error vector. Show that
-$$4e_1+e_2+4e_3+e_4=0.$$
+For the $X$ and $\vec{y}$ that you have written down, let $\vec{w}$ be the optimal parameter vector, which comes from solving the normal equations $X^TX\vec{w}=X^T\vec{y}$. Let $\vec{e} = \vec{y} - X \vec{w}$ be the error vector, and let $e_i$ be the $i$th component of this error vector. Show that $$4e_1+e_2+4e_3+e_4=0.$$
 
 # BEGIN SOLUTION
 
-We can rewrite the normal equations in terms of the error vector to get
-$$\begin{aligned}
-    X^TX\vec{w}&=X^T\vec{y} \\
-    \vec{0} &= X^T\vec{y} -  X^TX\vec{w}  \\
-    \vec{0} &= X^T( \vec{y} - X \vec{w}) \\
-    \vec{0} &= X^T\vec{e}.
-\end{aligned}$$ In particular, since one row of $X^T$ is
+We can rewrite the normal equation ($X^TX\vec{w}=X^T\vec{y}$) to allow substitution for $\vec{e} = \vec{y} - X \vec{w}$.
 
-$$\begin{bmatrix}
-4 & 1 & 4 & 1
-\end{bmatrix}$$
+$$
+\begin{align*}
+X^TX\vec{w}&=X^T\vec{y} \\ 
+0 &= X^T\vec{y} - X^TX\vec{w} \\
+0 &= X^T(\vec{y}-X\vec{w}) \\
+0 &= X^T\vec{e}
+\end{align*}
+$$
 
-when we multiply $\vec{e}$ by this row, the result is zero. This shows $4e_1+e_2+4e_3+e_4=0$.
+We can also transpose $X$:
+$$
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\ 0 & 15 & -15 & 0 \\ 4 & 1 & 4 & 1
+\end{bmatrix}
+$$
+
+And now we can plug it into our equation:
+$$
+\begin{align*}
+X^T\vec{e} &= 
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\ 0 & 15 & -15 & 0 \\ 4 & 1 & 4 & 1
+\end{bmatrix} \cdot \begin{bmatrix} e_1 \\ e_2 \\ e_3 \\ e_4\end{bmatrix} \\
+&= \begin{bmatrix} e_1 + e_2 + e_3 + e_4 \\
+15e_2 - 15e_3 \\ 4e_1 + e_2 + 4e_3 + e_4\end{bmatrix}
+\end{align*}
+$$
+
+Now we can set it equal to zero!
+$$
+\begin{align*}
+0 &= e_1 + e_2 + e_3 + e_4 \\
+0 &= 15e_2 - 15e_3 \\
+0 &= 4e_1 + e_2 + 4e_3 + e_4
+\end{align*}
+$$
+
+With this we have proved that $4e_1+e_2+4e_3+e_4=0$.
 
 # END SOLUTION
 
