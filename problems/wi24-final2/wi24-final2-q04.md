@@ -110,4 +110,20 @@ TODO
 
 # END SUBPROB
 
+# BEGIN SUBPROB
+
+Which Doctor's diagnoses is better?
+
+( ) Albert
+( ) Issac
+( ) They are equally good
+
+# BEGIN SOLUTION
+
+Albert
+
+# END SOLUTION
+
+# END SUBPROB
+
 # END PROB
