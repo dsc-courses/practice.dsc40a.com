@@ -163,7 +163,7 @@ Median<span class="math inline">(D) = 2</span>. So, we have:</p>
 \end{align*}</span></p>
 <p>But <span class="math inline">a&lt;-5</span> is in conflict with the
 condition <span class="math inline">0&lt;a\leq2</span>, therefore there
-is no solution in this situation, and <span class="math inline">Median_{D} = 2</span> is impossible.</p>
+is no solution in this situation, and Median<span class="math inline">(D) = 2</span> is impossible.</p>
 <p>In case 2, when <span class="math inline">2&lt;a&lt;5</span>, <span class="math inline">Median_{D} = a</span>. So, we have:</p>
 <p><span class="math display">\begin{align*}
         \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
@@ -195,14 +195,10 @@ Exam.</em></p>
 squared error of a constant prediction <span
 class="math inline">h</span> for a given dataset. For the dataset <span
 class="math inline">\{3, y_{1}\}</span>, the graph of <span
-class="math inline">R_{sq}(h)</span> has its minimum at the point
-(5,<span class="math inline">r_{1}</span>). Find out the value of <span
+class="math inline">R_{sq}(h)</span> has its minimum at the point <span
+class="math inline">(5,r_{1})</span>. Find out the value of <span
 class="math inline">y_{1}</span> and <span
 class="math inline">r_{1}</span></p>
-<div class="center">
-<p><span class="math inline">y_1 =</span> and <span
-class="math inline">r_1 =</span></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2">
@@ -216,45 +212,30 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-The mean square error is written as: $$ <span class="math display">
-<span class="math display">\begin{aligned}
-        R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2
-    
-\end{aligned}</span>
-</span> <span class="math display"> Since we only have two data points
-(<span class="math inline">n=2</span>), the equation simplifies to:
-</span> <span class="math display">
-<span class="math display">\begin{aligned}
-        R_{sq}(h) = \frac{1}{2}((y_{0}-h)^2+ (y_{1}-h)^2)
-    
-\end{aligned}</span>
-</span> <span class="math display"> Taking derivative with respect to h,
-we have: </span> <span class="math display">
-<span class="math display">\begin{aligned}
-        \frac{dR_{sq}(h)}{dh} = -(y_{0}-h)- (y_{1}-h)
-    
-\end{aligned}</span>
-</span> <span class="math display"> We know that the derivative has to
-be 0 at the local minima, therefore at <span
-class="math inline">h=5</span>, we have: </span>
-<span class="math display">
-<span class="math display">\begin{aligned}
-        \frac{dR_{sq}(h)}{dh} = -(3-5)- (y_{1}-5) &amp;amp;= 0\\
-        % -2+y_1-5 &amp;amp;=0\\
-        y_1 &amp;amp;= 7
-    
-\end{aligned}</span>
-</span> <span class="math display"> So we know that the dataset is <span
-class="math inline">{3,7}</span>. Given all these information, we can
-calculate <span class="math inline">r_1</span> with: </span>
-<span class="math display">
-<span class="math display">\begin{aligned}
-        R_{sq}(5) &amp;amp;= \frac{1}{2}((y_{0}-5)^2+ (y_{1}-5)^2)\\
-        &amp;amp;=\frac{1}{2}((3-5)^2+ (7-5)^2)\\
-        &amp;amp;=\frac{1}{2}(4+4)=4
-    
-\end{aligned}</span>
-<p></span> <p>$$</p></p>
+<p>The mean square error is written as: <span class="math display">\begin{align*}
+        R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2    
+\end{align*}</span></p>
+<p>Since we only have two data points (<span class="math inline">n=2</span>), the equation simplifies to:</p>
+<p><span class="math display">\begin{align*}
+        R_{sq}(h) = \frac{1}{2}((y_{0}-h)^2+ (y_{1}-h)^2)    
+\end{align*}</span></p>
+<p>Taking derivative with respect to h, we have: <span class="math display">\begin{align*}
+        \frac{dR_{sq}(h)}{dh} = -(y_{0}-h)- (y_{1}-h)    
+\end{align*}</span></p>
+<p>We know that the derivative has to be 0 at the local minima,
+therefore at <span class="math inline">h=5</span>, we have:</p>
+<p><span class="math display">\begin{align*}
+        \frac{dR_{sq}(h)}{dh} = -(3-5)- (y_{1}-5) &amp;= 0\\
+        % -2+y_1-5 &amp;=0\\
+        y_1 &amp;= 7
+\end{align*}</span></p>
+<p>So we know that the dataset is <span class="math inline">{3,7}</span>. Given all these information, we can
+calculate <span class="math inline">r_1</span> with:</p>
+<p><span class="math display">\begin{align*}
+        R_{sq}(5) &amp;= \frac{1}{2}((y_{0}-5)^2+ (y_{1}-5)^2)\\
+        &amp;=\frac{1}{2}((3-5)^2+ (7-5)^2)\\
+        &amp;=\frac{1}{2}(4+4)=4
+\end{align*}</span></p>
 </div>
 </div>
 </div>
