@@ -1,10 +1,10 @@
 Overleaf Link: https://www.overleaf.com/read/sxtxhfnpdncy#9530e5
 
 Nick: Winter 2024 midterm 1 (midterm_WI24_1.tex)
-- Probs Uploaded, cleaning needed.
+    - Cleaned, needs proofreading.
 
 Nick: Winter 2024 midterm 2 (Midterm2_WI24.tex)
-- Cleaned, needs proofreading.
+    - Cleaned, needs proofreading.
 
 Zoe: Winter 2024 final part 1 (final1_WI24.tex)
 COMPLETED
