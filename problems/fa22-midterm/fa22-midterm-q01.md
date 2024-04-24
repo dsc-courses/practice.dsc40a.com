@@ -5,8 +5,8 @@ $\alpha = 1/4$.
 
 # BEGIN SUBPROB
 
-First of all, write down the updating rule for gradient
-descent in general and for this function.
+Write down the updating rule for gradient
+descent in general, then write down the updating rule for gradient descent for the function $f(x)$.
 
 # BEGIN SOLUTION
 
@@ -32,18 +32,26 @@ If so, where it might converge to, given appropriate step size?
 
 # BEGIN SOLUTION
 
-We have $$f'(x_0) = f'(-1) = 3(-1)^2 + 2(-1) = 1 > 0,$$ so we go left,
+We have $$f'(x_0) = f'(-1) = 3(-1)^2 + 2(-1) = 1 > 0,$$ so we go <u>left</u>,
 and $$x_1 = x_0 - \alpha f'(x_0) = -1 - \frac{1}{4} = -\frac{5}{4}.$$
-Intuitively, the gradient descent cannot converge in this case because
-$$\text{lim}_{x \rightarrow -\infty} f(x) = -\infty,$$ We need to find
+Intuitively, the gradient descent <u>cannot converge in this case</u> because
+$$\text{lim}_{x \rightarrow -\infty} f(x) = -\infty,$$ 
+
+We need to find
 all local minimums and local maximums. First, we solve the equation
-$f'(x) = 0$ to find all critical points. We have:
+$f'(x) = 0$ to find all critical points. 
+
+We have:
 $$f'(x) = 0 \Leftrightarrow 3x^2 + 2x = 0 \Leftrightarrow x = -\frac{2}{3} \ \ \text{and} \ \ x = 0.$$
+
 Now, we consider the second-order derivative:
-$$f''(x) = \frac{d^2f}{dx^2} = 6x + 2.$$ We have $f''(x) = 0$ only when
-$x = -1/3$. Thus, for $x < -1/3$, $f''(x)$ is negative or the slope
-$f'(x)$ decreases; and for $x > -1/3$, $f''(x)$ is positive or the slope
-$f'(x)$ increases. Keep in mind that $-1 < -2/3 < -1/3 < 0 < 1$.
+$$f''(x) = \frac{d^2f}{dx^2} = 6x + 2.$$ 
+
+We have $f''(x) = 0$ only when $x = -1/3$. Thus, for $x < -1/3$, 
+$f''(x)$ is negative or the slope $f'(x)$ decreases; and for $x > -1/3$,
+$f''(x)$ is positive or the slope $f'(x)$ increases. Keep in mind that 
+$-1 < -2/3 < -1/3 < 0 < 1$.
+
 Therefore, $f$ has a local maximum at $x = -2/3$ and a local minimum at
 $x = 0$. If the gradient descent starts at $x_0 = -1$ and it always goes
 left then it will never meet the local minimum at $x = 0$, and it will
@@ -63,10 +71,11 @@ If so, where it might converge to, given appropriate step size?
 # BEGIN SOLUTION
 
 We have $$f'(x_0) = f'(-1) = 3 \cdot 1^2 + 2 \cdot 1 = 5 > 0,$$ so we go
-left, and
+<u>left</u>, and 
 $$x_1 = x_0 - \alpha f'(x_0) = 1 - \frac{1}{4} \cdot 5 = -\frac{1}{4}.$$
+
 From the previous part, function $f$ has a local minimum at $x = 0$, so
-the gradient descent can converge (given appropriate step size) at this
+the gradient descent <u>can converge</u> (given appropriate step size) at this
 local minimum.
 
 # END SOLUTION

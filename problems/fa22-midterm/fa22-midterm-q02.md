@@ -22,7 +22,7 @@ this dataset (mathematically)?
 
 $$\bar x = \frac{1}{3}(0 + 4 + 5) = 3$$
 $$\bar y = \frac{1}{3}(0 + 2 + 1) = 1$$
-\begin{center}
+<!-- \begin{center}
     \begin{tabular}{llllll}\toprule
         $x_i$ & $y_i$ & $(x_i - \bar x)$ & $(y_i - \bar y)$ & $(x_i - \bar x)(y_i - \bar y)$ & $(x_i - \bar x)^2$
         \\\midrule
@@ -31,7 +31,48 @@ $$\bar y = \frac{1}{3}(0 + 2 + 1) = 1$$
         5 & 1 & 2 & 0 & 0 & 4 \\
         \bottomrule
     \end{tabular} \\
-\end{center}
+\end{center} -->
+
+<table style='color:red'>
+  <tr>
+    <th>$x_i$</th>
+    <th>$y_i$</th>
+    <th>$(x_i - \bar x)$</th>
+    <th>$(y_i - \bar y)$</th>
+    <th>$(x_i - \bar x)(y_i - \bar y)$</th>
+    <th>$(x_i - \bar x)^2$</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>-3</td>
+    <td>-1</td>
+    <td>3</td>
+    <td>9</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>1</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>4</td>
+    <td></td>
+  </tr>
+</table>
+
+
 $$w_1^* =
 \frac{
 \displaystyle

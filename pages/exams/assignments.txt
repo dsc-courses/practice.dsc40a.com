@@ -32,3 +32,4 @@ Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 Nick: the zip fa22-final.zip, attached, has the .tex for the Fall 2022 final (Final_revised.tex).
 
 Nick: the zip fa22-midterm.zip, attached, has the .tex for the Fall 2022 midterm (midterm_sol.tex).
+    - Probs uploaded, needs cleaning.
