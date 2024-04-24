@@ -419,7 +419,6 @@ x_i \\
     &amp; \Leftrightarrow {1 \over n} \sum_i x_i \sum_i y_i = {1 \over
 n} \sum_i y_i \sum_i x_i \\
 \end{align*}</span></p>
-<p>In fact, the least square estimator for slope is unique.</p>
 </div>
 </div>
 </div>
@@ -448,8 +447,9 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>False. By (1), the only term affecting <span class="math inline">w</span> is <span class="math inline">x_i -
-\overline{x}</span>, which is unchanged after shifting. Therefore, <span class="math inline">w</span> is unchanged.</p>
+<p>False. By (1) in part a, we can view <span class="math inline">w</span> as only being affected by <span class="math inline">x_i - \overline{x}</span>, which is unchanged after
+shifting horizontally. Therefore, <span class="math inline">w</span> is
+unchanged.</p>
 </div>
 </div>
 </div>
@@ -479,7 +479,9 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>False. By (2).</p>
+<p>False. By (2) in part a, we can view <span class="math inline">w</span> as only being affected by <span class="math inline">y_i - \overline{y}</span>, which is unchanged after
+shifting vertically. Therefore, <span class="math inline">w</span> is
+unchanged.</p>
 </div>
 </div>
 </div>
@@ -491,26 +493,22 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 Exam.</em></p>
 <p>Suppose the following information is given for a linear
 regression:</p>
-<div class="center">
-<p><span class="math inline">X =</span></p>
-<div class="bmatrix">
-<p>1 &amp; 2<br />
-1 &amp; -1<br />
-</p>
-</div>
-<p><span class="math inline">\Vec{y} =
+<p><span class="math inline">X = \begin{bmatrix}
+1 &amp; 2\\
+1 &amp; -1
+\end{bmatrix}</span></p>
+<p><span class="math inline">\vec{y} =
     \begin{bmatrix}
     a\\
     b\\
-    \end{bmatrix}</span> <span class="math inline">\Vec{w}^{*} =
+    \end{bmatrix}</span> <span class="math inline">\vec{w}^{*} =
     \begin{bmatrix}
     1\\
     2\\
     \end{bmatrix}</span></p>
-</div>
 <p>Where X is the design matrix, <span
-class="math inline">\Vec{y}</span> is the observation vector, and <span
-class="math inline">\Vec{w}^{*}</span> is the optimal parameter vector.
+class="math inline">\vec{y}</span> is the observation vector, and <span
+class="math inline">\vec{w}^{*}</span> is the optimal parameter vector.
 Solve for parameter a and b using the normal equation, show your
 work.</p>
 <div id="accordionExample" class="accordion">
@@ -526,104 +524,99 @@ aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-Since <span class="math inline">^{*}</span> is the optimal parameter
-vector, it must satisfy the Normal Equation: $$
-<span class="math display">
-<span class="math display">\begin{aligned}
-        X^{T}X\Vec{w} = X^{T}\Vec{y}
-    
-\end{aligned}</span>
-</span> <p><span class="math display"> The left hand side of the
-equation will read:&lt;/p&gt;
-&lt;div class=&quot;center&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;X^{T}X\Vec{w}
-=&lt;/span&gt;&lt;/p&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;1 &amp;amp; 1&lt;br/&gt;
-2 &amp;amp; -1&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;1 &amp;amp; 2&lt;br/&gt;
-1 &amp;amp; -1&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;1&lt;br/&gt;
-2&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;=&lt;/p&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;2 &amp;amp; 1&lt;br/&gt;
-1 &amp;amp; 5&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;1&lt;br/&gt;
-2&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;=&lt;/p&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;4&lt;br/&gt;
-11&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;The right hand side of the equation is given by:&lt;/p&gt;
-&lt;div class=&quot;center&quot;&gt;
-&lt;p&gt;&lt;span class=&quot;math inline&quot;&gt;X^{T}\vec{y}
-=&lt;/span&gt;&lt;/p&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;1 &amp;amp; 1&lt;br/&gt;
-2 &amp;amp; -1&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;a&lt;br/&gt;
-b&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;=&lt;/p&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;a+b&lt;br/&gt;
-2a-b&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;By setting the left hand side and right hand side equal to each
-other, we will obatin the following system of equations:&lt;/p&gt;
-&lt;div class=&quot;center&quot;&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;4&lt;br/&gt;
-11&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;=&lt;/p&gt;
-&lt;div class=&quot;bmatrix&quot;&gt;
-&lt;p&gt;a+b&lt;br/&gt;
-2a-b&lt;br/&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-So we obtained this set of equations: </span>
-<span class="math display">
-<span class="math display">\begin{aligned}
-        &amp;amp;4 = a + b\\
-        &amp;amp;11 = 2a-b
-    
-\end{aligned}</span>
-</span> <span class="math display"> To sole this equation set, we can
-add them together: </span> <span class="math display">
-<span class="math display">\begin{aligned}
-       4+11 &amp;amp;= a + b + 2a -b\\
-       3a &amp;amp;= 15\\
-       a &amp;amp;= 5\\
-       b &amp;amp;= -1\\
-    
-\end{aligned}</span>
-<p></span> <p>$$</p></p>
+<p>Since <span class="math inline">\vec{w}^{*}</span> is the optimal
+parameter vector, it must satisfy the Normal Equation:</p>
+<p><span class="math display">\begin{align*}
+        X^{T}X\vec{w} = X^{T}\vec{y}
+\end{align*}</span></p>
+<p>The left hand side of the equation will read:</p>
+<p><span class="math display">\begin{align*}
+X^{T}X\vec{w} &amp;=
+\begin{bmatrix}
+1 &amp; 1\\
+2 &amp; -1
+\end{bmatrix}
+
+\begin{bmatrix}
+1 &amp; 2\\
+1 &amp; -1
+\end{bmatrix}
+
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix}
+\\
+&amp;=
+
+
+\begin{bmatrix}
+2 &amp; 1\\
+1 &amp; 5
+\end{bmatrix}
+
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix}
+\\
+&amp;=
+
+\begin{bmatrix}
+4\\
+11
+\end{bmatrix}
+\end{align*}</span></p>
+<p>The right hand side of the equation is given by:</p>
+<p><span class="math display">\begin{align*}
+X^{T}\vec{y} &amp;=
+\begin{bmatrix}
+1 &amp; 1\\
+2 &amp; -1
+\end{bmatrix}
+\begin{bmatrix}
+a\\
+b
+\end{bmatrix}
+
+\\
+&amp;=
+
+\begin{bmatrix}
+a+b\\
+2a-b
+\end{bmatrix}
+\end{align*}</span></p>
+<p>By setting the left hand side and right hand side equal to each
+other, we will obtain the following system of equations:</p>
+<p><span class="math display">\begin{align*}
+\begin{bmatrix}
+4\\
+11
+\end{bmatrix}
+
+=
+
+\begin{bmatrix}
+a+b\\
+2a-b
+\end{bmatrix}
+\end{align*}</span></p>
+<p>So we obtained this set of equations:</p>
+<p><span class="math display">\begin{align*}
+        &amp;4 = a + b\\
+        &amp;11 = 2a-b
+\end{align*}</span></p>
+<p>To solve this equation set, we can add them together: <span class="math display">\begin{align*}
+       4+11 &amp;= a + b + 2a -b\\
+       3a &amp;= 15\\
+       \\
+       \\
+       \begin{cases}
+       a = 5\\
+       b = -1\\
+       \end{cases}
+\end{align*}</span></p>
 </div>
 </div>
 </div>
