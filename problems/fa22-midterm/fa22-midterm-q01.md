@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+_Originally Problem 1 on the Fall 2022 Midterm Exam._
+
 Suppose that we are given $f(x) = x^3 + x^2$ and learning rate
 $\alpha = 1/4$.
 

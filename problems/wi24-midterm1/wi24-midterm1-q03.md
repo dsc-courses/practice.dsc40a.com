@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+_Originally Problem 3 on the first Winter 2024 Midterm Exam._
+
 \[(10 points)\] The hyperbolic cosine function is defined as
 $cosh(x) = \frac{1}{2}(e^{x} + e^{-x})$. In this problem, we aim to
 prove the convexity of this function using power series expansion.

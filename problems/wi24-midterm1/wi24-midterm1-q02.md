@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+_Originally Problem 2 on the first Winter 2024 Midterm Exam._
+
 Let $R_{sq}(h)$ represent the mean squared error of a
 constant prediction $h$ for a given dataset. For the dataset
 $\{3, y_{1}\}$, the graph of $R_{sq}(h)$ has its minimum at the point

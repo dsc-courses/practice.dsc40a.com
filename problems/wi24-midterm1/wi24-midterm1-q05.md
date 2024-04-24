@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+_Originally Problem 5 on the first Winter 2024 Midterm Exam._
+
 Suppose the following information is given for a linear regression:
 
 :::: center

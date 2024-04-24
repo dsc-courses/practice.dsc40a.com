@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+_Originally Problem 4 on the Fall 2022 Midterm Exam._
+
 Consider a dataset that consists of $y_1, \cdots, y_n$. In class, we
 used calculus to minimize mean squared error,
 $R_{sq}(h) = \frac{1}{n} \sum_{i = 1}^n (h - y_i)^2$. In this problem,

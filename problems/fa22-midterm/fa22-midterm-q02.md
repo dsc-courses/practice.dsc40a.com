@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+_Originally Problem 2 on the Fall 2022 Midterm Exam._
+
 Calculate $w_1^*$ and $w_0^*$ of the linear regression line 
 for the following dataset, $\mathcal{D}$. 
 You may use the fill-in-the-blanks and the table below to organize your work.

@@ -4,7 +4,7 @@ Nick: Winter 2024 midterm 1 (midterm_WI24_1.tex)
 - Probs Uploaded, cleaning needed.
 
 Nick: Winter 2024 midterm 2 (Midterm2_WI24.tex)
-- Added in solutions, proofreading needed
+- Cleaned, needs proofreading.
 
 Zoe: Winter 2024 final part 1 (final1_WI24.tex)
 COMPLETED
@@ -32,4 +32,4 @@ Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 Nick: the zip fa22-final.zip, attached, has the .tex for the Fall 2022 final (Final_revised.tex).
 
 Nick: the zip fa22-midterm.zip, attached, has the .tex for the Fall 2022 midterm (midterm_sol.tex).
-    - Probs uploaded, needs cleaning.
+    - Cleaned, needs proofreading.

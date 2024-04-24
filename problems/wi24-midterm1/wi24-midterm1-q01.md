@@ -1,19 +1,19 @@
 # BEGIN PROB
 
+_Originally Problem 1 on the first Winter 2024 Midterm Exam._
+
 Consider a dataset $D$ with 5 data points
 $\{7,5,1,2,a\}$, where a is a positive real number. Note that $a$ is not
 necessarily an integer.
 
 # BEGIN SUBPROB
 
-(2 points) Express the mean of $D$ as a function of $a$, simplify the
+Express the mean of $D$ as a function of $a$, simplify the
 expression as much as possible.
 
-::: center
-$Mean_{D}$ =
-:::
-
 # BEGIN SOLUTION
+
+$$\text{Mean($D$)} = \frac{a}{5} + 3$$
 
 # END SOLUTION
 
@@ -26,12 +26,14 @@ one of three possible values. Write out all possible median of $D$ along
 with the corresponding range of $a$ for each case. Express the ranges
 using double inequalities, e.g., i.e. $3<a\leq8$:
 
-::: center
-$Median_{D} =$ if a is in the range of $Median_{D} =$ if a is in the
-range of $Median_{D} =$ if a is in the range of
-:::
 
 # BEGIN SOLUTION
+
+$$\begin{cases}
+\text{Median($D$)} = 2 & \text{if a is in the range of } 0<a\leq2 \\
+\text{Median($D$)} = a & \text{if a is in the range of } 2<a\leq5 \\
+\text{Median($D$)} = 5 & \text{if a is in the range of } 5<a\leq\infty \\
+\end{cases}$$
 
 # END SOLUTION
 
