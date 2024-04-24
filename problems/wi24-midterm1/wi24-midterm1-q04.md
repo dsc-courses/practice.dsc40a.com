@@ -6,11 +6,12 @@ Note that we have two simplified closed form expressions for the
 estimated slope $w$ in simple linear regression that you have already
 seen in discussions and lectures:
 
-$$\begin{aligned}
+$$\begin{align*}
          w &= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i - \overline{x})^2} \tag{1}\\
-        w &= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i - \overline{x})^2} \tag{2}
-     
-\end{aligned}$$ where we have dataset
+        w &= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i - \overline{x})^2} \tag{2}  
+\end{align*}$$ 
+
+where we have dataset
 $D = [(x_1,y_1), \ldots, (x_n,y_n)]$, sample means
 $\overline{x} = {1 \over n} \sum_{i} x_i, \quad \overline{y} = {1 \over n} \sum_{i} y_i$.
 Without further explanation, $\sum_i$ means $\sum_{i=1}^n$
@@ -23,13 +24,13 @@ $$\sum_i (x_i - \overline{x}) y_i = \sum_i (y_i - \overline{y}) x_i$$
 
 # BEGIN SOLUTION
 
-True. $$\begin{aligned}
+True. 
+$$\begin{align*}
     & \sum_i (x_i - \overline{x}) y_i = \sum_i (y_i - \overline{y}) x_i \\
     & \Leftrightarrow  \sum_i x_i y_i - \overline{x} \sum_i y_i = \sum_i x_i y_i - \overline{y} \sum_i x_i \\
     & \Leftrightarrow   \overline{x} \sum_i y_i = \overline{y} \sum_i x_i \\
     & \Leftrightarrow {1 \over n} \sum_i x_i \sum_i y_i = {1 \over n} \sum_i y_i \sum_i x_i \\
-    
-\end{aligned}$$ In fact, the least square estimator for slope is unique.
+\end{align*}$$
 
 # END SOLUTION
 
@@ -37,7 +38,7 @@ True. $$\begin{aligned}
 
 # BEGIN SUBPROB
 
-(2pt) True or False: If the dataset shifted right by a constant distance
+True or False: If the dataset shifted right by a constant distance
 $a$, that is, we have the new dataset
 $D_a = (x_1 + a,y_1), \ldots, (x_n + a,y_n)$, then will the estimated
 slope $w$ change or not?
@@ -47,8 +48,8 @@ slope $w$ change or not?
 
 # BEGIN SOLUTION
 
-False. By (1), the only term affecting $w$ is $x_i - \overline{x}$,
-which is unchanged after shifting. Therefore, $w$ is unchanged.
+False. By (1) in part a, we can view $w$ as only being affected by $x_i - \overline{x}$,
+which is unchanged after shifting horizontally. Therefore, $w$ is unchanged.
 
 # END SOLUTION
 
@@ -67,7 +68,8 @@ slope $w$ change or not?
 
 # BEGIN SOLUTION
 
-False. By (2).
+False. By (2) in part a, we can view $w$ as only being affected by $y_i - \overline{y}$,
+which is unchanged after shifting vertically. Therefore, $w$ is unchanged.
 
 # END SOLUTION
 

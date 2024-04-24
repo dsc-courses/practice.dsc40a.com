@@ -244,17 +244,14 @@ calculate <span class="math inline">r_1</span> with:</p>
 <h2 id="problem-3">Problem 3</h2>
 <p><em>Originally Problem 3 on the first Winter 2024 Midterm
 Exam.</em></p>
-<p>[(10 points)] The hyperbolic cosine function is defined as <span
+<p>The hyperbolic cosine function is defined as <span
 class="math inline">cosh(x) = \frac{1}{2}(e^{x} + e^{-x})</span>. In
 this problem, we aim to prove the convexity of this function using power
 series expansion.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>(3 points) Prove that <span class="math inline">f(x) = x^{n}</span>
-is convex if n is an even integer.</p>
-<div class="mdframed">
-<p><strong>Proof:</strong></p>
-</div>
+<p>Prove that <span class="math inline">f(x) = x^{n}</span> is convex if
+n is an even integer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_1">
@@ -268,48 +265,38 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-Take the second derivative of f: $$ <span class="math display">
-<span class="math display">\begin{aligned}
-        f&#39;(x) &amp;amp;= nx^{n-1}\\
-        f&#39;&#39;(x) &amp;amp;= n(n-1)x^{n-2}
-    
-\end{aligned}</span>
-<p></span> <p>$$ If n is even, then n-2 must also be even, therefore
-<span class="math inline">f’’(x) = n(n-1)x^{n-2}</span> will always be a
-positive number. This means the second derivative of <span
-class="math inline">f(x)</span> is always larger than 0 and therefore
-passes the second derivative test.</p></p>
+<p>Take the second derivative of f:</p>
+<p><span class="math display">\begin{align*}
+        f'(x) &amp;= nx^{n-1}\\
+        f''(x) &amp;= n(n-1)x^{n-2}
+\end{align*}</span></p>
+<p>If n is even, then n-2 must also be even, therefore <span class="math inline">f''(x) = n(n-1)x^{n-2}</span> will always be
+a positive number. This means the second derivative of <span class="math inline">f(x)</span> is always larger than 0 and therefore
+passes the second derivative test.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-(2 points) Power series expansion is a powerful tool to analyze
-complicated functions. In power series expansion, a function can be
-written as an infinite sum of polynomial functions with certain
-coefficients. For example, the exponential function can be written as:
-$$
-<span class="math display">\begin{aligned}
-        \label{exp_expand}
+<p>Power series expansion is a powerful tool to analyze complicated
+functions. In power series expansion, a function can be written as an
+infinite sum of polynomial functions with certain coefficients. For
+example, the exponential function can be written as: <span
+class="math display">\begin{align*}
         e^{x} = \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x +
-\frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....
-    
-\end{aligned}</span>
-<p>$$ where <span class="math inline">n!</span> denotes the factorial of
+\frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ...
+\end{align*}</span></p>
+<p>where <span class="math inline">n!</span> denotes the factorial of
 <span class="math inline">n</span>, defined as the product of all
 positive integers up to <span class="math inline">n</span>, i.e. <span
 class="math inline">n! = 1\times2\times3\times ... \times(n-1)\times
 n</span>. Given the power series expansion of <span
 class="math inline">e^{x}</span> above, write the power series expansion
 of <span class="math inline">e^{-x}</span> and explicitly specify the
-first 5 terms, i.e., similar to the format of Equation <a
-href="#exp_expand" data-reference-type="ref"
-data-reference="exp_expand">[exp_expand]</a>:</p>
-<div class="mdframed">
-<p><span class="math inline">e^{-x} = \sum_{n=0}^{\infty}</span><span
-class="math inline">=</span></p>
-</div>
+first 5 terms, i.e., similar to the format of the equation above. <!-- 
+Equation [\[exp_expand\]](#exp_expand){reference-type="ref"
+reference="exp_expand"}: --></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
@@ -323,9 +310,10 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>By plugging <span class="math inline">-x</span> in for each <span class="math inline">x</span>, we get:</p>
 <p><span class="math inline">e^{-x} =
 \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2} -
-\frac{x^{3}}{6}+\frac{x^{4}}{24}+.....</span></p>
+\frac{x^{3}}{6}+\frac{x^{4}}{24}+ ...</span></p>
 </div>
 </div>
 </div>
@@ -333,12 +321,9 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>(5 points) Using the conclusions you reached in <strong>a)</strong>
-and <strong>b)</strong>, prove that <span class="math inline">cosh(x) =
-\frac{1}{2}(e^{x} + e^{-x})</span> is convex.</p>
-<div class="mdframed">
-<p><strong>Proof:</strong></p>
-</div>
+<p>Using the conclusions you reached in part a and part b, prove that
+<span class="math inline">cosh(x) = \frac{1}{2}(e^{x} + e^{-x})</span>
+is convex.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_3">
@@ -352,45 +337,36 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-Given that: $$ <span class="math display">
-<span class="math display">\begin{aligned}
-        e^{x} &amp;amp;= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x +
+<p>Given that:</p>
+<p><span class="math display">\begin{align*}
+        e^{x} &amp;= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x +
 \frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....\\
-        e^{-x} &amp;amp;= \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!} = 1 - x
-+
+        e^{-x} &amp;= \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!} = 1 - x +
 \frac{x^{2}}{2} - \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....
-    
-\end{aligned}</span>
-</span> <span class="math display"> We can add their power series
-expansion together, and we will obtain: </span>
-<span class="math display">
-<span class="math display">\begin{aligned}
-        e^{x} + e^{-x} &amp;amp;= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} +
+\end{align*}</span></p>
+<p>We can add their power series expansion together, and we will
+obtain:</p>
+<p><span class="math display">\begin{align*}
+        e^{x} + e^{-x} &amp;= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} +
 \sum_{n=0}^{\infty}\frac{x^{n}}{n!}\\
-        &amp;amp;=\sum_{n=0}^{\infty}\frac{(x)^{n} + (-x)^{n}}{n!}
-    
-\end{aligned}</span>
-</span> <span class="math display"> Within this infinite sum, if n is
-even, then the negative sign in <span
-class="math inline">(-x)^{n}</span> will disappear; if n is odd, then
-the negative sign in <span class="math inline">(-x)^{n}</span> will be
-kept and travel out of the parenthesis. Therefore we have: </span>
-<span class="math display">
-<span class="math display">\begin{aligned}
-        e^{x} + e^{-x} &amp;amp;=
-\sum_{n=0}^{\infty}\frac{x^{n}+x^{n}}{n!}
+        &amp;=\sum_{n=0}^{\infty}\frac{(x)^{n} + (-x)^{n}}{n!}
+\end{align*}</span></p>
+<p>Within this infinite sum, if n is even, then the negative sign in
+<span class="math inline">(-x)^{n}</span> will disappear; if n is odd,
+then the negative sign in <span class="math inline">(-x)^{n}</span> will
+be kept and travel out of the parenthesis. Therefore we have:</p>
+<p><span class="math display">\begin{align*}
+        e^{x} + e^{-x} &amp;= \sum_{n=0}^{\infty}\frac{x^{n}+x^{n}}{n!}
 \mathrm{(for\; even\; n)} +
 \sum_{n=0}^{\infty}\frac{x^{n}-x^{n}}{n!}\mathrm{(for\; odd\; n)}\\
-        &amp;amp;=\sum_{n=0}^{\infty}\frac{2x^{n}}{n!} \mathrm{(for\;
-even\;
+        &amp;=\sum_{n=0}^{\infty}\frac{2x^{n}}{n!} \mathrm{(for\; even\;
 n)}
-    
-\end{aligned}</span>
-<p></span> <p>$$ Therefore, <span class="math inline">cosh(x)=</span> is
-a sum of <span class="math inline">x^{n}</span> where n is even. Since
-we have already proved in a) that <span class="math inline">x^{n}</span>
-are always convex for even n, <span class="math inline">cosh(x)</span>
-is an infinite sum of convex function and therefore also convex.</p></p>
+\end{align*}</span></p>
+<p>Therefore, <span class="math inline">cosh(x)=\frac{e^{x}+e^{-x}}{2}</span> is a sum of
+<span class="math inline">x^{n}</span> where n is even. Since we have
+already proved in part a that <span class="math inline">x^{n}</span> are
+always convex for even n, <span class="math inline">cosh(x)</span> is an
+infinite sum of convex functions and therefore also convex.</p>
 </div>
 </div>
 </div>
@@ -403,15 +379,13 @@ Exam.</em></p>
 <p>Note that we have two simplified closed form expressions for the
 estimated slope <span class="math inline">w</span> in simple linear
 regression that you have already seen in discussions and lectures:</p>
-$$
-<span class="math display">\begin{aligned}
+<p><span class="math display">\begin{align*}
          w &amp;= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i -
 \overline{x})^2} \tag{1}\\
         w &amp;= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i -
-\overline{x})^2} \tag{2}
-     
-\end{aligned}</span>
-<p>$$ where we have dataset <span class="math inline">D = [(x_1,y_1),
+\overline{x})^2} \tag{2}  
+\end{align*}</span></p>
+<p>where we have dataset <span class="math inline">D = [(x_1,y_1),
 \ldots, (x_n,y_n)]</span>, sample means <span
 class="math inline">\overline{x} = {1 \over n} \sum_{i} x_i, \quad
 \overline{y} = {1 \over n} \sum_{i} y_i</span>. Without further
@@ -435,32 +409,26 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-True. $$ <span class="math display">
-<span class="math display">\begin{aligned}
-    &amp;amp; \sum_i (x_i - \overline{x}) y_i = \sum_i (y_i -
-\overline{y})
+<p>True. <span class="math display">\begin{align*}
+    &amp; \sum_i (x_i - \overline{x}) y_i = \sum_i (y_i - \overline{y})
 x_i \\
-    &amp;amp; \Leftrightarrow  \sum_i x_i y_i - \overline{x} \sum_i y_i
-=
+    &amp; \Leftrightarrow  \sum_i x_i y_i - \overline{x} \sum_i y_i =
 \sum_i x_i y_i - \overline{y} \sum_i x_i \\
-    &amp;amp; \Leftrightarrow   \overline{x} \sum_i y_i = \overline{y}
+    &amp; \Leftrightarrow   \overline{x} \sum_i y_i = \overline{y}
 \sum_i x_i \\
-    &amp;amp; \Leftrightarrow {1 \over n} \sum_i x_i \sum_i y_i = {1
-\over
+    &amp; \Leftrightarrow {1 \over n} \sum_i x_i \sum_i y_i = {1 \over
 n} \sum_i y_i \sum_i x_i \\
-    
-\end{aligned}</span>
-<p></span> <p>$$ In fact, the least square estimator for slope is
-unique.</p></p>
+\end{align*}</span></p>
+<p>In fact, the least square estimator for slope is unique.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>(2pt) True or False: If the dataset shifted right by a constant
-distance <span class="math inline">a</span>, that is, we have the new
-dataset <span class="math inline">D_a = (x_1 + a,y_1), \ldots, (x_n +
+<p>True or False: If the dataset shifted right by a constant distance
+<span class="math inline">a</span>, that is, we have the new dataset
+<span class="math inline">D_a = (x_1 + a,y_1), \ldots, (x_n +
 a,y_n)</span>, then will the estimated slope <span
 class="math inline">w</span> change or not?</p>
 <ul class="task-list">
