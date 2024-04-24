@@ -56,9 +56,7 @@ In certain poker rules, a bomb is defined as either four-of-a-kind, or two wildc
 
 <!-- Need to edit this one -->
 
-TODO
-
-<!-- The number of hands containing two jokers (the other two cards are arbitrary) is given by:
+The number of hands containing two jokers (the other two cards are arbitrary) is given by:
 $$\begin{align*}
 \underbrace{C(2,2)}_{\text{Two Jokers}} \times \underbrace{C(52, 2)}_{\text{Other Two Cards}} = \frac{52 \times 51}{2} = 1326.
 \end{align*}$$ The number of hands that form four of a kind is 13, one for each of the 13 unique values in a deck.
@@ -68,8 +66,8 @@ $$\begin{align*}
 For a bomb to occur,
 the four cards either contain two jokers or form four of a kind. Hence,
 $$\begin{align*}
-    mathbb{P}(\text{Four of a kind | Bomb}) = \frac{13}{13 + 1326} = \frac{1}{103}
-\end{align*}$$ -->
+    \mathbb{P}(\text{Four of a kind | Bomb}) = \frac{13}{13 + 1326} = \frac{1}{103}
+\end{align*}$$
 
 <!-- OLD SOLUTION -->
 
