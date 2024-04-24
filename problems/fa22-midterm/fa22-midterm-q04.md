@@ -29,11 +29,12 @@ of $\bar{y}$, $\alpha$ and $\lambda$.
 
 # BEGIN SOLUTION
 
-$$\begin{aligned}
-    \frac{d}{dh}R_{\text{midterm}}(h)&= [\frac{2}{n}\sum_{i=1}^{i=n}(h- \alpha y_i  )] +\lambda \\
-    &=2 h-2\alpha \bar{y} + \lambda.
-    
-\end{aligned}$$
+$$
+\begin{align*}
+\frac{d}{dh}R_{\text{midterm}}(h)&= [\frac{2}{n}\sum_{i=1}^{i=n}(h- \alpha y_i  )] +\lambda \\
+&=2 h-2\alpha \bar{y} + \lambda.
+\end{align*}
+$$
 
 By setting $\frac{d}{dh}R_{\text{midterm}}(h)=0$ we get
 $$2 h^*-2\alpha \bar{y} + \lambda=0 \Rightarrow h^*=\alpha \bar{y} - \frac{\lambda}{2}.$$
