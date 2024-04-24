@@ -6,16 +6,16 @@ providing fresh Baklavas to his customers daily. Here is the amount of
 Baklava he sold each day during last week in pounds(lb):
 $$y_1=100, y_2=110, y_3=75, y_4=90, y_5=105, y_6=90, y_7=25$$
 
-Mahdi needs your help as a data scientist to suggest the best constant
-prediction $h^*$ of daily sales that minimizes the empirical risk using
-$L(h,y)$ as the loss function. Answer the following questions and give a
+Mahdi needs your help as a data scientist to suggest <u>the best constant
+prediction ($h^*$) of daily sales that minimizes the empirical risk using
+$L(h,y)$ as the loss function</u>. Answer the following questions and give a
 **brief justification** for each part. **This problem has many parts, if
 you get stuck, move on and come back later!**
 
 # BEGIN SUBPROB
 
-Let $L(h,y)=|y-h|$. What is $h^*$? We refer to this
-prediction as $h_1^*$.
+Let $L(h,y)=|y-h|$. What is $h^*$? (We'll later refer to this
+prediction as $h_1^*$).
 
 # BEGIN SOLUTION
 
@@ -28,12 +28,12 @@ function. $$h^*_1=\text{Median}(y_1, \cdots, y_7).$$
 
 # BEGIN SUBPROB
 
-Let $L(h,y)=(y-h)^2$. What is $h^*$? We refer to this
-prediction as $h_2^*$.
+Let $L(h,y)=(y-h)^2$. What is $h^*$? (We'll later refer to this
+prediction as $h_2^*$).
 
 # BEGIN SOLUTION
 
-As we have seen in lectures, the median minimizes the absolute loss risk
+As we have seen in lectures, the mean minimizes the square loss risk
 function. $$h^*_2=\text{Mean}(y_1, \cdots, y_7).$$
 
 # END SOLUTION
@@ -63,7 +63,7 @@ prediction changes *more*? $h^*_1$ or $h_2^*$?
 
 # BEGIN SOLUTION
 
-The mean squared loss is more sensitive to outliers and removing data
+The mean squared loss is more sensitive to outliers than absolute loss, and removing data
 changes the mean more. Therefore, removing $y_7$ affects $h_2^*$ more
 than $h_1^*$.
 
@@ -78,7 +78,7 @@ the Gradient descent algorithm to find $h^*$.
 
 # BEGIN SOLUTION
 
-**False**. The function $|y-h|^3$ is not differantiable everywhere so we
+**False**. The function $|y-h|^3$ is not differentiable everywhere so we
 can not use the gradient descent to find the minimum.
 
 # END SOLUTION
@@ -105,24 +105,27 @@ is not guaranteed to converge.
 Mahdi has noticed that Baklava daily sale is associated with weather
 temperature. So he asks you to incorporate this feature to get a better
 prediction. Suppose the last week's daily temperatures are
-$x_1, x_2, \cdots, x_7$ in Fahrenheit (F). We know that $\Bar{x}=65$,
-$\sigma_x=8.5$ and the best linear prediction that minimizes the mean
-squared error is $H^*(x)=-3x+w_0^*$.
+$x_1, x_2, \cdots, x_7$ in Fahrenheit (F). We know that $\bar x=65$,
+$\sigma_x=8.5$ and the best linear prediction that <u>minimizes the mean
+squared error</u> is $H^*(x)=-3x+w_0^*$.
 
 What is the correlation coefficient ($r$) between $x$ and
 $y$? What does that mean? 
 
 # BEGIN SOLUTION
 
-We know $w_1^*=\frac{\sigma_y}{\sigma_x}r.$ We know that $\sigma_x=8.5$
-and $w_1^*=-3$. We can find $\sigma_y$ as follows: $$\begin{aligned}
+We know $w_1^* = \frac{\sigma_y}{\sigma_x}r.$ We know that $\sigma_x=8.5$
+and $w_1^*=-3$. We can find $\sigma_y$ as follows: 
+
+$$\begin{aligned}
     \sigma_y^2 =& \frac{1}{n} \sum_{i = 1}^n (y_i - \bar{y})^2\\
     =& \frac{1}{7}[(100-85)^2+(110-85)^2+(75-85)^2+(90-85)^2+(105-85)^2+(90-85)^2+(25-85)^2]\\
     =&\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
-    
-\end{aligned}$$ Then, $\sigma_y=26.7$ which results in $r=-0.95$. That
-means the weather tempreture inversly affect Baklava sale, i.e., they
-are highly correlated but in the reverse direction.
+\end{aligned}$$
+
+ Then, $\sigma_y=26.7$ which results in $r=-0.95$. That
+means the weather temperature inversely affects Baklava sales, i.e., they
+are highly negatively correlated.
 
 # END SOLUTION
 
@@ -135,8 +138,8 @@ are highly correlated but in the reverse direction.
 
 # BEGIN SOLUTION
 
-**False.** The correlation coefficient has no unit. (It is a unitless
-number in $[-1,1]$ range. )
+**False.** The correlation coefficient has no unit. (It is always a unitless
+number in $[-1,1]$ range.)
 
 # END SOLUTION
 
@@ -144,13 +147,13 @@ number in $[-1,1]$ range. )
 
 # BEGIN SUBPROB
 
-\[4 Points\] Find $w^*_0$. 
+Find $w^*_0$. _(Hint: You'll need to find $\bar y$ for the given dataset)_
 
 # BEGIN SOLUTION
 
-Note that $H(\bar{x})=\bar{y}$. Therefore, $$\begin{aligned}
+Note that $H(\bar x)=\bar y$. Therefore, 
+$$\begin{aligned}
         H(65)=-3\times 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
-        
 \end{aligned}$$
 
 # END SOLUTION
@@ -159,19 +162,31 @@ Note that $H(\bar{x})=\bar{y}$. Therefore, $$\begin{aligned}
 
 # BEGIN SUBPROB
 
-What the best linear prediction $H^*(x)$ would be if we
+What would the best linear prediction $H^*(x)$ be if we
 multiply all $x_i$'s by $2$? 
 
 # BEGIN SOLUTION
 
-The standard deviation also scales by a factor of $2$, i.e.,
-$\sigma_x'=2\times \sigma_x$. The same is true for the mean, i.e.,
-$\bar{x}'=2 \times \bar{x}.$ The correlation $r$ does not change, as
-well as $\sigma_y$. Thererfore, $w_1'^*=\frac{w_1^*}{2}$.
+The standard deviation scales by a factor of $2$, i.e.,
+$\sigma_x'=2\times \sigma_x$.<br>
+The same is true for the mean, i.e.,
+$\bar{x}'=2 \times \bar{x}.$ <br>
+ The correlation $r$, standard deviation of the y-values $\sigma_y$, and the mean of the y-values $\bar y$ do not change. <br> 
+(You can verify these claims by plugging $2x$ in for $x$ in their respective formulas and seeing what happens, but it's faster to _visually_ reason why this happens.)
 
-Also,
-$$\bar{y}=H(\bar{x}')=\frac{w_1^*}{2}(2\bar{x})+w_0'^*=w_1^*\bar{x}+w_0'^*$$
-Therefore, $w_0'^*=w_0^*=280.$
+
+ Therefore, $w_1'^*=\frac{\sigma_y'}{\sigma_x'}r' = \frac{(\sigma_y)}{(2\times\sigma_x)}(r) = \frac{w_1^*}{2} = -1.5$.
+
+We can find $w_0'^*$ as follows:
+
+\begin{align*}
+\bar{y}'&=H(\bar{x}')\\&=\frac{w_1^*}{2}(2\bar{x})+w_0'^*\\&=w_1^*\bar{x}+w_0'^* \\
+&\downarrow \\
+(85) &= -3(65) + w_0'^* \\
+w_0'^*&=280
+\end{align*}
+
+So, $H^*(x)$ would be $-1.5x + 280$.
 
 # END SOLUTION
 
@@ -179,15 +194,23 @@ Therefore, $w_0'^*=w_0^*=280.$
 
 # BEGIN SUBPROB
 
-What the best linear prediction $H^*(x)$ would be if we add
+What would the best linear prediction $H^*(x)$ be if we add
 $20$ to all $x_i$'s? 
 
 # BEGIN SOLUTION
 
 All parameters remain unchanged except $\bar{x}'=\bar{x}+20.$ Since $r$,
-$\sigma_x$ and $\sigma_y$ are not changed, so does $w_1^*$. Then, one
-can write, $$\bar{y}'=H(\bar{x}')\Rightarrow 85=-3(65+20)+w_0^*$$ which
-results in $w_0^*=340$.
+$\sigma_x$ and $\sigma_y$ are not changed, $w_1^*$ does not change. Then, one
+can find $w_0^*$ as follows:
+
+\begin{align*}
+\bar{y}'&=H(\bar{x}') \\
+&\downarrow \\
+(85) &=-3(65+20)+w_0^* \\
+w_0^*&=340
+\end{align*}
+
+So, $H^*(x)$ would be $-3x + 340$.
 
 # END SOLUTION
 

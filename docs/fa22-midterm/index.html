@@ -461,18 +461,18 @@ providing fresh Baklavas to his customers daily. Here is the amount of
 Baklava he sold each day during last week in pounds(lb): <span
 class="math display">y_1=100, y_2=110, y_3=75, y_4=90, y_5=105, y_6=90,
 y_7=25</span></p>
-<p>Mahdi needs your help as a data scientist to suggest the best
-constant prediction <span class="math inline">h^*</span> of daily sales
-that minimizes the empirical risk using <span
-class="math inline">L(h,y)</span> as the loss function. Answer the
+<p>Mahdi needs your help as a data scientist to suggest <u>the best
+constant prediction (<span class="math inline">h^*</span>) of daily
+sales that minimizes the empirical risk using <span
+class="math inline">L(h,y)</span> as the loss function</u>. Answer the
 following questions and give a <strong>brief justification</strong> for
 each part. <strong>This problem has many parts, if you get stuck, move
 on and come back later!</strong></p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
 <p>Let <span class="math inline">L(h,y)=|y-h|</span>. What is <span
-class="math inline">h^*</span>? We refer to this prediction as <span
-class="math inline">h_1^*</span>.</p>
+class="math inline">h^*</span>? (We’ll later refer to this prediction as
+<span class="math inline">h_1^*</span>).</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_1">
@@ -496,8 +496,8 @@ risk function. <span class="math display">h^*_1=\text{Median}(y_1,
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
 <p>Let <span class="math inline">L(h,y)=(y-h)^2</span>. What is <span
-class="math inline">h^*</span>? We refer to this prediction as <span
-class="math inline">h_2^*</span>.</p>
+class="math inline">h^*</span>? (We’ll later refer to this prediction as
+<span class="math inline">h_2^*</span>).</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
@@ -511,8 +511,8 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>As we have seen in lectures, the median minimizes the absolute loss
-risk function. <span class="math display">h^*_2=\text{Mean}(y_1, \cdots,
+<p>As we have seen in lectures, the mean minimizes the square loss risk
+function. <span class="math display">h^*_2=\text{Mean}(y_1, \cdots,
 y_7).</span></p>
 </div>
 </div>
@@ -564,8 +564,8 @@ aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean squared loss is more sensitive to outliers and removing data
-changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
+<p>The mean squared loss is more sensitive to outliers than absolute
+loss, and removing data changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
 </div>
 </div>
 </div>
@@ -588,7 +588,7 @@ aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differantiable everywhere so
+<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differentiable everywhere so
 we can not use the gradient descent to find the minimum.</p>
 </div>
 </div>
@@ -626,9 +626,9 @@ descent algorithm is not guaranteed to converge.</p>
 temperature. So he asks you to incorporate this feature to get a better
 prediction. Suppose the last week’s daily temperatures are <span
 class="math inline">x_1, x_2, \cdots, x_7</span> in Fahrenheit (F). We
-know that <span class="math inline">\Bar{x}=65</span>, <span
+know that <span class="math inline">\bar x=65</span>, <span
 class="math inline">\sigma_x=8.5</span> and the best linear prediction
-that minimizes the mean squared error is <span
+that <u>minimizes the mean squared error</u> is <span
 class="math inline">H^*(x)=-3x+w_0^*</span>.</p>
 <p>What is the correlation coefficient (<span
 class="math inline">r</span>) between <span class="math inline">x</span>
@@ -646,22 +646,18 @@ aria-labelledby="heading3_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-We know <span class="math inline">w_1^*=r.</span> We know that
-<span class="math inline">_x=8.5</span> and
-<span class="math inline">w_1^*=-3</span>. We can find
-<span class="math inline">_y</span> as follows: $$
-<span class="math display">
-<span class="math display">\begin{aligned}
-    \sigma_y^2 =&amp;amp; \frac{1}{n} \sum_{i = 1}^n (y_i - \bar{y})^2\\
-    =&amp;amp;
+<p>We know <span class="math inline">w_1^* =
+\frac{\sigma_y}{\sigma_x}r.</span> We know that <span class="math inline">\sigma_x=8.5</span> and <span class="math inline">w_1^*=-3</span>. We can find <span class="math inline">\sigma_y</span> as follows:</p>
+<p><span class="math display">\begin{aligned}
+    \sigma_y^2 =&amp; \frac{1}{n} \sum_{i = 1}^n (y_i - \bar{y})^2\\
+    =&amp;
 \frac{1}{7}[(100-85)^2+(110-85)^2+(75-85)^2+(90-85)^2+(105-85)^2+(90-85)^2+(25-85)^2]\\
-    =&amp;amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
-    
-\end{aligned}</span>
-<p></span> <p>$$ Then, <span class="math inline">_y=26.7</span> which
-results in <span class="math inline">r=-0.95</span>. That means the
-weather tempreture inversly affect Baklava sale, i.e., they are highly
-correlated but in the reverse direction.</p></p>
+    =&amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
+\end{aligned}</span></p>
+<p>Then, <span class="math inline">\sigma_y=26.7</span> which results in
+<span class="math inline">r=-0.95</span>. That means the weather
+temperature inversely affects Baklava sales, i.e., they are highly
+negatively correlated.</p>
 </div>
 </div>
 </div>
@@ -685,15 +681,17 @@ aria-labelledby="heading3_8" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><strong>False.</strong> The correlation coefficient has no unit. (It
-is a unitless number in <span class="math inline">[-1,1]</span> range.
-)</p>
+is always a unitless number in <span class="math inline">[-1,1]</span>
+range.)</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.9">Problem 3.9</h3>
-<p>[4 Points] Find <span class="math inline">w^*_0</span>.</p>
+<p>Find <span class="math inline">w^*_0</span>. <em>(Hint: You’ll need
+to find <span class="math inline">\bar y</span> for the given
+dataset)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_9">
@@ -707,21 +705,18 @@ aria-labelledby="heading3_9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-Note that <span class="math inline">H({x})={y}</span>. Therefore, $$
-<span class="math display">
-<span class="math display">\begin{aligned}
+<p>Note that <span class="math inline">H(\bar x)=\bar y</span>.
+Therefore, <span class="math display">\begin{aligned}
         H(65)=-3\times 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
-        
-\end{aligned}</span>
-<p></span> <p>$$</p></p>
+\end{aligned}</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.10">Problem 3.10</h3>
-<p>What the best linear prediction <span
-class="math inline">H^*(x)</span> would be if we multiply all <span
+<p>What would the best linear prediction <span
+class="math inline">H^*(x)</span> be if we multiply all <span
 class="math inline">x_i</span>’s by <span
 class="math inline">2</span>?</p>
 <div id="accordionExample" class="accordion">
@@ -737,21 +732,34 @@ aria-labelledby="heading3_10" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The standard deviation also scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\times \sigma_x</span>. The same is
-true for the mean, i.e., <span class="math inline">\bar{x}'=2 \times
-\bar{x}.</span> The correlation <span class="math inline">r</span> does
-not change, as well as <span class="math inline">\sigma_y</span>.
-Thererfore, <span class="math inline">w_1'^*=\frac{w_1^*}{2}</span>.</p>
-<p>Also, <span class="math display">\bar{y}=H(\bar{x}')=\frac{w_1^*}{2}(2\bar{x})+w_0'^*=w_1^*\bar{x}+w_0'^*</span>
-Therefore, <span class="math inline">w_0'^*=w_0^*=280.</span></p>
+<p>The standard deviation scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\times \sigma_x</span>.<br/> The same
+is true for the mean, i.e., <span class="math inline">\bar{x}'=2
+\times \bar{x}.</span> <br/> The correlation <span class="math inline">r</span>, standard deviation of the y-values <span class="math inline">\sigma_y</span>, and the mean of the y-values <span class="math inline">\bar y</span> do not change. <br/> (You can verify
+these claims by plugging <span class="math inline">2x</span> in for
+<span class="math inline">x</span> in their respective formulas and
+seeing what happens, but it’s faster to <em>visually</em> reason why
+this happens.)</p>
+<p>Therefore, <span class="math inline">w_1'^*=\frac{\sigma_y'}{\sigma_x'}r'
+= \frac{(\sigma_y)}{(2\times\sigma_x)}(r) = \frac{w_1^*}{2} =
+-1.5</span>.</p>
+<p>We can find <span class="math inline">w_0'^*</span> as
+follows:</p>
+<p><span class="math display">\begin{align*}
+\bar{y}'&amp;=H(\bar{x}')\\&amp;=\frac{w_1^*}{2}(2\bar{x})+w_0'^*\\&amp;=w_1^*\bar{x}+w_0'^*
+\\
+&amp;\downarrow \\
+(85) &amp;= -3(65) + w_0'^* \\
+w_0'^*&amp;=280
+\end{align*}</span></p>
+<p>So, <span class="math inline">H^*(x)</span> would be <span class="math inline">-1.5x + 280</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.11">Problem 3.11</h3>
-<p>What the best linear prediction <span
-class="math inline">H^*(x)</span> would be if we add <span
+<p>What would the best linear prediction <span
+class="math inline">H^*(x)</span> be if we add <span
 class="math inline">20</span> to all <span
 class="math inline">x_i</span>’s?</p>
 <div id="accordionExample" class="accordion">
@@ -768,9 +776,15 @@ aria-labelledby="heading3_11" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>All parameters remain unchanged except <span class="math inline">\bar{x}'=\bar{x}+20.</span> Since <span class="math inline">r</span>, <span class="math inline">\sigma_x</span>
-and <span class="math inline">\sigma_y</span> are not changed, so does
-<span class="math inline">w_1^*</span>. Then, one can write, <span class="math display">\bar{y}'=H(\bar{x}')\Rightarrow
-85=-3(65+20)+w_0^*</span> which results in <span class="math inline">w_0^*=340</span>.</p>
+and <span class="math inline">\sigma_y</span> are not changed, <span class="math inline">w_1^*</span> does not change. Then, one can find
+<span class="math inline">w_0^*</span> as follows:</p>
+<p><span class="math display">\begin{align*}
+\bar{y}'&amp;=H(\bar{x}') \\
+&amp;\downarrow \\
+(85) &amp;=-3(65+20)+w_0^* \\
+w_0^*&amp;=340
+\end{align*}</span></p>
+<p>So, <span class="math inline">H^*(x)</span> would be <span class="math inline">-3x + 340</span>.</p>
 </div>
 </div>
 </div>
