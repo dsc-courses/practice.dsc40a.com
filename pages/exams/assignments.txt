@@ -6,9 +6,6 @@ Spring 2023 midterm 1 (midterm1A.tex)
 
 Zoe: Spring 2023 midterm 2 (midterm 2A.tex)
 COMPLETED (Except for Prob 3 for Javier)
-
-Zoe: Spring 2023 final part 1 (final1A.tex)
-COMPLETED
     
 Javier: Spring 2023 final part 2 (final2A.tex)
     - Needs explanations
@@ -20,10 +17,8 @@ Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 
 Nick: the zip fa22-final.zip, attached, has the .tex for the Fall 2022 final (Final_revised.tex).
 
-Nick: the zip fa22-midterm.zip, attached, has the .tex for the Fall 2022 midterm (midterm_sol.tex).
-    - Cleaned, needs proofreading.
-
 DONE:
+
 Javier/Zoe: Winter 2022 midterm 1 (mockmidterm1.tex)
 COMPLETED (Added to Index)
 
@@ -34,4 +29,10 @@ Nick: Winter 2024 midterm 1 (midterm_WI24_1.tex)
     - Cleaned, needs proofreading.
 
 Nick: Winter 2024 midterm 2 (Midterm2_WI24.tex)
+    - Cleaned, needs proofreading.
+
+Zoe: Spring 2023 final part 1 (final1A.tex)
+COMPLETED
+
+Nick: the zip fa22-midterm.zip, attached, has the .tex for the Fall 2022 midterm (midterm_sol.tex).
     - Cleaned, needs proofreading.
