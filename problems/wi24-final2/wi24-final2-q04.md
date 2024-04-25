@@ -1,8 +1,8 @@
 # BEGIN PROB
 
-\begin{prob}[(12 points)] In hospital, there are 10 patients who have recently been exposed to COVID. The hospital purchased a new COVID testing machine. The machine could comprehensively analyze multiple body measurements to produce a COVID score for each patient, ranging from 1 to 10. According to the instruction manual of the machine, a higher COVID score means the patient is more likely to be infected by COVID, while a lower COVID score means the patient is less likely to be infected. The COVID score of each patient is listed below:
+In hospital, there are 10 patients who have recently been exposed to COVID. The hospital purchased a new COVID testing machine. The machine could comprehensively analyze multiple body measurements to produce a COVID score for each patient, ranging from 1 to 10. According to the instruction manual of the machine, a higher COVID score means the patient is more likely to be infected by COVID, while a lower COVID score means the patient is less likely to be infected. The COVID score of each patient is listed below:
 
-| **Patient Number** |  **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **10** |
+| **Patient Number** |  1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |--------------------|--------|-------|-------|-------|-------|-------|-------|-------|-------|--------|
 | **COVID Score**    | 7      | 9     | 9     | 3     | 5     | 4     | 6     | 1     | 8     | 2      |
 

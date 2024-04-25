@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(12 points)\] Consider an experiment where each of $n$ people selects
+Consider an experiment where each of $n$ people selects
 one piece from their own set of 32 chess pieces, uniformly at random.
 The **result** of the experiment is a description of the **colors and
 types** of the pieces each person selected. For example, if $n=3$, one
@@ -14,19 +14,14 @@ possible result is:
 
 # BEGIN SUBPROB
 
-(4 points) How many results are possible for this experiment with $n$
+How many results are possible for this experiment with $n$
 people?
 
 ( ) $2^n$
-
 ( ) $6^n$
-
 ( ) $12^n$
-
 ( ) $16^n$
-
 ( ) $32^n$
-
 ( ) None of the above.
 
 # BEGIN SOLUTION
@@ -39,17 +34,12 @@ $12^n$
 
 # BEGIN SUBPROB
 
-(4 points) As n become large, what fraction of n people has selected a
-black pawn? Choose the answer that's closest to the actual fraction.
+As $n$ become large, what fraction of n people has selected a black pawn? Choose the answer that's closest to the actual fraction.
 
 ( ) 1/32
-
 ( ) 1/12
-
 ( ) 1/4
-
 ( ) 1/2
-
 ( ) None of the above.
 
 # BEGIN SOLUTION
@@ -60,11 +50,10 @@ black pawn? Choose the answer that's closest to the actual fraction.
 
 # END SUBPROB # BEGIN SUBPROB
 
-(4 points) True or False: Having two pawns is **independent** of having
+True or False: Having two pawns is **independent** of having
 two white pieces.
 
 ( ) True
-
 ( ) False
 
 # BEGIN SOLUTION

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(8 points)\] With the help of the Alien from Bayesian Galaxy, Issac
+With the help of the Alien from Bayesian Galaxy, Issac
 built a Little Hadron Collider in his garage to continue testing some
 fundamental principles of nature. The alien set up a fixed target at one
 end of the collider, and ask Issac to shoot quarks from the other end.
