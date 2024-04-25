@@ -3,7 +3,7 @@ instructors: Aobo Li
 context: This exam was administered in person. The exam was open-notes, open-book, but no calculator. Students had **50 minutes** to take this exam.
 show_solution: true
 problems:
-  - wi24-final2/wi24-final2-q01
-  - wi24-final2/wi24-final2-q02
-  - wi24-final2/wi24-final2-q03
-  - wi24-final2/wi24-final2-q04
+  - wi24-final-pt2/wi24-final-pt2-q01
+  - wi24-final-pt2/wi24-final-pt2-q02
+  - wi24-final-pt2/wi24-final-pt2-q03
+  - wi24-final-pt2/wi24-final-pt2-q04
