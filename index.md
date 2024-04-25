@@ -45,6 +45,32 @@ In all cases, you should work on these problems on paper, since your exams will 
     </tr>
   </thead>
   <tbody>
+    <!-- <tr>
+      <th scope="row">Winter 2024</th>
+      <td>Aobo Li</td>
+      <td><a href='wi24-midterm1/index.html'>Midterm 1</a>
+      <br><a href='wi24-midterm2/index.html'>Midterm 2</a>
+      <br><a href='wi24-final-pt1/index.html'>Final 1</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Winter 2022</th>
+      <td>Janine Tiefenbruck</td>
+      <td><a href='wi22-midterm1/index.html'>Midterm 1</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Spring 2023</th>
+      <td>Janine Tiefenbruck</td>
+      <td><a href='sp23-final-pt1/index.html'>Final Part 1</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Fall 2022</th>
+      <td>Truong Son Hy, Mahdi Soleymani</td>
+      <td><a href='fa22-midterm/index.html'>Midterm</a>
+      </td>
+    </tr> -->
     <tr>
       <th scope="row">Fall 2021</th>
       <td>Suraj Rampure</td>
