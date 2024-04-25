@@ -3,3 +3,4 @@ context: This page contains all problems about Gradient Descent.
 show_solution: true
 problems:
   - sp21-midterm1/q01
+  - fa21-midterm/fa21-midterm-q03

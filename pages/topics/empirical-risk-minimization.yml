@@ -2,4 +2,5 @@ title: 'Empirical Risk Minimization'
 context: This page contains all problems about Empirical Risk Minimization.
 show_solution: true
 problems:
-  - sp21-midterm1/q01
+  - fa21-midterm/fa21-midterm-q01
+  - fa21-midterm/fa21-midterm-q02
