@@ -4,3 +4,5 @@ show_solution: true
 problems:
   - fa21-final/q05
   - fa21-midterm/fa21-midterm-q04
+  - fa22-midterm/fa22-midterm-q02
+  - fa22-midterm/fa22-midterm-q03
