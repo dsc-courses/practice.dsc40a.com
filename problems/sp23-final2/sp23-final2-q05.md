@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(3 points)\] You're interested in seeing the Milky Way in the night
+You're interested in seeing the Milky Way in the night
 sky, which you have sometimes been able to do when conditions are right.
 For each night that you've attempted to see the Milky Way, you have a
 record of:
@@ -46,11 +46,8 @@ are unsuccessful is $k$ times the probability you are successful, for an
 integer value of $k$. What is $k$?
 
 ( ) $k=1$
-
 ( ) $k=2$
-
 ( ) $k=3$
-
 ( ) $k=4$
 
 # BEGIN SOLUTION

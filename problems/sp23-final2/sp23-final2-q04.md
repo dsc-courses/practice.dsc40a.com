@@ -1,13 +1,13 @@
 # BEGIN PROB
 
-\[(10 points)\] At Panda Express, there are 18 items available on the
+At Panda Express, there are 18 items available on the
 menu. Food is served on plates that are divided into three equal
 sections, and all sections of the plate must contain exactly one menu
 item.
 
 # BEGIN SUBPROB
 
-(3 points) Suppose each section of the plate is a different color (in a
+Suppose each section of the plate is a different color (in a
 clockwise order around the plate, the sections are red, yellow, blue).
 How many different-looking plates of food can be created, if we must
 have three different menu items on the plate?
@@ -26,7 +26,7 @@ $P(18,3)$
 
 # BEGIN SUBPROB
 
-(2 points) Suppose each section of the plate is a different color (in a
+Suppose each section of the plate is a different color (in a
 clockwise order around the plate, the sections are red, yellow, blue).
 How many different-looking plates of food can be created, if we are
 allowed to have the same food in multiple sections?
@@ -41,7 +41,7 @@ $18^3$
 
 # BEGIN SUBPROB
 
-(3 points) Suppose each section of the plate is the same color (white).
+Suppose each section of the plate is the same color (white).
 How many different-looking plates of food can be created, if we must
 have three different menu items on the plate?
 
@@ -62,7 +62,7 @@ $2*C(18,3)$
 
 # BEGIN SUBPROB
 
-(2 points) Suppose each section of the plate is the same color (white).
+Suppose each section of the plate is the same color (white).
 Now we'd like to consider what happens if we can have the same food in
 multiple sections. What do we need to **add to part (c)'s answer** to
 get the number of different-looking plates of food that can be created,

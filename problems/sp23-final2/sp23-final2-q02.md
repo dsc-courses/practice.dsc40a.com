@@ -1,10 +1,10 @@
 # BEGIN PROB
 
-\[(6 points)\] You roll a 12-sided die 8 times.
+You roll a 12-sided die 8 times.
 
 # BEGIN SUBPROB
 
-(3 points) What is the probability you roll 8 distinct values?
+What is the probability you roll 8 distinct values?
 
 # BEGIN SOLUTION
 
@@ -16,7 +16,7 @@ $\dfrac{P(12,8)}{12^8} = \dfrac{12}{12}*\dfrac{11}{12}*\dfrac{10}{12}*\dots*\dfr
 
 # BEGIN SUBPROB
 
-(3 points) What is the probability you roll exactly 7 distinct values?
+What is the probability you roll exactly 7 distinct values?
 
 # BEGIN SOLUTION
 

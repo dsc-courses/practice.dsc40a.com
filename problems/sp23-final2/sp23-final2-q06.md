@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[(3 points)\] Suppose UCSD implements a new graduation requirement for
+Suppose UCSD implements a new graduation requirement for
 data science majors. All data science majors must submit a list of
 English words they can make using the letters of "Halicioglu". When
 these lists are collected, it is determined that:
@@ -24,9 +24,6 @@ these lists are collected, it is determined that:
     their list.
 
 How many data science majors submitted a list?
-
-::: center
-:::
 
 # BEGIN SOLUTION
 

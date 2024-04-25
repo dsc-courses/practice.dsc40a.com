@@ -20,6 +20,7 @@ Zoe: Spring 2023 final part 1 (final1A.tex)
 COMPLETED
     
 Javier: Spring 2023 final part 2 (final2A.tex)
+    - Needs explanations
 
 Javier/Zoe: Winter 2022 midterm 1 (mockmidterm1.tex)
 COMPLETED
