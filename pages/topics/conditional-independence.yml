@@ -3,3 +3,5 @@ context: This page contains all problems about Conditional Independence.
 show_solution: true
 problems:
   - sp21-midterm1/q01
+  - sp23-midterm2/sp23-midterm2-q02
+  - sp23-midterm2/sp23-midterm2-q06

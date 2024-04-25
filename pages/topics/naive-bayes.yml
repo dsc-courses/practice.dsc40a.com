@@ -3,3 +3,4 @@ context: This page contains all problems about Naive Bayes Classifiers.
 show_solution: true
 problems:
   - sp21-midterm1/q01
+  - sp23-midterm2/sp23-midterm2-q05
