@@ -2,7 +2,6 @@ title: 'Clustering'
 context: This page contains all problems about Clustering.
 show_solution: true
 problems:
-  - sp21-midterm1/q01
   - sp23-final-pt2/sp23-final-pt2-q01
   # - wi22-midterm2/wi22-midterm2-q13 UNFINISHED
   - wi24-final-pt2/wi24-final-pt2-q02
