@@ -22,9 +22,18 @@ In all cases, you should work on these problems on paper, since your exams will 
 
 ## 📊 Topics
 
-- [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
-- [Simple Linear Regression](simple-linear-regression/index.html)
+- [Bayes' Theorem](bayes-theorem/index.html)
+- [Clustering](clustering/index.html)
+- [Combinatorics](combinatorics/index.html)
+- [Conditional Independence](conditional-independence/index.html)
+- [Convexity](convexity/index.html)
+- [Empirical Risk Minimization](empirical-risk-minimization/index.html)
 - [Gradient Descent](gradient-descent/index.html)
+- [Multiple Linear Regression and The Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
+- [Naive Bayes Classifiers](naive-bayes-classifiers/index.html)
+- [Simple Linear Regression](simple-linear-regression/index.html)
+- [Sizes of Sets](sizes-of-sets/index.html)
+- [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
 
 ---
 
