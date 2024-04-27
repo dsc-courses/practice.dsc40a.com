@@ -20,13 +20,13 @@ and consider the two prediction rules
         
 \end{aligned}
 
-Let MSE represent the mean squared error of a prediction
-rule, and let MAE represent the mean absolute error of a prediction
+Let $\text{MSE}$ represent the mean squared error of a prediction
+rule, and let $\text{MAE}$ represent the mean absolute error of a prediction
 rule. Select the symbol that should go in each blank.
 
 # BEGIN SUBPROB
 
-MSE$(H^*)$ ___ MSE$(H^{\circ})$
+$\text{MSE}(H^*)$ ___ $\text{MSE}(H^{\circ})$
 
 ( ) $\leq$
 ( ) $\geq$
@@ -36,7 +36,7 @@ MSE$(H^*)$ ___ MSE$(H^{\circ})$
 
 $\leq$
 
-Recall the equation for mean squared error: $MSE(H(x_i)) = \frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2$. We can figure out which is bigger by subtracting  MSE$(H^{\circ})$ from MSE$(H^*)$. The difference between the squared differences is:
+Recall the equation for mean squared error: $\text{MSE}(H(x_i)) = \frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2$. We can figure out which is bigger by subtracting  $\text{MSE}(H^{\circ})$ from $\text{MSE}(H^*)$. The difference between the squared differences is:
 $$(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2$$Notice there is a squared element, which means that the differences of $w^*_0 - w^{\circ}_0$, $w^*_1 - w^{\circ}_1$, and $w^*_2 - w^{\circ}_2$ will appear as squared terms, which are always positive! This means adding these squared differences to $H^*$ will make it at least as large as the squared difference for $H^{\circ}$.
 
 # END SOLUTION
@@ -45,7 +45,7 @@ $$(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2$$Notice there is a squared element, wh
 
 # BEGIN SUBPROB
 
-$($MAE$(H^{\circ}))^2$ ___ MSE$(H^{\circ})$
+$(\text{MAE}(H^{\circ}))^2$ ___ $\text{MSE}(H^{\circ})$
 
 ( ) $\leq$
 ( ) $\geq$
@@ -55,18 +55,18 @@ $($MAE$(H^{\circ}))^2$ ___ MSE$(H^{\circ})$
 
 $\geq$
 
-Recall the equation for mean absolute error: $MAE(H(x_i)) = \frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|$.
+Recall the equation for mean absolute error: $\text{MAE}(H(x_i)) = \frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|$.
 
 This equation looks very similar to the mean squared error! We can actually take the square root of each sides of this equation to learn more about which side is larger:
 $$
 \begin{align*}
-(MAE(H^\circ))^2 &\_\_\_ MSE(H^\circ) \\
-\sqrt{(MAE(H^\circ))^2} &\_\_\_ \sqrt{MSE(H^\circ)} \\
-MAE(H^\circ) &\_\_\_ \sqrt{MSE(H^\circ)}
+(\text{MAE}(H^\circ))^2 &\_\_\_ \text{MSE}(H^\circ) \\
+\sqrt{(\text{MAE}(H^\circ))^2} &\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
+\text{MAE}(H^\circ) &\_\_\_ \sqrt{\text{MSE}(H^\circ)}
 \end{align*}
 $$
 
-The square root of MSE is equal to MAE! These two elements are basically the same because squaring a value will lead to non-negatives and then it will be square rooted to match the absolute value from MAE. However the MSE being square rooted also allows for it to be smaller than the MSE making the correct symbol $\geq$.
+The square root of $\text{MSE}$ is equal to $\text{MAE}$! These two elements are basically the same because squaring a value will lead to non-negatives and then it will be square rooted to match the absolute value from $\text{MAE}$. However the $\text{MSE}$ being square rooted also allows for it to be smaller than the $\text{MSE}$ making the correct symbol $\geq$.
 
 # END SOLUTION
 

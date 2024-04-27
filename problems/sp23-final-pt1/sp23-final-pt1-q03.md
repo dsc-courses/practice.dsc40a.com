@@ -24,7 +24,7 @@ If you and your friend chose different learning rates it is possible to have dif
 
 If you and your friend chose the same initial predictions you are guaranteed to end up in the same spot.
 
-Because two of the option choices are possible the answer cannot be "None of the above."
+Because two of the options are possible the answer cannot be "None of the above."
 
 # END SOLUTION
 
