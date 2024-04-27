@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- Loss/Risk Minimization -->
+<i>Originally Problem 2 on the Fall 2021 Midterm.</i>
 
 Consider a set of 23 data points $y_1, y_2, y_3, ..., y_{23}$ such that
 $y_1 < y_2 < ... < y_{23}$. Let's call this Dataset A.
@@ -43,7 +43,7 @@ question, state that clearly.
 # BEGIN SOLUTION
 
 The mean absolute deviation from the median for Dataset B is still 17.
-As we saw in part a, the median itself does not change. When adding
+As we saw in previous part, the median itself does not change. When adding
 together the deviations from the median, each point is repeated twice,
 so the sum of all deviations from the median is doubled. However, there
 are twice as many data points in Dataset B than there are in Dataset A,

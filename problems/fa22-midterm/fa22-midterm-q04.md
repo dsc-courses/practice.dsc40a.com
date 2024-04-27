@@ -6,7 +6,7 @@ Consider a dataset that consists of $y_1, \cdots, y_n$. In class, we
 used calculus to minimize mean squared error,
 $R_{sq}(h) = \frac{1}{n} \sum_{i = 1}^n (h - y_i)^2$. In this problem,
 we want you to apply the same approach to a slightly different loss
-function defined beelow:
+function defined below:
 $$L_{\text{midterm}}(y,h)=(\alpha y - h)^2+\lambda h$$
 
 # BEGIN SUBPROB
@@ -16,7 +16,7 @@ using the above loss function.
 
 # BEGIN SOLUTION
 
-$$R_{\text{midterm}}(h)=\frac{1}{n}\sum_{i=1}^{i=n}[(\alpha y_i - h)^2+\lambda h]=[\frac{1}{n}\sum_{i=1}^{i=n}(\alpha y_i - h)^2] +\lambda h$$
+$$R_{\text{midterm}}(h)=\frac{1}{n}\sum_{i=1}^{n}[(\alpha y_i - h)^2+\lambda h]=[\frac{1}{n}\sum_{i=1}^{n}(\alpha y_i - h)^2] +\lambda h$$
 
 # END SOLUTION
 

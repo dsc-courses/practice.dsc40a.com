@@ -59,7 +59,7 @@ is not changed.)
 # BEGIN SUBPROB
 
 Mahdi thinks that $y_7$ is an outlier. Hence, he asks you to
-remove $y_7$ and update your predictions in parts a and b accordingly.
+remove $y_7$ and update your predictions in parts (a) and (b) accordingly.
 Without calculating the new predictions, can you justify which
 prediction changes *more*? $h^*_1$ or $h_2^*$?
 

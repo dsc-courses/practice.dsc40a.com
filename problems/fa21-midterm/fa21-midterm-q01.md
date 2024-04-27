@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- Loss/Risk Minimization -->
+<i>Originally Problem 1 on the Fall 2021 Midterm.</i>
 
 King Triton just made an Instagram account and has been keeping track of
 the number of likes his posts have received so far.

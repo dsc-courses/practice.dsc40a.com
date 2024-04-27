@@ -82,7 +82,7 @@ this dataset (mathematically)?
 $$\bar{x} = \frac{1}{3}(0 + 4 + 5) = 3$$
 $$\bar{y} = \frac{1}{3}(0 + 2 + 1) = 1$$
 
-<div style="text-align:center">
+<div style="margin:auto">
 |$x_i$|$y_i$|$(x_i - \bar x)$|$(y_i - \bar y)$|$(x_i - \bar x)(y_i - \bar y)$|$(x_i - \bar x)^2$|
 |-------|-------|------------------|------------------|--------------------------------|--------------------|
 | $0$     | $0$     | $-3$               | $-1$               | $3$                              | $9$                  |
@@ -147,7 +147,7 @@ w_1^* &=
 w_0^* &= \bar{y} - w_1^* \bar{x} = 1 - \frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}
 \end{align*}
 
-Because $w_1^* = r \frac{\sigma_y}{\sigma_x}$ where the standard deviations $\sigma_y$ and $\sigma_x$ are non-negative, and $w_1^* = 2/7 > 0$, thus the correlation $r$ is positive and the slope is positive.
+Because $w_1^* = r \frac{\sigma_y}{\sigma_x}$ where the standard deviations $\sigma_y$ and $\sigma_x$ are non-negative, and $w_1^* = 2/7 > 0$, the correlation $r$ is positive and the slope is positive.
 
 # END SOLUTION
 
