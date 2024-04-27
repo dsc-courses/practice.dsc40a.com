@@ -56,7 +56,8 @@ A simple example shows that this is the case. Consider the dataset $(-2, 0)$ and
 
 True or False: For an arbitrary dataset, the mean squared error associated with $H^*(x)$ is greater than or equal to the mean squared error associated with the regression line.
 
-( ) True ( ) False
+( ) True 
+( ) False
 
 # BEGIN SOLUTION
 

@@ -40,7 +40,7 @@ Another way to do this problem uses the answer from part (a). Since the data poi
 
 # BEGIN SUBPROB
 
-Which of the following *could* be the mean absolute deviation from the median for this dataset? There is only one correct answer choice.
+Which of the following *could* be the mean absolute deviation from the median for this dataset? There is only one correct answer.
 
 ( ) 18
 ( ) 62
