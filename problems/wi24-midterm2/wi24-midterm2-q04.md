@@ -5,7 +5,7 @@
 
 The standard acceleration of gravity $g$ is a universal constant of nature. That means $g=9.80665$ across the entire universe. It is also known that:
 
-$$G = m \times g$$
+$$G = m \cdot  g$$
 
 Where $G$ is the weight of an object and $m$ is the mass of an object. Issac is interested in measuring $g$. He prepared a dumbbell with mass $10$ in his garage and measured the weight of it three times. The three measured weights were: $102$, $98$, and $100$.
 
@@ -50,7 +50,7 @@ After the first alien left, another alien from the Bayesian galaxy arrived. This
 # BEGIN SOLUTION
 The Bayes equation reads:
 
-$$\text{Posterior} = \frac{\text{Prior}\times \text{Likelihood}}{\text{Evidence}}$$
+$$\text{Posterior} = \frac{\text{Prior}\cdot  \text{Likelihood}}{\text{Evidence}}$$
 
 The alien provides a uniform prior, or $P(\text{Hypothesis})$. They assume $g$ could take many different possible values. However, the likelihood term is $P(\text{Data|Hypothesis})$. For the hypothesis of $g = 1$, since it does not agree with data, the likelihood is very low and does not contribute to posterior; the same argument holds for $g = 100$. Only when $g$ = $10$ will the likelihood be high.
 # END SOLUTION

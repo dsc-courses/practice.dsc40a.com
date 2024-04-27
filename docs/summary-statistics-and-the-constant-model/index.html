@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Summary Statistics and the Constant Model</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Summary Statistics and the Constant Model</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p>This page contains all problems about Summary Statistics and the
+Constant Model.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><i>Originally Problem 1 on the Fall 2021 Final Exam.</i></p>
+<p>The mean of 12 non-negative numbers is 45. Suppose we remove 2 of
+these numbers. What is the largest possible value of the mean of the
+remaining 10 numbers? Show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>To maximize the mean of the remaining 10 numbers, we want to minimize
+the numbers that are removed. The smallest possible non-negative number
+is 0, so to maximize the mean of the remaining 10, we should remove two
+0s from the set of numbers. Recall that the sum of the 12 number set is
+<span class="math inline">12 \cdot 45</span>; then, the maximum possible
+mean of the remaining 10 is</p>
+<p><span class="math display">\frac{12 \cdot 45 - 2 \cdot 0}{10} =
+\frac{6}{5} \cdot 45 = 54</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 2 on the Fall 2021 Final Exam.</i></p>
+<p>Consider a set of 8 data points, <span class="math inline">y_1, y_2,
+..., y_8</span> that are in sorted order, i.e. <span
+class="math inline">y_1 &lt; y_2 &lt; ... &lt; y_8</span>. Suppose that
+<span class="math inline">y_4 = 10</span>, <span class="math inline">y_5
+= 14</span>, and <span class="math inline">y_6 = 22</span>. Recall that
+mean absolute error, <span class="math inline">R_{abs}(h)</span>, is
+defined as <span class="math inline">R_{abs}(h) = \frac{1}{n} \sum_{i =
+1}^n |y_i - h|</span>. Suppose that <span
+class="math inline">R_{abs}(11) = 9</span>.</p>
+<p>What is <span class="math inline">R_{abs}(22)</span>? Show your
+work.</p>
+<p><em>Hint: Use the formula for the slope of <span
+class="math inline">R</span> at <span
+class="math inline">h</span>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can write the points given to us as</p>
+<p><span class="math display">y_1, y_2, y_3, 10, 14, 22, y_7,
+y_8</span></p>
+<p>Since there are an even number of data points, all values of <span class="math inline">h</span> between the middle two points minimize
+<span class="math inline">R_{abs}(h)</span>. In this case, all values of
+<span class="math inline">h</span> in the interval [10, 14] minimize
+<span class="math inline">R_{abs}(h)</span> and, as a result, have the
+same value of <span class="math inline">R_{abs}(h)</span>. Thus, <span class="math inline">R_{abs}(14) = R_{abs}(11) = 9</span>.</p>
+<p>From lecture, we know that</p>
+<p><span class="math display">\text{slope of $R$ at $h$} = \frac{1}{n}
+\left( \left(\text{\# points } &lt; h\right) - \left(\text{\# points }
+&gt; h\right)\right)</span></p>
+<p>We can use this formula to determine what to add to <span class="math inline">R_{abs}(14)</span> to get <span class="math inline">R_{abs}(22)</span>. Note that for values of <span class="math inline">h</span> in the interval (14, 22), the slope of
+<span class="math inline">R</span> at <span class="math inline">h</span>
+is <span class="math inline">\frac{1}{8} (5 - 3) = \frac{1}{4}</span>.
+This means that for every 1 unit we move to the right from <span class="math inline">h = 14</span> until we get to <span class="math inline">h = 22</span>, <span class="math inline">R_{abs}(h)</span> increases by <span class="math inline">\frac{1}{4}</span>. So,</p>
+<p><span class="math display">R_{abs}(22) = R_{abs}(14) + (22 - 14)
+\cdot \frac{1}{4} = 9 + 2 = 11</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Originally Problem 4 on the Fall 2021 Final Exam.</i></p>
+<p>You may find the following properties of logarithms helpful in this
+question. Assume that all logarithms in this question are natural
+logarithms, i.e. of base <span class="math inline">e</span>.</p>
+<ul>
+<li><span class="math inline">e^{\log(x)} = x</span></li>
+<li><span class="math inline">\log(a) + \log(b) = \log(a \cdot
+b)</span></li>
+<li><span class="math inline">\log(a) - \log(b) = \log \left(
+\frac{a}{b} \right)</span></li>
+<li><span class="math inline">\log(a^c) = c \log (a)</span></li>
+<li><span class="math inline">\frac{d}{dx} \log x =
+\frac{1}{x}</span></li>
+</ul>
+<p>Billy, the avocado-farmer-turned-waiter-turned-Instagram-influencer
+that you’re all-too-familiar with, is trying his hand at coming up with
+loss functions. He comes up with the Billy loss, <span
+class="math inline">L_B(h, y)</span>, defined as follows:</p>
+<p><span class="math display">L_B(h, y) = \left[ \log \left( \frac{y}{h}
+\right) \right]^2</span></p>
+<p>Throughout this problem, assume that all <span
+class="math inline">y</span>s are positive.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Show that <span class="math display">\frac{d}{dh} L_B(h, y) = -
+\frac{2}{h} \log \left( \frac{y}{h} \right)</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\begin{align*}
+    \frac{d}{dh} L_B(h, y) &amp;= \frac{d}{dh} \left[ \log \left(
+\frac{y}{h} \right) \right]^2 \\
+    &amp;= 2 \cdot \log \left( \frac{y}{h} \right) \cdot \frac{d}{dh}
+\log \left( \frac{y}{h} \right) \\
+    &amp;= 2 \cdot \log \left( \frac{y}{h} \right) \cdot \frac{d}{dh}
+\left( \log(y) - \log(h) \right) \\
+    &amp;= 2 \cdot \log \left( \frac{y}{h} \right) \cdot \left( -
+\frac{1}{h} \right) \\
+    &amp;= -\frac{2}{h} \log \left( \frac{y}{h} \right)
+\end{align*}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Show that the constant prediction <span
+class="math inline">h^*</span> that minimizes for Billy loss is</p>
+<p><span class="math display">h^* = \left(y_1 \cdot y_2 \cdot ... \cdot
+y_n \right)^{\frac{1}{n}}</span></p>
+<p>You do not need to perform a second derivative test, but otherwise
+you must show your work.</p>
+<p><em>Hint: To confirm that you’re interpreting the result correctly,
+<span class="math inline">h^*</span> for the dataset 3, 5, 16 is <span
+class="math inline">(3 \cdot 5 \cdot 16)^{\frac{1}{3}} =
+240^{\frac{1}{3}} \approx 6.214</span>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\begin{align*}
+    R_B(h) &amp;= \frac{1}{n} \sum_{i = 1}^n \left[ \log \left(
+\frac{y_i}{h} \right) \right]^2 \\
+\frac{d}{dh} R_B(h) &amp;= \frac{1}{n} \sum_{i = 1}^n \frac{d}{dh}
+\left[ \log \left( \frac{y_i}{h} \right) \right]^2 \\
+&amp;= \frac{1}{n} \sum_{i = 1}^n -\frac{2}{h} \log \left( \frac{y_i}{h}
+\right) \\
+&amp;= -\frac{2}{nh} \sum_{i = 1}^n \log \left( \frac{y_i}{h} \right) =
+0 \\
+0 &amp;= \sum_{i = 1}^n \log \left( \frac{y_i}{h} \right) = \sum_{i =
+1}^n \left( \log(y_i) - \log(h)\right) \\
+0 &amp;= \sum_{i = 1}^n \log(y_i) - \log(h) \sum_{i = 1}^n 1 \\
+0 &amp;= \left( \log(y_1) + \log(y_2) + ... + \log(y_n) \right) - n
+\log(h) \\
+\log(h^n) &amp;= \log(y_1 \cdot y_2 \cdot ... \cdot y_n) \\
+h^n &amp;= y_1 \cdot y_2 \cdot ... \cdot y_n \\
+h^* &amp;= (y_1 \cdot y_2 \cdot ... \cdot y_n)^{\frac{1}{n}}
+\end{align*}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><em>Originally Problem 3 on the Fall 2022 Midterm Exam.</em></p>
+<p>Mahdi runs a local pastry shop near UCSD and sells traditional desert
+called Baklava. He bakes Baklavas every morning to keep his promise of
+providing fresh Baklavas to his customers daily. Here is the amount of
+Baklava he sold each day during last week in pounds(lb): <span
+class="math display">y_1=100, y_2=110, y_3=75, y_4=90, y_5=105, y_6=90,
+y_7=25</span></p>
+<p>Mahdi needs your help as a data scientist to suggest <u>the best
+constant prediction (<span class="math inline">h^*</span>) of daily
+sales that minimizes the empirical risk using <span
+class="math inline">L(h,y)</span> as the loss function</u>. Answer the
+following questions and give a <strong>brief justification</strong> for
+each part. <strong>This problem has many parts, if you get stuck, move
+on and come back later!</strong></p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Let <span class="math inline">L(h,y)=|y-h|</span>. What is <span
+class="math inline">h^*</span>? (We’ll later refer to this prediction as
+<span class="math inline">h_1^*</span>).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>As we have seen in lectures, the median minimizes the absolute loss
+risk function. <span class="math display">h^*_1=\text{Median}(y_1,
+\cdots, y_7).</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Let <span class="math inline">L(h,y)=(y-h)^2</span>. What is <span
+class="math inline">h^*</span>? (We’ll later refer to this prediction as
+<span class="math inline">h_2^*</span>).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>As we have seen in lectures, the mean minimizes the square loss risk
+function. <span class="math display">h^*_2=\text{Mean}(y_1, \cdots,
+y_7).</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p><strong>True</strong> or <strong>False</strong>: Removing <span
+class="math inline">y_1</span> and <span class="math inline">y_3</span>
+from the dataset does not change <span
+class="math inline">h_2^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>False</strong>. It changes the mean from <span class="math inline">85</span> to <span class="math inline">84</span>.
+(However, the median is not changed.)</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>Mahdi thinks that <span class="math inline">y_7</span> is an outlier.
+Hence, he asks you to remove <span class="math inline">y_7</span> and
+update your predictions in parts (a) and (b) accordingly. Without
+calculating the new predictions, can you justify which prediction
+changes <em>more</em>? <span class="math inline">h^*_1</span> or <span
+class="math inline">h_2^*</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The mean squared loss is more sensitive to outliers than absolute
+loss, and removing data changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.5">Problem 4.5</h3>
+<p><strong>True</strong> or <strong>False</strong>: Let <span
+class="math inline">L(y,h)=|y-h|^3</span>. You can use the Gradient
+descent algorithm to find <span class="math inline">h^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_5" aria-expanded="true" aria-controls="collapse4_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_5" class="accordion-collapse collapse"
+aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differentiable everywhere so
+we can not use the gradient descent to find the minimum.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.6">Problem 4.6</h3>
+<p><strong>True</strong> or <strong>False</strong>: Let <span
+class="math inline">L(y,h)=\sin(y-h)</span>. The Gradient descent
+algorithm is guaranteed to converge, provided that a proper learning
+rate is given.<br />
+</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_6" aria-expanded="true" aria-controls="collapse4_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_6" class="accordion-collapse collapse"
+aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>False</strong>. The function is not convex, so the gradient
+descent algorithm is not guaranteed to converge.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.7">Problem 4.7</h3>
+<p>Mahdi has noticed that Baklava daily sale is associated with weather
+temperature. So he asks you to incorporate this feature to get a better
+prediction. Suppose the last week’s daily temperatures are <span
+class="math inline">x_1, x_2, \cdots, x_7</span> in Fahrenheit (F). We
+know that <span class="math inline">\bar x=65</span>, <span
+class="math inline">\sigma_x=8.5</span> and the best linear prediction
+that <u>minimizes the mean squared error</u> is <span
+class="math inline">H^*(x)=-3x+w_0^*</span>.</p>
+<p>What is the correlation coefficient (<span
+class="math inline">r</span>) between <span class="math inline">x</span>
+and <span class="math inline">y</span>? What does that mean?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_7" aria-expanded="true" aria-controls="collapse4_7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_7" class="accordion-collapse collapse"
+aria-labelledby="heading4_7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We know <span class="math inline">w_1^* =
+\frac{\sigma_y}{\sigma_x}r.</span> We know that <span class="math inline">\sigma_x=8.5</span> and <span class="math inline">w_1^*=-3</span>. We can find <span class="math inline">\sigma_y</span> as follows:</p>
+<p><span class="math display">\begin{aligned}
+    \sigma_y^2 =&amp; \frac{1}{n} \sum_{i = 1}^n (y_i - \bar{y})^2\\
+    =&amp;
+\frac{1}{7}[(100-85)^2+(110-85)^2+(75-85)^2+(90-85)^2+(105-85)^2+(90-85)^2+(25-85)^2]\\
+    =&amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
+\end{aligned}</span></p>
+<p>Then, <span class="math inline">\sigma_y=26.7</span> which results in
+<span class="math inline">r=-0.95</span>. That means the weather
+temperature inversely affects Baklava sales, i.e., they are highly
+negatively correlated.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.8">Problem 4.8</h3>
+<p><strong>True</strong> or <strong>False</strong>: The unit of <span
+class="math inline">r</span> is <span
+class="math inline">\frac{lb}{F}</span> (Pound per Fahrenheit).</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_8" aria-expanded="true" aria-controls="collapse4_8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_8" class="accordion-collapse collapse"
+aria-labelledby="heading4_8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>False.</strong> The correlation coefficient has no unit. (It
+is always a unitless number in <span class="math inline">[-1,1]</span>
+range.)</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.9">Problem 4.9</h3>
+<p>Find <span class="math inline">w^*_0</span>. <em>(Hint: You’ll need
+to find <span class="math inline">\bar y</span> for the given
+dataset)</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_9" aria-expanded="true" aria-controls="collapse4_9">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_9" class="accordion-collapse collapse"
+aria-labelledby="heading4_9" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Note that <span class="math inline">H(\bar x)=\bar y</span>.
+Therefore, <span class="math display">\begin{aligned}
+        H(65)=-3\cdot 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.10">Problem 4.10</h3>
+<p>What would the best linear prediction <span
+class="math inline">H^*(x)</span> be if we multiply all <span
+class="math inline">x_i</span>’s by <span
+class="math inline">2</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_10">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_10" aria-expanded="true" aria-controls="collapse4_10">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_10" class="accordion-collapse collapse"
+aria-labelledby="heading4_10" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The standard deviation scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\cdot \sigma_x</span>.<br/> The same
+is true for the mean, i.e., <span class="math inline">\bar{x}'=2
+\cdot \bar{x}.</span> <br/> The correlation <span class="math inline">r</span>, standard deviation of the y-values <span class="math inline">\sigma_y</span>, and the mean of the y-values <span class="math inline">\bar y</span> do not change. <br/> (You can verify
+these claims by plugging <span class="math inline">2x</span> in for
+<span class="math inline">x</span> in their respective formulas and
+seeing what happens, but it’s faster to <em>visually</em> reason why
+this happens.)</p>
+<p>Therefore, <span class="math inline">w_1'^*=\frac{\sigma_y'}{\sigma_x'}r'
+= \frac{(\sigma_y)}{(2\cdot\sigma_x)}(r) = \frac{w_1^*}{2} =
+-1.5</span>.</p>
+<p>We can find <span class="math inline">w_0'^*</span> as
+follows:</p>
+<p><span class="math display">\begin{align*}
+\bar{y}'&amp;=H(\bar{x}')\\&amp;=\frac{w_1^*}{2}(2\bar{x})+w_0'^*\\&amp;=w_1^*\bar{x}+w_0'^*
+\\
+&amp;\downarrow \\
+(85) &amp;= -3(65) + w_0'^* \\
+w_0'^*&amp;=280
+\end{align*}</span></p>
+<p>So, <span class="math inline">H^*(x)</span> would be <span class="math inline">-1.5x + 280</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.11">Problem 4.11</h3>
+<p>What would the best linear prediction <span
+class="math inline">H^*(x)</span> be if we add <span
+class="math inline">20</span> to all <span
+class="math inline">x_i</span>’s?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_11">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_11" aria-expanded="true" aria-controls="collapse4_11">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_11" class="accordion-collapse collapse"
+aria-labelledby="heading4_11" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>All parameters remain unchanged except <span class="math inline">\bar{x}'=\bar{x}+20.</span> Since <span class="math inline">r</span>, <span class="math inline">\sigma_x</span>
+and <span class="math inline">\sigma_y</span> are not changed, <span class="math inline">w_1^*</span> does not change. Then, one can find
+<span class="math inline">w_0^*</span> as follows:</p>
+<p><span class="math display">\begin{align*}
+\bar{y}'&amp;=H(\bar{x}') \\
+&amp;\downarrow \\
+(85) &amp;=-3(65+20)+w_0^* \\
+w_0^*&amp;=340
+\end{align*}</span></p>
+<p>So, <span class="math inline">H^*(x)</span> would be <span class="math inline">-3x + 340</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p><i>Originally Problem 1 on the first Midterm of Winter 2022</i></p>
+<p>Define the extreme mean (<span class="math inline">EM</span>) of a
+dataset to be the average of its largest and smallest values. Let <span
+class="math display">f(x)=-3x+4.</span> Show that for any dataset <span
+class="math inline">x_1\leq x_2 \leq \dots \leq x_n</span>, <span
+class="math display">EM(f(x_1), f(x_2), \dots, f(x_n)) = f(EM(x_1, x_2,
+\dots, x_n)).</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>This linear transformation reverses the order of the data because if
+<span class="math inline">a&lt;b</span>, then <span class="math inline">-3a&gt;-3b</span> and so adding four to both sides
+gives <span class="math inline">f(a)&gt;f(b)</span>. Since <span class="math inline">x_1\leq x_2 \leq \dots \leq x_n</span>, this means
+that the smallest of <span class="math inline">f(x_1), f(x_2), \dots,
+f(x_n)</span> is <span class="math inline">f(x_n)</span> and the largest
+is <span class="math inline">f(x_1)</span>. Therefore,</p>
+<p><span class="math display">\begin{aligned} EM(f(x_1), f(x_2), \dots,
+f(x_n)) &amp;= \dfrac{f(x_n) + f(x_n)}{2} \\ &amp;=
+\dfrac{-3x_n+4-3x_1+4}{2} \\ &amp;= \dfrac{-3x_n-3x_1}{2} + 4\\ &amp;=
+-3\left(\dfrac{x_1+x_n}{2}\right) + 4 \\ &amp;= -3EM(x_1, x_2, \dots,
+x_n)+ 4\\ &amp;= f(EM(x_1, x_2, \dots, x_n)). \end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><i>Originally Problem 1 on the Winter 2024 Final Part 1</i></p>
+<p>Suppose there is a dataset containing <span
+class="math inline">10,000</span> integers, the first <span
+class="math inline">2,500</span> of them are <span
+class="math inline">3</span>s, the next <span
+class="math inline">2,500</span> of them are <span
+class="math inline">5</span>s, the next <span
+class="math inline">4,500</span> of them are <span
+class="math inline">7</span>s, and the last <span
+class="math inline">500</span> of them are <span
+class="math inline">9</span>.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Calculate the median of this dataset.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">6</span></p>
+<p>We know there is an even number of integers in this dataset because
+<span class="math inline">10,000 \% 2 = 0</span>. We can find the middle
+of the dataset by doing <span class="math inline">\frac{10,000}{2} =
+5,000</span>. This means the element in the <span class="math inline">5,000</span> position and <span class="math inline">5,001</span> position can give us our median. The
+element at the <span class="math inline">5,000</span> position is a
+<span class="math inline">5</span> because <span class="math inline">2,500 + 2,500 = 5,000</span>. The element at the
+<span class="math inline">5,001</span> position is a <span class="math inline">7</span> because the next number after <span class="math inline">5</span> is <span class="math inline">7</span>. We
+can then plug <span class="math inline">5</span> and <span class="math inline">7</span> into the equation: <span class="math display">\frac{x_{5,000} + x_{5,001}}{2} = \frac{5 + 7}{2} =
+6</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>How does the mean of this dataset compared to its median?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The mean is larger than the median</p></li>
+<li><p><input type="radio" disabled="" /> The mean is smaller than the median</p></li>
+<li><p><input type="radio" disabled="" /> The mean and the median are equal</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The mean is smaller than the median</p>
+<p>We can calculate the mean by doing <span class="math display">\frac{2,500 \cdot  3 + 2,500 \cdot  5 + 4,500
+\cdot  7 + 500 \cdot  9}{10,000} = 5.6</span> Using part (a) we know
+that <span class="math inline">5.6 &lt; 6</span>, which means the mean
+is smaller than the median.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p><em>Originally Problem 1 on the first Winter 2024 Midterm
+Exam.</em></p>
+<p>Consider a dataset <span class="math inline">D</span> with 5 data
+points <span class="math inline">\{7,5,1,2,a\}</span>, where a is a
+positive real number. Note that <span class="math inline">a</span> is
+not necessarily an integer.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Express the mean of <span class="math inline">D</span> as a function
+of <span class="math inline">a</span>, simplify the expression as much
+as possible.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\text{Mean($D$)} = \frac{a}{5} +
+3</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Depending on the range of <span class="math inline">a</span>, the
+median of <span class="math inline">D</span> could assume one of three
+possible values. Write out all possible median of <span
+class="math inline">D</span> along with the corresponding range of <span
+class="math inline">a</span> for each case. Express the ranges using
+double inequalities, e.g., i.e. <span
+class="math inline">3&lt;a\leq8</span>:</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\begin{cases}
+\text{Median($D$)} = 2 &amp; \text{if a is in the range of } 0&lt;a\leq2
+\\
+\text{Median($D$)} = a &amp; \text{if a is in the range of } 2&lt;a\leq5
+\\
+\text{Median($D$)} = 5 &amp; \text{if a is in the range of }
+5&lt;a\leq\infty \\
+\end{cases}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>Determine the range of <span class="math inline">a</span> that
+satisfies: <span class="math display">\text{Mean}(D) &lt;
+\text{Median}(D)</span>. Make sure to show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Since there are 3 possible median values, we will have to discuss
+each situation separately. <br/></p>
+<p>In case 1, when <span class="math inline">0&lt;a\leq2</span>, <span class="math inline">\text{Median}(D) = 2</span>. So, we have:</p>
+<p><span class="math display">\begin{align*}
+        \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
+        3 + \frac{a}{5} &amp;&lt; 2\\
+        a&amp;&lt;-5
+\end{align*}</span></p>
+<p>But <span class="math inline">a&lt;-5</span> is in conflict with the
+condition <span class="math inline">0&lt;a\leq2</span>, therefore there
+is no solution in this situation, and Median<span class="math inline">(D) = 2</span> is impossible.</p>
+<p>In case 2, when <span class="math inline">2&lt;a&lt;5</span>, <span class="math inline">\text{Median}(D) = a</span>. So, we have:</p>
+<p><span class="math display">\begin{align*}
+        \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
+        3 + \frac{a}{5} &amp;&lt; a\\
+        3 &amp;&lt; \frac{4}{5} a\\
+        a &amp;&gt; \frac{15}{4}\\       
+\end{align*}</span></p>
+<p>So <span class="math inline">a</span> has to be larger than <span class="math inline">\frac{15}{4}</span>. But remember from the
+prerequisite condition that <span class="math inline">2&lt;a&lt;5</span>.</p>
+<p>To satisfy both conditions, we must have <span class="math inline">\frac{15}{4}&lt;a&lt;5</span>.</p>
+<p>In case 3, when <span class="math inline">a\geq5</span>, <span class="math inline">\text{Median}(D) = 5</span>. So, we have: <span class="math display">\begin{align*}
+        \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
+        3 + \frac{a}{5} &amp;&lt; 5\\
+        a&amp;&lt;10
+\end{align*}</span></p>
+<p>combining with the prerequisite condition, we have <span class="math inline">5\leq a&lt;10</span></p>
+<p>Combining the range of all three cases, we have <span class="math inline">\frac{15}{4}&lt;a&lt;10</span> as our final
+answer.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p><em>Originally Problem 2 on the first Winter 2024 Midterm
+Exam.</em></p>
+<p>Let <span class="math inline">R_{sq}(h)</span> represent the mean
+squared error of a constant prediction <span
+class="math inline">h</span> for a given dataset. For the dataset <span
+class="math inline">\{3, y_{1}\}</span>, the graph of <span
+class="math inline">R_{sq}(h)</span> has its minimum at the point <span
+class="math inline">(5,r_{1})</span>. Find out the value of <span
+class="math inline">y_{1}</span> and <span
+class="math inline">r_{1}</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The mean squared error is written as: <span class="math display">\begin{align*}
+        R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2    
+\end{align*}</span></p>
+<p>Since we only have two data points (<span class="math inline">n=2</span>), the equation simplifies to:</p>
+<p><span class="math display">\begin{align*}
+        R_{sq}(h) = \frac{1}{2}((y_{0}-h)^2+ (y_{1}-h)^2)    
+\end{align*}</span></p>
+<p>Taking the derivative with respect to <span class="math inline">h</span>, we have: <span class="math display">\begin{align*}
+        \frac{dR_{sq}(h)}{dh} = -(y_{0}-h)- (y_{1}-h)    
+\end{align*}</span></p>
+<p>We know that the derivative has to be 0 at the local minima,
+therefore at <span class="math inline">h=5</span>, we have:</p>
+<p><span class="math display">\begin{align*}
+        \frac{dR_{sq}(h)}{dh} = -(3-5)- (y_{1}-5) &amp;= 0\\
+        % -2+y_1-5 &amp;=0\\
+        y_1 &amp;= 7
+\end{align*}</span></p>
+<p>So we know that the dataset is <span class="math inline">\{3,7\}</span>. Given all these information, we can
+calculate <span class="math inline">r_1</span> with:</p>
+<p><span class="math display">\begin{align*}
+        R_{sq}(5) &amp;= \frac{1}{2}((y_{0}-5)^2+ (y_{1}-5)^2)\\
+        &amp;=\frac{1}{2}((3-5)^2+ (7-5)^2)\\
+        &amp;=\frac{1}{2}(4+4)=4
+\end{align*}</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>

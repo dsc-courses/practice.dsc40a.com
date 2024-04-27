@@ -3,5 +3,4 @@ instructors: Janine Tiefenbruck
 context: This exam was administered online. The exam was open-notes, open-book. Students had **50 minutes** to take this exam.
 show_solution: true
 problems:
-  # Commented problems are problems that are UNFINISHED, uncomment when complete :)
-  # - sp21-midterm1/q01 UNFINISHED
+  - sp21-midterm1/q01 
