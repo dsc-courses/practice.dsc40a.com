@@ -18,7 +18,7 @@ section.
 
 
 # BEGIN SOLUTION
-$P(18,3)$
+${18 \choose 3} * 3!$
 
 # END SOLUTION
 
@@ -54,7 +54,7 @@ Eggplant Tofu, because one plate can be rotated to look like the other
 
 # BEGIN SOLUTION
 
-$2*C(18,3)$
+$2 * {18 \choose 3}$
 
 # END SOLUTION
 
@@ -73,7 +73,7 @@ as the same.
 
 # BEGIN SOLUTION
 
-$2*C(18,2) + C(18,1)$
+$2 * {18 \choose 2} + {18 \choose 1}$
 
 # END SOLUTION
 

@@ -64,7 +64,7 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Janine Tiefenbruck (???)</p>
+<p><strong>Instructor(s):</strong> Janine Tiefenbruck</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book, but no calculator. Students had <strong>50 minutes</strong>
 to take this exam.</p>
@@ -121,8 +121,14 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\dfrac{P(12,8)}{12^8} =
+<p><span class="math inline">\dfrac{{12 \choose 8}*8!}{12^8} =
 \dfrac{12}{12}*\dfrac{11}{12}*\dfrac{10}{12}*\dots*\dfrac{5}{12}</span></p>
+<p>The numerator <span class="math inline">{12 \choose 8}*8!</span> is
+the number of total possible permutations of 8 distinct values; <span class="math inline">{12 \choose 8}</span> possible sets of 8 distinct
+values times <span class="math inline">8!</span> orderings, because the
+die could roll the same set of distinct values in <span class="math inline">8!</span> different ways. The denominator <span class="math inline">12^8</span> is the number of total possible
+outcomes. Altogether, dividing the numerator by the denominator gives us
+the probability of rolling 8 distinct values.</p>
 </div>
 </div>
 </div>
@@ -143,7 +149,8 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\dfrac{C(8,2)*P(12,7)}{12^8}</span></p>
+<p><span class="math inline">\dfrac{{8 \choose 2}*{12 \choose
+7}*7!}{12^8}</span></p>
 </div>
 </div>
 </div>
@@ -241,7 +248,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">P(18,3)</span></p>
+<p><span class="math inline">{18 \choose 3} * 3!</span></p>
 </div>
 </div>
 </div>
@@ -293,7 +300,7 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">2*C(18,3)</span></p>
+<p><span class="math inline">2 * {18 \choose 3}</span></p>
 </div>
 </div>
 </div>
@@ -321,7 +328,8 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">2*C(18,2) + C(18,1)</span></p>
+<p><span class="math inline">2 * {18 \choose 2} + {18 \choose
+1}</span></p>
 </div>
 </div>
 </div>
@@ -339,92 +347,96 @@ that you’ve attempted to see the Milky Way, you have a record of:</p>
 <li><p>the outcome (successful, or unsuccessful).</p></li>
 </ul>
 <p>These 12 attempts are recorded in the table below.</p>
-<div class="center">
 <table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><strong>setting</strong></th>
-<th style="text-align: left;"><strong>season</strong></th>
-<th style="text-align: left;"><strong>time</strong></th>
-<th style="text-align: left;"><strong>outcome</strong></th>
+<th><strong>setting</strong>  </th>
+<th><strong>season</strong>  </th>
+<th><strong>time</strong>      </th>
+<th><strong>outcome</strong>  </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">suburban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">successful</td>
+<td>suburban</td>
+<td>winter</td>
+<td>late night</td>
+<td>successful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">spring</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">successful</td>
+<td>rural</td>
+<td>spring</td>
+<td>late night</td>
+<td>successful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">successful</td>
+<td>urban</td>
+<td>winter</td>
+<td>early morning</td>
+<td>successful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">successful</td>
+<td>rural</td>
+<td>winter</td>
+<td>early morning</td>
+<td>successful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">summer</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>summer</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>urban</td>
+<td>winter</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>winter</td>
+<td>early morning</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">spring</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>spring</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">fall</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>urban</td>
+<td>fall</td>
+<td>early morning</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">suburban</td>
-<td style="text-align: left;">summer</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>suburban</td>
+<td>summer</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>urban</td>
+<td>winter</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>winter</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>You want to use a Naive Bayes classifier to predict whether you’ll be
 successful in seeing the Milky Way under the following conditions:</p>
 <ul>

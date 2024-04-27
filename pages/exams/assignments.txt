@@ -23,16 +23,16 @@ Javier/Zoe: Winter 2022 midterm 1 (mockmidterm1.tex)
 COMPLETED (Added to Index)
 
 Zoe: Winter 2024 final part 1 (final1_WI24.tex)
-COMPLETED (added to index)
+COMPLETED (Added to Index)
 
 Nick: Winter 2024 midterm 1 (midterm_WI24_1.tex)
-    - Cleaned, needs proofreading.
+COMPLETED
 
 Nick: Winter 2024 midterm 2 (Midterm2_WI24.tex)
-    - Cleaned, needs proofreading.
+COMPLETED
 
 Zoe: Spring 2023 final part 1 (final1A.tex)
 COMPLETED
 
 Nick: the zip fa22-midterm.zip, attached, has the .tex for the Fall 2022 midterm (midterm_sol.tex).
-    - Cleaned, needs proofreading.
+COMPLETED
