@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 3 on the Winter 2024 Final Part 1</i>
+
 Suppose there is a dataset contains four values: $-2$, $-1$,
 $2$, $4$. You would like to use gradient descent to minimize the mean square
 error over this dataset.
@@ -7,10 +9,6 @@ error over this dataset.
 # BEGIN SUBPROB
 
 Write down the expression of mean square error and its derivative given this dataset.
-
-$R_{sq}(h)$ =
-
-$\frac{dR_{sq}(h)}{dh}$ =
 
 # BEGIN SOLUTION
 
@@ -26,9 +24,14 @@ $$
 \begin{align*}
 \frac{dR_{sq}(h)}{dh} &= \frac{dR_{sq}(h)}{dh}(\frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2) \\
 &= \frac{1}{4}\sum_{i=1}^{4}\frac{dR_{sq}(h)}{dh}((y_i-h)^2) \\
-&\text{We can use the chain rule to find the derivative of $(y_i-h)^2$.} \\
-&\text{Recall the chain rule is: $\frac{df(x)}{dx}[(f(x))^n] = n(f(x))^{n-1} * f'(x)$.} \\
-&= \frac{1}{4}\sum_{i=1}^{4}2(y_i-h) * -1 \\
+\end{align*}
+$$
+We can use the chain rule to find the derivative of $(y_i-h)^2$.
+Recall the chain rule is: $\frac{df(x)}{dx}[(f(x))^n] = n(f(x))^{n-1} \cdot f'(x)$.
+
+$$
+\begin{align*}
+&= \frac{1}{4}\sum_{i=1}^{4}2(y_i-h) \cdot -1 \\
 &= \frac{1}{4}\sum_{i=1}^{4} 2(h - y_i) \\
 &= \frac{1}{2}\sum_{i=1}^{4} (h-y_i)
 \end{align*}
@@ -43,8 +46,6 @@ $$
 Suppose you choose the initial position to be $h_0$ and the
 learning rate to be $\frac{1}{4}$. After two gradient descent steps,
 $h_2=\frac{1}{4}$. What is the value of $h_0$?
-
-$h_0$ =
 
 # BEGIN SOLUTION
 
@@ -86,7 +87,7 @@ reach convergence?
 
 # BEGIN SOLUTION
 
-2 or 3
+$2$ or $3$ additional steps (both are correct).
 
 The gradient descent equation is given by: $$\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}

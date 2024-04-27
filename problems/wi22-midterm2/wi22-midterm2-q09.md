@@ -12,12 +12,12 @@ letters, and 2 gray letters?
 ( ) $6!$\
 ( ) $C(6.3)$\
 ( ) $(C(6,2))^3$\
-( ) $C(6,2)*C(4,2)$\
+( ) $C(6,2)\cdot C(4,2)$\
 ( ) None of the above.
 
 # BEGIN SOLUTION
 
-$C(6,2)*C(4,2)$
+$C(6,2)\cdot C(4,2)$
 
 # END SOLUTION
 

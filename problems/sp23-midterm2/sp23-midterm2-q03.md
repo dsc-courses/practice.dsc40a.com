@@ -27,7 +27,7 @@ $\dfrac{16!}{8!2!2!2!}$
 This answer can be found using combinatorics or permutations.
 <br> 
 
-${16 \choose 8}*{8 \choose 2}*{6 \choose 2}*{4 \choose 2}*{2 \choose 1}*{1 \choose 1} = \dfrac{16!}{8!2!2!2!}$
+${16 \choose 8}\cdot {8 \choose 2}\cdot{6 \choose 2}\cdot{4 \choose 2}\cdot{2 \choose 1}\cdot{1 \choose 1} = \dfrac{16!}{8!2!2!2!}$
 
 Here is the explanation using combinatorics:
 

@@ -2,7 +2,8 @@ title: 'Conditional Independence'
 context: This page contains all problems about Conditional Independence.
 show_solution: true
 problems:
+  # Commented problems are problems that are UNFINISHED, uncomment when complete :)
   - sp23-midterm2/sp23-midterm2-q02
   - sp23-midterm2/sp23-midterm2-q06
-  # - wi22-midterm2/wi22-midterm2-q07 UNFINISHED
-  # - wi22-midterm2/wi22-midterm2-q10 UNFINISHED
+  - wi22-midterm2/wi22-midterm2-q07 
+  # - wi22-midterm2/wi22-midterm2-q10 

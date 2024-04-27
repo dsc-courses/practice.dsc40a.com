@@ -97,7 +97,7 @@ $$
 \end{align*}
 $$
 
-With this we have proved that $4e_1+e_2+4e_3+e_4=0$.
+With this we have shown that $4e_1+e_2+4e_3+e_4=0$.
 
 # END SOLUTION
 

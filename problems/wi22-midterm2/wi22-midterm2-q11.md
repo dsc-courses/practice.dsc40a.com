@@ -8,7 +8,7 @@ With this (horrible) strategy, what is the probability that your Stringle score 
 
 # BEGIN SOLUTION
 
-$$\left( 1 - \frac{1}{26^6}\right)^7*\left( \frac{1}{26^6}\right)$$
+$$\left( 1 - \frac{1}{26^6}\right)^7\cdot \left( \frac{1}{26^6}\right)$$
 
 # END SOLUTION
 

@@ -38,9 +38,9 @@ Avi wins against beginners $1 - 0.1 = 0.9\%$ of the time, against intermediate p
 Now we can multiply the percentage of time Avi wins with the percentage of different players types to find the probability Avi will win in the first round! We can do this because you can imagine we are multiplying the probability Avi wins with the amount of people in the tournament of that level.
 
 $$\begin{align*}
-0.9 * 0.5 &= 0.45 \\
-0.4 * 0.5 &= 0.2 \\
-0.2 * 0.1 &= 0.02 \\
+0.9 \cdot 0.5 &= 0.45 \\
+0.4 \cdot 0.5 &= 0.2 \\
+0.2 \cdot 0.1 &= 0.02 \\
 0.45 + 0.2 + 0.02 &= 0.67
 \end{align*}$$
 

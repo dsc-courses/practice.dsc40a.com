@@ -20,7 +20,7 @@ section.
 
 
 # BEGIN SOLUTION
-${18 \choose 3} * 3!$
+${18 \choose 3} \cdot 3!$
 
 # END SOLUTION
 
@@ -56,7 +56,7 @@ Eggplant Tofu, because one plate can be rotated to look like the other
 
 # BEGIN SOLUTION
 
-$2 * {18 \choose 3}$
+$2 \cdot {18 \choose 3}$
 
 # END SOLUTION
 
@@ -75,7 +75,7 @@ as the same.
 
 # BEGIN SOLUTION
 
-$2 * {18 \choose 2} + {18 \choose 1}$
+$2 \cdot {18 \choose 2} + {18 \choose 1}$
 
 # END SOLUTION
 

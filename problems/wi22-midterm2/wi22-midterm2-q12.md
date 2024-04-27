@@ -6,7 +6,7 @@ Your competitive family keeps track of their Stringle scores in a spreadsheet, w
 
 # BEGIN SOLUTION
 
-$$5!*2 = 240$$
+$$5!\cdot 2 = 240$$
 
 TODO
 

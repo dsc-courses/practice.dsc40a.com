@@ -2,7 +2,7 @@
 
 _Originally Problem 5 on the first Winter 2024 Midterm Exam._
 
-Suppose the following information is given for a linear regression:
+Suppose the following information is given for linear regression:
 
 $X = \begin{bmatrix}
 1 & 2\\
@@ -21,14 +21,19 @@ $\vec{y} =
     \end{bmatrix}$
 
 
-Where X is the design matrix, $\vec{y}$ is the observation vector, and
-$\vec{w}^{*}$ is the optimal parameter vector. Solve for parameter a and
-b using the normal equation, show your work.
+Where $X$ is the design matrix, $\vec{y}$ is the observation vector, and
+$\vec{w}^{*}$ is the optimal parameter vector. Solve for parameters $a$ and
+$b$ using the normal equations, show your work.
 
 # BEGIN SOLUTION
 
+$$\begin{cases}
+       a = 5\\
+       b = -1\\ 
+\end{cases}$$
+
 Since $\vec{w}^{*}$ is the optimal parameter vector, it must satisfy the
-Normal Equation: 
+normal equations: 
 
 $$\begin{align*}
         X^{T}X\vec{w} = X^{T}\vec{y}
@@ -113,12 +118,10 @@ a+b\\
 \end{bmatrix}
 \end{align*}
 
-So we obtained this set of equations: 
-
-$$\begin{align*}
+$$\begin{cases}
         &4 = a + b\\
         &11 = 2a-b
-\end{align*}$$
+\end{cases}$$
 
 To solve this equation set, we can add them together:
 $$\begin{align*}
@@ -126,11 +129,12 @@ $$\begin{align*}
        3a &= 15\\
        \\
        \\
-       \begin{cases}
+\end{align*}$$
+
+$$\begin{cases}
        a = 5\\
        b = -1\\ 
-       \end{cases}
-\end{align*}$$
+\end{cases}$$
 
 # END SOLUTION
 

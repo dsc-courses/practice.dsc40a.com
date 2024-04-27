@@ -7,7 +7,7 @@ Suppose that every day, the Stringle string is chosen without replacement from a
 # BEGIN SOLUTION
 
 $$
-\dfrac{100}{26^6} = 100*\dfrac{P(26^6-1, 99)}{P(26^6, 100)} = 1 - \dfrac{P(26^6- 1, 100)}{P(26^6, 100)}
+\dfrac{100}{26^6} = 100\cdot \dfrac{P(26^6-1, 99)}{P(26^6, 100)} = 1 - \dfrac{P(26^6- 1, 100)}{P(26^6, 100)}
 $$
 
 TODO

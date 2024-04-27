@@ -40,7 +40,7 @@ $$\begin{align*}
 
 where $n!$ denotes the factorial of $n$, defined as the
 product of all positive integers up to $n$, i.e.
-$n! = 1\times2\times3\times ... \times(n-1)\times n$. Given the power
+$n! = 1\cdot 2\cdot 3\cdot  ... \cdot (n-1)\cdot  n$. Given the power
 series expansion of $e^{x}$ above, write the power series expansion of
 $e^{-x}$ and explicitly specify the first 5 terms, i.e., similar to the
 format of the equation above.
@@ -52,7 +52,7 @@ reference="exp_expand"}: -->
 
 By plugging $-x$ in for each $x$, we get:
 
-$e^{-x} = \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2} - \frac{x^{3}}{6}+\frac{x^{4}}{24}+ ...$
+$e^{-x} = \displaystyle\sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2} - \frac{x^{3}}{6}+\frac{x^{4}}{24}+ ...$
 
 # END SOLUTION
 
@@ -60,7 +60,7 @@ $e^{-x} = \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2} - \frac{x^{
 
 # BEGIN SUBPROB
 
-Using the conclusions you reached in part a and part b, prove
+Using the conclusions you reached in part (a) and part (b), prove
 that $cosh(x) = \frac{1}{2}(e^{x} + e^{-x})$ is convex.
 
 
@@ -91,9 +91,9 @@ $$\begin{align*}
         &=\sum_{n=0}^{\infty}\frac{2x^{n}}{n!} \mathrm{(for\; even\; n)}
 \end{align*}$$
 
-Therefore, $cosh(x)=\frac{e^{x}+e^{-x}}{2}$ is a sum of
-$x^{n}$ where n is even. Since we have already proved in part a that $x^{n}$
-are always convex for even n, $cosh(x)$ is an infinite sum of convex
+Therefore, $cosh(x)=\displaystyle\frac{e^{x}+e^{-x}}{2}$ is a sum of
+$x^{n}$, where $n$ is even. Since we have already proved in part (a) that $x^{n}$
+are always convex for even $n$, $cosh(x)$ is an infinite sum of convex
 functions and therefore also convex.
 
 # END SOLUTION

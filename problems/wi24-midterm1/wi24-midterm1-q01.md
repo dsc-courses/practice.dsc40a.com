@@ -50,7 +50,7 @@ Make sure to show your work.
 Since there are 3 possible median values, we will have to discuss each
 situation separately. <br>
 
-In case 1, when $0<a\leq2$, Median$(D) = 2$.
+In case 1, when $0<a\leq2$, $\text{Median}(D) = 2$.
 So, we have: 
 
 $$\begin{align*}
@@ -63,7 +63,7 @@ But $a<-5$ is in conflict with the condition $0<a\leq2$,
 therefore there is no solution in this situation, and Median$(D) = 2$
 is impossible.
 
-In case 2, when $2<a<5$, $Median_{D} = a$. 
+In case 2, when $2<a<5$, $\text{Median}(D) = a$. 
 So, we have:
 
 $$\begin{align*}
@@ -74,10 +74,12 @@ $$\begin{align*}
 \end{align*}$$
 
 So $a$ has to be larger than $\frac{15}{4}$. But
-remember from the prerequisite condition that $2<a<5$. To satisfy both
+remember from the prerequisite condition that $2<a<5$. 
+
+To satisfy both
 conditions, we must have $\frac{15}{4}<a<5$.
 
-In case 3, when $a\geq5$, $Median_{D} = 5$. 
+In case 3, when $a\geq5$, $\text{Median}(D) = 5$. 
 So, we have:
 $$\begin{align*}
         \text{Mean}(D) &< \text{Median}(D)\\

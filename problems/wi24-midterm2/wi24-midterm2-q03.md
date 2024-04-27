@@ -23,30 +23,30 @@ happened?
 
 # BEGIN SOLUTION
 
-The probability we are looking for is $\mathbb{P}(\text{Decay|Dead})$. Using Baye's equation, we can write:
+The probability we are looking for is $P(\text{Decay|Dead})$. Using Bayes' theorem, we can write:
 
 $$\begin{align*}
-\mathbb{P}(\text{Decay|Dead}) = \frac{\mathbb{P}(\text{Dead|Decay})\mathbb{P}(\text{Decay})}{\mathbb{P}(\text{Dead})}
+P(\text{Decay|Dead}) = \frac{P(\text{Dead|Decay})P(\text{Decay})}{P(\text{Dead})}
 \end{align*}$$
 
 Using the Law of Total Probability, we can rewrite the denominator:
 
 $$\begin{align*}
-\mathbb{P}(\text{Decay|Dead}) = \frac{\mathbb{P}(\text{Dead|Decay})\mathbb{P}(\text{Decay})}{\mathbb{P}(\text{Dead|Decay})\mathbb{P}(\text{Decay}) + \mathbb{P}(\text{Dead|Not Decay})\mathbb{P}(\text{Not Decay})}
+P(\text{Decay|Dead}) = \frac{P(\text{Dead|Decay})P(\text{Decay})}{P(\text{Dead|Decay})P(\text{Decay}) + P(\text{Dead|Not Decay})P(\text{Not Decay})}
 \end{align*}$$
 
 We know that:
 
 $$\begin{align*}
-    \mathbb{P}(\text{Dead|Decay}) &= 90\% = 0.9\\
-    \mathbb{P}(\text{Dead|Not Decay}) &= 10\% = 0.1\\
-    \mathbb{P}(\text{Decay}) &= 20\% = 0.2
+    P(\text{Dead|Decay}) &= 90\% = 0.9\\
+    P(\text{Dead|Not Decay}) &= 10\% = 0.1\\
+    P(\text{Decay}) &= 20\% = 0.2
 \end{align*}$$
 
 Plugging these numbers, we have:
 
 $$\begin{align*}
-\mathbb{P}(\text{Decay|Dead}) &= \frac{0.9\times 0.2}{0.9 \times 0.2 + 0.1 \times (1-0.2)}\\
+P(\text{Decay|Dead}) &= \frac{0.9\cdot 0.2}{0.9 \cdot 0.2 + 0.1 \cdot (1-0.2)}\\
 =\frac{18}{26}
 \end{align*}$$
 
@@ -81,10 +81,10 @@ Statements 1 and 2 are true. Statements 3, 4, and 5 are false.
 <br>
 
 When two events are independent, the following statement is true:
-$\mathbb{P}(\text{Event 1}) = \mathbb{P}(\text{Event 1} | \text{Event 2})$. So for statement 1, we need to show: $\mathbb{P}(\text{Decay}) = \mathbb{P}(\text{Decay} | \text{Cat Dead})$
+$P(\text{Event 1}) = P(\text{Event 1} | \text{Event 2})$. So for statement 1, we need to show: $P(\text{Decay}) = P(\text{Decay} | \text{Cat Dead})$
 
-- $\mathbb{P}(\text{Decay})$ is the fraction of the **total Venn Diagram** that is green.
-- $\mathbb{P}(\text{Decay}|\text{Cat Dead})$ is the fraction of the **"Cat Dead" region** that is green.
+- $P(\text{Decay})$ is the fraction of the **total Venn Diagram** that is green.
+- $P(\text{Decay}|\text{Cat Dead})$ is the fraction of the **"Cat Dead" region** that is green.
 
 These two fractions look the same. So that means the independence equation holds, and statement 1 is true.
 
@@ -104,13 +104,13 @@ Since statements 1 and 2 were true, the answer cannot be none of the above, so s
 
 You're given the following probabilities:
 
--   $\mathbb{P}$(Cat Dead $\cup$ Decay) = $\frac{4}{5}$
+-   $P(\text{Cat Dead} \cup \text{Decay}) = \frac{4}{5}$
 
--   $\mathbb{P}$(Cat Alive $\cup$ Decay) = $\frac{1}{2}$
+-   $P(\text{Cat Alive} \cup \text{Decay}) = \frac{1}{2}$
 
--   $\mathbb{P}$(Cat Alive $\cup$ Cat Dead) = $1$
+-   $P(\text{Cat Alive} \cup \text{Cat Dead}) = 1$
 
--   $\mathbb{P}$(Decay) = $\frac{1}{5}$
+-   $P(\text{Decay}) = \frac{1}{5}$
 
 Using the Venn diagram in Problem 3.2, calculate the probability for
 Schrodinger's cat to be in the superposition state (i.e. both dead and
@@ -120,58 +120,58 @@ alive):
 
 Since we know that the decay is independent to cat's state, we have:
 $$\begin{align*}
-    \mathbb{P}(\text{Dead} \cup \text{Decay}) &= \mathbb{P}(\text{Dead}) + \mathbb{P}(\text{Decay}) - \mathbb{P}(\text{Dead} \cap \text{Decay})\\
-    &=\mathbb{P}(\text{Dead}) + \mathbb{P}(\text{Decay}) - \mathbb{P}(\text{Dead})\cdot \mathbb{P}(\text{Decay}) = \frac{4}{5}
+    P(\text{Dead} \cup \text{Decay}) &= P(\text{Dead}) + P(\text{Decay}) - P(\text{Dead} \cap \text{Decay})\\
+    &=P(\text{Dead}) + P(\text{Decay}) - P(\text{Dead})\cdot P(\text{Decay}) = \frac{4}{5}
 \end{align*}$$ 
 
 Similarly, we have: 
 $$\begin{align*}
-    \mathbb{P}(\text{Alive} \cup \text{Decay}) &= \mathbb{P}(\text{Alive}) + \mathbb{P}(\text{Decay}) - \mathbb{P}(\text{Alive} \cap \text{Decay})\\
-    &=\mathbb{P}(\text{Alive}) + \mathbb{P}(\text{Decay}) - \mathbb{P}(\text{Alive})\cdot \mathbb{P}(\text{Decay}) = \frac{1}{2}
+    P(\text{Alive} \cup \text{Decay}) &= P(\text{Alive}) + P(\text{Decay}) - P(\text{Alive} \cap \text{Decay})\\
+    &=P(\text{Alive}) + P(\text{Decay}) - P(\text{Alive})\cdot P(\text{Decay}) = \frac{1}{2}
 \end{align*}$$ 
 
-We are given $\mathbb{P}(\text{Decay})$ = $\frac{1}{5}$, so we can plug it into the equations we made for $\mathbb{P}(\text{Dead} \cup \text{Decay})$ and $\mathbb{P}(\text{Alive} \cup \text{Decay})$:
+We are given $P(\text{Decay})$ = $\frac{1}{5}$, so we can plug it into the equations we made for $P(\text{Dead} \cup \text{Decay})$ and $P(\text{Alive} \cup \text{Decay})$:
 $$\begin{align*}
-    &\mathbb{P}(\text{Dead} \cup \text{Decay}) = \mathbb{P}(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Dead})) = \frac{4}{5}\\
+    &P(\text{Dead} \cup \text{Decay}) = P(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot P(\text{Dead})) = \frac{4}{5}\\
     \\
-    &\mathbb{P}(\text{Alive} \cup \text{Decay}) = \mathbb{P}(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Alive})) = \frac{1}{2}\\
+    &P(\text{Alive} \cup \text{Decay}) = P(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot P(\text{Alive})) = \frac{1}{2}\\
     \\
 \end{align*}$$ 
 
 Solving these two equations, we have: 
 $$\begin{align*}
-    &\frac{4}{5} = \mathbb{P}(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Dead})) \\
-    &(\frac{4}{5}) * 5 = (\mathbb{P}(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Dead}))) * 5 \\
-    &4 = 5 * (\mathbb{P}(\text{Dead})) + 1 - \mathbb{P}(\text{Dead}) \\
-    &3 = 4 * (\mathbb{P}(\text{Dead})) \\
-    &\mathbb{P}(\text{Dead}) = \frac{3}{4}
+    &\frac{4}{5} = P(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot P(\text{Dead})) \\
+    &(\frac{4}{5}) \cdot 5 = (P(\text{Dead}) + \frac{1}{5} - (\frac{1}{5} \cdot P(\text{Dead}))) \cdot 5 \\
+    &4 = 5 \cdot (P(\text{Dead})) + 1 - P(\text{Dead}) \\
+    &3 = 4 \cdot (P(\text{Dead})) \\
+    &P(\text{Dead}) = \frac{3}{4}
 \end{align*}$$
 and
 $$\begin{align*}
-    &\frac{4}{5} = \mathbb{P}(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Alive})) \\
-    &(\frac{1}{2}) * 10 = (\mathbb{P}(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot \mathbb{P}(\text{Alive}))) * 10 \\
-    &5 = 10 * (\mathbb{P}(\text{Alive})) + 2 - 2 * \mathbb{P}(\text{Alive}) \\
-    &3 = 8 * (\mathbb{P}(\text{Alive})) \\
-    &\mathbb{P}(\text{Alive}) = \frac{3}{8}
+    &\frac{4}{5} = P(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot P(\text{Alive})) \\
+    &(\frac{1}{2}) \cdot 10 = (P(\text{Alive}) + \frac{1}{5} - (\frac{1}{5} \cdot P(\text{Alive}))) \cdot 10 \\
+    &5 = 10 \cdot (P(\text{Alive})) + 2 - 2 \cdot P(\text{Alive}) \\
+    &3 = 8 \cdot (P(\text{Alive})) \\
+    &P(\text{Alive}) = \frac{3}{8}
 \end{align*}$$
 
 <!-- This means:
 $$\begin{align*}
-    &\mathbb{P}(\text{Dead}) = \frac{3}{4}\\
+    &P(\text{Dead}) = \frac{3}{4}\\
     \\
-    &\mathbb{P}(\text{Alive}) = \frac{3}{8}\\
+    &P(\text{Alive}) = \frac{3}{8}\\
     \\
 \end{align*}$$  -->
 
-The probability of superposition state is P(Alive $\cap$ Dead). Since we know that P(Alive $\cup$ Dead) = 1 we have:
+The probability of a superposition state is $P(\text{Alive} \cap \text{Dead})$. Since we know that $P(\text{Alive} \cup \text{Dead}) = 1$ we have:
 
 $$\begin{align*}
-    \mathbb{P}(\text{Alive} \cup \text{Dead}) &= \mathbb{P}(\text{Alive}) + \mathbb{P}(\text{Dead}) - \mathbb{P}(\text{Alive} \cap \text{Dead})\\
+    P(\text{Alive} \cup \text{Dead}) &= P(\text{Alive}) + P(\text{Dead}) - P(\text{Alive} \cap \text{Dead})\\
 \end{align*}$$ 
 
 Rearranging terms, we have: 
 $$\begin{align*}
-    \mathbb{P}(\text{Alive} \cap \text{Dead}) &= \mathbb{P}(\text{Alive}) + \mathbb{P}(\text{Dead}) - \mathbb{P}(\text{Alive} \cup \text{Dead})\\
+    P(\text{Alive} \cap \text{Dead}) &= P(\text{Alive}) + P(\text{Dead}) - P(\text{Alive} \cup \text{Dead})\\
     &= \frac{3}{4} + \frac{3}{8} - 1\\
     \\
     &= \frac{6}{8} + \frac{3}{8} - 1\\

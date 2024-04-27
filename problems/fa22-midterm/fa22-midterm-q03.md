@@ -167,7 +167,7 @@ Find $w^*_0$. _(Hint: You'll need to find $\bar y$ for the given dataset)_
 
 Note that $H(\bar x)=\bar y$. Therefore, 
 $$\begin{aligned}
-        H(65)=-3\times 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
+        H(65)=-3\cdot 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
 \end{aligned}$$
 
 # END SOLUTION
@@ -182,14 +182,14 @@ multiply all $x_i$'s by $2$?
 # BEGIN SOLUTION
 
 The standard deviation scales by a factor of $2$, i.e.,
-$\sigma_x'=2\times \sigma_x$.<br>
+$\sigma_x'=2\cdot \sigma_x$.<br>
 The same is true for the mean, i.e.,
-$\bar{x}'=2 \times \bar{x}.$ <br>
+$\bar{x}'=2 \cdot \bar{x}.$ <br>
  The correlation $r$, standard deviation of the y-values $\sigma_y$, and the mean of the y-values $\bar y$ do not change. <br> 
 (You can verify these claims by plugging $2x$ in for $x$ in their respective formulas and seeing what happens, but it's faster to _visually_ reason why this happens.)
 
 
- Therefore, $w_1'^*=\frac{\sigma_y'}{\sigma_x'}r' = \frac{(\sigma_y)}{(2\times\sigma_x)}(r) = \frac{w_1^*}{2} = -1.5$.
+ Therefore, $w_1'^*=\frac{\sigma_y'}{\sigma_x'}r' = \frac{(\sigma_y)}{(2\cdot\sigma_x)}(r) = \frac{w_1^*}{2} = -1.5$.
 
 We can find $w_0'^*$ as follows:
 

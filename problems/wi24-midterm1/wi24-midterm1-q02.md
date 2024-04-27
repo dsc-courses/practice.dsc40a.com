@@ -9,7 +9,7 @@ $(5,r_{1})$. Find out the value of $y_{1}$ and $r_{1}$
 
 # BEGIN SOLUTION
 
-The mean square error is written as: 
+The mean squared error is written as: 
 $$\begin{align*}
         R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2    
 \end{align*}$$
@@ -21,7 +21,7 @@ $$\begin{align*}
         R_{sq}(h) = \frac{1}{2}((y_{0}-h)^2+ (y_{1}-h)^2)    
 \end{align*}$$
 
-Taking derivative with respect to h, we have:
+Taking the derivative with respect to $h$, we have:
 $$\begin{align*}
         \frac{dR_{sq}(h)}{dh} = -(y_{0}-h)- (y_{1}-h)    
 \end{align*}$$
@@ -35,7 +35,7 @@ $$\begin{align*}
         y_1 &= 7
 \end{align*}$$
 
-So we know that the dataset is ${3,7}$. Given all these
+So we know that the dataset is $\{3,7\}$. Given all these
 information, we can calculate $r_1$ with: 
 
 $$\begin{align*}

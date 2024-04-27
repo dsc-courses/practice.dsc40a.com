@@ -22,7 +22,7 @@ You glance at the pieces just long enough to see that both pieces are white. Wha
 # BEGIN SOLUTION
 
 $$
-\dfrac{8}{16}*\dfrac{7}{15} = \dfrac{7}{30}
+\dfrac{8}{16}\cdot\dfrac{7}{15} = \dfrac{7}{30}
 $$
 
 We get $\dfrac{8}{16}$ from the fact there are $8$ white pawns and $16$ white chess pieces. So the chance of first getting a pawn is $\dfrac{8}{16}$.
@@ -32,14 +32,14 @@ Now we assume that we have a white pawn, meaning there are $8-1=7$ white pawns l
 From here we simplify the answer by doing:
 
 $$
-\dfrac{8 * 7}{16 * 15} = \dfrac{56}{240} = \dfrac{7}{30}
+\dfrac{8 \cdot 7}{16 \cdot 15} = \dfrac{56}{240} = \dfrac{7}{30}
 $$
 
 <br>
 
 Another way to solve this is using combinatorics: Note that ${8 \choose 2}$ means "$8$ choose $2$."
 
-$\dfrac{{8 \choose 2}}{16 \choose 2} = \dfrac{\frac{8}{32}*\frac{7}{31}}{\frac{16}{32}*\frac{15}{31}} = \dfrac{7}{30}$
+$\dfrac{{8 \choose 2}}{16 \choose 2} = \dfrac{\frac{8}{32}\cdot\frac{7}{31}}{\frac{16}{32}\cdot\frac{15}{31}} = \dfrac{7}{30}$
 
 # END SOLUTION
 

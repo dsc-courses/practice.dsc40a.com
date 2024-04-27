@@ -8,8 +8,6 @@ For a given dataset $\{y_1, y_2, \dots, y_n\}$, let $M_{abs}(h)$ represent the *
 
 For the dataset $\{4, 9, 10, 14, 15\}$, what is $M_{abs}(9)$?
 
-$M_{abs}(9) =$
-
 # BEGIN SOLUTION
 
 $5$

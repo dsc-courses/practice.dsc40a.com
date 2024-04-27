@@ -19,8 +19,8 @@ Using the formula for the slope of the regression line, we have:
 $$
 \begin{aligned}
 m &= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{\sum_{i=1}^n (x_i - \overline x)^2}\\
-&= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{n*\sigma_x^2}\\
-&= \frac{(3-\bar{x})*7 + (8 - \bar{x})*2 + \sum_{i=3}^n (x_i - \overline x)y_i}{8*50}. \\
+&= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{n\cdot \sigma_x^2}\\
+&= \frac{(3-\bar{x})\cdot 7 + (8 - \bar{x})\cdot 2 + \sum_{i=3}^n (x_i - \overline x)y_i}{8\cdot 50}. \\
 \end{aligned}
 $$
 
@@ -31,7 +31,7 @@ So the slope becomes:
 
 $$
 \begin{aligned}
-m' &= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 + \sum_{i=3}^n (x_i - \overline x)y_i}{8*50} \\
+m' &= \frac{(3-\bar{x})\cdot 2 + (8 - \bar{x})\cdot 7 + \sum_{i=3}^n (x_i - \overline x)y_i}{8\cdot 50} \\
 \end{aligned}
 $$
 
@@ -39,11 +39,11 @@ and the difference between these slopes is given by:
 
 $$
 \begin{aligned}
-m'-m &= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - ((3-\bar{x})*7 + (8 - \bar{x})*2)}{8*50}\\
-&= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - (3-\bar{x})*7 - (8 - \bar{x})*2}{8*50}\\
-&= \frac{(3-\bar{x})*(-5) + (8 - \bar{x})*5}{8*50}\\
-&= \frac{ -15+5\bar{x} + 40 -5\bar{x}}{8*50}\\
-&= \frac{ 25}{8*50}\\
+m'-m &= \frac{(3-\bar{x})\cdot 2 + (8 - \bar{x})\cdot 7 - ((3-\bar{x})\cdot 7 + (8 - \bar{x})\cdot 2)}{8\cdot 50}\\
+&= \frac{(3-\bar{x})\cdot 2 + (8 - \bar{x})\cdot 7 - (3-\bar{x})\cdot 7 - (8 - \bar{x})\cdot 2}{8\cdot 50}\\
+&= \frac{(3-\bar{x})\cdot (-5) + (8 - \bar{x})\cdot 5}{8\cdot 50}\\
+&= \frac{ -15+5\bar{x} + 40 -5\bar{x}}{8\cdot 50}\\
+&= \frac{ 25}{8\cdot 50}\\
 &= \frac{ 1}{16}
 \end{aligned}
 $$
