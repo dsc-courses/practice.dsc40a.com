@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 9 on the second Midterm of Winter 2022</i>
+
 Your first guess for today's Stringle has six distinct
 letters. There are $3^6$ possible colored feedback sequences for this
 first guess, since each of the six letters could be colored one of three

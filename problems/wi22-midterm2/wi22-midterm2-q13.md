@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 13 on the second Midterm of Winter 2022</i>
+
 Suppose you apply $k$-means clustering to the data in your
 family's Stringle score spreadsheet by representing the entries in each
 column of the spreadsheet as a vector in $\mathbb{R}^5$. If we run the
