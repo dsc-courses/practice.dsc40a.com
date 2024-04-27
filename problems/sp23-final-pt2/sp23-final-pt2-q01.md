@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 1 on the Spring 2023 Final Part 2</i>
+
 You run the $k$-means clustering algorithm on a dataset
 and it converges to a certain clustering with associated inertia $I$.
 You then duplicate each data point in the dataset and run $k$-means

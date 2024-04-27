@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 4 on the first Midterm of Winter 2022</i>
+
 Consider the dataset shown below.
 
 ::: center
