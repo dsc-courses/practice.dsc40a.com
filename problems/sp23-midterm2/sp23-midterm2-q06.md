@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 6 on the second Midterm of Spring 2023</i>
+
 The Avocado Cup is organized into rounds. In each round,
 players who win advance to the next round, and players who lose are
 eliminated. Rounds continue on like this until there is a single
@@ -30,7 +32,7 @@ $A$ and $B$ are conditionally independent given $C$.
 
 We know that $A$ and $B$ are not independent because winning or losing the first match could affect if Avi wins the tournament.
 
-It is helpful to think about if $C$ happens does it affect my knowledge of $A$ and $B$ happening? If $C$ happens we know that $A$ cannot happen. If $A$ cannot happen then $B$ is independent of $A$. This means $A$ and $B$ are conditionally independent given $C$.
+It is helpful to think about "if $C$ happens does it affect my knowledge of $A$ and $B$ happening"? If $C$ happens we know that $A$ cannot happen. If $A$ cannot happen then $B$ is independent of $A$. This means $A$ and $B$ are conditionally independent given $C$.
 
 Recall a particition is a collection of non-empty, non-overlapping subsets of a sample space. We know that $A$ affects $B$, which means that this statement cannot be true.
 

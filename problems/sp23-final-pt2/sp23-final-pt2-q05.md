@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 5 on the Spring 2023 Final Part 2</i>
+
 You're interested in seeing the Milky Way in the night
 sky, which you have sometimes been able to do when conditions are right.
 For each night that you've attempted to see the Milky Way, you have a

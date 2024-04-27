@@ -64,7 +64,7 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Janine Tiefenbruck (???)</p>
+<p><strong>Instructor(s):</strong> Janine Tiefenbruck</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book. Students had <strong>50 minutes</strong> to take this
 exam.</p>
@@ -186,8 +186,8 @@ getting another white pawn.</p>
 \dfrac{8 * 7}{16 * 15} = \dfrac{56}{240} = \dfrac{7}{30}
 </span></p>
 <p><br/></p>
-<p>Another way to solve this is using combinatorics: Note that <span class="math inline">C(8, 2)</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
-<p><span class="math inline">\dfrac{C(8, 2)}{C(16, 2)} =
+<p>Another way to solve this is using combinatorics: Note that <span class="math inline">{8 \choose 2}</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
+<p><span class="math inline">\dfrac{{8 \choose 2}}{16 \choose 2} =
 \dfrac{\frac{8}{32}*\frac{7}{31}}{\frac{16}{32}*\frac{15}{31}} =
 \dfrac{7}{30}</span></p>
 </div>
@@ -258,129 +258,6 @@ answer is False.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p>A set of chess pieces has <span class="math inline">32</span> pieces.
-<span class="math inline">16</span> of these are black and <span
-class="math inline">16</span> of these are white. <strong>In each
-color</strong>, the <span class="math inline">16</span> pieces are:</p>
-<ul>
-<li><span class="math inline">8</span> pawns,</li>
-<li><span class="math inline">2</span> bishops,</li>
-<li><span class="math inline">2</span> knights,</li>
-<li><span class="math inline">2</span> rooks,</li>
-<li><span class="math inline">1</span> queen, and</li>
-<li><span class="math inline">1</span> king.</li>
-</ul>
-<p>When there are multiple pieces of a given color and type (for
-example, <span class="math inline">8</span> white pawns), we will assume
-they are <strong>indistinguishable</strong> from one another.</p>
-<p>In this problem, a <strong>lineup</strong> is a way of arranging
-items in a straight line.</p>
-<p><br></p>
-<h3 id="problem-3.1">Problem 3.1</h3>
-<p>A chess player lines up all <span class="math inline">16</span>
-<strong>white pieces</strong> from the set of chess pieces. How many
-different-looking lineups can be created? Remember, some pieces look the
-same.</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading3_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><span class="math inline">\dfrac{16!}{8!2!2!2!}</span></p>
-<p>This answer can be found using combinatorics or permutations.
-<br/></p>
-<p><span class="math inline">C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2,
-1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
-<p>Here is the explanation using combinatorics:</p>
-<p>We know from the problem we are only looking at the <span class="math inline">16</span> white pieces. This means we know we are
-doing <span class="math inline">16</span> choose something. From here we
-can look at the different possible types of chess pieces (pawns,
-bishops, knights, rooks, queen, and king). This means we can write <span class="math inline">C(16, 8)</span> because from <span class="math inline">16</span> pieces we are choosing <span class="math inline">8</span> pawns (we know there will be <span class="math inline">8!</span> many different ways to line up the <span class="math inline">8</span> pawns). Then we can multiply it by <span class="math inline">C(8, 2)</span> because <span class="math inline">16
-- 8 = 8</span> pieces left and there are <span class="math inline">2</span> bishops. Following this same logic we get
-<span class="math inline">C(8 - 2 = 6, 2)</span> for knights, <span class="math inline">C(6-2 = 4, 2)</span> for rooks, <span class="math inline">C(4 - 2, 1)</span> for the queen, and <span class="math inline">C(2 - 1 = 1, 1)</span> for the king.</p>
-<p><br/></p>
-<p><span class="math inline">\dfrac{P(16,8)}{2^3} =
-\dfrac{16!}{8!2!2!2!}</span></p>
-<p>Recall that permutations require the order matters. For the lineup
-because pieces of the same kind are <strong>indistinguishable</strong>
-from one another we say the order does not matter.</p>
-<p>TODO</p>
-<p><strong>Why is the permutation <span class="math inline">P(16,
-8)</span>?</strong></p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
-<p>A chess player lines up all 16 <strong>pawns</strong> from the set of
-chess pieces. How many lineups have white pawns on both ends?</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading3_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><span class="math inline">C(14, 6) = C(14, 8) =
-\dfrac{14!}{8!6!}</span></p>
-<p>We can say <span class="math inline">C(14, 6) = C(14, 8)</span>
-because <span class="math inline">\dfrac{14!}{8!6!} =
-\dfrac{14!}{6!8!}</span>.</p>
-<p>TODO</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-3.3">Problem 3.3</h3>
-<p>A chess player lines up all 16 <strong>pawns</strong> from the set of
-chess pieces. Assuming that each different-looking lineup is equally
-likely, what is the probability that the lineup has two of the
-same-colored pawns on both ends (both black or both white)?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{4}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{2}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{7}{30}</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{7}{15}</span></p></li>
-<li><p><input type="radio" disabled="" /> None of the above.</p></li>
-</ul>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading3_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse3_3" class="accordion-collapse collapse"
-aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><span class="math inline">\frac{7}{15}</span></p>
-<p>TODO</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<hr />
-<h2 id="problem-4">Problem 4</h2>
 <p>Suppose that there are three possible experience levels in chess
 (beginner, intermediate, advanced). Only <strong>10%</strong> of
 beginner players beat Avi at a game of chess, while <strong>50%</strong>
@@ -394,7 +271,7 @@ tournament are beginners, <strong>40%</strong> are intermediate, and
 tournament, players are <strong>randomly paired up</strong> for a game
 of chess.</p>
 <p><br></p>
-<h3 id="problem-4.1">Problem 4.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p>What is the probability that Avi wins in the first round of the
 tournament?</p>
 <ul class="task-list">
@@ -406,13 +283,13 @@ tournament?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
-aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -444,7 +321,7 @@ tournament of that level.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.2">Problem 4.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>It turns out that, sadly, Avi loses to his opponent in the first
 round. What is the probability that Avi’s opponent is an advanced
 player? Choose the <strong>closest answer</strong> among the choices
@@ -457,13 +334,13 @@ listed.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
-aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -521,7 +398,7 @@ using what we know in part A (<span class="math inline">67 \%</span>).
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-5">Problem 5</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p>You have a large historical dataset of all competitors in past years
 of the Avocado Cup chess tournament. Each year, hundreds of chess
 players compete in the tournament, and one person is crowned the winner.
@@ -550,13 +427,13 @@ than</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5" class="accordion-collapse collapse"
-aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div id="collapse4" class="accordion-collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -571,7 +448,7 @@ lost because of their birthday and level.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-6">Problem 6</h2>
+<h2 id="problem-5">Problem 5</h2>
 <p>The Avocado Cup is organized into rounds. In each round, players who
 win advance to the next round, and players who lose are eliminated.
 Rounds continue on like this until there is a single tournament
@@ -587,7 +464,7 @@ tournament.</p></li>
 round.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-6.1">Problem 6.1</h3>
+<h3 id="problem-5.1">Problem 5.1</h3>
 <p>Which of the following statements is true? <strong>Select all that
 apply.</strong></p>
 <ul class="task-list">
@@ -599,13 +476,13 @@ form a partition of the sample space.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse"
-aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -628,7 +505,7 @@ above.”</p>
 </div>
 </div>
 <p><br> <br></p>
-<h3 id="problem-6.2">Problem 6.2</h3>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>The events <span class="math inline">A</span> and <span
 class="math inline">B</span> are mutually exclusive, or disjoint. More
 generally, for <strong>any</strong> two disjoint events <span
@@ -639,13 +516,13 @@ class="math inline">P(B)</span> <strong>only</strong>. For this problem
 only, <strong>show your work and justify each step.</strong></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse"
-aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

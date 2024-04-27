@@ -5,7 +5,7 @@ show_solution: true
 problems:
   - sp23-midterm2/sp23-midterm2-q01
   - sp23-midterm2/sp23-midterm2-q02
-  - sp23-midterm2/sp23-midterm2-q03
+  # - sp23-midterm2/sp23-midterm2-q03 UNFINISHED
   - sp23-midterm2/sp23-midterm2-q04
   - sp23-midterm2/sp23-midterm2-q05
   - sp23-midterm2/sp23-midterm2-q06

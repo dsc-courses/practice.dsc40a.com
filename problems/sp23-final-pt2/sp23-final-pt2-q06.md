@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 6 on the Spring 2023 Final Part 2</i>
+
 Suppose UCSD implements a new graduation requirement for
 data science majors. All data science majors must submit a list of
 English words they can make using the letters of "Halicioglu". When

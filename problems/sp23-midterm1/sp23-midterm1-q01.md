@@ -49,7 +49,7 @@ Which of the following *could* be the mean absolute deviation from the median fo
 
 # BEGIN SOLUTION
 
-One easy way to do this problem is to recognize that none of these values are too low, but they may be too high. For example,the mean absolute deviation from median can be as low as $0$, when all the data points are the same. Since we are told there is only one correct answer and we know that no answer choice is too low, that means the correct answer must be the lowest option, $18$.
+One easy way to do this problem is to recognize that none of these values are too low, but they may be too high. For example, the mean absolute deviation from the median can be as low as $0$, when all the data points are the same. Since we are told there is only one correct answer and we know that no answer choice is too low, that means the correct answer must be the lowest option, $18$.
 
 We can also rule out all the other answer choices to show that they are too high. To do that, we'll show that $62$ is too high, and therefore, both $94$ and $102$ are too high as well. We are told that all data points are at least $60$. By similar logic as we used in part (b), we can see that $R_{abs}(60) = 61$. Since the minimum value of $R_{abs}(h)$ occurs at the median $h^*\geq 60$ and we already know $R_{abs}(60) = 61$, it must be the case that $R(h^*) \leq 61$.
 

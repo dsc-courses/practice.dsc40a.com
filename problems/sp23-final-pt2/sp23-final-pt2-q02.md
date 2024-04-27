@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 2 on the Spring 2023 Final Part 2</i>
+
 You roll a 12-sided die 8 times.
 
 # BEGIN SUBPROB

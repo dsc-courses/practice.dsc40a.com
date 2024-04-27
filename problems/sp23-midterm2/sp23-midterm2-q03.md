@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 3 on the second Midterm of Spring 2023</i>
+
 A set of chess pieces has $32$ pieces. $16$ of these are black and $16$ of these are white. **In each color**, the $16$ pieces are:
 
 - $8$ pawns,
@@ -25,7 +27,7 @@ $\dfrac{16!}{8!2!2!2!}$
 This answer can be found using combinatorics or permutations.
 <br> 
 
-$C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}$
+${16 \choose 8}*{8 \choose 2}*{6 \choose 2}*{4 \choose 2}*{2 \choose 1}*{1 \choose 1} = \dfrac{16!}{8!2!2!2!}$
 
 Here is the explanation using combinatorics:
 
