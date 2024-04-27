@@ -47,6 +47,9 @@ function. $$h^*_2=\text{Mean}(y_1, \cdots, y_7).$$
 **True** or **False**: Removing $y_1$ and $y_3$ from the
 dataset does not change $h_2^*$.
 
+( ) True
+( ) False
+
 # BEGIN SOLUTION
 
 **False**. It changes the mean from $85$ to $84$. (However, the median
@@ -78,6 +81,9 @@ than $h_1^*$.
 **True** or **False**: Let $L(y,h)=|y-h|^3$. You can use
 the Gradient descent algorithm to find $h^*$. 
 
+( ) True
+( ) False
+
 # BEGIN SOLUTION
 
 **False**. The function $|y-h|^3$ is not differentiable everywhere so we
@@ -92,6 +98,9 @@ can not use the gradient descent to find the minimum.
 **True** or **False**: Let $L(y,h)=\sin(y-h)$. The Gradient
 descent algorithm is guaranteed to converge, provided that a proper
 learning rate is given.\
+
+( ) True
+( ) False
 
 # BEGIN SOLUTION
 
@@ -137,6 +146,9 @@ are highly negatively correlated.
 
 **True** or **False**: The unit of $r$ is $\frac{lb}{F}$
 (Pound per Fahrenheit). 
+
+( ) True
+( ) False
 
 # BEGIN SOLUTION
 

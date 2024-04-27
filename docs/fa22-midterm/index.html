@@ -64,12 +64,13 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Son &amp; Mahdi</p>
+<p><strong>Instructor(s):</strong> Truong Son Hy, Mahdi Soleymani</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book. Students had <strong>50 minutes</strong> to take this
 exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><em>Originally Problem 1 on the Fall 2022 Midterm Exam.</em></p>
 <p>Suppose that we are given <span class="math inline">f(x) = x^3 +
 x^2</span> and learning rate <span class="math inline">\alpha =
 1/4</span>.</p>
@@ -106,7 +107,7 @@ have: <span class="math display">\frac{df}{dx} = f'(x) = 3x^2 +
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
 <p>If we start at <span class="math inline">x_0 = -1</span>, should we
-go left or right? Can you verify mathematically? What is <span
+go left or right? Can you verify this mathematically? What is <span
 class="math inline">x_1</span>? Can gradient descent converge? If so,
 where it might converge to, given appropriate step size?</p>
 <div id="accordionExample" class="accordion">
@@ -150,7 +151,7 @@ cannot converge, or is divergent.</p>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
 <p>If we start at <span class="math inline">x_0 = 1</span>, should we go
-left or right? Can you verify mathematically? What is <span
+left or right? Can you verify this mathematically? What is <span
 class="math inline">x_1</span>? Can gradient descent converge? If so,
 where it might converge to, given appropriate step size?</p>
 <div id="accordionExample" class="accordion">
@@ -213,6 +214,7 @@ constant.</p></li>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><em>Originally Problem 2 on the Fall 2022 Midterm Exam.</em></p>
 <p>Calculate <span class="math inline">w_1^*</span> and <span
 class="math inline">w_0^*</span> of the linear regression line for the
 following dataset, <span class="math inline">\mathcal{D}</span>. You may
@@ -337,10 +339,11 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">\bar{x} = \frac{1}{3}(0 + 4 + 5) =
-3</span> <span class="math display">\bar{y} = \frac{1}{3}(0 + 2 + 1) =
-1</span></p>
-<div style="text-align:center">
+<p><span class="math inline">\bar{x} = \frac{1}{3}(0 + 4 + 5) = 3</span>
+<span class="math inline">\quad \quad\bar{y} = \frac{1}{3}(0 + 2 + 1) =
+1</span><br/>
+<br/></p>
+<div style="text-align:center; border-width:10px; border-color:black">
 <table>
 <colgroup>
 <col style="width: 6%"/>
@@ -436,25 +439,23 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
     </tr>
   </tbody>
 </table> -->
-<p><span class="math display">\begin{align*}
-w_1^* &amp;=
+<p><br/></p>
+<p><span class="math inline">w_1^* = \displaystyle
 \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i -
 \bar{x})^2}
-= \frac{3 + 1 + 0}{9 + 1 + 4} = \frac{4}{14} = \frac{2}{7}\\
-
-w_0^* &amp;= \bar{y} - w_1^* \bar{x} = 1 - \frac{2}{7} \cdot 3 = 1 -
-\frac{6}{7} = \frac{1}{7}
-\end{align*}</span></p>
+= \frac{3 + 1 + 0}{9 + 1 + 4} = \frac{4}{14} = \frac{2}{7}</span><br>
+</br></p>
+<p><span class="math inline">w_0^* = \bar{y} - w_1^* \bar{x} = 1 -
+\frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}</span></p>
 <p>Because <span class="math inline">w_1^* = r
-\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 2/7 &gt; 0</span>, thus the correlation
-<span class="math inline">r</span> is positive and the slope is
-positive.</p>
+\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 2/7 &gt; 0</span>, the correlation <span class="math inline">r</span> is positive and the slope is positive.</p>
 </div>
 </div>
 </div>
 </div>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<p><em>Originally Problem 3 on the Fall 2022 Midterm Exam.</em></p>
 <p>Mahdi runs a local pastry shop near UCSD and sells traditional desert
 called Baklava. He bakes Baklavas every morning to keep his promise of
 providing fresh Baklavas to his customers daily. Here is the amount of
@@ -524,6 +525,10 @@ y_7).</span></p>
 class="math inline">y_1</span> and <span class="math inline">y_3</span>
 from the dataset does not change <span
 class="math inline">h_2^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_3">
@@ -547,7 +552,7 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <h3 id="problem-3.4">Problem 3.4</h3>
 <p>Mahdi thinks that <span class="math inline">y_7</span> is an outlier.
 Hence, he asks you to remove <span class="math inline">y_7</span> and
-update your predictions in parts a and b accordingly. Without
+update your predictions in parts (a) and (b) accordingly. Without
 calculating the new predictions, can you justify which prediction
 changes <em>more</em>? <span class="math inline">h^*_1</span> or <span
 class="math inline">h_2^*</span>?</p>
@@ -575,6 +580,10 @@ loss, and removing data changes the mean more. Therefore, removing <span class="
 <p><strong>True</strong> or <strong>False</strong>: Let <span
 class="math inline">L(y,h)=|y-h|^3</span>. You can use the Gradient
 descent algorithm to find <span class="math inline">h^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_5">
@@ -601,6 +610,10 @@ class="math inline">L(y,h)=\sin(y-h)</span>. The Gradient descent
 algorithm is guaranteed to converge, provided that a proper learning
 rate is given.<br />
 </p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_6">
@@ -667,6 +680,10 @@ negatively correlated.</p>
 <p><strong>True</strong> or <strong>False</strong>: The unit of <span
 class="math inline">r</span> is <span
 class="math inline">\frac{lb}{F}</span> (Pound per Fahrenheit).</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_8">
@@ -792,11 +809,12 @@ w_0^*&amp;=340
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p><em>Originally Problem 4 on the Fall 2022 Midterm Exam.</em></p>
 <p>Consider a dataset that consists of <span class="math inline">y_1,
 \cdots, y_n</span>. In class, we used calculus to minimize mean squared
 error, <span class="math inline">R_{sq}(h) = \frac{1}{n} \sum_{i = 1}^n
 (h - y_i)^2</span>. In this problem, we want you to apply the same
-approach to a slightly different loss function defined beelow: <span
+approach to a slightly different loss function defined below: <span
 class="math display">L_{\text{midterm}}(y,h)=(\alpha y - h)^2+\lambda
 h</span></p>
 <p><br></p>
@@ -817,8 +835,8 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">R_{\text{midterm}}(h)=\frac{1}{n}\sum_{i=1}^{i=n}[(\alpha
-y_i - h)^2+\lambda h]=[\frac{1}{n}\sum_{i=1}^{i=n}(\alpha y_i - h)^2]
+<p><span class="math display">R_{\text{midterm}}(h)=\frac{1}{n}\sum_{i=1}^{n}[(\alpha
+y_i - h)^2+\lambda h]=[\frac{1}{n}\sum_{i=1}^{n}(\alpha y_i - h)^2]
 +\lambda h</span></p>
 </div>
 </div>

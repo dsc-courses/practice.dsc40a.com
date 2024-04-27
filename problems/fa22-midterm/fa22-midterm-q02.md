@@ -79,16 +79,19 @@ this dataset (mathematically)?
 
 # BEGIN SOLUTION
 
-$$\bar{x} = \frac{1}{3}(0 + 4 + 5) = 3$$
-$$\bar{y} = \frac{1}{3}(0 + 2 + 1) = 1$$
+$\bar{x} = \frac{1}{3}(0 + 4 + 5) = 3$
+$\quad \quad\bar{y} = \frac{1}{3}(0 + 2 + 1) = 1$ \
+<br>
 
-<div style="margin:auto">
+<div style="text-align:center; border-width:10px; border-color:black">
 |$x_i$|$y_i$|$(x_i - \bar x)$|$(y_i - \bar y)$|$(x_i - \bar x)(y_i - \bar y)$|$(x_i - \bar x)^2$|
 |-------|-------|------------------|------------------|--------------------------------|--------------------|
 | $0$     | $0$     | $-3$               | $-1$               | $3$                              | $9$                  |
 | $4$     | $2$     | $1$                | $1$                | $1$                              | $1$                  |
 | $5$     | $1$     | $2$                | $0$                | $0$                              | $4$                  |
 </div>
+
+
 <!-- \begin{center}
     \begin{tabular}{llllll}\toprule
         $x_i$ & $y_i$ & $(x_i - \bar x)$ & $(y_i - \bar y)$ & $(x_i - \bar x)(y_i - \bar y)$ & $(x_i - \bar x)^2$
@@ -139,13 +142,14 @@ $$\bar{y} = \frac{1}{3}(0 + 2 + 1) = 1$$
   </tbody>
 </table> -->
 
-\begin{align*}
-w_1^* &=
-\frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}
-= \frac{3 + 1 + 0}{9 + 1 + 4} = \frac{4}{14} = \frac{2}{7}\\
+<br>
 
-w_0^* &= \bar{y} - w_1^* \bar{x} = 1 - \frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}
-\end{align*}
+$w_1^* = \displaystyle
+\frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2}
+= \frac{3 + 1 + 0}{9 + 1 + 4} = \frac{4}{14} = \frac{2}{7}$\
+
+$w_0^* = \bar{y} - w_1^* \bar{x} = 1 - \frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}$
+
 
 Because $w_1^* = r \frac{\sigma_y}{\sigma_x}$ where the standard deviations $\sigma_y$ and $\sigma_x$ are non-negative, and $w_1^* = 2/7 > 0$, the correlation $r$ is positive and the slope is positive.
 
