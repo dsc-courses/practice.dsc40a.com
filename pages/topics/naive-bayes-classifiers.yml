@@ -1,0 +1,8 @@
+title: 'Naive Bayes Classifiers'
+context: This page contains all problems about Naive Bayes Classifiers.
+show_solution: true
+problems:
+  # Commented problems are problems that are UNFINISHED, uncomment when complete :)
+  - sp23-midterm2/sp23-midterm2-q05
+  # - wi22-midterm2/wi22-midterm2-q14 
+  # - wi22-midterm2/wi22-midterm2-q15 

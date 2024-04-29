@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 10 on the second Midterm of Winter 2022</i>
+
 Consider the following three events:
 
 -   $A$ is the event that today's Stringle string has a duplicate letter.

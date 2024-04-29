@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 3 on the Winter 2024 Final Part 2</i>
+
 With the help of the Alien from Bayesian Galaxy, Issac
 built a Little Hadron Collider in his garage to continue testing some
 fundamental principles of nature. The alien set up a fixed target at one

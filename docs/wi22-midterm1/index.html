@@ -64,12 +64,13 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Janine Tiefenbruck (???)</p>
+<p><strong>Instructor(s):</strong> Janine Tiefenbruck</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book. Students had <strong>90 minutes</strong> to take this
 exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Originally Problem 1 on the first Midterm of Winter 2022</i></p>
 <p>Define the extreme mean (<span class="math inline">EM</span>) of a
 dataset to be the average of its largest and smallest values. Let <span
 class="math display">f(x)=-3x+4.</span> Show that for any dataset <span
@@ -106,6 +107,7 @@ x_n)+ 4\\ &amp;= f(EM(x_1, x_2, \dots, x_n)). \end{aligned}</span></p>
 </div>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 2 on the first Midterm of Winter 2022</i></p>
 <p>Consider a new loss function, <span class="math display">L(h, y) =
 e^{(h-y)^2}.</span> Given a dataset <span class="math inline">y_1, y_2,
 \dots, y_n</span>, let <span class="math inline">R(h)</span> represent
@@ -162,7 +164,8 @@ records the necessary information:</p>
 </tr>
 </tbody>
 </table>
-<p>This means <span class="math display">\begin{aligned} R(2) &amp;=
+<p><br/></p>
+<p>This means: <span class="math display">\begin{aligned} R(2) &amp;=
 \dfrac{1}{3} \sum_{i=1}^{3} e^{(2-y_i)^2} \\ &amp;= \frac13 (e+e+e^4) \\
 &amp;= \frac13 (2e+e^4)  \end{aligned}</span></p>
 </div>
@@ -192,59 +195,65 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 </header>
 <p>First, we calculate the derivative of <span class="math inline">R(h)</span>. Using the chain rule, we have <span class="math display">\begin{align*} R(h) &amp;= \dfrac1n \sum_{i=1}^n
 e^{(h-y_i)^2} \\
-R'(h) &amp;= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2}*2(h-y_i) \\
-&amp;\text{To apply the gradient descent update rule, we next have to
-calculate $R'(h_0)$ or $R'(2)$.}\\
-&amp;\text{Plugging in $h=2$ to the derivative we calculated above
-gives:} \\
-R'(2) &amp;= \dfrac1n \sum_{i=1}^n e^{(2-y_i)^2}*2(2-y_i)
+R'(h) &amp;= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2}\cdot 2(h-y_i) \\
+\end{align*}</span> To apply the gradient descent update rule, we next
+have to calculate <span class="math inline">R'(h_0)</span> or <span class="math inline">R'(2)</span>. Plugging in <span class="math inline">h=2</span> to the derivative we calculated above
+gives: <span class="math display">\begin{align*}
+R'(2) &amp;= \dfrac1n \sum_{i=1}^n e^{(2-y_i)^2}\cdot 2(2-y_i)
 \end{align*}</span></p>
 <p>The table below records the necessary information (note that we’ve
 done most of the work already).</p>
-<div class="center">
+<div>
 <table>
+<colgroup>
+<col style="width: 54%"/>
+<col style="width: 12%"/>
+<col style="width: 14%"/>
+<col style="width: 18%"/>
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;"><span class="math inline">y_i</span></th>
-<th style="text-align: center;">1</th>
-<th style="text-align: center;">3</th>
-<th style="text-align: center;">4</th>
+<th><span class="math inline">y_i</span>             </th>
+<th>1</th>
+<th>3</th>
+<th>4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">2-y_i</span></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">-1</td>
-<td style="text-align: center;">-2</td>
+<td><span class="math inline">2-y_i</span></td>
+<td>1</td>
+<td>-1</td>
+<td>-2</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">(2-y_i)^2</span></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">4</td>
+<td><span class="math inline">(2-y_i)^2</span></td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">e^{(2-y_i)^2}</span></td>
-<td style="text-align: center;"><span class="math inline">e</span></td>
-<td style="text-align: center;"><span class="math inline">e</span></td>
-<td style="text-align: center;"><span class="math inline">e^4</span></td>
+<td><span class="math inline">e^{(2-y_i)^2}</span></td>
+<td><span class="math inline">e</span></td>
+<td><span class="math inline">e</span></td>
+<td><span class="math inline">e^4</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><span class="math inline">e^{(2-y_i)^2}*2(2-y_i)</span></td>
-<td style="text-align: center;"><span class="math inline">2e</span></td>
-<td style="text-align: center;"><span class="math inline">-2e</span></td>
-<td style="text-align: center;"><span class="math inline">-4e^4</span></td>
+<td><span class="math inline">e^{(2-y_i)^2}\cdot 2(2-y_i)</span></td>
+<td><span class="math inline">2e</span></td>
+<td><span class="math inline">-2e</span></td>
+<td><span class="math inline">-4e^4</span></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Therefore <span class="math display">\begin{aligned} R'(2) &amp;=
-\dfrac{1}{3} \sum_{i=1}^{3} e^{(2-y_i)^2*2(2-y_i)} \\ &amp;= \frac13 (2e
-- 2e -4e^4) \\ &amp;= \frac{-4e^4}{3}. \end{aligned}</span> Applying the
-gradient descent update rule gives <span class="math display">\begin{aligned} h_1 &amp;= h_0 - \alpha*R'(h_0)
-\\ &amp;= 2 - \frac{1}{2}*\frac{-4e^4}{3} \\ &amp;= 2 + \frac{2e^4}{3}
-\end{aligned}</span></p>
+<p><br/></p>
+<p>Therefore: <span class="math display">\begin{aligned} R'(2)
+&amp;= \dfrac{1}{3} \sum_{i=1}^{3} e^{(2-y_i)^2\cdot 2(2-y_i)} \\ &amp;=
+\frac13 (2e - 2e -4e^4) \\ &amp;= \frac{-4e^4}{3}. \end{aligned}</span>
+Applying the gradient descent update rule gives: <span class="math display">\begin{aligned} h_1 &amp;= h_0 - \alpha\cdot
+R'(h_0) \\ &amp;= 2 - \frac{1}{2}\cdot \frac{-4e^4}{3} \\ &amp;= 2 +
+\frac{2e^4}{3} \end{aligned}</span></p>
 </div>
 </div>
 </div>
@@ -252,6 +261,7 @@ gradient descent update rule gives <span class="math display">\begin{aligned} h_
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<p><i>Originally Problem 3 on the first Midterm of Winter 2022</i></p>
 <p>Suppose you have a dataset <span class="math display">\{(x_1, y_1),
 (x_2,y_2), \dots, (x_8, y_8)\}</span> with <span
 class="math inline">n=8</span> ordered pairs such that the variance of
@@ -286,28 +296,37 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Using the formula for the slope of the regression line, we have <span class="math display">
+<p>Using the formula for the slope of the regression line, we have:
+<span class="math display">
 \begin{aligned}
 m &amp;= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{\sum_{i=1}^n (x_i -
 \overline x)^2}\\
-&amp;= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{n*\sigma_x^2}\\
-&amp;= \frac{(3-\bar{x})*7 + (8 - \bar{x})*2 + \sum_{i=3}^n (x_i -
-\overline x)y_i}{8*50}. \\
-&amp;\text{Note that by switching the first two $y$-values, the terms in
-the sum from $i=3$ to $n$,} \\
-&amp;\text{the number of data points $n$, and the variance of the
-$x$-values are all unchanged.} \\
-\text{So the slope becomes:} \\
-m' &amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 + \sum_{i=3}^n (x_i
-- \overline x)y_i}{8*50} \\
-\text{and the difference between these slopes is given by} \\
-m'-m &amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - ((3-\bar{x})*7 +
-(8 - \bar{x})*2)}{8*50}\\
-&amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - (3-\bar{x})*7 - (8 -
-\bar{x})*2}{8*50}\\
-&amp;= \frac{(3-\bar{x})*(-5) + (8 - \bar{x})*5}{8*50}\\
-&amp;= \frac{ -15+5\bar{x} + 40 -5\bar{x}}{8*50}\\
-&amp;= \frac{ 25}{8*50}\\
+&amp;= \frac{\sum_{i=1}^n (x_i - \overline x)y_i}{n\cdot \sigma_x^2}\\
+&amp;= \frac{(3-\bar{x})\cdot 7 + (8 - \bar{x})\cdot 2 + \sum_{i=3}^n
+(x_i - \overline x)y_i}{8\cdot 50}. \\
+\end{aligned}
+</span></p>
+<p>Note that by switching the first two <span class="math inline">y</span>-values, the terms in the sum from <span class="math inline">i=3</span> to <span class="math inline">n</span>,
+the number of data points <span class="math inline">n</span>, and the
+variance of the <span class="math inline">x</span>-values are all
+unchanged.</p>
+<p>So the slope becomes:</p>
+<p><span class="math display">
+\begin{aligned}
+m' &amp;= \frac{(3-\bar{x})\cdot 2 + (8 - \bar{x})\cdot 7 +
+\sum_{i=3}^n (x_i - \overline x)y_i}{8\cdot 50} \\
+\end{aligned}
+</span></p>
+<p>and the difference between these slopes is given by:</p>
+<p><span class="math display">
+\begin{aligned}
+m'-m &amp;= \frac{(3-\bar{x})\cdot 2 + (8 - \bar{x})\cdot 7 -
+((3-\bar{x})\cdot 7 + (8 - \bar{x})\cdot 2)}{8\cdot 50}\\
+&amp;= \frac{(3-\bar{x})\cdot 2 + (8 - \bar{x})\cdot 7 -
+(3-\bar{x})\cdot 7 - (8 - \bar{x})\cdot 2}{8\cdot 50}\\
+&amp;= \frac{(3-\bar{x})\cdot (-5) + (8 - \bar{x})\cdot 5}{8\cdot 50}\\
+&amp;= \frac{ -15+5\bar{x} + 40 -5\bar{x}}{8\cdot 50}\\
+&amp;= \frac{ 25}{8\cdot 50}\\
 &amp;= \frac{ 1}{16}
 \end{aligned}
 </span></p>
@@ -317,6 +336,7 @@ m'-m &amp;= \frac{(3-\bar{x})*2 + (8 - \bar{x})*7 - ((3-\bar{x})*7 +
 </div>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p><i>Originally Problem 4 on the first Midterm of Winter 2022</i></p>
 <p>Consider the dataset shown below.</p>
 <div class="center">
 <table>
@@ -473,7 +493,7 @@ e_4\end{bmatrix} \\
 0 &amp;= 4e_1 + e_2 + 4e_3 + e_4
 \end{align*}
 </span></p>
-<p>With this we have proved that <span class="math inline">4e_1+e_2+4e_3+e_4=0</span>.</p>
+<p>With this we have shown that <span class="math inline">4e_1+e_2+4e_3+e_4=0</span>.</p>
 </div>
 </div>
 </div>

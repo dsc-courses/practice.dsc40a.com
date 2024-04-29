@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 4 on the Spring 2023 Final Part 2</i>
+
 At Panda Express, there are 18 items available on the
 menu. Food is served on plates that are divided into three equal
 sections, and all sections of the plate must contain exactly one menu
@@ -18,7 +20,7 @@ section.
 
 
 # BEGIN SOLUTION
-$P(18,3)$
+${18 \choose 3} \cdot 3!$
 
 # END SOLUTION
 
@@ -54,7 +56,7 @@ Eggplant Tofu, because one plate can be rotated to look like the other
 
 # BEGIN SOLUTION
 
-$2*C(18,3)$
+$2 \cdot {18 \choose 3}$
 
 # END SOLUTION
 
@@ -73,7 +75,7 @@ as the same.
 
 # BEGIN SOLUTION
 
-$2*C(18,2) + C(18,1)$
+$2 \cdot {18 \choose 2} + {18 \choose 1}$
 
 # END SOLUTION
 

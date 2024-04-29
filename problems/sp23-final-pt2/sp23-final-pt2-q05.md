@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 5 on the Spring 2023 Final Part 2</i>
+
 You're interested in seeing the Milky Way in the night
 sky, which you have sometimes been able to do when conditions are right.
 For each night that you've attempted to see the Milky Way, you have a
@@ -15,22 +17,22 @@ record of:
 
 These 12 attempts are recorded in the table below.
 
-::: center
-  **setting**   **season**   **time**        **outcome**
-  ------------- ------------ --------------- --------------
-  suburban      winter       late night      successful
-  rural         spring       late night      successful
-  urban         winter       early morning   successful
-  rural         winter       early morning   successful
-  rural         summer       late night      unsuccessful
-  urban         winter       late night      unsuccessful
-  rural         winter       early morning   unsuccessful
-  rural         spring       late night      unsuccessful
-  urban         fall         early morning   unsuccessful
-  suburban      summer       late night      unsuccessful
-  urban         winter       late night      unsuccessful
-  rural         winter       late night      unsuccessful
-:::
+
+  |**setting** &emsp;|  **season** &emsp;|  **time** &emsp;&emsp;&emsp;&emsp;&emsp;    |  **outcome** &emsp; |
+  |-------------|------------|---------------|--------------|
+  |suburban     |winter      |late night     |successful|
+  |rural        |spring      |late night     |successful|
+  |urban        |winter      |early morning  |successful|
+  |rural        |winter      |early morning  |successful|
+  |rural        |summer      |late night     |unsuccessful|
+  |urban        |winter      |late night     |unsuccessful|
+  |rural        |winter      |early morning  |unsuccessful|
+  |rural        |spring      |late night     |unsuccessful|
+  |urban        |fall        |early morning  |unsuccessful|
+  |suburban     |summer      |late night     |unsuccessful|
+  |urban        |winter      |late night     |unsuccessful|
+  |rural        |winter      |late night     |unsuccessful|
+
 
 You want to use a Naive Bayes classifier to predict whether you'll be
 successful in seeing the Milky Way under the following conditions:

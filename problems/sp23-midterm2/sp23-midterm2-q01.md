@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 1 on the second Midterm of Spring 2023</i>
+
 A set of chess pieces has $32$ pieces. $16$ of these are black and $16$ of these are white. **In each color**, the $16$ pieces are:
 
 - $8$ pawns,
@@ -32,7 +34,7 @@ How many results are possible for this experiment with $n$ people?
 
 $12^n$.
 
-The key to solving this problem is the note "When there are multiple pieces of a given color and type (for example, $8$ white pawns), we will assume they are **indistinguishable** from one another." This means we count each type of chess piece for the colors black and white. There are $6$ different types of chess pieces: pawn, bishop, knight, rook, queen, and king. There are $2$ possible colors: black and white. This means there are $6 * 2 = 12$ unique colored types of chess pieces.
+The key to solving this problem is the note "When there are multiple pieces of a given color and type (for example, $8$ white pawns), we will assume they are **indistinguishable** from one another." This means we count each type of chess piece for the colors black and white. There are $6$ different types of chess pieces: pawn, bishop, knight, rook, queen, and king. There are $2$ possible colors: black and white. This means there are $6 \cdot 2 = 12$ unique colored types of chess pieces.
 
 We raise $12$ to the power of $n$ because there are $n$ people in this experiment who can each select 12 unique combinations.
 

@@ -1,0 +1,8 @@
+title: 'Clustering'
+context: This page contains all problems about Clustering.
+show_solution: true
+problems:
+  # Commented problems are problems that are UNFINISHED, uncomment when complete :)
+  - sp23-final-pt2/sp23-final-pt2-q01
+  # - wi22-midterm2/wi22-midterm2-q13 
+  - wi24-final-pt2/wi24-final-pt2-q02

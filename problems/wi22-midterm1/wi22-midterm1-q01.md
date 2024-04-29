@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 1 on the first Midterm of Winter 2022</i>
+
 Define the extreme mean ($EM$) of a dataset to be the average of its largest and smallest values. Let 
 $$f(x)=-3x+4.$$ 
 Show that for any dataset $x_1\leq x_2 \leq \dots \leq x_n$,

@@ -64,12 +64,13 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Janine Tiefenbruck (???)</p>
+<p><strong>Instructor(s):</strong> Janine Tiefenbruck</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book, but no calculator. Students had <strong>50 minutes</strong>
 to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Originally Problem 1 on the Spring 2023 Final Part 2</i></p>
 <p>You run the <span class="math inline">k</span>-means clustering
 algorithm on a dataset and it converges to a certain clustering with
 associated inertia <span class="math inline">I</span>. You then
@@ -104,6 +105,7 @@ aria-labelledby="heading1" data-bs-parent="#accordionExample">
 </div>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 2 on the Spring 2023 Final Part 2</i></p>
 <p>You roll a 12-sided die 8 times.</p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
@@ -121,8 +123,14 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\dfrac{P(12,8)}{12^8} =
-\dfrac{12}{12}*\dfrac{11}{12}*\dfrac{10}{12}*\dots*\dfrac{5}{12}</span></p>
+<p><span class="math inline">\dfrac{{12 \choose 8}\cdot8!}{12^8} =
+\dfrac{12}{12}\cdot\dfrac{11}{12}\cdot\dfrac{10}{12}\cdot\dots\cdot\dfrac{5}{12}</span></p>
+<p>The numerator <span class="math inline">{12 \choose 8}\cdot8!</span>
+is the number of total possible permutations of 8 distinct values; <span class="math inline">{12 \choose 8}</span> possible sets of 8 distinct
+values times <span class="math inline">8!</span> orderings, because the
+die could roll the same set of distinct values in <span class="math inline">8!</span> different ways. The denominator <span class="math inline">12^8</span> is the number of total possible
+outcomes. Altogether, dividing the numerator by the denominator gives us
+the probability of rolling 8 distinct values.</p>
 </div>
 </div>
 </div>
@@ -143,7 +151,8 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\dfrac{C(8,2)*P(12,7)}{12^8}</span></p>
+<p><span class="math inline">\dfrac{{8 \choose 2}\cdot{12 \choose
+7}\cdot7!}{12^8}</span></p>
 </div>
 </div>
 </div>
@@ -151,6 +160,7 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<p><i>Originally Problem 3 on the Spring 2023 Final Part 2</i></p>
 <p>Consider three events <span class="math inline">A, B,</span> and
 <span class="math inline">C</span> in the same sample space.</p>
 <p><br></p>
@@ -216,6 +226,7 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p><i>Originally Problem 4 on the Spring 2023 Final Part 2</i></p>
 <p>At Panda Express, there are 18 items available on the menu. Food is
 served on plates that are divided into three equal sections, and all
 sections of the plate must contain exactly one menu item.</p>
@@ -241,7 +252,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">P(18,3)</span></p>
+<p><span class="math inline">{18 \choose 3} \cdot 3!</span></p>
 </div>
 </div>
 </div>
@@ -293,7 +304,7 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">2*C(18,3)</span></p>
+<p><span class="math inline">2 \cdot {18 \choose 3}</span></p>
 </div>
 </div>
 </div>
@@ -321,7 +332,8 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">2*C(18,2) + C(18,1)</span></p>
+<p><span class="math inline">2 \cdot {18 \choose 2} + {18 \choose
+1}</span></p>
 </div>
 </div>
 </div>
@@ -329,6 +341,7 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
+<p><i>Originally Problem 5 on the Spring 2023 Final Part 2</i></p>
 <p>You’re interested in seeing the Milky Way in the night sky, which you
 have sometimes been able to do when conditions are right. For each night
 that you’ve attempted to see the Milky Way, you have a record of:</p>
@@ -339,92 +352,96 @@ that you’ve attempted to see the Milky Way, you have a record of:</p>
 <li><p>the outcome (successful, or unsuccessful).</p></li>
 </ul>
 <p>These 12 attempts are recorded in the table below.</p>
-<div class="center">
 <table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><strong>setting</strong></th>
-<th style="text-align: left;"><strong>season</strong></th>
-<th style="text-align: left;"><strong>time</strong></th>
-<th style="text-align: left;"><strong>outcome</strong></th>
+<th><strong>setting</strong>  </th>
+<th><strong>season</strong>  </th>
+<th><strong>time</strong>      </th>
+<th><strong>outcome</strong>  </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">suburban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">successful</td>
+<td>suburban</td>
+<td>winter</td>
+<td>late night</td>
+<td>successful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">spring</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">successful</td>
+<td>rural</td>
+<td>spring</td>
+<td>late night</td>
+<td>successful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">successful</td>
+<td>urban</td>
+<td>winter</td>
+<td>early morning</td>
+<td>successful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">successful</td>
+<td>rural</td>
+<td>winter</td>
+<td>early morning</td>
+<td>successful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">summer</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>summer</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>urban</td>
+<td>winter</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>winter</td>
+<td>early morning</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">spring</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>spring</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">fall</td>
-<td style="text-align: left;">early morning</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>urban</td>
+<td>fall</td>
+<td>early morning</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">suburban</td>
-<td style="text-align: left;">summer</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>suburban</td>
+<td>summer</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">urban</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>urban</td>
+<td>winter</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">rural</td>
-<td style="text-align: left;">winter</td>
-<td style="text-align: left;">late night</td>
-<td style="text-align: left;">unsuccessful</td>
+<td>rural</td>
+<td>winter</td>
+<td>late night</td>
+<td>unsuccessful</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>You want to use a Naive Bayes classifier to predict whether you’ll be
 successful in seeing the Milky Way under the following conditions:</p>
 <ul>
@@ -463,6 +480,7 @@ aria-labelledby="heading5" data-bs-parent="#accordionExample">
 </div>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
+<p><i>Originally Problem 6 on the Spring 2023 Final Part 2</i></p>
 <p>Suppose UCSD implements a new graduation requirement for data science
 majors. All data science majors must submit a list of English words they
 can make using the letters of “Halicioglu”. When these lists are

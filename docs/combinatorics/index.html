@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Combinatorics</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Combinatorics</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p>This page contains all problems about Combinatorics.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><i>Originally Problem 2 on the Spring 2023 Final Part 2</i></p>
+<p>You roll a 12-sided die 8 times.</p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>What is the probability you roll 8 distinct values?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\dfrac{{12 \choose 8}\cdot8!}{12^8} =
+\dfrac{12}{12}\cdot\dfrac{11}{12}\cdot\dfrac{10}{12}\cdot\dots\cdot\dfrac{5}{12}</span></p>
+<p>The numerator <span class="math inline">{12 \choose 8}\cdot8!</span>
+is the number of total possible permutations of 8 distinct values; <span class="math inline">{12 \choose 8}</span> possible sets of 8 distinct
+values times <span class="math inline">8!</span> orderings, because the
+die could roll the same set of distinct values in <span class="math inline">8!</span> different ways. The denominator <span class="math inline">12^8</span> is the number of total possible
+outcomes. Altogether, dividing the numerator by the denominator gives us
+the probability of rolling 8 distinct values.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>What is the probability you roll exactly 7 distinct values?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\dfrac{{8 \choose 2}\cdot{12 \choose
+7}\cdot7!}{12^8}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 4 on the Spring 2023 Final Part 2</i></p>
+<p>At Panda Express, there are 18 items available on the menu. Food is
+served on plates that are divided into three equal sections, and all
+sections of the plate must contain exactly one menu item.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Suppose each section of the plate is a different color (in a
+clockwise order around the plate, the sections are red, yellow, blue).
+How many different-looking plates of food can be created, if we must
+have three different menu items on the plate?</p>
+<p>One example plate of food has Honey Walnut Shrimp in the red section,
+Kung Pao Chicken in the yellow section, and brown rice in the blue
+section.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{18 \choose 3} \cdot 3!</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Suppose each section of the plate is a different color (in a
+clockwise order around the plate, the sections are red, yellow, blue).
+How many different-looking plates of food can be created, if we are
+allowed to have the same food in multiple sections?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">18^3</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Suppose each section of the plate is the same color (white). How many
+different-looking plates of food can be created, if we must have three
+different menu items on the plate?</p>
+<p>One example plate of food has, in a clockwise order around the plate,
+Eggplant Tofu, Broccoli Beef, and fried rice. This is the same plate as
+the one that has, in a clockwise order, Broccoli Beef, fried rice, and
+Eggplant Tofu, because one plate can be rotated to look like the other
+(this counts as the same.)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">2 \cdot {18 \choose 3}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>Suppose each section of the plate is the same color (white). Now we’d
+like to consider what happens if we can have the same food in multiple
+sections. What do we need to <strong>add to part (c)’s answer</strong>
+to get the number of different-looking plates of food that can be
+created, if we are allowed to have the same food in multiple
+sections?</p>
+<p>As before, two plates that can be rotated to look like one another
+count as the same.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">2 \cdot {18 \choose 2} + {18 \choose
+1}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Originally Problem 1 on the second Midterm of Spring 2023</i></p>
+<p>A set of chess pieces has <span class="math inline">32</span> pieces.
+<span class="math inline">16</span> of these are black and <span
+class="math inline">16</span> of these are white. <strong>In each
+color</strong>, the <span class="math inline">16</span> pieces are:</p>
+<ul>
+<li><span class="math inline">8</span> pawns,</li>
+<li><span class="math inline">2</span> bishops,</li>
+<li><span class="math inline">2</span> knights,</li>
+<li><span class="math inline">2</span> rooks,</li>
+<li><span class="math inline">1</span> queen, and</li>
+<li><span class="math inline">1</span> king.</li>
+</ul>
+<p>When there are multiple pieces of a given color and type (for
+example, <span class="math inline">8</span> white pawns), we will assume
+they are <strong>indistinguishable</strong> from one another.</p>
+<p>Consider an experiment where each of <span
+class="math inline">n</span> people selects one piece from their own set
+of 32 chess pieces, uniformly at random. The <strong>result</strong> of
+the experiment is a description of the <strong>colors and types</strong>
+of the pieces each person selected. For example, if <span
+class="math inline">n=3</span>, one possible result is:</p>
+<ul>
+<li><p>Person 1 selected a white knight.</p></li>
+<li><p>Person 2 selected a black queen.</p></li>
+<li><p>Person 3 selected a black pawn.</p></li>
+</ul>
+<p>How many results are possible for this experiment with <span
+class="math inline">n</span> people?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">2^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">16^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">32^n</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">12^n</span>.</p>
+<p>The key to solving this problem is the note “When there are multiple
+pieces of a given color and type (for example, <span class="math inline">8</span> white pawns), we will assume they are
+<strong>indistinguishable</strong> from one another.” This means we
+count each type of chess piece for the colors black and white. There are
+<span class="math inline">6</span> different types of chess pieces:
+pawn, bishop, knight, rook, queen, and king. There are <span class="math inline">2</span> possible colors: black and white. This
+means there are <span class="math inline">6 \cdot 2 = 12</span> unique
+colored types of chess pieces.</p>
+<p>We raise <span class="math inline">12</span> to the power of <span class="math inline">n</span> because there are <span class="math inline">n</span> people in this experiment who can each
+select 12 unique combinations.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><i>Originally Problem 2 on the second Midterm of Spring 2023</i></p>
+<p>A set of chess pieces has <span class="math inline">32</span> pieces.
+<span class="math inline">16</span> of these are black and <span
+class="math inline">16</span> of these are white. <strong>In each
+color</strong>, the <span class="math inline">16</span> pieces are:</p>
+<ul>
+<li><span class="math inline">8</span> pawns,</li>
+<li><span class="math inline">2</span> bishops,</li>
+<li><span class="math inline">2</span> knights,</li>
+<li><span class="math inline">2</span> rooks,</li>
+<li><span class="math inline">1</span> queen, and</li>
+<li><span class="math inline">1</span> king.</li>
+</ul>
+<p>When there are multiple pieces of a given color and type (for
+example, <span class="math inline">8</span> white pawns), we will assume
+they are <strong>indistinguishable</strong> from one another.</p>
+<p>Suppose you randomly select <span class="math inline">2</span> pieces
+from a set of <span class="math inline">32</span> chess pieces,
+<strong>without replacement</strong>.</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>You glance at the pieces just long enough to see that both pieces are
+white. What is the probability that you have <span
+class="math inline">2</span> pawns?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">
+\dfrac{8}{16}\cdot\dfrac{7}{15} = \dfrac{7}{30}
+</span></p>
+<p>We get <span class="math inline">\dfrac{8}{16}</span> from the fact
+there are <span class="math inline">8</span> white pawns and <span class="math inline">16</span> white chess pieces. So the chance of first
+getting a pawn is <span class="math inline">\dfrac{8}{16}</span>.</p>
+<p>Now we assume that we have a white pawn, meaning there are <span class="math inline">8-1=7</span> white pawns left and <span class="math inline">16 - 1 = 15</span> white chess pieces, which means
+we have a <span class="math inline">\dfrac{7}{15}</span> chance for
+getting another white pawn.</p>
+<p>From here we simplify the answer by doing:</p>
+<p><span class="math display">
+\dfrac{8 \cdot 7}{16 \cdot 15} = \dfrac{56}{240} = \dfrac{7}{30}
+</span></p>
+<p><br/></p>
+<p>Another way to solve this is using combinatorics: Note that <span class="math inline">{8 \choose 2}</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
+<p><span class="math inline">\dfrac{{8 \choose 2}}{16 \choose 2} =
+\dfrac{\frac{8}{32}\cdot\frac{7}{31}}{\frac{16}{32}\cdot\frac{15}{31}} =
+\dfrac{7}{30}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>True or False: Having two pawns is <strong>independent</strong> of
+having two white pieces.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>False.</p>
+<p>We know that two probabilities are independent of each other if <span class="math inline">P(A \cap B) = P(A) \cdot P(B)</span>.</p>
+<ul>
+<li>Let <span class="math inline">P(A)</span> be the probability of
+getting a white piece twice in a row.</li>
+<li>Let <span class="math inline">P(B)</span> be the probability of
+getting a pawn twice in a row.</li>
+</ul>
+<p>We can calculate the probability of getting a white piece twice in a
+row <span class="math inline">P(A) = \frac{16}{32} \cdot \frac{15}{31} =
+\frac{15}{62}</span>. We get <span class="math inline">\frac{16}{32}</span> from the fact there are <span class="math inline">16</span> white pieces out of the <span class="math inline">32</span> total pieces. We get <span class="math inline">\frac{15}{31}</span> from the fact there are now
+<span class="math inline">15</span> white pieces out of the <span class="math inline">31</span> pieces left after taking out a white
+piece.</p>
+<p>We can also calculate the probability of getting a pawn twice in a
+row. Note that the color of the pawn does not matter! <span class="math inline">P(B) = \frac{16}{32} \cdot \frac{15}{31} =
+\frac{15}{62}</span>. We get <span class="math inline">\frac{16}{32}</span> from the fact there are <span class="math inline">16</span> pawns (<span class="math inline">8</span>
+black pawns plus <span class="math inline">8</span> white pawns) out of
+the <span class="math inline">32</span> total pieces. We get <span class="math inline">\frac{15}{31}</span> from the fact there are now
+<span class="math inline">15</span> pawns out of the <span class="math inline">31</span> pieces left after taking out a pawn.</p>
+<p>We can now calculate <span class="math inline">P(A) \cdot
+P(B)</span>: <span class="math display">
+\frac{15}{62} \cdot \frac{15}{62} = \frac{225}{3844}
+</span></p>
+<p>Recall we calculate <span class="math inline">P(A \cap B) = P(A)
+\cdot P(B|A)</span>.</p>
+<p>We solved for <span class="math inline">P(B|A)</span> in part A of
+the problem: <span class="math inline">\frac{7}{30}</span>. We also
+already solved for <span class="math inline">P(A)</span> above: <span class="math inline">\frac{15}{62}</span>.</p>
+<p><span class="math display">
+\frac{15}{62} \cdot \frac{7}{30} = \frac{7}{124}
+</span></p>
+<p>We can see that <span class="math inline">P(A \cap B) \neq P(A) \cdot
+P(B)</span> because <span class="math inline">\frac{7}{124} \neq
+\frac{225}{3844}</span>, so the answer is False.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p><i>Originally Problem 4 on the second Midterm of Spring 2023</i></p>
+<p>Suppose that there are three possible experience levels in chess
+(beginner, intermediate, advanced). Only <strong>10%</strong> of
+beginner players beat Avi at a game of chess, while <strong>50%</strong>
+of intermediate players and <strong>80%</strong> of advanced players
+do.</p>
+<p>Avi signs up to participate in a certain chess tournament called the
+Avocado Cup. Aside from Avi, <strong>50%</strong> of the players in the
+tournament are beginners, <strong>40%</strong> are intermediate, and
+<strong>10%</strong> are advanced.</p>
+<p>The tournament proceeds in rounds. In the first round of the
+tournament, players are <strong>randomly paired up</strong> for a game
+of chess.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>What is the probability that Avi wins in the first round of the
+tournament?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">33 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">50 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">67 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">83 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">67 \%</span></p>
+<p>We know the percentages of players that beat Avi (meaning Avi loses)
+and the percentages of different types of players inside the Avocado
+Cup.</p>
+<p>We can use the percentage of players that beat Avi to figure out the
+percentage of times Avi wins by doing <span class="math inline">1 -
+p</span>!</p>
+<p>Avi wins against beginners <span class="math inline">1 - 0.1 =
+0.9\%</span> of the time, against intermediate players <span class="math inline">1 - 0.4 = 0.6\%</span> of the time, and against
+advanced players <span class="math inline">1 - 0.8 = 0.2 \%</span> of
+the time.</p>
+<p>Now we can multiply the percentage of time Avi wins with the
+percentage of different players types to find the probability Avi will
+win in the first round! We can do this because you can imagine we are
+multiplying the probability Avi wins with the amount of people in the
+tournament of that level.</p>
+<p><span class="math display">\begin{align*}
+0.9 \cdot 0.5 &amp;= 0.45 \\
+0.4 \cdot 0.5 &amp;= 0.2 \\
+0.2 \cdot 0.1 &amp;= 0.02 \\
+0.45 + 0.2 + 0.02 &amp;= 0.67
+\end{align*}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>It turns out that, sadly, Avi loses to his opponent in the first
+round. What is the probability that Avi’s opponent is an advanced
+player? Choose the <strong>closest answer</strong> among the choices
+listed.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">15 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">25 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">35 \%</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">45 \%</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">25 \%</span></p>
+<ul>
+<li>Let <span class="math inline">P(A)</span> be the probability of Avi
+playing against an advanced player</li>
+<li>Let <span class="math inline">P(B)</span> be the probability of Avi
+losing a match</li>
+<li>Let <span class="math inline">P(C)</span> be the probability of Avi
+playing against an intermediate player</li>
+<li>Let <span class="math inline">P(D)</span> be the probability of Avi
+playing against a beginner player</li>
+</ul>
+<p>We can use Bayes theorem to help us find the probability that Avi
+lost the match to an advanced player (<span class="math inline">P(A|B)</span>). Recall Bayes’ theorem is:</p>
+<p><span class="math display">
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+</span></p>
+<p>We are given the probability that Avi loses the match against an
+advanced player <span class="math inline">P(B|A) = 0.8</span> and the
+probability of Avi playing against an advanced player <span class="math inline">P(A) = 0.1</span>.</p>
+<p>We can calculate the probability of Avi losing a match <span class="math inline">P(B)</span> with the law of total probability: <span class="math display">
+P(B) = P(B|A) \cdot P(A) + P(B|C) \cdot P(C) + P(B|D) \cdot P(D)
+</span></p>
+<p>We know the probability of Avi losing to an intermediate player:
+<span class="math inline">P(B|C) = 0.5</span>, the probability of Avi
+losing to a beginner player: <span class="math inline">P(B|D) =
+0.1</span>, the probability of an intermediate player being the
+opponent: <span class="math inline">P(C) = 0.4</span>, and the
+probability of a beginner player being the oponent: <span class="math inline">P(D) = 0.5</span></p>
+<p>Plugging in what we know into the law of total probability equation
+we get: <span class="math display">\begin{align*}
+P(B) &amp;= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
+&amp;=0.08 + 0.2 + 0.05 \\
+&amp;= 0.33
+\end{align*}</span></p>
+<p>Or we can calculate <span class="math inline">P(B)</span> by using
+what we know in part A (<span class="math inline">67 \%</span>). <span class="math inline">1 - 0.67 = 0.33</span>.</p>
+<p>Back to Bayes theorem we have: <span class="math display">\begin{align*}
+P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
+&amp;= \frac{0.08}{0.33}\\
+&amp;= 0.24
+\end{align*}</span></p>
+<p><span class="math inline">0.24</span> is closest to <span class="math inline">0.25</span>, so <span class="math inline">25
+\%</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><i>Originally Problem 1 on the Second Winter 2024 Midterm.</i></p>
+<p>Quarks are one of the smallest fundamental particles in physics.
+There are <span class="math inline">6</span> <strong>types</strong> of
+quarks: up, down, top, bottom, strange, charm. Each one of the <span
+class="math inline">6</span> types of quarks can be in two
+<strong>states</strong>: quark or antiquark.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Consider an experiment where we select <span
+class="math inline">n</span> quarks uniformly at random. The
+<strong>result</strong> of the experiment is a description of the
+<strong>type and state</strong> of the quark selected. For example, if
+<span class="math inline">n=3</span>, one possible result is:</p>
+<ul>
+<li><p>Selected quark 1 is a top quark.</p></li>
+<li><p>Selected quark 2 is a charm antiquark.</p></li>
+<li><p>Selected quark 3 is a top antiquark.</p></li>
+</ul>
+<p>How many results are possible for this experiment with <span
+class="math inline">n</span> quarks?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">6^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">9^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">18^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">36^n</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">12^n</span></p>
+<p>Each quark has <span class="math inline">6 \cdot 2 = 12</span>
+possibilities because there are <span class="math inline">6</span>
+possible types and <span class="math inline">2</span> possible states.
+Since our experiment involves independently picking one of these <span class="math inline">12</span> possibilities for each of our <span class="math inline">n</span> quarks, the total number of results for the
+experiment is <span class="math inline">12^n</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>A meson is formed by combining two quarks. In order to form a meson,
+the two quarks must satisfy the following rules:</p>
+<ul>
+<li><p>They must be in <strong>different states</strong>: one must be a
+quark and the other one must be an anti-quark.</p></li>
+<li><p>The two quarks can be the <strong>same type</strong>: i.e. top
+quark and top antiquark can form a meson.</p></li>
+<li><p>The <strong>order</strong> of quark and antiquark does
+matter.</p></li>
+</ul>
+<p>Consider an experiment where we select <span
+class="math inline">n</span> mesons uniformly at random. How many
+results are possible for this experiment?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">2^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">18^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">36^n</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>None of the above (<span class="math inline">72^n</span>).</p>
+<p>For making a meson, we need to choose two quarks. The first quark we
+choose has <span class="math inline">6 \cdot 2 = 12</span> possibilities
+because there are <span class="math inline">6</span> possible types and
+<span class="math inline">2</span> possible states. However, our second
+quark cannot have the same state as our first; so the second quark has
+<span class="math inline">6 \cdot 1 = 6</span> possibilities because
+there are still <span class="math inline">6</span> possible types, but
+only <span class="math inline">1</span> possible state.</p>
+<p>This means a single meson has <span class="math inline">12 \cdot 6 =
+72</span> possibilities. (If the order of the quark and antiquark did
+not matter, it would instead have <span class="math inline">\frac{72}{2}
+= 36</span> possibilities). So, an experiment where we select <span class="math inline">n</span> mesons uniformly at random has <span class="math inline">72^n</span> unique results.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p><i>Originally Problem 2 on the Second Winter 2024 Midterm.</i></p>
+<p>A special poker card deck contains the <span
+class="math inline">52</span> standard cards:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Heart: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q,
+K, A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Diamond: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q,
+K, A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Club: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,
+A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spade: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q,
+K, A</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>…plus two wildcards: a Red Joker and a Black Joker. The total number
+of cards in this card deck is <span class="math inline">54</span>.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>How many different four-card hands can be selected from this deck?
+(Note: order does not matter in a card hand.)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{54 \choose 4} = 316251</span>   <em>Note:
+this means “54 Choose 4”</em></p>
+<p>Since order does not matter, we would use a combination instead of a
+permutation here. From <span class="math inline">54</span> unique cards
+in our poker deck, we can <em>choose</em> <span class="math inline">4</span> at random to get a card hand.</p>
+<p>An alternative way to think about it: there are <span class="math inline">54</span> options for the first card we pick, <span class="math inline">53</span> for the second card, <span class="math inline">52</span> for the third card, etc. For four cards,
+we have <span class="math inline">54 \cdot 53 \cdot 52 \cdot 51</span>
+hands. However this will count the same hand in different card orders as
+different hands, which we don’t want. To correct this, we divide by
+<span class="math inline">4!</span> (<span class="math inline">4 \cdot 3
+\cdot 2 \cdot 1</span>), because each unique hand will appear <span class="math inline">24</span> times but in different orders.</p>
+<p><span class="math display">\frac{54 \cdot 53 \cdot 52 \cdot 51}{4
+\cdot 3 \cdot 2 \cdot 1} = {54 \choose 4} = 316251</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>For this deck, how many <span class="math inline">5</span> card hands
+are there that include four-of-a-kind (four cards of the same
+<em>value</em>)? Show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Since the first <span class="math inline">4</span> cards are
+four-of-a-kind (same number), there are <span class="math inline">13</span> ways to select a four-of-a-kind. For the
+<span class="math inline">5</span>th card, there are <span class="math inline">50</span> total choices (<span class="math inline">12</span> remaining values <span class="math inline">\cdot 4</span> suits + <span class="math inline">2</span> wildcards). So there are a total <span class="math inline">13 \cdot 50 = 650</span> options.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>In certain poker rules, a bomb is defined as either four-of-a-kind,
+or two wildcards (red joker and black joker). Suppose you randomly draw
+a <span class="math inline">4</span> card hand and you found a bomb in
+it, what is the probability that the bomb is four-of-a-kind? Show your
+work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<!-- Need to edit this one -->
+<p>The number of hands containing two jokers (the other two cards are
+arbitrary) is given by: <span class="math display">\begin{align*}
+\underbrace{{2 \choose 2}}_{\text{Two Jokers}} \cdot \underbrace{{52
+\choose 2}}_{\text{Other Two Cards}} = \frac{52 \cdot 51}{2} = 1326.
+\end{align*}</span> The number of hands that form four of a kind is 13,
+one for each of the 13 unique values in a deck.</p>
+<p><br/></p>
+<p>For a bomb to occur, the four cards either contain two jokers or form
+four of a kind. Hence, <span class="math display">\begin{align*}
+    P(\text{Four of a kind | Bomb}) = \frac{13}{13 + 1326} =
+\frac{1}{103}
+\end{align*}</span></p>
+<!-- OLD SOLUTION -->
+<!-- 
+The number of sequences that containing two jokers (the other two cards are arbitrary) is given by:
+$$\begin{aligned}
+\underbrace{C(4,2)}_{\text{Joker Locations}} \times P(2,2) \times C(52, 2) \times P(2,2) = 4 \times 3 \times 52 \times 51
+\end{aligned}$$ The number of sequences that form four of a kind is
+$$\begin{aligned}
+C(13,1) P(4,4) = 13 \times 4 \times 3 \times 2
+\end{aligned}$$ The two events are exclusive. And for a bomb to occur,
+the four cards either contains two jokers or form four of a kind. Hence,
+$$\begin{aligned}
+    P(\text{Four of a kind | Bomb}) = \frac{13 \times 4 \times 3 \times 2}{13 \times 4 \times 3 \times 2 + 4 \times 3 \times 52 \times 51 } = \frac{1}{103}
+\end{aligned}$$ -->
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>

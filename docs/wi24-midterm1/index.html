@@ -64,7 +64,7 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Undetermined</p>
+<p><strong>Instructor(s):</strong> Aobo Li</p>
 <p>This exam was administered in person. The exam was open-notes.
 Students had <strong>50 minutes</strong> to take this exam.</p>
 <hr />
@@ -154,8 +154,7 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 </header>
 <p>Since there are 3 possible median values, we will have to discuss
 each situation separately. <br/></p>
-<p>In case 1, when <span class="math inline">0&lt;a\leq2</span>,
-Median<span class="math inline">(D) = 2</span>. So, we have:</p>
+<p>In case 1, when <span class="math inline">0&lt;a\leq2</span>, <span class="math inline">\text{Median}(D) = 2</span>. So, we have:</p>
 <p><span class="math display">\begin{align*}
         \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
         3 + \frac{a}{5} &amp;&lt; 2\\
@@ -164,7 +163,7 @@ Median<span class="math inline">(D) = 2</span>. So, we have:</p>
 <p>But <span class="math inline">a&lt;-5</span> is in conflict with the
 condition <span class="math inline">0&lt;a\leq2</span>, therefore there
 is no solution in this situation, and Median<span class="math inline">(D) = 2</span> is impossible.</p>
-<p>In case 2, when <span class="math inline">2&lt;a&lt;5</span>, <span class="math inline">Median_{D} = a</span>. So, we have:</p>
+<p>In case 2, when <span class="math inline">2&lt;a&lt;5</span>, <span class="math inline">\text{Median}(D) = a</span>. So, we have:</p>
 <p><span class="math display">\begin{align*}
         \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
         3 + \frac{a}{5} &amp;&lt; a\\
@@ -172,9 +171,9 @@ is no solution in this situation, and Median<span class="math inline">(D) = 2</s
         a &amp;&gt; \frac{15}{4}\\       
 \end{align*}</span></p>
 <p>So <span class="math inline">a</span> has to be larger than <span class="math inline">\frac{15}{4}</span>. But remember from the
-prerequisite condition that <span class="math inline">2&lt;a&lt;5</span>. To satisfy both conditions, we
-must have <span class="math inline">\frac{15}{4}&lt;a&lt;5</span>.</p>
-<p>In case 3, when <span class="math inline">a\geq5</span>, <span class="math inline">Median_{D} = 5</span>. So, we have: <span class="math display">\begin{align*}
+prerequisite condition that <span class="math inline">2&lt;a&lt;5</span>.</p>
+<p>To satisfy both conditions, we must have <span class="math inline">\frac{15}{4}&lt;a&lt;5</span>.</p>
+<p>In case 3, when <span class="math inline">a\geq5</span>, <span class="math inline">\text{Median}(D) = 5</span>. So, we have: <span class="math display">\begin{align*}
         \text{Mean}(D) &amp;&lt; \text{Median}(D)\\
         3 + \frac{a}{5} &amp;&lt; 5\\
         a&amp;&lt;10
@@ -212,14 +211,14 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean square error is written as: <span class="math display">\begin{align*}
+<p>The mean squared error is written as: <span class="math display">\begin{align*}
         R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2    
 \end{align*}</span></p>
 <p>Since we only have two data points (<span class="math inline">n=2</span>), the equation simplifies to:</p>
 <p><span class="math display">\begin{align*}
         R_{sq}(h) = \frac{1}{2}((y_{0}-h)^2+ (y_{1}-h)^2)    
 \end{align*}</span></p>
-<p>Taking derivative with respect to h, we have: <span class="math display">\begin{align*}
+<p>Taking the derivative with respect to <span class="math inline">h</span>, we have: <span class="math display">\begin{align*}
         \frac{dR_{sq}(h)}{dh} = -(y_{0}-h)- (y_{1}-h)    
 \end{align*}</span></p>
 <p>We know that the derivative has to be 0 at the local minima,
@@ -229,7 +228,7 @@ therefore at <span class="math inline">h=5</span>, we have:</p>
         % -2+y_1-5 &amp;=0\\
         y_1 &amp;= 7
 \end{align*}</span></p>
-<p>So we know that the dataset is <span class="math inline">{3,7}</span>. Given all these information, we can
+<p>So we know that the dataset is <span class="math inline">\{3,7\}</span>. Given all these information, we can
 calculate <span class="math inline">r_1</span> with:</p>
 <p><span class="math display">\begin{align*}
         R_{sq}(5) &amp;= \frac{1}{2}((y_{0}-5)^2+ (y_{1}-5)^2)\\
@@ -290,8 +289,8 @@ class="math display">\begin{align*}
 <p>where <span class="math inline">n!</span> denotes the factorial of
 <span class="math inline">n</span>, defined as the product of all
 positive integers up to <span class="math inline">n</span>, i.e. <span
-class="math inline">n! = 1\times2\times3\times ... \times(n-1)\times
-n</span>. Given the power series expansion of <span
+class="math inline">n! = 1\cdot 2\cdot 3\cdot  ... \cdot
+(n-1)\cdot  n</span>. Given the power series expansion of <span
 class="math inline">e^{x}</span> above, write the power series expansion
 of <span class="math inline">e^{-x}</span> and explicitly specify the
 first 5 terms, i.e., similar to the format of the equation above. <!-- 
@@ -312,8 +311,8 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 </header>
 <p>By plugging <span class="math inline">-x</span> in for each <span class="math inline">x</span>, we get:</p>
 <p><span class="math inline">e^{-x} =
-\sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2} -
-\frac{x^{3}}{6}+\frac{x^{4}}{24}+ ...</span></p>
+\displaystyle\sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2}
+- \frac{x^{3}}{6}+\frac{x^{4}}{24}+ ...</span></p>
 </div>
 </div>
 </div>
@@ -321,9 +320,9 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
-<p>Using the conclusions you reached in part a and part b, prove that
-<span class="math inline">cosh(x) = \frac{1}{2}(e^{x} + e^{-x})</span>
-is convex.</p>
+<p>Using the conclusions you reached in part (a) and part (b), prove
+that <span class="math inline">cosh(x) = \frac{1}{2}(e^{x} +
+e^{-x})</span> is convex.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_3">
@@ -362,11 +361,11 @@ be kept and travel out of the parenthesis. Therefore we have:</p>
         &amp;=\sum_{n=0}^{\infty}\frac{2x^{n}}{n!} \mathrm{(for\; even\;
 n)}
 \end{align*}</span></p>
-<p>Therefore, <span class="math inline">cosh(x)=\frac{e^{x}+e^{-x}}{2}</span> is a sum of
-<span class="math inline">x^{n}</span> where n is even. Since we have
-already proved in part a that <span class="math inline">x^{n}</span> are
-always convex for even n, <span class="math inline">cosh(x)</span> is an
-infinite sum of convex functions and therefore also convex.</p>
+<p>Therefore, <span class="math inline">cosh(x)=\displaystyle\frac{e^{x}+e^{-x}}{2}</span>
+is a sum of <span class="math inline">x^{n}</span>, where <span class="math inline">n</span> is even. Since we have already proved in
+part (a) that <span class="math inline">x^{n}</span> are always convex
+for even <span class="math inline">n</span>, <span class="math inline">cosh(x)</span> is an infinite sum of convex
+functions and therefore also convex.</p>
 </div>
 </div>
 </div>
@@ -381,12 +380,12 @@ estimated slope <span class="math inline">w</span> in simple linear
 regression that you have already seen in discussions and lectures:</p>
 <p><span class="math display">\begin{align*}
          w &amp;= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i -
-\overline{x})^2} \tag{1}\\
+\overline{x})^2} \tag{1}\\ \\
         w &amp;= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i -
 \overline{x})^2} \tag{2}  
 \end{align*}</span></p>
 <p>where we have dataset <span class="math inline">D = [(x_1,y_1),
-\ldots, (x_n,y_n)]</span>, sample means <span
+\ldots, (x_n,y_n)]</span> and sample means   <span
 class="math inline">\overline{x} = {1 \over n} \sum_{i} x_i, \quad
 \overline{y} = {1 \over n} \sum_{i} y_i</span>. Without further
 explanation, <span class="math inline">\sum_i</span> means <span
@@ -447,7 +446,7 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>False. By (1) in part a, we can view <span class="math inline">w</span> as only being affected by <span class="math inline">x_i - \overline{x}</span>, which is unchanged after
+<p>False. By (1) in part (a), we can view <span class="math inline">w</span> as only being affected by <span class="math inline">x_i - \overline{x}</span>, which is unchanged after
 shifting horizontally. Therefore, <span class="math inline">w</span> is
 unchanged.</p>
 </div>
@@ -479,7 +478,7 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>False. By (2) in part a, we can view <span class="math inline">w</span> as only being affected by <span class="math inline">y_i - \overline{y}</span>, which is unchanged after
+<p>False. By (2) in part (a), we can view <span class="math inline">w</span> as only being affected by <span class="math inline">y_i - \overline{y}</span>, which is unchanged after
 shifting vertically. Therefore, <span class="math inline">w</span> is
 unchanged.</p>
 </div>
@@ -491,8 +490,7 @@ unchanged.</p>
 <h2 id="problem-5">Problem 5</h2>
 <p><em>Originally Problem 5 on the first Winter 2024 Midterm
 Exam.</em></p>
-<p>Suppose the following information is given for a linear
-regression:</p>
+<p>Suppose the following information is given for linear regression:</p>
 <p><span class="math inline">X = \begin{bmatrix}
 1 &amp; 2\\
 1 &amp; -1
@@ -506,10 +504,11 @@ regression:</p>
     1\\
     2\\
     \end{bmatrix}</span></p>
-<p>Where X is the design matrix, <span
+<p>Where <span class="math inline">X</span> is the design matrix, <span
 class="math inline">\vec{y}</span> is the observation vector, and <span
 class="math inline">\vec{w}^{*}</span> is the optimal parameter vector.
-Solve for parameter a and b using the normal equation, show your
+Solve for parameters <span class="math inline">a</span> and <span
+class="math inline">b</span> using the normal equations, show your
 work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -524,8 +523,12 @@ aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">\begin{cases}
+       a = 5\\
+       b = -1\\
+\end{cases}</span></p>
 <p>Since <span class="math inline">\vec{w}^{*}</span> is the optimal
-parameter vector, it must satisfy the Normal Equation:</p>
+parameter vector, it must satisfy the normal equations:</p>
 <p><span class="math display">\begin{align*}
         X^{T}X\vec{w} = X^{T}\vec{y}
 \end{align*}</span></p>
@@ -602,21 +605,20 @@ a+b\\
 2a-b
 \end{bmatrix}
 \end{align*}</span></p>
-<p>So we obtained this set of equations:</p>
-<p><span class="math display">\begin{align*}
+<p><span class="math display">\begin{cases}
         &amp;4 = a + b\\
         &amp;11 = 2a-b
-\end{align*}</span></p>
+\end{cases}</span></p>
 <p>To solve this equation set, we can add them together: <span class="math display">\begin{align*}
        4+11 &amp;= a + b + 2a -b\\
        3a &amp;= 15\\
        \\
        \\
-       \begin{cases}
+\end{align*}</span></p>
+<p><span class="math display">\begin{cases}
        a = 5\\
        b = -1\\
-       \end{cases}
-\end{align*}</span></p>
+\end{cases}</span></p>
 </div>
 </div>
 </div>

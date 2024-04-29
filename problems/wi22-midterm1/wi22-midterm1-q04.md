@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 4 on the first Midterm of Winter 2022</i>
+
 Consider the dataset shown below.
 
 ::: center
@@ -95,7 +97,7 @@ $$
 \end{align*}
 $$
 
-With this we have proved that $4e_1+e_2+4e_3+e_4=0$.
+With this we have shown that $4e_1+e_2+4e_3+e_4=0$.
 
 # END SOLUTION
 

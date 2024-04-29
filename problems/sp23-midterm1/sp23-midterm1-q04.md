@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 4 on the first Midterm of Spring 2023</i>
+
 Suppose we are given a dataset of points $\{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$ and for some reason, we want to make predictions using a prediction rule of the form $$H(x) = 17 + w_1x.$$
 
 # BEGIN SUBPROB
@@ -56,7 +58,8 @@ A simple example shows that this is the case. Consider the dataset $(-2, 0)$ and
 
 True or False: For an arbitrary dataset, the mean squared error associated with $H^*(x)$ is greater than or equal to the mean squared error associated with the regression line.
 
-( ) True ( ) False
+( ) True 
+( ) False
 
 # BEGIN SOLUTION
 

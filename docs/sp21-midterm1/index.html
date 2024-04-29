@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../assets/theme.css" />
+  <link rel="stylesheet" href="..\assets\theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -40,9 +40,6 @@
   </script>
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -73,8 +70,8 @@ open-book. Students had <strong>50 minutes</strong> to take this
 exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><em>Originally Problem 1 on the first Midterm Exam in Spring
-2021.</em></p>
+<p><em>Originally Problem 1 on the first Spring 2021 Midterm
+Exam.</em></p>
 <p>Consider the function <span class="math inline">R(h) = \sqrt{(h -
 3)^2 + 1} = ((h - 3)^2 + 1)^{\frac{1}{2}}</span>, which is a convex and
 differentiable function with only one local minimum.</p>
@@ -99,7 +96,27 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO: write the solution</p>
+<p>The updating rule for gradient descent in the one-dimensional case
+is: <span class="math display">h_{i+1} = h_{i} - \alpha \cdot
+\frac{dR}{dh}(h_i)</span></p>
+<p>We can find <span class="math inline">\frac{dR}{dh}</span> by taking
+the derivative of <span class="math inline">R(h)</span>: <span class="math display">\frac{d}{dh}R(h) = \frac{d}{dh}(\sqrt{(h - 3)^2 +
+1}) = \dfrac{h-3}{\sqrt{\left(h-3\right)^2+1}}</span></p>
+<p>Now we can use <span class="math inline">\alpha = 2\sqrt{2}</span>
+and <span class="math inline">h_0 = 2</span> to begin updating:</p>
+<p><span class="math display">\begin{align*}
+h_{1} &amp;= h_{0} - \alpha \cdot \frac{dR}{dh}(h_0) \\
+h_{1} &amp;= 2 - 2\sqrt{2} \cdot
+\left(\dfrac{2-3}{\sqrt{\left(2-3\right)^2+1}}\right) \\
+h_{1} &amp;= 2 - 2\sqrt{2} \cdot (\dfrac{-1}{\sqrt{2}}) \\
+h_{1} &amp;= 4
+\end{align*}</span> <br/> <span class="math display">\begin{align*}
+h_{2} &amp;= h_{1} - \alpha \cdot \frac{dR}{dh}(h_1) \\
+h_{2} &amp;= 4 - 2\sqrt{2} \cdot
+\left(\dfrac{4-3}{\sqrt{\left(4-3\right)^2+1}}\right) \\
+h_{2} &amp;= 4 - 2\sqrt{2} \cdot (\dfrac{1}{\sqrt{2}}) \\
+h_{2} &amp;= 2
+\end{align*}</span></p>
 </div>
 </div>
 </div>

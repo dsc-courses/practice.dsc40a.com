@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- Gradient Descent -->
+<i>Originally Problem 3 on the Fall 2021 Midterm.</i>
 
 Remember to show your work and justify your answers.
 
@@ -57,8 +57,8 @@ gradient descent finds $h^*$ after just one iteration?
 
 # BEGIN SOLUTION
 
-We know from part b that $h_1 = -\alpha \cdot 2e$, and we know from part
-a that $h^* = -1$. If gradient descent converges in one iteration, that
+We know from the part (b) that $h_1 = -\alpha \cdot 2e$, and we know from part
+(a) that $h^* = -1$. If gradient descent converges in one iteration, that
 means that $h_1 = h^*$; solving this yields
 
 $$-\alpha \cdot 2e = -1 \implies \alpha = \frac{1}{2e}$$

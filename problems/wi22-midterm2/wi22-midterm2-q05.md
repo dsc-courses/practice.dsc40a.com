@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 5 on the second Midterm of Winter 2022</i>
+
 What is the probability that today's String string has the
 last three letters matching the first three letters, like BAMBAM or
 GOOGOO, if we know that the first letter matches the fourth letter?

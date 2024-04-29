@@ -7,12 +7,12 @@ estimated slope $w$ in simple linear regression that you have already
 seen in discussions and lectures:
 
 $$\begin{align*}
-         w &= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i - \overline{x})^2} \tag{1}\\
+         w &= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i - \overline{x})^2} \tag{1}\\ \\
         w &= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i - \overline{x})^2} \tag{2}  
 \end{align*}$$ 
 
 where we have dataset
-$D = [(x_1,y_1), \ldots, (x_n,y_n)]$, sample means
+$D = [(x_1,y_1), \ldots, (x_n,y_n)]$ and  sample means &emsp;
 $\overline{x} = {1 \over n} \sum_{i} x_i, \quad \overline{y} = {1 \over n} \sum_{i} y_i$.
 Without further explanation, $\sum_i$ means $\sum_{i=1}^n$
 
@@ -48,7 +48,7 @@ slope $w$ change or not?
 
 # BEGIN SOLUTION
 
-False. By (1) in part a, we can view $w$ as only being affected by $x_i - \overline{x}$,
+False. By (1) in part (a), we can view $w$ as only being affected by $x_i - \overline{x}$,
 which is unchanged after shifting horizontally. Therefore, $w$ is unchanged.
 
 # END SOLUTION
@@ -68,7 +68,7 @@ slope $w$ change or not?
 
 # BEGIN SOLUTION
 
-False. By (2) in part a, we can view $w$ as only being affected by $y_i - \overline{y}$,
+False. By (2) in part (a), we can view $w$ as only being affected by $y_i - \overline{y}$,
 which is unchanged after shifting vertically. Therefore, $w$ is unchanged.
 
 # END SOLUTION

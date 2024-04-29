@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- Simple Linear Regression -->
+<i>Originally Problem 4 on the Fall 2021 Midterm.</i>
 
 Billy, the avocado farmer from Homework 3, wasn't making enough money
 growing avocados and decided to take on a part-time job as a waiter at
@@ -40,7 +40,7 @@ association between total bills and tips.
 
 # BEGIN SUBPROB
 
-The variance of the tip amounts is 2.1. Let M be the mean
+The variance of the tip amounts is 2.1. Let $M$ be the mean
 squared error of the best linear prediction rule on this dataset (under
 squared loss). Is $M$ less than, equal to, or greater than 2.1? How can
 you tell?
@@ -88,25 +88,25 @@ intuitively about what happens.*
 
 First, we present the rigorous solution.
 
-Let $\bar{x_\text{old}}$ represent the previous mean of the $x$'s and
-$\bar{x_\text{new}}$ represent the new mean of the $x$'s. Then, we know
-that $\bar{x_\text{new}} = \bar{x_\text{old}} + 1$.
+Let $\bar{x}_\text{old}$ represent the previous mean of the $x$'s and
+$\bar{x}_\text{new}$ represent the new mean of the $x$'s. Then, we know
+that $\bar{x}_\text{new} = \bar{x}_\text{old} + 1$.
 
-Also, let $\bar{y_\text{old}}$ and $\bar{_\text{new}}$ represent the old
+Also, let $\bar{y}_\text{old}$ and $\bar{y}_\text{new}$ represent the old
 and new mean of the $y$'s. We will try and find a relationship between
 these two quantities.
 
 We want the two intercepts to be the same. The intercept for the old
-line is $\bar{y_\text{old}} - w_1^* \bar{x_\text{old}}$ and the
+line is $\bar{y}_\text{old} - w_1^* \bar{x}_\text{old}$ and the
 intercept for the new line is
-$\bar{y_\text{new}} - w_1^* \bar{x_\text{new}}$. Setting these equal
+$\bar{y}_\text{new} - w_1^* \bar{x}_\text{new}$. Setting these equal
 yields
 
 $$\begin{aligned}
-    \bar{y_\text{new}} - w_1^* \bar{x_\text{new}} &= \bar{y_\text{old}} - w_1^* \bar{x_\text{old}} \\
-     \bar{y_\text{new}} - w_1^* (\bar{x_\text{old}} + 1) &= \bar{y_\text{old}} - w_1^* \bar{x_\text{old}} \\
-     \bar{y_\text{new}} &= \bar{y_\text{old}} - w_1^* \bar{x_\text{old}} + w_1^* (\bar{x_\text{old}} + 1) \\
-     \bar{y_{\text{new}}} &= \bar{y_\text{old}} + w_1^*
+    \bar{y}_\text{new} - w_1^* \bar{x}_\text{new} &= \bar{y}_\text{old} - w_1^* \bar{x}_\text{old} \\
+     \bar{y}_\text{new} - w_1^* (\bar{x}_\text{old} + 1) &= \bar{y}_\text{old} - w_1^* \bar{x}_\text{old} \\
+     \bar{y}_\text{new} &= \bar{y}_\text{old} - w_1^* \bar{x}_\text{old} + w_1^* (\bar{x}_\text{old} + 1) \\
+     \bar{y}_{\text{new}} &= \bar{y}_\text{old} + w_1^*
 \end{aligned}$$
 
 Thus, in order for the intercepts to be equal, we need the mean of the

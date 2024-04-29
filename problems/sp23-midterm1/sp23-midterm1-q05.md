@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 5 on the first Midterm of Spring 2023</i>
+
 Let $X$ be a design matrix with 4 columns, such that the first column is a column of all 1's. Let $\vec{y}$ be an observation vector. Let $\vec{w}^* = (X^TX)^{-1}X^T\vec{y}.$ We'll name the components of $\vec{w}^*$ as follows:
 
 $$\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^* \\ w_3^* \end{bmatrix}$$

@@ -8,13 +8,11 @@ For a given dataset $\{y_1, y_2, \dots, y_n\}$, let $M_{abs}(h)$ represent the *
 
 For the dataset $\{4, 9, 10, 14, 15\}$, what is $M_{abs}(9)$?
 
-$M_{abs}(9) =$
-
 # BEGIN SOLUTION
 
 $5$
 
-The first step we need to do is calculate the absolute errors ($|y_i - h|$).
+The first step is to calculate the absolute errors ($|y_i - h|$).
 
 $$
 \begin{align*}
@@ -34,19 +32,17 @@ Now we have to order the values inside of the absolute errors: $\{0, 1, 5, 5, 6\
 
 For the same dataset $\{4, 9, 10, 14, 15\}$, find another integer $h$ such that $M_{abs}(9) = M_{abs}(h)$.
 
-$h =$
-
 # BEGIN SOLUTION
 
 $5$ or $15$
 
-Our goal is to find another number that will give us the same median of absolute errors as in part A.
+Our goal is to find another number that will give us the same median of absolute errors as in part (a).
 
 One way to do this is to plug in a number and guess. Another way requires noticing you can modify $10$ (the middle element) to become $5$ in either direction (negative or positive) because of the absolute value.
 
 We can solve this equation to get $|10-x| = 5 \rightarrow x = 15 \text{ and } x = 5$.
 
-We can then test this by following the same steps as we did in part A.
+We can then test this by following the same steps as we did in part (a).
 
 **For $x = 15$:**
 $$

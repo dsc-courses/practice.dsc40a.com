@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 4 on the second Midterm of Spring 2023</i>
+
 Suppose that there are three possible experience levels
 in chess (beginner, intermediate, advanced). Only **10%** of beginner
 players beat Avi at a game of chess, while **50%** of intermediate
@@ -36,9 +38,9 @@ Avi wins against beginners $1 - 0.1 = 0.9\%$ of the time, against intermediate p
 Now we can multiply the percentage of time Avi wins with the percentage of different players types to find the probability Avi will win in the first round! We can do this because you can imagine we are multiplying the probability Avi wins with the amount of people in the tournament of that level.
 
 $$\begin{align*}
-0.9 * 0.5 &= 0.45 \\
-0.4 * 0.5 &= 0.2 \\
-0.2 * 0.1 &= 0.02 \\
+0.9 \cdot 0.5 &= 0.45 \\
+0.4 \cdot 0.5 &= 0.2 \\
+0.2 \cdot 0.1 &= 0.02 \\
 0.45 + 0.2 + 0.02 &= 0.67
 \end{align*}$$
 
@@ -61,38 +63,38 @@ player? Choose the **closest answer** among the choices listed.
 
 $25 \%$
 
-- Let $\mathbb{P}(A)$ be the probability of Avi playing against an advanced player
-- Let $\mathbb{P}(B)$ be the probability of Avi losing a match
-- Let $\mathbb{P}(C)$ be the probability of Avi playing against an intermediate player
-- Let $\mathbb{P}(D)$ be the probability of Avi playing against a beginner player
+- Let $P(A)$ be the probability of Avi playing against an advanced player
+- Let $P(B)$ be the probability of Avi losing a match
+- Let $P(C)$ be the probability of Avi playing against an intermediate player
+- Let $P(D)$ be the probability of Avi playing against a beginner player
 
-We can use Bayes theorem to help us find the probability that Avi lost the match to an advanced player ($\mathbb{P}(A|B)$). Recall Bayes' theorem is:
+We can use Bayes theorem to help us find the probability that Avi lost the match to an advanced player ($P(A|B)$). Recall Bayes' theorem is:
 
 $$
-\mathbb{P}(A|B) = \frac{\mathbb{P}(B|A) \cdot \mathbb{P}(A)}{\mathbb{P}(B)}
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
-We are given the probability that Avi loses the match against an advanced player $\mathbb{P}(B|A) = 0.8$ and the probability of Avi playing against an advanced player $\mathbb{P}(A) = 0.1$.
+We are given the probability that Avi loses the match against an advanced player $P(B|A) = 0.8$ and the probability of Avi playing against an advanced player $P(A) = 0.1$.
 
-We can calculate the probability of Avi losing a match $\mathbb{P}(B)$ with the law of total probability:
+We can calculate the probability of Avi losing a match $P(B)$ with the law of total probability:
 $$
-\mathbb{P}(B) = \mathbb{P}(B|A) \cdot \mathbb{P}(A) + \mathbb{P}(B|C) \cdot \mathbb{P}(C) + \mathbb{P}(B|D) \cdot \mathbb{P}(D)
+P(B) = P(B|A) \cdot P(A) + P(B|C) \cdot P(C) + P(B|D) \cdot P(D)
 $$
 
-We know the probability of Avi losing to an intermediate player: $\mathbb{P}(B|C) = 0.5$, the probability of Avi losing to a beginner player: $\mathbb{P}(B|D) = 0.1$, the probability of an intermediate player being the opponent: $\mathbb{P}(C) = 0.4$, and the probability of a beginner player being the oponent: $\mathbb{P}(D) = 0.5$
+We know the probability of Avi losing to an intermediate player: $P(B|C) = 0.5$, the probability of Avi losing to a beginner player: $P(B|D) = 0.1$, the probability of an intermediate player being the opponent: $P(C) = 0.4$, and the probability of a beginner player being the oponent: $P(D) = 0.5$
 
 Plugging in what we know into the law of total probability equation we get:
 $$\begin{align*}
-\mathbb{P}(B) &= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
+P(B) &= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
 &=0.08 + 0.2 + 0.05 \\
 &= 0.33
 \end{align*}$$
 
-Or we can calculate $\mathbb{P}(B)$ by using what we know in part A ($67 \%$). $1 - 0.67 = 0.33$.
+Or we can calculate $P(B)$ by using what we know in part A ($67 \%$). $1 - 0.67 = 0.33$.
 
 Back to Bayes theorem we have:
 $$\begin{align*}
-\mathbb{P}(A|B) &= \frac{0.8 \cdot 0.1}{0.33} \\
+P(A|B) &= \frac{0.8 \cdot 0.1}{0.33} \\
 &= \frac{0.08}{0.33}\\
 &= 0.24
 \end{align*}$$

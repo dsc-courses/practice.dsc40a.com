@@ -70,7 +70,7 @@ open-book. Students had <strong>90 minutes</strong> to take this
 exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<!-- Loss/Risk Minimization -->
+<p><i>Originally Problem 1 on the Fall 2021 Midterm.</i></p>
 <p>King Triton just made an Instagram account and has been keeping track
 of the number of likes his posts have received so far.</p>
 <p>His first 7 posts have received a mean of 16 likes; the specific like
@@ -264,7 +264,7 @@ larger we make <span class="math inline">h</span>, the more negative
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<!-- Loss/Risk Minimization -->
+<p><i>Originally Problem 2 on the Fall 2021 Midterm.</i></p>
 <p>Consider a set of 23 data points <span class="math inline">y_1, y_2,
 y_3, ..., y_{23}</span> such that <span class="math inline">y_1 &lt; y_2
 &lt; ... &lt; y_{23}</span>. Let’s call this Dataset A.</p>
@@ -324,12 +324,12 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The mean absolute deviation from the median for Dataset B is still
-17. As we saw in part a, the median itself does not change. When adding
-together the deviations from the median, each point is repeated twice,
-so the sum of all deviations from the median is doubled. However, there
-are twice as many data points in Dataset B than there are in Dataset A,
-so we divide by <span class="math inline">2n</span> (46) instead of
-<span class="math inline">n</span> (23) in our average.</p>
+17. As we saw in previous part, the median itself does not change. When
+adding together the deviations from the median, each point is repeated
+twice, so the sum of all deviations from the median is doubled. However,
+there are twice as many data points in Dataset B than there are in
+Dataset A, so we divide by <span class="math inline">2n</span> (46)
+instead of <span class="math inline">n</span> (23) in our average.</p>
 <p>In short, for Dataset B both the numerator and denominator in the
 calculation of mean absolute deviation from the median <span class="math inline">\frac{\sum_{i = 1}^n |y_i -
 \text{Median}(y)|}{n}</span> are double what they were for Dataset A, so
@@ -384,7 +384,7 @@ h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right)
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<!-- Gradient Descent -->
+<p><i>Originally Problem 3 on the Fall 2021 Midterm.</i></p>
 <p>Remember to show your work and justify your answers.</p>
 <p>Suppose we want to minimize the function</p>
 <p><span class="math display">R(h) = e^{(h + 1)^2}</span></p>
@@ -467,8 +467,8 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>We know from part b that <span class="math inline">h_1 = -\alpha
-\cdot 2e</span>, and we know from part a that <span class="math inline">h^* = -1</span>. If gradient descent converges in
+<p>We know from the part (b) that <span class="math inline">h_1 =
+-\alpha \cdot 2e</span>, and we know from part (a) that <span class="math inline">h^* = -1</span>. If gradient descent converges in
 one iteration, that means that <span class="math inline">h_1 =
 h^*</span>; solving this yields</p>
 <p><span class="math display">-\alpha \cdot 2e = -1 \implies \alpha =
@@ -513,7 +513,7 @@ size.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<!-- Simple Linear Regression -->
+<p><i>Originally Problem 4 on the Fall 2021 Midterm.</i></p>
 <p>Billy, the avocado farmer from Homework 3, wasn’t making enough money
 growing avocados and decided to take on a part-time job as a waiter at
 the restaurant Dirty Birds on campus. For two months, he kept track of
@@ -557,10 +557,11 @@ association between total bills and tips.</p>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>The variance of the tip amounts is 2.1. Let M be the mean squared
-error of the best linear prediction rule on this dataset (under squared
-loss). Is <span class="math inline">M</span> less than, equal to, or
-greater than 2.1? How can you tell?</p>
+<p>The variance of the tip amounts is 2.1. Let <span
+class="math inline">M</span> be the mean squared error of the best
+linear prediction rule on this dataset (under squared loss). Is <span
+class="math inline">M</span> less than, equal to, or greater than 2.1?
+How can you tell?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_2">
@@ -622,26 +623,26 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>First, we present the rigorous solution.</p>
-<p>Let <span class="math inline">\bar{x_\text{old}}</span> represent the
-previous mean of the <span class="math inline">x</span>’s and <span class="math inline">\bar{x_\text{new}}</span> represent the new mean of
-the <span class="math inline">x</span>’s. Then, we know that <span class="math inline">\bar{x_\text{new}} = \bar{x_\text{old}} +
+<p>Let <span class="math inline">\bar{x}_\text{old}</span> represent the
+previous mean of the <span class="math inline">x</span>’s and <span class="math inline">\bar{x}_\text{new}</span> represent the new mean of
+the <span class="math inline">x</span>’s. Then, we know that <span class="math inline">\bar{x}_\text{new} = \bar{x}_\text{old} +
 1</span>.</p>
-<p>Also, let <span class="math inline">\bar{y_\text{old}}</span> and
-<span class="math inline">\bar{_\text{new}}</span> represent the old and
-new mean of the <span class="math inline">y</span>’s. We will try and
-find a relationship between these two quantities.</p>
+<p>Also, let <span class="math inline">\bar{y}_\text{old}</span> and
+<span class="math inline">\bar{y}_\text{new}</span> represent the old
+and new mean of the <span class="math inline">y</span>’s. We will try
+and find a relationship between these two quantities.</p>
 <p>We want the two intercepts to be the same. The intercept for the old
-line is <span class="math inline">\bar{y_\text{old}} - w_1^*
-\bar{x_\text{old}}</span> and the intercept for the new line is <span class="math inline">\bar{y_\text{new}} - w_1^*
-\bar{x_\text{new}}</span>. Setting these equal yields</p>
+line is <span class="math inline">\bar{y}_\text{old} - w_1^*
+\bar{x}_\text{old}</span> and the intercept for the new line is <span class="math inline">\bar{y}_\text{new} - w_1^*
+\bar{x}_\text{new}</span>. Setting these equal yields</p>
 <p><span class="math display">\begin{aligned}
-    \bar{y_\text{new}} - w_1^* \bar{x_\text{new}} &amp;=
-\bar{y_\text{old}} - w_1^* \bar{x_\text{old}} \\
-     \bar{y_\text{new}} - w_1^* (\bar{x_\text{old}} + 1) &amp;=
-\bar{y_\text{old}} - w_1^* \bar{x_\text{old}} \\
-     \bar{y_\text{new}} &amp;= \bar{y_\text{old}} - w_1^*
-\bar{x_\text{old}} + w_1^* (\bar{x_\text{old}} + 1) \\
-     \bar{y_{\text{new}}} &amp;= \bar{y_\text{old}} + w_1^*
+    \bar{y}_\text{new} - w_1^* \bar{x}_\text{new} &amp;=
+\bar{y}_\text{old} - w_1^* \bar{x}_\text{old} \\
+     \bar{y}_\text{new} - w_1^* (\bar{x}_\text{old} + 1) &amp;=
+\bar{y}_\text{old} - w_1^* \bar{x}_\text{old} \\
+     \bar{y}_\text{new} &amp;= \bar{y}_\text{old} - w_1^*
+\bar{x}_\text{old} + w_1^* (\bar{x}_\text{old} + 1) \\
+     \bar{y}_{\text{new}} &amp;= \bar{y}_\text{old} + w_1^*
 \end{aligned}</span></p>
 <p>Thus, in order for the intercepts to be equal, we need the mean of
 the new <span class="math inline">y</span>’s to be <span class="math inline">w_1^*</span> greater than the mean of the old <span class="math inline">y</span>’s. Since we’re told we’re adding the same

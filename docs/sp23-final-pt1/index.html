@@ -64,7 +64,7 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Janine Tiefenbruck (???)</p>
+<p><strong>Instructor(s):</strong> Janine Tiefenbruck</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book, but no calculator. Students had <strong>50 minutes</strong>
 to take this exam.</p>
@@ -80,7 +80,6 @@ mean absolute error <span class="math inline">R_{abs}(h)</span>).</p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>For the dataset <span class="math inline">\{4, 9, 10, 14,
 15\}</span>, what is <span class="math inline">M_{abs}(9)</span>?</p>
-<p><span class="math inline">M_{abs}(9) =</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -95,7 +94,7 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">5</span></p>
-<p>The first step we need to do is calculate the absolute errors (<span class="math inline">|y_i - h|</span>).</p>
+<p>The first step is to calculate the absolute errors (<span class="math inline">|y_i - h|</span>).</p>
 <p><span class="math display">
 \begin{align*}
 \text{Absolute Errors} &amp;= \{|4-9|, |9-9|, |10-9|, |14-9|, |15-9|\}
@@ -115,7 +114,6 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <p>For the same dataset <span class="math inline">\{4, 9, 10, 14,
 15\}</span>, find another integer <span class="math inline">h</span>
 such that <span class="math inline">M_{abs}(9) = M_{abs}(h)</span>.</p>
-<p><span class="math inline">h =</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_2">
@@ -131,7 +129,7 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">5</span> or <span class="math inline">15</span></p>
 <p>Our goal is to find another number that will give us the same median
-of absolute errors as in part A.</p>
+of absolute errors as in part (a).</p>
 <p>One way to do this is to plug in a number and guess. Another way
 requires noticing you can modify <span class="math inline">10</span>
 (the middle element) to become <span class="math inline">5</span> in
@@ -140,7 +138,7 @@ value.</p>
 <p>We can solve this equation to get <span class="math inline">|10-x| =
 5 \rightarrow x = 15 \text{ and } x = 5</span>.</p>
 <p>We can then test this by following the same steps as we did in part
-A.</p>
+(a).</p>
 <p><strong>For <span class="math inline">x = 15</span>:</strong> <span class="math display">
 \begin{align*}
 \text{Absolute Errors} &amp;= \{|4-15|, |9-15|, |10-15|, |14-15|,
@@ -244,20 +242,21 @@ chosen points.</p>
 <tr class="odd">
 <td><span class="math inline">0</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
-\frac{1}{5} * 41 \approx 8</span></td>
+\frac{1}{5} \cdot 41 \approx 8</span></td>
 </tr>
 <tr class="even">
 <td><span class="math inline">8</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
-\frac{1}{5} * 11 = 2</span></td>
+\frac{1}{5} \cdot 11 = 2</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">18</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
-\frac{1}{5} * 49 \approx 10</span></td>
+\frac{1}{5} \cdot 49 \approx 10</span></td>
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <p>When looking at these three places we can see that this dataset
 matches Graph 2.</p>
 </div>
@@ -289,7 +288,7 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Graph 1</p>
-<p>We will use the same approach we used in part A.</p>
+<p>We will use the same approach we used in part (a).</p>
 <table>
 <colgroup>
 <col style="width: 50%"/>
@@ -305,20 +304,21 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <tr class="odd">
 <td><span class="math inline">0</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
-\frac{1}{5} * 44 \approx 9</span></td>
+\frac{1}{5} \cdot 44 \approx 9</span></td>
 </tr>
 <tr class="even">
 <td><span class="math inline">8</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
-\frac{1}{5} * 34 \approx 7</span></td>
+\frac{1}{5} \cdot 34 \approx 7</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">18</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
-\frac{1}{5} * 56 \approx 11</span></td>
+\frac{1}{5} \cdot 56 \approx 11</span></td>
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <p>When looking at these three places we can see that this dataset
 matches Graph 1.</p>
 </div>
@@ -366,20 +366,21 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <tr class="odd">
 <td><span class="math inline">0</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
-\frac{1}{5} * 44 \approx 11</span></td>
+\frac{1}{5} \cdot 44 \approx 11</span></td>
 </tr>
 <tr class="even">
 <td><span class="math inline">8</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
-\frac{1}{5} * 17 \approx 3</span></td>
+\frac{1}{5} \cdot 17 \approx 3</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">18</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
-\frac{1}{5} * 33 \approx 7</span></td>
+\frac{1}{5} \cdot 33 \approx 7</span></td>
 </tr>
 </tbody>
 </table>
+<p><br/></p>
 <p>When looking at these three places we can see that this dataset
 matches Graph 3.</p>
 </div>
@@ -427,24 +428,23 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <tr class="odd">
 <td><span class="math inline">0</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| =
-\frac{1}{5} * 62 \approx 12</span></td>
+\frac{1}{5} \cdot 62 \approx 12</span></td>
 </tr>
 <tr class="even">
 <td><span class="math inline">8</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| =
-\frac{1}{5} * 22 \approx 4</span></td>
+\frac{1}{5} \cdot 22 \approx 4</span></td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">18</span></td>
 <td><span class="math inline">\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| =
-\frac{1}{5} * 28 \approx 6</span></td>
+\frac{1}{5} \cdot 28 \approx 6</span></td>
 </tr>
 </tbody>
 </table>
-<p>When looking at these three places we can see that this dataset
-matches Graph 4.</p>
-<p>Another way would be choosing the only option not chosen in the other
-parts yet!</p>
+<p><br/> When looking at these three places we can see that this dataset
+matches Graph 4. Another way would be choosing the only option not
+chosen in the other parts yet!</p>
 </div>
 </div>
 </div>
@@ -496,8 +496,8 @@ converging. Your friend could choose a smaller learning rate, which will
 allow you to converge to the global minimum.</p>
 <p>If you and your friend chose the same initial predictions you are
 guaranteed to end up in the same spot.</p>
-<p>Because two of the option choices are possible the answer cannot be
-“None of the above.”</p>
+<p>Because two of the options are possible the answer cannot be “None of
+the above.”</p>
 </div>
 </div>
 </div>
@@ -663,13 +663,15 @@ w_1^*-4 \\ w_2^*-6 \end{bmatrix}
 + w_2^{\circ} \cdot (\text{max iterations})^{\text{variables} - 10}
         
 \end{aligned}</span>
-<p>Let MSE represent the mean squared error of a prediction rule, and
-let MAE represent the mean absolute error of a prediction rule. Select
-the symbol that should go in each blank.</p>
+<p>Let <span class="math inline">\text{MSE}</span> represent the mean
+squared error of a prediction rule, and let <span
+class="math inline">\text{MAE}</span> represent the mean absolute error
+of a prediction rule. Select the symbol that should go in each
+blank.</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
-<p>MSE<span class="math inline">(H^*)</span> ___ MSE<span
-class="math inline">(H^{\circ})</span></p>
+<p><span class="math inline">\text{MSE}(H^*)</span> ___ <span
+class="math inline">\text{MSE}(H^{\circ})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\leq</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\geq</span></p></li>
@@ -689,11 +691,10 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\leq</span></p>
-<p>Recall the equation for mean squared error: <span class="math inline">MSE(H(x_i)) =
+<p>Recall the equation for mean squared error: <span class="math inline">\text{MSE}(H(x_i)) =
 \frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2</span>. We can figure out which is
-bigger by subtracting MSE<span class="math inline">(H^{\circ})</span>
-from MSE<span class="math inline">(H^*)</span>. The difference between
-the squared differences is: <span class="math display">(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2</span>Notice
+bigger by subtracting <span class="math inline">\text{MSE}(H^{\circ})</span> from <span class="math inline">\text{MSE}(H^*)</span>. The difference between the
+squared differences is: <span class="math display">(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2</span>Notice
 there is a squared element, which means that the differences of <span class="math inline">w^*_0 - w^{\circ}_0</span>, <span class="math inline">w^*_1 - w^{\circ}_1</span>, and <span class="math inline">w^*_2 - w^{\circ}_2</span> will appear as squared
 terms, which are always positive! This means adding these squared
 differences to <span class="math inline">H^*</span> will make it at
@@ -704,9 +705,8 @@ least as large as the squared difference for <span class="math inline">H^{\circ}
 </div>
 <p><br></p>
 <h3 id="problem-6.2">Problem 6.2</h3>
-<p><span class="math inline">(</span>MAE<span
-class="math inline">(H^{\circ}))^2</span> ___ MSE<span
-class="math inline">(H^{\circ})</span></p>
+<p><span class="math inline">(\text{MAE}(H^{\circ}))^2</span> ___ <span
+class="math inline">\text{MSE}(H^{\circ})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\leq</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\geq</span></p></li>
@@ -726,22 +726,24 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\geq</span></p>
-<p>Recall the equation for mean absolute error: <span class="math inline">MAE(H(x_i)) =
+<p>Recall the equation for mean absolute error: <span class="math inline">\text{MAE}(H(x_i)) =
 \frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|</span>.</p>
 <p>This equation looks very similar to the mean squared error! We can
 actually take the square root of each sides of this equation to learn
 more about which side is larger: <span class="math display">
 \begin{align*}
-(MAE(H^\circ))^2 &amp;\_\_\_ MSE(H^\circ) \\
-\sqrt{(MAE(H^\circ))^2} &amp;\_\_\_ \sqrt{MSE(H^\circ)} \\
-MAE(H^\circ) &amp;\_\_\_ \sqrt{MSE(H^\circ)}
+(\text{MAE}(H^\circ))^2 &amp;\_\_\_ \text{MSE}(H^\circ) \\
+\sqrt{(\text{MAE}(H^\circ))^2} &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
+\text{MAE}(H^\circ) &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)}
 \end{align*}
 </span></p>
-<p>The square root of MSE is equal to MAE! These two elements are
-basically the same because squaring a value will lead to non-negatives
-and then it will be square rooted to match the absolute value from MAE.
-However the MSE being square rooted also allows for it to be smaller
-than the MSE making the correct symbol <span class="math inline">\geq</span>.</p>
+<p>The square root of <span class="math inline">\text{MSE}</span> is
+equal to <span class="math inline">\text{MAE}</span>! These two elements
+are basically the same because squaring a value will lead to
+non-negatives and then it will be square rooted to match the absolute
+value from <span class="math inline">\text{MAE}</span>. However the
+<span class="math inline">\text{MSE}</span> being square rooted also
+allows for it to be smaller than the <span class="math inline">\text{MSE}</span> making the correct symbol <span class="math inline">\geq</span>.</p>
 </div>
 </div>
 </div>

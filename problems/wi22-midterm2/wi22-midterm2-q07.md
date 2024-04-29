@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 7 on the second Midterm of Winter 2022</i>
+
 Recall in the game Stringle, players try to guess a randomly generated string. There is a new Stringle string available each day.
 
 Each day's Stringle string is a **six-letter string**, where each letter is chosen uniformly at random, **with replacement**, from among the 26 letters of the English alphabet. This means Stringle strings can have repeated letters, and they do not need to have any meaning as an English word.

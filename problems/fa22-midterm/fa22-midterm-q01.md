@@ -29,7 +29,7 @@ $$x_{i + 1} = x_i - \alpha(3x_i^2 + 2x_i) = -\frac{3}{4} x_i^2 + \frac{1}{2}x_i.
 # BEGIN SUBPROB
 
 If we start at $x_0 = -1$, should we go left or right? Can
-you verify mathematically? What is $x_1$? Can gradient descent converge?
+you verify this mathematically? What is $x_1$? Can gradient descent converge?
 If so, where it might converge to, given appropriate step size? 
 
 # BEGIN SOLUTION
@@ -67,7 +67,7 @@ divergent.
 # BEGIN SUBPROB
 
 If we start at $x_0 = 1$, should we go left or right? Can
-you verify mathematically? What is $x_1$? Can gradient descent converge?
+you verify this mathematically? What is $x_1$? Can gradient descent converge?
 If so, where it might converge to, given appropriate step size?
 
 # BEGIN SOLUTION

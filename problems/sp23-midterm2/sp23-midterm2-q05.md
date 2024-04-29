@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 5 on the second Midterm of Spring 2023</i>
+
 You have a large historical dataset of all competitors in
 past years of the Avocado Cup chess tournament. Each year, hundreds of
 chess players compete in the tournament, and one person is crowned the
@@ -21,12 +23,9 @@ each competitor as a winner or non-winner, given their experience level
 and birth month. Which of the following reasons best explains **why your
 classifier is ineffective** in identifying the winner?
 
-( ) Because it uses a variable (birth month) that likely has nothing to
-do with a person's chances of winning the tournament.
-( ) Because it uses a variable (experience level) that likely has a
-strong connection with a person's chances of winning the tournament.
-( ) Because it uses a dataset where there are many more non-winners than
-winners.
+( ) Because it uses a variable (birth month) that likely has nothing to do with a person's chances of winning the tournament.
+( ) Because it uses a variable (experience level) that likely has a strong connection with a person's chances of winning the tournament.
+( ) Because it uses a dataset where there are many more non-winners than winners.
 ( ) Because it uses a categorical response variable.
 
 # BEGIN SOLUTION

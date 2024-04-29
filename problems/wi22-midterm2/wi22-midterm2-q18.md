@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 18 on the second Midterm of Winter 2022</i>
+
 In today's Quadringle puzzle, the four strings are all very
 similar:
 

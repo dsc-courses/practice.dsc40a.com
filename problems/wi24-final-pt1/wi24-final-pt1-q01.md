@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 1 on the Winter 2024 Final Part 1</i>
+
 Suppose there is a dataset containing $10,000$ integers, the first $2,500$ of them are $3$s, the next $2,500$ of them are $5$s, the next $4,500$ of them are $7$s, and the last $500$ of them are $9$.
 
 # BEGIN SUBPROB
@@ -29,7 +31,7 @@ How does the mean of this dataset compared to its median?
 
 The mean is smaller than the median
 
-We can calculate the mean by doing $$\frac{2,500 * 3 + 2,500 * 5 + 4,500 * 7 + 500 * 9}{10,000} = 5.6$$ Using part A we know that $5.6 < 6$, which means the mean is smaller than the median.
+We can calculate the mean by doing $$\frac{2,500 \cdot  3 + 2,500 \cdot  5 + 4,500 \cdot  7 + 500 \cdot  9}{10,000} = 5.6$$ Using part (a) we know that $5.6 < 6$, which means the mean is smaller than the median.
 
 # END SOLUTION
 

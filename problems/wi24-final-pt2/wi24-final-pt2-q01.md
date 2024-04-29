@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 1 on the Winter 2024 Final Part 2</i>
+
 Consider an experiment where each of $n$ people selects
 one piece from their own set of 32 chess pieces, uniformly at random.
 The **result** of the experiment is a description of the **colors and
@@ -34,7 +36,7 @@ $12^n$
 
 # BEGIN SUBPROB
 
-As $n$ become large, what fraction of n people has selected a black pawn? Choose the answer that's closest to the actual fraction.
+As $n$ becomes large, what fraction of n people has selected a black pawn? Choose the answer that's closest to the actual fraction.
 
 ( ) 1/32
 ( ) 1/12

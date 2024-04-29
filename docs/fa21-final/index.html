@@ -138,7 +138,7 @@ y_8</span></p>
 <span class="math inline">R_{abs}(h)</span> and, as a result, have the
 same value of <span class="math inline">R_{abs}(h)</span>. Thus, <span class="math inline">R_{abs}(14) = R_{abs}(11) = 9</span>.</p>
 <p>From lecture, we know that</p>
-<p><span class="math display">\text{slope of R at h} = \frac{1}{n}
+<p><span class="math display">\text{slope of $R$ at $h$} = \frac{1}{n}
 \left( \left(\text{\# points } &lt; h\right) - \left(\text{\# points }
 &gt; h\right)\right)</span></p>
 <p>We can use this formula to determine what to add to <span class="math inline">R_{abs}(14)</span> to get <span class="math inline">R_{abs}(22)</span>. Note that for values of <span class="math inline">h</span> in the interval (14, 22), the slope of
@@ -415,8 +415,9 @@ that uses square footage to predict price to find <span class="math inline">\bar
 <hr />
 <h2 id="problem-6">Problem 6</h2>
 <p><em>Originally Problem 6 on the Fall 2021 Final Exam.</em></p>
-<p>Billy’s aunt owns a jewellery store, and gives him data on 5000 of
-the diamonds in her store. For each diamond, we have:</p>
+<p>Billy’s aunt owns a jewellery store, and gives him data on <span
+class="math inline">5000</span> of the diamonds in her store. For each
+diamond, we have:</p>
 <ul>
 <li><strong>carat</strong>: the weight of the diamond, in carats</li>
 <li><strong>length</strong>: the length of the diamond, in
@@ -476,7 +477,7 @@ centimeters</li>
 </tbody>
 </table>
 </div>
-<p>Billy has enlisted our help in predicting the price of a diamond
+<p><br> Billy has enlisted our help in predicting the price of a diamond
 given various other features.</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
@@ -485,6 +486,7 @@ features, carat and length, to predict price. Specifically, our
 prediction rule will be of the form</p>
 <p><span class="math display">\text{predicted price} = w_0 + w_1 \cdot
 \text{carat} + w_2 \cdot \text{length}</span></p>
+<p><br></p>
 <p>We will use least squares to find <span class="math inline">\vec{w}^*
 = \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^* \end{bmatrix}</span>.</p>
 <p>Write out the first 5 rows of the design matrix, <span

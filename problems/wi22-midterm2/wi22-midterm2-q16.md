@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 16 on the second Midterm of Winter 2022</i>
+
 Stringle has become such a popular game that many spin-offs
 have been created. In a variant called Quadringle, players have to solve
 four different Stringle puzzles at the same time. We'll say that a

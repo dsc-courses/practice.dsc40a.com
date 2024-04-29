@@ -25,9 +25,11 @@ The important thing to note here is the y axis is equal to $R_{abs}(h)$ and the 
 
 | $h^*$   | $R_{abs}(h)$   |
 |---------|---------|
-| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} * 41 \approx 8$     |
-| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} * 11 = 2$  |
-| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} * 49 \approx 10$  |
+| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} \cdot 41 \approx 8$     |
+| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} \cdot 11 = 2$  |
+| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} \cdot 49 \approx 10$  |
+
+<br>
 
 When looking at these three places we can see that this dataset matches Graph 2.
 
@@ -52,13 +54,15 @@ $\{-3, 1, 9, 11, 20\}$
 
 Graph 1
 
-We will use the same approach we used in part A.
+We will use the same approach we used in part (a).
 
 | $h^*$   | $R_{abs}(h)$   |
 |---------|---------|
-| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} * 44 \approx 9$     |
-| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} * 34 \approx 7$  |
-| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} * 56 \approx 11$  |
+| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} \cdot 44 \approx 9$     |
+| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} \cdot 34 \approx 7$  |
+| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} \cdot 56 \approx 11$  |
+
+<br>
 
 When looking at these three places we can see that this dataset matches Graph 1.
 
@@ -87,9 +91,11 @@ We will use the same approach we used in the previous parts.
 
 | $h^*$   | $R_{abs}(h)$   |
 |---------|---------|
-| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} * 44 \approx 11$     |
-| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} * 17 \approx 3$  |
-| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} * 33 \approx 7$  |
+| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} \cdot 44 \approx 11$     |
+| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} \cdot 17 \approx 3$  |
+| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} \cdot 33 \approx 7$  |
+
+<br>
 
 When looking at these three places we can see that this dataset matches Graph 3.
 
@@ -118,12 +124,12 @@ We will use the same approach we used in the previous parts.
 
 | $h^*$   | $R_{abs}(h)$   |
 |---------|---------|
-| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} * 62 \approx 12$     |
-| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} * 22 \approx 4$  |
-| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} * 28 \approx 6$  |
+| $0$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-0| = \frac{1}{5} \cdot 62 \approx 12$     |
+| $8$  | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-8| = \frac{1}{5} \cdot 22 \approx 4$  |
+| $18$   | $\frac{1}{5}\sum_{i = 1}^{5}|y_i-18| = \frac{1}{5} \cdot 28 \approx 6$  |
 
+<br>
 When looking at these three places we can see that this dataset matches Graph 4.
-
 Another way would be choosing the only option not chosen in the other parts yet!
 
 # END SOLUTION

@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Originally Problem 3 on the Spring 2023 Final Part 2</i>
+
 Consider three events $A, B,$ and $C$ in the same sample
 space.
 

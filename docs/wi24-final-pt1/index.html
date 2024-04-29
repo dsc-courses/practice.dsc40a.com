@@ -64,12 +64,13 @@
 </script>
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
-<p><strong>Instructor(s):</strong> Janine Tiefenbruck (???)</p>
+<p><strong>Instructor(s):</strong> Aobo Li</p>
 <p>This exam was administered in person. The exam was open-notes,
 open-book, but no calculator. Students had <strong>50 minutes</strong>
 to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Originally Problem 1 on the Winter 2024 Final Part 1</i></p>
 <p>Suppose there is a dataset containing <span
 class="math inline">10,000</span> integers, the first <span
 class="math inline">2,500</span> of them are <span
@@ -132,9 +133,10 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The mean is smaller than the median</p>
-<p>We can calculate the mean by doing <span class="math display">\frac{2,500 * 3 + 2,500 * 5 + 4,500 * 7 + 500 *
-9}{10,000} = 5.6</span> Using part A we know that <span class="math inline">5.6 &lt; 6</span>, which means the mean is smaller
-than the median.</p>
+<p>We can calculate the mean by doing <span class="math display">\frac{2,500 \cdot  3 + 2,500 \cdot  5 + 4,500
+\cdot  7 + 500 \cdot  9}{10,000} = 5.6</span> Using part (a) we know
+that <span class="math inline">5.6 &lt; 6</span>, which means the mean
+is smaller than the median.</p>
 </div>
 </div>
 </div>
@@ -142,6 +144,7 @@ than the median.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 2 on the Winter 2024 Final Part 1</i></p>
 <p>You and a friend independently perform gradient descent on the same
 function, but after <span class="math inline">200</span> iterations, you
 have different results. Which of the following is sufficient <strong>on
@@ -194,6 +197,7 @@ guaranteed to end up in the same spot.</p>
 </div>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<p><i>Originally Problem 3 on the Winter 2024 Final Part 1</i></p>
 <p>Suppose there is a dataset contains four values: <span
 class="math inline">-2</span>, <span class="math inline">-1</span>,
 <span class="math inline">2</span>, <span class="math inline">4</span>.
@@ -203,8 +207,6 @@ over this dataset.</p>
 <h3 id="problem-3.1">Problem 3.1</h3>
 <p>Write down the expression of mean square error and its derivative
 given this dataset.</p>
-<p><span class="math inline">R_{sq}(h)</span> =</p>
-<p><span class="math inline">\frac{dR_{sq}(h)}{dh}</span> =</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_1">
@@ -232,11 +234,12 @@ derivative:</p>
 \frac{dR_{sq}(h)}{dh} &amp;=
 \frac{dR_{sq}(h)}{dh}(\frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2) \\
 &amp;= \frac{1}{4}\sum_{i=1}^{4}\frac{dR_{sq}(h)}{dh}((y_i-h)^2) \\
-&amp;\text{We can use the chain rule to find the derivative of
-$(y_i-h)^2$.} \\
-&amp;\text{Recall the chain rule is: $\frac{df(x)}{dx}[(f(x))^n] =
-n(f(x))^{n-1} * f'(x)$.} \\
-&amp;= \frac{1}{4}\sum_{i=1}^{4}2(y_i-h) * -1 \\
+\end{align*}
+</span> We can use the chain rule to find the derivative of <span class="math inline">(y_i-h)^2</span>. Recall the chain rule is: <span class="math inline">\frac{df(x)}{dx}[(f(x))^n] = n(f(x))^{n-1} \cdot
+f'(x)</span>.</p>
+<p><span class="math display">
+\begin{align*}
+&amp;= \frac{1}{4}\sum_{i=1}^{4}2(y_i-h) \cdot -1 \\
 &amp;= \frac{1}{4}\sum_{i=1}^{4} 2(h - y_i) \\
 &amp;= \frac{1}{2}\sum_{i=1}^{4} (h-y_i)
 \end{align*}
@@ -252,7 +255,6 @@ class="math inline">h_0</span> and the learning rate to be <span
 class="math inline">\frac{1}{4}</span>. After two gradient descent
 steps, <span class="math inline">h_2=\frac{1}{4}</span>. What is the
 value of <span class="math inline">h_0</span>?</p>
-<p><span class="math inline">h_0</span> =</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
@@ -313,7 +315,7 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>2 or 3</p>
+<p><span class="math inline">2</span> or <span class="math inline">3</span> additional steps (both are correct).</p>
 <p>The gradient descent equation is given by: <span class="math display">\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
 \end{aligned}</span> Now we start from <span class="math inline">\alpha
@@ -345,48 +347,64 @@ so both <span class="math inline">2</span> and <span class="math inline">3</span
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p>Albert collected 400 data points from a radiation detector. Each data
-point contains 3 feature: feature A, feature B and feature C, along with
-the true particle energy E. Albert want to design a linear regression
-algorithm to predict the energy E of each particle, given one or a
-combination(s) of feature A, B, C. As the first step, Albert calculated
-the correlation coefficients among A, B, C and E. He wrote it down in
-the following table, where each cell of the table represents the
-correlaton of two terms:</p>
+<p><i>Originally Problem 4 on the Winter 2024 Final Part 1</i></p>
+<p>Albert collected <span class="math inline">400</span> data points
+from a radiation detector. Each data point contains <span
+class="math inline">3</span> features: feature <span
+class="math inline">A</span>, feature <span class="math inline">B</span>
+and feature <span class="math inline">C</span>. The true particle energy
+<span class="math inline">E</span> is also reported. Albert wants to
+design a linear regression algorithm to predict the energy <span
+class="math inline">E</span> of each particle, given a combination of
+one or more of feature <span class="math inline">A</span>, <span
+class="math inline">B</span>, and <span class="math inline">C</span>. As
+the first step, Albert calculated the correlation coefficients among
+<span class="math inline">A</span>, <span class="math inline">B</span>,
+<span class="math inline">C</span> and <span
+class="math inline">E</span>. He wrote it down in the following table,
+where each cell of the table represents the correlaton of two terms:</p>
+<div>
 <table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th>Feature A</th>
-<th>Feature B</th>
-<th>Feature C</th>
-<th>Energy E</th>
+<th><span class="math inline">A</span>   </th>
+<th><span class="math inline">B</span>   </th>
+<th><span class="math inline">C</span>   </th>
+<th><span class="math inline">E</span>   </th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Feature A</td>
+<td><span class="math inline">A</span></td>
 <td>1</td>
 <td>-0.99</td>
 <td>0.13</td>
 <td>0.8</td>
 </tr>
 <tr class="even">
-<td>Feature B</td>
+<td><span class="math inline">B</span></td>
 <td>-0.99</td>
 <td>1</td>
 <td>0.25</td>
 <td>-0.95</td>
 </tr>
 <tr class="odd">
-<td>Feature C</td>
+<td><span class="math inline">C</span></td>
 <td>0.13</td>
 <td>0.25</td>
 <td>1</td>
 <td>0.72</td>
 </tr>
 <tr class="even">
-<td>Energy E</td>
+<td><span class="math inline">E</span></td>
 <td>0.8</td>
 <td>-0.95</td>
 <td>0.72</td>
@@ -394,16 +412,17 @@ correlaton of two terms:</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>Albert want to start with a simple model: fitting only a single
+<p>Albert wants to start with a simple model: fitting only a single
 feature to obtain the true energy (i.e. <span class="math inline">y =
 w_0+w_1 x</span>). Which feature should he choose as <span
 class="math inline">x</span> to get the lowest mean square error?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A</p></li>
-<li><p><input type="radio" disabled="" /> B</p></li>
-<li><p><input type="radio" disabled="" /> C</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">B</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">C</span></p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -418,26 +437,27 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>B</p>
-<p>B is the correct answer, because it has the highest absolute
-correlation (0.95), the negative sign in front of B just means it is
-negatively correlated to energy and it can be compensated by a negative
-sign in the weight.</p>
+<p><span class="math inline">B</span></p>
+<p><span class="math inline">B</span> is the correct answer, because it
+has the highest absolute correlation (0.95), the negative sign in front
+of <span class="math inline">B</span> just means it is negatively
+correlated to energy, and it can be compensated by a negative sign in
+the weight.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>Albert want to add another feature into his linear regression in part
-A to further boost the model’s performance. (i.e. <span
+<p>Albert wants to add another feature to his linear regression in part
+(a) to further boost the model’s performance. (i.e. <span
 class="math inline">y = w_0+w_1 x + +w_2 x_2</span>) Which feature
 should he choose as <span class="math inline">x_2</span> to make
 additional improvements?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> A</p></li>
-<li><p><input type="radio" disabled="" /> B</p></li>
-<li><p><input type="radio" disabled="" /> C</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">B</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">C</span></p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -452,22 +472,22 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>C</p>
-<p>C is the correct answer, because although A has a higher correlation
-with energy, it also has an extremely high correlation with B (-0.99),
-that means adding A into the fit will not be too much useful, since it
-provides almost the same information as B.</p>
+<p><span class="math inline">C</span></p>
+<p><span class="math inline">C</span> is the correct answer, because
+although <span class="math inline">A</span> has a higher correlation
+with energy, it also has an extremely high correlation with <span class="math inline">B</span> (-0.99), that means adding <span class="math inline">A</span> into the fit will not be too useful, since
+it provides almost the same information as <span class="math inline">B</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
-<p>Albert further refine his algorithm by fitting a prediction rule of
+<p>Albert further refines his algorithm by fitting a prediction rule of
 the form: <span class="math display">\begin{aligned}
 H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
 \end{aligned}</span></p>
-<p>Given this prediction rule, What are the dimensions of the design
+<p>Given this prediction rule, what are the dimensions of the design
 matrix <span class="math inline">X</span>?</p>
 <p><span class="math display">\begin{bmatrix}
 &amp; &amp; &amp; \\
@@ -501,41 +521,53 @@ are <span class="math inline">3</span> features present inside of <span class="m
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.4">Problem 4.4</h3>
-<p>Now Albert solve the normal equations and find the solution to be:
-<span class="math display">\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \\
-w_2^*  \end{bmatrix}</span> To improve on this result, Albert decides to
-modify his design matrix with the following steps:</p>
-<ol type="1">
-<li><p>Add 1 to every entry to the first column</p></li>
-<li><p>Interchange the second and the third column</p></li>
-</ol>
-<p>Let <span class="math inline">X_a</span> be the modified design
-matrix. Let <span class="math inline">\vec{w_a}^* =
-(X_a^TX_a)^{-1}X_a^T\vec{y}</span>. Express the components <span
-class="math inline">\vec{w_a}^*</span> in terms of <span
-class="math inline">w_0^*, w_1^*, w_2^*</span>, which were the
-components of <span class="math inline">\vec{w}^*</span>.</p>
-<p><span class="math display">\vec{w_a}^* = \begin{bmatrix}
-\phantom{XXX} \\ \phantom{XXX} \\ \phantom{XXX} \\ \phantom{XXX} \\
-\phantom{XXX} \end{bmatrix}</span></p>
-<div id="accordionExample" class="accordion">
+<!-- Commented out the last subproblem, because the solution is weird?? Need to rework. -->
+<!-- <br>
+
+### Problem 4.4
+
+
+
+Now Albert solves the normal equations and finds the solution to be:
+$$\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^*  \end{bmatrix}$$
+To improve on this result, Albert decides to modify his design matrix
+with the following steps:
+
+1.  Add 1 to every entry to the first column
+
+2.  Swap the second and the third column
+
+Let $X_a$ be the modified design matrix. Let
+$\vec{w_a}^* = (X_a^TX_a)^{-1}X_a^T\vec{y}$. 
+
+Express the components
+$\vec{w_a}^*$ in terms of $w_0^*, w_1^*, w_2^*$, which were the
+components of $\vec{w}^*$.
+
+$$\vec{w_a}^* = \begin{bmatrix} ? \\ ? \\ ? \\ \end{bmatrix}$$
+
+
+
+
+
+
+<div class="accordion" id="accordionExample">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_4">
 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse"
-aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div id="collapse4_4" class="accordion-collapse collapse collapse" aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
+
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math display">\vec{w}^* = \begin{bmatrix} w_0^*/2 \\
 w_2^* \\ w_1^*  \end{bmatrix}</span></p>
 <p>We should follow the steps Albert did to construct <span class="math inline">X</span>. We will add <span class="math inline">1</span> to be the first element in each row and
-then switch the constants attatched to <span class="math inline">w_1</span> (<span class="math inline">A \cdot
+then switch the constants attached to <span class="math inline">w_1</span> (<span class="math inline">A \cdot
 B</span>) and <span class="math inline">w_2</span> (<span class="math inline">B^{C-7}</span>): <span class="math display">
 X_a = \begin{bmatrix}
 1 &amp; B^{C-7} &amp; A \\
@@ -572,11 +604,17 @@ matrix, <span class="math inline">\sum_{i = 1}^{400}{B^{C-7} \cdot
 y_i}</span>, is proportional to <span class="math inline">w_2^*</span>.
 Finally, the third component of our matrix, <span class="math inline">\sum_{i = 1}^{400}{A \cdot y_i}</span>, is
 proportional to <span class="math inline">w_1^*</span>.</p>
+
 </div>
 </div>
 </div>
 </div>
-<p><br></p>
+
+
+
+
+    
+<br> -->
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
