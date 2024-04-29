@@ -86,7 +86,7 @@ local minimum.
 
 # BEGIN SUBPROB
 
-Write down 1 condition to terminate the gradient descent
+Write down $1$ condition to terminate the gradient descent
 algorithm (in general).
 
 # BEGIN SOLUTION
