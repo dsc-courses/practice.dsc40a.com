@@ -74,15 +74,15 @@ In all cases, you should work on these problems on paper, since your exams will 
     <tr>
       <th scope="row">Fall 2021</th>
       <td>Suraj Rampure</td>
-      <td><a href='fa21-final/index.html'>Final</a>
+      <td><a href="fa21-final/index.html">Final</a>
       </td>
     </tr>
-    <tr>
+    <!-- <tr>
       <th scope="row">Spring 2021</th>
       <td>Janine Tiefenbruck</td>
       <td><a href='sp21-midterm1/index.html'>Midterm 1</a>
       </td>
-    </tr>
+    </tr> -->
   </tbody>
 </table>
 </center>
