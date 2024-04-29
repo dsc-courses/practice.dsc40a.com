@@ -26,7 +26,7 @@ $$\begin{align*}
         \frac{dR_{sq}(h)}{dh} = -(y_{0}-h)- (y_{1}-h)    
 \end{align*}$$
 
-We know that the derivative has to be 0 at the local
+We know that the derivative has to be $0$ at the local
 minima, therefore at $h=5$, we have: 
 
 $$\begin{align*}

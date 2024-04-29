@@ -19,9 +19,9 @@ $$\begin{align*}
         f''(x) &= n(n-1)x^{n-2}
 \end{align*}$$
 
-If n is even, then n-2 must also be even, therefore
+If $n$ is even, then $n-2$ must also be even, therefore
 $f''(x) = n(n-1)x^{n-2}$ will always be a positive number. This means
-the second derivative of $f(x)$ is always larger than 0 and therefore
+the second derivative of $f(x)$ is always larger than $0$ and therefore
 passes the second derivative test.
 
 # END SOLUTION

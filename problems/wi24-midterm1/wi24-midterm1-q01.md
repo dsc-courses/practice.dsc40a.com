@@ -2,7 +2,7 @@
 
 _Originally Problem 1 on the first Winter 2024 Midterm Exam._
 
-Consider a dataset $D$ with 5 data points
+Consider a dataset $D$ with $5$ data points
 $\{7,5,1,2,a\}$, where a is a positive real number. Note that $a$ is not
 necessarily an integer.
 
@@ -47,10 +47,10 @@ Make sure to show your work.
 
 # BEGIN SOLUTION
 
-Since there are 3 possible median values, we will have to discuss each
+Since there are $3$ possible median values, we will have to discuss each
 situation separately. <br>
 
-In case 1, when $0<a\leq2$, $\text{Median}(D) = 2$.
+In case $1$, when $0<a\leq2$, $\text{Median}(D) = 2$.
 So, we have: 
 
 $$\begin{align*}
@@ -63,7 +63,7 @@ But $a<-5$ is in conflict with the condition $0<a\leq2$,
 therefore there is no solution in this situation, and Median$(D) = 2$
 is impossible.
 
-In case 2, when $2<a<5$, $\text{Median}(D) = a$. 
+In case $2$, when $2<a<5$, $\text{Median}(D) = a$. 
 So, we have:
 
 $$\begin{align*}
