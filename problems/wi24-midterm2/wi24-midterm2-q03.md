@@ -2,7 +2,7 @@
 
 <i>Originally Problem 3 on the Second Winter 2024 Midterm.</i>
 
-Schrödinger's cat is a famous thought experiment in quantum mechanics proposed by physicist Erwin Schrödinger in 1935. The
+Schrödinger's cat is a famous thought experiment in quantum mechanics proposed by physicist Erwin Schrödinger in $1935$. The
 experiment is described below:
 
 "Imagine there's a hypothetical cat in a closed box with a toxic
@@ -76,7 +76,7 @@ space.
 [ ] None of Above.
 
 # BEGIN SOLUTION
-Statements 1 and 2 are true. Statements 3, 4, and 5 are false.
+Statements $1$ and $2$ are true. Statements $3$, $4$, and $5$ are false.
 
 <br>
 
@@ -86,15 +86,15 @@ $P(\text{Event 1}) = P(\text{Event 1} | \text{Event 2})$. So for statement 1, we
 - $P(\text{Decay})$ is the fraction of the **total Venn Diagram** that is green.
 - $P(\text{Decay}|\text{Cat Dead})$ is the fraction of the **"Cat Dead" region** that is green.
 
-These two fractions look the same. So that means the independence equation holds, and statement 1 is true.
+These two fractions look the same. So that means the independence equation holds, and statement $1$ is true.
 
-We can do the same thing but instead with the "Cat Alive" region to also show that statement 2 is true.
+We can do the same thing but instead with the "Cat Alive" region to also show that statement $2$ is true.
 
-The "Cat Alive" and "Cat Dead" regions intersect, implying those two events can occur at the same time. If two events can occur at the same time, they are not mutually exclusive, so statement 3 is false.
+The "Cat Alive" and "Cat Dead" regions intersect, implying those two events can occur at the same time. If two events can occur at the same time, they are not mutually exclusive, so statement $3$ is false.
 
-A partition of a sample is a _perfect division_ the sample space into a bunch of little pieces, without any overlaps or empty space. For this problem, it would mean finding a way to perfectly divide the Venn Diagram. You cannot divide the Venn Diagram into the regions "Cat Dead", "Cat Alive", and "Decay"; go ahead and try, no matter how you slice it the overlaps will mess up the division. This means that "Cat Dead", "Cat Alive", and "Decay" do not form a partition of the sample, so statement 4 is false.
+A partition of a sample is a _perfect division_ the sample space into a bunch of little pieces, without any overlaps or empty space. For this problem, it would mean finding a way to perfectly divide the Venn Diagram. You cannot divide the Venn Diagram into the regions "Cat Dead", "Cat Alive", and "Decay"; go ahead and try, no matter how you slice it the overlaps will mess up the division. This means that "Cat Dead", "Cat Alive", and "Decay" do not form a partition of the sample, so statement $4$ is false.
 
-Since statements 1 and 2 were true, the answer cannot be none of the above, so statement 5 is false.
+Since statements $1$ and $2$ were true, the answer cannot be none of the above, so statement $5$ is false.
 
 # END SOLUTION
 
@@ -112,7 +112,7 @@ You're given the following probabilities:
 
 -   $P(\text{Decay}) = \frac{1}{5}$
 
-Using the Venn diagram in Problem 3.2, calculate the probability for
+Using the Venn diagram in Problem $3.2$, calculate the probability for
 Schrodinger's cat to be in the superposition state (i.e. both dead and
 alive):
 
