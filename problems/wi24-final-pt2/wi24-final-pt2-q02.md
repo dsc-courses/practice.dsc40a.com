@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the Winter 2024 Final Part 2</i>
+<i>Source: [Winter 2024 Final Part 2](../wi24-final-pt2/index.html), Problem 2</i>
 
 You run the $k$-means clustering algorithm on a dataset
 and it converges to a certain clustering with associated inertia $I$.

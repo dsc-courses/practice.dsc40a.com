@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 3 on the Winter 2024 Final Part 2</i>
+<i>Source: [Winter 2024 Final Part 2](../wi24-final-pt2/index.html), Problem 3</i>
 
 With the help of the Alien from Bayesian Galaxy, Issac
 built a Little Hadron Collider in his garage to continue testing some

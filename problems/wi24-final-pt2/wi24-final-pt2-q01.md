@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 1 on the Winter 2024 Final Part 2</i>
+<i>Source: [Winter 2024 Final Part 2](../wi24-final-pt2/index.html), Problem 1</i>
 
 Consider an experiment where each of $n$ people selects
 one piece from their own set of 32 chess pieces, uniformly at random.
