@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-_Originally Problem 3 on the Fall 2022 Midterm Exam._
+<i>Source: [Fall 2022 Midterm](../fa22-midterm/index.html), Problem 3</i>
 
 Mahdi runs a local pastry shop near UCSD and sells traditional desert
 called Baklava. He bakes Baklavas every morning to keep his promise of

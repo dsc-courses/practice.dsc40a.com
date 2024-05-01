@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-_Originally Problem 4 on the Fall 2022 Midterm Exam._
+<i>Source: [Fall 2022 Midterm](../fa22-midterm/index.html), Problem 4</i>
 
 Consider a dataset that consists of $y_1, \cdots, y_n$. In class, we
 used calculus to minimize mean squared error,
