@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 8 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 8</i>
 
 For this problem, we'll say that there are six vowels: A, E, I, O, U, and Y. What is the probability that today's Stringle string satisfies at least one of the following conditions?
 

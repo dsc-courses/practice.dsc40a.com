@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 16 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 16</i>
 
 Stringle has become such a popular game that many spin-offs
 have been created. In a variant called Quadringle, players have to solve

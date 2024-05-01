@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 15 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 15</i>
 
 This problem is a continuation of the previous problem, using
 the same survey results.

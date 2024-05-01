@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 14 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 14</i>
 
 You survey 250 Stringle players and ask them several questions
 about their Stringle-playing behavior, with the goal of figuring out how

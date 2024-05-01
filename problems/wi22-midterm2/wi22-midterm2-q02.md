@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 2</i>
 
 Suppose that every day, the Stringle string is chosen without replacement from among the set of all possible valid strings. What is the probability that DSCTEN was the Stringle string for one of the first 100 days after the game's release?
 

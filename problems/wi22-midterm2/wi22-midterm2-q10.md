@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 10 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 10</i>
 
 Consider the following three events:
 

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 6 on the second Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 2](../wi22-midterm2/index.html), Problem 6</i>
 
 How many possible Stringle strings contain exactly three H's, like HAHAHA or SSSHHH?
 
