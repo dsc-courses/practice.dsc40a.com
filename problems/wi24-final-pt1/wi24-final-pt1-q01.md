@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 1 on the Winter 2024 Final Part 1</i>
+<i>Source: [Winter 2024 Final Part 1](../wi24-final-pt1/index.html), Problem 1</i>
 
 Suppose there is a dataset containing 10000 integers: 
 

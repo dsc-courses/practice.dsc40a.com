@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the Winter 2024 Final Part 1</i>
+<i>Source: [Winter 2024 Final Part 1](../wi24-final-pt1/index.html), Problem 2</i>
 
 You and a friend independently perform gradient descent on the same function, but after $200$ iterations, you have different results. Which of the following is sufficient **on its own** to explain the difference in your results? **Note:** When we say "same function" we assume the learning rate and initial predictions are the same too until said otherwise.
 

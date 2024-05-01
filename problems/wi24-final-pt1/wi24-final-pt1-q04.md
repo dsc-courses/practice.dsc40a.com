@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the Winter 2024 Final Part 1</i>
+<i>Source: [Winter 2024 Final Part 1](../wi24-final-pt1/index.html), Problem 4</i>
 
 Albert collected 400 data points from a radiation detector.
 Each data point contains 3 features: feature $A$, feature $B$ and feature $C$.

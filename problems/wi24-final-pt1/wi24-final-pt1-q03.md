@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 3 on the Winter 2024 Final Part 1</i>
+<i>Source: [Winter 2024 Final Part 1](../wi24-final-pt1/index.html), Problem 3</i>
 
 Suppose there is a dataset contains four values: $-2$, $-1$,
 $2$, $4$. You would like to use gradient descent to minimize the mean square
