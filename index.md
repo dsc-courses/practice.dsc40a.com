@@ -11,29 +11,45 @@ title: Home – DSC 40A Practice
 
 This site contains practice problems taken from old DSC 40A exams. We’ve organized problems in two ways:
 
-1. By **topic**. This makes it easy to practice old exam problems by topic.
-1. By **past exam**. This makes it easy to simulate taking an entire exam.
+1. By **[topic](#topics)**. This makes it easy to practice old exam problems by topic.
+1. By **[past exam](#exams)**. This makes it easy to simulate taking an entire exam.
 
 In all cases, you should work on these problems on paper, since your exams will also be on paper. Even though you will see some multiple choice bubbles, you intentionally cannot select them.
 
-**Note that this site is new for Spring 2024; problems will be added regularly.**
+Note that some offerings in the past had one Midterm Exam and one Final Exam, while other offerings had two Midterm Exams and a two-part Final Exam. Typically:
+
+- Midterms, Midterm 1s, and Final Part 1s cover the first 5 weeks of the course (loss functions, empirical risk minimization, linear regression, gradient descent), while
+- Midterm 2s and Final Part 2s cover the latter 5 weeks of the course (mostly probability).
+- Offerings with a single Final Exam were typically cumulative.
+
+**Note that in Spring 2024**, we've covered more linear algebra concepts (e.g. projecting a vector onto the span of other vectors) than were covered in the past, and our Midterm Exam will reflect this. However, we haven't yet covered gradient descent, which appears on most past Midterm/Midterm 1s but will not appear on ours.
+
+Furthermore, note that different exams were offered in different formats (remote vs. in-person) with different time limits (50 minutes vs. 80 minutes vs. 180 minutes) and different levels of allowed resources (student-created notes sheets allowed vs. instructor-created reference sheets only vs. no notes). **In Spring 2024, the Midterm Exam is 80 minutes long, and students are allowed to bring one two-sided index card (4 inches by 6 inches) of notes that they write by hand (no iPad).**
 
 ---
 
 ## 📊 Topics
 
-- [Bayes' Theorem](bayes-theorem/index.html)
-- [Clustering](clustering/index.html)
-- [Combinatorics](combinatorics/index.html)
-- [Conditional Independence](conditional-independence/index.html)
-- [Convexity](convexity/index.html)
-- [Empirical Risk Minimization](empirical-risk-minimization/index.html)
-- [Gradient Descent](gradient-descent/index.html)
-- [Multiple Linear Regression and The Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
-- [Naive Bayes Classifiers](naive-bayes-classifiers/index.html)
-- [Simple Linear Regression](simple-linear-regression/index.html)
-- [Sizes of Sets](sizes-of-sets/index.html)
+In scope for the Spring 2024 Midterm Exam:
+
 - [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
+- [Empirical Risk Minimization](empirical-risk-minimization/index.html)
+- [Simple Linear Regression](simple-linear-regression/index.html)
+- [Multiple Linear Regression and the Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
+
+Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
+
+- [Gradient Descent and Convexity](gradient-descent-convexity/index.html)
+- [Clustering](clustering/index.html)
+- More to come!
+<!-- - [] -->
+
+<!-- <li><a href="sizes-of-sets/index.html">Sizes of Sets</a></li>
+<li><a href="naive-bayes-classifiers/index.html">Naive Bayes Classifiers</a></li>
+<li><a href="bayes-theorem/index.html">Bayes' Theorem</a></li>
+<li><a href="combinatorics/index.html">Combinatorics</a></li>
+<li><a href="conditional-independence/index.html">Conditional Independence</a></li> -->
+
 
 ---
 
@@ -54,18 +70,12 @@ In all cases, you should work on these problems on paper, since your exams will 
     </tr>
   </thead>
   <tbody>
-    <!-- <tr>
+  <tr>
       <th scope="row">Winter 2024</th>
       <td>Aobo Li</td>
       <td><a href='wi24-midterm1/index.html'>Midterm 1</a>
       <br><a href='wi24-midterm2/index.html'>Midterm 2</a>
-      <br><a href='wi24-final-pt1/index.html'>Final 1</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Winter 2022</th>
-      <td>Janine Tiefenbruck</td>
-      <td><a href='wi22-midterm1/index.html'>Midterm 1</a>
+      <br><a href='wi24-final-pt1/index.html'>Final Part 1</a>
       </td>
     </tr>
     <tr>
@@ -79,19 +89,25 @@ In all cases, you should work on these problems on paper, since your exams will 
       <td>Truong Son Hy, Mahdi Soleymani</td>
       <td><a href='fa22-midterm/index.html'>Midterm</a>
       </td>
-    </tr> -->
+    </tr>
+    <tr>
+      <th scope="row">Winter 2022</th>
+      <td>Janine Tiefenbruck</td>
+      <td><a href='wi22-midterm1/index.html'>Midterm 1</a>
+      </td>
+    </tr>
     <tr>
       <th scope="row">Fall 2021</th>
       <td>Suraj Rampure</td>
       <td><a href="fa21-final/index.html">Final</a>
       </td>
     </tr>
-    <!-- <tr>
+    <tr>
       <th scope="row">Spring 2021</th>
       <td>Janine Tiefenbruck</td>
       <td><a href='sp21-midterm1/index.html'>Midterm 1</a>
       </td>
-    </tr> -->
+    </tr>
   </tbody>
 </table>
 </center>
