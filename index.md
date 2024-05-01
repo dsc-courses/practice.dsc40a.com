@@ -26,6 +26,8 @@ Note that some offerings in the past had one Midterm Exam and one Final Exam, wh
 
 Furthermore, note that different exams were offered in different formats (remote vs. in-person) with different time limits (50 minutes vs. 80 minutes vs. 180 minutes) and different levels of allowed resources (student-created notes sheets allowed vs. instructor-created reference sheets only vs. no notes). **In Spring 2024, the Midterm Exam is 80 minutes long, and students are allowed to bring one two-sided index card (4 inches by 6 inches) of notes that they write by hand (no iPad).**
 
+To get a rough sense of the format of the exam, you can see this [**past exam PDF**](https://drive.google.com/file/d/1izK0af67J0ub0keAVkO-T7piaG_PIIGF/view).
+
 ---
 
 ## 📊 Topics
