@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 6 on the Spring 2023 Final Part 2</i>
+<i>Source: [Spring 2023 Final Part 2](../sp23-final-pt2/index.html), Problem 6</i>
 
 Suppose UCSD implements a new graduation requirement for
 data science majors. All data science majors must submit a list of

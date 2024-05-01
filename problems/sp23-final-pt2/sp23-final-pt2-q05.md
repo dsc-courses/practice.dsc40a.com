@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 5 on the Spring 2023 Final Part 2</i>
+<i>Source: [Spring 2023 Final Part 2](../sp23-final-pt2/index.html), Problem 5</i>
 
 You're interested in seeing the Milky Way in the night
 sky, which you have sometimes been able to do when conditions are right.

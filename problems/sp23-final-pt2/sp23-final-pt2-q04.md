@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the Spring 2023 Final Part 2</i>
+<i>Source: [Spring 2023 Final Part 2](../sp23-final-pt2/index.html), Problem 4</i>
 
 At Panda Express, there are 18 items available on the
 menu. Food is served on plates that are divided into three equal
