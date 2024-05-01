@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 3 on the Second Winter 2024 Midterm.</i>
+<i>Source: [Winter 2024 Midterm 2](../wi24-midterm2/index.html), Problem 3</i>
 
 Schrödinger's cat is a famous thought experiment in quantum mechanics proposed by physicist Erwin Schrödinger in $1935$. The
 experiment is described below:

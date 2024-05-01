@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the Second Winter 2024 Midterm.</i>
+<i>Source: [Winter 2024 Midterm 2](../wi24-midterm2/index.html), Problem 2</i>
 
 A special poker card deck contains the $52$ standard cards:
 

@@ -1,7 +1,7 @@
 
 # BEGIN PROB
 
-<i>Originally Problem 4 on the Second Winter 2024 Midterm.</i>
+<i>Source: [Winter 2024 Midterm 2](../wi24-midterm2/index.html), Problem 4</i>
 
 The standard acceleration of gravity $g$ is a universal constant of nature. That means $g=9.80665$ across the entire universe. It is also known that:
 
