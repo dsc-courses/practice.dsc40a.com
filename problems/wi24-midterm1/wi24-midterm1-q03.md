@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-_Originally Problem 3 on the first Winter 2024 Midterm Exam._
+<i>Source: [Winter 2024 Midterm 1](../wi24-midterm1/index.html), Problem 3</i>
 
 The hyperbolic cosine function is defined as
 $cosh(x) = \frac{1}{2}(e^{x} + e^{-x})$. In this problem, we aim to

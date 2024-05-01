@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-_Originally Problem 4 on the first Winter 2024 Midterm Exam._
+<i>Source: [Winter 2024 Midterm 1](../wi24-midterm1/index.html), Problem 4</i>
 
 Note that we have two simplified closed form expressions for the
 estimated slope $w$ in simple linear regression that you have already

@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-_Originally Problem 5 on the first Winter 2024 Midterm Exam._
+<i>Source: [Winter 2024 Midterm 1](../wi24-midterm1/index.html), Problem 5</i>
 
 Suppose the following information is given for linear regression:
 

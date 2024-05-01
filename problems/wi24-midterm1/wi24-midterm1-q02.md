@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-_Originally Problem 2 on the first Winter 2024 Midterm Exam._
+<i>Source: [Winter 2024 Midterm 1](../wi24-midterm1/index.html), Problem 2</i>
 
 Let $R_{sq}(h)$ represent the mean squared error of a
 constant prediction $h$ for a given dataset. For the dataset
