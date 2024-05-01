@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the Spring 2023 Final Part 1</i>
+<i>Source: [Spring 2023 Final Part 1](../sp23-final-pt1/index.html), Problem 4</i>
 
 In simple linear regression, our goal was to fit a
 prediction rule of the form $H(x) = w_0 + w_1x$. We found many

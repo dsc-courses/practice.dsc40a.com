@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2023 Final Part 1](../sp23-final-pt1/index.html), Problem 5</i>
+
 Suppose we want to predict how long it takes to run a
 Jupyter notebook on Datahub. For 100 different Jupyter notebooks, we
 collect the following 5 pieces of information:
@@ -19,8 +21,6 @@ Then we use multiple regression to fit a prediction rule of the form
 $$H(\text{cells, lines, max iterations, variables}) =  w_0 + w_1 \cdot \text{cells} \cdot \text{lines} + w_2 \cdot (\text{max iterations})^{\text{variables} - 10}$$
 
 # BEGIN SUBPROB
-
-<i>Originally Problem 5a on the Spring 2023 Final Part 1</i>
 
 What are the dimensions of the design matrix $X$?
 
@@ -43,8 +43,6 @@ There should be $100$ rows because there are $100$ different Jupyter notebooks w
 # END SUBPROB
 
 # BEGIN SUBPROB
-
-<i>Originally Problem 5b on the Spring 2023 Final Part 1</i>
 
 In **one sentence**, what does the entry in row 3, column 2
 of the design matrix X represent? (Count rows and columns starting at 1,

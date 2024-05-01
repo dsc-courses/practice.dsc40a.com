@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 5c on the Spring 2023 Final Part 1</i>
+<i>Source: [Spring 2023 Final Part 1](../sp23-final-pt1/index.html), Problem 6</i>
 
 Now we solve the normal equations and find the solution to be
 \begin{aligned}

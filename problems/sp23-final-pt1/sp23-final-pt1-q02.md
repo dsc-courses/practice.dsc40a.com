@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the Spring 2023 Final Part 1</i>
+<i>Source: [Spring 2023 Final Part 1](../sp23-final-pt1/index.html), Problem 2</i>
 
 Match each dataset with the graph of its mean absolute error, $R_{abs}(h)$.
 

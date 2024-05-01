@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 1 on the Spring 2023 Final Part 1</i>
+<i>Source: [Spring 2023 Final Part 1](../sp23-final-pt1/index.html), Problem 1</i>
 
 For a given dataset $\{y_1, y_2, \dots, y_n\}$, let $M_{abs}(h)$ represent the **median** absolute error of the constant prediction $h$ on that dataset (as opposed to the mean absolute error $R_{abs}(h)$).
 
