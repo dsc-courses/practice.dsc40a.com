@@ -2,8 +2,8 @@
 
 <i>Originally Problem 4 on the Winter 2024 Final Part 1</i>
 
-Albert collected $400$ data points from a radiation detector.
-Each data point contains $3$ features: feature $A$, feature $B$ and feature $C$.
+Albert collected 400 data points from a radiation detector.
+Each data point contains 3 features: feature $A$, feature $B$ and feature $C$.
 The true particle energy $E$ is also reported. Albert wants to design a linear
 regression algorithm to predict the energy $E$ of each particle, given a combination of one or more of feature $A$, $B$, and $C$. As the first step, Albert
 calculated the correlation coefficients among $A$, $B$, $C$ and $E$. He wrote it
@@ -88,7 +88,7 @@ So, what are $r$ and $c$ in $r \text{ rows} \times c \text{ columns}$?
 
 $400 \text{ rows} \times 3 \text{ columns}$
 
-Recall there are $400$ data points, which means there will be $400$ rows. There will be $3$ columns because there are $3$ features present inside of $H(A, B, C)$.
+Recall there are 400 data points, which means there will be 400 rows. There will be 3 columns; one is the bias column of all $1$s, one is for the feature $A\cdot C$, and one is for the feature $B^{C-7}$.
 
 # END SOLUTION
 

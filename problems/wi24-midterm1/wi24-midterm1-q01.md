@@ -42,7 +42,7 @@ $$\begin{cases}
 # BEGIN SUBPROB
 
 Determine the range of
-$a$ that satisfies: $$\text{Mean}(D) < \text{Median}(D)$$. 
+$a$ that satisfies: $$\text{Mean}(D) < \text{Median}(D)$$
 Make sure to show your work.
 
 # BEGIN SOLUTION

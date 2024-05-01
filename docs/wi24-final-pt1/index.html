@@ -65,23 +65,18 @@
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
 <p><strong>Instructor(s):</strong> Aobo Li</p>
-<p>This exam was administered in person. The exam was open-notes,
-open-book, but no calculator. Students had <strong>50 minutes</strong>
-to take this exam.</p>
+<p>This exam was administered in person. Students had <strong>50
+minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p><i>Originally Problem 1 on the Winter 2024 Final Part 1</i></p>
-<p>Suppose there is a dataset containing <span
-class="math inline">10,000</span> integers, the first <span
-class="math inline">2,500</span> of them are <span
-class="math inline">3</span>s, the next <span
-class="math inline">2,500</span> of them are <span
-class="math inline">5</span>s, the next <span
-class="math inline">4,500</span> of them are <span
-class="math inline">7</span>s, and the last <span
-class="math inline">500</span> of them are <span
-class="math inline">9</span>.</p>
-<p><br></p>
+<p>Suppose there is a dataset containing 10000 integers:</p>
+<ul>
+<li>2500 of them are <span class="math inline">3</span>s</li>
+<li>2500 of them are <span class="math inline">5</span>s</li>
+<li>4500 of them are <span class="math inline">7</span>s</li>
+<li>500 of them are <span class="math inline">9</span>s. <br></li>
+</ul>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>Calculate the median of this dataset.</p>
 <div id="accordionExample" class="accordion">
@@ -99,14 +94,15 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">6</span></p>
 <p>We know there is an even number of integers in this dataset because
-<span class="math inline">10,000 \% 2 = 0</span>. We can find the middle
-of the dataset by doing <span class="math inline">\frac{10,000}{2} =
-5,000</span>. This means the element in the <span class="math inline">5,000</span> position and <span class="math inline">5,001</span> position can give us our median. The
-element at the <span class="math inline">5,000</span> position is a
-<span class="math inline">5</span> because <span class="math inline">2,500 + 2,500 = 5,000</span>. The element at the
-<span class="math inline">5,001</span> position is a <span class="math inline">7</span> because the next number after <span class="math inline">5</span> is <span class="math inline">7</span>. We
-can then plug <span class="math inline">5</span> and <span class="math inline">7</span> into the equation: <span class="math display">\frac{x_{5,000} + x_{5,001}}{2} = \frac{5 + 7}{2} =
-6</span></p>
+<span class="math inline">10000 \% 2 = 0</span>. We can find the middle
+of the dataset as follows: <span class="math inline">\frac{10000}{2} =
+5000</span>. This means the element in the 5000th position and 5001st
+position can give us our median. The element at the 5000th position is a
+<span class="math inline">5</span> because <span class="math inline">2500 + 2500 = 5000</span>. The element at the 5001st
+position is a <span class="math inline">7</span> because the next number
+after <span class="math inline">5</span> is <span class="math inline">7</span>. We can then plug <span class="math inline">5</span> and <span class="math inline">7</span> into
+the equation: <span class="math display">\frac{x_{5000} + x_{5001}}{2} =
+\frac{5 + 7}{2} = 6</span></p>
 </div>
 </div>
 </div>
@@ -132,11 +128,10 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean is smaller than the median</p>
-<p>We can calculate the mean by doing <span class="math display">\frac{2,500 \cdot  3 + 2,500 \cdot  5 + 4,500
-\cdot  7 + 500 \cdot  9}{10,000} = 5.6</span> Using part (a) we know
-that <span class="math inline">5.6 &lt; 6</span>, which means the mean
-is smaller than the median.</p>
+<p>The mean is smaller than the median.</p>
+<p>We can calculate the mean as follows: <span class="math display">\frac{2500 \cdot  3 + 2500 \cdot  5 + 4500 \cdot  7
++ 500 \cdot  9}{10000} = 5.6</span> Using part (a) we know that <span class="math inline">5.6 &lt; 6</span>, which means the mean is smaller
+than the median.</p>
 </div>
 </div>
 </div>
@@ -348,13 +343,12 @@ so both <span class="math inline">2</span> and <span class="math inline">3</span
 <hr />
 <h2 id="problem-4">Problem 4</h2>
 <p><i>Originally Problem 4 on the Winter 2024 Final Part 1</i></p>
-<p>Albert collected <span class="math inline">400</span> data points
-from a radiation detector. Each data point contains <span
-class="math inline">3</span> features: feature <span
-class="math inline">A</span>, feature <span class="math inline">B</span>
-and feature <span class="math inline">C</span>. The true particle energy
-<span class="math inline">E</span> is also reported. Albert wants to
-design a linear regression algorithm to predict the energy <span
+<p>Albert collected 400 data points from a radiation detector. Each data
+point contains 3 features: feature <span class="math inline">A</span>,
+feature <span class="math inline">B</span> and feature <span
+class="math inline">C</span>. The true particle energy <span
+class="math inline">E</span> is also reported. Albert wants to design a
+linear regression algorithm to predict the energy <span
 class="math inline">E</span> of each particle, given a combination of
 one or more of feature <span class="math inline">A</span>, <span
 class="math inline">B</span>, and <span class="math inline">C</span>. As
@@ -512,10 +506,8 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">400 \text{ rows} \times 3 \text{
 columns}</span></p>
-<p>Recall there are <span class="math inline">400</span> data points,
-which means there will be <span class="math inline">400</span> rows.
-There will be <span class="math inline">3</span> columns because there
-are <span class="math inline">3</span> features present inside of <span class="math inline">H(A, B, C)</span>.</p>
+<p>Recall there are 400 data points, which means there will be 400 rows.
+There will be 3 columns; one is the bias column of all <span class="math inline">1</span>s, one is for the feature <span class="math inline">A\cdot C</span>, and one is for the feature <span class="math inline">B^{C-7}</span>.</p>
 </div>
 </div>
 </div>
