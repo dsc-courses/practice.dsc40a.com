@@ -33,7 +33,7 @@ of $\bar{y}$, $\alpha$ and $\lambda$.
 
 $$
 \begin{align*}
-\frac{d}{dh}R_{\text{midterm}}(h)&= [\frac{2}{n}\sum_{i=1}^{i=n}(h- \alpha y_i  )] +\lambda \\
+\frac{d}{dh}R_{\text{midterm}}(h)&= [\frac{2}{n}\sum_{i=1}^{n}(h- \alpha y_i  )] +\lambda \\
 &=2 h-2\alpha \bar{y} + \lambda.
 \end{align*}
 $$

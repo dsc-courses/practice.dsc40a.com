@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 1 on the Second Winter 2024 Midterm.</i>
+<i>Source: [Winter 2024 Midterm 2](../wi24-midterm2/index.html), Problem 1</i>
 
 Quarks are one of the smallest fundamental particles in
 physics. There are $6$ **types** of quarks: up, down, top, bottom, strange,
