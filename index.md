@@ -35,7 +35,6 @@ To get a rough sense of the format of the exam, you can see this [**past exam PD
 In scope for the Spring 2024 Midterm Exam:
 
 - [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
-<!-- - [Empirical Risk Minimization](empirical-risk-minimization/index.html) -->
 - [Simple Linear Regression](simple-linear-regression/index.html)
 - [Multiple Linear Regression and the Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
 
