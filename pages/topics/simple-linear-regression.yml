@@ -2,6 +2,7 @@ title: 'Simple Linear Regression'
 context: This page contains all problems about Simple Linear Regression.
 show_solution: true
 problems:
+  - fa22-midterm/fa22-midterm-q03
   - fa21-final/q05
   - fa21-midterm/fa21-midterm-q04
   - fa22-midterm/fa22-midterm-q02

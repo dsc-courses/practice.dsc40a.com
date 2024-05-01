@@ -216,6 +216,117 @@ or equal to the MSE associated with the regression line.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Originally Problem 5c on the Spring 2023 Final Part 1</i></p>
+Now we solve the normal equations and find the solution to be
+<span class="math display">\begin{aligned}
+            \vec{w}^* &amp;= \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^*
+\end{bmatrix}
+\end{aligned}</span>
+Define a new vector:
+<span class="math display">\begin{aligned}
+            \vec{w}^{\circ} &amp;= \begin{bmatrix} w_0^{\circ} \\
+w_1^{\circ} \\ w_2^{\circ} \end{bmatrix} = \begin{bmatrix} w_0^*+3 \\
+w_1^*-4 \\ w_2^*-6 \end{bmatrix}
+            
+\end{aligned}</span>
+<p>and consider the two prediction rules</p>
+<span class="math display">\begin{aligned}
+        H^*(\text{cells, lines, max iterations, variables})
+&amp;=  w_0^* + w_1^* \cdot \text{cells} \cdot \text{lines} + w_2^*
+\cdot (\text{max iterations})^{\text{variables} - 10}\\
+        H^{\circ}(\text{cells, lines, max iterations, variables})
+&amp;=  w_0^{\circ} + w_1^{\circ} \cdot \text{cells} \cdot \text{lines}
++ w_2^{\circ} \cdot (\text{max iterations})^{\text{variables} - 10}
+        
+\end{aligned}</span>
+<p>Let <span class="math inline">\text{MSE}</span> represent the mean
+squared error of a prediction rule, and let <span
+class="math inline">\text{MAE}</span> represent the mean absolute error
+of a prediction rule. Select the symbol that should go in each
+blank.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p><span class="math inline">\text{MSE}(H^*)</span> ___ <span
+class="math inline">\text{MSE}(H^{\circ})</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\leq</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\geq</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">=</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\leq</span></p>
+<p>Recall the equation for mean squared error: <span class="math inline">\text{MSE}(H(x_i)) =
+\frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2</span>. We can figure out which is
+bigger by subtracting <span class="math inline">\text{MSE}(H^{\circ})</span> from <span class="math inline">\text{MSE}(H^*)</span>. The difference between the
+squared differences is: <span class="math display">(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2</span>Notice
+there is a squared element, which means that the differences of <span class="math inline">w^*_0 - w^{\circ}_0</span>, <span class="math inline">w^*_1 - w^{\circ}_1</span>, and <span class="math inline">w^*_2 - w^{\circ}_2</span> will appear as squared
+terms, which are always positive! This means adding these squared
+differences to <span class="math inline">H^*</span> will make it at
+least as large as the squared difference for <span class="math inline">H^{\circ}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p><span class="math inline">(\text{MAE}(H^{\circ}))^2</span> ___ <span
+class="math inline">\text{MSE}(H^{\circ})</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\leq</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\geq</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">=</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\geq</span></p>
+<p>Recall the equation for mean absolute error: <span class="math inline">\text{MAE}(H(x_i)) =
+\frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|</span>.</p>
+<p>This equation looks very similar to the mean squared error! We can
+actually take the square root of each sides of this equation to learn
+more about which side is larger: <span class="math display">
+\begin{align*}
+(\text{MAE}(H^\circ))^2 &amp;\_\_\_ \text{MSE}(H^\circ) \\
+\sqrt{(\text{MAE}(H^\circ))^2} &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
+\text{MAE}(H^\circ) &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)}
+\end{align*}
+</span></p>
+<p>The square root of <span class="math inline">\text{MSE}</span> is
+equal to <span class="math inline">\text{MAE}</span>! These two elements
+are basically the same because squaring a value will lead to
+non-negatives and then it will be square rooted to match the absolute
+value from <span class="math inline">\text{MAE}</span>. However the
+<span class="math inline">\text{MSE}</span> being square rooted also
+allows for it to be smaller than the <span class="math inline">\text{MSE}</span> making the correct symbol <span class="math inline">\geq</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
 <p><i>Originally Problem 4 on the first Midterm of Winter 2022</i></p>
 <p>Consider the dataset shown below.</p>
 <div class="center">
@@ -260,7 +371,7 @@ class="math inline">x^{(3)}</span></th>
 </table>
 </div>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p>We want to use multiple regression to fit a prediction rule of the
 form <span class="math display">H(x^{(1)}, x^{(2)}, x^{(3)}) = w_0 + w_1
 x^{(1)}x^{(3)} + w_2 (x^{(2)}-x^{(3)})^2.</span> Write down the design
@@ -269,13 +380,13 @@ class="math inline">\vec{y}</span> for this scenario. No justification
 needed.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -315,7 +426,7 @@ other elements in the matrix.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>For the <span class="math inline">X</span> and <span
 class="math inline">\vec{y}</span> that you have written down, let <span
 class="math inline">\vec{w}</span> be the optimal parameter vector,
@@ -327,13 +438,13 @@ class="math inline">i</span>th component of this error vector. Show that
 <span class="math display">4e_1+e_2+4e_3+e_4=0.</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -380,7 +491,7 @@ e_4\end{bmatrix} \\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><em>Originally Problem 5 on the first Winter 2024 Midterm
 Exam.</em></p>
 <p>Suppose the following information is given for linear regression:</p>
@@ -405,13 +516,13 @@ class="math inline">b</span> using the normal equations, show your
 work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse"
-aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div id="collapse4" class="accordion-collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

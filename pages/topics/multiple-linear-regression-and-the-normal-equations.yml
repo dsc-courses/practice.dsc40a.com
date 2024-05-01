@@ -3,5 +3,6 @@ context: This page contains all problems about Multiple Linear Regression and Th
 show_solution: true
 problems:
   - sp23-midterm1/sp23-midterm1-q04
+  - sp23-final-pt1/sp23-final-pt1-q06
   - wi22-midterm1/wi22-midterm1-q04
   - wi24-midterm1/wi24-midterm1-q05 
