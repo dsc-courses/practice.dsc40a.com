@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 1 on the first Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 1](../sp23-midterm1/index.html), Problem 1</i>
 
 Consider a dataset such that $60 \leq y_1 \leq y_2 \leq \dots \leq y_n$. Let $R_{abs}(h)$ represent the mean absolute error of a constant prediction $h$ on this dataset. Suppose we know that $R_{abs}(27) = 94.$
 

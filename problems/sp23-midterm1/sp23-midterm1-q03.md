@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 3 on the first Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 1](../sp23-midterm1/index.html), Problem 3</i>
 
 In general, the logarithm of a convex function is not convex. Give an example of a function $f(x)$ such that $f(x)$ is convex, but $\log_{10}(f(x))$ is not convex.
 

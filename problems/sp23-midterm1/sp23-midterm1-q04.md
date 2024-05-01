@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the first Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 1](../sp23-midterm1/index.html), Problem 4</i>
 
 Suppose we are given a dataset of points $\{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$ and for some reason, we want to make predictions using a prediction rule of the form $$H(x) = 17 + w_1x.$$
 
