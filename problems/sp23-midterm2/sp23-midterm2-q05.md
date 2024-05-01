@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 5 on the second Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 2](../sp23-midterm2/index.html), Problem 5</i>
 
 You have a large historical dataset of all competitors in
 past years of the Avocado Cup chess tournament. Each year, hundreds of

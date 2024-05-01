@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the second Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 2](../sp23-midterm2/index.html), Problem 2</i>
 
 A set of chess pieces has $32$ pieces. $16$ of these are black and $16$ of these are white. **In each color**, the $16$ pieces are:
 

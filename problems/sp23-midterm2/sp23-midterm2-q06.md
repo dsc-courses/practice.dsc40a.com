@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 6 on the second Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 2](../sp23-midterm2/index.html), Problem 6</i>
 
 The Avocado Cup is organized into rounds. In each round,
 players who win advance to the next round, and players who lose are

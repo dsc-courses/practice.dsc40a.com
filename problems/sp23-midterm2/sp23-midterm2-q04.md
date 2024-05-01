@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the second Midterm of Spring 2023</i>
+<i>Source: [Spring 2023 Midterm 2](../sp23-midterm2/index.html), Problem 4</i>
 
 Suppose that there are three possible experience levels
 in chess (beginner, intermediate, advanced). Only **10%** of beginner
