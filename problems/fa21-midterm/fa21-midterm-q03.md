@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 3 on the Fall 2021 Midterm.</i>
+<i>Source: [Fall 2021 Midterm](../fa21-midterm/index.html), Problem 3</i>
 
 Remember to show your work and justify your answers.
 

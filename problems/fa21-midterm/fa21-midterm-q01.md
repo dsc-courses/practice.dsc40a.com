@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 1 on the Fall 2021 Midterm.</i>
+<i>Source: [Fall 2021 Midterm](../fa21-midterm/index.html), Problem 1</i>
 
 King Triton just made an Instagram account and has been keeping track of
 the number of likes his posts have received so far.

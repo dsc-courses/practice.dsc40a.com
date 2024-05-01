@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the Fall 2021 Midterm.</i>
+<i>Source: [Fall 2021 Midterm](../fa21-midterm/index.html), Problem 2</i>
 
 Consider a set of 23 data points $y_1, y_2, y_3, ..., y_{23}$ such that
 $y_1 < y_2 < ... < y_{23}$. Let's call this Dataset A.

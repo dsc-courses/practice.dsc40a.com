@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the Fall 2021 Midterm.</i>
+<i>Source: [Fall 2021 Midterm](../fa21-midterm/index.html), Problem 4</i>
 
 Billy, the avocado farmer from Homework 3, wasn't making enough money
 growing avocados and decided to take on a part-time job as a waiter at
