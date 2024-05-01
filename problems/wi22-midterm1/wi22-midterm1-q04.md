@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 4 on the first Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 4</i>
 
 Consider the dataset shown below.
 

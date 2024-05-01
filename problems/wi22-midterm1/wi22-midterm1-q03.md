@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 3 on the first Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 3</i>
 
 Suppose you have a dataset 
 $$\{(x_1, y_1), (x_2,y_2), \dots, (x_8, y_8)\}$$ 

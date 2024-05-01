@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<i>Originally Problem 2 on the first Midterm of Winter 2022</i>
+<i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 2</i>
 
 Consider a new loss function, 
 $$L(h, y) = e^{(h-y)^2}.$$
