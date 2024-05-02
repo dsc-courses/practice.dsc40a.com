@@ -47,7 +47,7 @@ weight.
 
 Albert wants to add another feature to his linear regression in
 part (a) to further boost the model's performance. (i.e.
-$y = w_0+w_1 x + +w_2 x_2$) Which feature should he choose as $x_2$ to
+$y = w_0 + w_1 x + w_2 x_2$) Which feature should he choose as $x_2$ to
 make additional improvements?
 
 ( ) $A$

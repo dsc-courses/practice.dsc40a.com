@@ -218,6 +218,90 @@ or equal to the MSE associated with the regression line.</p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
 <p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
+Part 1</a>, Problem 5</i></p>
+<p>Suppose we want to predict how long it takes to run a Jupyter
+notebook on Datahub. For 100 different Jupyter notebooks, we collect the
+following 5 pieces of information:</p>
+<ul>
+<li><p><strong>cells</strong>: number of cells in the notebook</p></li>
+<li><p><strong>lines</strong>: number of lines of code</p></li>
+<li><p><strong>max iterations</strong>: largest number of iterations in
+any loop in the notebook, or 1 if there are no loops</p></li>
+<li><p><strong>variables</strong>: number of variables defined in the
+notebook</p></li>
+<li><p><strong>runtime</strong>: number of seconds for the notebook to
+run on Datahub</p></li>
+</ul>
+<p>Then we use multiple regression to fit a prediction rule of the form
+<span class="math display">H(\text{cells, lines, max iterations,
+variables}) =  w_0 + w_1 \cdot \text{cells} \cdot \text{lines} + w_2
+\cdot (\text{max iterations})^{\text{variables} - 10}</span></p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>What are the dimensions of the design matrix <span
+class="math inline">X</span>?</p>
+<p><span class="math display">\begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{r \times c}</span></p>
+<p>So, what should <span class="math inline">r</span> and <span
+class="math inline">c</span> be for: <span class="math inline">r</span>
+rows <span class="math inline">\times</span> <span
+class="math inline">c</span> columns.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">100 \text{ rows} \times 3 \text{
+columns}</span></p>
+<p>There should be <span class="math inline">100</span> rows because
+there are <span class="math inline">100</span> different Jupyter
+notebooks with different information within them. There should be <span class="math inline">3</span> rows because there are three distinct
+predictor variables: “cells,” “lines,” and the combined effect of “max
+iterations” and “variables.”</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>In <strong>one sentence</strong>, what does the entry in row 3,
+column 2 of the design matrix X represent? (Count rows and columns
+starting at 1, not 0).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>This entry represents the product of the number of cells and number
+of lines of code for the third Jupyter notebook in the training
+dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
 Part 1</a>, Problem 6</i></p>
 Now we solve the normal equations and find the solution to be
 <span class="math display">\begin{aligned}
@@ -247,7 +331,7 @@ class="math inline">\text{MAE}</span> represent the mean absolute error
 of a prediction rule. Select the symbol that should go in each
 blank.</p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p><span class="math inline">\text{MSE}(H^*)</span> ___ <span
 class="math inline">\text{MSE}(H^{\circ})</span></p>
 <ul class="task-list">
@@ -257,13 +341,13 @@ class="math inline">\text{MSE}(H^{\circ})</span></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -282,7 +366,7 @@ least as large as the squared difference for <span class="math inline">H^{\circ}
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p><span class="math inline">(\text{MAE}(H^{\circ}))^2</span> ___ <span
 class="math inline">\text{MSE}(H^{\circ})</span></p>
 <ul class="task-list">
@@ -292,13 +376,13 @@ class="math inline">\text{MSE}(H^{\circ})</span></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -328,7 +412,7 @@ allows for it to be smaller than the <span class="math inline">\text{MSE}</span>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../wi22-midterm1/index.html">Winter 2022 Midterm
 1</a>, Problem 4</i></p>
 <p>Consider the dataset shown below.</p>
@@ -374,7 +458,7 @@ class="math inline">x^{(3)}</span></th>
 </table>
 </div>
 <p><br></p>
-<h3 id="problem-3.1">Problem 3.1</h3>
+<h3 id="problem-4.1">Problem 4.1</h3>
 <p>We want to use multiple regression to fit a prediction rule of the
 form <span class="math display">H(x^{(1)}, x^{(2)}, x^{(3)}) = w_0 + w_1
 x^{(1)}x^{(3)} + w_2 (x^{(2)}-x^{(3)})^2.</span> Write down the design
@@ -383,13 +467,13 @@ class="math inline">\vec{y}</span> for this scenario. No justification
 needed.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -418,18 +502,17 @@ X &amp;=
 dataset and seeing the <span class="math inline">y</span> column.</p>
 <p>The matrix <span class="math inline">X</span> was found by looking at
 the equation <span class="math inline">H(x)</span>. You can think of
-each row of <span class="math inline">X</span> being: <span class="math inline">\begin{bmatrix}\text{bias term} &amp; x^{(1)}x^{(3)}
-&amp; (x^{(2)}-x^{(3)})^2\end{bmatrix}</span>. Recall our bias term here
-is not affected by <span class="math inline">x^{(i)}</span>, but it
-still exists! So we will always have the first element in our row be
-<span class="math inline">1</span>. We can then easily calculate the
-other elements in the matrix.</p>
+each row of <span class="math inline">X</span> being: <span class="math inline">\begin{bmatrix}1 &amp; x^{(1)}x^{(3)} &amp;
+(x^{(2)}-x^{(3)})^2\end{bmatrix}</span>. Recall our bias term here is
+not affected by <span class="math inline">x^{(i)}</span>, but it still
+exists! So we will always have the first element in our row be <span class="math inline">1</span>. We can then easily calculate the other
+elements in the matrix.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
+<h3 id="problem-4.2">Problem 4.2</h3>
 <p>For the <span class="math inline">X</span> and <span
 class="math inline">\vec{y}</span> that you have written down, let <span
 class="math inline">\vec{w}</span> be the optimal parameter vector,
@@ -441,17 +524,21 @@ class="math inline">i</span>th component of this error vector. Show that
 <span class="math display">4e_1+e_2+4e_3+e_4=0.</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>The key to this problem is the fact that the error vector, <span class="math inline">\vec{e}</span>, is orthogonal to the columns of the
+design matrix, <span class="math inline">X</span>. As a refresher, if
+<span class="math inline">\vec{w^*}</span> satisfies the normal
+equations, then:</p>
 <p>We can rewrite the normal equation (<span class="math inline">X^TX\vec{w}=X^T\vec{y}</span>) to allow substitution
 for <span class="math inline">\vec{e} = \vec{y} - X \vec{w}</span>.</p>
 <p><span class="math display">
@@ -462,13 +549,15 @@ X^TX\vec{w}&amp;=X^T\vec{y} \\
 0 &amp;= X^T\vec{e}
 \end{align*}
 </span></p>
-<p>We can also transpose <span class="math inline">X</span>: <span class="math display">
+<p>The first step is to find <span class="math inline">X^T</span>, which
+is easy because we found <span class="math inline">X</span> above: <span class="math display">
 \begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 15 &amp; -15 &amp; 0 \\ 4 &amp; 1
 &amp; 4 &amp; 1
 \end{bmatrix}
 </span></p>
-<p>And now we can plug it into our equation: <span class="math display">
+<p>And now we can plug <span class="math inline">X^T</span> and <span class="math inline">\vec e</span> into our equation <span class="math inline">0 = X^T\vec{e}</span>. It might be easiest to find
+the right side first: <span class="math display">
 \begin{align*}
 X^T\vec{e} &amp;=
 \begin{bmatrix}
@@ -480,7 +569,7 @@ e_4\end{bmatrix} \\
 15e_2 - 15e_3 \\ 4e_1 + e_2 + 4e_3 + e_4\end{bmatrix}
 \end{align*}
 </span></p>
-<p>Now we can set it equal to zero! <span class="math display">
+<p>Finally, we set it equal to zero! <span class="math display">
 \begin{align*}
 0 &amp;= e_1 + e_2 + e_3 + e_4 \\
 0 &amp;= 15e_2 - 15e_3 \\
@@ -494,7 +583,7 @@ e_4\end{bmatrix} \\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-5">Problem 5</h2>
 <p><i>Source: <a href="../wi24-midterm1/index.html">Winter 2024 Midterm
 1</a>, Problem 5</i></p>
 <p>Suppose the following information is given for linear regression:</p>
@@ -519,13 +608,13 @@ class="math inline">b</span> using the normal equations, show your
 work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4" class="accordion-collapse collapse"
-aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div id="collapse5" class="accordion-collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -630,6 +719,274 @@ a+b\\
 </div>
 </div>
 </div>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><i>Source: <a href="../wi24-final-pt1/index.html">Winter 2024 Final
+Part 1</a>, Problem 4</i></p>
+<p>Albert collected 400 data points from a radiation detector. Each data
+point contains 3 features: feature <span class="math inline">A</span>,
+feature <span class="math inline">B</span> and feature <span
+class="math inline">C</span>. The true particle energy <span
+class="math inline">E</span> is also reported. Albert wants to design a
+linear regression algorithm to predict the energy <span
+class="math inline">E</span> of each particle, given a combination of
+one or more of feature <span class="math inline">A</span>, <span
+class="math inline">B</span>, and <span class="math inline">C</span>. As
+the first step, Albert calculated the correlation coefficients among
+<span class="math inline">A</span>, <span class="math inline">B</span>,
+<span class="math inline">C</span> and <span
+class="math inline">E</span>. He wrote it down in the following table,
+where each cell of the table represents the correlaton of two terms:</p>
+<div>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">A</span>   </th>
+<th><span class="math inline">B</span>   </th>
+<th><span class="math inline">C</span>   </th>
+<th><span class="math inline">E</span>   </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">A</span></td>
+<td>1</td>
+<td>-0.99</td>
+<td>0.13</td>
+<td>0.8</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">B</span></td>
+<td>-0.99</td>
+<td>1</td>
+<td>0.25</td>
+<td>-0.95</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">C</span></td>
+<td>0.13</td>
+<td>0.25</td>
+<td>1</td>
+<td>0.72</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">E</span></td>
+<td>0.8</td>
+<td>-0.95</td>
+<td>0.72</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Albert wants to start with a simple model: fitting only a single
+feature to obtain the true energy (i.e. <span class="math inline">y =
+w_0+w_1 x</span>). Which feature should he choose as <span
+class="math inline">x</span> to get the lowest mean square error?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">B</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">C</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">B</span></p>
+<p><span class="math inline">B</span> is the correct answer, because it
+has the highest absolute correlation (0.95), the negative sign in front
+of <span class="math inline">B</span> just means it is negatively
+correlated to energy, and it can be compensated by a negative sign in
+the weight.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Albert wants to add another feature to his linear regression in part
+(a) to further boost the model’s performance. (i.e. <span
+class="math inline">y = w_0 + w_1 x + w_2 x_2</span>) Which feature
+should he choose as <span class="math inline">x_2</span> to make
+additional improvements?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">B</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">C</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">C</span></p>
+<p><span class="math inline">C</span> is the correct answer, because
+although <span class="math inline">A</span> has a higher correlation
+with energy, it also has an extremely high correlation with <span class="math inline">B</span> (-0.99), that means adding <span class="math inline">A</span> into the fit will not be too useful, since
+it provides almost the same information as <span class="math inline">B</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Albert further refines his algorithm by fitting a prediction rule of
+the form: <span class="math display">\begin{aligned}
+H(A,B,C) = w_0 + w_1 \cdot A\cdot C + w_2 \cdot B^{C-7}
+\end{aligned}</span></p>
+<p>Given this prediction rule, what are the dimensions of the design
+matrix <span class="math inline">X</span>?</p>
+<p><span class="math display">\begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{r \times c}</span></p>
+<p>So, what are <span class="math inline">r</span> and <span
+class="math inline">c</span> in <span class="math inline">r \text{ rows}
+\times c \text{ columns}</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">400 \text{ rows} \times 3 \text{
+columns}</span></p>
+<p>Recall there are 400 data points, which means there will be 400 rows.
+There will be 3 columns; one is the bias column of all <span class="math inline">1</span>s, one is for the feature <span class="math inline">A\cdot C</span>, and one is for the feature <span class="math inline">B^{C-7}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<!-- Commented out the last subproblem, because the solution is weird?? Need to rework. -->
+<!-- <br>
+
+### Problem 6.4
+
+
+
+Now Albert solves the normal equations and finds the solution to be:
+$$\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^*  \end{bmatrix}$$
+To improve on this result, Albert decides to modify his design matrix
+with the following steps:
+
+1.  Add 1 to every entry to the first column
+
+2.  Swap the second and the third column
+
+Let $X_a$ be the modified design matrix. Let
+$\vec{w_a}^* = (X_a^TX_a)^{-1}X_a^T\vec{y}$. 
+
+Express the components
+$\vec{w_a}^*$ in terms of $w_0^*, w_1^*, w_2^*$, which were the
+components of $\vec{w}^*$.
+
+$$\vec{w_a}^* = \begin{bmatrix} ? \\ ? \\ ? \\ \end{bmatrix}$$
+
+
+
+
+
+
+<div class="accordion" id="accordionExample">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse collapse" aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\vec{w}^* = \begin{bmatrix} w_0^*/2 \\
+w_2^* \\ w_1^*  \end{bmatrix}</span></p>
+<p>We should follow the steps Albert did to construct <span class="math inline">X</span>. We will add <span class="math inline">1</span> to be the first element in each row and
+then switch the constants attached to <span class="math inline">w_1</span> (<span class="math inline">A \cdot
+B</span>) and <span class="math inline">w_2</span> (<span class="math inline">B^{C-7}</span>): <span class="math display">
+X_a = \begin{bmatrix}
+1 &amp; B^{C-7} &amp; A \\
+1 &amp; B^{C-7} &amp; A \\
+\vdots &amp; \vdots &amp; \vdots \\
+1 &amp; B^{C-7} &amp; A
+\end{bmatrix}
+</span></p>
+<p>We know that <span class="math inline">X_\alpha^T X_\alpha</span> is
+the same as an identity matrix. The inverse of an identity matrix is the
+same as it was before.</p>
+<p>This means we are really looking at <span class="math inline">X_\alpha^T \vec{y}</span>: <span class="math display">
+\begin{align*}
+X_\alpha^T \vec{y} &amp;= \begin{bmatrix}
+1 &amp; 1 &amp; \cdots &amp; 1 \\
+B^{C-7} &amp; B^{C-7} &amp; \cdots &amp; B^{C-7} \\
+A &amp; A &amp; \cdots &amp; A
+\end{bmatrix} \cdot \begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_{400}
+\end{bmatrix} \\
+&amp;= \begin{bmatrix}
+\sum_{i = 1}^{400}{y_i}\\
+\sum_{i = 1}^{400}{B^{C-7} \cdot y_i} \\
+\sum_{i = 1}^{400}{A \cdot y_i}
+\end{bmatrix}
+\end{align*}
+</span></p>
+<p>The first component of our final matrix, <span class="math inline">sum_{i = 1}^{400}{y_i}</span>, is proportional to
+<span class="math inline">w_0^*</span>. The second component of our
+matrix, <span class="math inline">\sum_{i = 1}^{400}{B^{C-7} \cdot
+y_i}</span>, is proportional to <span class="math inline">w_2^*</span>.
+Finally, the third component of our matrix, <span class="math inline">\sum_{i = 1}^{400}{A \cdot y_i}</span>, is
+proportional to <span class="math inline">w_1^*</span>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    
+<br> -->
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
