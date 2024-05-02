@@ -82,7 +82,9 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
     <tr>
       <th scope="row">Spring 2023</th>
       <td>Janine Tiefenbruck</td>
-      <td><a href='sp23-midterm2/index.html'>Midterm 2</a><br><a href='sp23-final-pt1/index.html'>Final Part 1</a>
+      <td><a href='sp23-midterm1/index.html'>Midterm 1</a>
+      <br><a href='sp23-midterm2/index.html'>Midterm 2</a>
+      <br><a href='sp23-final-pt1/index.html'>Final Part 1</a>
       </td>
     </tr>
     <tr>
