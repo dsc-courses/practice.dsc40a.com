@@ -1290,6 +1290,154 @@ w_0^*&amp;=340
 <p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
+<p><i>Source: <a href="../sp23-midterm1/index.html">Spring 2023 Midterm
+1</a>, Problem 4</i></p>
+<p>Suppose we are given a dataset of points <span
+class="math inline">\{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}</span>
+and for some reason, we want to make predictions using a prediction rule
+of the form <span class="math display">H(x) = 17 + w_1x.</span></p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Write down an expression for the mean squared error of a prediction
+rule of this form, as a function of the parameter <span
+class="math inline">w_1</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">MSE(w_1) = \dfrac1n
+\displaystyle\sum_{i=1}^n (y_i - (17 + w_1x_i))^2</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Minimize the function <span class="math inline">MSE(w_1)</span> to
+find the parameter <span class="math inline">w_1^*</span> which defines
+the optimal prediction rule <span class="math inline">H^*(x) = 17 +
+w_1^*x</span>. Show all your work and explain your steps.</p>
+<p>Fill in your final answer below:</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Answer:</strong></p>
+<p><span class="math display">w_1^* = \dfrac{\displaystyle\sum_{i=1}^n
+x_i(y_i - 17)}{\displaystyle\sum_{i=1}^n x_i^2}</span></p>
+<p><strong>Proof:</strong></p>
+<p>To minimize a function of one variable, we need to take the
+derivative, set it equal to zero, and solve. <span class="math display">\begin{aligned} MSE(w_1) &amp;= \dfrac1n
+\displaystyle\sum_{i=1}^n (y_i - 17 - w_1x_i)^2 \\ MSE'(w_1) &amp;=
+\dfrac1n \displaystyle\sum_{i=1}^n -2x_i(y_i - 17 - w_1x_i)) \qquad
+\text{using the chain rule} \\ 0 &amp;= \dfrac1n
+\displaystyle\sum_{i=1}^n -2x_i(y_i - 17) + \dfrac1n
+\displaystyle\sum_{i=1}^n 2x_i^2w_1 \qquad \text{splitting up the sum}
+\\ 0 &amp;=  \displaystyle\sum_{i=1}^n -x_i(y_i - 17)
++  \displaystyle\sum_{i=1}^n x_i^2w_1 \qquad \text{multiplying through
+by } \frac{n}{2} \\ w_1 \displaystyle\sum_{i=1}^n x_i^2
+&amp;=  \displaystyle\sum_{i=1}^n x_i(y_i - 17)   \qquad
+\text{rearranging terms and pulling out } w_1 \\ w_1 &amp; =
+\dfrac{\displaystyle\sum_{i=1}^n x_i(y_i -
+17)}{\displaystyle\sum_{i=1}^n x_i^2} \end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>True or False: For an arbitrary dataset, the prediction rule <span
+class="math inline">H^*(x) = 17 + w_1^*x</span> goes through the point
+<span class="math inline">(\bar x, \bar y)</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>When we fit a prediction rule of the form <span class="math inline">H(x) = w_0+w_1x</span> using simple linear
+regression, the formula for the intercept <span class="math inline">w_0</span> is designed to make sure the regression
+line passes through the point <span class="math inline">(\bar x, \bar
+y)</span>. Here, we don’t have the freedom to control our intercept, as
+it’s forced to be <span class="math inline">17</span>. This means we
+can’t guarantee that the prediction rule <span class="math inline">H^*(x) = 17 + w_1^*x</span> goes through the point
+<span class="math inline">(\bar x, \bar y)</span>.</p>
+<p>A simple example shows that this is the case. Consider the dataset
+<span class="math inline">(-2, 0)</span> and <span class="math inline">(2, 0)</span>. The point <span class="math inline">(\bar x, \bar y)</span> is the origin, but the
+prediction rule <span class="math inline">H^*(x)</span> does not pass
+through the origin because it has an intercept of <span class="math inline">17</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>True or False: For an arbitrary dataset, the mean squared error
+associated with <span class="math inline">H^*(x)</span> is greater than
+or equal to the mean squared error associated with the regression
+line.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The regression line is the prediction rule of the form <span class="math inline">H(x) = w_0+w_1x</span> with the smallest mean
+squared error (MSE). <span class="math inline">H^*(x)</span> is one
+example of a prediction rule of that form so unless it happens to be the
+regression line itself, the regression line will have lower MSE because
+it was designed to have the lowest possible MSE. This means the MSE
+associated with <span class="math inline">H^*(x)</span> is greater than
+or equal to the MSE associated with the regression line.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
 <p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
 Part 1</a>, Problem 4</i></p>
 <p>In simple linear regression, our goal was to fit a prediction rule of
@@ -1311,13 +1459,13 @@ x)^2}</span></p>
 class="math inline">w_1^*</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse"
-aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div id="collapse7" class="accordion-collapse collapse"
+aria-labelledby="heading7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1341,90 +1489,6 @@ question.</p>
 </div>
 </div>
 </div>
-<hr />
-<h2 id="problem-7">Problem 7</h2>
-<p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
-Part 1</a>, Problem 5</i></p>
-<p>Suppose we want to predict how long it takes to run a Jupyter
-notebook on Datahub. For 100 different Jupyter notebooks, we collect the
-following 5 pieces of information:</p>
-<ul>
-<li><p><strong>cells</strong>: number of cells in the notebook</p></li>
-<li><p><strong>lines</strong>: number of lines of code</p></li>
-<li><p><strong>max iterations</strong>: largest number of iterations in
-any loop in the notebook, or 1 if there are no loops</p></li>
-<li><p><strong>variables</strong>: number of variables defined in the
-notebook</p></li>
-<li><p><strong>runtime</strong>: number of seconds for the notebook to
-run on Datahub</p></li>
-</ul>
-<p>Then we use multiple regression to fit a prediction rule of the form
-<span class="math display">H(\text{cells, lines, max iterations,
-variables}) =  w_0 + w_1 \cdot \text{cells} \cdot \text{lines} + w_2
-\cdot (\text{max iterations})^{\text{variables} - 10}</span></p>
-<p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
-<p>What are the dimensions of the design matrix <span
-class="math inline">X</span>?</p>
-<p><span class="math display">\begin{bmatrix}
-&amp; &amp; &amp; \\
-&amp; &amp; &amp; \\
-&amp; &amp; &amp; \\
-\end{bmatrix}_{r \times c}</span></p>
-<p>So, what should <span class="math inline">r</span> and <span
-class="math inline">c</span> be for: <span class="math inline">r</span>
-rows <span class="math inline">\times</span> <span
-class="math inline">c</span> columns.</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p><span class="math inline">100 \text{ rows} \times 3 \text{
-columns}</span></p>
-<p>There should be <span class="math inline">100</span> rows because
-there are <span class="math inline">100</span> different Jupyter
-notebooks with different information within them. There should be <span class="math inline">3</span> rows because there are three distinct
-predictor variables: “cells,” “lines,” and the combined effect of “max
-iterations” and “variables.”</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
-<p>In <strong>one sentence</strong>, what does the entry in row 3,
-column 2 of the design matrix X represent? (Count rows and columns
-starting at 1, not 0).</p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>This entry represents the product of the number of cells and number
-of lines of code for the third Jupyter notebook in the training
-dataset.</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../wi22-midterm1/index.html">Winter 2022 Midterm
@@ -1607,7 +1671,7 @@ the weight.</p>
 <h3 id="problem-9.2">Problem 9.2</h3>
 <p>Albert wants to add another feature to his linear regression in part
 (a) to further boost the model’s performance. (i.e. <span
-class="math inline">y = w_0+w_1 x + +w_2 x_2</span>) Which feature
+class="math inline">y = w_0 + w_1 x + w_2 x_2</span>) Which feature
 should he choose as <span class="math inline">x_2</span> to make
 additional improvements?</p>
 <ul class="task-list">
