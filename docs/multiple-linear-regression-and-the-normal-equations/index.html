@@ -840,6 +840,244 @@ proportional to <span class="math inline">w_1^*</span>.</p>
     
 <br> -->
 <hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><i>Source: <a href="../fa21-final/index.html">Fall 2021 Final
+Exam</a>, Problem 6</i></p>
+<p>Billy’s aunt owns a jewellery store, and gives him data on <span
+class="math inline">5000</span> of the diamonds in her store. For each
+diamond, we have:</p>
+<ul>
+<li><strong>carat</strong>: the weight of the diamond, in carats</li>
+<li><strong>length</strong>: the length of the diamond, in
+centimeters</li>
+<li><strong>width</strong>: the width of the diamond, in
+centimeters</li>
+<li><strong>price</strong>: the value of the diamond, in dollars</li>
+</ul>
+<p>The first 5 rows of the 5000-row dataset are shown below:</p>
+<div>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 27%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>carat   </th>
+<th>length   </th>
+<th>width   </th>
+<th>price   </th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.40</td>
+<td>4.81</td>
+<td>4.76</td>
+<td>1323</td>
+</tr>
+<tr class="even">
+<td>1.04</td>
+<td>6.58</td>
+<td>6.53</td>
+<td>5102</td>
+</tr>
+<tr class="odd">
+<td>0.40</td>
+<td>4.74</td>
+<td>4.76</td>
+<td>696</td>
+</tr>
+<tr class="even">
+<td>0.40</td>
+<td>4.67</td>
+<td>4.65</td>
+<td>798</td>
+</tr>
+<tr class="odd">
+<td>0.50</td>
+<td>4.90</td>
+<td>4.95</td>
+<td>987</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br> Billy has enlisted our help in predicting the price of a diamond
+given various other features.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Suppose we want to fit a linear prediction rule that uses two
+features, carat and length, to predict price. Specifically, our
+prediction rule will be of the form</p>
+<p><span class="math display">\text{predicted price} = w_0 + w_1 \cdot
+\text{carat} + w_2 \cdot \text{length}</span></p>
+<p><br></p>
+<p>We will use least squares to find <span class="math inline">\vec{w}^*
+= \begin{bmatrix} w_0^* \\ w_1^* \\ w_2^* \end{bmatrix}</span>.</p>
+<p>Write out the first 5 rows of the design matrix, <span
+class="math inline">X</span>. Your matrix should not have any variables
+in it.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">X = \begin{bmatrix} 1 &amp; 0.40 &amp;
+4.81 \\ 1 &amp; 1.04 &amp; 6.58 \\ 1 &amp; 0.40 &amp; 4.74 \\ 1 &amp;
+0.40 &amp; 4.67 \\ 1 &amp; 0.50 &amp; 4.90 \end{bmatrix}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>Suppose the optimal parameter vector <span
+class="math inline">\vec{w}^*</span> is given by</p>
+<p><span class="math display">\vec{w}^* = \begin{bmatrix} 2000 \\ 10000
+\\ -1000 \end{bmatrix}</span></p>
+<p>What is the predicted price of a diamond with 0.65 carats and a
+length of 4 centimeters? Show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The predicted price is</p>
+<p><span class="math display">2000 + 10000 \cdot 0.65 - 1000 \cdot 4 =
+4500</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Suppose <span class="math inline">\vec{e} = \begin{bmatrix} e_1 \\
+e_2 \\ ... \\ e_n \end{bmatrix}</span> is the error/residual vector,
+defined as</p>
+<p><span class="math display">\vec{e} = \vec{y} - X \vec{w}^*</span></p>
+<p>where <span class="math inline">\vec{y}</span> is the observation
+vector containing the prices for each diamond.</p>
+<p>For each of the following quantities, state whether they are
+guaranteed to be equal to 0 the scalar, <span
+class="math inline">\vec{0}</span> the vector of all 0s, or neither. No
+justification is necessary.</p>
+<ul>
+<li><span class="math inline">\sum_{i = 1}^n e_i</span></li>
+<li><span class="math inline">|| \vec{y} - X \vec{w}^* ||^2</span></li>
+<li><span class="math inline">X^TX \vec{w}^*</span></li>
+<li><span class="math inline">2X^TX \vec{w}^* - 2X^T\vec{y}</span></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<ul>
+<li><span class="math inline">\sum_{i = 1}^n e_i</span>: Yes, this is
+guaranteed to be 0. This was discussed in Homework 4; it is a
+consequence of the fact that <span class="math inline">X^T (y - X
+\vec{w}^*) = 0</span> and that we have an intercept term in our
+prediction rule (and hence a column of all 1s in our design matrix,
+<span class="math inline">X</span>).</li>
+<li><span class="math inline">|| \vec{y} - X \vec{w}^* ||^2</span>: No,
+this is not guaranteed to be 0. This is the mean squared error of our
+prediction rule, multiplied by <span class="math inline">n</span>. <span class="math inline">\vec{w}^*</span> is found by minimizing mean squared
+error, but the minimum value of mean squared error isn’t necessarily 0 —
+in fact, this quantity is only 0 if we can write <span class="math inline">\vec{y}</span> exactly as <span class="math inline">X \vec{w}^*</span> with no prediction errors.</li>
+<li><span class="math inline">X^TX \vec{w}^*</span>: This is not
+guaranteed to be 0, either.</li>
+<li><span class="math inline">2X^TX \vec{w}^* - 2X^T\vec{y}</span>: This
+is guaranteed to be 0. Recall, the optimal parameter vector <span class="math inline">\vec{w}^*</span> satisfies the normal equations
+<span class="math inline">X^TX\vec{w}^* = X^T \vec{y}</span>.
+Subtracting <span class="math inline">X^T \vec{y}</span> from both sides
+of this equation and multiplying both sides by 2 yields the desired
+result. (You may also find <span class="math inline">2X^TX \vec{w}^* -
+2X^T\vec{y}</span> to be familiar from lecture — it is the gradient of
+the mean squared error, multiplied by <span class="math inline">n</span>, and we set the gradient to 0 to find <span class="math inline">\vec{w}^*</span>.)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>Suppose we introduce two more features:</p>
+<ul>
+<li>width alone, and</li>
+<li>area, which is defined as length times width</li>
+</ul>
+<p>Suppose we also decide to remove the intercept term of our prediction
+rule. With all of these changes, our prediction rule is now</p>
+<p><span class="math display">\text{predicted price} = w_1 \cdot
+\text{carat} + w_2 \cdot \text{length} + w_3 \cdot \text{width} + w_4
+\cdot (\text{length} \cdot \text{width}) </span></p>
+<ul>
+<li>Write out just the first 2 rows of the design matrix <span
+class="math inline">X</span> for this new prediction rule. You do
+<strong>not</strong> need to simplify the numbers in your matrix, it is
+fine if they involve the multiplication symbol.</li>
+<li>Is the optimal coefficient for carat, <span
+class="math inline">w_1^*</span>, for this new prediction rule
+guaranteed to be equal to 10000, the optimal coefficient for carat in
+our original prediction rule? No justification is necessary.</li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<ul>
+<li><span class="math inline">X = \begin{bmatrix} 0.40 &amp; 4.81 &amp;
+4.76 &amp; 4.81 \cdot 4.76 \\ 1.04 &amp; 6.58 &amp; 6.53 &amp; 6.58
+\cdot 6.53 \end{bmatrix}</span></li>
+<li>No, it’s not guaranteed that the <span class="math inline">\vec{w}_1^*</span> for this new prediction rule is
+equal to the <span class="math inline">\vec{w}_1^*</span> for the
+original prediction rule. The value of <span class="math inline">\vec{w}_1^*</span> in the new prediction rule will
+be influenced by the fact that there’s no longer an intercept term and
+that there are two new features (width and area) that weren’t previously
+there.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
