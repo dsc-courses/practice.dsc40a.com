@@ -427,12 +427,11 @@ X &amp;=
 dataset and seeing the <span class="math inline">y</span> column.</p>
 <p>The matrix <span class="math inline">X</span> was found by looking at
 the equation <span class="math inline">H(x)</span>. You can think of
-each row of <span class="math inline">X</span> being: <span class="math inline">\begin{bmatrix}\text{bias term} &amp; x^{(1)}x^{(3)}
-&amp; (x^{(2)}-x^{(3)})^2\end{bmatrix}</span>. Recall our bias term here
-is not affected by <span class="math inline">x^{(i)}</span>, but it
-still exists! So we will always have the first element in our row be
-<span class="math inline">1</span>. We can then easily calculate the
-other elements in the matrix.</p>
+each row of <span class="math inline">X</span> being: <span class="math inline">\begin{bmatrix}1 &amp; x^{(1)}x^{(3)} &amp;
+(x^{(2)}-x^{(3)})^2\end{bmatrix}</span>. Recall our bias term here is
+not affected by <span class="math inline">x^{(i)}</span>, but it still
+exists! So we will always have the first element in our row be <span class="math inline">1</span>. We can then easily calculate the other
+elements in the matrix.</p>
 </div>
 </div>
 </div>
@@ -461,6 +460,10 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>The key to this problem is the fact that the error vector, <span class="math inline">\vec{e}</span>, is orthogonal to the columns of the
+design matrix, <span class="math inline">X</span>. As a refresher, if
+<span class="math inline">\vec{w^*}</span> satisfies the normal
+equations, then:</p>
 <p>We can rewrite the normal equation (<span class="math inline">X^TX\vec{w}=X^T\vec{y}</span>) to allow substitution
 for <span class="math inline">\vec{e} = \vec{y} - X \vec{w}</span>.</p>
 <p><span class="math display">
@@ -471,13 +474,15 @@ X^TX\vec{w}&amp;=X^T\vec{y} \\
 0 &amp;= X^T\vec{e}
 \end{align*}
 </span></p>
-<p>We can also transpose <span class="math inline">X</span>: <span class="math display">
+<p>The first step is to find <span class="math inline">X^T</span>, which
+is easy because we found <span class="math inline">X</span> above: <span class="math display">
 \begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 15 &amp; -15 &amp; 0 \\ 4 &amp; 1
 &amp; 4 &amp; 1
 \end{bmatrix}
 </span></p>
-<p>And now we can plug it into our equation: <span class="math display">
+<p>And now we can plug <span class="math inline">X^T</span> and <span class="math inline">\vec e</span> into our equation <span class="math inline">0 = X^T\vec{e}</span>. It might be easiest to find
+the right side first: <span class="math display">
 \begin{align*}
 X^T\vec{e} &amp;=
 \begin{bmatrix}
@@ -489,7 +494,7 @@ e_4\end{bmatrix} \\
 15e_2 - 15e_3 \\ 4e_1 + e_2 + 4e_3 + e_4\end{bmatrix}
 \end{align*}
 </span></p>
-<p>Now we can set it equal to zero! <span class="math display">
+<p>Finally, we set it equal to zero! <span class="math display">
 \begin{align*}
 0 &amp;= e_1 + e_2 + e_3 + e_4 \\
 0 &amp;= 15e_2 - 15e_3 \\

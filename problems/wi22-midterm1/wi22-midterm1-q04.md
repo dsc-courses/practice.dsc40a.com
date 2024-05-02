@@ -46,7 +46,7 @@ $$
 
 We got $\vec{y}$ by looking at our dataset and seeing the $y$ column.
 
-The matrix $X$ was found by looking at the equation $H(x)$. You can think of each row of $X$ being: $\begin{bmatrix}\text{bias term} & x^{(1)}x^{(3)} & (x^{(2)}-x^{(3)})^2\end{bmatrix}$. Recall our bias term here is not affected by $x^{(i)}$, but it still exists! So we will always have the first element in our row be $1$. We can then easily calculate the other elements in the matrix.
+The matrix $X$ was found by looking at the equation $H(x)$. You can think of each row of $X$ being: $\begin{bmatrix}1 & x^{(1)}x^{(3)} & (x^{(2)}-x^{(3)})^2\end{bmatrix}$. Recall our bias term here is not affected by $x^{(i)}$, but it still exists! So we will always have the first element in our row be $1$. We can then easily calculate the other elements in the matrix.
 
 # END SOLUTION
 
@@ -57,6 +57,8 @@ The matrix $X$ was found by looking at the equation $H(x)$. You can think of eac
 For the $X$ and $\vec{y}$ that you have written down, let $\vec{w}$ be the optimal parameter vector, which comes from solving the normal equations $X^TX\vec{w}=X^T\vec{y}$. Let $\vec{e} = \vec{y} - X \vec{w}$ be the error vector, and let $e_i$ be the $i$th component of this error vector. Show that $$4e_1+e_2+4e_3+e_4=0.$$
 
 # BEGIN SOLUTION
+
+The key to this problem is the fact that the error vector, $\vec{e}$, is orthogonal to the columns of the design matrix, $X$. As a refresher, if $\vec{w^*}$ satisfies the normal equations, then:
 
 We can rewrite the normal equation ($X^TX\vec{w}=X^T\vec{y}$) to allow substitution for $\vec{e} = \vec{y} - X \vec{w}$.
 
@@ -69,14 +71,14 @@ X^TX\vec{w}&=X^T\vec{y} \\
 \end{align*}
 $$
 
-We can also transpose $X$:
+The first step is to find $X^T$, which is easy because we found $X$ above:
 $$
 \begin{bmatrix}
 1 & 1 & 1 & 1 \\ 0 & 15 & -15 & 0 \\ 4 & 1 & 4 & 1
 \end{bmatrix}
 $$
 
-And now we can plug it into our equation:
+And now we can plug $X^T$ and $\vec e$ into our equation $0 = X^T\vec{e}$. It might be easiest to find the right side first:
 $$
 \begin{align*}
 X^T\vec{e} &= 
@@ -88,7 +90,7 @@ X^T\vec{e} &=
 \end{align*}
 $$
 
-Now we can set it equal to zero!
+Finally, we set it equal to zero!
 $$
 \begin{align*}
 0 &= e_1 + e_2 + e_3 + e_4 \\
