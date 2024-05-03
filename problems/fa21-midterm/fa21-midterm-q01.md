@@ -13,7 +13,7 @@ $$8, 12, 12, 15, 18, 20, 27$$
 King Triton wants to predict the number of likes his next post will
 receive, using a constant prediction rule $h$. For each loss function
 $L(h, y)$, determine the constant prediction $h^*$ that minimizes
-empirical risk. If you believe there are multiplie minimizers, specify
+empirical risk. If you believe there are multiple minimizers, specify
 them all. If you believe you need more information to answer the
 question or that there is no minimizer, state that clearly. **Give a
 brief justification for each answer.**
