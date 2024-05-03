@@ -37,6 +37,7 @@ In scope for the Spring 2024 Midterm Exam:
 - [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
 - [Simple Linear Regression](simple-linear-regression/index.html)
 - [Multiple Linear Regression and the Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
+- [Dimensions of Matrix-Vector Products (taken from DSC 140A)](https://dsc140a.com/practice/tags/object%20type.html)
 
 Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
 
