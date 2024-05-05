@@ -1028,8 +1028,9 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>There are several ways to do this problem. One way is to interpret
-mean absolute error of a constant prediction <span class="math inline">h</span> as the average distance of each data point
+<p><span class="math inline">\bar{y} = 121</span></p>
+<p>There are several ways to complete this problem. One way is to
+interpret mean absolute error of a constant prediction <span class="math inline">h</span> as the average distance of each data point
 to <span class="math inline">h</span>. So we are told that the average
 distance of each data point to <span class="math inline">27</span> is
 <span class="math inline">94</span>. That is, the data points are <span class="math inline">94</span> units away from <span class="math inline">27</span> on average. Since all the data is at least
@@ -1067,9 +1068,11 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Again, we can do this problem in multiple ways. Interpreting <span class="math inline">R_{abs}(h)</span> as the average distance of each
-data point to <span class="math inline">h</span>, we can see that since
-<span class="math inline">58</span> is <span class="math inline">31</span> units closer to each data point than <span class="math inline">27</span>, <span class="math inline">R_{abs}(58) =
+<p><span class="math inline">R_{abs}(58) = 63</span></p>
+<p>Again, we can complete this problem in multiple ways. Interpreting
+<span class="math inline">R_{abs}(h)</span> as the average distance of
+each data point to <span class="math inline">h</span>, we can see that
+since <span class="math inline">58</span> is <span class="math inline">31</span> units closer to each data point than <span class="math inline">27</span>, <span class="math inline">R_{abs}(58) =
 R_{abs}(27) - 31 = 94 - 31 = 63.</span></p>
 <p>Another way to do this problem uses the answer from part (a). Since
 the data points average to <span class="math inline">121</span>, their
@@ -1103,6 +1106,7 @@ aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>Our answer is <span class="math inline">18</span>.</p>
 <p>One easy way to do this problem is to recognize that none of these
 values are too low, but they may be too high. For example, the mean
 absolute deviation from the median can be as low as <span class="math inline">0</span>, when all the data points are the same.
@@ -1147,6 +1151,7 @@ aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>The dataset is {<span class="math inline">3, 11</span>}.</p>
 <p>We’ve already learned that <span class="math inline">R_{sq}(h)</span>
 is minimized at the mean of the data, and the minimum value of <span class="math inline">R_sq(h)</span> is the variance of the data. So we
 need to provide a dataset of two points with a mean of <span class="math inline">7</span> and a variance of <span class="math inline">16</span>. Recall that the variance is the average
@@ -1578,7 +1583,7 @@ that the smallest of <span class="math inline">f(x_1), f(x_2), \dots,
 f(x_n)</span> is <span class="math inline">f(x_n)</span> and the largest
 is <span class="math inline">f(x_1)</span>. Therefore,</p>
 <p><span class="math display">\begin{aligned} EM(f(x_1), f(x_2), \dots,
-f(x_n)) &amp;= \dfrac{f(x_n) + f(x_n)}{2} \\ &amp;=
+f(x_n)) &amp;= \dfrac{f(x_n) + f(x_1)}{2} \\ &amp;=
 \dfrac{-3x_n+4-3x_1+4}{2} \\ &amp;= \dfrac{-3x_n-3x_1}{2} + 4\\ &amp;=
 -3\left(\dfrac{x_1+x_n}{2}\right) + 4 \\ &amp;= -3EM(x_1, x_2, \dots,
 x_n)+ 4\\ &amp;= f(EM(x_1, x_2, \dots, x_n)). \end{aligned}</span></p>
