@@ -46,6 +46,8 @@ True or False: For an arbitrary dataset, the prediction rule $H^*(x) = 17 + w_1^
 
 # BEGIN SOLUTION
 
+False.
+
 When we fit a prediction rule of the form $H(x) = w_0+w_1x$ using simple linear regression, the formula for the intercept $w_0$ is designed to make sure the regression line passes through the point $(\bar x, \bar y)$. Here, we don't have the freedom to control our intercept, as it's forced to be $17$. This means we can't guarantee that the prediction rule $H^*(x) = 17 + w_1^*x$ goes through the point $(\bar x, \bar y)$.
 
 A simple example shows that this is the case. Consider the dataset $(-2, 0)$ and $(2, 0)$. The point $(\bar x, \bar y)$ is the origin, but the prediction rule $H^*(x)$ does not pass through the origin because it has an intercept of $17$.
@@ -62,6 +64,8 @@ True or False: For an arbitrary dataset, the mean squared error associated with 
 ( ) False
 
 # BEGIN SOLUTION
+
+True.
 
 The regression line is the prediction rule of the form $H(x) = w_0+w_1x$ with the smallest mean squared error (MSE). $H^*(x)$ is one example of a prediction rule of that form so unless it happens to be the regression line itself, the regression line will have lower MSE because it was designed to have the lowest possible MSE. This means the MSE associated with $H^*(x)$ is greater than or equal to the MSE associated with the regression line.
 
