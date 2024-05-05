@@ -103,7 +103,7 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
     <tr>
       <th scope="row">Fall 2021</th>
       <td>Suraj Rampure</td>
-      <td><a href="fa21-final/index.html">Final</a>
+      <td><a href="fa21-midterm/index.html">Midterm</a><br><a href="fa21-final/index.html">Final</a>
       </td>
     </tr>
     <tr>
