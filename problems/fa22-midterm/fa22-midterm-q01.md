@@ -34,9 +34,9 @@ If so, where it might converge to, given appropriate step size?
 
 # BEGIN SOLUTION
 
-We have $$f'(x_0) = f'(-1) = 3(-1)^2 + 2(-1) = 1 > 0,$$ so we go <u>left</u>,
+We have $$f'(x_0) = f'(-1) = 3(-1)^2 + 2(-1) = 1 > 0,$$ so we go **left**,
 and $$x_1 = x_0 - \alpha f'(x_0) = -1 - \frac{1}{4} = -\frac{5}{4}.$$
-Intuitively, the gradient descent <u>cannot converge in this case</u> because
+Intuitively, the gradient descent **cannot converge in this case** because
 $$\text{lim}_{x \rightarrow -\infty} f(x) = -\infty,$$ 
 
 We need to find
@@ -73,11 +73,11 @@ If so, where it might converge to, given appropriate step size?
 # BEGIN SOLUTION
 
 We have $$f'(x_0) = f'(-1) = 3 \cdot 1^2 + 2 \cdot 1 = 5 > 0,$$ so we go
-<u>left</u>, and 
+**left**, and 
 $$x_1 = x_0 - \alpha f'(x_0) = 1 - \frac{1}{4} \cdot 5 = -\frac{1}{4}.$$
 
 From the previous part, function $f$ has a local minimum at $x = 0$, so
-the gradient descent <u>can converge</u> (given appropriate step size) at this
+the gradient descent **can converge** (given appropriate step size) at this
 local minimum.
 
 # END SOLUTION

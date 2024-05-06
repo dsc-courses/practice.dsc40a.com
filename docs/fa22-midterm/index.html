@@ -124,9 +124,9 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>We have <span class="math display">f'(x_0) = f'(-1) = 3(-1)^2
-+ 2(-1) = 1 &gt; 0,</span> so we go <u>left</u>, and <span class="math display">x_1 = x_0 - \alpha f'(x_0) = -1 - \frac{1}{4} =
--\frac{5}{4}.</span> Intuitively, the gradient descent <u>cannot
-converge in this case</u> because <span class="math display">\text{lim}_{x \rightarrow -\infty} f(x) =
++ 2(-1) = 1 &gt; 0,</span> so we go <strong>left</strong>, and <span class="math display">x_1 = x_0 - \alpha f'(x_0) = -1 - \frac{1}{4} =
+-\frac{5}{4}.</span> Intuitively, the gradient descent <strong>cannot
+converge in this case</strong> because <span class="math display">\text{lim}_{x \rightarrow -\infty} f(x) =
 -\infty,</span></p>
 <p>We need to find all local minimums and local maximums. First, we
 solve the equation <span class="math inline">f'(x) = 0</span> to
@@ -168,12 +168,13 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>We have <span class="math display">f'(x_0) = f'(-1) = 3 \cdot
-1^2 + 2 \cdot 1 = 5 &gt; 0,</span> so we go <u>left</u>, and <span class="math display">x_1 = x_0 - \alpha f'(x_0) = 1 - \frac{1}{4}
-\cdot 5 = -\frac{1}{4}.</span></p>
+1^2 + 2 \cdot 1 = 5 &gt; 0,</span> so we go <strong>left</strong>, and
+<span class="math display">x_1 = x_0 - \alpha f'(x_0) = 1 -
+\frac{1}{4} \cdot 5 = -\frac{1}{4}.</span></p>
 <p>From the previous part, function <span class="math inline">f</span>
 has a local minimum at <span class="math inline">x = 0</span>, so the
-gradient descent <u>can converge</u> (given appropriate step size) at
-this local minimum.</p>
+gradient descent <strong>can converge</strong> (given appropriate step
+size) at this local minimum.</p>
 </div>
 </div>
 </div>
@@ -449,7 +450,9 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <p><span class="math inline">w_0^* = \bar{y} - w_1^* \bar{x} = 1 -
 \frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}</span></p>
 <p>Because <span class="math inline">w_1^* = r
-\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 2/7 &gt; 0</span>, the correlation <span class="math inline">r</span> is positive and the slope is positive.</p>
+\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 2/7 &gt; 0</span>, <strong>the correlation
+<span class="math inline">r</span> is positive and the slope is
+positive</strong>.</p>
 </div>
 </div>
 </div>
@@ -544,8 +547,9 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. It changes the mean from <span class="math inline">85</span> to <span class="math inline">84</span>.
-(However, the median is not changed.)</p>
+<p>False. It changes the mean from <span class="math inline">85</span>
+to <span class="math inline">84</span>. (However, the median is not
+changed.)</p>
 </div>
 </div>
 </div>
@@ -571,8 +575,9 @@ aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean squared loss is more sensitive to outliers than absolute
-loss, and removing data changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
+<p>Removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>. This is because the mean squared loss
+is more sensitive to outliers than absolute loss, and removing data
+changes the mean more.</p>
 </div>
 </div>
 </div>
@@ -599,8 +604,9 @@ aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differentiable everywhere so
-we can not use the gradient descent to find the minimum.</p>
+<p>False. The function <span class="math inline">|y-h|^3</span> is not
+differentiable everywhere so we can not use the gradient descent to find
+the minimum.</p>
 </div>
 </div>
 </div>
@@ -629,8 +635,8 @@ aria-labelledby="heading3_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function is not convex, so the gradient
-descent algorithm is not guaranteed to converge.</p>
+<p>False. The function is not convex, so the gradient descent algorithm
+is not guaranteed to converge.</p>
 </div>
 </div>
 </div>
@@ -661,6 +667,9 @@ aria-labelledby="heading3_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">r=-0.95</span>. This means the weather
+temperature inversely affects Baklava sales, i.e., they are highly
+negatively correlated.</p>
 <p>We know <span class="math inline">w_1^* =
 \frac{\sigma_y}{\sigma_x}r.</span> We know that <span class="math inline">\sigma_x=8.5</span> and <span class="math inline">w_1^*=-3</span>. We can find <span class="math inline">\sigma_y</span> as follows:</p>
 <p><span class="math display">\begin{aligned}
@@ -670,9 +679,7 @@ aria-labelledby="heading3_7" data-bs-parent="#accordionExample">
     =&amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
 \end{aligned}</span></p>
 <p>Then, <span class="math inline">\sigma_y=26.7</span> which results in
-<span class="math inline">r=-0.95</span>. That means the weather
-temperature inversely affects Baklava sales, i.e., they are highly
-negatively correlated.</p>
+<span class="math inline">r=-0.95</span>.</p>
 </div>
 </div>
 </div>
@@ -699,9 +706,8 @@ aria-labelledby="heading3_8" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False.</strong> The correlation coefficient has no unit. (It
-is always a unitless number in <span class="math inline">[-1,1]</span>
-range.)</p>
+<p>False. The correlation coefficient has no unit. (It is always a
+unitless number in <span class="math inline">[-1,1]</span> range.)</p>
 </div>
 </div>
 </div>
@@ -724,6 +730,7 @@ aria-labelledby="heading3_9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">w_0^*=280</span></p>
 <p>Note that <span class="math inline">H(\bar x)=\bar y</span>.
 Therefore, <span class="math display">\begin{aligned}
         H(65)=-3\cdot 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
@@ -751,6 +758,7 @@ aria-labelledby="heading3_10" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -1.5x + 280</span></p>
 <p>The standard deviation scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\cdot \sigma_x</span>.<br/> The same
 is true for the mean, i.e., <span class="math inline">\bar{x}'=2
 \cdot \bar{x}.</span> <br/> The correlation <span class="math inline">r</span>, standard deviation of the y-values <span class="math inline">\sigma_y</span>, and the mean of the y-values <span class="math inline">\bar y</span> do not change. <br/> (You can verify
@@ -794,6 +802,7 @@ aria-labelledby="heading3_11" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -3x + 340</span></p>
 <p>All parameters remain unchanged except <span class="math inline">\bar{x}'=\bar{x}+20.</span> Since <span class="math inline">r</span>, <span class="math inline">\sigma_x</span>
 and <span class="math inline">\sigma_y</span> are not changed, <span class="math inline">w_1^*</span> does not change. Then, one can find
 <span class="math inline">w_0^*</span> as follows:</p>
@@ -868,6 +877,10 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">h^*=\alpha \bar{y} -
+\frac{\lambda}{2}</span></p>
+<hr/>
+<p><br/></p>
 <p><span class="math display">
 \begin{align*}
 \frac{d}{dh}R_{\text{midterm}}(h)&amp;= [\frac{2}{n}\sum_{i=1}^{n}(h-

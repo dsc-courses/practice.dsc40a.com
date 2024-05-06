@@ -31,6 +31,12 @@ of $\bar{y}$, $\alpha$ and $\lambda$.
 
 # BEGIN SOLUTION
 
+$$h^*=\alpha \bar{y} - \frac{\lambda}{2}$$
+
+___
+
+<br>
+
 $$
 \begin{align*}
 \frac{d}{dh}R_{\text{midterm}}(h)&= [\frac{2}{n}\sum_{i=1}^{n}(h- \alpha y_i  )] +\lambda \\

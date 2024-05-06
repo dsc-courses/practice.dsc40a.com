@@ -151,7 +151,7 @@ $w_1^* = \displaystyle
 $w_0^* = \bar{y} - w_1^* \bar{x} = 1 - \frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}$
 
 
-Because $w_1^* = r \frac{\sigma_y}{\sigma_x}$ where the standard deviations $\sigma_y$ and $\sigma_x$ are non-negative, and $w_1^* = 2/7 > 0$, the correlation $r$ is positive and the slope is positive.
+Because $w_1^* = r \frac{\sigma_y}{\sigma_x}$ where the standard deviations $\sigma_y$ and $\sigma_x$ are non-negative, and $w_1^* = 2/7 > 0$, **the correlation $r$ is positive and the slope is positive**.
 
 # END SOLUTION
 

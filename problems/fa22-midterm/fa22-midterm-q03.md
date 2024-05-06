@@ -52,7 +52,7 @@ dataset does not change $h_2^*$.
 
 # BEGIN SOLUTION
 
-**False**. It changes the mean from $85$ to $84$. (However, the median
+False. It changes the mean from $85$ to $84$. (However, the median
 is not changed.)
 
 # END SOLUTION
@@ -68,9 +68,7 @@ prediction changes *more*? $h^*_1$ or $h_2^*$?
 
 # BEGIN SOLUTION
 
-The mean squared loss is more sensitive to outliers than absolute loss, and removing data
-changes the mean more. Therefore, removing $y_7$ affects $h_2^*$ more
-than $h_1^*$.
+Removing $y_7$ affects $h_2^*$ more than $h_1^*$. This is because the mean squared loss is more sensitive to outliers than absolute loss, and removing data changes the mean more. 
 
 # END SOLUTION
 
@@ -86,7 +84,7 @@ the Gradient descent algorithm to find $h^*$.
 
 # BEGIN SOLUTION
 
-**False**. The function $|y-h|^3$ is not differentiable everywhere so we
+False. The function $|y-h|^3$ is not differentiable everywhere so we
 can not use the gradient descent to find the minimum.
 
 # END SOLUTION
@@ -104,7 +102,7 @@ learning rate is given.\
 
 # BEGIN SOLUTION
 
-**False**. The function is not convex, so the gradient descent algorithm
+False. The function is not convex, so the gradient descent algorithm
 is not guaranteed to converge.
 
 # END SOLUTION
@@ -125,6 +123,9 @@ $y$? What does that mean?
 
 # BEGIN SOLUTION
 
+$r=-0.95$. This means the weather temperature inversely affects Baklava sales, i.e., they
+are highly negatively correlated.
+
 We know $w_1^* = \frac{\sigma_y}{\sigma_x}r.$ We know that $\sigma_x=8.5$
 and $w_1^*=-3$. We can find $\sigma_y$ as follows: 
 
@@ -134,9 +135,7 @@ $$\begin{aligned}
     =&\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
 \end{aligned}$$
 
- Then, $\sigma_y=26.7$ which results in $r=-0.95$. That
-means the weather temperature inversely affects Baklava sales, i.e., they
-are highly negatively correlated.
+Then, $\sigma_y=26.7$ which results in $r=-0.95$.
 
 # END SOLUTION
 
@@ -152,7 +151,7 @@ are highly negatively correlated.
 
 # BEGIN SOLUTION
 
-**False.** The correlation coefficient has no unit. (It is always a unitless
+False. The correlation coefficient has no unit. (It is always a unitless
 number in $[-1,1]$ range.)
 
 # END SOLUTION
@@ -164,6 +163,8 @@ number in $[-1,1]$ range.)
 Find $w^*_0$. _(Hint: You'll need to find $\bar y$ for the given dataset)_
 
 # BEGIN SOLUTION
+
+$$w_0^*=280$$
 
 Note that $H(\bar x)=\bar y$. Therefore, 
 $$\begin{aligned}
@@ -180,6 +181,8 @@ What would the best linear prediction $H^*(x)$ be if we
 multiply all $x_i$'s by $2$? 
 
 # BEGIN SOLUTION
+
+$$H^*(x) = -1.5x + 280$$
 
 The standard deviation scales by a factor of $2$, i.e.,
 $\sigma_x'=2\cdot \sigma_x$.<br>
@@ -212,6 +215,8 @@ What would the best linear prediction $H^*(x)$ be if we add
 $20$ to all $x_i$'s? 
 
 # BEGIN SOLUTION
+
+$$H^*(x) = -3x + 340$$
 
 All parameters remain unchanged except $\bar{x}'=\bar{x}+20.$ Since $r$,
 $\sigma_x$ and $\sigma_y$ are not changed, $w_1^*$ does not change. Then, one
