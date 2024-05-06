@@ -65,9 +65,9 @@ This is saying we just halve the intercept term. For example, imagine fitting a 
 
 Let $X_c$ be the design matrix that comes from **adding one to each entry of the third column** of $X$. Let $\vec{w_c}^* = (X_c^TX_c)^{-1}X_c^T\vec{y}$. Express the components $\vec{w_c}^*$ in terms of $w_0^*, w_1^*, w_2^*$, and $w_3^*$, which were the components of $\vec{w}^*$.
 
-$$\vec{w_c}^* = \begin{bmatrix} w_0^* - w_2^*  \\ w_1^* \\ w_2^* \\ w_3^* \end{bmatrix}$$
-
 # BEGIN SOLUTION
+
+$$\vec{w_c}^* = \begin{bmatrix} w_0^* - w_2^*  \\ w_1^* \\ w_2^* \\ w_3^* \end{bmatrix}$$
 
 Suppose our original prediction rule was of the form:
 $$H(\vec{x}) = w_0 + w_1x_1+ w_2x_2+  w_3x_3.$$ 
