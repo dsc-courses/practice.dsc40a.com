@@ -694,14 +694,25 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\leq</span></p>
-<p>Recall the equation for mean squared error: <span class="math inline">\text{MSE}(H(x_i)) =
-\frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2</span>. We can figure out which is
-bigger by subtracting <span class="math inline">\text{MSE}(H^{\circ})</span> from <span class="math inline">\text{MSE}(H^*)</span>. The difference between the
-squared differences is: <span class="math display">(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2</span>Notice
-there is a squared element, which means that the differences of <span class="math inline">w^*_0 - w^{\circ}_0</span>, <span class="math inline">w^*_1 - w^{\circ}_1</span>, and <span class="math inline">w^*_2 - w^{\circ}_2</span> will appear as squared
-terms, which are always positive! This means adding these squared
-differences to <span class="math inline">H^*</span> will make it at
-least as large as the squared difference for <span class="math inline">H^{\circ}</span>.</p>
+<p>It is given that <span class="math inline">\vec{w}^*</span> is the
+optimal parameter vector. Here’s one thing we know about the optimal
+parameter vector <span class="math inline">\vec{w}^*</span>: it is
+optimal, which means that any <em>changes</em> made to it will, at best,
+keep our predictions of the exact same quality, and, at worst, reduce
+the quality of our predictions and <strong>increase our error</strong>.
+And since <span class="math inline">\vec{w} \degree</span> is just the
+optimal parameter vector but with some small <em>changes</em> to the
+weights, it stands that <span class="math inline">\vec{w} \degree</span>
+is liable to create equal or greater error!</p>
+<p>In other words, <span class="math inline">\vec{w} \degree</span> is a
+slightly worse version of <span class="math inline">\vec{w}^*</span>,
+meaning that <span class="math inline">H \degree(x)</span> is a slightly
+worse version of <span class="math inline">H^*(x)</span>. So, <span class="math inline">H \degree(x)</span> will have equal or higher error
+than <span class="math inline">H^*(x)</span>.</p>
+<p>Hence: <span class="math inline">\text{MSE}(H^*) \leq
+\text{MSE}(H^{\circ})</span></p>
+<!-- Recall the equation for mean squared error: $\text{MSE}(H(x_i)) = \frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2$. We can figure out which is bigger by subtracting  $\text{MSE}(H^{\circ})$ from $\text{MSE}(H^*)$. The difference between the squared differences is:
+$$(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2$$Notice there is a squared element, which means that the differences of $w^*_0 - w^{\circ}_0$, $w^*_1 - w^{\circ}_1$, and $w^*_2 - w^{\circ}_2$ will appear as squared terms, which are always positive! This means adding these squared differences to $H^*$ will make it at least as large as the squared difference for $H^{\circ}$. -->
 </div>
 </div>
 </div>
@@ -729,24 +740,39 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\geq</span></p>
-<p>Recall the equation for mean absolute error: <span class="math inline">\text{MAE}(H(x_i)) =
-\frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|</span>.</p>
-<p>This equation looks very similar to the mean squared error! We can
-actually take the square root of each sides of this equation to learn
-more about which side is larger: <span class="math display">
+<p>The formula for mean absolute error is: <span class="math inline">\text{MAE}(H(x_i)) =
+\frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|</span><br/>
+The formula for mean squared error is: <span class="math inline">\text{MSE}(H(x_i)) =
+\frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2</span></p>
+<p>We can substitute these two formulas into our comparison and recieve:
+<span class="math inline">(\frac{1}{n}\sum_{i=1}^n|y_i-H(x_i)|)^2</span>
+___ <span class="math inline">\frac{1}{n}\sum_{i=1}^n(y_i-H(x_i))^2</span></p>
+<p>It is now clear that our comparison boils down to this question:
+“Which is greater? If I take the absolute errors, square them, and then
+sum them up… <em>or</em> if I take the absolute errors, sum them up, and
+then square them?”</p>
+<p>Rules from algebra tell us that summing the absolute errors up
+<em>before</em> squaring them will always produce a greater result than
+the other way around (this holds when all of our values are positive,
+which they are in this case thanks to dealing with <em>absolute</em>
+errors)! It’s a good exercise to think about why this is the case, but a
+basic example is if I have two positive values <span class="math inline">a</span> and <span class="math inline">b</span>:
+<span class="math inline">(a + b)^2 = a^2 + b^2 + 2ab \geq a^2 +
+b^2</span>, since <span class="math inline">2ab</span> is a non-negative
+term.</p>
+<p>Bringing this altogether, we should conclude that <span class="math inline">\text{MAE}(H(x_i))^2  \geq
+\text{MSE}(H(x_i))</span>, since summing up the errors before squaring
+them is greater than the other way around!</p>
+<!-- This equation looks very similar to the mean squared error! We can actually take the square root of each sides of this equation to learn more about which side is larger:
+$$
 \begin{align*}
-(\text{MAE}(H^\circ))^2 &amp;\_\_\_ \text{MSE}(H^\circ) \\
-\sqrt{(\text{MAE}(H^\circ))^2} &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
-\text{MAE}(H^\circ) &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)}
+(\text{MAE}(H^\circ))^2 &\_\_\_ \text{MSE}(H^\circ) \\
+\sqrt{(\text{MAE}(H^\circ))^2} &\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
+\text{MAE}(H^\circ) &\_\_\_ \sqrt{\text{MSE}(H^\circ)}
 \end{align*}
-</span></p>
-<p>The square root of <span class="math inline">\text{MSE}</span> is
-equal to <span class="math inline">\text{MAE}</span>! These two elements
-are basically the same because squaring a value will lead to
-non-negatives and then it will be square rooted to match the absolute
-value from <span class="math inline">\text{MAE}</span>. However the
-<span class="math inline">\text{MSE}</span> being square rooted also
-allows for it to be smaller than the <span class="math inline">\text{MSE}</span> making the correct symbol <span class="math inline">\geq</span>.</p>
+$$
+
+The square root of $\text{MSE}$ is equal to $\text{MAE}$! These two elements are basically the same because squaring a value will lead to non-negatives and then it will be square rooted to match the absolute value from $\text{MAE}$. However the $\text{MSE}$ being square rooted also allows for it to be smaller than the $\text{MSE}$ making the correct symbol $\geq$. -->
 </div>
 </div>
 </div>
