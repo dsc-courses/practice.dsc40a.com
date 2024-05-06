@@ -24,11 +24,9 @@ Minimize the function $MSE(w_1)$ to find the parameter $w_1^*$ which defines the
 Fill in your final answer below: 
 
 # BEGIN SOLUTION
-**Answer:**
 
 $$w_1^* = \dfrac{\displaystyle\sum_{i=1}^n x_i(y_i - 17)}{\displaystyle\sum_{i=1}^n x_i^2}$$
 
-**Proof:** 
 
 To minimize a function of one variable, we need to take the derivative, set it equal to zero, and solve. $$\begin{aligned} MSE(w_1) &= \dfrac1n \displaystyle\sum_{i=1}^n (y_i - 17 - w_1x_i)^2 \\ MSE'(w_1) &= \dfrac1n \displaystyle\sum_{i=1}^n -2x_i(y_i - 17 - w_1x_i)) \qquad \text{using the chain rule} \\ 0 &= \dfrac1n \displaystyle\sum_{i=1}^n -2x_i(y_i - 17) + \dfrac1n \displaystyle\sum_{i=1}^n 2x_i^2w_1 \qquad \text{splitting up the sum} \\ 0 &=  \displaystyle\sum_{i=1}^n -x_i(y_i - 17) +  \displaystyle\sum_{i=1}^n x_i^2w_1 \qquad \text{multiplying through by } \frac{n}{2} \\ w_1 \displaystyle\sum_{i=1}^n x_i^2 &=  \displaystyle\sum_{i=1}^n x_i(y_i - 17)   \qquad \text{rearranging terms and pulling out } w_1 \\ w_1 & = \dfrac{\displaystyle\sum_{i=1}^n x_i(y_i - 17)}{\displaystyle\sum_{i=1}^n x_i^2} \end{aligned}$$
 

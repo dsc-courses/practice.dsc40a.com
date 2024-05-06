@@ -324,9 +324,9 @@ has an intercept of <span class="math inline">w_0^*</span> and slope of
 <p><span class="math display">\text{predicted price} = w_0^* + w_1^*
 \cdot \text{square footage}</span></p>
 <p>We’re now interested in minimizing mean squared error to fit a linear
-prediction rule that uses price to predict square footage. Suppose this
-new regression line has an intercept of <span
-class="math inline">\beta_0^*</span> and slope of <span
+prediction rule <strong>that uses price to predict square
+footage</strong>. Suppose this new regression line has an intercept of
+<span class="math inline">\beta_0^*</span> and slope of <span
 class="math inline">\beta_1^*</span>.</p>
 <p>What is <span class="math inline">\beta_1^*</span>? Give your answer
 in terms of one or more of <span class="math inline">n</span>, <span
@@ -345,17 +345,36 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">\beta_1^* = \frac{r^2}{w_1^*}</span></p>
 <p>Throughout this solution, let <span class="math inline">x</span>
 represent square footage and <span class="math inline">y</span>
 represent price.</p>
 <p>We know that <span class="math inline">w_1^* = r
-\frac{\sigma_y}{\sigma_x}</span>, and <span class="math inline">\beta_1^* = r \frac{\sigma_x}{\sigma_y}</span>. This
-means that</p>
-<p><span class="math display">w_1^* \cdot \beta_1^* = r
-\frac{\sigma_y}{\sigma_x} \cdot r \frac{\sigma_x}{\sigma_y} =
-r^2</span></p>
-<p>and as a result, <span class="math inline">\beta_1^* =
-\frac{r^2}{w_1^*}</span>.</p>
+\frac{\sigma_y}{\sigma_x}</span>. But what about <span class="math inline">\beta_1^*</span>?</p>
+<p>When we take a rule that predicts price from square footage and
+transform it into a rule that predicts square footage from price, the
+roles of <span class="math inline">x</span> and <span class="math inline">y</span> have swapped; suddenly, square footage is
+no longer our independent variable, but our dependent variable, and vice
+versa for price. This means that the altered dataset we work with when
+using our new prediction rule has <span class="math inline">\sigma_x</span> standard deviation for its dependent
+variable (square footage), and <span class="math inline">\sigma_y</span>
+for its independent variable (price). So, we can write the formula for
+<span class="math inline">\beta_1^*</span> as follows: <span class="math display">\beta_1^* = r \frac{\sigma_x}{\sigma_y}</span></p>
+<p>In essence, swapping the independent and dependent variables of a
+dataset changes the slope of the regression line from <span class="math inline">r \frac{\sigma_y}{\sigma_x}</span> to <span class="math inline">r \frac{\sigma_x}{\sigma_y}</span>.</p>
+<p>From here, we can use a little algebra to get our <span class="math inline">\beta_1^*</span> in terms of one or more <span class="math inline">n</span>, <span class="math inline">r</span>, <span class="math inline">w_0^*</span>, and <span class="math inline">w_1^*</span>:</p>
+<p><span class="math display">\begin{align*}
+\beta_1^* &amp;= r \frac{\sigma_x}{\sigma_y} \\
+w_1^* \cdot \beta_1^* &amp;= w_1^* \cdot r \frac{\sigma_x}{\sigma_y} \\
+w_1^* \cdot \beta_1^* &amp;= ( r \frac{\sigma_y}{\sigma_x}) \cdot r
+\frac{\sigma_x}{\sigma_y}
+\end{align*}</span></p>
+<p>The fractions <span class="math inline">\frac{\sigma_y}{\sigma_x}</span> and <span class="math inline">\frac{\sigma_x}{\sigma_y}</span> cancel out and we
+get:</p>
+<p><span class="math display">\begin{align*}
+w_1^* \cdot \beta_1^* &amp;= r^2 \\
+\beta_1^* &amp;= \frac{r^2}{w_1^*}
+\end{align*}</span></p>
 </div>
 </div>
 </div>
@@ -387,6 +406,7 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">\beta_0^* = 1278.56</span></p>
 <p>We start with the formula for the intercept of the regression line.
 Note that <span class="math inline">x</span> and <span class="math inline">y</span> are opposite what they’d normally be since
 we’re using price to predict square footage.</p>
@@ -404,12 +424,12 @@ that uses square footage to predict price to find <span class="math inline">\bar
 <span class="math inline">w_0^* = 1000</span>, <span class="math inline">\bar{x} = 2000</span>, and <span class="math inline">w_1^* = 250</span>, so <span class="math inline">\bar{y} = 1000 + 2000 \cdot 250 = 501000</span>.</p>
 <p>Putting these pieces together, we have</p>
 <p><span class="math display">
-\begin{align}
+\begin{align*}
 \beta_0^* &amp;= \bar{x} - \beta_1^* \bar{y} \\
 &amp;= 2000 - \frac{0.6^2}{250} \cdot 501000 \\
 &amp;= 2000 - 0.6^2 \cdot 2004 \\
 &amp;= 1278.56
-\end{align}
+\end{align*}
 </span></p>
 </div>
 </div>
