@@ -608,9 +608,8 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 columns}</span></p>
 <p>There should be <span class="math inline">100</span> rows because
 there are <span class="math inline">100</span> different Jupyter
-notebooks with different information within them. There should be <span class="math inline">3</span> rows because there are three distinct
-predictor variables: “cells,” “lines,” and the combined effect of “max
-iterations” and “variables.”</p>
+notebooks with different information within them. There should be <span class="math inline">3</span> columns, one for each <span class="math inline">w_i</span>. In this case we have <span class="math inline">w_0</span>, which means <span class="math inline">X</span> will have a column of ones, <span class="math inline">w_1</span>, which means <span class="math inline">X</span> will have a second column of <span class="math inline">\text{cells} \cdot \text{lines}</span>, and <span class="math inline">w_2</span>, which will be the last column in <span class="math inline">X</span> containing <span class="math inline">\text{max iterations})^{\text{variables} -
+10}</span>.</p>
 </div>
 </div>
 </div>

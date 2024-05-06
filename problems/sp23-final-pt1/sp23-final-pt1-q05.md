@@ -36,7 +36,7 @@ So, what should $r$ and $c$ be for: $r$ rows $\times$ $c$ columns.
 
 $100 \text{ rows} \times 3 \text{ columns}$
 
-There should be $100$ rows because there are $100$ different Jupyter notebooks with different information within them. There should be $3$ rows because there are three distinct predictor variables: "cells," "lines," and the combined effect of "max iterations" and "variables."
+There should be $100$ rows because there are $100$ different Jupyter notebooks with different information within them. There should be $3$ columns, one for each $w_i$. In this case we have $w_0$, which means $X$ will have a column of ones, $w_1$, which means $X$ will have a second column of $\text{cells} \cdot \text{lines}$, and $w_2$, which will be the last column in $X$ containing $\text{max iterations})^{\text{variables} - 10}$.
 
 # END SOLUTION
 
