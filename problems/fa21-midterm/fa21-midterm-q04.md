@@ -86,6 +86,9 @@ intuitively about what happens.*
 
 # BEGIN SOLUTION
 
+We should add $w_1^*$ to each tip $y$.
+
+
 First, we present the rigorous solution.
 
 Let $\bar{x}_\text{old}$ represent the previous mean of the $x$'s and
@@ -111,7 +114,7 @@ $$\begin{aligned}
 
 Thus, in order for the intercepts to be equal, we need the mean of the
 new $y$'s to be $w_1^*$ greater than the mean of the old $y$'s. Since
-we're told we're adding the same constant to each $y$, that constant is
+we're told we're adding the same constant to each $y$ that constant is
 $w_1^*$.
 
 Another way to approach the question is as follows: consider any point

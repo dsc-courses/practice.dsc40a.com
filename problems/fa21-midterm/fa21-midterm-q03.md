@@ -15,6 +15,8 @@ value $h^*$ that minimizes $R(h)$?
 
 # BEGIN SOLUTION
 
+$$h^* = -1$$
+
 The minimum possible value of the exponent is $0$, since anything
 squared is non-negative. The exponent is 0 when $(x+1)^2 = 0$, i.e. when
 $x = -1$. Since $e^{(x+1)^2}$ gets larger as $(x+1)^2$ gets larger, the
@@ -32,6 +34,8 @@ your answer in terms of a generic step size, $\alpha$, and other
 constants. ($e$ is a constant.)
 
 # BEGIN SOLUTION
+
+$$h_1 = -\alpha \cdot 2e$$
 
 First, we find $\frac{dR}{dh}(h)$:
 
@@ -56,6 +60,8 @@ should we set the value of $\alpha$ to be if we want to ensure that
 gradient descent finds $h^*$ after just one iteration?
 
 # BEGIN SOLUTION
+
+$$\alpha = \frac{1}{2e}$$
 
 We know from the part (b) that $h_1 = -\alpha \cdot 2e$, and we know from part
 (a) that $h^* = -1$. If gradient descent converges in one iteration, that

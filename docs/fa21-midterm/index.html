@@ -294,13 +294,13 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The minimizer of MAE for Dataset B is still 5. Note that when we
-repeat each data point, we go from having an odd number of data points
-(23) to an even number (46). This means the minimizer is the set of all
-values between the middle two values. But the middle two values will now
-both be <span class="math inline">y_{12}</span>, and so there are no
-numbers “in between" them – only <span class="math inline">y_{12}</span>
-minimizes MAE.</p>
+<p>The minimizer of MAE for Dataset B is still 5.</p>
+<p>Note that when we repeat each data point, we go from having an odd
+number of data points (23) to an even number (46). This means the
+minimizer is the set of all values between the middle two values. But
+the middle two values will now both be <span class="math inline">y_{12}</span>, and so there are no numbers “in
+between" them – only <span class="math inline">y_{12}</span> minimizes
+MAE.</p>
 </div>
 </div>
 </div>
@@ -325,7 +325,8 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The mean absolute deviation from the median for Dataset B is still
-17. As we saw in previous part, the median itself does not change. When
+17.</p>
+<p>As we saw in previous part, the median itself does not change. When
 adding together the deviations from the median, each point is repeated
 twice, so the sum of all deviations from the median is doubled. However,
 there are twice as many data points in Dataset B than there are in
@@ -363,14 +364,14 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Yes they are.</p>
-<p>Recall that the definition of <span class="math inline">R_{abs}(h)</span> is</p>
+<p>Yes, <span class="math inline">R_{A}(h) = R_{B}(h)</span>.</p>
+<p>Recall that the definition of <span class="math inline">R_{abs}(h)</span> is:</p>
 <p><span class="math display">R_{abs}(h) = \frac{1}{n} \sum_{i = 1}^n
 |y_i - h|</span></p>
-<p>For the first dataset, we have</p>
+<p>For the first dataset, we have:</p>
 <p><span class="math display">R_{A}(h) = \frac{1}{23} \sum_{i = 1}^{23}
 |y_i - h|</span></p>
-<p>and for the second dataset, we have</p>
+<p>and for the second dataset, we have:</p>
 <p><span class="math display">\begin{aligned}
 R_{B}(h) &amp;= \frac{1}{46} \sum_{i = 1}^{46} \left( |y_1 - h| + |y_1 -
 h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right)
@@ -408,6 +409,7 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">h^* = -1</span></p>
 <p>The minimum possible value of the exponent is <span class="math inline">0</span>, since anything squared is non-negative.
 The exponent is 0 when <span class="math inline">(x+1)^2 = 0</span>,
 i.e. when <span class="math inline">x = -1</span>. Since <span class="math inline">e^{(x+1)^2}</span> gets larger as <span class="math inline">(x+1)^2</span> gets larger, the minimizing input
@@ -437,6 +439,7 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">h_1 = -\alpha \cdot 2e</span></p>
 <p>First, we find <span class="math inline">\frac{dR}{dh}(h)</span>:</p>
 <p><span class="math display">\frac{dR}{dh}(h) = 2(x+1)
 e^{(x+1)^2}</span></p>
@@ -469,6 +472,7 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">\alpha = \frac{1}{2e}</span></p>
 <p>We know from the part (b) that <span class="math inline">h_1 =
 -\alpha \cdot 2e</span>, and we know from part (a) that <span class="math inline">h^* = -1</span>. If gradient descent converges in
 one iteration, that means that <span class="math inline">h_1 =
@@ -625,6 +629,8 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>We should add <span class="math inline">w_1^*</span> to each tip
+<span class="math inline">y</span>.</p>
 <p>First, we present the rigorous solution.</p>
 <p>Let <span class="math inline">\bar{x}_\text{old}</span> represent the
 previous mean of the <span class="math inline">x</span>’s and <span class="math inline">\bar{x}_\text{new}</span> represent the new mean of
@@ -649,7 +655,7 @@ line is <span class="math inline">\bar{y}_\text{old} - w_1^*
 \end{aligned}</span></p>
 <p>Thus, in order for the intercepts to be equal, we need the mean of
 the new <span class="math inline">y</span>’s to be <span class="math inline">w_1^*</span> greater than the mean of the old <span class="math inline">y</span>’s. Since we’re told we’re adding the same
-constant to each <span class="math inline">y</span>, that constant is
+constant to each <span class="math inline">y</span> that constant is
 <span class="math inline">w_1^*</span>.</p>
 <p>Another way to approach the question is as follows: consider any
 point that lies directly on a line with slope <span class="math inline">w_1^*</span> and intercept <span class="math inline">w_0^*</span>. Consider how the slope between two

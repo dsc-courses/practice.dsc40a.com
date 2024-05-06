@@ -45,6 +45,7 @@ question, state that clearly.
 # BEGIN SOLUTION
 
 The mean absolute deviation from the median for Dataset B is still 17.
+
 As we saw in previous part, the median itself does not change. When adding
 together the deviations from the median, each point is repeated twice,
 so the sum of all deviations from the median is doubled. However, there
@@ -72,17 +73,17 @@ reasoning.
 
 # BEGIN SOLUTION
 
-Yes they are.
+Yes, $R_{A}(h) = R_{B}(h)$.
 
-Recall that the definition of $R_{abs}(h)$ is
+Recall that the definition of $R_{abs}(h)$ is:
 
 $$R_{abs}(h) = \frac{1}{n} \sum_{i = 1}^n |y_i - h|$$
 
-For the first dataset, we have
+For the first dataset, we have:
 
 $$R_{A}(h) = \frac{1}{23} \sum_{i = 1}^{23} |y_i - h|$$
 
-and for the second dataset, we have
+and for the second dataset, we have:
 
 $$\begin{aligned}
 R_{B}(h) &= \frac{1}{46} \sum_{i = 1}^{46} \left( |y_1 - h| + |y_1 - h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right) \\
