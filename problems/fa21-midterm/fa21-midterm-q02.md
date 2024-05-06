@@ -22,7 +22,9 @@ state that clearly.
 
 # BEGIN SOLUTION
 
-The minimizer of MAE for Dataset B is still 5. Note that when we repeat
+The minimizer of MAE for Dataset B is still 5. 
+
+Note that when we repeat
 each data point, we go from having an odd number of data points (23) to
 an even number (46). This means the minimizer is the set of all values
 between the middle two values. But the middle two values will now both
