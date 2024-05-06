@@ -23,16 +23,13 @@ Remember, some pieces look the same.
 # BEGIN SOLUTION
 
 
-**Answer:** 
+$$C(16, 8) \cdot C(8, 2) \cdot C(6, 2) \cdot C(4, 2) \cdot C(2, 1) \cdot C(1, 1) = \dfrac{16!}{8!2!2!2!}$$
 
-$C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}$
 
-**Proof:** 
-
-Think about the problem this way. You have 16 spots on the line and for each subgroup of pieces (pawns, bishops, rooks, etc.), you need to assign spots from the line to place the pieces on that group. For example, we have 16 spots available in the line, and we want to place the pawns first. Well, since we have 8 pawns and 16 unique spots on the line, there are exactly $C(16,8)$ ways to place the pawns differently. Now, once you place the pawns you'll have only 8 remaining spots on the line, so if you wish to place the 2 bishops now, there are C(8,2)  ways to do it. This means that there are $C(16,8)*C(8,2)$ ways of arranging 8 pawns and 2 bishops. Repeat the process for all subgroups and you'll get:
+Think about the problem this way. You have 16 spots on the line and for each subgroup of pieces (pawns, bishops, rooks, etc.), you need to assign spots from the line to place the pieces on that group. For example, we have 16 spots available in the line, and we want to place the pawns first. Well, since we have 8 pawns and 16 unique spots on the line, there are exactly $C(16,8)$ ways to place the pawns differently. Now, once you place the pawns you'll have only 8 remaining spots on the line, so if you wish to place the 2 bishops now, there are C(8,2)  ways to do it. This means that there are $C(16,8) \cdot C(8,2)$ ways of arranging 8 pawns and 2 bishops. Repeat the process for all subgroups and you'll get:
 <br>
 
-$C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2, 1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}$
+$C(16, 8) \cdot C(8, 2) \cdot C(6, 2) \cdot C(4, 2) \cdot C(2, 1) \cdot C(1, 1) = \dfrac{16!}{8!2!2!2!}$
 
 
 # END SOLUTION
@@ -45,11 +42,7 @@ A chess player lines up all 16 **pawns** from the set of chess pieces. How many 
 
 # BEGIN SOLUTION
 
-**Answer:** 
-
-$C(14, 6) = C(14, 8) = \dfrac{14!}{8!6!}$
-
-**Proof:** 
+$$C(14, 6) = C(14, 8) = \dfrac{14!}{8!6!}$$
 
 Similarly to 3.1, you know the placement of two pawns, thus you have 14 spots remaining. Then, you only want to place the remaining white pawns, once you do that, the remaining spaces are for the black pawns. therefore the answer is $C(14,6)=C(14,8)$ 
 
@@ -72,11 +65,8 @@ same-colored pawns on both ends (both black or both white)?
 
 # BEGIN SOLUTION
 
-**Answer:** 
 
-$\frac{7}{15}$
-
-**Proof:** 
+$$\frac{7}{15}$$
 
 For this question you can use your answer for 3.2. We found that there's $C(14, 6) = C(14, 8) = \dfrac{14!}{8!6!}$ lines of pawns with only whitepawns in the ends, by the same reasoning there would be another $C(14, 8) = \dfrac{14!}{8!6!}$ lines with black pawns at the ends. Then there is $2C(14, 8)$ lines with same color pawns at the end, since we know ther are $C(16, 8)$ lines in total then we can calculates the answer by $\frac{2C(14, 8)}{C(16, 8)}$=$\frac{7}{15}$
 

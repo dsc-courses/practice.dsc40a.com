@@ -28,7 +28,7 @@ apply.**
 
 # BEGIN SOLUTION
 
-$A$ and $B$ are conditionally independent given $C$.
+Only bubble 2: $A$ and $B$ are conditionally independent given $C$.
 
 We know that $A$ and $B$ are not independent because winning or losing the first match could affect if Avi wins the tournament.
 
@@ -49,6 +49,8 @@ express $P(\overline{A}|(A \cup B))$ in terms of $P(A)$ and $P(B)$
 step.**
 
 # BEGIN SOLUTION
+
+$$P(\overline{A}|(A \cup B)) = \dfrac{P(B)}{P(A)+P(B)}$$
 
 There are several correct approaches to this problem. The simplest
 one comes from using the definition of conditional probability to write

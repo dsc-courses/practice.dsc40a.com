@@ -30,7 +30,7 @@ classifier is ineffective** in identifying the winner?
 
 # BEGIN SOLUTION
 
-Because it uses a dataset where there are many more non-winners than winners.
+Bubble 3: because it uses a dataset where there are many more non-winners than winners.
 
 Each year there is only one winner, but then hundreds of non-winners! This skews the data and makes it harder to figure out if someone won or lost because of their birthday and level.
 

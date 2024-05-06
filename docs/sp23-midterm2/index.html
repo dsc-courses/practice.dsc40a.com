@@ -297,10 +297,8 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong></p>
-<p><span class="math inline">C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2,
-1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
-<p><strong>Proof:</strong></p>
+<p><span class="math display">C(16, 8) \cdot C(8, 2) \cdot C(6, 2) \cdot
+C(4, 2) \cdot C(2, 1) \cdot C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
 <p>Think about the problem this way. You have 16 spots on the line and
 for each subgroup of pieces (pawns, bishops, rooks, etc.), you need to
 assign spots from the line to place the pieces on that group. For
@@ -310,11 +308,11 @@ line, there are exactly <span class="math inline">C(16,8)</span> ways to
 place the pawns differently. Now, once you place the pawns you’ll have
 only 8 remaining spots on the line, so if you wish to place the 2
 bishops now, there are C(8,2) ways to do it. This means that there are
-<span class="math inline">C(16,8)*C(8,2)</span> ways of arranging 8
-pawns and 2 bishops. Repeat the process for all subgroups and you’ll
+<span class="math inline">C(16,8) \cdot C(8,2)</span> ways of arranging
+8 pawns and 2 bishops. Repeat the process for all subgroups and you’ll
 get: <br/></p>
-<p><span class="math inline">C(16, 8)*C(8, 2)*C(6, 2)*C(4, 2)*C(2,
-1)*C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
+<p><span class="math inline">C(16, 8) \cdot C(8, 2) \cdot C(6, 2) \cdot
+C(4, 2) \cdot C(2, 1) \cdot C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
 </div>
 </div>
 </div>
@@ -336,10 +334,8 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong></p>
-<p><span class="math inline">C(14, 6) = C(14, 8) =
+<p><span class="math display">C(14, 6) = C(14, 8) =
 \dfrac{14!}{8!6!}</span></p>
-<p><strong>Proof:</strong></p>
 <p>Similarly to 3.1, you know the placement of two pawns, thus you have
 14 spots remaining. Then, you only want to place the remaining white
 pawns, once you do that, the remaining spaces are for the black pawns.
@@ -374,9 +370,7 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>Answer:</strong></p>
-<p><span class="math inline">\frac{7}{15}</span></p>
-<p><strong>Proof:</strong></p>
+<p><span class="math display">\frac{7}{15}</span></p>
 <p>For this question you can use your answer for 3.2. We found that
 there’s <span class="math inline">C(14, 6) = C(14, 8) =
 \dfrac{14!}{8!6!}</span> lines of pawns with only whitepawns in the
@@ -578,8 +572,8 @@ aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Because it uses a dataset where there are many more non-winners than
-winners.</p>
+<p>Bubble 3: because it uses a dataset where there are many more
+non-winners than winners.</p>
 <p>Each year there is only one winner, but then hundreds of non-winners!
 This skews the data and makes it harder to figure out if someone won or
 lost because of their birthday and level.</p>
@@ -629,7 +623,7 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">A</span> and <span class="math inline">B</span> are conditionally independent given <span class="math inline">C</span>.</p>
+<p>Only bubble 2: <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally independent given <span class="math inline">C</span>.</p>
 <p>We know that <span class="math inline">A</span> and <span class="math inline">B</span> are not independent because winning or
 losing the first match could affect if Avi wins the tournament.</p>
 <p>It is helpful to think about “if <span class="math inline">C</span>
@@ -669,6 +663,8 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">P(\overline{A}|(A \cup B)) =
+\dfrac{P(B)}{P(A)+P(B)}</span></p>
 <p>There are several correct approaches to this problem. The simplest
 one comes from using the definition of conditional probability to
 write</p>
