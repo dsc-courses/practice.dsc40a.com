@@ -50,7 +50,7 @@ a hadron under the following quark conditions:
 
 # BEGIN SUBPROB
 
-(4 points) Naive Bayes predicts that, given a up-particle-blue quark,
+Naive Bayes predicts that, given a up-particle-blue quark,
 the probability a hadron formed is k times the probability a hadron is
 not formed, for an integer value of k. What is k?
 
@@ -69,7 +69,7 @@ not formed, for an integer value of k. What is k?
 
 # BEGIN SUBPROB
 
-(4 points) What would be the value of k if you change up quark in the
+What would be the value of k if you change up quark in the
 previous collision to top quark, but keep everything else the same (i.e.
 top-particle-blue quark)?
 

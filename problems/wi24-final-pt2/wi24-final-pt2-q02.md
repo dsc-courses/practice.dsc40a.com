@@ -15,9 +15,7 @@ before. Which of the following is true? **Select all that apply.**
 
 # BEGIN SOLUTION
 
-The centroids found will be the same as before.
-
-The inertia will be twice as much as before, $2I$.
+Bubbles 1 and 3: "The centroids found will be the same as before" and "The inertia will be twice as much as before, $2I$."
 
 # END SOLUTION
 

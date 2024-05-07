@@ -14,21 +14,9 @@ Suppose Patient 1, Patient 2, Patient 3, and Patient 4 are actually infected by 
 
 # BEGIN SUBPROB
 
-Based on the patient's COVID score, Dr. Issac uses a threshold of 2.5 to diagnose COVID. That means, he diagnose all patients with COVID Score above 2.5 to be COVID-infected, and all patient with Diagnostic Score below 2.5 to be non-infected. What is the True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN) of Dr. Issac’s diagnose? Each block should be filled with an integer.
+Based on the patient's COVID score, Dr. Issac uses a threshold of 2.5 to diagnose COVID. That is, he diagnoses all patients with a COVID Score above 2.5 to be COVID-infected, and all patients with a COVID Score below 2.5 to be non-infected. What is the True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN) of Dr. Issac’s diagnosis? Each block should be filled with an integer.
 
-TP =
-
-# BEGIN SOLUTION
-
-TODO
-
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
-TN =
+TP = ?
 
 # BEGIN SOLUTION
 
@@ -40,7 +28,7 @@ TODO
 
 # BEGIN SUBPROB
 
-FP =
+TN = ?
 
 # BEGIN SOLUTION
 
@@ -52,7 +40,7 @@ TODO
 
 # BEGIN SUBPROB
 
-FN =
+FP = ?
 
 # BEGIN SOLUTION
 
@@ -64,9 +52,7 @@ TODO
 
 # BEGIN SUBPROB
 
-Dr. Albert is somewhat skeptical about technology, leading him to adopt a cautious approach in diagnosing patients. Initially, he sets a diagnostic threshold at 5.5. Patients scoring above this threshold are initially diagnosed as positive. However, Dr. Albert conducts a secondary diagnosis for all patients who received a positive diagnosis initially. During this secondary diagnosis, he reclassifies Patient 9's positive diagnoses as negative. What is the True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN) of Dr. Albert’s diagnose? Each block should be filled with an integer.
-
-TP = 
+FN = ?
 
 # BEGIN SOLUTION
 
@@ -78,7 +64,9 @@ TODO
 
 # BEGIN SUBPROB
 
-TN = 
+Dr. Albert is somewhat skeptical about technology, leading him to adopt a cautious approach in diagnosing patients. Initially, he sets a diagnostic threshold at 5.5. Patients scoring above this threshold are initially diagnosed as positive. However, Dr. Albert conducts a secondary diagnosis for all patients who received a positive diagnosis initially. During this secondary diagnosis, he reclassifies Patient 9's positive diagnoses as negative. What is the True Positive (TP), True Negative (TN), False Positive (FP), and False Negative (FN) of Dr. Albert’s diagnosis? Each block should be filled with an integer.
+
+TP = ?
 
 # BEGIN SOLUTION
 
@@ -90,7 +78,7 @@ TODO
 
 # BEGIN SUBPROB
 
-FP = 
+TN = ?
 
 # BEGIN SOLUTION
 
@@ -102,7 +90,19 @@ TODO
 
 # BEGIN SUBPROB
 
-FN = 
+FP = ?
+
+# BEGIN SOLUTION
+
+TODO
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+FN = ?
 
 # BEGIN SOLUTION
 
