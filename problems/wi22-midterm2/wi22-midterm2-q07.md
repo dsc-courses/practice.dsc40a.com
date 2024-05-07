@@ -28,7 +28,7 @@ given $C$.\
 
 # BEGIN SOLUTION
 
-$A$ and $B$ are independent. $A$ and $B$ are conditionally dependent given $C$.
+Bubble 1: $A$ and $B$ are independent. $A$ and $B$ are conditionally dependent given $C$.
 
 We can test if $A$ and $B$ are independent by using the equation: $\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B)$.
 

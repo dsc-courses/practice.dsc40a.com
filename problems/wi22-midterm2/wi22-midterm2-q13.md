@@ -15,7 +15,7 @@ what the clusters represent?
 
 # BEGIN SOLUTION
 
-One cluster represents the Stringle strings that were easier to guess, and the other represents the Stringle strings that were harder to guess.
+Bubble 1: One cluster represents the Stringle strings that were easier to guess, and the other represents the Stringle strings that were harder to guess.
 
 The first option is correct. Recall our data is based on Stringle strings, so if they were easier or harder to guess they might cluster together based on the family member's scores.
 
