@@ -155,8 +155,9 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. It changes the mean from <span class="math inline">85</span> to <span class="math inline">84</span>.
-(However, the median is not changed.)</p>
+<p>False. It changes the mean from <span class="math inline">85</span>
+to <span class="math inline">84</span>. (However, the median is not
+changed.)</p>
 </div>
 </div>
 </div>
@@ -182,8 +183,9 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean squared loss is more sensitive to outliers than absolute
-loss, and removing data changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
+<p>Removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>. This is because the mean squared loss
+is more sensitive to outliers than absolute loss, and removing data
+changes the mean more.</p>
 </div>
 </div>
 </div>
@@ -210,8 +212,9 @@ aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differentiable everywhere so
-we can not use the gradient descent to find the minimum.</p>
+<p>False. The function <span class="math inline">|y-h|^3</span> is not
+differentiable everywhere so we can not use the gradient descent to find
+the minimum.</p>
 </div>
 </div>
 </div>
@@ -240,8 +243,8 @@ aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function is not convex, so the gradient
-descent algorithm is not guaranteed to converge.</p>
+<p>False. The function is not convex, so the gradient descent algorithm
+is not guaranteed to converge.</p>
 </div>
 </div>
 </div>
@@ -272,6 +275,9 @@ aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">r=-0.95</span>. This means the weather
+temperature inversely affects Baklava sales, i.e., they are highly
+negatively correlated.</p>
 <p>We know <span class="math inline">w_1^* =
 \frac{\sigma_y}{\sigma_x}r.</span> We know that <span class="math inline">\sigma_x=8.5</span> and <span class="math inline">w_1^*=-3</span>. We can find <span class="math inline">\sigma_y</span> as follows:</p>
 <p><span class="math display">\begin{aligned}
@@ -281,9 +287,7 @@ aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
     =&amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
 \end{aligned}</span></p>
 <p>Then, <span class="math inline">\sigma_y=26.7</span> which results in
-<span class="math inline">r=-0.95</span>. That means the weather
-temperature inversely affects Baklava sales, i.e., they are highly
-negatively correlated.</p>
+<span class="math inline">r=-0.95</span>.</p>
 </div>
 </div>
 </div>
@@ -310,9 +314,8 @@ aria-labelledby="heading1_8" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False.</strong> The correlation coefficient has no unit. (It
-is always a unitless number in <span class="math inline">[-1,1]</span>
-range.)</p>
+<p>False. The correlation coefficient has no unit. (It is always a
+unitless number in <span class="math inline">[-1,1]</span> range.)</p>
 </div>
 </div>
 </div>
@@ -335,6 +338,7 @@ aria-labelledby="heading1_9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">w_0^*=280</span></p>
 <p>Note that <span class="math inline">H(\bar x)=\bar y</span>.
 Therefore, <span class="math display">\begin{aligned}
         H(65)=-3\cdot 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
@@ -362,6 +366,7 @@ aria-labelledby="heading1_10" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -1.5x + 280</span></p>
 <p>The standard deviation scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\cdot \sigma_x</span>.<br/> The same
 is true for the mean, i.e., <span class="math inline">\bar{x}'=2
 \cdot \bar{x}.</span> <br/> The correlation <span class="math inline">r</span>, standard deviation of the y-values <span class="math inline">\sigma_y</span>, and the mean of the y-values <span class="math inline">\bar y</span> do not change. <br/> (You can verify
@@ -405,6 +410,7 @@ aria-labelledby="heading1_11" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -3x + 340</span></p>
 <p>All parameters remain unchanged except <span class="math inline">\bar{x}'=\bar{x}+20.</span> Since <span class="math inline">r</span>, <span class="math inline">\sigma_x</span>
 and <span class="math inline">\sigma_y</span> are not changed, <span class="math inline">w_1^*</span> does not change. Then, one can find
 <span class="math inline">w_0^*</span> as follows:</p>
@@ -662,6 +668,8 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>We should add <span class="math inline">w_1^*</span> to each tip
+<span class="math inline">y</span>.</p>
 <p>First, we present the rigorous solution.</p>
 <p>Let <span class="math inline">\bar{x}_\text{old}</span> represent the
 previous mean of the <span class="math inline">x</span>’s and <span class="math inline">\bar{x}_\text{new}</span> represent the new mean of
@@ -686,7 +694,7 @@ line is <span class="math inline">\bar{y}_\text{old} - w_1^*
 \end{aligned}</span></p>
 <p>Thus, in order for the intercepts to be equal, we need the mean of
 the new <span class="math inline">y</span>’s to be <span class="math inline">w_1^*</span> greater than the mean of the old <span class="math inline">y</span>’s. Since we’re told we’re adding the same
-constant to each <span class="math inline">y</span>, that constant is
+constant to each <span class="math inline">y</span> that constant is
 <span class="math inline">w_1^*</span>.</p>
 <p>Another way to approach the question is as follows: consider any
 point that lies directly on a line with slope <span class="math inline">w_1^*</span> and intercept <span class="math inline">w_0^*</span>. Consider how the slope between two
@@ -948,7 +956,9 @@ aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <p><span class="math inline">w_0^* = \bar{y} - w_1^* \bar{x} = 1 -
 \frac{2}{7} \cdot 3 = 1 - \frac{6}{7} = \frac{1}{7}</span></p>
 <p>Because <span class="math inline">w_1^* = r
-\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 2/7 &gt; 0</span>, the correlation <span class="math inline">r</span> is positive and the slope is positive.</p>
+\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 2/7 &gt; 0</span>, <strong>the correlation
+<span class="math inline">r</span> is positive and the slope is
+positive</strong>.</p>
 </div>
 </div>
 </div>
@@ -1043,8 +1053,9 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. It changes the mean from <span class="math inline">85</span> to <span class="math inline">84</span>.
-(However, the median is not changed.)</p>
+<p>False. It changes the mean from <span class="math inline">85</span>
+to <span class="math inline">84</span>. (However, the median is not
+changed.)</p>
 </div>
 </div>
 </div>
@@ -1070,8 +1081,9 @@ aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean squared loss is more sensitive to outliers than absolute
-loss, and removing data changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
+<p>Removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>. This is because the mean squared loss
+is more sensitive to outliers than absolute loss, and removing data
+changes the mean more.</p>
 </div>
 </div>
 </div>
@@ -1098,8 +1110,9 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differentiable everywhere so
-we can not use the gradient descent to find the minimum.</p>
+<p>False. The function <span class="math inline">|y-h|^3</span> is not
+differentiable everywhere so we can not use the gradient descent to find
+the minimum.</p>
 </div>
 </div>
 </div>
@@ -1128,8 +1141,8 @@ aria-labelledby="heading5_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function is not convex, so the gradient
-descent algorithm is not guaranteed to converge.</p>
+<p>False. The function is not convex, so the gradient descent algorithm
+is not guaranteed to converge.</p>
 </div>
 </div>
 </div>
@@ -1160,6 +1173,9 @@ aria-labelledby="heading5_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">r=-0.95</span>. This means the weather
+temperature inversely affects Baklava sales, i.e., they are highly
+negatively correlated.</p>
 <p>We know <span class="math inline">w_1^* =
 \frac{\sigma_y}{\sigma_x}r.</span> We know that <span class="math inline">\sigma_x=8.5</span> and <span class="math inline">w_1^*=-3</span>. We can find <span class="math inline">\sigma_y</span> as follows:</p>
 <p><span class="math display">\begin{aligned}
@@ -1169,9 +1185,7 @@ aria-labelledby="heading5_7" data-bs-parent="#accordionExample">
     =&amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
 \end{aligned}</span></p>
 <p>Then, <span class="math inline">\sigma_y=26.7</span> which results in
-<span class="math inline">r=-0.95</span>. That means the weather
-temperature inversely affects Baklava sales, i.e., they are highly
-negatively correlated.</p>
+<span class="math inline">r=-0.95</span>.</p>
 </div>
 </div>
 </div>
@@ -1198,9 +1212,8 @@ aria-labelledby="heading5_8" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False.</strong> The correlation coefficient has no unit. (It
-is always a unitless number in <span class="math inline">[-1,1]</span>
-range.)</p>
+<p>False. The correlation coefficient has no unit. (It is always a
+unitless number in <span class="math inline">[-1,1]</span> range.)</p>
 </div>
 </div>
 </div>
@@ -1223,6 +1236,7 @@ aria-labelledby="heading5_9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">w_0^*=280</span></p>
 <p>Note that <span class="math inline">H(\bar x)=\bar y</span>.
 Therefore, <span class="math display">\begin{aligned}
         H(65)=-3\cdot 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
@@ -1250,6 +1264,7 @@ aria-labelledby="heading5_10" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -1.5x + 280</span></p>
 <p>The standard deviation scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\cdot \sigma_x</span>.<br/> The same
 is true for the mean, i.e., <span class="math inline">\bar{x}'=2
 \cdot \bar{x}.</span> <br/> The correlation <span class="math inline">r</span>, standard deviation of the y-values <span class="math inline">\sigma_y</span>, and the mean of the y-values <span class="math inline">\bar y</span> do not change. <br/> (You can verify
@@ -1293,6 +1308,7 @@ aria-labelledby="heading5_11" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -3x + 340</span></p>
 <p>All parameters remain unchanged except <span class="math inline">\bar{x}'=\bar{x}+20.</span> Since <span class="math inline">r</span>, <span class="math inline">\sigma_x</span>
 and <span class="math inline">\sigma_y</span> are not changed, <span class="math inline">w_1^*</span> does not change. Then, one can find
 <span class="math inline">w_0^*</span> as follows:</p>
@@ -1547,6 +1563,7 @@ aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">m' - m = \dfrac{1}{16}</span></p>
 <p>Using the formula for the slope of the regression line, we have:
 <span class="math display">
 \begin{aligned}
@@ -1861,10 +1878,10 @@ proportional to <span class="math inline">w_1^*</span>.</p>
 estimated slope <span class="math inline">w</span> in simple linear
 regression that you have already seen in discussions and lectures:</p>
 <p><span class="math display">\begin{align*}
-         w &amp;= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i -
-\overline{x})^2} \tag{1}\\ \\
-        w &amp;= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i -
-\overline{x})^2} \tag{2}  
+    w &amp;= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i -
+\overline{x})^2} \\ \\
+    w &amp;= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i -
+\overline{x})^2}
 \end{align*}</span></p>
 <p>where we have dataset <span class="math inline">D = [(x_1,y_1),
 \ldots, (x_n,y_n)]</span> and sample means   <span

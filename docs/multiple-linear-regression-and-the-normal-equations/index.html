@@ -187,8 +187,6 @@ Express the components <span class="math inline">\vec{w_c}^*</span> in
 terms of <span class="math inline">w_0^*, w_1^*, w_2^*</span>, and <span
 class="math inline">w_3^*</span>, which were the components of <span
 class="math inline">\vec{w}^*</span>.</p>
-<p><span class="math display">\vec{w_c}^* = \begin{bmatrix} w_0^* -
-w_2^*  \\ w_1^* \\ w_2^* \\ w_3^* \end{bmatrix}</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_3">
@@ -202,6 +200,8 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">\vec{w_c}^* = \begin{bmatrix} w_0^* -
+w_2^*  \\ w_1^* \\ w_2^* \\ w_3^* \end{bmatrix}</span></p>
 <p>Suppose our original prediction rule was of the form: <span class="math display">H(\vec{x}) = w_0 + w_1x_1+
 w_2x_2+  w_3x_3.</span></p>
 <p>Where: <span class="math display">\vec{w_c}^* = \begin{bmatrix} v_0^*
@@ -515,7 +515,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The design matrix <span class="math inline">X</span> and observation
-vector <span class="math inline">\vec{y}</span> are given by</p>
+vector <span class="math inline">\vec{y}</span> are given by:</p>
 <p><span class="math display">
 \begin{align*}
 X &amp;=
@@ -525,7 +525,6 @@ X &amp;=
 1 &amp; -15 &amp; 4\\
 1 &amp; 0 &amp; 1
 \end{bmatrix} \\
-&amp;\text{and} \\
 \vec{y} &amp;= \begin{bmatrix}
 -5\\
 7\\
@@ -1145,7 +1144,8 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The predicted price is</p>
+<p>The predicted price is <span class="math inline">4500</span>
+dollars.</p>
 <p><span class="math display">2000 + 10000 \cdot 0.65 - 1000 \cdot 4 =
 4500</span></p>
 </div>
@@ -1184,27 +1184,28 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <ul>
-<li><span class="math inline">\sum_{i = 1}^n e_i</span>: Yes, this is
-guaranteed to be 0. This was discussed in Homework 4; it is a
-consequence of the fact that <span class="math inline">X^T (y - X
-\vec{w}^*) = 0</span> and that we have an intercept term in our
-prediction rule (and hence a column of all 1s in our design matrix,
-<span class="math inline">X</span>).</li>
-<li><span class="math inline">|| \vec{y} - X \vec{w}^* ||^2</span>: No,
-this is not guaranteed to be 0. This is the mean squared error of our
-prediction rule, multiplied by <span class="math inline">n</span>. <span class="math inline">\vec{w}^*</span> is found by minimizing mean squared
-error, but the minimum value of mean squared error isn’t necessarily 0 —
-in fact, this quantity is only 0 if we can write <span class="math inline">\vec{y}</span> exactly as <span class="math inline">X \vec{w}^*</span> with no prediction errors.</li>
-<li><span class="math inline">X^TX \vec{w}^*</span>: This is not
-guaranteed to be 0, either.</li>
-<li><span class="math inline">2X^TX \vec{w}^* - 2X^T\vec{y}</span>: This
-is guaranteed to be 0. Recall, the optimal parameter vector <span class="math inline">\vec{w}^*</span> satisfies the normal equations
-<span class="math inline">X^TX\vec{w}^* = X^T \vec{y}</span>.
-Subtracting <span class="math inline">X^T \vec{y}</span> from both sides
-of this equation and multiplying both sides by 2 yields the desired
-result. (You may also find <span class="math inline">2X^TX \vec{w}^* -
-2X^T\vec{y}</span> to be familiar from lecture — it is the gradient of
-the mean squared error, multiplied by <span class="math inline">n</span>, and we set the gradient to 0 to find <span class="math inline">\vec{w}^*</span>.)</li>
+<li><span class="math inline">\sum_{i = 1}^n e_i</span>:
+<strong>Yes</strong>, this is guaranteed to be 0. This was discussed in
+Homework 4; it is a consequence of the fact that <span class="math inline">X^T (y - X \vec{w}^*) = 0</span> and that we have an
+intercept term in our prediction rule (and hence a column of all 1s in
+our design matrix, <span class="math inline">X</span>).</li>
+<li><span class="math inline">|| \vec{y} - X \vec{w}^* ||^2</span>:
+<strong>No</strong>, this is not guaranteed to be 0. This is the mean
+squared error of our prediction rule, multiplied by <span class="math inline">n</span>. <span class="math inline">\vec{w}^*</span>
+is found by minimizing mean squared error, but the minimum value of mean
+squared error isn’t necessarily 0 — in fact, this quantity is only 0 if
+we can write <span class="math inline">\vec{y}</span> exactly as <span class="math inline">X \vec{w}^*</span> with no prediction errors.</li>
+<li><span class="math inline">X^TX \vec{w}^*</span>:
+<strong>No</strong>, this is not guaranteed to be 0, either.</li>
+<li><span class="math inline">2X^TX \vec{w}^* - 2X^T\vec{y}</span>:
+<strong>Yes</strong>, this is guaranteed to be 0. Recall, the optimal
+parameter vector <span class="math inline">\vec{w}^*</span> satisfies
+the normal equations <span class="math inline">X^TX\vec{w}^* = X^T
+\vec{y}</span>. Subtracting <span class="math inline">X^T \vec{y}</span>
+from both sides of this equation and multiplying both sides by 2 yields
+the desired result. (You may also find <span class="math inline">2X^TX
+\vec{w}^* - 2X^T\vec{y}</span> to be familiar from lecture — it is the
+gradient of the mean squared error, multiplied by <span class="math inline">n</span>, and we set the gradient to 0 to find <span class="math inline">\vec{w}^*</span>.)</li>
 </ul>
 </div>
 </div>

@@ -293,13 +293,13 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The minimizer of MAE for Dataset B is still 5. Note that when we
-repeat each data point, we go from having an odd number of data points
-(23) to an even number (46). This means the minimizer is the set of all
-values between the middle two values. But the middle two values will now
-both be <span class="math inline">y_{12}</span>, and so there are no
-numbers “in between" them – only <span class="math inline">y_{12}</span>
-minimizes MAE.</p>
+<p>The minimizer of MAE for Dataset B is still 5.</p>
+<p>Note that when we repeat each data point, we go from having an odd
+number of data points (23) to an even number (46). This means the
+minimizer is the set of all values between the middle two values. But
+the middle two values will now both be <span class="math inline">y_{12}</span>, and so there are no numbers “in
+between" them – only <span class="math inline">y_{12}</span> minimizes
+MAE.</p>
 </div>
 </div>
 </div>
@@ -324,7 +324,8 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>The mean absolute deviation from the median for Dataset B is still
-17. As we saw in previous part, the median itself does not change. When
+17.</p>
+<p>As we saw in previous part, the median itself does not change. When
 adding together the deviations from the median, each point is repeated
 twice, so the sum of all deviations from the median is doubled. However,
 there are twice as many data points in Dataset B than there are in
@@ -362,14 +363,14 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Yes they are.</p>
-<p>Recall that the definition of <span class="math inline">R_{abs}(h)</span> is</p>
+<p>Yes, <span class="math inline">R_{A}(h) = R_{B}(h)</span>.</p>
+<p>Recall that the definition of <span class="math inline">R_{abs}(h)</span> is:</p>
 <p><span class="math display">R_{abs}(h) = \frac{1}{n} \sum_{i = 1}^n
 |y_i - h|</span></p>
-<p>For the first dataset, we have</p>
+<p>For the first dataset, we have:</p>
 <p><span class="math display">R_{A}(h) = \frac{1}{23} \sum_{i = 1}^{23}
 |y_i - h|</span></p>
-<p>and for the second dataset, we have</p>
+<p>and for the second dataset, we have:</p>
 <p><span class="math display">\begin{aligned}
 R_{B}(h) &amp;= \frac{1}{46} \sum_{i = 1}^{46} \left( |y_1 - h| + |y_1 -
 h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right)
@@ -402,6 +403,7 @@ aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">54</span>.</p>
 <p>To maximize the mean of the remaining 10 numbers, we want to minimize
 the numbers that are removed. The smallest possible non-negative number
 is 0, so to maximize the mean of the remaining 10, we should remove two
@@ -445,22 +447,21 @@ aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>We can write the points given to us as</p>
+<p><span class="math display">R_{abs}(22) = 11</span></p>
+<p>We can write the points given to us as:</p>
 <p><span class="math display">y_1, y_2, y_3, 10, 14, 22, y_7,
 y_8</span></p>
 <p>Since there are an even number of data points, all values of <span class="math inline">h</span> between the middle two points minimize
 <span class="math inline">R_{abs}(h)</span>. In this case, all values of
-<span class="math inline">h</span> in the interval [10, 14] minimize
-<span class="math inline">R_{abs}(h)</span> and, as a result, have the
-same value of <span class="math inline">R_{abs}(h)</span>. Thus, <span class="math inline">R_{abs}(14) = R_{abs}(11) = 9</span>.</p>
-<p>From lecture, we know that</p>
+<span class="math inline">h</span> in the interval <span class="math inline">[10, 14]</span> minimize <span class="math inline">R_{abs}(h)</span> and, as a result, have the same
+value of <span class="math inline">R_{abs}(h)</span>. Thus, <span class="math inline">R_{abs}(14) = R_{abs}(11) = 9</span>.</p>
+<p>From lecture, we know that:</p>
 <p><span class="math display">\text{slope of $R$ at $h$} = \frac{1}{n}
 \left( \left(\text{\# points } &lt; h\right) - \left(\text{\# points }
 &gt; h\right)\right)</span></p>
-<p>We can use this formula to determine what to add to <span class="math inline">R_{abs}(14)</span> to get <span class="math inline">R_{abs}(22)</span>. Note that for values of <span class="math inline">h</span> in the interval (14, 22), the slope of
-<span class="math inline">R</span> at <span class="math inline">h</span>
-is <span class="math inline">\frac{1}{8} (5 - 3) = \frac{1}{4}</span>.
-This means that for every 1 unit we move to the right from <span class="math inline">h = 14</span> until we get to <span class="math inline">h = 22</span>, <span class="math inline">R_{abs}(h)</span> increases by <span class="math inline">\frac{1}{4}</span>. So,</p>
+<p>We can use this formula to determine what to add to <span class="math inline">R_{abs}(14)</span> to get <span class="math inline">R_{abs}(22)</span>. Note that for values of <span class="math inline">h</span> in the interval <span class="math inline">(14, 22)</span>, the slope of <span class="math inline">R</span> at <span class="math inline">h</span> is
+<span class="math inline">\frac{1}{8} (5 - 3) = \frac{1}{4}</span>. This
+means that for every 1 unit we move to the right from <span class="math inline">h = 14</span> until we get to <span class="math inline">h = 22</span>, <span class="math inline">R_{abs}(h)</span> increases by <span class="math inline">\frac{1}{4}</span>. So,</p>
 <p><span class="math display">R_{abs}(22) = R_{abs}(14) + (22 - 14)
 \cdot \frac{1}{4} = 9 + 2 = 11</span></p>
 </div>
@@ -494,7 +495,7 @@ class="math inline">L_B(h, y)</span>, defined as follows:</p>
 class="math inline">y</span>s are positive.</p>
 <p><br></p>
 <h3 id="problem-5.1">Problem 5.1</h3>
-<p>Show that <span class="math display">\frac{d}{dh} L_B(h, y) = -
+<p>Show that: <span class="math display">\frac{d}{dh} L_B(h, y) = -
 \frac{2}{h} \log \left( \frac{y}{h} \right)</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -527,7 +528,7 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
 <p>Show that the constant prediction <span
-class="math inline">h^*</span> that minimizes for Billy loss is</p>
+class="math inline">h^*</span> that minimizes for Billy loss is:</p>
 <p><span class="math display">h^* = \left(y_1 \cdot y_2 \cdot ... \cdot
 y_n \right)^{\frac{1}{n}}</span></p>
 <p>You do not need to perform a second derivative test, but otherwise
@@ -662,8 +663,9 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. It changes the mean from <span class="math inline">85</span> to <span class="math inline">84</span>.
-(However, the median is not changed.)</p>
+<p>False. It changes the mean from <span class="math inline">85</span>
+to <span class="math inline">84</span>. (However, the median is not
+changed.)</p>
 </div>
 </div>
 </div>
@@ -689,8 +691,9 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The mean squared loss is more sensitive to outliers than absolute
-loss, and removing data changes the mean more. Therefore, removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>.</p>
+<p>Removing <span class="math inline">y_7</span> affects <span class="math inline">h_2^*</span> more than <span class="math inline">h_1^*</span>. This is because the mean squared loss
+is more sensitive to outliers than absolute loss, and removing data
+changes the mean more.</p>
 </div>
 </div>
 </div>
@@ -717,8 +720,9 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function <span class="math inline">|y-h|^3</span> is not differentiable everywhere so
-we can not use the gradient descent to find the minimum.</p>
+<p>False. The function <span class="math inline">|y-h|^3</span> is not
+differentiable everywhere so we can not use the gradient descent to find
+the minimum.</p>
 </div>
 </div>
 </div>
@@ -747,8 +751,8 @@ aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False</strong>. The function is not convex, so the gradient
-descent algorithm is not guaranteed to converge.</p>
+<p>False. The function is not convex, so the gradient descent algorithm
+is not guaranteed to converge.</p>
 </div>
 </div>
 </div>
@@ -779,6 +783,9 @@ aria-labelledby="heading6_7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">r=-0.95</span>. This means the weather
+temperature inversely affects Baklava sales, i.e., they are highly
+negatively correlated.</p>
 <p>We know <span class="math inline">w_1^* =
 \frac{\sigma_y}{\sigma_x}r.</span> We know that <span class="math inline">\sigma_x=8.5</span> and <span class="math inline">w_1^*=-3</span>. We can find <span class="math inline">\sigma_y</span> as follows:</p>
 <p><span class="math display">\begin{aligned}
@@ -788,9 +795,7 @@ aria-labelledby="heading6_7" data-bs-parent="#accordionExample">
     =&amp;\frac{1}{7}[15^2+25^2+10^2+5^2+20^2+5^2+60^2]=714.28
 \end{aligned}</span></p>
 <p>Then, <span class="math inline">\sigma_y=26.7</span> which results in
-<span class="math inline">r=-0.95</span>. That means the weather
-temperature inversely affects Baklava sales, i.e., they are highly
-negatively correlated.</p>
+<span class="math inline">r=-0.95</span>.</p>
 </div>
 </div>
 </div>
@@ -817,9 +822,8 @@ aria-labelledby="heading6_8" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><strong>False.</strong> The correlation coefficient has no unit. (It
-is always a unitless number in <span class="math inline">[-1,1]</span>
-range.)</p>
+<p>False. The correlation coefficient has no unit. (It is always a
+unitless number in <span class="math inline">[-1,1]</span> range.)</p>
 </div>
 </div>
 </div>
@@ -842,6 +846,7 @@ aria-labelledby="heading6_9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">w_0^*=280</span></p>
 <p>Note that <span class="math inline">H(\bar x)=\bar y</span>.
 Therefore, <span class="math display">\begin{aligned}
         H(65)=-3\cdot 65 +w_0^*=85 \xrightarrow[]{}w_0^*=280.
@@ -869,6 +874,7 @@ aria-labelledby="heading6_10" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -1.5x + 280</span></p>
 <p>The standard deviation scales by a factor of <span class="math inline">2</span>, i.e., <span class="math inline">\sigma_x'=2\cdot \sigma_x</span>.<br/> The same
 is true for the mean, i.e., <span class="math inline">\bar{x}'=2
 \cdot \bar{x}.</span> <br/> The correlation <span class="math inline">r</span>, standard deviation of the y-values <span class="math inline">\sigma_y</span>, and the mean of the y-values <span class="math inline">\bar y</span> do not change. <br/> (You can verify
@@ -912,6 +918,7 @@ aria-labelledby="heading6_11" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">H^*(x) = -3x + 340</span></p>
 <p>All parameters remain unchanged except <span class="math inline">\bar{x}'=\bar{x}+20.</span> Since <span class="math inline">r</span>, <span class="math inline">\sigma_x</span>
 and <span class="math inline">\sigma_y</span> are not changed, <span class="math inline">w_1^*</span> does not change. Then, one can find
 <span class="math inline">w_0^*</span> as follows:</p>
@@ -986,6 +993,10 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">h^*=\alpha \bar{y} -
+\frac{\lambda}{2}</span></p>
+<hr/>
+<p><br/></p>
 <p><span class="math display">
 \begin{align*}
 \frac{d}{dh}R_{\text{midterm}}(h)&amp;= [\frac{2}{n}\sum_{i=1}^{n}(h-
@@ -1617,6 +1628,7 @@ aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">R(2) = \frac13 (2e+e^4)</span></p>
 <p>We need to calculate the loss for each data point then average the
 losses. That is, we need to calculate <span class="math display">R(2) =
 \dfrac{1}{3} \sum_{i=1}^{3} e^{(2-y_i)^2}.</span> The table below
@@ -1680,6 +1692,7 @@ aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">h_1 = 2 + \frac{2e^4}{3}</span></p>
 <p>First, we calculate the derivative of <span class="math inline">R(h)</span>. Using the chain rule, we have <span class="math display">\begin{align*} R(h) &amp;= \dfrac1n \sum_{i=1}^n
 e^{(h-y_i)^2} \\
 R'(h) &amp;= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2}\cdot 2(h-y_i) \\
@@ -1843,8 +1856,8 @@ aria-labelledby="heading15_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">R_{sq}(h) =
-\frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2</span></p>
+<p><span class="math display">R_{sq}(h) =
+\dfrac{1}{4}\sum_{i=1}^{4}(y_i-h)^2</span></p>
 <p>Recall the equation for <span class="math inline">R_{sq}(h) =
 \frac{1}{n}\sum_{i=1}^{n}(y_i-h)^2</span>, so we simply need to replace
 <span class="math inline">n</span> with <span class="math inline">4</span> because there are <span class="math inline">4</span> elements in our dataset.</p>
@@ -1891,7 +1904,7 @@ aria-labelledby="heading15_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">h_{0} = -\frac{5}{4}</span></p>
+<p><span class="math display">h_{0} = -\frac{5}{4}</span></p>
 <p>The gradient descent equation is given by: <span class="math display">\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
 \end{aligned}</span> Recall the learning rate is equal to <span class="math inline">\alpha</span>. We can plug in <span class="math inline">\alpha = \frac{1}{4}</span>, <span class="math inline">h_2 = \frac{1}{4}</span>, and <span class="math inline">i=2</span>, in that case we obtain: <span class="math display">\begin{aligned}
@@ -2054,6 +2067,7 @@ aria-labelledby="heading16_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">\dfrac{15}{4}&lt;a&lt;10</span></p>
 <p>Since there are <span class="math inline">3</span> possible median
 values, we will have to discuss each situation separately. <br/></p>
 <p>In case <span class="math inline">1</span>, when <span class="math inline">0&lt;a\leq2</span>, <span class="math inline">\text{Median}(D) = 2</span>. So, we have:</p>
@@ -2081,7 +2095,7 @@ prerequisite condition that <span class="math inline">2&lt;a&lt;5</span>.</p>
         a&amp;&lt;10
 \end{align*}</span></p>
 <p>combining with the prerequisite condition, we have <span class="math inline">5\leq a&lt;10</span></p>
-<p>Combining the range of all three cases, we have <span class="math inline">\frac{15}{4}&lt;a&lt;10</span> as our final
+<p>Combining the range of all three cases, we have <span class="math inline">\dfrac{15}{4}&lt;a&lt;10</span> as our final
 answer.</p>
 </div>
 </div>
@@ -2113,6 +2127,7 @@ aria-labelledby="heading17" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">y_1 = 7, r_1 = 4</span></p>
 <p>The mean squared error is written as: <span class="math display">\begin{align*}
         R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2    
 \end{align*}</span></p>

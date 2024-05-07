@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Gradient Descent and Convexity</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Gradient Descent and Convexity</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p>This page contains all problems about Gradient Descent and
+Convexity.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
+Part 1</a>, Problem 3</i></p>
+<p>You and a friend independently perform gradient descent on the same
+function, but after 100 iterations, you have different results. Which of
+the following is sufficient <strong>on its own</strong> to explain the
+difference in your results? <strong>Note:</strong> When we say “same
+function” we assume the learning rate and initial predictions are the
+same too until said otherwise.</p>
+<p><strong>Select all that apply.</strong></p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> The function is nonconvex.</p></li>
+<li><p><input type="checkbox" disabled="" /> The function is not differentiable.</p></li>
+<li><p><input type="checkbox" disabled="" /> You and your friend chose different learning rates.</p></li>
+<li><p><input type="checkbox" disabled="" /> You and your friend chose different initial predictions.</p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Bubbles 1 and 3 are true: “The function is nonconvex” and “You and
+your friend chose different learning rates.”</p>
+<p>If the function is nonconvex it is possible for you and your friend
+to end in different places if you start in different places. For example
+if you have a polynomial with a local minima and a global minimum then
+it is possible you could find the local minima and your friend could
+find the global minima, which would mean you have different results.</p>
+<p>If the function is not differentiable then you cannot perform
+gradient descent, so this cannot be an answer.</p>
+<p>If you and your friend chose different learning rates it is possible
+to have different results because if you have a really large learning
+rate you might be hopping over the global minimum without properly
+converging. Your friend could choose a smaller learning rate, which will
+allow you to converge to the global minimum.</p>
+<p>If you and your friend chose the same initial predictions you are
+guaranteed to end up in the same spot.</p>
+<p>Because two of the options are possible the answer cannot be “None of
+the above.”</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../sp21-midterm1/index.html">Spring 2021 Midterm
+1</a>, Problem 1</i></p>
+<p>Consider the function <span class="math inline">R(h) = \sqrt{(h -
+3)^2 + 1} = ((h - 3)^2 + 1)^{\frac{1}{2}}</span>, which is a convex and
+differentiable function with only one local minimum.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Perform by hand two iterations of the gradient descent algorithm on
+this function, using an initial prediction of <span
+class="math inline">h_0 = 2</span> and a learning rate of <span
+class="math inline">\alpha = 2\sqrt{2}</span>. Show your work and your
+final answers, <span class="math inline">h_1</span> and <span
+class="math inline">h_2</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">h_1 = 4, h_2 = 2</span></p>
+<p>The updating rule for gradient descent in the one-dimensional case
+is: <span class="math display">h_{i+1} = h_{i} - \alpha \cdot
+\frac{dR}{dh}(h_i)</span></p>
+<p>We can find <span class="math inline">\frac{dR}{dh}</span> by taking
+the derivative of <span class="math inline">R(h)</span>: <span class="math display">\frac{d}{dh}R(h) = \frac{d}{dh}(\sqrt{(h - 3)^2 +
+1}) = \dfrac{h-3}{\sqrt{\left(h-3\right)^2+1}}</span></p>
+<p>Now we can use <span class="math inline">\alpha = 2\sqrt{2}</span>
+and <span class="math inline">h_0 = 2</span> to begin updating:</p>
+<p><span class="math display">\begin{align*}
+h_{1} &amp;= h_{0} - \alpha \cdot \frac{dR}{dh}(h_0) \\
+h_{1} &amp;= 2 - 2\sqrt{2} \cdot
+\left(\dfrac{2-3}{\sqrt{\left(2-3\right)^2+1}}\right) \\
+h_{1} &amp;= 2 - 2\sqrt{2} \cdot (\dfrac{-1}{\sqrt{2}}) \\
+h_{1} &amp;= 4
+\end{align*}</span> <br/> <span class="math display">\begin{align*}
+h_{2} &amp;= h_{1} - \alpha \cdot \frac{dR}{dh}(h_1) \\
+h_{2} &amp;= 4 - 2\sqrt{2} \cdot
+\left(\dfrac{4-3}{\sqrt{\left(4-3\right)^2+1}}\right) \\
+h_{2} &amp;= 4 - 2\sqrt{2} \cdot (\dfrac{1}{\sqrt{2}}) \\
+h_{2} &amp;= 2
+\end{align*}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>With more iterations, will we eventually converge to the minimizer?
+Explain.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>No, this algorithm will not converge to the minimizer because if we
+do more iterations, we’ll keep oscillating back and forth between
+predictions of 2 and 4. We showed the first two iterations of the
+algorithm in part 1, but the next two would be exactly the same, and the
+two after that, and so on. This happens because the learning rate is too
+big, resulting in steps that are too big, and we keep jumping over the
+true minimizer at <span class="math inline">h = 3</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../sp23-midterm1/index.html">Spring 2023 Midterm
+1</a>, Problem 3</i></p>
+<p>In general, the logarithm of a convex function is not convex. Give an
+example of a function <span class="math inline">f(x)</span> such that
+<span class="math inline">f(x)</span> is convex, but <span
+class="math inline">\log_{10}(f(x))</span> is not convex.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3" class="accordion-collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are many correct answers to this question. Some simple answers
+are <span class="math inline">f(x) = x</span> and <span class="math inline">f(x) = x^2</span>. The logarithms of these function
+are <span class="math inline">\log_{10}(x)</span> and <span class="math inline">2\log_{10}(x)</span>, both of which are nonconvex
+because there are pairs of points such that the line connecting them
+goes below the function.</p>
+<center><img height="333" src="../../assets/images/sp23-midterm1/p3/3.jpg" width="500"/></center>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><i>Source: <a href="../fa21-midterm/index.html">Fall 2021
+Midterm</a>, Problem 3</i></p>
+<p>Remember to show your work and justify your answers.</p>
+<p>Suppose we want to minimize the function</p>
+<p><span class="math display">R(h) = e^{(h + 1)^2}</span></p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Without using gradient descent or calculus, what is the value <span
+class="math inline">h^*</span> that minimizes <span
+class="math inline">R(h)</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">h^* = -1</span></p>
+<p>The minimum possible value of the exponent is <span class="math inline">0</span>, since anything squared is non-negative.
+The exponent is 0 when <span class="math inline">(x+1)^2 = 0</span>,
+i.e. when <span class="math inline">x = -1</span>. Since <span class="math inline">e^{(x+1)^2}</span> gets larger as <span class="math inline">(x+1)^2</span> gets larger, the minimizing input
+<span class="math inline">h^*</span> is <span class="math inline">-1</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Now, suppose we want to use gradient descent to minimize <span
+class="math inline">R(h)</span>. Assume we use an initial guess of <span
+class="math inline">h_0 = 0</span>. What is <span
+class="math inline">h_1</span>? Give your answer in terms of a generic
+step size, <span class="math inline">\alpha</span>, and other constants.
+(<span class="math inline">e</span> is a constant.)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">h_1 = -\alpha \cdot 2e</span></p>
+<p>First, we find <span class="math inline">\frac{dR}{dh}(h)</span>:</p>
+<p><span class="math display">\frac{dR}{dh}(h) = 2(x+1)
+e^{(x+1)^2}</span></p>
+<p>Then, we know that</p>
+<p><span class="math display">h_1 = h_0 - \alpha \frac{dR}{dh}(h_0) = 0
+- \alpha \frac{dR}{dh}(0)</span></p>
+<p>In our case, <span class="math inline">\frac{dR}{dh}(0) = 2(0 + 1)
+e^{(0+1)^2} = 2e</span>, so</p>
+<p><span class="math display">h_1 = -\alpha \cdot 2e</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>Using your answers from the previous two parts, what should we set
+the value of <span class="math inline">\alpha</span> to be if we want to
+ensure that gradient descent finds <span class="math inline">h^*</span>
+after just one iteration?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\alpha = \frac{1}{2e}</span></p>
+<p>We know from the part (b) that <span class="math inline">h_1 =
+-\alpha \cdot 2e</span>, and we know from part (a) that <span class="math inline">h^* = -1</span>. If gradient descent converges in
+one iteration, that means that <span class="math inline">h_1 =
+h^*</span>; solving this yields</p>
+<p><span class="math display">-\alpha \cdot 2e = -1 \implies \alpha =
+\frac{1}{2e}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>Below is a graph of <span class="math inline">R(h)</span> with no
+axis labels.</p>
+<!-- TODO -->
+<center><img src="../assets/images/fa21-midterm/grad-desc.png" width="500" height="350"></center>
+<p>True or False: Given an appropriate choice of step size, <span
+class="math inline">\alpha</span>, gradient descent is guaranteed to
+find the minimizer of <span class="math inline">R(h)</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>True.</p>
+<p><span class="math inline">R(h)</span> is convex, since the graph is
+bowl shaped. (It can also be proved that <span class="math inline">R(h)</span> is convex using the second derivative
+test.) It is also differentiable, as we saw in part (b). As a result,
+since it’s both convex and differentiable, gradient descent is
+guaranteed to be able to minimize it given an appropriate choice of step
+size.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p><i>Source: <a href="../fa22-midterm/index.html">Fall 2022
+Midterm</a>, Problem 1</i></p>
+<p>Suppose that we are given <span class="math inline">f(x) = x^3 +
+x^2</span> and learning rate <span class="math inline">\alpha =
+1/4</span>.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Write down the updating rule for gradient descent in general, then
+write down the updating rule for gradient descent for the function <span
+class="math inline">f(x)</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>In general, the updating rule for gradient descent is: <span class="math display">x_{i + 1} = x_i - \alpha \nabla f(x_i) = x_i -
+\alpha \frac{\partial f}{\partial x}(x_i),</span> where <span class="math inline">\alpha \in \mathbb{R}_+</span> is the learning rate
+or step size. For this function, since <span class="math inline">f</span> is a single-variable function, we can write
+down the updating rule as: <span class="math display">x_{i + 1} = x_i -
+\alpha \frac{df}{dx}(x_i) = x_i - \alpha f'(x_i).</span> We also
+have: <span class="math display">\frac{df}{dx} = f'(x) = 3x^2 +
+2x,</span> thus the updating rule can be written down as: <span class="math display">x_{i + 1} = x_i - \alpha(3x_i^2 + 2x_i) =
+-\frac{3}{4} x_i^2 + \frac{1}{2}x_i.</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>If we start at <span class="math inline">x_0 = -1</span>, should we
+go left or right? Can you verify this mathematically? What is <span
+class="math inline">x_1</span>? Can gradient descent converge? If so,
+where it might converge to, given appropriate step size?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We have <span class="math display">f'(x_0) = f'(-1) = 3(-1)^2
++ 2(-1) = 1 &gt; 0,</span> so we go <strong>left</strong>, and <span class="math display">x_1 = x_0 - \alpha f'(x_0) = -1 - \frac{1}{4} =
+-\frac{5}{4}.</span> Intuitively, the gradient descent <strong>cannot
+converge in this case</strong> because <span class="math display">\text{lim}_{x \rightarrow -\infty} f(x) =
+-\infty,</span></p>
+<p>We need to find all local minimums and local maximums. First, we
+solve the equation <span class="math inline">f'(x) = 0</span> to
+find all critical points.</p>
+<p>We have: <span class="math display">f'(x) = 0 \Leftrightarrow
+3x^2 + 2x = 0 \Leftrightarrow x = -\frac{2}{3} \ \ \text{and} \ \ x =
+0.</span></p>
+<p>Now, we consider the second-order derivative: <span class="math display">f''(x) = \frac{d^2f}{dx^2} = 6x +
+2.</span></p>
+<p>We have <span class="math inline">f''(x) = 0</span> only when
+<span class="math inline">x = -1/3</span>. Thus, for <span class="math inline">x &lt; -1/3</span>, <span class="math inline">f''(x)</span> is negative or the slope <span class="math inline">f'(x)</span> decreases; and for <span class="math inline">x &gt; -1/3</span>, <span class="math inline">f''(x)</span> is positive or the slope <span class="math inline">f'(x)</span> increases. Keep in mind that <span class="math inline">-1 &lt; -2/3 &lt; -1/3 &lt; 0 &lt; 1</span>.</p>
+<p>Therefore, <span class="math inline">f</span> has a local maximum at
+<span class="math inline">x = -2/3</span> and a local minimum at <span class="math inline">x = 0</span>. If the gradient descent starts at
+<span class="math inline">x_0 = -1</span> and it always goes left then
+it will never meet the local minimum at <span class="math inline">x =
+0</span>, and it will go left infinitely. We say the gradient descent
+cannot converge, or is divergent.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>If we start at <span class="math inline">x_0 = 1</span>, should we go
+left or right? Can you verify this mathematically? What is <span
+class="math inline">x_1</span>? Can gradient descent converge? If so,
+where it might converge to, given appropriate step size?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We have <span class="math display">f'(x_0) = f'(-1) = 3 \cdot
+1^2 + 2 \cdot 1 = 5 &gt; 0,</span> so we go <strong>left</strong>, and
+<span class="math display">x_1 = x_0 - \alpha f'(x_0) = 1 -
+\frac{1}{4} \cdot 5 = -\frac{1}{4}.</span></p>
+<p>From the previous part, function <span class="math inline">f</span>
+has a local minimum at <span class="math inline">x = 0</span>, so the
+gradient descent <strong>can converge</strong> (given appropriate step
+size) at this local minimum.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.4">Problem 5.4</h3>
+<p>Write down <span class="math inline">1</span> condition to terminate
+the gradient descent algorithm (in general).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_4" aria-expanded="true" aria-controls="collapse5_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_4" class="accordion-collapse collapse"
+aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are several ways to terminate the gradient descent
+algorithm:</p>
+<ul>
+<li><p>If the change in the optimization objective is too small, i.e.
+<span class="math inline">|f(x_i) - f(x_{i + 1})| &lt; \epsilon</span>
+where <span class="math inline">\epsilon</span> is a small
+constant,</p></li>
+<li><p>If the gradient is close to zero or the norm of the gradient is
+very small, i.e. <span class="math inline">\|\nabla f(x_i)\| &lt;
+\lambda</span> where <span class="math inline">\lambda</span> is a small
+constant.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><i>Source: <a href="../wi24-final-pt1/index.html">Winter 2024 Final
+Part 1</a>, Problem 2</i></p>
+<p>You and a friend independently perform gradient descent on the same
+function, but after <span class="math inline">200</span> iterations, you
+have different results. Which of the following is sufficient <strong>on
+its own</strong> to explain the difference in your results?
+<strong>Note:</strong> When we say “same function” we assume the
+learning rate and initial predictions are the same too until said
+otherwise.</p>
+<p><strong>Select all that apply.</strong></p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> The function is nonconvex.</p></li>
+<li><p><input type="checkbox" disabled="" /> The function is not differentiable.</p></li>
+<li><p><input type="checkbox" disabled="" /> You and your friend chose different learning rates.</p></li>
+<li><p><input type="checkbox" disabled="" /> You and your friend chose the same initial predictions.</p></li>
+<li><p><input type="checkbox" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Bubbles 1 and 3: “The function is nonconvex” and “You and your friend
+chose different learning rates.”</p>
+<p>If the function is nonconvex it is possible for you and your friend
+to end in different places if you start in different places. For example
+if you have a polynomial with a local minima and a global minimum then
+it is possible you could find the local minima and your friend could
+find the global minima, which would mean you have different results.</p>
+<p>If the function is not differentiable then you cannot perform
+gradient descent, so this cannot be an answer.</p>
+<p>If you and your friend chose different learning rates it is possible
+to have different results because if you have a really large learning
+rate you might be hopping over the global minimum without properly
+converging. Your friend could choose a smaller learning rate, which will
+allow you to converge to the global minimum.</p>
+<p>If you and your friend chose the same initial predictions you are
+guaranteed to end up in the same spot.</p>
+<p>Because two of the option choices are possible the answer cannot be
+“None of the above.”</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p><i>Source: <a href="../wi24-midterm1/index.html">Winter 2024 Midterm
+1</a>, Problem 3</i></p>
+<p>The hyperbolic cosine function is defined as <span
+class="math inline">cosh(x) = \frac{1}{2}(e^{x} + e^{-x})</span>. In
+this problem, we aim to prove the convexity of this function using power
+series expansion.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Prove that <span class="math inline">f(x) = x^{n}</span> is convex if
+n is an even integer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Take the second derivative of f:</p>
+<p><span class="math display">\begin{align*}
+        f'(x) &amp;= nx^{n-1}\\
+        f''(x) &amp;= n(n-1)x^{n-2}
+\end{align*}</span></p>
+<p>If <span class="math inline">n</span> is even, then <span class="math inline">n-2</span> must also be even, therefore <span class="math inline">f''(x) = n(n-1)x^{n-2}</span> will always be
+a positive number. This means the second derivative of <span class="math inline">f(x)</span> is always larger than <span class="math inline">0</span> and therefore passes the second derivative
+test.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Power series expansion is a powerful tool to analyze complicated
+functions. In power series expansion, a function can be written as an
+infinite sum of polynomial functions with certain coefficients. For
+example, the exponential function can be written as: <span
+class="math display">\begin{align*}
+        e^{x} = \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x +
+\frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ...
+\end{align*}</span></p>
+<p>where <span class="math inline">n!</span> denotes the factorial of
+<span class="math inline">n</span>, defined as the product of all
+positive integers up to <span class="math inline">n</span>, i.e. <span
+class="math inline">n! = 1\cdot 2\cdot 3\cdot  ... \cdot
+(n-1)\cdot  n</span>. Given the power series expansion of <span
+class="math inline">e^{x}</span> above, write the power series expansion
+of <span class="math inline">e^{-x}</span> and explicitly specify the
+first 5 terms, i.e., similar to the format of the equation above. <!-- 
+Equation [\[exp_expand\]](#exp_expand){reference-type="ref"
+reference="exp_expand"}: --></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>By plugging <span class="math inline">-x</span> in for each <span class="math inline">x</span>, we get:</p>
+<p><span class="math inline">e^{-x} =
+\displaystyle\sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!}=1-x+\frac{x^{2}}{2}
+- \frac{x^{3}}{6}+\frac{x^{4}}{24}+ ...</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>Using the conclusions you reached in part (a) and part (b), prove
+that <span class="math inline">cosh(x) = \frac{1}{2}(e^{x} +
+e^{-x})</span> is convex.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Given that:</p>
+<p><span class="math display">\begin{align*}
+        e^{x} &amp;= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} = 1 + x +
+\frac{x^{2}}{2} + \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....\\
+        e^{-x} &amp;= \sum_{n=0}^{\infty}\frac{(-x)^{n}}{n!} = 1 - x +
+\frac{x^{2}}{2} - \frac{x^{3}}{6} + \frac{x^{4}}{24} + ....
+\end{align*}</span></p>
+<p>We can add their power series expansion together, and we will
+obtain:</p>
+<p><span class="math display">\begin{align*}
+        e^{x} + e^{-x} &amp;= \sum_{n=0}^{\infty}\frac{x^{n}}{n!} +
+\sum_{n=0}^{\infty}\frac{x^{n}}{n!}\\
+        &amp;=\sum_{n=0}^{\infty}\frac{(x)^{n} + (-x)^{n}}{n!}
+\end{align*}</span></p>
+<p>Within this infinite sum, if n is even, then the negative sign in
+<span class="math inline">(-x)^{n}</span> will disappear; if n is odd,
+then the negative sign in <span class="math inline">(-x)^{n}</span> will
+be kept and travel out of the parenthesis. Therefore we have:</p>
+<p><span class="math display">\begin{align*}
+        e^{x} + e^{-x} &amp;= \sum_{n=0}^{\infty}\frac{x^{n}+x^{n}}{n!}
+\mathrm{(for\; even\; n)} +
+\sum_{n=0}^{\infty}\frac{x^{n}-x^{n}}{n!}\mathrm{(for\; odd\; n)}\\
+        &amp;=\sum_{n=0}^{\infty}\frac{2x^{n}}{n!} \mathrm{(for\; even\;
+n)}
+\end{align*}</span></p>
+<p>Therefore, <span class="math inline">cosh(x)=\displaystyle\frac{e^{x}+e^{-x}}{2}</span>
+is a sum of <span class="math inline">x^{n}</span>, where <span class="math inline">n</span> is even. Since we have already proved in
+part (a) that <span class="math inline">x^{n}</span> are always convex
+for even <span class="math inline">n</span>, <span class="math inline">cosh(x)</span> is an infinite sum of convex
+functions and therefore also convex.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
