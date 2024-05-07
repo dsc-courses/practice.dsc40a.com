@@ -47,6 +47,8 @@ Make sure to show your work.
 
 # BEGIN SOLUTION
 
+$$\dfrac{15}{4}<a<10$$
+
 Since there are $3$ possible median values, we will have to discuss each
 situation separately. <br>
 
@@ -90,7 +92,7 @@ $$\begin{align*}
 combining with the prerequisite condition, we have
 $5\leq a<10$
 
-Combining the range of all three cases, we have $\frac{15}{4}<a<10$ as our
+Combining the range of all three cases, we have $\dfrac{15}{4}<a<10$ as our
 final answer.
 
 # END SOLUTION

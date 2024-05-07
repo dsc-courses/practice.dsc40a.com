@@ -7,8 +7,8 @@ estimated slope $w$ in simple linear regression that you have already
 seen in discussions and lectures:
 
 $$\begin{align*}
-         w &= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i - \overline{x})^2} \tag{1}\\ \\
-        w &= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i - \overline{x})^2} \tag{2}  
+    w &= \frac{\sum_i (x_i - \overline{x}) y_i}{\sum_i (x_i - \overline{x})^2} \\ \\
+    w &= \frac{\sum_i (y_i - \overline{y}) x_i }{\sum_i (x_i - \overline{x})^2}
 \end{align*}$$ 
 
 where we have dataset

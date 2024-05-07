@@ -9,6 +9,8 @@ $(5,r_{1})$. Find out the value of $y_{1}$ and $r_{1}$
 
 # BEGIN SOLUTION
 
+$$y_1 = 7, r_1 = 4$$
+
 The mean squared error is written as: 
 $$\begin{align*}
         R_{sq}(h) = \frac{1}{n}\sum_{i=0}^{n}(y_{i}-h)^2    
