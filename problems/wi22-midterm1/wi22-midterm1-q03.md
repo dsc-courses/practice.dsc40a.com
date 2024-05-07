@@ -15,6 +15,10 @@ If $x_1 = 3$, $y_1 =7$, $x_2=8$, and $y_2=2$, what is the difference between the
 **Hint:** There are many equivalent formulas for the slope of the regression line. We recommend using the version of the formula without $\overline{y}$.
 
 # BEGIN SOLUTION
+
+$$m' - m = \dfrac{1}{16}$$
+
+
 Using the formula for the slope of the regression line, we have:
 $$
 \begin{aligned}

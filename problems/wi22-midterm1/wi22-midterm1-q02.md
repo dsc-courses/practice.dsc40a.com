@@ -12,6 +12,8 @@ For the dataset $\{1, 3, 4\}$, calculate $R(2).$ Simplify your answer as much as
 
 # BEGIN SOLUTION
 
+$$R(2) = \frac13 (2e+e^4)$$
+
 We need to calculate the loss for each data point then average the losses. That is, we need to calculate
 $$R(2) = \dfrac{1}{3} \sum_{i=1}^{3} e^{(2-y_i)^2}.$$ 
 The table below records the necessary information:
@@ -37,6 +39,8 @@ $$\begin{aligned} R(2) &= \dfrac{1}{3} \sum_{i=1}^{3} e^{(2-y_i)^2} \\ &= \frac1
 For the same dataset $\{1, 3, 4\}$, perform one iteration of gradient descent on $R(h)$, starting at an initial prediction of $h_0=2$ with a step size of $\alpha=\frac{1}{2}$. Show your work and simplify your answer.
 
 # BEGIN SOLUTION
+
+$$h_1 = 2 + \frac{2e^4}{3}$$
 
 First, we calculate the derivative of $R(h)$. Using the chain rule, we have 
 $$\begin{align*} R(h) &= \dfrac1n \sum_{i=1}^n e^{(h-y_i)^2} \\

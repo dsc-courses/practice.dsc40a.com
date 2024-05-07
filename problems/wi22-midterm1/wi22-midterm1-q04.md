@@ -23,7 +23,7 @@ this scenario. No justification needed.
 
 # BEGIN SOLUTION
 
-The design matrix $X$ and observation vector $\vec{y}$ are given by
+The design matrix $X$ and observation vector $\vec{y}$ are given by:
 
 $$
 \begin{align*}
@@ -34,7 +34,6 @@ X &=
 1 & -15 & 4\\
 1 & 0 & 1
 \end{bmatrix} \\
-&\text{and} \\
 \vec{y} &= \begin{bmatrix}
 -5\\
 7\\
