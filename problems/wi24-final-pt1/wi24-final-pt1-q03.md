@@ -12,7 +12,7 @@ Write down the expression of mean square error and its derivative given this dat
 
 # BEGIN SOLUTION
 
-$R_{sq}(h) = \frac{1}{4}\sum_{i=1}^{4}(y_i-h)^2$
+$$R_{sq}(h) = \dfrac{1}{4}\sum_{i=1}^{4}(y_i-h)^2$$
 
 Recall the equation for $R_{sq}(h) = \frac{1}{n}\sum_{i=1}^{n}(y_i-h)^2$, so we simply need to replace $n$ with $4$ because there are $4$ elements in our dataset.
 
@@ -49,7 +49,7 @@ $h_2=\frac{1}{4}$. What is the value of $h_0$?
 
 # BEGIN SOLUTION
 
-$h_{0} = -\frac{5}{4}$
+$$h_{0} = -\frac{5}{4}$$
 
 The gradient descent equation is given by: $$\begin{aligned}
     h_i = h_{i-1} - \alpha \frac{dR_{sq}(h_{i-1})}{dh}
