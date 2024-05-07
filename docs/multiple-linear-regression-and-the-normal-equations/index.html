@@ -387,24 +387,36 @@ $$(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2$$Notice there is a squared element, wh
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
-<p><span class="math inline">(\text{MAE}(H^{\circ}))^2</span> ___ <span
-class="math inline">\text{MSE}(H^{\circ})</span></p>
+<!-- Commented out this subproblem for now, solution is wack. To uncomment, highlight from "BEGIN SUBPROB" to "..other way around" -->
+<!-- <br>
+
+### Problem 3.2
+
+
+
+$(\text{MAE}(H^{\circ}))^2$ ___ $\text{MSE}(H^{\circ})$
+
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\leq</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\geq</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">=</span></p></li>
 </ul>
-<div id="accordionExample" class="accordion">
+
+
+
+
+
+
+<div class="accordion" id="accordionExample">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse collapse" aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
+
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
@@ -432,21 +444,34 @@ term.</p>
 <p>Bringing this altogether, we should conclude that <span class="math inline">\text{MAE}(H(x_i))^2  \geq
 \text{MSE}(H(x_i))</span>, since summing up the errors before squaring
 them is greater than the other way around!</p>
-<!-- This equation looks very similar to the mean squared error! We can actually take the square root of each sides of this equation to learn more about which side is larger:
-$$
+<p>Old Solution Below:</p>
+<p>This equation looks very similar to the mean squared error! We can
+actually take the square root of each sides of this equation to learn
+more about which side is larger: <span class="math display">
 \begin{align*}
-(\text{MAE}(H^\circ))^2 &\_\_\_ \text{MSE}(H^\circ) \\
-\sqrt{(\text{MAE}(H^\circ))^2} &\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
-\text{MAE}(H^\circ) &\_\_\_ \sqrt{\text{MSE}(H^\circ)}
+(\text{MAE}(H^\circ))^2 &amp;\_\_\_ \text{MSE}(H^\circ) \\
+\sqrt{(\text{MAE}(H^\circ))^2} &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)} \\
+\text{MAE}(H^\circ) &amp;\_\_\_ \sqrt{\text{MSE}(H^\circ)}
 \end{align*}
-$$
+</span></p>
+<p>The square root of <span class="math inline">\text{MSE}</span> is
+equal to <span class="math inline">\text{MAE}</span>! These two elements
+are basically the same because squaring a value will lead to
+non-negatives and then it will be square rooted to match the absolute
+value from <span class="math inline">\text{MAE}</span>. However the
+<span class="math inline">\text{MSE}</span> being square rooted also
+allows for it to be smaller than the <span class="math inline">\text{MSE}</span> making the correct symbol <span class="math inline">\geq</span>.</p>
 
-The square root of $\text{MSE}$ is equal to $\text{MAE}$! These two elements are basically the same because squaring a value will lead to non-negatives and then it will be square rooted to match the absolute value from $\text{MAE}$. However the $\text{MSE}$ being square rooted also allows for it to be smaller than the $\text{MSE}$ making the correct symbol $\geq$. -->
 </div>
 </div>
 </div>
 </div>
-<p><br></p>
+
+
+
+
+    
+<br> -->
 <hr />
 <h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../wi22-midterm1/index.html">Winter 2022 Midterm

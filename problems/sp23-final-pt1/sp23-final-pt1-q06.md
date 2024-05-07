@@ -50,7 +50,9 @@ $$(y_i-H^*(x_i))^2-(y_i-H^{\circ}(x_i))^2$$Notice there is a squared element, wh
 
 # END SUBPROB
 
-# BEGIN SUBPROB
+<!-- Commented out this subproblem for now, solution is wack. To uncomment, highlight from "BEGIN SUBPROB" to "..other way around" -->
+
+<!-- # BEGIN SUBPROB
 
 $(\text{MAE}(H^{\circ}))^2$ ___ $\text{MSE}(H^{\circ})$
 
@@ -74,10 +76,9 @@ Rules from algebra tell us that summing the absolute errors up *before* squaring
 
 Bringing this altogether, we should conclude that $\text{MAE}(H(x_i))^2  \geq \text{MSE}(H(x_i))$, since summing up the errors before squaring them is greater than the other way around!
 
+Old Solution Below:
 
-
-
-<!-- This equation looks very similar to the mean squared error! We can actually take the square root of each sides of this equation to learn more about which side is larger:
+This equation looks very similar to the mean squared error! We can actually take the square root of each sides of this equation to learn more about which side is larger:
 $$
 \begin{align*}
 (\text{MAE}(H^\circ))^2 &\_\_\_ \text{MSE}(H^\circ) \\
@@ -86,10 +87,10 @@ $$
 \end{align*}
 $$
 
-The square root of $\text{MSE}$ is equal to $\text{MAE}$! These two elements are basically the same because squaring a value will lead to non-negatives and then it will be square rooted to match the absolute value from $\text{MAE}$. However the $\text{MSE}$ being square rooted also allows for it to be smaller than the $\text{MSE}$ making the correct symbol $\geq$. -->
+The square root of $\text{MSE}$ is equal to $\text{MAE}$! These two elements are basically the same because squaring a value will lead to non-negatives and then it will be square rooted to match the absolute value from $\text{MAE}$. However the $\text{MSE}$ being square rooted also allows for it to be smaller than the $\text{MSE}$ making the correct symbol $\geq$.
 
 # END SOLUTION
 
-# END SUBPROB
+# END SUBPROB -->
 
 # END PROB
