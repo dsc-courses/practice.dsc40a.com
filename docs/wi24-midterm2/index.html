@@ -222,8 +222,7 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">{54 \choose 4} = 316251</span>   <em>Note:
-this means “54 Choose 4”</em></p>
+<p><span class="math display">{54 \choose 4} = 316251</span></p>
 <p>Since order does not matter, we would use a combination instead of a
 permutation here. From <span class="math inline">54</span> unique cards
 in our poker deck, we can <em>choose</em> <span class="math inline">4</span> at random to get a card hand.</p>
@@ -258,6 +257,7 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">650</span></p>
 <p>Since the first <span class="math inline">4</span> cards are
 four-of-a-kind (same number), there are <span class="math inline">13</span> ways to select a four-of-a-kind. For the
 <span class="math inline">5</span>th card, there are <span class="math inline">50</span> total choices (<span class="math inline">12</span> remaining values <span class="math inline">\cdot 4</span> suits + <span class="math inline">2</span> wildcards). So there are a total <span class="math inline">13 \cdot 50 = 650</span> options.</p>
@@ -286,6 +286,8 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <!-- Need to edit this one -->
+<p><span class="math display">P(\text{Four of a kind | Bomb}) =
+\frac{1}{103}</span></p>
 <p>The number of hands containing two jokers (the other two cards are
 arbitrary) is given by: <span class="math display">\begin{align*}
 \underbrace{{2 \choose 2}}_{\text{Two Jokers}} \cdot \underbrace{{52
@@ -351,6 +353,8 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">P(\text{Decay|Dead}) =
+\frac{18}{26}</span></p>
 <p>The probability we are looking for is <span class="math inline">P(\text{Decay|Dead})</span>. Using Bayes’ theorem,
 we can write:</p>
 <p><span class="math display">\begin{align*}
@@ -374,7 +378,7 @@ P(\text{Decay|Dead}) =
 <p><span class="math display">\begin{align*}
 P(\text{Decay|Dead}) &amp;= \frac{0.9\cdot 0.2}{0.9 \cdot 0.2 + 0.1
 \cdot (1-0.2)}\\
-=\frac{18}{26}
+&amp;=\frac{18}{26}
 \end{align*}</span></p>
 </div>
 </div>
@@ -457,13 +461,13 @@ above, so statement <span class="math inline">5</span> is false.</p>
 <p>You’re given the following probabilities:</p>
 <ul>
 <li><p><span class="math inline">P(\text{Cat Dead} \cup \text{Decay}) =
-\frac{4}{5}</span></p></li>
+\dfrac{4}{5}</span></p></li>
 <li><p><span class="math inline">P(\text{Cat Alive} \cup \text{Decay}) =
-\frac{1}{2}</span></p></li>
+\dfrac{1}{2}</span></p></li>
 <li><p><span class="math inline">P(\text{Cat Alive} \cup \text{Cat
 Dead}) = 1</span></p></li>
 <li><p><span class="math inline">P(\text{Decay}) =
-\frac{1}{5}</span></p></li>
+\dfrac{1}{5}</span></p></li>
 </ul>
 <p>Using the Venn diagram in Problem <span
 class="math inline">3.2</span>, calculate the probability for
@@ -482,6 +486,8 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math display">P(\text{Alive} \cap \text{Dead}) =
+\frac{1}{8}</span></p>
 <p>Since we know that the decay is independent to cat’s state, we have:
 <span class="math display">\begin{align*}
     P(\text{Dead} \cup \text{Decay}) &amp;= P(\text{Dead}) +

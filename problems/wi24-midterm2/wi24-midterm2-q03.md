@@ -23,6 +23,8 @@ happened?
 
 # BEGIN SOLUTION
 
+$$P(\text{Decay|Dead}) = \frac{18}{26}$$
+
 The probability we are looking for is $P(\text{Decay|Dead})$. Using Bayes' theorem, we can write:
 
 $$\begin{align*}
@@ -47,7 +49,7 @@ Plugging these numbers, we have:
 
 $$\begin{align*}
 P(\text{Decay|Dead}) &= \frac{0.9\cdot 0.2}{0.9 \cdot 0.2 + 0.1 \cdot (1-0.2)}\\
-=\frac{18}{26}
+&=\frac{18}{26}
 \end{align*}$$
 
 # END SOLUTION
@@ -104,19 +106,21 @@ Since statements $1$ and $2$ were true, the answer cannot be none of the above, 
 
 You're given the following probabilities:
 
--   $P(\text{Cat Dead} \cup \text{Decay}) = \frac{4}{5}$
+-   $P(\text{Cat Dead} \cup \text{Decay}) = \dfrac{4}{5}$
 
--   $P(\text{Cat Alive} \cup \text{Decay}) = \frac{1}{2}$
+-   $P(\text{Cat Alive} \cup \text{Decay}) = \dfrac{1}{2}$
 
 -   $P(\text{Cat Alive} \cup \text{Cat Dead}) = 1$
 
--   $P(\text{Decay}) = \frac{1}{5}$
+-   $P(\text{Decay}) = \dfrac{1}{5}$
 
 Using the Venn diagram in Problem $3.2$, calculate the probability for
 Schrodinger's cat to be in the superposition state (i.e. both dead and
 alive):
 
 # BEGIN SOLUTION
+
+$$P(\text{Alive} \cap \text{Dead}) = \frac{1}{8}$$
 
 Since we know that the decay is independent to cat's state, we have:
 $$\begin{align*}

@@ -24,7 +24,7 @@ How many different four-card hands can be selected from this deck?
 
 # BEGIN SOLUTION
 
-${54 \choose 4} = 316251$ &emsp; _Note: this means "54 Choose 4"_
+$${54 \choose 4} = 316251$$
 
 Since order does not matter, we would use a combination instead of a permutation here. From $54$ unique cards in our poker deck, we can _choose_ $4$ at random to get a card hand.
 
@@ -42,6 +42,9 @@ For this deck, how many $5$ card hands are there that include four-of-a-kind (fo
 
 # BEGIN SOLUTION
 
+
+$$650$$
+
 Since the first $4$ cards are four-of-a-kind (same number), there are $13$ ways to select a four-of-a-kind. For the $5$th card, there are $50$ total choices ($12$ remaining values $\cdot 4$ suits + $2$ wildcards). So there are a total $13 \cdot 50 = 650$ options.
 
 # END SOLUTION
@@ -55,6 +58,8 @@ In certain poker rules, a bomb is defined as either four-of-a-kind, or two wildc
 # BEGIN SOLUTION
 
 <!-- Need to edit this one -->
+
+$$P(\text{Four of a kind | Bomb}) = \frac{1}{103}$$
 
 The number of hands containing two jokers (the other two cards are arbitrary) is given by:
 $$\begin{align*}
