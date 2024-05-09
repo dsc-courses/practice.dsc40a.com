@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<i>Source: [Spring 2024 Midterm](../sp24-midterm/index.html), Problem 4a-c</i>
 
 Suppose we want to fit a hypothesis function of the form:
 

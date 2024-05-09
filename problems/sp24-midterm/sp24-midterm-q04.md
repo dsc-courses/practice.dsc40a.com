@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<i>Source: [Spring 2024 Midterm](../sp24-midterm/index.html), Problem 3</i>
 
 Consider a dataset of $n$ values, $y_1, y_2, ..., y_n$, where $y_1 < y_2 < ... < y_n$. Let $R_\text{abs}(h)$ be the mean absolute error of a constant prediction $h$ on this dataset of $n$ values.
 

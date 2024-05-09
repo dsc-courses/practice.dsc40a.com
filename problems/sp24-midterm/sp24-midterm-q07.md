@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<i>Source: [Spring 2024 Midterm](../sp24-midterm/index.html), Problem 5</i>
 
 Consider a dataset of $n$ points, $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$ where:
 

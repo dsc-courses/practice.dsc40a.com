@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- <i>Source: [Spring 2024 Midterm 1](../wi22-midterm1/index.html), Problem 1b-e</i> -->
+<i>Source: [Spring 2024 Midterm](../sp24-midterm/index.html), Problem 1b-e</i>
 
 Consider the vectors $\vec{c}$ and $\vec{d}$, defined below.
 

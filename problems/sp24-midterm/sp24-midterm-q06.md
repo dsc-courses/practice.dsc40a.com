@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<i>Source: [Spring 2024 Midterm](../sp24-midterm/index.html), Problem 4d</i>
 
 Consider the following four hypothesis functions:
 
