@@ -1,11 +1,15 @@
 Overleaf Link: https://www.overleaf.com/read/sxtxhfnpdncy#9530e5
 
+**NEWER TASKS:**
+
+SP24 Midterm
+- Zoe: Problems 2 and 4 (q03 & q05 & q06)
+- Javier:
+
+
+**OLDER TASKS:**
+
 Javier: Winter 2024 final part 2 (final2_WI24.tex)
-
-Spring 2023 midterm 1 (midterm1A.tex)
-
-Zoe: Spring 2023 midterm 2 (midterm 2A.tex)
-COMPLETED (Except for Prob 3 for Javier)
     
 Javier: Spring 2023 final part 2 (final2A.tex)
     - Needs explanations
@@ -17,7 +21,7 @@ Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 
 Nick: the zip fa22-final.zip, attached, has the .tex for the Fall 2022 final (Final_revised.tex).
 
-DONE:
+**DONE:**
 
 Javier/Zoe: Winter 2022 midterm 1 (mockmidterm1.tex)
 COMPLETED (Added to Index)
@@ -35,4 +39,10 @@ Zoe: Spring 2023 final part 1 (final1A.tex)
 COMPLETED
 
 Nick: the zip fa22-midterm.zip, attached, has the .tex for the Fall 2022 midterm (midterm_sol.tex).
+COMPLETED
+
+Zoe: Spring 2023 midterm 2 (midterm 2A.tex)
+COMPLETED
+
+Spring 2023 midterm 1 (midterm1A.tex)
 COMPLETED
