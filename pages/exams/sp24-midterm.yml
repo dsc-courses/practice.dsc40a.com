@@ -1,0 +1,12 @@
+title: 'Spring 2024 Midterm Exam'
+instructors: Suraj Rampure
+context: This exam was administered in person. Students had **80 minutes** to take this exam.
+show_solution: true
+problems:
+  - sp24-midterm/sp24-midterm-q01
+  - sp24-midterm/sp24-midterm-q02
+  - sp24-midterm/sp24-midterm-q03
+  - sp24-midterm/sp24-midterm-q04
+  - sp24-midterm/sp24-midterm-q05
+  - sp24-midterm/sp24-midterm-q06
+  - sp24-midterm/sp24-midterm-q07

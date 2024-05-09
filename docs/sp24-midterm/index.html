@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Spring 2024 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Spring 2024 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Suraj Rampure</p>
+<p>This exam was administered in person. Students had <strong>80
+minutes</strong> to take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<p>Vectors get lonely, and so we will give each vector one friend to
+keep them company.</p>
+<p>Specifically, if <span class="math inline">\vec{v} = \begin{bmatrix}
+v_1 \\ v_2 \end{bmatrix}</span>, <span
+class="math inline">\vec{v_f}</span> is the friend of <span
+class="math inline">\vec{v}</span>, where <span
+class="math inline">\vec{v_f} = \begin{bmatrix} -v_2 \\ v_1
+\end{bmatrix}</span>.</p>
+<p>Prove that <span class="math inline">\vec{v}</span> and <span
+class="math inline">\vec{v_f}</span> are orthogonal.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<!-- <i>Source: [Spring 2024 Midterm 1](../wi22-midterm1/index.html), Problem 1b-e</i> -->
+<p>Consider the vectors <span class="math inline">\vec{c}</span> and
+<span class="math inline">\vec{d}</span>, defined below.</p>
+<p><span class="math display">\vec{c} = \begin{bmatrix} 1 \\ 7
+\end{bmatrix} \qquad \vec{d} = \begin{bmatrix} -2 \\ 1
+\end{bmatrix}</span></p>
+<p>The next few parts ask you to write various vectors as scalar
+multiples of either <span class="math inline">\vec{c}</span>, <span
+class="math inline">\vec{c_f}</span>, <span
+class="math inline">\vec{d}</span>, or <span
+class="math inline">\vec{d_f}</span>, where <span
+class="math inline">\vec{c_f}</span> and <span
+class="math inline">\vec{d_f}</span> are the friends of <span
+class="math inline">\vec{c}</span> and <span
+class="math inline">\vec{d}</span>, respectively. In each part, write in
+the box, and fill in . Here is an example:</p>
+<p><span class="math inline">2 \times</span> ____</p>
+<p>( ) <span class="math inline">\vec c</span> ( ) <span
+class="math inline">\vec c_f</span> ( ) <span class="math inline">\vec
+d</span> (Correct answer!) ( ) <span class="math inline">\vec
+d_f</span></p>
+<p>^ This is problematic and I am unsure how to fix - Zoe</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>The projection of <span class="math inline">\vec{c}</span> onto <span
+class="math inline">\text{span}(\vec{d})</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>The error vector of the projection of <span
+class="math inline">\vec{c}</span> onto <span
+class="math inline">\text{span}(\vec{d})</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>The projection of <span class="math inline">\vec{d}</span> onto <span
+class="math inline">\text{span}(\vec{c})</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>The error vector of the projection of <span
+class="math inline">\vec{d}</span> onto <span
+class="math inline">\text{span}(\vec{c})</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<p>Consider a dataset of <span class="math inline">n</span> values,
+<span class="math inline">y_1, y_2, ..., y_n</span>, all of which are
+non-negative. We’re interested in fitting a constant model, <span
+class="math inline">H(x) = h</span>, to the data, using the new ``Sun
+God” loss function:</p>
+<p><span class="math display">L_\text{sungod}(y_i, h) = w_i \left( y_i^2
+- h^2  \right)^2</span></p>
+<p>Here, <span class="math inline">w_i</span> corresponds to the
+``weight” assigned to the data point <span
+class="math inline">y_i</span>, the idea being that different data
+points can be weighted differently when finding the optimal constant
+prediction, <span class="math inline">h^*</span>.</p>
+<p>For example, for the dataset <span class="math inline">y_1 = 1, y_2 =
+5, y_3 = 2</span>, we will end up with different values of <span
+class="math inline">h^*</span> when we use the weights <span
+class="math inline">w_1 = w_2 = w_3 = 1</span> and when we use weights
+<span class="math inline">w_1 = 8, w_2 = 4, w_3 = 3</span>.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Find <span class="math inline">\frac{\partial
+L_\text{sungod}}{\partial h}</span>, the derivative of the Sun God loss
+function with respect to <span class="math inline">h</span>. Show your
+work, and put a <span class="math inline">\boxed{\text{box}}</span>
+around your final answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Prove that the constant prediction that minimizes empirical risk for
+the Sun God loss function is:</p>
+<p><span class="math display">h^* = \sqrt{\frac{\sum_{i = 1}^n w_i
+y_i^2}{\sum_{i = 1}^n w_i}}</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>For a dataset of non-negative values <span class="math inline">y_1,
+y_2, ..., y_n</span> with weights <span class="math inline">w_1, 1, ...,
+1</span>, evaluate: <span class="math display">\displaystyle \lim_{w_1
+\rightarrow \infty} h^*</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> The maximum of <span class="math inline">y_1, y_2, ...,
+y_n</span></p></li>
+<li><p><input type="radio" disabled="" /> The mean of <span class="math inline">y_1, y_2, ...,
+y_{n-1}</span></p></li>
+<li><p><input type="radio" disabled="" /> The mean of <span class="math inline">y_2, y_3, ..., y_n</span></p></li>
+<li><p><input type="radio" disabled="" /> The mean of <span class="math inline">y_2, y_3, ..., y_n</span>,
+multiplied by <span class="math inline">\frac{n}{n-1}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_n</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<p>Consider a dataset of <span class="math inline">n</span> values,
+<span class="math inline">y_1, y_2, ..., y_n</span>, where <span
+class="math inline">y_1 &lt; y_2 &lt; ... &lt; y_n</span>. Let <span
+class="math inline">R_\text{abs}(h)</span> be the mean absolute error of
+a constant prediction <span class="math inline">h</span> on this dataset
+of <span class="math inline">n</span> values.</p>
+<p>Suppose that we introduce a new value to the dataset, <span
+class="math inline">\alpha</span>. Let <span
+class="math inline">S_\text{abs}(h)</span> be the mean absolute error of
+a constant prediction <span class="math inline">h</span> on this new
+dataset of <span class="math inline">n + 1</span> values.</p>
+<p>We’re given that:</p>
+<ul>
+<li><span class="math inline">n &gt; 5</span>.</li>
+<li><span class="math inline">\alpha</span> is not equal to any of <span
+class="math inline">y_1, y_2, ..., y_n</span>.</li>
+<li>All values of <span class="math inline">h</span> between 7 and 9
+minimize <span class="math inline">S_\text{abs}(h)</span>.</li>
+<li>The slope of <span class="math inline">S_\text{abs}(h)</span> on the
+line segment immediately to the right of <span
+class="math inline">\alpha</span> is <span
+class="math inline">\frac{5-n}{1 + n}</span>.</li>
+</ul>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>In the problem statement, we were told that ``all values between 7
+and 9 minimize <span class="math inline">S_\text{abs}(h)</span>.” More
+specifically, what interval of values <span class="math inline">h</span>
+minimize <span class="math inline">S_\text{abs}(h)</span>?</p>
+<p> </p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Which value(s) minimize <span
+class="math inline">R_\text{abs}(h)</span>? Give your answer(s) as
+integer(s) with no variables. Show your work, and put a <span
+class="math inline">\boxed{\text{box}}</span> around your final
+answer(s).</p>
+<p><i>Hint: Don’t start by trying to expand <span
+class="math inline">\frac{1}{n} \sum_{i = 1}^n |y_i - h|</span> —
+instead, think about what removing <span
+class="math inline">\alpha</span> does.</i></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>What is the slope of <span class="math inline">S_\text{abs}(h)</span>
+on the line segment immediately to the left of <span
+class="math inline">\alpha</span>? Give your answer in the form of an
+expression involving <span class="math inline">n</span>. Show your work,
+and put a <span class="math inline">\boxed{\text{box}}</span> around
+your final answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<p>Suppose we want to fit a hypothesis function of the form:</p>
+<p><span class="math display">H(x) = w_0 + w_1 x^2</span></p>
+<p>Note that this is the simple linear regression hypothesis function,
+<span class="math inline">H(x) = w_0 + w_1x</span>.</p>
+<p>To do so, we will find the optimal parameter vector <span
+class="math inline">\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^*
+\end{bmatrix}</span> that satisfies the normal equations. The first 5
+rows of our dataset are as follows, though note that our dataset has
+<span class="math inline">n</span> rows in total.</p>
+<p>Suppose that <span class="math inline">x_1, x_2, ..., x_n</span> have
+a mean of <span class="math inline">\bar{x} = 2</span> and a variance of
+<span class="math inline">\sigma_x^2 = 10</span>.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Write out the first 5 rows of the design matrix, <span
+class="math inline">X</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>Suppose, just in part (b), that after solving the normal equations,
+we find <span class="math inline">\vec{w}^* = \begin{bmatrix} 2 \\ -5
+\end{bmatrix}</span>. What is the predicted <span
+class="math inline">y</span> value for the augmented feature vector
+<span class="math inline">\text{Aug}(\vec{x}) =  \begin{bmatrix} 1 \\ 4
+\end{bmatrix}</span>? Give your answer as an integer with no variables.
+Show your work, and put</p>
+<p>a <span class="math inline">\boxed{\text{box}}</span> around your
+final answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Let <span class="math inline">X_\text{tri} = 3 X</span>. Using the
+fact that <span class="math inline">\sum_{i = 1}^n x_i^2 = n \sigma_x^2
++ n \bar{x}^2</span>, determine the value of the bottom-left value in
+the matrix <span class="math inline">X_\text{tri}^T X_\text{tri}</span>,
+i.e. the value in the second row and first column. Give your answer as
+an expression involving <span class="math inline">n</span>. Show your
+work, and put a <span class="math inline">\boxed{\text{box}}</span>
+around your final answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<p>Consider the following four hypothesis functions:</p>
+<p>Let <span class="math inline">H_1^*</span>, <span
+class="math inline">H_2^*</span>, <span
+class="math inline">H_3^*</span>, and <span
+class="math inline">H_4^*</span> be the versions of all four hypothesis
+functions that are using optimal parameters. In the subparts below, fill
+in the blanks.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>The mean squared error of <span class="math inline">H_1^*</span> is
+____ the mean squared error of <span
+class="math inline">H_2^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> greater than</p></li>
+<li><p><input type="radio" disabled="" /> greater than or equal to</p></li>
+<li><p><input type="radio" disabled="" /> equal to</p></li>
+<li><p><input type="radio" disabled="" /> less than</p></li>
+<li><p><input type="radio" disabled="" /> less than or equal to</p></li>
+<li><p><input type="radio" disabled="" /> impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>The mean squared error of <span class="math inline">H_1^*</span> is
+____ the mean squared error of <span
+class="math inline">H_3^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> greater than</p></li>
+<li><p><input type="radio" disabled="" /> greater than or equal to</p></li>
+<li><p><input type="radio" disabled="" /> equal to</p></li>
+<li><p><input type="radio" disabled="" /> less than</p></li>
+<li><p><input type="radio" disabled="" /> less than or equal to</p></li>
+<li><p><input type="radio" disabled="" /> impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>The mean squared error of <span class="math inline">H_1^*</span> is
+____ the mean squared error of <span
+class="math inline">H_4^*</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> greater than</p></li>
+<li><p><input type="radio" disabled="" /> greater than or equal to</p></li>
+<li><p><input type="radio" disabled="" /> equal to</p></li>
+<li><p><input type="radio" disabled="" /> less than</p></li>
+<li><p><input type="radio" disabled="" /> less than or equal to</p></li>
+<li><p><input type="radio" disabled="" /> impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>In ____ of the hypothesis functions <span
+class="math inline">H_1^*</span>,<span class="math inline">H_2^*</span>,
+<span class="math inline">H_3^*</span>, and <span
+class="math inline">H_4^*</span>, the sum of the residuals of the
+function’s predictions is 0.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> None</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">3</span></p></li>
+<li><p><input type="radio" disabled="" /> All <span class="math inline">4</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+<p>Consider a dataset of <span class="math inline">n</span> points,
+<span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)</span>
+where:</p>
+<ul>
+<li><span class="math inline">x_1 &lt; x_2 &lt; ... &lt; x_n</span>, and
+<span class="math inline">x_1, x_2, ..., x_n</span> have a variance of
+<span class="math inline">\sigma_x^2 = 15</span> and a range of 20 (the
+range of a collection of values is the difference between the largest
+and smallest value).</li>
+<li><span class="math inline">y_1 &gt; y_2 &gt; ... &gt; y_n</span>, and
+<span class="math inline">y_1, y_2, ..., y_n</span> have a variance of
+<span class="math inline">\sigma_y^2 = 8</span> and a range of 6.</li>
+</ul>
+<p>We fit two linear hypothesis functions using squared loss:</p>
+<ul>
+<li>One hypothesis function is fit with a ``swapped” version of the
+dataset, where <span class="math inline">x_1</span> and <span
+class="math inline">x_n</span> are swapped — that is, it uses the
+dataset <span class="math inline">(x_n, y_1), (x_2, y_2), ..., (x_{n-1},
+y_{n-1}), (x_1, y_n)</span>. Note that only two of the points in this
+dataset are different than in the original dataset. We’ll call the
+optimal slope and intercept of this hypothesis function <span
+class="math inline">w_1^\text{swap}</span> and <span
+class="math inline">w_0^\text{swap}</span>, respectively.</li>
+<li>Another hypothesis function is fit with the original dataset,</li>
+</ul>
+<p><span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_{n-1},
+y_{n-1}), (x_n, y_n)</span>. We’ll call the optimal slope and intercept
+of this hypothesis function <span
+class="math inline">w_1^\text{orig}</span> and <span
+class="math inline">w_0^\text{orig}</span>, respectively.</p>
+<p>On the next page, in the space provided, prove that:</p>
+<p><span class="math display">\displaystyle | w_1^\text{swap} -
+w_1^\text{orig} | = \frac{8}{n}</span></p>
+<p></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7" class="accordion-collapse collapse"
+aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>

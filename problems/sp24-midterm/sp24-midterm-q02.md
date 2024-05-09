@@ -8,11 +8,14 @@ $$\vec{c} = \begin{bmatrix} 1 \\ 7 \end{bmatrix} \qquad \vec{d} = \begin{bmatrix
 
 The next few parts ask you to write various vectors as scalar multiples of either $\vec{c}$, $\vec{c_f}$, $\vec{d}$, or $\vec{d_f}$, where $\vec{c_f}$ and $\vec{d_f}$ are the friends of $\vec{c}$ and $\vec{d}$, respectively. In each part, write \textbf{one number} in the box, and fill in \textbf{one bubble}. Here is an example:
 
-$2 \times$
+$2 \times$ \_\_\_\_
+
 ( ) $\vec c$
 ( ) $\vec c_f$
 ( ) $\vec d$ (Correct answer!)
 ( ) $\vec d_f$
+
+^ This is problematic and I am unsure how to fix - Zoe
 
 # BEGIN SUBPROB
 

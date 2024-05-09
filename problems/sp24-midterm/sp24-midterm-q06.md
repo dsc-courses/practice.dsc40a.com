@@ -72,7 +72,7 @@ TODO
 
 # BEGIN SUBPROB
 
-In \_\_\_\_ of the hypothesis functions $H_1^*$,$ H_2^*$, $H_3^*$, and $H_4^*$, the sum of the residuals of the function's predictions is 0.
+In \_\_\_\_ of the hypothesis functions $H_1^*$,$H_2^*$, $H_3^*$, and $H_4^*$, the sum of the residuals of the function's predictions is 0.
 
 ( ) None
 ( ) $1$
