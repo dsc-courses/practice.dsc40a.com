@@ -1,0 +1,21 @@
+# BEGIN PROB
+
+<!-- <i>Source: [Winter 2022 Midterm 1](../wi22-midterm1/index.html), Problem 1</i> -->
+
+Vectors get lonely, and so we will give each vector one friend to keep them company.
+
+Specifically, if $\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$, $\vec{v_f}$ is the friend of $\vec{v}$, where $\vec{v_f} = \begin{bmatrix} -v_2 \\ v_1 \end{bmatrix}$.
+
+# BEGIN SUBPROB
+
+Prove that $\vec{v}$ and $\vec{v_f}$ are orthogonal.
+
+# BEGIN SOLUTION
+
+TODO
+
+# END SOLUTION
+
+# END SUBPROB
+
+# END PROB
