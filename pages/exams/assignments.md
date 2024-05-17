@@ -4,6 +4,7 @@ Overleaf Link: https://www.overleaf.com/read/sxtxhfnpdncy#9530e5
 
 SP24 Midterm
 - Zoe: Problems 2 and 4 (q03 & q05 & q06)
+    - COMPLETED
 - Javier:
 
 

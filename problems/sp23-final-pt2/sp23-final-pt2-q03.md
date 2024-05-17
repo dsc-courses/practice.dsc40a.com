@@ -2,8 +2,7 @@
 
 <i>Source: [Spring 2023 Final Part 2](../sp23-final-pt2/index.html), Problem 3</i>
 
-Consider three events $A, B,$ and $C$ in the same sample
-space.
+Consider three events $A, B,$ and $C$ in the same sample space.
 
 # BEGIN SUBPROB
 
