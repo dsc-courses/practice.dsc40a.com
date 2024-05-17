@@ -22,7 +22,7 @@ To solve this problem we simply take the derivative of $L_\text{sungod}(y_i, h) 
 
 We can use the chain rule to find the derivative. The chain rule is: $\frac{\partial}{\partial h}[f(g(h))]=f'(g(h))g'(h)$.
 
-Note that $(y_i^2 -h^2)^2$ is the area we care about inside of $L_\text{sungod}(y_i, h) = w_i( y_i^2 - h^2 )^2$. In this case $f(h) = h^2$ and $g(h) = y_i^2 - h^2$. We can then take the derivative of both to get: $f'(h) = 2h$ and $g'(x) = -2h$.
+Note that $(y_i^2 -h^2)^2$ is the area we care about inside of $L_\text{sungod}(y_i, h) = w_i( y_i^2 - h^2 )^2$ because that is where $h$ is!. In this case $f(h) = h^2$ and $g(h) = y_i^2 - h^2$. We can then take the derivative of both to get: $f'(h) = 2h$ and $g'(x) = -2h$.
 
 This tells us the derivative is: $\frac{\partial L}{\partial h} = (w_i) * 2(y_i^2 -h^2) * (-2h)$, which can be simplified to $\frac{\partial L}{\partial h} = -4w_ih(y_i^2 -h^2)$.
 
@@ -42,7 +42,7 @@ The recipe for emprical risk is to find the derivative of the risk function, set
 
 We know that empirical risk follows the equation $R(L(y_i, h)) = \frac{1}{n} \sum_{i=1}^n L(y_i, h)$. This means that $R_\text{sungod}(h) = \frac{1}{n} \sum_{i = 1}^n w_i (y_i^2 - h^2)^2$.
 
-Recall we have already found the derivative of $L_\text{sungod}(y_i, h) = w_i ( y_i^2 - h^2)^2$. Which means that $\frac{\partial R}{\partial h}(h) = \frac{1}{n} \sum_{i = 1}^n \frac{\partial L}{\partial h}(h)$. So we can set $R_\text{sungod}(h) = \frac{1}{n} \sum_{i = 1}^n -4hw_i(y_i^2 -h^2)$.
+Recall we have already found the derivative of $L_\text{sungod}(y_i, h) = w_i ( y_i^2 - h^2)^2$. Which means that $\frac{\partial R}{\partial h}(h) = \frac{1}{n} \sum_{i = 1}^n \frac{\partial L}{\partial h}(h)$. So we can set $\frac{\partial}{\partial h}(h) R_\text{sungod}(h) = \frac{1}{n} \sum_{i = 1}^n -4hw_i(y_i^2 -h^2)$.
 
 We can now do the last two steps:
 \begin{align*}
