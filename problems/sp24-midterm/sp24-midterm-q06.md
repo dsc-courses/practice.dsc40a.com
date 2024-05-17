@@ -38,16 +38,18 @@ $H_1^*$ is a more flexible version of $H_2^*$ – anything $H_2^*$ can do, $H_1^
 
 The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_3^*$.
 
-( ) greater than
-( ) greater than or equal to
-( ) equal to
-( ) less than
-( ) less than or equal to
-( ) impossible to tell
+( ) Greater than
+( ) Greater than or equal to
+( ) Equal to
+( ) Less than
+( ) Less than or equal to
+( ) Impossible to tell
 
 # BEGIN SOLUTION
 
-TODO
+Impossible to tell
+
+$H_1^*$ has a different set of features than $H_2^*$ and vice versa – this is not a situation like in (a) or (c), where one hypothesis function has a superset of the features of the other.
 
 # END SOLUTION
 
@@ -57,16 +59,18 @@ TODO
 
 The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_4^*$.
 
-( ) greater than
-( ) greater than or equal to
-( ) equal to
-( ) less than
-( ) less than or equal to
-( ) impossible to tell
+( ) Greater than
+( ) Greater than or equal to
+( ) Equal to
+( ) Less than
+( ) Less than or equal to
+( ) Impossible to tell
 
 # BEGIN SOLUTION
 
-TODO
+Greater than or equal to.
+
+$H_1^*$ is a less flexible version of $H_4^*$, which has the same features as $H_1^*$ but with an added linear term. So, $H_4^*$ can fit all of the same patterns that $H_1^*$ can, but more.
 
 # END SOLUTION
 
@@ -84,7 +88,9 @@ In \_\_\_\_ of the hypothesis functions $H_1^*$,$H_2^*$, $H_3^*$, and $H_4^*$, t
 
 # BEGIN SOLUTION
 
-TODO
+All $4$
+
+All 4 hypothesis functions have intercept terms, which, as we saw in lecture, creates a column of all 1s in their design matrices, which enables the sum of residuals to be 0.
 
 # END SOLUTION
 
