@@ -30,6 +30,8 @@ Less than or equal to
 
 $H_1^*$ is a more flexible version of $H_2^*$ – anything $H_2^*$ can do, $H_1^*$ can also do, so $H_1^*$ can't have a higher MSE than $H_1^*$.
 
+Another way to think about this is in $H_1^*$ we have more information to make an educated guess in comparison to $H_2^*$ because of $x^2$. If we have more information, assuming it is useful, then the error will at least be equal to $H_2^*$, but would probably decrease the error. Making the MSE of $H_1^*$ is less than or equal to the MSE of $H_2^*$.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -49,7 +51,7 @@ The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_3^*$.
 
 Impossible to tell
 
-$H_1^*$ has a different set of features than $H_2^*$ and vice versa – this is not a situation like in (a) or (c), where one hypothesis function has a superset of the features of the other.
+$H_1^*$ has a different set of features than $H_2^*$ and vice versa, which makes it impossible to tell – this is not a situation like in (a) or (c), where one hypothesis function has a superset of the features of the other.
 
 # END SOLUTION
 
@@ -72,6 +74,8 @@ Greater than or equal to.
 
 $H_1^*$ is a less flexible version of $H_4^*$, which has the same features as $H_1^*$ but with an added linear term. So, $H_4^*$ can fit all of the same patterns that $H_1^*$ can, but more.
 
+Again, think about adding more information. In $H_4^*$ we can, at best, make a better guess by adding more $x$ variables. At worst it will be the same as $H_1^*$.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -90,7 +94,7 @@ In \_\_\_\_ of the hypothesis functions $H_1^*$,$H_2^*$, $H_3^*$, and $H_4^*$, t
 
 All $4$
 
-All 4 hypothesis functions have intercept terms, which, as we saw in lecture, creates a column of all 1s in their design matrices, which enables the sum of residuals to be 0.
+All $4$ hypothesis functions have intercept terms, which, as we saw in lecture, creates a column of all 1s in their design matrices, which enables the sum of residuals to be $0$.
 
 # END SOLUTION
 
