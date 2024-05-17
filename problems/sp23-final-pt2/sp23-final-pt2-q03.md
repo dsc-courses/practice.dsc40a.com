@@ -17,9 +17,7 @@ $P((A\cap B)|(B \cap C))$? **Select all that apply.**
 
 # BEGIN SOLUTION
 
-$P(A|(B \cap C))$
-
-$P((A \cap C)|(B \cap C))$
+$P(A|(B \cap C))$ and $P((A \cap C)|(B \cap C))$
 
 # END SOLUTION
 
