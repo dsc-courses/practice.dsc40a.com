@@ -202,6 +202,38 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">P(A|(B \cap C))</span> and <span class="math inline">P((A \cap C)|(B \cap C))</span></p>
+<p>Recall the formula for conditional probability is <span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span>. We are
+going to use this fact to figure out which of the following are the same
+as <span class="math inline">P((A\cap B)|(B \cap C))</span>.</p>
+<p>We should first expand <span class="math inline">P((A\cap B)|(B \cap
+C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) =
+\frac{P(A \cap B) \cap P(B \cap C)}{P(B \cap C)}</span>. We can further
+simplify the numerator to be <span class="math inline">(A \cap B) \cap
+(B \cap C) \rightarrow A \cap B \cap C</span>. This means we get <span class="math inline">P((A\cap B)|(B \cap C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) = \frac{P(A \cap B \cap
+C)}{P(B \cap C)}</span>.</p>
+<p>Now we can go through each of the options and figure out if, when put
+inside the formula for conditional probability, we get <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>.</p>
+<p><br/></p>
+<p><span class="math inline">P(A|(B \cap C))</span> <span class="math display">P(A|(B \cap C)) = \frac{P(A)P(B \cap C)}{P(B \cap
+C)}= \frac{P(A \cap (B \cap C))}{P(B \cap C)} = \frac{P(A \cap B \cap
+C)}{P(B \cap C)}</span> This matches <span class="math inline">\frac{P(A
+\cap B \cap C)}{P(B \cap C)}</span>!</p>
+<p><br/></p>
+<p><span class="math inline">P(A \cap B \cap C)</span></p>
+<p>We can see that there is no way for this to equal <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>
+because it is missing the denominator.</p>
+<p><br/> <span class="math inline">P((B \cap C)|(A \cap B))</span></p>
+<p><span class="math display">P((B \cap C)|(A \cap B)) = \frac{P(B \cap
+C)P(A \cap B)}{P(A \cap B)}= \frac{P(A \cap B \cap C)}{P(A \cap
+B)}</span> This does not match <span class="math inline">\frac{P(A \cap
+B \cap C)}{P(B \cap C)}</span>.</p>
+<p><br/></p>
+<p><span class="math inline">P((A \cap C)|(B \cap C))</span> <span class="math display">P((A \cap C)|(B \cap C)) = \frac{P(A \cap C)P(B
+\cap C)}{P(B \cap C)} = \frac{P(A \cap B \cap C)}{P(B \cap C)}</span>
+This matches <span class="math inline">\frac{P(A \cap B \cap C)}{P(B
+\cap C)}</span>!</p>
+<p><br/> Since options 1 and 4 are correct the answer cannot be None of
+the Above!</p>
 </div>
 </div>
 </div>
@@ -231,6 +263,25 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">B, C</span></p>
+<p>We are going to rewrite the following in the hopes of being able to
+simplify things later. To do this we will once again use the formula for
+conditional probability: <span class="math inline">P(A|B) = \frac{P(A
+\cap B)}{P(B)}</span></p>
+<p>Let’s look at the left side of <span class="math inline">P((A \cap
+B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
+<p><span class="math display">P((A \cap B)|C) = \frac{P(A \cap
+B)P(C)}{P(C)} = \frac{P(A \cap B \cap C)}{P(C)}</span></p>
+<p>Let’s now look at the right side of <span class="math inline">P((A
+\cap B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
+<p><span class="math display">P(A|(B \cap C))*P(B) = \frac{P(A)P(B \cap
+C)}{P(B \cap C)} * P(B) = \frac{P(A \cap B \cap C)}{P(B \cap C)}* P(B) =
+\frac{P(A \cap B \cap C) * P(B)}{P(B \cap C)}</span></p>
+<p>Now we can look at them together! <span class="math inline">\frac{P(A
+\cap B \cap C)}{P(C)} = \frac{P(A \cap B \cap C) * P(B)}{P(B \cap
+C)}</span>. We can cross multiply to clear the fractions: <span class="math inline">P(A \cap B \cap C) * P(B \cap C) = P(A \cap B \cap
+C) * P(B) * P(C)</span>. Assuming that <span class="math inline">P(A
+\cap B \cap C) \neq 0</span> we can divide both sides by <span class="math inline">P(A \cap B \cap C)</span>. We end up with <span class="math inline">P(B \cap C) = P(B) * P(C)</span>, which demonstrates
+to us that <span class="math inline">B</span> and <span class="math inline">C</span> are independent of one another.</p>
 </div>
 </div>
 </div>
@@ -240,9 +291,10 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 4</i></p>
-<p>At Panda Express, there are 18 items available on the menu. Food is
-served on plates that are divided into three equal sections, and all
-sections of the plate must contain exactly one menu item.</p>
+<p>At Panda Express, there are <span class="math inline">18</span> items
+available on the menu. Food is served on plates that are divided into
+three equal sections, and all sections of the plate must contain exactly
+one menu item.</p>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
 <p>Suppose each section of the plate is a different color (in a
@@ -502,16 +554,22 @@ majors. All data science majors must submit a list of English words they
 can make using the letters of “Halicioglu”. When these lists are
 collected, it is determined that:</p>
 <ul>
-<li>200 people included the word “hall” on their list.</li>
-<li>100 people included the word “chill” on their list.</li>
-<li>25 people included the word “logical” on their list.</li>
-<li>60 people did not include any of “hall”, “chill”, or “logical” on
-their list.</li>
-<li>80 people included both “hall” and “chill” on their list.</li>
-<li>15 people included both “chill” and “logical” on their list.</li>
-<li>20 people included both “hall” and “logical” on their list.</li>
-<li>10 people included all three of “hall”, “chill”, and “logical” on
-their list.</li>
+<li><span class="math inline">200</span> people included the word “hall”
+on their list.</li>
+<li><span class="math inline">100</span> people included the word
+“chill” on their list.</li>
+<li><span class="math inline">25</span> people included the word
+“logical” on their list.</li>
+<li><span class="math inline">60</span> people did not include any of
+“hall”, “chill”, or “logical” on their list.</li>
+<li><span class="math inline">80</span> people included both “hall” and
+“chill” on their list.</li>
+<li><span class="math inline">15</span> people included both “chill” and
+“logical” on their list.</li>
+<li><span class="math inline">20</span> people included both “hall” and
+“logical” on their list.</li>
+<li><span class="math inline">10</span> people included all three of
+“hall”, “chill”, and “logical” on their list.</li>
 </ul>
 <p>How many data science majors submitted a list?</p>
 <div id="accordionExample" class="accordion">
@@ -527,7 +585,7 @@ aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>280</p>
+<p><span class="math inline">280</span></p>
 </div>
 </div>
 </div>
