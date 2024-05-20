@@ -644,6 +644,41 @@ aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">280</span></p>
+<p>This problem requires us to the the principle of inclusion-exclusion
+for three sets. For this problem lets define the following sets:</p>
+<ul>
+<li>Let <span class="math inline">H</span> be the set of people who
+included “hall” on their list</li>
+<li>Let <span class="math inline">C</span> be the set of people who
+included “chill” on their list</li>
+<li>Let <span class="math inline">L</span> be the set of people who
+included “logical” on their list</li>
+</ul>
+<p>We are told:</p>
+<ul>
+<li><span class="math inline">|H| = 200</span></li>
+<li><span class="math inline">|C| = 100</span></li>
+<li><span class="math inline">|L| = 25</span></li>
+<li><span class="math inline">|H \cap C| = 80</span></li>
+<li><span class="math inline">|C \cap L| = 15</span></li>
+<li><span class="math inline">|H \cap L| = 20</span></li>
+<li><span class="math inline">|H \cap C \cap L| = 10</span></li>
+<li><span class="math inline">|H' \cap C' \cap L'| =
+60</span>
+<ul>
+<li><span class="math inline">H'</span> means “not <span class="math inline">H</span>”</li>
+</ul></li>
+</ul>
+<p>Recall the principle of inclusion-exclusion for three sets follows:
+<span class="math display">|H \cup C \cup L| = |H| + |C| + |L| - |H \cap
+C| - |C \cap L| - |H \cap L| + |H \cap C \cap L|</span></p>
+<p>We can simply plug and chug into the equation: <span class="math inline">|H \cup C \cup L| = 200 + 100 + 25 - 80 - 15 - 20 +
+10 = 220</span>. This means the number of data science majors who
+submited words “hall,”chill,” and “logical” is 220. But this is not all
+data science majors!</p>
+<p>We need to add in the number of data science majors who did not
+submit any of those words in their list, which we are told is <span class="math inline">60</span> students. This means the number of data
+science majors is <span class="math inline">220  + 60 = 280</span>.</p>
 </div>
 </div>
 </div>
