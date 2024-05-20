@@ -541,6 +541,64 @@ aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">k=3</span></p>
+<p>According to the Naive Bayes formula we will be solving these
+equations: <span class="math display">\begin{align*}
+&amp;P(\text{successful}|\text{urban, winter, late night})\\ &amp;=
+P(\text{successful}) * P(\text{urban}|\text{successful}) *
+P(\text{winter}|\text{successful}) * P(\text{late
+night}|\text{successful})
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{unsuccessful}|\text{urban, winter, late night}) \\
+&amp;= P(\text{unsuccessful}) * P(\text{urban}|\text{unsuccessful}) *
+P(\text{winter}|\text{unsuccessful}) * P(\text{late
+night}|\text{unsuccessful})
+\end{align*}</span></p>
+<p>This means we need to calculate our prior probabilities <span class="math inline">P(\text{successful})</span>, <span class="math inline">P(\text{unsucessful})</span>, <span class="math inline">P(\text{urban}|\text{successful})</span>, <span class="math inline">P(\text{urban}|\text{usuccessful})</span>, <span class="math inline">P(\text{winter}|\text{successful})</span>, <span class="math inline">P(\text{winter}|\text{unsuccessful})</span>, <span class="math inline">P(\text{late night}|\text{successful})</span>, and
+<span class="math inline">P(\text{late
+night}|\text{unsuccessful})</span>.</p>
+<p>We can calculate <span class="math inline">P(\text{successful})</span> by looking at the number
+of successful outcomes from all possible outcomes. We find <span class="math inline">P(\text{successful}) = \frac{4}{12} =
+\frac{1}{3}</span>.</p>
+<p>Similarily we can calculate <span class="math inline">P(\text{unsucessful})</span>. <span class="math inline">P(\text{unsucessful}) = \frac{8}{12} =
+\frac{2}{3}</span>.</p>
+<p>We can now calculate <span class="math inline">P(\text{urban}|\text{successful})</span> by looking
+at how many settings are urban when the outcome is successful. <span class="math inline">P(\text{urban}|\text{successful}) =
+\frac{1}{4}</span>.</p>
+<p>Similarily we can calculate <span class="math inline">P(\text{urban}|\text{unsuccessful})</span>. <span class="math inline">P(\text{urban}|\text{unsuccessful}) =
+\frac{3}{8}</span>.</p>
+<p>Following this same pattern we will find:</p>
+<p><span class="math inline">P(\text{winter}|\text{successful}) =
+\frac{3}{4}</span></p>
+<p><span class="math inline">P(\text{winter}|\text{unsuccessful}) =
+\frac{4}{8} = \frac{1}{2}</span></p>
+<p><span class="math inline">P(\text{late night}|\text{successful}) =
+\frac{2}{4} = \frac{1}{2}</span></p>
+<p><span class="math inline">P(\text{late night}|\text{unsuccessful}) =
+\frac{6}{8} = \frac{3}{4}</span></p>
+<p>From here all we need to do is plug our prior probnabilities into the
+equations we made earlier and solve!</p>
+<p><span class="math display">\begin{align*}
+&amp; P(\text{successful}|\text{urban, winter, late night})\\&amp;=
+P(\text{successful}) * P(\text{urban}|\text{successful}) *
+P(\text{winter}|\text{successful}) * P(\text{late
+night}|\text{successful})\\
+&amp;= \frac{1}{3} * \frac{1}{4} * \frac{3}{4} * \frac{1}{2}\\
+&amp;= \frac{1}{32}
+\end{align*}</span></p>
+<p>and</p>
+<p><span class="math display">\begin{align*}
+&amp; P(\text{unsuccessful}|\text{urban, winter, late night}) \\ &amp;=
+P(\text{unsuccessful}) * P(\text{urban}|\text{unsuccessful}) *
+P(\text{winter}|\text{unsuccessful}) * P(\text{late
+night}|\text{unsuccessful})\\
+&amp;= \frac{2}{3} * \frac{3}{8} * \frac{1}{2} * \frac{3}{4}\\
+&amp;= \frac{3}{32}
+\end{align*}</span></p>
+<p>We are told in the problem that “the probability you are unsuccessful
+is <span class="math inline">k</span> times the probability you are
+successful.”</p>
+<p>This means <span class="math inline">k * \frac{1}{32} =
+\frac{3}{32}</span>, which we can easily see shows <span class="math inline">k = 3</span>.</p>
 </div>
 </div>
 </div>
