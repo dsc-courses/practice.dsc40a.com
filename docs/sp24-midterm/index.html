@@ -94,7 +94,14 @@ aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>Recall two vectors are orthogonal if their dot product is equal to
+zero.</p>
+<p>This means if <span class="math inline">\vec v \cdot \vec v_f =
+0</span> then they are orthogonal to one another.</p>
+<p><span class="math display">
+\begin{bmatrix} v_1 \\ v_2\end{bmatrix} \cdot \begin{bmatrix} -v_2 \\
+v_1 \end{bmatrix} = (-v_1)*(v_2) + (v_1)(v_2) = 0
+</span></p>
 </div>
 </div>
 </div>
@@ -117,17 +124,23 @@ class="math inline">\vec{c_f}</span> and <span
 class="math inline">\vec{d_f}</span> are the friends of <span
 class="math inline">\vec{c}</span> and <span
 class="math inline">\vec{d}</span>, respectively. In each part, write in
-the box, and fill in . Here is an example:</p>
-<p><span class="math inline">2 \times</span> ____</p>
-<p>( ) <span class="math inline">\vec c</span> ( ) <span
-class="math inline">\vec c_f</span> ( ) <span class="math inline">\vec
-d</span> (Correct answer!) ( ) <span class="math inline">\vec
-d_f</span></p>
-<p>^ This is problematic and I am unsure how to fix - Zoe</p>
+the box, and fill in .</p>
+<p><br></p>
+<p>Here is an example:</p>
+<p>A vector in span(<span class="math inline">\vec d</span>) that is
+twice as long as <span class="math inline">\vec d</span>.</p>
+<p><span class="math inline">2 \times \vec d</span></p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>The projection of <span class="math inline">\vec{c}</span> onto <span
 class="math inline">\text{span}(\vec{d})</span>.</p>
+<p>_____ <span class="math inline">\times</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c_f</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d_f</span></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_1">
@@ -141,7 +154,26 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">1 \times \vec d</span></p>
+<p>Recall the span(<span class="math inline">\vec x</span>) is the set
+of all scalar multiples of <span class="math inline">\vec x</span> (like
+<span class="math inline">w\vec x</span>). The closest vector to <span class="math inline">\vec y \in \mathbb{R}^n</span> is the vector <span class="math inline">w * \vec x</span> where <span class="math inline">w^* = \frac{\vec x \cdot \vec y}{\vec x \cdot \vec
+x}</span>.</p>
+<p>The problem is asking us to find <span class="math inline">w</span>,
+put it inside of the blank, and multiply it by <span class="math inline">\vec c</span>.</p>
+<p>We know we are trying to find the projection of <span class="math inline">\vec c</span> onto <span class="math inline">\text{span}(\vec{d})</span>, so it will be our <span class="math inline">y</span> in this situation, which makes <span class="math inline">\vec d</span> our <span class="math inline">\vec
+x</span>. We can now calculate <span class="math inline">w^*</span>.</p>
+<p>I would recommend calculating the dot product first and then plugging
+it into our equation. <span class="math display">\vec d \cdot \vec c =
+\begin{bmatrix} -2 \\ 1 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 7
+\end{bmatrix} = (-2)*(1) + (1)*(7) = 5</span> <span class="math display">\vec d \cdot \vec d = \begin{bmatrix} -2 \\ 1
+\end{bmatrix} \cdot \begin{bmatrix} -2 \\ 1 \end{bmatrix} = (-2)*(-2) +
+(1)*(1) = 5</span></p>
+<p><span class="math display">
+w^* = \frac{\vec d \cdot \vec c}{\vec d \cdot \vec d} = \frac{5}{5} = 1
+</span></p>
+<p>Since we are trying to find the span(<span class="math inline">\vec
+d</span>) our vector is <span class="math inline">\vec d</span>.</p>
 </div>
 </div>
 </div>
@@ -151,6 +183,13 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <p>The error vector of the projection of <span
 class="math inline">\vec{c}</span> onto <span
 class="math inline">\text{span}(\vec{d})</span>.</p>
+<p>_____ <span class="math inline">\times</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c_f</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d_f</span></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_2">
@@ -164,7 +203,33 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">-3 \times \vec d_f</span></p>
+<p>Using what we learned in part 1 of this problem (<span class="math inline">w</span>) we are able to utilize the error vector
+equation <span class="math inline">\vec e = \vec y - w * \vec x</span>.
+Recall we are trying to find the projection of <span class="math inline">\vec c</span> onto <span class="math inline">\text{span}(\vec{d})</span>, so it will be our <span class="math inline">y</span> in this situation, which makes <span class="math inline">\vec d</span> our <span class="math inline">\vec
+x</span>. We learned that <span class="math inline">w</span> from part 1
+is <span class="math inline">1</span>, so our equation is <span class="math inline">\vec e = \vec c - 1 * \vec d</span>.</p>
+<p><span class="math display">
+\vec e = \begin{bmatrix} 1 \\ 7 \end{bmatrix} - \begin{bmatrix} -2 \\ 1
+\end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix}
+</span></p>
+<p>We can now try and find a scalar that when multiplied by one of our
+multiple choice vectors gives us <span class="math inline">\begin{bmatrix} 3 \\ 6 \end{bmatrix}</span>.</p>
+<p>Recall our choices are:</p>
+<ul>
+<li><span class="math inline">\vec c = \begin{bmatrix} 1 \\ 7
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec d = \begin{bmatrix} -2 \\ 1
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec c_f = \begin{bmatrix} -7 \\ 1
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec d_f = \begin{bmatrix} -1 \\ -2
+\end{bmatrix}</span></li>
+</ul>
+<p><i>Note that we are applying the same transformation as in Problem
+1.</i></p>
+<p>We can easily see <span class="math inline">-3 * \begin{bmatrix} -1
+\\ -2 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix}</span>!</p>
 </div>
 </div>
 </div>
@@ -173,6 +238,13 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h3 id="problem-2.3">Problem 2.3</h3>
 <p>The projection of <span class="math inline">\vec{d}</span> onto <span
 class="math inline">\text{span}(\vec{c})</span>.</p>
+<p>_____ <span class="math inline">\times</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c_f</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d_f</span></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_3">
@@ -186,7 +258,23 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\frac{1}{10} \times \vec c</span></p>
+<p>Once again the problem is asking us to find <span class="math inline">w</span>, put it inside of the blank, and multiply
+it by <span class="math inline">\vec c</span>.</p>
+<p>We know we are trying to find the projection of <span class="math inline">\vec d</span> onto <span class="math inline">\text{span}(\vec{c})</span>, so it will be our <span class="math inline">y</span> in this situation, which makes <span class="math inline">\vec c</span> our <span class="math inline">\vec
+x</span>. We can now calculate <span class="math inline">w^*</span>.</p>
+<p>I would recommend calculating the dot product first and then plugging
+it into our equation. <span class="math display">\vec c \cdot \vec d =
+\begin{bmatrix} 1 \\ 7 \end{bmatrix} \cdot \begin{bmatrix} -2 \\ 1
+\end{bmatrix} = (1)*(7) + (-2)*(1) = 5</span> <span class="math display">\vec c \cdot \vec c = \begin{bmatrix} 1 \\ 7
+\end{bmatrix} \cdot \begin{bmatrix} 1 \\ 7 \end{bmatrix} = (1)*(1) +
+(7)*(7) = 50</span></p>
+<p><span class="math display">
+w^* = \frac{\vec c \cdot \vec d}{\vec c \cdot \vec c} = \frac{5}{50} =
+\frac{1}{10}
+</span></p>
+<p>Since we are trying to find the span(<span class="math inline">\vec
+c</span>) our vector is <span class="math inline">\vec c</span>.</p>
 </div>
 </div>
 </div>
@@ -196,6 +284,13 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <p>The error vector of the projection of <span
 class="math inline">\vec{d}</span> onto <span
 class="math inline">\text{span}(\vec{c})</span>.</p>
+<p>_____ <span class="math inline">\times</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec c_f</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\vec d_f</span></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_4">
@@ -209,7 +304,47 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\frac{3}{10} \times \vec c_f</span></p>
+<p>Using what we learned in part 3 of this problem (<span class="math inline">w</span>) we are able to utilize the error vector
+equation <span class="math inline">\vec e = \vec y - w * \vec x</span>.
+Recall we are trying to find the projection of <span class="math inline">\vec d</span> onto <span class="math inline">\text{span}(\vec{d})</span>, so it will be our <span class="math inline">y</span> in this situation, which makes <span class="math inline">\vec c</span> our <span class="math inline">\vec
+x</span>. We learned that <span class="math inline">w</span> from part 1
+is <span class="math inline">1</span>, so our equation is <span class="math inline">\vec e = \vec d - \frac{1}{10} * \vec c</span>.</p>
+<p><span class="math display">\begin{align*}
+\vec e &amp;= \begin{bmatrix} -2 \\ 1 \end{bmatrix} - \frac{1}{10} *
+\begin{bmatrix} 1 \\ 7 \end{bmatrix} \\
+&amp;= \begin{bmatrix} -2 \\ 1 \end{bmatrix} - \begin{bmatrix}
+\frac{1}{10} \\ \frac{7}{10} \end{bmatrix}\\
+&amp;= \begin{bmatrix} \frac{-20}{10} \\ \frac{10}{10} \end{bmatrix} -
+\begin{bmatrix} \frac{1}{10} \\ \frac{7}{10} \end{bmatrix}\\
+&amp;= \begin{bmatrix} \frac{-21}{10} \\ \frac{3}{10} \end{bmatrix}
+\end{align*}</span></p>
+<p>We can now try and find a scalar, <span class="math inline">s</span>,
+that when multiplied by one of our multiple choice vectors gives us
+<span class="math inline">\begin{bmatrix} \frac{-21}{10} \\ \frac{3}{10}
+\end{bmatrix}</span>.</p>
+<p>Recall our choices are:</p>
+<ul>
+<li><span class="math inline">\vec c = \begin{bmatrix} 1 \\ 7
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec d = \begin{bmatrix} -2 \\ 1
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec c_f = \begin{bmatrix} -7 \\ 1
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec d_f = \begin{bmatrix} -1 \\ -2
+\end{bmatrix}</span></li>
+</ul>
+<p><i>Note that we are applying the same transformation as in Problem
+1.</i></p>
+<p>It might be a bit hard to see the answer here, but we want a negative
+in our first element of our matrix and a positive one in the
+denominator, which means we want to look at one of the friend
+vectors.</p>
+<p>From here we can see <span class="math inline">c_f</span> multiplied
+by <span class="math inline">3</span> will give us the numerators of our
+goal (<span class="math inline">\begin{bmatrix} \frac{-21}{10} \\
+\frac{3}{10} \end{bmatrix}</span>). The only thing we need to do is
+divide by <span class="math inline">10</span>, so our <span class="math inline">w^* = \frac{3}{10}</span>.</p>
 </div>
 </div>
 </div>
