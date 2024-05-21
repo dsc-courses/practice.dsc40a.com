@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -517,7 +517,7 @@ a constant prediction <span class="math inline">h</span> on this new
 dataset of <span class="math inline">n + 1</span> values.</p>
 <p>We’re given that:</p>
 <ul>
-<li><span class="math inline">n &gt; 5</span>.</li>
+<li><span class="math inline">n &gt; 5</span></li>
 <li><span class="math inline">\alpha</span> is not equal to any of <span
 class="math inline">y_1, y_2, ..., y_n</span>.</li>
 <li>All values of <span class="math inline">h</span> between 7 and 9
@@ -533,7 +533,12 @@ class="math inline">\frac{5-n}{1 + n}</span>.</li>
 and 9 minimize <span class="math inline">S_\text{abs}(h)</span>.” More
 specifically, what interval of values <span class="math inline">h</span>
 minimize <span class="math inline">S_\text{abs}(h)</span>?</p>
-<p> </p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">7 &lt; h &lt; 9</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7 \leq h &lt; 9</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7 &lt; h \leq 9</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7 \leq h \leq 9</span></p></li>
+</ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_1">
@@ -547,7 +552,39 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">7 \leq h \leq 9</span></p>
+<p>Remeber that when the minimizer of <span class="math inline">R_\text{abs}(h)</span> is a range that imples that
+you have dataset with an even number of elements (in this problem that
+means <span class="math inline">n+1</span> is even, so <span class="math inline">n</span> is odd). Now we know that any point in
+between 7 and 9 minimizes <span class="math inline">S_\text{abs}(h)</span>. Algebraically, if x is a
+point between 7 and 9, then <span class="math inline">S_\text{abs}(x)</span> looks like this</p>
+<p><span class="math display">\begin{align*}
+S_\text{abs}(x) &amp;= |y_1 - x| + ... + |7 - x| + |9 - x| + ... +
+|y_\text{n} -x| \\
+\end{align*}</span></p>
+<p>Now let’s say that <span class="math inline">\gamma = |7-x|</span> ,
+and <span class="math inline">\beta = 2-\gamma = |9-x|</span>. Then we
+can see that</p>
+<p><span class="math display">\begin{align*}
+S_\text{abs}(7) &amp;= (|y_1 - x| - \gamma) + ... + (|7 - x| - \gamma) +
+(|9 - x| + \gamma) + ... + (|y_\text{n} - x| + \gamma)\\
+S_\text{abs}(7) &amp;= |y_1 - x| + ... + |7 - x| + |9 - x| + ... +
+|y_\text{n} - x| + \frac{n+1}{2}(\gamma) + \frac{n+1}{2}(-\gamma)\\
+S_\text{abs}(7) &amp;= S_\text{abs}(x)
+\end{align*}</span></p>
+<p>Similarly</p>
+<p><span class="math display">\begin{align*}
+S_\text{abs}(9) &amp;= (|y_1 - x| + \beta) + ... + (|7 - x| + \beta) +
+(|9 - x| - \beta) + ... + (|y_\text{n} - x| - \beta)\\
+S_\text{abs}(9) &amp;= |y_1 - x| + ... + |7 - x| + |9 - x| + ... +
+|y_\text{n} - x| + \frac{n+1}{2}(-\beta) + \frac{n+1}{2}(\beta)\\
+S_\text{abs}(9) &amp;= S_\text{abs}(x)
+\end{align*}</span></p>
+<p>Therefore both 7 and 9 minimize <span class="math inline">S_\text{abs}(h)</span>.</p>
+<p><strong>Note:</strong> Even though the equations end at <span class="math inline">y_n</span>, remember that there’s an element <span class="math inline">\alpha</span> somewhere on the dataset, making <span class="math inline">n+1</span> elements in total. In particular, there
+must be <span class="math inline">\frac{n+1}{2}</span> elements before
+and including 7, and <span class="math inline">\frac{n+1}{2}</span>
+after and including 9.</p>
 </div>
 </div>
 </div>
@@ -556,9 +593,7 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h3 id="problem-4.2">Problem 4.2</h3>
 <p>Which value(s) minimize <span
 class="math inline">R_\text{abs}(h)</span>? Give your answer(s) as
-integer(s) with no variables. Show your work, and put a <span
-class="math inline">\boxed{\text{box}}</span> around your final
-answer(s).</p>
+integer(s) with no variables. Show your work.</p>
 <p><i>Hint: Don’t start by trying to expand <span
 class="math inline">\frac{1}{n} \sum_{i = 1}^n |y_i - h|</span> —
 instead, think about what removing <span
@@ -576,7 +611,32 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>9</p>
+<p>We now that the minimizer of <span class="math inline">R_\text{abs}(h)</span> must be the median, which we
+know it must be either 7 or 9, and it all depends on where on the
+dataset was <span class="math inline">\alpha</span> added. Assuming we
+added <span class="math inline">\alpha</span> on the first half of the
+dataset, our dataset should look like this <span class="math display">\begin{align*}
+y_1,...,\alpha,...7,9,...,y_\text{n+1}
+\end{align*}</span> Now if we remove <span class="math inline">\alpha</span>, the dataset becomes <span class="math display">\begin{align*}
+y_1,...,7,9,...,y_\text{n+1}
+\end{align*}</span> which means that now there’s only <span class="math inline">\frac{n+1}{2} - 1</span> elements from <span class="math inline">y_1</span> to <span class="math inline">7</span>,
+and <span class="math inline">\frac{n+1}{2}</span> elements from <span class="math inline">9</span> to <span class="math inline">y_\text{n}</span>. Thus 9 is the new median since
+there would be <span class="math inline">\frac{n+1}{2} - 1</span>
+elements before and after 9. Using a similar reasoning you can show that
+if <span class="math inline">\alpha</span> is on the second half of the
+dataset then 7 would be the new median and minimizer.</p>
+<p>Now we only need to find the placement of <span class="math inline">\alpha</span> on our data. Remember that the slope
+of <span class="math inline">S_\text{abs}(h)</span> at a point p can be
+calculated as <span class="math display">\begin{align*}
+\frac{\text{number of points before p} - \text{number of points after
+p}}{n+1} \\
+\end{align*}</span> Which means that if the slope of <span class="math inline">S_\text{abs}(h)</span> is negative near <span class="math inline">\alpha</span> then <span class="math inline">\alpha</span> is in the first halft, otherwise <span class="math inline">\alpha</span> is in the second half.</p>
+<p>Since we know that the slope of <span class="math inline">S_\text{abs}(h)</span> on the line segment
+immediately to the right of <span class="math inline">\alpha</span> is
+<span class="math inline">\frac{5-n}{1 + n}</span> , and since <span class="math inline">n &gt; 5</span> then the slope is negative, meaning
+that <span class="math inline">\alpha</span> is on the first half,
+making 9 the minimizer.</p>
 </div>
 </div>
 </div>
@@ -586,9 +646,8 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <p>What is the slope of <span class="math inline">S_\text{abs}(h)</span>
 on the line segment immediately to the left of <span
 class="math inline">\alpha</span>? Give your answer in the form of an
-expression involving <span class="math inline">n</span>. Show your work,
-and put a <span class="math inline">\boxed{\text{box}}</span> around
-your final answer.</p>
+expression involving <span class="math inline">n</span>. Show your
+work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_3">
@@ -602,7 +661,20 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\frac{3-n}{1 + n}</span></p>
+<p>Remember that the slope of <span class="math inline">S_\text{abs}(h)</span> at a point p can be
+calculated as <span class="math display">\begin{align*}
+\frac{\text{number of points before p} - \text{number of points after
+p}}{n+1} \\
+\end{align*}</span></p>
+<p>Whenever we transition from the right of <span class="math inline">\alpha</span> to the left of <span class="math inline">\alpha</span>, then alpha becomes a new point after
+p and we also lose a point that was before p, therefore looking at the
+formula above we can get the slope of the segment to the left of <span class="math inline">\alpha</span> by subtracting 2 to the numerator of
+the slope to the right of <span class="math inline">\alpha</span>.</p>
+<p>Since we know that the slope of <span class="math inline">S_\text{abs}(h)</span> on the line segment
+immediately to the right of <span class="math inline">\alpha</span> is
+<span class="math inline">\frac{5-n}{1 + n}</span>, then the answer must
+be <span class="math inline">\frac{3-n}{1 + n}</span>.</p>
 </div>
 </div>
 </div>
