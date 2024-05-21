@@ -12,13 +12,13 @@ garage, he could only generate up, down, top, and bottom quarks (Strange
 and Charm quark would have consumed too much energy). For each quark
 Issac created, he has a record of:
 
--   the type `\[up, down, top, bottom\]`
+-   the type `up`, `down`, `top`, `bottom`
 
--   the state `\[particle, antiparticle\]`
+-   the state `particle`, `antiparticle`
 
--   the color charge `\[red, green, blue\]`, and
+-   the color charge `red`, `green`, `blue`, and
 
--   the outcome `\[hadron formed, hadron not formed\]`
+-   the outcome `hadron formed`, `hadron not formed`
 
 Issac created $10$ quarks, and these $10$ quarks are recorded in the table
 below.
@@ -48,7 +48,7 @@ a hadron under the following quark conditions:
 
 # BEGIN SUBPROB
 
-Naive Bayes predicts that, given a up-particle-blue quark,
+Naive Bayes predicts that, given a `up-particle-blue` quark,
 the probability a hadron formed is $k$ times the probability a hadron is
 not formed, for an integer value of $k$. What is $k$?
 
@@ -83,6 +83,7 @@ We can calculate $P(\text{up}|\text{formed hadron})$ by looking at the number of
 We can use this same method to calculate $P(\text{up}|\text{not formed hadron})$ by looking at the number of times `up` appears out of all `not formed hadron`s. $P(\text{up}|\text{not formed hadron}) = \frac{1}{5}$
 
 If you continue finding the conditional probabilities you will find:
+
 - $P(\text{particle}|\text{formed hadron}) = \frac{3}{5}$
 - $P(\text{particle}|\text{not formed hadron}) = \frac{2}{5}$
 - $P(\text{blue}|\text{formed hadron}) = \frac{2}{5}$
@@ -90,15 +91,15 @@ If you continue finding the conditional probabilities you will find:
 
 Now we simply plug and chug using the equations we had before!
 \begin{align*}
-&P(\text{formed hadron}|\text{up, particle, blue}) =\\
-&P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) * P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed hadron})\\
+&P(\text{formed hadron}|\text{up, particle, blue})\\
+&= P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) * P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed hadron})\\
 &= \frac{1}{2} * \frac{2}{5} * \frac{3}{5} * \frac{2}{5}\\
 &= \frac{6}{125}
 \end{align*}
 and 
 \begin{align*}
-&P(\text{not formed hadron}|\text{up, particle, blue}) =\\
-&P(\text{not formed hadron}) * P(\text{up}|\text{not formed hadron}) * P(\text{particle}|\text{not formed hadron}) * P(\text{blue}|\text{not formed hadron})\\
+&P(\text{not formed hadron}|\text{up, particle, blue})\\
+&= P(\text{not formed hadron}) * P(\text{up}|\text{not formed hadron}) * P(\text{particle}|\text{not formed hadron}) * P(\text{blue}|\text{not formed hadron})\\
 &= \frac{1}{2} * \frac{1}{5} * \frac{2}{5} * \frac{2}{5}\\
 &= \frac{2}{125}
 \end{align*}
@@ -113,7 +114,7 @@ Now the only thing left to do is calculate $k$. We can do this by solving the eq
 
 What would be the value of $k$ if you change `up` quark in the
 previous collision to `top` quark, but keep everything else the same (i.e.
-top-particle-blue quark)?
+`top-particle-blue` quark)?
 
 ( ) $1$
 ( ) $2$
