@@ -52,6 +52,8 @@ Therefore both 7 and 9 minimize $S_\text{abs}(h)$.
 
 **Note:** Even though the equations end at $y_n$, remember that there's an element $\alpha$ somewhere on the dataset, making $n+1$ elements in total. In particular, there must be $\frac{n+1}{2}$ elements before and including  7, and $\frac{n+1}{2}$ after and including  9.
 
+<average>59</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -85,6 +87,9 @@ Now we only need to find the placement of $\alpha$ on our data. Remember that th
 Which means that if the slope of $S_\text{abs}(h)$ is negative near $\alpha$ then $\alpha$ is in the first halft, otherwise $\alpha$ is in the second half.
 
 Since we know that the slope of $S_\text{abs}(h)$ on the line segment immediately to the right of $\alpha$ is $\frac{5-n}{1 + n}$ , and since $n > 5$ then the slope is negative, meaning that $\alpha$ is on the first half, making 9 the minimizer.
+
+<average>39</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -105,6 +110,7 @@ Whenever we transition from the right of $\alpha$ to the left of $\alpha$, then 
 
 Since we know that the slope of $S_\text{abs}(h)$ on the line segment immediately to the right of $\alpha$ is $\frac{5-n}{1 + n}$, then the answer must be $\frac{3-n}{1 + n}$.
 
+<average>32</average>
 
 # END SOLUTION
 

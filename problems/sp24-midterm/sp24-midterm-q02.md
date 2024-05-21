@@ -46,6 +46,8 @@ $$
 
 Since we are trying to find the span($\vec d$) our vector is $\vec d$.
 
+<average>72</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -84,6 +86,8 @@ Recall our choices are:
 
 We can easily see $-3 * \begin{bmatrix} -1 \\ -2 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix}$!
 
+<average>49</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -116,6 +120,8 @@ w^* = \frac{\vec c \cdot \vec d}{\vec c \cdot \vec c} = \frac{5}{50} = \frac{1}{
 $$
 
 Since we are trying to find the span($\vec c$) our vector is $\vec c$.
+
+<average>65</average>
 
 # END SOLUTION
 
@@ -159,6 +165,8 @@ Recall our choices are:
 It might be a bit hard to see the answer here, but we want a negative in our first element of our matrix and a positive one in the denominator, which means we want to look at one of the friend vectors.
 
 From here we can see $c_f$ multiplied by $3$ will give us the numerators of our goal ($\begin{bmatrix} \frac{-21}{10} \\ \frac{3}{10} \end{bmatrix}$). The only thing we need to do is divide by $10$, so our $w^* = \frac{3}{10}$.
+
+<average>46</average>
 
 # END SOLUTION
 

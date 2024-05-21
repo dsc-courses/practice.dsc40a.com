@@ -35,6 +35,8 @@ $X = \begin{bmatrix} 1 & 4 \\ 1 & 1 \\ 1 & 9 \\ 1 & 49 \\ 1 & 9 \end{bmatrix}$
 
 Recall our hypothesis function is $H(x) = w_0 + w_1x^2$. Since there is a $w_0$ present our $X$ matrix should contain a column of ones. This means that our first column will be ones. Our second column should be $x^2$. This means we take each datapoint $x$ and square it inside of $X$.
 
+<average>84</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -57,6 +59,8 @@ To find the predicted $y$ value all you need to do is $\vec w^* \cdot \text{Aug}
 &2 - 20\\
 &-18
 \end{align*}
+
+<average>78</average>
 
 # END SOLUTION
 
@@ -102,6 +106,8 @@ From here we can use the fact given to us in the directions: $\sum_{i = 1}^n x_i
 &9(10n + 4n)\\
 &9(14n) = 126n
 \end{align*}
+
+<average>39</average>
 
 # END SOLUTION
 

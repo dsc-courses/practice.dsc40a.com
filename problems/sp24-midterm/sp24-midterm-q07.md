@@ -40,6 +40,7 @@ then cancelling the sumations you get
 = \frac{8}{n}
 \end{align*}
 
+<average>39</average>
 
 # END SOLUTION
 

@@ -18,6 +18,8 @@ $$
 \begin{bmatrix} v_1 \\ v_2\end{bmatrix} \cdot \begin{bmatrix} -v_2 \\ v_1 \end{bmatrix} = (-v_1)*(v_2) + (v_1)(v_2) = 0
 $$
 
+<average>89</average>
+
 # END SOLUTION
 
 # END PROB
