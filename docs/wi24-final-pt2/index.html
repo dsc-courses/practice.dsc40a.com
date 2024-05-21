@@ -374,6 +374,894 @@ P(\text{blue}|\text{not formed hadron})\\
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
+Part 2</a>, Problem 4</i></p>
+<p>In hospital, there are <span class="math inline">10</span> patients
+who have recently been exposed to COVID. The hospital purchased a new
+COVID testing machine. The machine could comprehensively analyze
+multiple body measurements to produce a COVID score for each patient,
+ranging from <span class="math inline">1</span> to <span
+class="math inline">10</span>. According to the instruction manual of
+the machine, a higher COVID score means the patient is more likely to be
+infected by COVID, while a lower COVID score means the patient is less
+likely to be infected. The COVID score of each patient is listed
+below:</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>Suppose Patient 1, Patient 2, Patient 3, and Patient 4 are actually
+infected by COVID, while all other patients are not infected.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Based on the patient’s COVID score, Dr. Issac uses a threshold of
+<span class="math inline">2.5</span> to diagnose COVID. That is, he
+diagnoses all patients with a COVID Score above <span
+class="math inline">2.5</span> to be COVID-infected, and all patients
+with a COVID Score below <span class="math inline">2.5</span> to be
+non-infected. What is the True Positive (TP), True Negative (TN), False
+Positive (FP), and False Negative (FN) of Dr. Issac’s diagnosis? Each
+block should be filled with an integer.</p>
+<p>TP = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TP = <span class="math inline">4</span></p>
+<p>True positives are when the patient has COVID and was predicted to
+have COVID. It can be helpful to expand on the table from above to
+visualize how many patients have COVID.</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>We can now easily see Dr. Issac’s threshold would correctly diagnose
+<span class="math inline">4</span> patients with COVID.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>TN = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TN = <span class="math inline">2</span></p>
+<p>A true negative is when the patient does not have COVID and is
+predicted to not have COVID.</p>
+<p>Using the same table as the part before:</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>We can see Dr. Issac’s threshold would correctly diagnose <span class="math inline">2</span> patients to not have COVID.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>FP = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>FP = <span class="math inline">4</span></p>
+<p>A false positive is when the patient is said to have COVID, but does
+not have COVID.</p>
+<p>Using the same table as the part before:</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>We can see Dr. Issac’s threshold would incorrectly diagnose <span class="math inline">4</span> patients with COVID.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.4">Problem 3.4</h3>
+<p>FN = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>FN = <span class="math inline">0</span></p>
+<p>A false negative is when the patient is said to not have COVID, but
+has COVID.</p>
+<p>Using the same table as the part before:</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>We can see Dr. Issac’s threshold would incorrectly diagnose <span class="math inline">0</span> patients.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.5">Problem 3.5</h3>
+<p>Dr. Albert is somewhat skeptical about technology, leading him to
+adopt a cautious approach in diagnosing patients. Initially, he sets a
+diagnostic threshold at <span class="math inline">5.5</span>. Patients
+scoring above this threshold are initially diagnosed as positive.
+However, Dr. Albert conducts a secondary diagnosis for all patients who
+received a positive diagnosis initially. During this secondary
+diagnosis, he reclassifies Patient 9’s positive diagnoses as negative.
+What is the True Positive (TP), True Negative (TN), False Positive (FP),
+and False Negative (FN) of Dr. Albert’s diagnosis? Each block should be
+filled with an integer.</p>
+<p>TP = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_5" aria-expanded="true" aria-controls="collapse3_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_5" class="accordion-collapse collapse"
+aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TP = <span class="math inline">3</span></p>
+<p>True positives are when the patient has COVID and was predicted to
+have COVID.</p>
+<p>Once again it can be beneficial to look at the table visually with
+added rows for how Dr. Albert predicted each patient’s COVID status.</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><i> Note that Patient 9 was classified as False after a secondary
+diagnosis! </i></p>
+<p>Here we can see that Dr. Albert’s threshold and diagnosises would
+correctly identify <span class="math inline">3</span> of the <span class="math inline">4</span> patients have COVID, making TP = <span class="math inline">3</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.6">Problem 3.6</h3>
+<p>TN = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_6" aria-expanded="true" aria-controls="collapse3_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_6" class="accordion-collapse collapse"
+aria-labelledby="heading3_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TN = <span class="math inline">5</span></p>
+<p>A true negative is when the patient does not have COVID and is
+predicted to not have COVID.</p>
+<p>Using the same table as the part before:</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><i> Note that Patient 9 was classified as False after a secondary
+diagnosis! </i></p>
+<p>Here we can see that Dr. Albert’s threshold and diagnosises would
+correctly identify <span class="math inline">5</span> of the <span class="math inline">6</span> not having COVID, making TP = <span class="math inline">5</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.7">Problem 3.7</h3>
+<p>FP = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_7" aria-expanded="true" aria-controls="collapse3_7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_7" class="accordion-collapse collapse"
+aria-labelledby="heading3_7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>FP = <span class="math inline">1</span></p>
+<p>A false positive is when the patient is said to have COVID, but does
+not have COVID.</p>
+<p>Using the same table as the part before:</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><i> Note that Patient 9 was classified as False after a secondary
+diagnosis! </i></p>
+<p>We can see that Dr. Albert’s threshold and diagnosises would
+incorrectly identify <span class="math inline">1</span> patient as
+having COVID when they do not. Making FP = <span class="math inline">1</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.8">Problem 3.8</h3>
+<p>FN = ?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_8" aria-expanded="true" aria-controls="collapse3_8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_8" class="accordion-collapse collapse"
+aria-labelledby="heading3_8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>FN = <span class="math inline">1</span></p>
+<p>A false negative is when the patient is said to not have COVID, but
+has COVID.</p>
+<p>Using the same table as the part before:</p>
+<table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 8%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 7%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Patient Number</strong></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>COVID Score</strong></td>
+<td>7</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>1</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td><strong>Has COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td><strong>Predicted COVID</strong></td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><i> Note that Patient 9 was classified as False after a secondary
+diagnosis! </i></p>
+<p>We can see Dr. Albert’s threshold would incorrectly diagnose <span class="math inline">1</span> patient.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.9">Problem 3.9</h3>
+<p>Which Doctor’s diagnoses is better?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Albert</p></li>
+<li><p><input type="radio" disabled="" /> Issac</p></li>
+<li><p><input type="radio" disabled="" /> They are equally good</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_9" aria-expanded="true" aria-controls="collapse3_9">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_9" class="accordion-collapse collapse"
+aria-labelledby="heading3_9" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Albert</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
