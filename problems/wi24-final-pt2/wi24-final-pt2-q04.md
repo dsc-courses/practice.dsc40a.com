@@ -245,7 +245,7 @@ $$
 \frac{3 + 5}{3 + 1 + 1 + 5} = \frac{8}{10}
 $$
 
-We can see that Dr. Albert's accuracy is greater than Dr Isaac's accuracy, which means Dr. ALbert's accuracy is better.
+We can see that Dr. Albert's accuracy is greater than Dr Isaac's accuracy, which means Dr. ALbert's diagnosis is better.
 
 # END SOLUTION
 
