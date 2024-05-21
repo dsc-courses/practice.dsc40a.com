@@ -160,7 +160,7 @@ Using the same table as the part before:
 
 <i> Note that Patient 9 was classified as False after a secondary diagnosis! </i>
 
-Here we can see that Dr. Albert's threshold and diagnosises would correctly identify $5$ of the $6$ not having COVID, making TP = $5$.
+Here we can see that Dr. Albert's threshold and diagnosises would correctly identify $5$ of the $6$ not having COVID, making TN = $5$.
 
 # END SOLUTION
 
@@ -186,7 +186,8 @@ Using the same table as the part before:
 
 <i> Note that Patient 9 was classified as False after a secondary diagnosis! </i>
 
-We can see that Dr. Albert's threshold and diagnosises would incorrectly identify $1$ patient as having COVID when they do not. Making FP = $1$.
+We can see that Dr. Albert's threshold and diagnosises would incorrectly identify $1$ patient as having COVID when they do not.
+Making FP = $1$.
 
 # END SOLUTION
 
@@ -212,7 +213,7 @@ Using the same table as the part before:
 
 <i> Note that Patient 9 was classified as False after a secondary diagnosis! </i>
 
-We can see Dr. Albert's threshold would incorrectly diagnose $1$ patient.
+We can see Dr. Albert's threshold would incorrectly diagnose $1$ patient, making FN = $1$.
 
 # END SOLUTION
 
