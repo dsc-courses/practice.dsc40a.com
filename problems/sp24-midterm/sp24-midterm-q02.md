@@ -46,7 +46,7 @@ $$
 
 Since we are trying to find the span($\vec d$) our vector is $\vec d$.
 
-<average>72</average>
+<average>66</average>
 
 # END SOLUTION
 
@@ -86,7 +86,7 @@ Recall our choices are:
 
 We can easily see $-3 * \begin{bmatrix} -1 \\ -2 \end{bmatrix} = \begin{bmatrix} 3 \\ 6 \end{bmatrix}$!
 
-<average>49</average>
+<average>27</average>
 
 # END SOLUTION
 
@@ -121,7 +121,7 @@ $$
 
 Since we are trying to find the span($\vec c$) our vector is $\vec c$.
 
-<average>65</average>
+<average>53</average>
 
 # END SOLUTION
 
@@ -166,7 +166,7 @@ It might be a bit hard to see the answer here, but we want a negative in our fir
 
 From here we can see $c_f$ multiplied by $3$ will give us the numerators of our goal ($\begin{bmatrix} \frac{-21}{10} \\ \frac{3}{10} \end{bmatrix}$). The only thing we need to do is divide by $10$, so our $w^* = \frac{3}{10}$.
 
-<average>46</average>
+<average>21</average>
 
 # END SOLUTION
 
