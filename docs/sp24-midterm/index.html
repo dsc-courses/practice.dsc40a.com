@@ -1051,7 +1051,29 @@ aria-labelledby="heading7" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>Using one of the formulas for <span class="math inline">w_1</span>.</p>
+<p><span class="math display">\begin{align*}
+\displaystyle | w_1^\text{swap} - w_1^\text{orig} | = |
+\frac{[\sum_{i=2}^{n-1} (x_i - x_\text{mean})(y_i - y_\text{mean})] +
+(x_n - x_\text{mean})(y_1 - y_\text{mean}) + (x_1 - x_\text{mean})(y_n -
+y_\text{mean})}{15n} \\
+- \frac{([\sum_{i=2}^{n-1} (x_i - x_\text{mean})(y_i - y_\text{mean})] +
+(x_1 - x_\text{mean})(y_1 - y_\text{mean}) + (x_n - x_\text{mean})(y_n -
+y_\text{mean}))}{15n} | \\
+\end{align*}</span></p>
+<p>then cancelling the sumations you get <span class="math display">\begin{align*}
+\displaystyle | w_1^\text{swap} - w_1^\text{orig} | = | \frac{ (x_n -
+x_\text{mean})(y_1 - y_\text{mean}) + (x_1 - x_\text{mean})(y_n -
+y_\text{mean})}{15n} \\
+- \frac{((x_1 - x_\text{mean})(y_1 - y_\text{mean}) + (x_n -
+x_\text{mean})(y_n - y_\text{mean}))}{15n} | \\
+= |\frac{(x_n - x_\text{mean})(y_1 - y_n) + (x_1 - x_\text{mean})(y_n -
+y_1)}{15n}|\\
+= |\frac{(x_n - x_\text{mean})(6) + (x_1 - x_\text{mean})(-6)}{15n}| \\
+= |\frac{6(x_n - x_\text{mean} - x_1 + x_\text{mean})}{15n}|\\
+= |\frac{6(20)}{15n}|
+= \frac{8}{n}
+\end{align*}</span></p>
 </div>
 </div>
 </div>

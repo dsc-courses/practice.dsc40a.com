@@ -22,7 +22,24 @@ $$\displaystyle | w_1^\text{swap} - w_1^\text{orig} | = \frac{8}{n}$$
 
 # BEGIN SOLUTION
 
-TODO
+Using one of the formulas for $w_1$.
+
+\begin{align*}
+\displaystyle | w_1^\text{swap} - w_1^\text{orig} | = | \frac{[\sum_{i=2}^{n-1} (x_i - x_\text{mean})(y_i - y_\text{mean})] + (x_n - x_\text{mean})(y_1 - y_\text{mean}) + (x_1 - x_\text{mean})(y_n - y_\text{mean})}{15n} \\
+- \frac{([\sum_{i=2}^{n-1} (x_i - x_\text{mean})(y_i - y_\text{mean})] + (x_1 - x_\text{mean})(y_1 - y_\text{mean}) + (x_n - x_\text{mean})(y_n - y_\text{mean}))}{15n} | \\
+\end{align*}
+
+then cancelling the sumations you get
+\begin{align*}
+\displaystyle | w_1^\text{swap} - w_1^\text{orig} | = | \frac{ (x_n - x_\text{mean})(y_1 - y_\text{mean}) + (x_1 - x_\text{mean})(y_n - y_\text{mean})}{15n} \\
+- \frac{((x_1 - x_\text{mean})(y_1 - y_\text{mean}) + (x_n - x_\text{mean})(y_n - y_\text{mean}))}{15n} | \\
+= |\frac{(x_n - x_\text{mean})(y_1 - y_n) + (x_1 - x_\text{mean})(y_n - y_1)}{15n}|\\
+= |\frac{(x_n - x_\text{mean})(6) + (x_1 - x_\text{mean})(-6)}{15n}| \\
+= |\frac{6(x_n - x_\text{mean} - x_1 + x_\text{mean})}{15n}|\\
+= |\frac{6(20)}{15n}|
+= \frac{8}{n}
+\end{align*}
+
 
 # END SOLUTION
 
