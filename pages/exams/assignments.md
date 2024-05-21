@@ -7,10 +7,12 @@ TODO
 
 **OLDER TASKS:**
 
-Javier: Winter 2024 final part 2 (final2_WI24.tex)
+Zoe/Javier: Winter 2024 final part 2 (final2_WI24.tex)
+- Zoe has COMPLETED 2-4
     
-Javier: Spring 2023 final part 2 (final2A.tex)
-    - Needs explanations
+Zoe/Javier: Spring 2023 final part 2 (final2A.tex)
+- Needs explanations
+- Zoe COMPLETED 1, 3, 5, 6
 
 Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 - Added in solutions
