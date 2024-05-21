@@ -96,8 +96,39 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">P(A|(B \cap C))</span></p>
-<p><span class="math inline">P((A \cap C)|(B \cap C))</span></p>
+<p><span class="math inline">P(A|(B \cap C))</span> and <span class="math inline">P((A \cap C)|(B \cap C))</span></p>
+<p>Recall the formula for conditional probability is <span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span>. We are
+going to use this fact to figure out which of the following are the same
+as <span class="math inline">P((A\cap B)|(B \cap C))</span>.</p>
+<p>We should first expand <span class="math inline">P((A\cap B)|(B \cap
+C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) =
+\frac{P(A \cap B) \cap P(B \cap C)}{P(B \cap C)}</span>. We can further
+simplify the numerator to be <span class="math inline">(A \cap B) \cap
+(B \cap C) \rightarrow A \cap B \cap C</span>. This means we get <span class="math inline">P((A\cap B)|(B \cap C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) = \frac{P(A \cap B \cap
+C)}{P(B \cap C)}</span>.</p>
+<p>Now we can go through each of the options and figure out if, when put
+inside the formula for conditional probability, we get <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>.</p>
+<p><br/></p>
+<p><span class="math inline">P(A|(B \cap C))</span> <span class="math display">P(A|(B \cap C)) = \frac{P(A)P(B \cap C)}{P(B \cap
+C)}= \frac{P(A \cap (B \cap C))}{P(B \cap C)} = \frac{P(A \cap B \cap
+C)}{P(B \cap C)}</span> This matches <span class="math inline">\frac{P(A
+\cap B \cap C)}{P(B \cap C)}</span>!</p>
+<p><br/></p>
+<p><span class="math inline">P(A \cap B \cap C)</span></p>
+<p>We can see that there is no way for this to equal <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>
+because it is missing the denominator.</p>
+<p><br/> <span class="math inline">P((B \cap C)|(A \cap B))</span></p>
+<p><span class="math display">P((B \cap C)|(A \cap B)) = \frac{P(B \cap
+C)P(A \cap B)}{P(A \cap B)}= \frac{P(A \cap B \cap C)}{P(A \cap
+B)}</span> This does not match <span class="math inline">\frac{P(A \cap
+B \cap C)}{P(B \cap C)}</span>.</p>
+<p><br/></p>
+<p><span class="math inline">P((A \cap C)|(B \cap C))</span> <span class="math display">P((A \cap C)|(B \cap C)) = \frac{P(A \cap C)P(B
+\cap C)}{P(B \cap C)} = \frac{P(A \cap B \cap C)}{P(B \cap C)}</span>
+This matches <span class="math inline">\frac{P(A \cap B \cap C)}{P(B
+\cap C)}</span>!</p>
+<p><br/> Since options 1 and 4 are correct the answer cannot be None of
+the Above!</p>
 </div>
 </div>
 </div>
@@ -127,6 +158,25 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">B, C</span></p>
+<p>We are going to rewrite the following in the hopes of being able to
+simplify things later. To do this we will once again use the formula for
+conditional probability: <span class="math inline">P(A|B) = \frac{P(A
+\cap B)}{P(B)}</span></p>
+<p>Let’s look at the left side of <span class="math inline">P((A \cap
+B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
+<p><span class="math display">P((A \cap B)|C) = \frac{P(A \cap
+B)P(C)}{P(C)} = \frac{P(A \cap B \cap C)}{P(C)}</span></p>
+<p>Let’s now look at the right side of <span class="math inline">P((A
+\cap B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
+<p><span class="math display">P(A|(B \cap C))*P(B) = \frac{P(A)P(B \cap
+C)}{P(B \cap C)} * P(B) = \frac{P(A \cap B \cap C)}{P(B \cap C)}* P(B) =
+\frac{P(A \cap B \cap C) * P(B)}{P(B \cap C)}</span></p>
+<p>Now we can look at them together! <span class="math inline">\frac{P(A
+\cap B \cap C)}{P(C)} = \frac{P(A \cap B \cap C) * P(B)}{P(B \cap
+C)}</span>. We can cross multiply to clear the fractions: <span class="math inline">P(A \cap B \cap C) * P(B \cap C) = P(A \cap B \cap
+C) * P(B) * P(C)</span>. Assuming that <span class="math inline">P(A
+\cap B \cap C) \neq 0</span> we can divide both sides by <span class="math inline">P(A \cap B \cap C)</span>. We end up with <span class="math inline">P(B \cap C) = P(B) * P(C)</span>, which demonstrates
+to us that <span class="math inline">B</span> and <span class="math inline">C</span> are independent of one another.</p>
 </div>
 </div>
 </div>
@@ -140,12 +190,13 @@ Part 2</a>, Problem 5</i></p>
 have sometimes been able to do when conditions are right. For each night
 that you’ve attempted to see the Milky Way, you have a record of:</p>
 <ul>
-<li><p>the setting (urban, suburban, or rural),</p></li>
-<li><p>the season (winter, spring, summer, or fall),</p></li>
-<li><p>the time (late night, or early morning), and</p></li>
-<li><p>the outcome (successful, or unsuccessful).</p></li>
+<li>the setting (urban, suburban, or rural),</li>
+<li>the season (winter, spring, summer, or fall),</li>
+<li>the time (late night, or early morning), and</li>
+<li>the outcome (successful, or unsuccessful).</li>
 </ul>
-<p>These 12 attempts are recorded in the table below.</p>
+<p>These <span class="math inline">12</span> attempts are recorded in
+the table below.</p>
 <table>
 <colgroup>
 <col style="width: 24%" />
@@ -239,9 +290,9 @@ that you’ve attempted to see the Milky Way, you have a record of:</p>
 <p>You want to use a Naive Bayes classifier to predict whether you’ll be
 successful in seeing the Milky Way under the following conditions:</p>
 <ul>
-<li><p>the setting is urban,</p></li>
-<li><p>the season is winter, and</p></li>
-<li><p>the time is late night.</p></li>
+<li>the setting is urban,</li>
+<li>the season is winter, and</li>
+<li>the time is late night.</li>
 </ul>
 <p>Naive Bayes predicts that, under these conditions, the probability
 you are unsuccessful is <span class="math inline">k</span> times the
@@ -268,6 +319,64 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">k=3</span></p>
+<p>According to the Naive Bayes formula we will be solving these
+equations: <span class="math display">\begin{align*}
+&amp;P(\text{successful}|\text{urban, winter, late night})\\ &amp;=
+P(\text{successful}) * P(\text{urban}|\text{successful}) *
+P(\text{winter}|\text{successful}) * P(\text{late
+night}|\text{successful})
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{unsuccessful}|\text{urban, winter, late night}) \\
+&amp;= P(\text{unsuccessful}) * P(\text{urban}|\text{unsuccessful}) *
+P(\text{winter}|\text{unsuccessful}) * P(\text{late
+night}|\text{unsuccessful})
+\end{align*}</span></p>
+<p>This means we need to calculate our prior probabilities <span class="math inline">P(\text{successful})</span>, <span class="math inline">P(\text{unsucessful})</span>, <span class="math inline">P(\text{urban}|\text{successful})</span>, <span class="math inline">P(\text{urban}|\text{usuccessful})</span>, <span class="math inline">P(\text{winter}|\text{successful})</span>, <span class="math inline">P(\text{winter}|\text{unsuccessful})</span>, <span class="math inline">P(\text{late night}|\text{successful})</span>, and
+<span class="math inline">P(\text{late
+night}|\text{unsuccessful})</span>.</p>
+<p>We can calculate <span class="math inline">P(\text{successful})</span> by looking at the number
+of successful outcomes from all possible outcomes. We find <span class="math inline">P(\text{successful}) = \frac{4}{12} =
+\frac{1}{3}</span>.</p>
+<p>Similarily we can calculate <span class="math inline">P(\text{unsucessful})</span>. <span class="math inline">P(\text{unsucessful}) = \frac{8}{12} =
+\frac{2}{3}</span>.</p>
+<p>We can now calculate <span class="math inline">P(\text{urban}|\text{successful})</span> by looking
+at how many settings are urban when the outcome is successful. <span class="math inline">P(\text{urban}|\text{successful}) =
+\frac{1}{4}</span>.</p>
+<p>Similarily we can calculate <span class="math inline">P(\text{urban}|\text{unsuccessful})</span>. <span class="math inline">P(\text{urban}|\text{unsuccessful}) =
+\frac{3}{8}</span>.</p>
+<p>Following this same pattern we will find:</p>
+<p><span class="math inline">P(\text{winter}|\text{successful}) =
+\frac{3}{4}</span></p>
+<p><span class="math inline">P(\text{winter}|\text{unsuccessful}) =
+\frac{4}{8} = \frac{1}{2}</span></p>
+<p><span class="math inline">P(\text{late night}|\text{successful}) =
+\frac{2}{4} = \frac{1}{2}</span></p>
+<p><span class="math inline">P(\text{late night}|\text{unsuccessful}) =
+\frac{6}{8} = \frac{3}{4}</span></p>
+<p>From here all we need to do is plug our prior probnabilities into the
+equations we made earlier and solve!</p>
+<p><span class="math display">\begin{align*}
+&amp; P(\text{successful}|\text{urban, winter, late night})\\&amp;=
+P(\text{successful}) * P(\text{urban}|\text{successful}) *
+P(\text{winter}|\text{successful}) * P(\text{late
+night}|\text{successful})\\
+&amp;= \frac{1}{3} * \frac{1}{4} * \frac{3}{4} * \frac{1}{2}\\
+&amp;= \frac{1}{32}
+\end{align*}</span></p>
+<p>and</p>
+<p><span class="math display">\begin{align*}
+&amp; P(\text{unsuccessful}|\text{urban, winter, late night}) \\ &amp;=
+P(\text{unsuccessful}) * P(\text{urban}|\text{unsuccessful}) *
+P(\text{winter}|\text{unsuccessful}) * P(\text{late
+night}|\text{unsuccessful})\\
+&amp;= \frac{2}{3} * \frac{3}{8} * \frac{1}{2} * \frac{3}{4}\\
+&amp;= \frac{3}{32}
+\end{align*}</span></p>
+<p>We are told in the problem that “the probability you are unsuccessful
+is <span class="math inline">k</span> times the probability you are
+successful.”</p>
+<p>This means <span class="math inline">k * \frac{1}{32} =
+\frac{3}{32}</span>, which we can easily see shows <span class="math inline">k = 3</span>.</p>
 </div>
 </div>
 </div>

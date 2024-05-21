@@ -129,7 +129,14 @@ count each type of chess piece for the colors black and white. There are
 pawn, bishop, knight, rook, queen, and king. There are <span class="math inline">2</span> possible colors: black and white. This
 means there are <span class="math inline">6 \cdot 2 = 12</span> unique
 colored types of chess pieces.</p>
-<p>We raise <span class="math inline">12</span> to the power of <span class="math inline">n</span> because there are <span class="math inline">n</span> people in this experiment who can each
+<p>There are <span class="math inline">12</span> options for the first
+person, there are <span class="math inline">12</span> options for the
+second person, and so on, for <span class="math inline">n</span> people,
+so we can write:</p>
+<p><span class="math display">12 \cdot 12 \cdot \dots \cdot 12 =
+12^n</span></p>
+<p>We see there are <span class="math inline">12^n</span> possible
+results for this experiment because there are <span class="math inline">n</span> people in this experiment who can each
 select 12 unique combinations.</p>
 </div>
 </div>
@@ -184,12 +191,12 @@ getting a pawn is <span class="math inline">\dfrac{8}{16}</span>.</p>
 <p>Now we assume that we have a white pawn, meaning there are <span class="math inline">8-1=7</span> white pawns left and <span class="math inline">16 - 1 = 15</span> white chess pieces, which means
 we have a <span class="math inline">\dfrac{7}{15}</span> chance for
 getting another white pawn.</p>
-<p>From here we simplify the answer by doing:</p>
+<p>From here we simplify the answer by writing:</p>
 <p><span class="math display">
 \dfrac{8 \cdot 7}{16 \cdot 15} = \dfrac{56}{240} = \dfrac{7}{30}
 </span></p>
 <p><br/></p>
-<p>Another way to solve this is using combinatorics: Note that <span class="math inline">{8 \choose 2}</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
+<p>Another way to solve this is by using combinatorics: Note that <span class="math inline">{8 \choose 2}</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
 <p><span class="math inline">\dfrac{{8 \choose 2}}{16 \choose 2} =
 \dfrac{\frac{8}{32}\cdot\frac{7}{31}}{\frac{16}{32}\cdot\frac{15}{31}} =
 \dfrac{7}{30}</span></p>
@@ -251,7 +258,7 @@ already solved for <span class="math inline">P(A)</span> above: <span class="mat
 </span></p>
 <p>We can see that <span class="math inline">P(A \cap B) \neq P(A) \cdot
 P(B)</span> because <span class="math inline">\frac{7}{124} \neq
-\frac{225}{3844}</span>, so the answer is False.</p>
+\frac{225}{3844}</span>, so the answer is “False.”</p>
 </div>
 </div>
 </div>
@@ -297,22 +304,24 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">C(16, 8) \cdot C(8, 2) \cdot C(6, 2) \cdot
-C(4, 2) \cdot C(2, 1) \cdot C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
+<p><span class="math display">{16 \choose 8} \cdot {8 \choose 2} \cdot
+{6 \choose 2} \cdot {4 \choose 2} \cdot {2 \choose 1} \cdot {1 \choose
+1} = \dfrac{16!}{8!2!2!2!}</span></p>
 <p>Think about the problem this way. You have 16 spots on the line and
 for each subgroup of pieces (pawns, bishops, rooks, etc.), you need to
 assign spots from the line to place the pieces on that group. For
 example, we have 16 spots available in the line, and we want to place
 the pawns first. Well, since we have 8 pawns and 16 unique spots on the
-line, there are exactly <span class="math inline">C(16,8)</span> ways to
-place the pawns differently. Now, once you place the pawns you’ll have
-only 8 remaining spots on the line, so if you wish to place the 2
-bishops now, there are C(8,2) ways to do it. This means that there are
-<span class="math inline">C(16,8) \cdot C(8,2)</span> ways of arranging
-8 pawns and 2 bishops. Repeat the process for all subgroups and you’ll
-get: <br/></p>
-<p><span class="math inline">C(16, 8) \cdot C(8, 2) \cdot C(6, 2) \cdot
-C(4, 2) \cdot C(2, 1) \cdot C(1, 1) = \dfrac{16!}{8!2!2!2!}</span></p>
+line, there are exactly <span class="math inline">{16 \choose 8}</span>
+ways to place the pawns differently. Now, once you place the pawns
+you’ll have only 8 remaining spots on the line, so if you wish to place
+the 2 bishops now, there are <span class="math inline">{8 \choose
+2}</span> ways to do it. This means that there are <span class="math inline">{16 \choose 8} \cdot {8 \choose 2}</span> ways of
+arranging 8 pawns and 2 bishops. Repeat the process for all subgroups
+and you’ll get: <br/></p>
+<p><span class="math inline">{16 \choose 8} \cdot {8 \choose 2} \cdot {6
+\choose 2} \cdot {4 \choose 2} \cdot {2 \choose 1} \cdot {1 \choose 1} =
+\dfrac{16!}{8!2!2!2!}</span></p>
 </div>
 </div>
 </div>
@@ -334,12 +343,13 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">C(14, 6) = C(14, 8) =
+<p><span class="math display">{14 \choose 6} = {14 \choose 8} =
 \dfrac{14!}{8!6!}</span></p>
 <p>Similarly to 3.1, you know the placement of two pawns, thus you have
 14 spots remaining. Then, you only want to place the remaining white
-pawns, once you do that, the remaining spaces are for the black pawns.
-therefore the answer is <span class="math inline">C(14,6)=C(14,8)</span></p>
+pawns. Once you do that, the remaining spaces are for the black pawns.
+Therefore, the answer is <span class="math inline">{14 \choose 6}= {14
+\choose 8}</span></p>
 </div>
 </div>
 </div>
@@ -372,14 +382,14 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math display">\frac{7}{15}</span></p>
 <p>For this question you can use your answer for 3.2. We found that
-there’s <span class="math inline">C(14, 6) = C(14, 8) =
+there’s <span class="math inline">{14 \choose 6} = {14 \choose 8} =
 \dfrac{14!}{8!6!}</span> lines of pawns with only whitepawns in the
-ends, by the same reasoning there would be another <span class="math inline">C(14, 8) = \dfrac{14!}{8!6!}</span> lines with black
-pawns at the ends. Then there is <span class="math inline">2C(14,
-8)</span> lines with same color pawns at the end, since we know ther are
-<span class="math inline">C(16, 8)</span> lines in total then we can
-calculates the answer by <span class="math inline">\frac{2C(14,
-8)}{C(16, 8)}</span>=<span class="math inline">\frac{7}{15}</span></p>
+ends, by the same reasoning there would be another <span class="math inline">{14 \choose 8} = \dfrac{14!}{8!6!}</span> lines with
+black pawns at the ends. Then there is <span class="math inline">2 \cdot
+{14 \choose 8}</span> lines with same color pawns at the end, since we
+know ther are <span class="math inline">{16 \choose 8}</span> lines in
+total then we can calculates the answer by <span class="math inline">\frac{2 \cdot {14 \choose 8}}{{16 \choose
+8}}</span>=<span class="math inline">\frac{7}{15}</span></p>
 <p>Alternatively, As soon as you know the color of the first pawn, you
 know that there are 15 remaining pawns, from which only 7 are the same
 color, since each pawn is equally likely to get placed in the last spot
@@ -434,17 +444,16 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 and the percentages of different types of players inside the Avocado
 Cup.</p>
 <p>We can use the percentage of players that beat Avi to figure out the
-percentage of times Avi wins by doing <span class="math inline">1 -
-p</span>!</p>
-<p>Avi wins against beginners <span class="math inline">1 - 0.1 =
-0.9\%</span> of the time, against intermediate players <span class="math inline">1 - 0.4 = 0.6\%</span> of the time, and against
-advanced players <span class="math inline">1 - 0.8 = 0.2 \%</span> of
-the time.</p>
-<p>Now we can multiply the percentage of time Avi wins with the
-percentage of different players types to find the probability Avi will
-win in the first round! We can do this because you can imagine we are
-multiplying the probability Avi wins with the amount of people in the
-tournament of that level.</p>
+percentage of times Avi wins by writing <span class="math inline">1 -
+p</span>.</p>
+<p>Avi wins against beginners with a likelihood of <span class="math inline">1 - 0.1 = 0.9</span>, against intermediate players
+with a likelihood of <span class="math inline">1 - 0.4 = 0.6</span>, and
+against advanced players with a likelihood of <span class="math inline">1 - 0.8 = 0.2</span>.</p>
+<p>Now we can multiply the probabilities of Avi winning with their
+respective probabilities of different players’ types to find the
+probability Avi that will win in the first round! We can do this because
+you can imagine we are multiplying the probability Avi wins with the
+amount of people in the tournament of that level.</p>
 <p><span class="math display">\begin{align*}
 0.9 \cdot 0.5 &amp;= 0.45 \\
 0.4 \cdot 0.5 &amp;= 0.2 \\
@@ -491,7 +500,7 @@ playing against an intermediate player</li>
 <li>Let <span class="math inline">P(D)</span> be the probability of Avi
 playing against a beginner player</li>
 </ul>
-<p>We can use Bayes theorem to help us find the probability that Avi
+<p>We can use Bayes’ theorem to help us find the probability that Avi
 lost the match to an advanced player (<span class="math inline">P(A|B)</span>). Recall Bayes’ theorem is:</p>
 <p><span class="math display">
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
@@ -540,7 +549,8 @@ information on their</p>
 <ul>
 <li><p>experience level (beginner, intermediate, advanced),</p></li>
 <li><p>birth month (January through December), and</p></li>
-<li><p>whether they won the tournament that year (yes or no).</p></li>
+<li><p>whether or not they won the tournament that year (yes or
+no).</p></li>
 </ul>
 <p>Assume that birthdays of competitors are evenly distributed
 throughout the months.</p>
@@ -572,7 +582,7 @@ aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Bubble 3: because it uses a dataset where there are many more
+<p>Bubble 3: Because it uses a dataset where there are many more
 non-winners than winners.</p>
 <p>Each year there is only one winner, but then hundreds of non-winners!
 This skews the data and makes it harder to figure out if someone won or
@@ -631,7 +641,7 @@ happens does it affect my knowledge of <span class="math inline">A</span> and <s
 happening”? If <span class="math inline">C</span> happens we know that
 <span class="math inline">A</span> cannot happen. If <span class="math inline">A</span> cannot happen then <span class="math inline">B</span> is independent of <span class="math inline">A</span>. This means <span class="math inline">A</span> and <span class="math inline">B</span> are
 conditionally independent given <span class="math inline">C</span>.</p>
-<p>Recall a particition is a collection of non-empty, non-overlapping
+<p>Recall a partition is a collection of non-empty, non-overlapping
 subsets of a sample space. We know that <span class="math inline">A</span> affects <span class="math inline">B</span>,
 which means that this statement cannot be true.</p>
 <p>Since the third option is true the answer cannot be “None of the
@@ -667,7 +677,7 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 \dfrac{P(B)}{P(A)+P(B)}</span></p>
 <p>There are several correct approaches to this problem. The simplest
 one comes from using the definition of conditional probability to
-write</p>
+write:</p>
 <p><span class="math display">P(\overline{A}|(A \cup B)) =
 \dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}</span> To evaluate
 the numerator, notice that since <span class="math inline">A</span> and
@@ -680,7 +690,7 @@ disjoint, we can use the addition rule to expand the denominator as
 <span class="math display">= \dfrac{P(B)}{P(A)+P(B)}</span></p>
 <p>This is the desired final expression because it uses <span class="math inline">P(A)</span> and <span class="math inline">P(B)</span> only.</p>
 <p>In the Venn Diagram below, <span class="math inline">\overline{A}</span> is shaded in yellow, and <span class="math inline">A \cup B</span> is shaded in blue. Their overlap,
-<span class="math inline">\overline{A}\cap (A \cup B))</span>, is shaded
+<span class="math inline">\overline{A}\cap (A \cup B)</span>, is shaded
 in green, which is just <span class="math inline">B</span>.</p>
 <center><img height="330" src="../assets/images/sp23-midterm2/venn.jpg" width="600"/></center>
 </div>

@@ -88,12 +88,21 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">\dfrac{{12 \choose 8}\cdot8!}{12^8} =
 \dfrac{12}{12}\cdot\dfrac{11}{12}\cdot\dfrac{10}{12}\cdot\dots\cdot\dfrac{5}{12}</span></p>
+<p>There’s two ways you can think of this problem.</p>
 <p>The numerator <span class="math inline">{12 \choose 8}\cdot8!</span>
 is the number of total possible permutations of 8 distinct values; <span class="math inline">{12 \choose 8}</span> possible sets of 8 distinct
 values times <span class="math inline">8!</span> orderings, because the
 die could roll the same set of distinct values in <span class="math inline">8!</span> different ways. The denominator <span class="math inline">12^8</span> is the number of total possible
 outcomes. Altogether, dividing the numerator by the denominator gives us
 the probability of rolling 8 distinct values.</p>
+<p>We can also solve this problem differently by realizing that the
+rolls are independent. In the first roll the probability of getting a
+new number is 1 (since any number would be new), now in the second roll
+the probability of getting a new number is <span class="math inline">\frac{11}{12}</span> since we’ve only rolled one
+number so rolling any of the other 11 numbers would be rolling a new
+number.If you keep doing this for each roll, and multiply the
+independent probabilities of getting a new number in each of the rolls
+you’ll get <span class="math inline">\dfrac{12}{12}\cdot\dfrac{11}{12}\cdot\dfrac{10}{12}\cdot\dots\cdot\dfrac{5}{12}</span></p>
 </div>
 </div>
 </div>
@@ -116,6 +125,35 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">\dfrac{{8 \choose 2}\cdot{12 \choose
 7}\cdot7!}{12^8}</span></p>
+<p>Again, I’m going to show you two different ways you can think of this
+problem. We can get the total number of outcomes that get you exactly 7
+distinct values by doing the following, first choose 7 from the 12
+possible numbers (there’s <span class="math inline">{12 \choose
+7}</span> ways to do it), then choose a number to duplicate (there’s
+<span class="math inline">{7 \choose 1}</span> ways to do that), lastly
+you need to order them. From the 8 possible places you have availible
+you need to choose 2 for the repeated value (there’s <span class="math inline">{8 \choose 2}</span> ways to do that), then once you
+chose a placement for your reapeted value you need to choose one for
+each of the remaing 6 values(there’s <span class="math inline">6!</span>
+ways to do that). Finally just multiply the different ways you can
+perform each of those actions and you’ll get the number of ways you can
+roll 7 different values <span class="math display">\begin{align*}
+{12 \choose 7}\cdot{7 \choose 1}\cdot{8 \choose 2}\cdot6! = {8 \choose
+2}\cdot{12 \choose 7}
+\end{align*}</span></p>
+<p>lastly, just divide by the total number of possible outcomes and you
+get <span class="math inline">\dfrac{{8 \choose 2}\cdot{12 \choose
+7}\cdot7!}{12^8}</span></p>
+<p>You could also find the number of rolls with exactly 7 different
+values by doing the following. First, select an ordered string of size 7
+from the 12 possible values (there’s <span class="math inline">{12
+\choose 7}\cdot7!</span> ways to do that), then take the first value of
+the string as the duplicated value and keep the others as they are, now
+you only need to place 2 copies of the repeated value somewhere on your
+string of 6 numbers (there’s <span class="math inline">{8 \choose
+2}</span> ways to do that), multiply this the ways you can do these two
+actions and divide by total number of outcomes and you’ll get <span class="math inline">\dfrac{{8 \choose 2}\cdot{12 \choose
+7}\cdot7!}{12^8}</span> This solution is faster but less intuitive.</p>
 </div>
 </div>
 </div>
@@ -125,9 +163,10 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h2 id="problem-2">Problem 2</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 4</i></p>
-<p>At Panda Express, there are 18 items available on the menu. Food is
-served on plates that are divided into three equal sections, and all
-sections of the plate must contain exactly one menu item.</p>
+<p>At Panda Express, there are <span class="math inline">18</span> items
+available on the menu. Food is served on plates that are divided into
+three equal sections, and all sections of the plate must contain exactly
+one menu item.</p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>Suppose each section of the plate is a different color (in a
@@ -299,7 +338,14 @@ count each type of chess piece for the colors black and white. There are
 pawn, bishop, knight, rook, queen, and king. There are <span class="math inline">2</span> possible colors: black and white. This
 means there are <span class="math inline">6 \cdot 2 = 12</span> unique
 colored types of chess pieces.</p>
-<p>We raise <span class="math inline">12</span> to the power of <span class="math inline">n</span> because there are <span class="math inline">n</span> people in this experiment who can each
+<p>There are <span class="math inline">12</span> options for the first
+person, there are <span class="math inline">12</span> options for the
+second person, and so on, for <span class="math inline">n</span> people,
+so we can write:</p>
+<p><span class="math display">12 \cdot 12 \cdot \dots \cdot 12 =
+12^n</span></p>
+<p>We see there are <span class="math inline">12^n</span> possible
+results for this experiment because there are <span class="math inline">n</span> people in this experiment who can each
 select 12 unique combinations.</p>
 </div>
 </div>
@@ -354,12 +400,12 @@ getting a pawn is <span class="math inline">\dfrac{8}{16}</span>.</p>
 <p>Now we assume that we have a white pawn, meaning there are <span class="math inline">8-1=7</span> white pawns left and <span class="math inline">16 - 1 = 15</span> white chess pieces, which means
 we have a <span class="math inline">\dfrac{7}{15}</span> chance for
 getting another white pawn.</p>
-<p>From here we simplify the answer by doing:</p>
+<p>From here we simplify the answer by writing:</p>
 <p><span class="math display">
 \dfrac{8 \cdot 7}{16 \cdot 15} = \dfrac{56}{240} = \dfrac{7}{30}
 </span></p>
 <p><br/></p>
-<p>Another way to solve this is using combinatorics: Note that <span class="math inline">{8 \choose 2}</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
+<p>Another way to solve this is by using combinatorics: Note that <span class="math inline">{8 \choose 2}</span> means “<span class="math inline">8</span> choose <span class="math inline">2</span>.”</p>
 <p><span class="math inline">\dfrac{{8 \choose 2}}{16 \choose 2} =
 \dfrac{\frac{8}{32}\cdot\frac{7}{31}}{\frac{16}{32}\cdot\frac{15}{31}} =
 \dfrac{7}{30}</span></p>
@@ -421,7 +467,7 @@ already solved for <span class="math inline">P(A)</span> above: <span class="mat
 </span></p>
 <p>We can see that <span class="math inline">P(A \cap B) \neq P(A) \cdot
 P(B)</span> because <span class="math inline">\frac{7}{124} \neq
-\frac{225}{3844}</span>, so the answer is False.</p>
+\frac{225}{3844}</span>, so the answer is “False.”</p>
 </div>
 </div>
 </div>
@@ -472,17 +518,16 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 and the percentages of different types of players inside the Avocado
 Cup.</p>
 <p>We can use the percentage of players that beat Avi to figure out the
-percentage of times Avi wins by doing <span class="math inline">1 -
-p</span>!</p>
-<p>Avi wins against beginners <span class="math inline">1 - 0.1 =
-0.9\%</span> of the time, against intermediate players <span class="math inline">1 - 0.4 = 0.6\%</span> of the time, and against
-advanced players <span class="math inline">1 - 0.8 = 0.2 \%</span> of
-the time.</p>
-<p>Now we can multiply the percentage of time Avi wins with the
-percentage of different players types to find the probability Avi will
-win in the first round! We can do this because you can imagine we are
-multiplying the probability Avi wins with the amount of people in the
-tournament of that level.</p>
+percentage of times Avi wins by writing <span class="math inline">1 -
+p</span>.</p>
+<p>Avi wins against beginners with a likelihood of <span class="math inline">1 - 0.1 = 0.9</span>, against intermediate players
+with a likelihood of <span class="math inline">1 - 0.4 = 0.6</span>, and
+against advanced players with a likelihood of <span class="math inline">1 - 0.8 = 0.2</span>.</p>
+<p>Now we can multiply the probabilities of Avi winning with their
+respective probabilities of different players’ types to find the
+probability Avi that will win in the first round! We can do this because
+you can imagine we are multiplying the probability Avi wins with the
+amount of people in the tournament of that level.</p>
 <p><span class="math display">\begin{align*}
 0.9 \cdot 0.5 &amp;= 0.45 \\
 0.4 \cdot 0.5 &amp;= 0.2 \\
@@ -529,7 +574,7 @@ playing against an intermediate player</li>
 <li>Let <span class="math inline">P(D)</span> be the probability of Avi
 playing against a beginner player</li>
 </ul>
-<p>We can use Bayes theorem to help us find the probability that Avi
+<p>We can use Bayes’ theorem to help us find the probability that Avi
 lost the match to an advanced player (<span class="math inline">P(A|B)</span>). Recall Bayes’ theorem is:</p>
 <p><span class="math display">
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}

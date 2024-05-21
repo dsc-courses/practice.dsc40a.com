@@ -31,11 +31,11 @@ $67 \%$
 
 We know the percentages of players that beat Avi (meaning Avi loses) and the percentages of different types of players inside the Avocado Cup.
 
-We can use the percentage of players that beat Avi to figure out the percentage of times Avi wins by doing $1 - p$!
+We can use the percentage of players that beat Avi to figure out the percentage of times Avi wins by writing $1 - p$.
 
-Avi wins against beginners $1 - 0.1 = 0.9\%$ of the time, against intermediate players $1 - 0.4 = 0.6\%$ of the time, and against advanced players $1 - 0.8 = 0.2 \%$ of the time.
+Avi wins against beginners with a likelihood of $1 - 0.1 = 0.9$, against intermediate players with a likelihood of $1 - 0.4 = 0.6$, and against advanced players with a likelihood of $1 - 0.8 = 0.2$.
 
-Now we can multiply the percentage of time Avi wins with the percentage of different players types to find the probability Avi will win in the first round! We can do this because you can imagine we are multiplying the probability Avi wins with the amount of people in the tournament of that level.
+Now we can multiply the probabilities of Avi winning with their respective probabilities of different players' types to find the probability Avi that will win in the first round! We can do this because you can imagine we are multiplying the probability Avi wins with the amount of people in the tournament of that level.
 
 $$\begin{align*}
 0.9 \cdot 0.5 &= 0.45 \\
@@ -68,7 +68,7 @@ $25 \%$
 - Let $P(C)$ be the probability of Avi playing against an intermediate player
 - Let $P(D)$ be the probability of Avi playing against a beginner player
 
-We can use Bayes theorem to help us find the probability that Avi lost the match to an advanced player ($P(A|B)$). Recall Bayes' theorem is:
+We can use Bayes' theorem to help us find the probability that Avi lost the match to an advanced player ($P(A|B)$). Recall Bayes' theorem is:
 
 $$
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
@@ -81,7 +81,7 @@ $$
 P(B) = P(B|A) \cdot P(A) + P(B|C) \cdot P(C) + P(B|D) \cdot P(D)
 $$
 
-We know the probability of Avi losing to an intermediate player: $P(B|C) = 0.5$, the probability of Avi losing to a beginner player: $P(B|D) = 0.1$, the probability of an intermediate player being the opponent: $P(C) = 0.4$, and the probability of a beginner player being the oponent: $P(D) = 0.5$
+We know the probability of Avi losing to an intermediate player: $P(B|C) = 0.5$, the probability of Avi losing to a beginner player: $P(B|D) = 0.1$, the probability of an intermediate player being the opponent: $P(C) = 0.4$, and the probability of a beginner player being the opponent: $P(D) = 0.5$
 
 Plugging in what we know into the law of total probability equation we get:
 $$\begin{align*}
@@ -92,7 +92,7 @@ P(B) &= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
 
 Or we can calculate $P(B)$ by using what we know in part A ($67 \%$). $1 - 0.67 = 0.33$.
 
-Back to Bayes theorem we have:
+Back to Bayes' theorem we have:
 $$\begin{align*}
 P(A|B) &= \frac{0.8 \cdot 0.1}{0.33} \\
 &= \frac{0.08}{0.33}\\

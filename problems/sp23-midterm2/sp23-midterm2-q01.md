@@ -36,7 +36,11 @@ $12^n$.
 
 The key to solving this problem is the note "When there are multiple pieces of a given color and type (for example, $8$ white pawns), we will assume they are **indistinguishable** from one another." This means we count each type of chess piece for the colors black and white. There are $6$ different types of chess pieces: pawn, bishop, knight, rook, queen, and king. There are $2$ possible colors: black and white. This means there are $6 \cdot 2 = 12$ unique colored types of chess pieces.
 
-We raise $12$ to the power of $n$ because there are $n$ people in this experiment who can each select 12 unique combinations.
+There are $12$ options for the first person, there are $12$ options for the second person, and so on, for $n$ people, so we can write:
+
+$$12 \cdot 12 \cdot \dots \cdot 12 = 12^n$$
+
+We see there are $12^n$ possible results for this experiment because there are $n$ people in this experiment who can each select 12 unique combinations.
 
 # END SOLUTION
 

@@ -12,7 +12,7 @@ you have information on their
 
 -   birth month (January through December), and
 
--   whether they won the tournament that year (yes or no).
+-   whether or not they won the tournament that year (yes or no).
 
 Assume that birthdays of competitors are evenly distributed throughout
 the months.
@@ -30,7 +30,7 @@ classifier is ineffective** in identifying the winner?
 
 # BEGIN SOLUTION
 
-Bubble 3: because it uses a dataset where there are many more non-winners than winners.
+Bubble 3: Because it uses a dataset where there are many more non-winners than winners.
 
 Each year there is only one winner, but then hundreds of non-winners! This skews the data and makes it harder to figure out if someone won or lost because of their birthday and level.
 

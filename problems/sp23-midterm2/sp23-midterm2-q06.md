@@ -34,7 +34,7 @@ We know that $A$ and $B$ are not independent because winning or losing the first
 
 It is helpful to think about "if $C$ happens does it affect my knowledge of $A$ and $B$ happening"? If $C$ happens we know that $A$ cannot happen. If $A$ cannot happen then $B$ is independent of $A$. This means $A$ and $B$ are conditionally independent given $C$.
 
-Recall a particition is a collection of non-empty, non-overlapping subsets of a sample space. We know that $A$ affects $B$, which means that this statement cannot be true.
+Recall a partition is a collection of non-empty, non-overlapping subsets of a sample space. We know that $A$ affects $B$, which means that this statement cannot be true.
 
 Since the third option is true the answer cannot be "None of the above."
 
@@ -53,7 +53,7 @@ step.**
 $$P(\overline{A}|(A \cup B)) = \dfrac{P(B)}{P(A)+P(B)}$$
 
 There are several correct approaches to this problem. The simplest
-one comes from using the definition of conditional probability to write
+one comes from using the definition of conditional probability to write:
 
 $$P(\overline{A}|(A \cup B)) = \dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}$$
 To evaluate the numerator, notice that since $A$ and $B$ are disjoint, any outcome that is not in $A$ but is in the union of $A$ and $B$ ($A$ or $B$) must be in $B$. The Venn diagram shown below illustrates this. Therefore, we can simplify this as
@@ -66,7 +66,7 @@ $P(A)$ and $P(B)$ only.
 
 In the Venn Diagram below, $\overline{A}$ is shaded in yellow, and
 $A \cup B$ is shaded in blue. Their overlap,
-$\overline{A}\cap (A \cup B))$, is shaded in green, which is just $B$.
+$\overline{A}\cap (A \cup B)$, is shaded in green, which is just $B$.
 
 <center><img src="../assets/images/sp23-midterm2/venn.jpg" width="600" height="330"></center>
 

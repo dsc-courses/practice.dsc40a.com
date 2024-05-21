@@ -29,7 +29,7 @@ We get $\dfrac{8}{16}$ from the fact there are $8$ white pawns and $16$ white ch
 
 Now we assume that we have a white pawn, meaning there are $8-1=7$ white pawns left and $16 - 1 = 15$ white chess pieces, which means we have a $\dfrac{7}{15}$ chance for getting another white pawn.
 
-From here we simplify the answer by doing:
+From here we simplify the answer by writing:
 
 $$
 \dfrac{8 \cdot 7}{16 \cdot 15} = \dfrac{56}{240} = \dfrac{7}{30}
@@ -37,7 +37,7 @@ $$
 
 <br>
 
-Another way to solve this is using combinatorics: Note that ${8 \choose 2}$ means "$8$ choose $2$."
+Another way to solve this is by using combinatorics: Note that ${8 \choose 2}$ means "$8$ choose $2$."
 
 $\dfrac{{8 \choose 2}}{16 \choose 2} = \dfrac{\frac{8}{32}\cdot\frac{7}{31}}{\frac{16}{32}\cdot\frac{15}{31}} = \dfrac{7}{30}$
 
@@ -78,7 +78,7 @@ $$
 \frac{15}{62} \cdot \frac{7}{30} = \frac{7}{124}
 $$
 
-We can see that $P(A \cap B) \neq P(A) \cdot P(B)$ because $\frac{7}{124} \neq \frac{225}{3844}$, so the answer is False.
+We can see that $P(A \cap B) \neq P(A) \cdot P(B)$ because $\frac{7}{124} \neq \frac{225}{3844}$, so the answer is "False."
 
 # END SOLUTION
 
