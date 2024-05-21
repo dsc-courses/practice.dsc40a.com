@@ -231,6 +231,22 @@ Which Doctor's diagnoses is better?
 
 Albert
 
+Recall the equation for accuracy is $\frac{\text{TP}+\text{TN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}$.
+
+We can figure out which Doctor's diagnosis was more accurate, thus better.
+
+Dr. Isaac:
+$$
+\frac{4 + 2}{4 + 4 + 0 + 2} = \frac{6}{10}
+$$
+
+Dr. Albert:
+$$
+\frac{3 + 5}{3 + 1 + 1 + 5} = \frac{8}{10}
+$$
+
+We can see that Dr. Albert's accuracy is greater than Dr Isaac's accuracy, which means Dr. ALbert's accuracy is better.
+
 # END SOLUTION
 
 # END SUBPROB
