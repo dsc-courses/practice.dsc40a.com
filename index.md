@@ -73,6 +73,12 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
   </thead>
   <tbody>
   <tr>
+      <th scope="row">Spring 2024</th>
+      <td>Suraj Rampure</td>
+      <td><a href='sp24-midterm/index.html'>Midterm </a>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Winter 2024</th>
       <td>Aobo Li</td>
       <td><a href='wi24-midterm1/index.html'>Midterm 1</a>
