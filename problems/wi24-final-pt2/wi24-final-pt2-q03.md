@@ -125,6 +125,27 @@ previous collision to `top` quark, but keep everything else the same (i.e.
 
 $k = 3$
 
+All we have to do for this problem, after completing the first part, is to see how $P(\text{top}|\text{formed hadron})$ and $P(\text{top}|\text{not formed hadron})$ changes our previous equations.
+
+We calculate these two probabilites by looking at the number of formed/not formed hadrons respectively and counting how many of those are in the `top` position. You will find $P(\text{top}|\text{formed hadron}) = \frac{2}{5}$ and $P(\text{top}|\text{not formed hadron}) = \frac{1}{5}$. These are the same as our conditional probabilities when in the `up` position! Which means $k=3$ again.
+
+If you want to go through the entire calculation again it can be found below:
+\begin{align*}
+&P(\text{formed hadron}|\text{top, particle, blue})\\
+&= P(\text{formed hadron}) * P(\text{top}|\text{formed hadron}) * P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed hadron})\\
+&= \frac{1}{2} * \frac{2}{5} * \frac{3}{5} * \frac{2}{5}\\
+&= \frac{6}{125}
+\end{align*}
+and 
+\begin{align*}
+&P(\text{not formed hadron}|\text{top, particle, blue})\\
+&= P(\text{not formed hadron}) * P(\text{top}|\text{not formed hadron}) * P(\text{particle}|\text{not formed hadron}) * P(\text{blue}|\text{not formed hadron})\\
+&= \frac{1}{2} * \frac{1}{5} * \frac{2}{5} * \frac{2}{5}\\
+&= \frac{2}{125}
+\end{align*}
+
+We can do this by solving the equation $k * \frac{2}{125} = \frac{6}{125}$. You should find $k=3$.
+
 # END SOLUTION
 
 # END SUBPROB

@@ -251,15 +251,15 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <p><span class="math inline">k = 3</span></p>
 <p>Following the equation for Naive Bayes we will create the folllowing
 two formulas: <span class="math display">\begin{align*}
-&amp;P(\text{formed hadron}|\text{up, particle, blue}) =\\
-&amp;P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) *
+&amp;P(\text{formed hadron}|\text{up, particle, blue})\\
+&amp;=P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) *
 P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed
 hadron})
 \end{align*}</span> and <span class="math display">\begin{align*}
-&amp;P(\text{not formed hadron}|\text{up, particle, blue}) =\\
-&amp;P(\text{not formed hadron}) * P(\text{up}|\text{not formed hadron})
-* P(\text{particle}|\text{not formed hadron}) * P(\text{blue}|\text{not
-formed hadron})
+&amp;P(\text{not formed hadron}|\text{up, particle, blue})\\
+&amp;=P(\text{not formed hadron}) * P(\text{up}|\text{not formed
+hadron}) * P(\text{particle}|\text{not formed hadron}) *
+P(\text{blue}|\text{not formed hadron})
 \end{align*}</span></p>
 <p>Now all we have to do is calculate the prior probabilities!</p>
 <p>We can calculate <span class="math inline">P(\text{formed
@@ -339,6 +339,35 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">k = 3</span></p>
+<p>All we have to do for this problem, after completing the first part,
+is to see how <span class="math inline">P(\text{top}|\text{formed
+hadron})</span> and <span class="math inline">P(\text{top}|\text{not
+formed hadron})</span> changes our previous equations.</p>
+<p>We calculate these two probabilites by looking at the number of
+formed/not formed hadrons respectively and counting how many of those
+are in the <code>top</code> position. You will find <span class="math inline">P(\text{top}|\text{formed hadron}) =
+\frac{2}{5}</span> and <span class="math inline">P(\text{top}|\text{not
+formed hadron}) = \frac{1}{5}</span>. These are the same as our
+conditional probabilities when in the <code>up</code> position! Which
+means <span class="math inline">k=3</span> again.</p>
+<p>If you want to go through the entire calculation again it can be
+found below: <span class="math display">\begin{align*}
+&amp;P(\text{formed hadron}|\text{top, particle, blue})\\
+&amp;= P(\text{formed hadron}) * P(\text{top}|\text{formed hadron}) *
+P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed
+hadron})\\
+&amp;= \frac{1}{2} * \frac{2}{5} * \frac{3}{5} * \frac{2}{5}\\
+&amp;= \frac{6}{125}
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{not formed hadron}|\text{top, particle, blue})\\
+&amp;= P(\text{not formed hadron}) * P(\text{top}|\text{not formed
+hadron}) * P(\text{particle}|\text{not formed hadron}) *
+P(\text{blue}|\text{not formed hadron})\\
+&amp;= \frac{1}{2} * \frac{1}{5} * \frac{2}{5} * \frac{2}{5}\\
+&amp;= \frac{2}{125}
+\end{align*}</span></p>
+<p>We can do this by solving the equation <span class="math inline">k *
+\frac{2}{125} = \frac{6}{125}</span>. You should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 </div>
