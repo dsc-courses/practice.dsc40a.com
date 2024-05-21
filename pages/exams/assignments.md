@@ -2,10 +2,7 @@ Overleaf Link: https://www.overleaf.com/read/sxtxhfnpdncy#9530e5
 
 **NEWER TASKS:**
 
-SP24 Midterm
-- Zoe: Problems 1, 2, and 4 (q01 & q02 & q03 & q05 & q06)
-    - COMPLETED
-- Javier:
+TODO
 
 
 **OLDER TASKS:**
@@ -47,3 +44,8 @@ COMPLETED
 
 Spring 2023 midterm 1 (midterm1A.tex)
 COMPLETED
+
+SP24 Midterm
+- Zoe: Problems 1, 2, and 4 (q01 & q02 & q03 & q05 & q06)
+    - COMPLETED
+- Javier: COMPLETED
