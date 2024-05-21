@@ -63,13 +63,13 @@ $k = 3$
 
 Following the equation for Naive Bayes we will create the folllowing two formulas:
 \begin{align*}
-&P(\text{formed hadron}|\text{up, particle, blue}) =\\
-&P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) * P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed hadron})
+&P(\text{formed hadron}|\text{up, particle, blue})\\
+&=P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) * P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed hadron})
 \end{align*}
 and
 \begin{align*}
-&P(\text{not formed hadron}|\text{up, particle, blue}) =\\
-&P(\text{not formed hadron}) * P(\text{up}|\text{not formed hadron}) * P(\text{particle}|\text{not formed hadron}) * P(\text{blue}|\text{not formed hadron})
+&P(\text{not formed hadron}|\text{up, particle, blue})\\
+&=P(\text{not formed hadron}) * P(\text{up}|\text{not formed hadron}) * P(\text{particle}|\text{not formed hadron}) * P(\text{blue}|\text{not formed hadron})
 \end{align*}
 
 Now all we have to do is calculate the prior probabilities!
