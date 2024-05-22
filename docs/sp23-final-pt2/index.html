@@ -356,6 +356,20 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">{18 \choose 3} \cdot 3!</span></p>
+<p>This problem is exactly asking for the number of permutations of
+three elements from a pool of 18 elements, which is <span class="math display">\begin{align*}
+18\cdot17\cdot16 = \frac{18!}{15!} = {18 \choose 3} \cdot 3!
+\end{align*}</span></p>
+<p>You should remember that whenever you draw items <strong>without
+replacement</strong> and the <strong>order matters</strong> then you are
+calculating a permutation. Alternatively, you can reason that in the red
+segment of the plate, you can have any of the 18 different menu items,
+then for the yellow segment you only have 17 menu items available, since
+the red already has one, lastly you have 16 items left for the blue part
+of the plate. Then just multiply all the ways you can choose menu items
+for each segment getting a total of <span class="math display">\begin{align*}
+18\cdot17\cdot16 = {18 \choose 3} \cdot 3!
+\end{align*}</span></p>
 </div>
 </div>
 </div>

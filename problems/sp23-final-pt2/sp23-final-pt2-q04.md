@@ -15,6 +15,16 @@ One example plate of food has Honey Walnut Shrimp in the red section, Kung Pao C
 # BEGIN SOLUTION
 ${18 \choose 3} \cdot 3!$
 
+This problem is exactly asking for the number of permutations of three elements from a pool of 18 elements, which is 
+\begin{align*}
+18\cdot17\cdot16 = \frac{18!}{15!} = {18 \choose 3} \cdot 3!
+\end{align*}
+
+You should remember that whenever you draw items **without replacement** and the **order matters** then you are calculating a permutation.  Alternatively, you can reason that in the red segment of the plate, you can have any of the 18 different menu items, then for the yellow segment you only have 17 menu items available, since the red already has one, lastly you have 16 items left for the blue part of the plate. Then just multiply all the ways you can choose menu items for each segment getting a total of
+\begin{align*}
+18\cdot17\cdot16 = {18 \choose 3} \cdot 3!
+\end{align*}
+
 # END SOLUTION
 
 # END SUBPROB
