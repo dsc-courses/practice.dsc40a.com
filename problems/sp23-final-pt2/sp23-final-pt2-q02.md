@@ -32,7 +32,7 @@ $\dfrac{{8 \choose 2}\cdot{12 \choose 7}\cdot7!}{12^8}$
 
 Again, I'm going to show you two different ways you can think of this problem. We can get the total number of outcomes that get you exactly 7 distinct values by doing the following, first choose 7 from the 12 possible numbers (there's ${12 \choose 7}$ ways to do it), then choose a number to duplicate (there's ${7 \choose 1}$ ways to do that), lastly you need to order them. From the 8 possible places you have availible you need to choose 2 for the repeated value (there's ${8 \choose 2}$ ways to do that), then once you chose a placement for your reapeted value you need to choose one for each of the remaing 6 values(there's $6!$ ways to do that). Finally just multiply the different ways you can perform each of those actions and you'll get the number of ways you can roll 7 different values
 \begin{align*}
-{12 \choose 7}\cdot{7 \choose 1}\cdot{8 \choose 2}\cdot6! = {8 \choose 2}\cdot{12 \choose 7}
+{12 \choose 7}\cdot{7 \choose 1}\cdot{8 \choose 2}\cdot6! = {8 \choose 2}\cdot{12 \choose 7}\cdot7!
 \end{align*}
 
 lastly, just divide by the total number of possible outcomes and you get 
