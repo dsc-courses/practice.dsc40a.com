@@ -84,6 +84,7 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
       <td><a href='wi24-midterm1/index.html'>Midterm 1</a>
       <br><a href='wi24-midterm2/index.html'>Midterm 2</a>
       <br><a href='wi24-final-pt1/index.html'>Final Part 1</a>
+      <br><a href='wi24-final-pt2/index.html'>Final Part 2</a>
       </td>
     </tr>
     <tr>
@@ -92,6 +93,7 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
       <td><a href='sp23-midterm1/index.html'>Midterm 1</a>
       <br><a href='sp23-midterm2/index.html'>Midterm 2</a>
       <br><a href='sp23-final-pt1/index.html'>Final Part 1</a>
+      <br><a href='sp23-final-pt2/index.html'>Final Part 2</a>
       </td>
     </tr>
     <tr>
