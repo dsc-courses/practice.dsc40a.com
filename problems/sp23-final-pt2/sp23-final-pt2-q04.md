@@ -75,13 +75,13 @@ As before, two plates that can be rotated to look like one another count as the 
 
 $2 \cdot {18 \choose 2} + {18 \choose 1}$
 
-Now that we allowed to repeat menu items we need to consider the 2 new types of plates, type 1 a plate with the same menu item 3 times, type 2 a plate with a repeated menu item and an additional menu item. Then the total number of plates should be our answer from 4.3 plus the number of plates with type 1 and number of plets with type 2. 
+Now that we are allowed to repeat menu items we need to consider the 2 new types of plates, type 1 a plate with the same menu item 3 times, type 2 a plate with a repeated menu item and an additional menu item. Then the total number of plates should be our answer from 4.3 plus the number of plates with type 1 and number of plates with type 2. 
 
 **Type 1**
-Counting the number of type 1 plates should be fairly simple, if your plate only contains one menu item then there should be on plate of this type for each of the menu items, therefore there's $18$ plates like this.
+Counting the number of type 1 plates should be fairly simple, if your plate only contains one menu item then there should be one plate of this type for each of the menu items, therefore there's $18$ plates like this.
 
 **Type 2**
-Now for type two, we can start by chossing two items from the menu (there's $$18 \choose 2$ ways to do that) then from here note that you need to choose which item you are going to repeat because depending on which one you choose to double you get a different plate (there's $2$ options to choose which one you double), then  you should also consider the order but you should realize that no matter how you arange the item on your plate you are just getting rotations of the same plate, therefore your total number of plates of type 2 is $2 \cdot {18 \choose 2}$
+Now for type 2, we can start by chossing two items from the menu (there's $18 \choose 2$ ways to do that) then from here note that you need to choose which item you are going to repeat because depending on which one you choose to double you get a different plate (there's $2$ options to double), then  you should also consider the order but you should realize that no matter how you arange the item on your plate you are just getting rotations of the same plate, therefore your total number of plates of type 2 is $2 \cdot {18 \choose 2}$
 
 Lastly, just add both the plates of type 1 and type 2, and that's the number you need to add to your answer from 4.3. 
 **Answer**: $2 \cdot {18 \choose 2} + {18 \choose 1}$
