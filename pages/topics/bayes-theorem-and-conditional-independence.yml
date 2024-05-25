@@ -1,0 +1,14 @@
+title: "Bayes' Theorem and Conditional Independence"
+context: This page contains all problems about Bayes' Theorem and Conditional Independence.
+show_solution: true
+problems:
+  # Bayes Theorem
+  - sp23-final-pt2/sp23-final-pt2-q03
+  - sp23-midterm2/sp23-midterm2-q04
+  - wi24-final-pt2/wi24-final-pt2-q03
+  - wi24-final-pt2/wi24-final-pt2-q04
+
+  # Conditional Independence Problems
+  - sp23-midterm2/sp23-midterm2-q06
+  - wi22-midterm2/wi22-midterm2-q07 
+  # - wi22-midterm2/wi22-midterm2-q10 

@@ -8,7 +8,6 @@ problems:
   - sp23-midterm2/sp23-midterm2-q01
   - sp23-midterm2/sp23-midterm2-q02
   # - sp23-midterm2/sp23-midterm2-q03
-  - sp23-midterm2/sp23-midterm2-q04
   # - wi22-midterm2/wi22-midterm2-q01 
   # - wi22-midterm2/wi22-midterm2-q02 
   # - wi22-midterm2/wi22-midterm2-q03 
@@ -22,7 +21,7 @@ problems:
   # - wi22-midterm2/wi22-midterm2-q16 
   # - wi22-midterm2/wi22-midterm2-q17 
   # - wi22-midterm2/wi22-midterm2-q18 
-  # - wi24-final-pt2/wi24-final-pt2-q01
+  - wi24-final-pt2/wi24-final-pt2-q01
   - wi24-midterm2/wi24-midterm2-q01
   - wi24-midterm2/wi24-midterm2-q02
   
