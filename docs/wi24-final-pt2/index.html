@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -70,6 +70,151 @@ minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
+Part 2</a>, Problem 1</i></p>
+<p>Consider an experiment where each of <span
+class="math inline">n</span> people selects one piece from their own set
+of 32 chess pieces, uniformly at random. The <strong>result</strong> of
+the experiment is a description of the <strong>colors and types</strong>
+of the pieces each person selected. For example, if <span
+class="math inline">n=3</span>, one possible result is:</p>
+<ul>
+<li><p>Person 1 selected a white knight.</p></li>
+<li><p>Person 2 selected a black queen.</p></li>
+<li><p>Person 3 selected a black pawn.</p></li>
+</ul>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>How many results are possible for this experiment with <span
+class="math inline">n</span> people?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">2^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">16^n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">32^n</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">12^n</span></p>
+<p>To answer this question we must determine how many
+<strong>different</strong> pieces each person can choose. In a complete
+chess set we know that there’s pawns, knights, bishops, rooks, queens,
+and kings. Then we also know that each of these pieces can be aither
+black or white, therefore there’s a totoal of <span class="math inline">6 \cdot 2 = 12</span> different pieces. Notice that
+a complete chess set has 32 total pieces, but there’s multiple
+duplicates in those 32 pieces that is why there’s only 12 different
+pieces on a chess set.</p>
+<p>Now since every person has their own chess set, we know that each of
+them can get any of the 12 pieces, therefore if we do these with one
+person there would be <span class="math inline">12</span> possible
+outcomes, now if we do it with two persons the first one can get any of
+the 12 pieces, but then for each piece that person once can choose
+person 2 can choose from their 12 pieces, which means that in this case
+there’s <span class="math inline">12 \cdot 12</span> outcomes. if we
+keep doing this for n persons we’ll get that there’s <span class="math inline">12 \cdot \dots \cdot 12 = 12^n</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>As <span class="math inline">n</span> becomes large, what fraction of
+n people has selected a black pawn? Choose the answer that’s closest to
+the actual fraction.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 1/32</p></li>
+<li><p><input type="radio" disabled="" /> 1/12</p></li>
+<li><p><input type="radio" disabled="" /> 1/4</p></li>
+<li><p><input type="radio" disabled="" /> 1/2</p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>1/4</p>
+<p>First lets calculate the probability of one person choosing a black
+pawn. Well, we know that the complete chess set has 32 pieces and from
+those 32 there’s 8 black pawns, that gives us a probability of <span class="math inline">\frac{8}{32} = \frac{1}{4}</span>. Now think about
+how we interpret probabilities, for example if I say that the
+probability of getting heads when flipping a coin is <span class="math inline">\frac{1}{2}</span> that just means that if I flip a
+coin undefinetely, I expect to see heads <span class="math inline">\frac{1}{2}</span> of the time. Similarly when we
+say that the probability of choosing a black pawn is <span class="math inline">\frac{1}{4}</span>, that means that if we were to do
+the experiment undefinetely, we expect to choose a black pawn <span class="math inline">\frac{1}{4}</span> of the time, but it does not
+matter if you are doing it undefinetly or if you have an infinete amount
+of people doing it once the experiemnt remains the same, therefore you
+still expect to see the black pawn <span class="math inline">\frac{1}{4}</span> of the time.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>True or False: Having two pawns is <strong>independent</strong> of
+having two white pieces.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> True</p></li>
+<li><p><input type="radio" disabled="" /> False</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>True</p>
+<p>There are multiple ways to check the independence between two events,
+in this case I will use the fact that two events (A and B) are
+indepedent whenever <span class="math inline">P(A|B) = P(A)</span>.</p>
+<p>No lets define A as the event where you choose two pawns, and B as
+the event of choosing two white pieces. Then if we have a white piece
+the probability of that white piece being also a pawn would be <span class="math inline">\frac{8}{16}</span> because there’s 8 white pawns
+and 16 white pieces total, thus if we know that we have another white
+piece the probability for that piece to be also a pawn is <span class="math inline">\frac{8}{16}</span> again, Therefore $P(A|B) = ()^2
+= $. Now the probability of having a pawn is <span class="math inline">\frac{16}{32}</span> because there’s 16 pawns and 32
+total pieces, therefore the probability of doing that twice would be
+<span class="math inline">(\frac{16}{32})^2 = \frac{1}{4}</span>. So we
+conclude that</p>
+<p><span class="math display">\begin{align*}
+P(A|B) = \frac{1}{4} = P(A)
+\end{align*}</span></p>
+<p>which means A and B are independent.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 2</i></p>
 <p>You run the <span class="math inline">k</span>-means clustering
 algorithm on a dataset and it converges to a certain clustering with
@@ -86,13 +231,13 @@ true? <strong>Select all that apply.</strong></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1" class="accordion-collapse collapse"
-aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -115,7 +260,7 @@ will cause the inertia to double.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
+<h2 id="problem-3">Problem 3</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 3</i></p>
 <p>With the help of the Alien from Bayesian Galaxy, Issac built a Little
@@ -223,7 +368,7 @@ a hadron under the following quark conditions:</p>
 <li>the color is <code>blue</code></li>
 </ul>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p>Naive Bayes predicts that, given a <code>up-particle-blue</code>
 quark, the probability a hadron formed is <span
 class="math inline">k</span> times the probability a hadron is not
@@ -237,13 +382,13 @@ is <span class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -314,7 +459,7 @@ should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>What would be the value of <span class="math inline">k</span> if you
 change <code>up</code> quark in the previous collision to
 <code>top</code> quark, but keep everything else the same (i.e.
@@ -327,13 +472,13 @@ change <code>up</code> quark in the previous collision to
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -374,7 +519,7 @@ P(\text{blue}|\text{not formed hadron})\\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 4</i></p>
 <p>In hospital, there are <span class="math inline">10</span> patients
@@ -435,7 +580,7 @@ below:</p>
 <p>Suppose Patient 1, Patient 2, Patient 3, and Patient 4 are actually
 infected by COVID, while all other patients are not infected.</p>
 <p><br></p>
-<h3 id="problem-3.1">Problem 3.1</h3>
+<h3 id="problem-4.1">Problem 4.1</h3>
 <p>Based on the patient’s COVID score, Dr. Issac uses a threshold of
 <span class="math inline">2.5</span> to diagnose COVID. That is, he
 diagnoses all patients with a COVID Score above <span
@@ -447,13 +592,13 @@ block should be filled with an integer.</p>
 <p>TP = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -540,17 +685,17 @@ visualize how many patients have COVID.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
+<h3 id="problem-4.2">Problem 4.2</h3>
 <p>TN = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -636,17 +781,17 @@ predicted to not have COVID.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.3">Problem 3.3</h3>
+<h3 id="problem-4.3">Problem 4.3</h3>
 <p>FP = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_3" class="accordion-collapse collapse"
-aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -732,17 +877,17 @@ not have COVID.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.4">Problem 3.4</h3>
+<h3 id="problem-4.4">Problem 4.4</h3>
 <p>FN = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_4" class="accordion-collapse collapse"
-aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -828,7 +973,7 @@ has COVID.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.5">Problem 3.5</h3>
+<h3 id="problem-4.5">Problem 4.5</h3>
 <p>Dr. Albert is somewhat skeptical about technology, leading him to
 adopt a cautious approach in diagnosing patients. Initially, he sets a
 diagnostic threshold at <span class="math inline">5.5</span>. Patients
@@ -842,13 +987,13 @@ filled with an integer.</p>
 <p>TP = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_5" aria-expanded="true" aria-controls="collapse3_5">
+<h2 class="accordion-header" id="heading4_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_5" aria-expanded="true" aria-controls="collapse4_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_5" class="accordion-collapse collapse"
-aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
+<div id="collapse4_5" class="accordion-collapse collapse"
+aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -938,17 +1083,17 @@ correctly identify <span class="math inline">3</span> of the <span class="math i
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.6">Problem 3.6</h3>
+<h3 id="problem-4.6">Problem 4.6</h3>
 <p>TN = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_6" aria-expanded="true" aria-controls="collapse3_6">
+<h2 class="accordion-header" id="heading4_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_6" aria-expanded="true" aria-controls="collapse4_6">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_6" class="accordion-collapse collapse"
-aria-labelledby="heading3_6" data-bs-parent="#accordionExample">
+<div id="collapse4_6" class="accordion-collapse collapse"
+aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1037,17 +1182,17 @@ correctly identify <span class="math inline">5</span> of the <span class="math i
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.7">Problem 3.7</h3>
+<h3 id="problem-4.7">Problem 4.7</h3>
 <p>FP = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_7">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_7" aria-expanded="true" aria-controls="collapse3_7">
+<h2 class="accordion-header" id="heading4_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_7" aria-expanded="true" aria-controls="collapse4_7">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_7" class="accordion-collapse collapse"
-aria-labelledby="heading3_7" data-bs-parent="#accordionExample">
+<div id="collapse4_7" class="accordion-collapse collapse"
+aria-labelledby="heading4_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1137,17 +1282,17 @@ having COVID when they do not. Making FP = <span class="math inline">1</span>.</
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.8">Problem 3.8</h3>
+<h3 id="problem-4.8">Problem 4.8</h3>
 <p>FN = ?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_8">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_8" aria-expanded="true" aria-controls="collapse3_8">
+<h2 class="accordion-header" id="heading4_8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_8" aria-expanded="true" aria-controls="collapse4_8">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_8" class="accordion-collapse collapse"
-aria-labelledby="heading3_8" data-bs-parent="#accordionExample">
+<div id="collapse4_8" class="accordion-collapse collapse"
+aria-labelledby="heading4_8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1235,7 +1380,7 @@ diagnosis! </i></p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.9">Problem 3.9</h3>
+<h3 id="problem-4.9">Problem 4.9</h3>
 <p>Which Doctor’s diagnoses is better?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Albert</p></li>
@@ -1244,13 +1389,13 @@ diagnosis! </i></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_9">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_9" aria-expanded="true" aria-controls="collapse3_9">
+<h2 class="accordion-header" id="heading4_9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_9" aria-expanded="true" aria-controls="collapse4_9">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_9" class="accordion-collapse collapse"
-aria-labelledby="heading3_9" data-bs-parent="#accordionExample">
+<div id="collapse4_9" class="accordion-collapse collapse"
+aria-labelledby="heading4_9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
