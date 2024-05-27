@@ -32,17 +32,18 @@ To get a rough sense of the format of the exam, you can see this [**past exam PD
 
 ## 📊 Topics
 
-In scope for the Spring 2024 Midterm Exam:
+In scope for the Spring 2024 Final Exam:
 
 - [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
 - [Simple Linear Regression](simple-linear-regression/index.html)
 - [Multiple Linear Regression and the Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
 - [Dimensions of Matrix-Vector Products (taken from DSC 140A)](https://dsc140a.com/practice/tags/object%20type.html)
 - [Gradient Descent and Convexity](gradient-descent-convexity/index.html)
-- [Clustering](clustering/index.html)
 - [Foundations of Probability](foundations-of-probability/index.html)
 - [Conditional Probability](conditional-probability/index.html)
 - [Combinatorics](combinatorics/index.html)
+
+<!-- - [Clustering](clustering/index.html) -->
 
 <!-- Topics not in scope for the Midterm Exam, but in scope for the Final Exam: -->
 
