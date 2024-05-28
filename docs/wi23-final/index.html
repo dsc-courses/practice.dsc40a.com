@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Winter 2023 Final Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Winter 2023 Final Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Gal Mishne</p>
+<p>This exam was administered in person. Students had <strong>180
+minutes</strong> to take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><strong>Empirical risk minimization</strong></p>
+<p>For the loss functions below, find <span
+class="math inline">h^*</span> which minimizes the corresponding
+empirical risk with respect to the data <span class="math inline">y_1 =
+-3, y_2 = 2, y_3 = 2, y_4 = -2</span>, <span class="math inline">y_5 =
+-6</span> .</p>
+<div class="responsebox">
+<p>3.2in This question was based on Final Winter 2021 Part 1 problem
+2.</p>
+</div>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>[4 points] The <strong><span
+class="math inline">\alpha</span>-absolute</strong> loss is defined as
+follows: <span class="math display">L_{\alpha-\text{abs} }(h, y) = |h -
+(y-\alpha) |.</span></p>
+<p>Use <span class="math inline">\alpha=3</span>. Bonus [2 points]: What
+is the empirical risk <span class="math inline">R_{\alpha-\text{abs}}
+(h^*)</span>?</p>
+<div class="responsebox">
+<p>3in This is equivalent to the absolute loss on the same dataset
+shifted by <span class="math inline">\alpha</span>. Therefore the
+optimal solution that minimizes this loss is the median shifted by <span
+class="math inline">-\alpha</span>.</p>
+<p><span class="math inline">h^*=-2-3=-5</span>.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+[4 points] The <strong><span
+class="math inline">\beta</span>-zero-one</strong> loss is defined as
+follows: $$
+<span class="math display">\begin{aligned}
+                L_{\beta -01}(h,y) = \begin{cases}
+                    0,&amp; \text{$h = y\mathbf{\beta} $},\\
+                    1,&amp; \text{$h \neq y\mathbf{\beta} $}.
+                \end{cases}
+            
+\end{aligned}</span>
+<p>$$</p>
+<p>Use <span class="math inline">\beta=2</span>. Hint: plot the
+empirical risk function for <span class="math inline">y\in[-6,
+3]</span>.</p>
+<p>Bonus [2 points]: What is the empirical risk <span
+class="math inline">R_{\beta- 01} (h^*)</span>?</p>
+<div class="responsebox">
+<p>3.2in This is equivalent to the absolute loss on the same dataset
+scaled by <span class="math inline">\beta</span>. Therefore the optimal
+solution that minimizes this loss is the mode scaled by <span
+class="math inline">\beta</span>.</p>
+<p><span class="math inline">h^*=2*2=4</span>.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><strong>Convexity</strong>[4 points]</p>
+Let <span class="math inline">f(x):\mathbb{R}\to\mathbb{R}</span> be a
+convex function. <span class="math inline">f(x)</span> is not
+necessarily differentiable. Use Jensen’s inequality (definition of
+convexity) to prove the following: $$
+<span class="math display">\begin{aligned}
+            f(1)+f(3)\geq 2f(2).
+        
+\end{aligned}</span>
+<p>$$</p>
+<div class="responsebox">
+<p>3in This is based on the review question we did in class, with <span
+class="math inline">x_1=1,x_2=2,x_3=3</span>.</p>
+<p>Jensen’s inequality: <span
+class="math display">f(tx_{1}+(1-t)x_{2})\leq
+tf(x_{1})+(1-t)f(x_{2})</span> Let <span
+class="math inline">x_1=1</span>, <span
+class="math inline">x_2=3</span>, then for <span
+class="math inline">t=0.5, x=tx_{1}+(1-t)x_{2}=2</span>. Therefore <span
+class="math display">f(x)=f(2) \leq 0.5 (f(x_{1})+f(x_{2})=0.5
+(f(1)+f(3))</span> <span class="math display">2f(2) \leq
+f(1)+f(3)</span></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><strong>Gradient Descent</strong></p>
+Let <span class="math inline">(x,y)</span> be a sample where <span
+class="math inline">x</span> is the feature and <span
+class="math inline">y</span> denotes the class. Consider the following
+loss function, known as Hinge loss, for a predictor <span
+class="math inline">z</span> of <span class="math inline">y</span>: $$
+<span class="math display">\begin{aligned}
+        L(z)=\max(0,1-yz).
+    
+\end{aligned}</span>
+<p>$$ For all the following questions assume <span
+class="math inline">y=1</span>.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>[2 points] Plot <span class="math inline">L(z)</span>.</p>
+<div class="responsebox">
+<p>3in Intercept at (0,1)with slope of -1 until (1,0) where it plateaus
+to zero.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+Consider the following smoothed version of Hinge loss. $$
+<span class="math display">\begin{aligned}
+    L_s(z)=\begin{cases}
+    0 &amp; \text{ if } z\geq 1\\
+    \frac12(1-z)^2 &amp; \text{ if } 0&lt;z&lt; 1\\
+    0.5-z &amp; \text{ if } z\leq 0
+    \end{cases}.
+    
+\end{aligned}</span>
+<p>$$</p>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>[1 points] Is the global minima of <span
+class="math inline">L_s(z)</span> unique?</p>
+<div class="responsebox">
+<p>2.5in The minima is not unique since the minimum value is 0 and any
+<span class="math inline">z\geq 1</span> achieves L(z)=0.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>[4 points] Perform two steps of gradient descent with step size <span
+class="math inline">\alpha=1</span> for <span
+class="math inline">L_s(z)</span> starting from the point <span
+class="math inline">z_0=-0.5</span>.</p>
+<div class="responsebox">
+<p>3.5in</p>
+<p>For <span class="math inline">x_0=-0.5</span> we are in the linear
+part of the function and <span class="math inline">L(z)=0.5-z</span>,
+therefore <span class="math inline">L&#39;(z)=-1</span>. The update is
+then <span class="math display">x_1=x_0 - \alpha
+L&#39;(z_0)=-0.5+1=0.5</span></p>
+<p>For <span class="math inline">x_0=0.5</span> we are in the quadratic
+part of the function and <span
+class="math inline">L(z)=0.5(1-z)^2</span>, therefore <span
+class="math inline">L&#39;(z)=-(1-z)</span>. The update is then <span
+class="math display">x_2=x_1 - \alpha
+L&#39;(z_1)=0.5+(1-0.5)=1</span></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><strong>Regression</strong></p>
+<p>Reggie and Essie are given a dataset of real features <span
+class="math inline">x_i \in \mathbb{R}</span> and observations <span
+class="math inline">y_i</span>. Essie proposes the following linear
+prediction rule: <span class="math display">H_1(\alpha_0,\alpha_1) =
+\alpha_0 + \alpha_1 x_i.</span> and Reggie proposes to use <span
+class="math inline">v_i=(x_i)^2</span> and the prediction rule <span
+class="math display">H_2(\gamma_0,\gamma_1) = \gamma_0 + \gamma_1
+v_i.</span></p>
+<div class="responsebox">
+<p>3.2in This question was based on midterm question 2b and homework 4
+problem 3.</p>
+</div>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>[3 points] Give an example of a dataset <span
+class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> for which minimum
+MSE<span class="math inline">(H_2) &lt;</span> minimum MSE<span
+class="math inline">(H_1)</span>. Explain.</p>
+<div class="responsebox">
+<p>3in</p>
+<p>Example: If the datapoints follow a quadratic form <span
+class="math inline">y_i=x_i^2 \; \forall i</span>, then the <span
+class="math inline">H_2</span> prediction rule will achieve a zero error
+while <span class="math inline">H_1&gt;0</span> since the data do not
+follow a linear form.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>[3 points] Give an example of a dataset <span
+class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> for which minimum
+MSE<span class="math inline">(H_2) =</span> minimum MSE<span
+class="math inline">(H_1)</span>. Explain.</p>
+<div class="responsebox">
+<p>3in</p>
+<p>Example 1: If the response variables are constant <span
+class="math inline">y_i=c \; \forall i</span>, then for both prediciton
+rules by setting <span class="math inline">\alpha_0=\gamma_0=c</span>
+and <span class="math inline">\alpha_1=\gamma_1=0</span>, both
+predictors will achieve MSE=0.</p>
+<p>Example 2: when every single value of the features <span
+class="math inline">x_i</span> and <span class="math inline">x^2_
+i</span> coincide in the dataset (this occurs when <span
+class="math inline">x = 0</span> or <span class="math inline">x =
+1</span>), the parameters of both prediction rules will be the same, as
+will the MSE.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>[4 points]</p>
+<p>A new feature <span class="math inline">z</span> has been added to
+the dataset.</p>
+<p>Essie proposes a linear regression model using two predictor
+variables <span class="math inline">x,z</span> as <span
+class="math display">H_3(w_0,w_1,w_2) = w_0 + w_1 x_i +w_2
+z_i.</span></p>
+<p>Explain if the following statement is True or False (prove or provide
+counter-example).</p>
+<p>Reggie claims that having more features will lead to a smaller error,
+therefore the following prediction rule will give a smaller MSE: <span
+class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0
++ \alpha_1 x_i +\alpha_2 z_i + \alpha_3 (2x_i-z_i)</span></p>
+<div class="responsebox">
+<p>3in <span class="math inline">H_4</span> can be rewritten as <span
+class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0
++ (\alpha_1+2\alpha_3) x_i +(\alpha_2 - \alpha_3)z_i</span> By setting
+<span class="math inline">\tilde{\alpha}_1=\alpha_1+2\alpha_3</span> and
+<span class="math inline">\tilde{\alpha_2}= \alpha_2 - \alpha_3</span>
+then</p>
+<p><span class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) =
+H_4(\alpha_0,\tilde{\alpha}_1,\tilde{\alpha}_2) = \alpha_0 +
+\tilde{\alpha_1} x_i +\tilde{\alpha}_2 z_i</span></p>
+<p>Thus <span class="math inline">H_4</span> and <span
+class="math inline">H_3</span> have the same normal equations and
+therefore the same minimum MSE.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p><strong>k-means Clustering</strong></p>
+<p>Look at the following picture representing where the data are in a 2
+dimensional space. We want to use k-means to cluster them into 3 groups.
+The cross shapes represent positions of the initial centroids (that are
+not data points).</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>[3 points] Which of the following facts are true about the cluster
+assignment during the first iteration, as determined by these initial
+centroids (circle all answers that are correct)? Explain your
+answer.</p>
+<div class="center">
+<figure>
+<img src="pics/K-means.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><p>Exactly one cluster contains 11 data points.</p></li>
+<li><p>Exactly two clusters contain 11 data points.</p></li>
+<li><p>Exactly one cluster contains at least 12 data points.</p></li>
+<li><p>Exactly two clusters contain at least 12 data points.</p></li>
+<li><p>None of the above.</p></li>
+</ol>
+<div class="responsebox">
+<p>2.6in The top cluster will contain 13 points. The left cluster will
+contain 10 points. The bottom right cluster will contain 12 points
+(including the outlier since it is closer to the bottom cross than to
+the left one). Therefore D is correct.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>[3 points] The cross shapes represent positions of the initial
+centroids (that are not data points) before the first iteration. Now the
+algorithm is run for one iteration, where the centroids have been
+adjusted.</p>
+<p>We are now starting the second iteration. Which of the following
+facts are true about the cluster assignment during the <em>second</em>
+iteration (circle all answers that are correct)? Explain your
+answer.</p>
+<ol type="1">
+<li><p>Exactly one cluster contains 11 data points.</p></li>
+<li><p>Exactly two clusters contain 11 data points.</p></li>
+<li><p>Exactly one cluster contains at least 12 data points.</p></li>
+<li><p>Exactly two clusters contain at least 12 data points.</p></li>
+<li><p>None of the above.</p></li>
+</ol>
+<div class="responsebox">
+<p>2.4in The top cluster will contain 13 points. The left cluster will
+contain 11 points (the outlier has now moved to this cluster since it
+will be closer to its centroid). The bottom right cluster will contain
+11 points. Therefore B and C are correct.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>[2 points] Compare the loss after the end of the second iteration to
+the loss at the end of the firs iteration. Which of the following facts
+are true (circle all answers that are correct)?</p>
+<ol type="1">
+<li><p>The loss at the end of the second iteration is lower.</p></li>
+<li><p>The loss doesn’t decrease since there are actually 4 clusters in
+the data but we are using k-means with <span
+class="math inline">k=3</span>.</p></li>
+<li><p>The loss doesn’t decrease since there are actually 5 clusters in
+the data but we are using k-means with <span
+class="math inline">k=3</span>.</p></li>
+<li><p>The loss doesn’t decrease since there is an outlier that does not
+belong to any cluster.</p></li>
+<li><p>The loss at the end of the second iteration is the same as at the
+end of the first iteration.</p></li>
+</ol>
+<div class="responsebox">
+<p>2.4in The loss at each iteration of k-means is non-increasing.
+Specifically, at the end of the second iteration the outlier having
+moved from the bottom right cluster to the left cluster will have
+decreased the loss.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p><strong>Probability</strong></p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>[1 point]</p>
+<figure>
+<img src="venn.jpg" style="width:60.0%" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p>In the above figure <span class="math inline">S</span> is the sample
+space. Two events are denoted by two circles: <span
+class="math inline">A</span> (Red + Blue) and <span
+class="math inline">B</span> (Green + Blue). Which area denotes the
+event <span class="math inline">\bar{A}\cap\bar{B}</span>?</p>
+<ol type="1">
+<li><p>Orange stripes</p></li>
+<li><p>Red stripes</p></li>
+<li><p>Green stripes</p></li>
+<li><p>Blue stripes</p></li>
+</ol>
+<div class="responsebox">
+<p>4in Orange stripes. <span class="math inline">\bar{A}</span> is green
+and orange <span class="math inline">\bar{A}</span> is red and orange
+Therefore <span class="math inline">\bar{A}\cap\bar{B}</span> is orange
+stripes.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>[4 points] Use law of total probability to prove De Morgan’s law:
+<span class="math inline">P(\bar{A}\cap\bar{B})=1-P(A\cup B)</span>. You
+may use the figure above to visualize the statement but the proof has to
+use law of total probability to be considered for points.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="responsebox">
+<p>6in <span class="math display">P(A\cup B)=P({A}) + P({B}) - P(A\cap
+B)=</span> <span class="math display">=P({A}) + P(A\cap B)+(\bar{A}\cap
+B) - P(A\cap B)=</span> <span class="math display">=P({A}) +
+P(\bar{A}\cap B) =</span> <span class="math display">=1-P(\bar{A})+
+P(\bar{A}\cap B) =</span> <span class="math display">=1-P(\bar{A}\cap
+B)-P(\bar{A}\cap \bar{B}) + P(\bar{A}\cap B) =</span> <span
+class="math display">1-P(\bar{A}\cap\bar{B})</span></p>
+<p>Therefore <span class="math inline">P(\bar{A}\cap\bar{B})=1-P(A\cup
+B)</span>.</p>
+<p>Note this is similar to the review quesiton solved in class in week
+10.</p>
+</div>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p><strong>Probability and Counting</strong></p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>[4 points] There is one box of bolts that contains some long and some
+short bolts. A manager is unable to open the box at present, so she asks
+her employees what is the composition of the box. One employee says that
+it contains 60 long bolts and 40 short bolts. Another says that it
+contains 10 long bolts and 20 short bolts. Unable to reconcile these
+opinions, the manager decides that each of the employees is correct with
+probability 1/2. Let <span class="math inline">B_1</span> be the event
+that the box contains 60 long and 40 short bolts, and let <span
+class="math inline">B_2</span> be the event that the box contains 10
+long and 20 short bolts. What is the probability that the first bolt
+selected is long?</p>
+<div class="responsebox">
+<p>3.3in <span class="math display">P(B_1)=P(B_2)=0.5.</span> <span
+class="math display">P(long|B_1) = 0.6</span> <span
+class="math display">P(long|B_2) = 1/3</span></p>
+<p><span
+class="math display">P(long)=P(long|B_1)*P(B_1)+P(long|B_2)*P(B_2)
+= 0.5*0.6+0.5*1/3=7/15</span></p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>[3 points] How many ways can one arrange the letters A,B,C,D,E such
+that A,B,C are together (in any order)?</p>
+<div class="responsebox">
+<p>4in 3*2*1 for the different ways to arrange D, E and the sub-sequence
+of A,B,C 3*2*1 for arranging A,B,C within the subsequence</p>
+<p>Overall 3!*3!</p>
+<p>This is similar to homework 6 problem 3.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>[4 points] Two chess players A and B play a series of chess matches
+against each other until one of them wins 3 matches. Every match ends
+when one of the players wins against the other that is the game does not
+end in draw/tie. For example, the series ends when the outcomes of the
+1st 4 games are: A wins, A wins, B wins, A wins. In how many ways can
+the series be won?</p>
+<div class="responsebox">
+<p>4in Series ends when the last game in the series is the third win by
+either player. Overall there can at least 3 games and at most up to 5
+games (including) before either player wins 3 games.Let’s assume player
+A wins, and multiply the options by 2 to count for player B winning.
+Therefore</p>
+<ul>
+<li><p>For 3 games - there is a single option.</p></li>
+<li><p>For 4 games, the last game is player A win, therefore the 3
+preceding have C(3,2) options for player A winning 2 of the
+games.</p></li>
+<li><p>For 5 games, the last game is player A win, therefore the 4
+preceding have C(4,2) options for player A winning 2 of the
+games.</p></li>
+</ul>
+<p>Overall 2*(1+C(3,2)+C(4,2))</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>[<strong>Bayes theorem</strong>]</p>
+<p>1% of the population have a certain genetic defect.</p>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>[4 points] A test has been developed such that 90% of administered
+tests accurately detect the gene (true positives). What needs to be the
+false positive probability (administered test are positive though the
+patient doesn’t have a genetic defect) so that the posterior probability
+(a patient having the genetic defect given a positive result) is
+90%?</p>
+<div class="responsebox">
+<p>3.4in</p>
+<ul>
+<li><p>Hypothesis: patient has the gene, <span class="math inline">P(H)
+= 0.01</span></p></li>
+<li><p>Evidence: patient got a positive test result</p></li>
+<li><p>True positive: Probability of positive test result if someone has
+the gene <span class="math inline">P(E|H)=0.9</span></p></li>
+<li><p>False positive: Probability of positive test result if someone
+doesn’t have the gene, denote <span class="math inline">P(E|\bar{H}) =
+p</span></p></li>
+</ul>
+<p><span class="math display">\begin{aligned}
+P(H|E)  &amp;= \frac{ P(E|H)P(H)}{P(E)} \\
+&amp;=\frac{ P(E|H)P(H)}{P(E|H)P(H)+ P(E|\bar{H})P(\bar{H})}\\
+&amp;=\frac{0.9 * 0.01}{0.9 * 0.01 + p * 0.99} =0.9
+\end{aligned}</span></p>
+<p>Rearranging the terms <span class="math display">\begin{aligned}
+0.9 * 0.01 &amp; = 0.9*(0.9 * 0.01 + p * 0.99)\\
+0.1 * 0.9 * 0.01 &amp; = 0.9* p * 0.99 \\
+p =P(E|\bar{H}) &amp;=\frac{0.1*0.01}{0.99}\approx0.001
+\end{aligned}</span></p>
+<p>The probability of a false positive (positive result for someone who
+doesn’t have the gene) needs to be 0.001.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>[4 points] A test has been developed such that 1% of administered
+tests are positive when the patient doesn’t have the gene (false
+positives). What needs to be the true positive probability so that the
+posterior probability (probability a patient having the genetic defect
+given a positive result) is 50%?</p>
+<div class="responsebox">
+<p>3.8in</p>
+<ul>
+<li><p>Hypothesis: patient has the gene, <span class="math inline">P(H)
+= 0.01</span></p></li>
+<li><p>True positive: Probability of positive test result if someone has
+the gene, denote <span class="math inline">P(E|H)=p</span></p></li>
+<li><p>False positive: Probability of positive test result if someone
+doesn’t have the gene, denote <span class="math inline">P(E|\bar{H}) =
+0.01</span></p></li>
+</ul>
+<p><span class="math display">\begin{aligned}
+P(H|E)  &amp;= \frac{ P(E|H)P(H)}{P(E|H)P(H)+ P(E|\bar{H})P(\bar{H})}\\
+&amp;=\frac{p * 0.01}{p * 0.01 + 0.01 * 0.99} \\
+&amp;=\frac{p}{p  + 0.99} =0.5
+\end{aligned}</span></p>
+<p>Rearranging the terms <span class="math display">\begin{aligned}
+p  &amp; = 0.5*(p  + 0.99)\\
+0.5 * p  &amp; = 0.5*  0.99 \\
+p =P(E|{H}) &amp;=0.99
+\end{aligned}</span></p>
+<p>The probability of a true positive needs to be 0.99.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>[4 points] 1% of the population have a certain genetic defect. 1% of
+administered tests are positive when the patient doesn’t have the gene
+(false positives). Show that there is no true positive probability such
+that the probability of a patient having the genetic defect given a
+positive result (the posterior) can be 90%. (Hint: remember a
+probability <span class="math inline">p</span> needs to fulfill <span
+class="math inline">0\leq p \leq 1</span>.)</p>
+<div class="responsebox">
+<p>4in</p>
+<ul>
+<li><p>Hypothesis: patient has the gene, <span class="math inline">P(H)
+= 0.01</span></p></li>
+<li><p>True positive: Probability of positive test result if someone has
+the gene, denote <span class="math inline">P(E|H)=p</span></p></li>
+<li><p>False positive: Probability of positive test result if someone
+doesn’t have the gene, denote <span class="math inline">P(E|\bar{H}) =
+0.01</span></p></li>
+</ul>
+<p>Let’s try solving as before: <span
+class="math display">\begin{aligned}
+P(H|E)  &amp;=\frac{ P(E|H)P(H)}{P(E|H)P(H)+ P(E|\bar{H})P(\bar{H})}\\
+&amp;=\frac{p * 0.01}{p * 0.01 + 0.01 * 0.99} \\
+&amp;=\frac{p}{p  + 0.99} =0.9
+\end{aligned}</span></p>
+<p>Rearranging the terms <span class="math display">\begin{aligned}
+p  &amp; = 0.9*(p  + 0.99)\\
+0.1 * p  &amp; = 0.9*  0.99 \\
+p =P(E|{H}) &amp;= \frac{0.99 * 0.9}{0.1} = 8.91 &gt; 1
+\end{aligned}</span></p>
+<p>Given the rate of false positives, we cannot find a true positive
+rate such that the posterior is 0.9.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p><strong>Naive Bayes Classifier</strong> In the following "Symptoms"
+dataset, the task is to diagnose whether a person is sick. We use a
+representation based on four features per subject to describe an
+individual person. These features are "running nose", "coughing", and
+"fever", each of which can take the value true (‘+’) or false (‘–’).</p>
+<figure id="fig:my_label">
+<img src="Q5a" style="width:40.0%" alt="Symptoms dataset" />
+<figcaption aria-hidden="true">Symptoms dataset</figcaption>
+</figure>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>[4 points] What is the predicted class for a person with running nose
+but no coughing, and no fever? Use Naive Bayes classifier.</p>
+<div class="responsebox">
+<p>3.5in We have to compare <span class="math display">\begin{aligned}
+    p_+=P(N,\bar C,\bar F|+)P(+)\quad \text{and}\quad p_-=P(N,\bar
+C,\bar F|-)P(-).
+\end{aligned}</span> <span class="math display">\begin{aligned}
+    &amp;P(+)=\frac35 \quad P(-)=\frac25\quad P(N,\bar C,\bar
+F|+)=P(N|+)P(\bar C|+)P(\bar F|+)=\frac23\times
+\frac13\times\frac13=\frac{2}{27}\\
+    &amp;P(N,\bar C,\bar F|-)=P(N|-)P(\bar C|-)P(\bar F|-)=\frac12\times
+\frac12\times 1=\frac{1}{4}.
+\end{aligned}</span> Then, <span class="math display">\begin{aligned}
+    p_+=\frac35\times\frac{2}{27}=\frac{2}{45}\quad
+p_-=\frac25\times\frac{1}{4}=\frac{1}{10}&gt;p_+
+\end{aligned}</span> So predicted class is Healthy(-).</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>[1 point] What is the predicted class for a person with running nose,
+and fever but no coughing? Use Naive Bayes classifier.</p>
+<div class="responsebox">
+<p>2 in</p>
+<p>Since <span class="math inline">P(F|-)=0</span>, <span
+class="math inline">P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=0</span>
+whereas <span class="math inline">P(F|+)=2/3</span>. So <span
+class="math inline">p_+&gt;p_-</span>. So predicted class is
+Sick(+).</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>[3 points] To deal with cases of unseen feature, we used “smoothing"
+in class. If we use the”smoothing" method discussed in class, then what
+is the probability of a person having running nose, and fever but no
+coughing if that person was diagnosed “healthy"?</p>
+<div class="responsebox">
+3 in $$
+<span class="math display">\begin{aligned}
+          P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=\frac24\times
+\frac24\times \frac14=\frac{1}{16}.
+     
+\end{aligned}</span>
+<p>$$</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>[2 points] In part (a), what are the odds of a person being “sick"
+who has running nose but no coughing, and no fever?</p>
+<div class="responsebox">
+2 in Probability of being sick who has running nose but no coughing, and
+no fever, $$
+<span class="math display">\begin{aligned}
+         P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar
+F)}=\frac{\frac{2}{45}}{\frac{1}{5}}=\frac29.
+     
+\end{aligned}</span>
+<span class="math display"> </span>
+<span class="math display">\begin{aligned}
+            \text{Odds of being sick}=\frac{P(+|N,\bar C,\bar
+F)}{1-P(+|N,\bar C,\bar F)}=\frac27.
+        
+\end{aligned}</span>
+<p>$$</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<h3 id="problem-9.5">Problem 9.5</h3>
+[2 points] Say someone fit a logistic regression model to a dataset
+containing <span class="math inline">n</span> points <span
+class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where
+<span class="math inline">x_i</span>s are features and <span
+class="math inline">y_i\in\{-1,+1\}</span> are labels. The estimated
+parameters are <span class="math inline">w_0,~w_1</span>, that is, given
+feature <span class="math inline">x</span>, the predicted probability of
+belonging to class <span class="math inline">y=+1</span> is $$
+<span class="math display">\begin{aligned}
+        P(y=+1|x)=\frac{1}{1+\exp(-w_0-w_1x)}.
+    
+\end{aligned}</span>
+<p>$$ Interpret the meaning of <span
+class="math inline">w_1=1</span>.</p>
+<div class="responsebox">
+<p>1.5 in If <span class="math inline">x</span> is increased by <span
+class="math inline">1</span>, then the odd of <span
+class="math inline">y=+1</span> increases <span
+class="math inline">\exp(1)=2.718</span> times.</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_5" aria-expanded="true" aria-controls="collapse9_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_5" class="accordion-collapse collapse"
+aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
