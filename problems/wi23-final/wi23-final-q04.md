@@ -16,7 +16,7 @@ which minimum MSE$(H_2) <$ minimum MSE$(H_1)$. Explain.
 
 # BEGIN SOLUTION
 Example: If the datapoints follow a quadratic form
-$y_i=x_i^2 \; \forall i$, then the $H_2$ prediction rule will achieve a
+$y_i=x_i^2$ for all $i$, then the $H_2$ prediction rule will achieve a
 zero error while $H_1>0$ since the data do not follow a linear form.
 
 # END SOLUTION
@@ -31,7 +31,7 @@ which minimum MSE$(H_2) =$ minimum MSE$(H_1)$. Explain.
 
 # BEGIN SOLUTION
 
-Example 1: If the response variables are constant $y_i=c \; \forall i$,
+Example 1: If the response variables are constant $y_i=c$ for all $i$,
 then for both prediciton rules by setting $\alpha_0=\gamma_0=c$ and
 $\alpha_1=\gamma_1=0$, both predictors will achieve MSE=0.
 
@@ -50,7 +50,7 @@ A new feature $z$ has been added to the dataset.
 Essie proposes a linear regression model using two predictor variables
 $x,z$ as $$H_3(w_0,w_1,w_2) = w_0 + w_1 x_i +w_2 z_i.$$
 
-Explain if the following statement is True or False (prove or provide
+Explain if the following statement is **True or False** (prove or provide
 counter-example).
 
 Reggie claims that having more features will lead to a smaller error,

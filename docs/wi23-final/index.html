@@ -287,7 +287,6 @@ quadratic part of the function (<span class="math inline">L_s(z)=0.5(1-z)^2</spa
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p><strong>Regression</strong></p>
 <!-- Regression Question -->
 <p>Reggie and Essie are given a dataset of real features <span
 class="math inline">x_i \in \mathbb{R}</span> and observations <span
@@ -297,24 +296,12 @@ prediction rule: <span class="math display">H_1(\alpha_0,\alpha_1) =
 class="math inline">v_i=(x_i)^2</span> and the prediction rule <span
 class="math display">H_2(\gamma_0,\gamma_1) = \gamma_0 + \gamma_1
 v_i.</span></p>
-<div class="responsebox">
-<p>3.2in This question was based on midterm question 2b and homework 4
-problem 3.</p>
-</div>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>[3 points] Give an example of a dataset <span
+<p>Give an example of a dataset <span
 class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> for which minimum
 MSE<span class="math inline">(H_2) &lt;</span> minimum MSE<span
 class="math inline">(H_1)</span>. Explain.</p>
-<div class="responsebox">
-<p>3in</p>
-<p>Example: If the datapoints follow a quadratic form <span
-class="math inline">y_i=x_i^2 \; \forall i</span>, then the <span
-class="math inline">H_2</span> prediction rule will achieve a zero error
-while <span class="math inline">H_1&gt;0</span> since the data do not
-follow a linear form.</p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_1">
@@ -328,30 +315,19 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>Example: If the datapoints follow a quadratic form <span class="math inline">y_i=x_i^2</span> for all <span class="math inline">i</span>, then the <span class="math inline">H_2</span> prediction rule will achieve a zero error
+while <span class="math inline">H_1&gt;0</span> since the data do not
+follow a linear form.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>[3 points] Give an example of a dataset <span
+<p>Give an example of a dataset <span
 class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> for which minimum
 MSE<span class="math inline">(H_2) =</span> minimum MSE<span
 class="math inline">(H_1)</span>. Explain.</p>
-<div class="responsebox">
-<p>3in</p>
-<p>Example 1: If the response variables are constant <span
-class="math inline">y_i=c \; \forall i</span>, then for both prediciton
-rules by setting <span class="math inline">\alpha_0=\gamma_0=c</span>
-and <span class="math inline">\alpha_1=\gamma_1=0</span>, both
-predictors will achieve MSE=0.</p>
-<p>Example 2: when every single value of the features <span
-class="math inline">x_i</span> and <span class="math inline">x^2_
-i</span> coincide in the dataset (this occurs when <span
-class="math inline">x = 0</span> or <span class="math inline">x =
-1</span>), the parameters of both prediction rules will be the same, as
-will the MSE.</p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_2">
@@ -365,39 +341,31 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>Example 1: If the response variables are constant <span class="math inline">y_i=c</span> for all <span class="math inline">i</span>, then for both prediciton rules by setting
+<span class="math inline">\alpha_0=\gamma_0=c</span> and <span class="math inline">\alpha_1=\gamma_1=0</span>, both predictors will
+achieve MSE=0.</p>
+<p>Example 2: when every single value of the features <span class="math inline">x_i</span> and <span class="math inline">x^2_
+i</span> coincide in the dataset (this occurs when <span class="math inline">x = 0</span> or <span class="math inline">x =
+1</span>), the parameters of both prediction rules will be the same, as
+will the MSE.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
-<p>[4 points]</p>
 <p>A new feature <span class="math inline">z</span> has been added to
 the dataset.</p>
 <p>Essie proposes a linear regression model using two predictor
 variables <span class="math inline">x,z</span> as <span
 class="math display">H_3(w_0,w_1,w_2) = w_0 + w_1 x_i +w_2
 z_i.</span></p>
-<p>Explain if the following statement is True or False (prove or provide
-counter-example).</p>
+<p>Explain if the following statement is <strong>True or False</strong>
+(prove or provide counter-example).</p>
 <p>Reggie claims that having more features will lead to a smaller error,
 therefore the following prediction rule will give a smaller MSE: <span
 class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0
 + \alpha_1 x_i +\alpha_2 z_i + \alpha_3 (2x_i-z_i)</span></p>
-<div class="responsebox">
-<p>3in <span class="math inline">H_4</span> can be rewritten as <span
-class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0
-+ (\alpha_1+2\alpha_3) x_i +(\alpha_2 - \alpha_3)z_i</span> By setting
-<span class="math inline">\tilde{\alpha}_1=\alpha_1+2\alpha_3</span> and
-<span class="math inline">\tilde{\alpha_2}= \alpha_2 - \alpha_3</span>
-then</p>
-<p><span class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) =
-H_4(\alpha_0,\tilde{\alpha}_1,\tilde{\alpha}_2) = \alpha_0 +
-\tilde{\alpha_1} x_i +\tilde{\alpha}_2 z_i</span></p>
-<p>Thus <span class="math inline">H_4</span> and <span
-class="math inline">H_3</span> have the same normal equations and
-therefore the same minimum MSE.</p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_3">
@@ -411,6 +379,16 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">H_4</span> can be rewritten as <span class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0
++ (\alpha_1+2\alpha_3) x_i +(\alpha_2 - \alpha_3)z_i</span> By setting
+<span class="math inline">\tilde{\alpha}_1=\alpha_1+2\alpha_3</span> and
+<span class="math inline">\tilde{\alpha_2}= \alpha_2 - \alpha_3</span>
+then</p>
+<p><span class="math display">H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) =
+H_4(\alpha_0,\tilde{\alpha}_1,\tilde{\alpha}_2) = \alpha_0 +
+\tilde{\alpha_1} x_i +\tilde{\alpha}_2 z_i</span></p>
+<p>Thus <span class="math inline">H_4</span> and <span class="math inline">H_3</span> have the same normal equations and
+therefore the same minimum MSE.</p>
 </div>
 </div>
 </div>
