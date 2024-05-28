@@ -70,11 +70,11 @@ minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <!-- Empirical Risk Minimization Problem -->
-<p>For the loss functions below, find <span
-class="math inline">h^*</span> which minimizes the corresponding
-empirical risk with respect to the data <span class="math inline">y_1 =
--3, y_2 = 2, y_3 = 2, y_4 = -2</span>, <span class="math inline">y_5 =
--6</span> .</p>
+<p>For each of the loss functions below, <strong>find <span
+class="math inline">h^*</span></strong> which minimizes the
+corresponding empirical risk with respect to the data <span
+class="math inline">y_1 = -3, y_2 = 2, y_3 = 2, y_4 = -2</span>, <span
+class="math inline">y_5 = -6</span> .</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>The <strong><span class="math inline">\alpha</span>-absolute</strong>
@@ -97,10 +97,10 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">h^*=-2-3=-5</span></p>
 <p>This is equivalent to the absolute loss on the same dataset shifted
 by <span class="math inline">\alpha</span>. Therefore the optimal
-solution that minimizes this loss is the median shifted by <span class="math inline">-\alpha</span>.</p>
-<p><span class="math inline">h^*=-2-3=-5</span>.</p>
+solution that minimizes this loss is the median (-2) shifted by <span class="math inline">-\alpha</span> (-3).</p>
 </div>
 </div>
 </div>
@@ -108,7 +108,7 @@ solution that minimizes this loss is the median shifted by <span class="math inl
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
 The <strong><span class="math inline">\beta</span>-zero-one</strong>
-loss is defined as follows: $$
+loss is defined as follows:
 <span class="math display">\begin{aligned}
                 L_{\beta -01}(h,y) = \begin{cases}
                     0,&amp; \text{$h = y\mathbf{\beta} $},\\
@@ -116,7 +116,6 @@ loss is defined as follows: $$
                 \end{cases}
             
 \end{aligned}</span>
-<p>$$</p>
 <p>Use <span class="math inline">\beta=2</span>. Hint: plot the
 empirical risk function for <span class="math inline">y\in[-6,
 3]</span>.</p>
@@ -134,10 +133,10 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><span class="math inline">h^*=2 \cdot 2=4</span>.</p>
 <p>This is equivalent to the absolute loss on the same dataset scaled by
 <span class="math inline">\beta</span>. Therefore the optimal solution
 that minimizes this loss is the mode scaled by <span class="math inline">\beta</span>.</p>
-<p><span class="math inline">h^*=2*2=4</span>.</p>
 </div>
 </div>
 </div>

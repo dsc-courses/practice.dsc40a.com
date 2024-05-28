@@ -2,7 +2,7 @@
 
 <!-- Empirical Risk Minimization Problem -->
 
-For the loss functions below, find $h^*$ which minimizes the
+For each of the loss functions below, **find $h^*$** which minimizes the
 corresponding empirical risk with respect to the data
 $y_1 = -3, y_2 = 2, y_3 = 2, y_4 = -2$, $y_5 = -6$ .
 
@@ -18,11 +18,12 @@ $R_{\alpha-\text{abs}} (h^*)$? -->
 
 # BEGIN SOLUTION
 
+$h^*=-2-3=-5$
+
 This is equivalent to the absolute loss on the same dataset shifted
 by $\alpha$. Therefore the optimal solution that minimizes this loss is
-the median shifted by $-\alpha$.
+the median (-2) shifted by $-\alpha$ (-3).
 
-$h^*=-2-3=-5$.
 
 # END SOLUTION
 
@@ -31,13 +32,13 @@ $h^*=-2-3=-5$.
 # BEGIN SUBPROB
 
 The **$\beta$-zero-one** loss is defined as follows:
-$$\begin{aligned}
+\begin{aligned}
                 L_{\beta -01}(h,y) = \begin{cases}
                     0,& \text{$h = y\mathbf{\beta} $},\\
                     1,& \text{$h \neq y\mathbf{\beta} $}.
                 \end{cases}
             
-\end{aligned}$$
+\end{aligned}
 
 Use $\beta=2$. Hint: plot the empirical risk function for $y\in[-6, 3]$.
 
@@ -45,11 +46,11 @@ Use $\beta=2$. Hint: plot the empirical risk function for $y\in[-6, 3]$.
 
 # BEGIN SOLUTION
 
- This is equivalent to the absolute loss on the same dataset scaled
+$h^*=2 \cdot 2=4$.
+
+This is equivalent to the absolute loss on the same dataset scaled
 by $\beta$. Therefore the optimal solution that minimizes this loss is
 the mode scaled by $\beta$.
-
-$h^*=2*2=4$.
 
 # END SOLUTION
 
