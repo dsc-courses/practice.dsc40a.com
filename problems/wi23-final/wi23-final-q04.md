@@ -2,6 +2,8 @@
 
 **Regression**
 
+<!-- Regression Question -->
+
 Reggie and Essie are given a dataset of real features
 $x_i \in \mathbb{R}$ and observations $y_i$. Essie proposes the
 following linear prediction rule:
