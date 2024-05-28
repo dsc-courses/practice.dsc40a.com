@@ -2,7 +2,9 @@
 
 <!-- Empirical Risk Minimization Problem -->
 
-For each of the loss functions below, **find $h^*$** which minimizes the
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 1</i>
+
+For each of the loss functions below, **find the constant prediction $h^*$** which minimizes the
 corresponding empirical risk with respect to the data
 $y_1 = -3, y_2 = 2, y_3 = 2, y_4 = -2$, $y_5 = -6$ .
 

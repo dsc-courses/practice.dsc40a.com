@@ -2,6 +2,8 @@
 
 <!-- **Naive Bayes Classifier** -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 9</i>
+
 In the following \"Symptoms\" dataset, the 
 task is to diagnose whether a person is sick. We use a representation
 based on four features per subject to describe an individual person.

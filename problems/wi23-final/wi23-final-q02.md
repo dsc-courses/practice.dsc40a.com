@@ -2,6 +2,8 @@
 
 <!-- Convexity Problem -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 2</i>
+
 Let $f(x):\mathbb{R}\to\mathbb{R}$ be a convex function. $f(x)$ is not
 necessarily differentiable. Use the definition of
 convexity to prove the following: \begin{aligned}

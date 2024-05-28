@@ -2,6 +2,8 @@
 
 <!-- **Probability and Counting** -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 7</i>
+
 # BEGIN SUBPROB
 
 There is one box of bolts that contains some long and some

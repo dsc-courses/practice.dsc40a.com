@@ -2,6 +2,8 @@
 
 <!-- \[**Bayes theorem**\] -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 8</i>
+
 Let's say $1\%$ of the population has a certain genetic defect.
 
 # BEGIN SUBPROB

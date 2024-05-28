@@ -7,6 +7,8 @@ problems:
    # Bayes Theorem
   - sp23-final-pt2/sp23-final-pt2-q03
   - sp23-midterm2/sp23-midterm2-q04
+  - wi23-final/wi23-final-q07
+  - wi23-final/wi23-final-q08
   # - wi24-final-pt2/wi24-final-pt2-q04 Accuracy Problem
 
   # Conditional Independence Problems
@@ -17,6 +19,8 @@ problems:
   # Naive Bayes
   - sp23-midterm2/sp23-midterm2-q05
   - sp23-final-pt2/sp23-final-pt2-q05
+  - wi23-final/wi23-final-q09
   - wi24-final-pt2/wi24-final-pt2-q03
+
   # - wi22-midterm2/wi22-midterm2-q14 
   # - wi22-midterm2/wi22-midterm2-q15 

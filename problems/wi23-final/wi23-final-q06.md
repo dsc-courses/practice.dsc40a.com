@@ -2,6 +2,8 @@
 
 <!-- **Probability** -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 6</i>
+
 # BEGIN SUBPROB
 
 <center><img src="../assets/images/wi23-final/venn2.png" width="500"></center>

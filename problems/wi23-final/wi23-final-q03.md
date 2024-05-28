@@ -2,6 +2,8 @@
 
 <!-- **Gradient Descent** Problem -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 3</i>
+
 Let $(x,y)$ be a sample where $x$ is the feature and $y$ denotes the
 class. Consider the following loss function, known as Hinge loss, for a
 predictor $z$ of $y$: \begin{aligned}

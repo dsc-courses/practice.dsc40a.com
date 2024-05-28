@@ -2,6 +2,8 @@
 
 <!-- **k-means Clustering** -->
 
+<i>Source: [Winter 2023 Final](../wi23-final/index.html), Problem 5</i>
+
 Look at the following picture representing where the data are in a 2
 dimensional space. We want to use k-means to cluster them into 3 groups.
 The cross shapes represent positions of the initial centroids (that are
