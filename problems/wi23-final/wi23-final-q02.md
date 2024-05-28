@@ -3,22 +3,24 @@
 <!-- Convexity Problem -->
 
 Let $f(x):\mathbb{R}\to\mathbb{R}$ be a convex function. $f(x)$ is not
-necessarily differentiable. Use Jensen's inequality (definition of
-convexity) to prove the following: $$\begin{aligned}
-            f(1)+f(3)\geq 2f(2).
-        
-\end{aligned}$$
+necessarily differentiable. Use the definition of
+convexity to prove the following: \begin{aligned}
+            2f(2) \leq f(1)+f(3)
+\end{aligned}
 
 # BEGIN SOLUTION
 
-This is based on the review question we did in class, with
-$x_1=1,x_2=2,x_3=3$.
+Here is the definition of convexity:
 
-Jensen's inequality:
-$$f(tx_{1}+(1-t)x_{2})\leq tf(x_{1})+(1-t)f(x_{2})$$ Let $x_1=1$,
-$x_2=3$, then for $t=0.5, x=tx_{1}+(1-t)x_{2}=2$. Therefore
-$$f(x)=f(2) \leq 0.5 (f(x_{1})+f(x_{2})=0.5 (f(1)+f(3))$$
-$$2f(2) \leq f(1)+f(3)$$
+$$f(tx_{1}+(1-t)x_{2})\leq tf(x_{1})+(1-t)f(x_{2})$$ 
+
+Since $f(x)$ is a convex function, we know that this inequality is satisfied for all choices of $x_1$ and $x_2$ on the real number line and all choices of $t \in [0, 1]$. This problem boils down to finding a choice of $x_1$, $x_2$, and $t$ to morph the definition of convexity into our desired inequality.
+
+One such successful combination is $x_1=1$, $x_2=3$, and $t=0.5$. This makes $tx_{1}+(1-t)x_{2}=0.5\cdot 1 + (1 - 0.5)\cdot 3=2$. Therefore:
+$$f(tx_{1}+(1-t)x_{2})=f(2) \leq 0.5f(x_{1})+f(x_{2})=0.5 (f(1)+f(3))$$
+$$2f(2) \leq f(1)+f(3)$$.
+
+The strategy for these variable choices boils down to trying to make the left side of the definition of convexity "look more" like the left side of our desired inequality, and trying to make the right side of the definition of convexity "look more" like the right side of our desired inequality.
 
 # END SOLUTION
 

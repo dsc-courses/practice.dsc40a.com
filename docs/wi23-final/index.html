@@ -147,13 +147,11 @@ that minimizes this loss is the mode scaled by <span class="math inline">\beta</
 <!-- Convexity Problem -->
 Let <span class="math inline">f(x):\mathbb{R}\to\mathbb{R}</span> be a
 convex function. <span class="math inline">f(x)</span> is not
-necessarily differentiable. Use Jensen’s inequality (definition of
-convexity) to prove the following: $$
+necessarily differentiable. Use the definition of convexity to prove the
+following:
 <span class="math display">\begin{aligned}
-            f(1)+f(3)\geq 2f(2).
-        
+            2f(2) \leq f(1)+f(3)
 \end{aligned}</span>
-<p>$$</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2">
@@ -167,11 +165,23 @@ aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>This is based on the review question we did in class, with <span class="math inline">x_1=1,x_2=2,x_3=3</span>.</p>
-<p>Jensen’s inequality: <span class="math display">f(tx_{1}+(1-t)x_{2})\leq
-tf(x_{1})+(1-t)f(x_{2})</span> Let <span class="math inline">x_1=1</span>, <span class="math inline">x_2=3</span>, then for <span class="math inline">t=0.5, x=tx_{1}+(1-t)x_{2}=2</span>. Therefore <span class="math display">f(x)=f(2) \leq 0.5 (f(x_{1})+f(x_{2})=0.5
-(f(1)+f(3))</span> <span class="math display">2f(2) \leq
-f(1)+f(3)</span></p>
+<p>Here is the definition of convexity:</p>
+<p><span class="math display">f(tx_{1}+(1-t)x_{2})\leq
+tf(x_{1})+(1-t)f(x_{2})</span></p>
+<p>Since <span class="math inline">f(x)</span> is a convex function, we
+know that this inequality is satisfied for all choices of <span class="math inline">x_1</span> and <span class="math inline">x_2</span>
+on the real number line and all choices of <span class="math inline">t
+\in [0, 1]</span>. This problem boils down to finding a choice of <span class="math inline">x_1</span>, <span class="math inline">x_2</span>,
+and <span class="math inline">t</span> to morph the definition of
+convexity into our desired inequality.</p>
+<p>One such successful combination is <span class="math inline">x_1=1</span>, <span class="math inline">x_2=3</span>, and <span class="math inline">t=0.5</span>. This makes <span class="math inline">tx_{1}+(1-t)x_{2}=0.5\cdot 1 + (1 - 0.5)\cdot
+3=2</span>. Therefore: <span class="math display">f(tx_{1}+(1-t)x_{2})=f(2) \leq
+0.5f(x_{1})+f(x_{2})=0.5 (f(1)+f(3))</span> <span class="math display">2f(2) \leq f(1)+f(3)</span>.</p>
+<p>The strategy for these variable choices boils down to trying to make
+the left side of the definition of convexity “look more” like the left
+side of our desired inequality, and trying to make the right side of the
+definition of convexity “look more” like the right side of our desired
+inequality.</p>
 </div>
 </div>
 </div>
