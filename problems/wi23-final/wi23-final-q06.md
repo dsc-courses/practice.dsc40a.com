@@ -34,7 +34,7 @@ Therefore $\bar{A}\cap\bar{B}$ is the area with orange stripes.
 
 Use the law of total probability to prove De Morgan's law:
 $P(\bar{A}\cap\bar{B})=1-P(A\cup B)$. You may use the figure above to
-visualize the statement, but your proof must use law of total
+visualize the statement, but your proof must use the law of total
 probability.
 
 # BEGIN SOLUTION

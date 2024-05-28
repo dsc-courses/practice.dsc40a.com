@@ -514,6 +514,153 @@ constant.</p></li>
 <p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
+<!-- Convexity Problem -->
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 2</i></p>
+Let <span class="math inline">f(x):\mathbb{R}\to\mathbb{R}</span> be a
+convex function. <span class="math inline">f(x)</span> is not
+necessarily differentiable. Use the definition of convexity to prove the
+following:
+<span class="math display">\begin{aligned}
+            2f(2) \leq f(1)+f(3)
+\end{aligned}</span>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6" class="accordion-collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Here is the definition of convexity:</p>
+<p><span class="math display">f(tx_{1}+(1-t)x_{2})\leq
+tf(x_{1})+(1-t)f(x_{2})</span></p>
+<p>Since <span class="math inline">f(x)</span> is a convex function, we
+know that this inequality is satisfied for all choices of <span class="math inline">x_1</span> and <span class="math inline">x_2</span>
+on the real number line and all choices of <span class="math inline">t
+\in [0, 1]</span>. This problem boils down to finding a choice of <span class="math inline">x_1</span>, <span class="math inline">x_2</span>,
+and <span class="math inline">t</span> to morph the definition of
+convexity into our desired inequality.</p>
+<p>One such successful combination is <span class="math inline">x_1=1</span>, <span class="math inline">x_2=3</span>, and <span class="math inline">t=0.5</span>. This makes <span class="math inline">tx_{1}+(1-t)x_{2}=0.5\cdot 1 + (1 - 0.5)\cdot
+3=2</span>. Therefore: <span class="math display">f(tx_{1}+(1-t)x_{2})=f(2) \leq
+0.5f(x_{1})+f(x_{2})=0.5 (f(1)+f(3))</span> <span class="math display">2f(2) \leq f(1)+f(3)</span>.</p>
+<p>The strategy for these variable choices boils down to trying to make
+the left side of the definition of convexity “look more” like the left
+side of our desired inequality, and trying to make the right side of the
+definition of convexity “look more” like the right side of our desired
+inequality.</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<!-- **Gradient Descent** Problem -->
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 3</i></p>
+Let <span class="math inline">(x,y)</span> be a sample where <span
+class="math inline">x</span> is the feature and <span
+class="math inline">y</span> denotes the class. Consider the following
+loss function, known as Hinge loss, for a predictor <span
+class="math inline">z</span> of <span class="math inline">y</span>:
+<span class="math display">\begin{aligned}
+        L(z)=\max(0,1-yz).
+    
+\end{aligned}</span>
+<p><strong>For all the following questions assume <span
+class="math inline">y=1</span>.</strong></p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>Plot <span class="math inline">L(z)</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<center><img src="../assets/images/wi23-final/maxgraph.jpg" width="500"/></center>
+<p>The plot should have a y-intercept at <span class="math inline">(0,1)</span> with slope of <span class="math inline">-1</span> until <span class="math inline">(1,0)</span>, where it plateaus to zero.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+Consider the following smoothed version of Hinge loss.
+<span class="math display">\begin{aligned}
+    L_s(z)=\begin{cases}
+    0 &amp; \text{ if } z\geq 1\\
+    \frac12(1-z)^2 &amp; \text{ if } 0&lt;z&lt; 1\\
+    0.5-z &amp; \text{ if } z\leq 0
+    \end{cases}.
+    
+\end{aligned}</span>
+<p>Is the global minima of <span class="math inline">L_s(z)</span>
+unique?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The minima is not unique since the minimum value is 0 and any <span class="math inline">z\geq 1</span> achieves <span class="math inline">L(z)=0</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>Perform two steps of gradient descent with step size <span
+class="math inline">\alpha=1</span> for <span
+class="math inline">L_s(z)</span> starting from the point <span
+class="math inline">z_0=-0.5</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>For <span class="math inline">z_0=-0.5</span>, our point lies on the
+linear part of the function (<span class="math inline">L_s(z)=0.5-z</span>), therefore <span class="math inline">{L'}_s(z)=-1</span>. Our update is then: <span class="math display">z_1=z_0 - \alpha
+{L'}_s(z_0)=-0.5+1=0.5</span></p>
+<p>For <span class="math inline">z_1=0.5</span>, our point lies on the
+quadratic part of the function (<span class="math inline">L_s(z)=0.5(1-z)^2</span>), therefore <span class="math inline">{L'}_s(z)=-(1-z)</span>. The update is then
+<span class="math display">z_2=z_1 - \alpha
+{L'}_s(z_1)=0.5+(1-0.5)=1</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../wi24-final-pt1/index.html">Winter 2024 Final
 Part 1</a>, Problem 2</i></p>
 <p>You and a friend independently perform gradient descent on the same
@@ -533,13 +680,13 @@ otherwise.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse"
-aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -567,7 +714,7 @@ guaranteed to end up in the same spot.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-7">Problem 7</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../wi24-midterm1/index.html">Winter 2024 Midterm
 1</a>, Problem 3</i></p>
 <p>The hyperbolic cosine function is defined as <span
@@ -575,18 +722,18 @@ class="math inline">cosh(x) = \frac{1}{2}(e^{x} + e^{-x})</span>. In
 this problem, we aim to prove the convexity of this function using power
 series expansion.</p>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p>Prove that <span class="math inline">f(x) = x^{n}</span> is convex if
 n is an even integer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -604,7 +751,7 @@ test.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p>Power series expansion is a powerful tool to analyze complicated
 functions. In power series expansion, a function can be written as an
 infinite sum of polynomial functions with certain coefficients. For
@@ -625,13 +772,13 @@ Equation [\[exp_expand\]](#exp_expand){reference-type="ref"
 reference="exp_expand"}: --></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -646,19 +793,19 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-7.3">Problem 7.3</h3>
+<h3 id="problem-9.3">Problem 9.3</h3>
 <p>Using the conclusions you reached in part (a) and part (b), prove
 that <span class="math inline">cosh(x) = \frac{1}{2}(e^{x} +
 e^{-x})</span> is convex.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse"
-aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

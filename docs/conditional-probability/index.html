@@ -322,6 +322,320 @@ P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<!-- **Probability and Counting** -->
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 7</i></p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>There is one box of bolts that contains some long and some short
+bolts. A manager is unable to open the box at present, so she asks her
+employees what is the composition of the box. One employee says that it
+contains 60 long bolts and 40 short bolts. Another says that it contains
+10 long bolts and 20 short bolts. Unable to reconcile these opinions,
+the manager decides that each of the employees is correct with
+probability <span class="math inline">\frac{1}{2}</span>. Let <span
+class="math inline">B_1</span> be the event that the box contains 60
+long and 40 short bolts, and let <span class="math inline">B_2</span> be
+the event that the box contains 10 long and 20 short bolts. What is the
+probability that the first bolt selected is long?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">P(\text{long}) = \frac{7}{15}</span></p>
+<p>We are given that: <span class="math display">P(B_1)=P(B_2)=\frac{1}{2}</span> <span class="math display">P(\text{long}|B_1) = \frac{60}{60 + 40} =
+\frac{3}{5}</span> <span class="math display">P(\text{long}|B_2) =
+\frac{10}{10 + 20} = \frac{1}{3}</span></p>
+<p>Using the law of total probability:</p>
+<p><span class="math display">P(\text{long})=P(\text{long}|B_1) \cdot
+P(B_1)+P(\text{long}|B_2) \cdot P(B_2)
+= \frac{3}{5} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{2} =
+\frac{7}{15}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>How many ways can one arrange the letters <span
+class="math inline">A</span>, <span class="math inline">B</span>, <span
+class="math inline">C</span>, <span class="math inline">D</span>, <span
+class="math inline">E</span> such that <span
+class="math inline">A</span>, <span class="math inline">B</span>, and
+<span class="math inline">C</span> are all together (in any order)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are <span class="math inline">3! \cdot 3!</span>
+permutations.</p>
+<p>We can treat the group of <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> (in
+any order) as a single block of letters which we can call <span class="math inline">X</span>. This will gurantee that any permutation we
+find will satisfy our condition of having <span class="math inline">A</span>, <span class="math inline">B</span>, and
+<span class="math inline">C</span> being all together.</p>
+<p>Our problem now has <span class="math inline">3! = 6</span>
+permutations of our new letter bank: <span class="math inline">X</span>,
+<span class="math inline">D</span>, and <span class="math inline">E</span>.</p>
+<p><span class="math display">XDE</span> <span class="math display">XED</span> <span class="math display">DXE</span>
+<span class="math display">EXD</span> <span class="math display">DEX</span> <span class="math display">EDX</span></p>
+<p>Let’s call these 6 permutations “structures”. For each of these
+structures, there are <span class="math inline">3! = 6</span>
+rearrangements of the letters <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span>
+<em>inside</em> of <span class="math inline">X</span>.</p>
+<p>So, with <span class="math inline">3!</span> different arrangements
+of <span class="math inline">D</span>, <span class="math inline">E</span> and our block of letters (<span class="math inline">X</span>), and with each of those arrangements
+individually having <span class="math inline">3!</span> ways to re-order
+the group of <span class="math inline">ABC</span>, the overall number of
+permutations of <span class="math inline">ABCDE</span> where <span class="math inline">ABC</span> are all together, in any order, is <span class="math inline">3! \cdot 3!</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Two chess players <span class="math inline">A</span> and <span
+class="math inline">B</span> play a series of chess matches against each
+other until one of them wins 3 matches. Every match ends when one of the
+players <em>wins</em> against the other, that is, the game does not ever
+end in draw/tie. For example, one series of matches ends when the
+outcomes of the first four games are: <span class="math inline">A</span>
+wins, <span class="math inline">A</span> wins, <span
+class="math inline">B</span> wins, <span class="math inline">A</span>
+wins. In how many different ways can the series occur?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are <span class="math inline">20</span> ways the series can be
+won.</p>
+<p>The series ends when the last game in the series is the third win by
+either player. Overall, there must be at least 3 games to end a series
+(all wins by the same player) and at most 5 games to end a series (each
+player has two wins, and then a final win by either player) before
+either player wins 3 games. Let’s assume player <span class="math inline">A</span> always wins, and then we’ll multiply the
+number of options by two to account for the possibilities where player
+<span class="math inline">B</span> wins instead.</p>
+<p>Breaking it down:</p>
+<ul>
+<li><p>For a series that ends in 3 games - there is a single option (all
+wins by player <span class="math inline">A</span>).</p></li>
+<li><p>For a series that ends in 4 games, we’ve assumed the last game is
+a player <span class="math inline">A</span> win to end the series,
+therefore the 3 preceding games have <span class="math inline">{3
+\choose 2}</span> options for player <span class="math inline">A</span>
+winning 2 of the 3 preceding games.</p></li>
+<li><p>For a series that ends in 5 games, we’ve assumed the last game is
+a player <span class="math inline">A</span> win to end the series,
+therefore the 4 preceding games have <span class="math inline">{4
+\choose 2}</span> options for player <span class="math inline">A</span>
+winning 2 of the 4 preceding games.</p></li>
+</ul>
+<p>Overall, the number of ways the series can occur is: <span class="math inline">2 \cdot (1 + {3 \choose 2} + {4 \choose 2}) =
+20</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<!-- \[**Bayes theorem**\] -->
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 8</i></p>
+<p>Let’s say <span class="math inline">1\%</span> of the population has
+a certain genetic defect.</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>A test has been developed such that <span
+class="math inline">90\%</span> of administered tests accurately detect
+the gene (true positives). What needs to be the false positive rate
+(probability that the administered test is positive even though the
+patient doesn’t have a genetic defect) such that the probability that a
+patient having the genetic defect given a positive result is <span
+class="math inline">90\%</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The false positive rate should be <span class="math inline">\approx
+0.001</span> to satisfy this condition.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
+<p>We know:</p>
+<ul>
+<li><p><span class="math inline">P(A) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of a positive test result
+given someone has the genetic defect) can be modeled by <span class="math inline">P(B|A)=0.9</span></p></li>
+<li><p>The false positive rate (probability of positive test result
+given someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = p</span></p></li>
+</ul>
+<p>We want:</p>
+<ul>
+<li>The probability that a patient having the genetic defect given a
+positive result (<span class="math inline">P(A|B)</span>) is <span class="math inline">90\%</span></li>
+</ul>
+<p>Let’s set up a relationship between what we know and what we want by
+using Bayes’ Theorem:</p>
+<p><span class="math display">\begin{aligned}
+P(A|B) &amp;= \frac{ P(B|A)P(A)}{P(B)} \\
+&amp;=\frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
+&amp;=\frac{0.9 \cdot 0.01}{0.9 \cdot 0.01 + p \cdot 0.99} =0.9
+\end{aligned}</span></p>
+<p>Rearranging the terms:</p>
+<p><span class="math display">\begin{aligned}
+0.9 \cdot 0.01 &amp; = 0.9 \cdot (0.9 \cdot 0.01 + p \cdot 0.99)\\
+0.1 \cdot 0.9 \cdot 0.01 &amp; = 0.9 \cdot p \cdot 0.99 \\
+p = P(B|\bar{A}) &amp;=\frac{0.1 \cdot 0.01}{0.99} \approx 0.001
+\end{aligned}</span></p>
+<p>We’ve found that the probability of a false positive (positive result
+for someone who doesn’t have the genetic defect) needs to be <span class="math inline">\approx 0.001</span> to satisfy our condition.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>A test has been developed such that <span
+class="math inline">1\%</span> of administered tests are positive when
+the patient doesn’t have the genetic defect (false positives). What
+needs to be the true positive probability so that the the probability a
+patient has the genetic defect given a positive result is <span
+class="math inline">50\%</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The probability of a true positive needs to be <span class="math inline">0.99</span> to satisfy our condition.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
+<p>We know:</p>
+<ul>
+<li><p><span class="math inline">P(A) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of positive test result if
+someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
+<li><p>The false positive rate (probability of positive test result if
+someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
+</ul>
+<p>We can set up Bayes’ Theorem again to gain more information:</p>
+<p><span class="math display">\begin{aligned}
+P(A|B)  &amp;= \frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
+&amp;=\frac{p \cdot 0.01}{p \cdot 0.01 + 0.01 \cdot 0.99} \\
+&amp;=\frac{p}{p  + 0.99} = 0.5
+\end{aligned}</span></p>
+<p>Rearranging the terms: <span class="math display">\begin{aligned}
+p  &amp; = 0.5 \cdot (p  + 0.99)\\
+0.5 \cdot p  &amp; = 0.5 \cdot  0.99 \\
+p = P(B|{A}) &amp;=0.99
+\end{aligned}</span></p>
+<p>We find that the probability of a true positive needs to be <span class="math inline">0.99</span> to satisfy our condition.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p><span class="math inline">1\%</span> of administered tests are
+positive when the patient doesn’t have the gene (false positives). Show
+that there is no true positive probability such that the probability of
+a patient having the genetic defect given a positive result can be <span
+class="math inline">90\%</span>.</p>
+<!-- (Hint: remember a
+probability $p$ needs to fulfill $0 \leq p \leq 1$.) -->
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
+<p>We know:</p>
+<ul>
+<li><p><span class="math inline">P(A) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of positive test result if
+someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
+<li><p>The false positive rate (probability of positive test result if
+someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
+</ul>
+<p>Let’s try solving as before:</p>
+<p><span class="math display">\begin{aligned}
+P(A|B)  &amp;=\frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
+&amp;=\frac{p \cdot 0.01}{p \cdot 0.01 + 0.01 \cdot 0.99} \\
+&amp;=\frac{p}{p + 0.99} = 0.9
+\end{aligned}</span></p>
+<p>Rearranging the terms: <span class="math display">\begin{aligned}
+p  &amp; = 0.9 \cdot (p  + 0.99)\\
+0.1 \cdot p  &amp; = 0.9 \cdot  0.99 \\
+p = P(B|{A}) &amp;= \frac{0.99 \cdot 0.9}{0.1} = 8.91 &gt; 1
+\end{aligned}</span></p>
+<p>We have found that <span class="math inline">p</span>, a probability
+value, must be greater than 1, which is impossible!</p>
+<p>Given the rate of false positives, we cannot find a true positive
+rate such that the probability of a patient having the genetic defect
+given a positive result is 0.9.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 6</i></p>
 <p>The Avocado Cup is organized into rounds. In each round, players who
@@ -339,7 +653,7 @@ tournament.</p></li>
 round.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-3.1">Problem 3.1</h3>
+<h3 id="problem-5.1">Problem 5.1</h3>
 <p>Which of the following statements is true? <strong>Select all that
 apply.</strong></p>
 <ul class="task-list">
@@ -351,13 +665,13 @@ form a partition of the sample space.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -380,7 +694,7 @@ above.”</p>
 </div>
 </div>
 <p><br> <br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>The events <span class="math inline">A</span> and <span
 class="math inline">B</span> are mutually exclusive, or disjoint. More
 generally, for <strong>any</strong> two disjoint events <span
@@ -391,13 +705,13 @@ class="math inline">P(B)</span> <strong>only</strong>. For this problem
 only, <strong>show your work and justify each step.</strong></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -428,7 +742,7 @@ in green, which is just <span class="math inline">B</span>.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-6">Problem 6</h2>
 <p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm
 2</a>, Problem 7</i></p>
 <p>Recall in the game Stringle, players try to guess a randomly
@@ -463,13 +777,13 @@ conditionally dependent</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+<h2 class="accordion-header" id="heading6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4" class="accordion-collapse collapse"
-aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div id="collapse6" class="accordion-collapse collapse"
+aria-labelledby="heading6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -531,7 +845,7 @@ conditionally dependent given <span class="math inline">C</span>.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-5">Problem 5</h2>
+<h2 id="problem-7">Problem 7</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 5</i></p>
 <p>You have a large historical dataset of all competitors in past years
@@ -564,13 +878,13 @@ winners.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+<h2 class="accordion-header" id="heading7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5" class="accordion-collapse collapse"
-aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div id="collapse7" class="accordion-collapse collapse"
+aria-labelledby="heading7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -585,7 +899,7 @@ lost because of their birthday and level.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-6">Problem 6</h2>
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 5</i></p>
 <p>You’re interested in seeing the Milky Way in the night sky, which you
@@ -709,13 +1023,13 @@ class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse"
-aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -784,7 +1098,207 @@ successful.”</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-7">Problem 7</h2>
+<h2 id="problem-9">Problem 9</h2>
+<!-- **Naive Bayes Classifier** -->
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 9</i></p>
+<p>In the following "Symptoms" dataset, the task is to diagnose whether
+a person is sick. We use a representation based on four features per
+subject to describe an individual person. These features are "running
+nose", "coughing", and "fever", each of which can take the value true
+(‘+’) or false (‘–’).</p>
+<center><img src="../assets/images/wi23-final/symptoms.png" width="500"></center>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>What is the predicted class for a person with running nose but no
+coughing, and no fever: sick, or healthy? Use a Naive Bayes
+classifier.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The predicted class is Healthy(<span class="math inline">-</span>).</p>
+<p>If <span class="math inline">p_+</span> and <span class="math inline">p_-</span> are the numerators of the Naive Bayes
+comparison that represent a Sick(<span class="math inline">+</span>)
+prediction and a Healthy(<span class="math inline">-</span>) prediction,
+respectively, we have to compare: <span class="math display">\begin{aligned}
+    p_+=P(N,\bar C,\bar F|+)P(+)\quad \text{and}\quad p_-=P(N,\bar
+C,\bar F|-)P(-).
+\end{aligned}</span></p>
+<p>We can find: <span class="math display">\begin{aligned}
+    &amp;P(+)=\frac35\\
+    &amp;P(-)=\frac25 \\
+    &amp;P(N,\bar C,\bar F|+)=P(N|+)P(\bar C|+)P(\bar F|+)=\frac23\times
+\frac13\times\frac13=\frac{2}{27}\\
+    &amp;P(N,\bar C,\bar F|-)=P(N|-)P(\bar C|-)P(\bar F|-)=\frac12\times
+\frac12\times 1=\frac{1}{4}.
+\end{aligned}</span></p>
+<p>Then we can build up our comparison: <span class="math display">\begin{aligned}
+    p_+&amp;= P(+)P(N,\bar C,\bar F|+) =
+\frac35\times\frac{2}{27}=\frac{2}{45}\quad \\
+    p_-&amp;= P(-)P(N,\bar C,\bar F|-) =
+\frac25\times\frac{1}{4}=\frac{1}{10}\\
+    p_-&amp;&gt;p_+
+\end{aligned}</span></p>
+<p>So, the predicted class is Healthy(<span class="math inline">-</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>What is the predicted class for a person with a running nose and
+fever, but no coughing? Use a Naive Bayes classifier.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The predicted class is Sick(<span class="math inline">+</span>).</p>
+<p>From the dataset we see <span class="math inline">P(F|-)=0</span>, so
+we know: <span class="math display">P(N,\bar C, F|-)=P(N|-)P(\bar
+C|-)P(F|-)=0</span></p>
+<p>This will make <span class="math inline">p_- = P(N,\bar C, F|-)P(-) =
+0</span></p>
+<p>Contrast this against <span class="math inline">P(F|+),
+P(N|+),</span> and <span class="math inline">P(\bar C|+)</span>, which
+are all nonzero values, making <span class="math inline">P(N,\bar C,
+F|+)</span>, (and therefore <span class="math inline">p_+</span>)
+nonzero.</p>
+<p>So <span class="math inline">p_+&gt;p_-</span>. This means our
+predicted class is Sick(<span class="math inline">+</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>To deal with cases of unseen features, we used “smoothing" in class.
+If we use the”smoothing" method discussed in class, then what is the
+probability of a person having running nose and fever, but no coughing
+if that person was diagnosed “healthy"?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>With smoothing, the result is <span class="math inline">\dfrac{1}{16}</span>.</p>
+<p>To apply smoothing, we add <span class="math inline">1</span> to both
+the numerator and denominator of pesky <span class="math inline">0</span> probabilities. That way, other
+probabilities avoid being multiplied by zero.</p>
+<p><span class="math inline">P(F|-)=0</span> is a zero probability that
+needs to be smoothed. The smoothed version becomes: <span class="math display">P(F|-)= \frac{0}{3} \to \frac{0 + 1}{3 + 1} =
+\frac{1}{4}</span></p>
+<p>We carry on evaluating <span class="math inline">P(N,\bar C,
+F|-)</span>, just as the problem asks.</p>
+<p><span class="math display">\begin{aligned}
+          P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=\frac24\times
+\frac24\times \frac14=\frac{1}{16}.
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>In part (a), what are the <strong>odds</strong> of a person being
+“sick" who has running nose but no coughing, and no fever? <em>(Hint:
+the formula for the odds of an event <span class="math inline">A</span>
+is <span class="math inline">\text{odds}(A) = \frac{P(A)}{1 -
+P(A)}</span>)</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\text{Odds of being
+sick}=\frac27</span></p>
+<p>Using previous information, we have that the probability of a person
+being sick with a running nose but no coughing and no fever is:</p>
+<p><span class="math display">\begin{aligned}
+P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar
+F)}=\frac{\frac{2}{45}}{\frac{1}{5}}=\frac29.
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+\text{Odds of being sick}=\frac{P(+|N,\bar C,\bar F)}{1-P(+|N,\bar
+C,\bar F)}=\frac27.   
+\end{aligned}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-9.5">Problem 9.5</h3>
+<p>Say someone fit a logistic regression model to a dataset containing
+<span class="math inline">n</span> points <span
+class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where
+<span class="math inline">x_i</span>s are features and <span
+class="math inline">y_i\in\{-1,+1\}</span> are labels. The estimated
+parameters are <span class="math inline">w_0,~w_1</span>, that is, given
+feature <span class="math inline">x</span>, the predicted probability of
+belonging to class <span class="math inline">y=+1</span> is</p>
+<p><span class="math display">\begin{aligned}
+        P(y=+1|x)=\frac{1}{1+\exp(-w_0-w_1x)}.
+\end{aligned}</span></p>
+<p>Interpret the meaning of <span class="math inline">w_1=1</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_5" aria-expanded="true" aria-controls="collapse9_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_5" class="accordion-collapse collapse"
+aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>One interpretation is as follows:</p>
+<p>“If <span class="math inline">x</span> is increased by <span class="math inline">1</span>, then the odds of <span class="math inline">y=+1</span> increases by a factor of <span class="math inline">\exp(1)=2.718</span>.”</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 3</i></p>
 <p>With the help of the Alien from Bayesian Galaxy, Issac built a Little
@@ -892,7 +1406,7 @@ a hadron under the following quark conditions:</p>
 <li>the color is <code>blue</code></li>
 </ul>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-10.1">Problem 10.1</h3>
 <p>Naive Bayes predicts that, given a <code>up-particle-blue</code>
 quark, the probability a hadron formed is <span
 class="math inline">k</span> times the probability a hadron is not
@@ -906,13 +1420,13 @@ is <span class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -983,7 +1497,7 @@ should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-10.2">Problem 10.2</h3>
 <p>What would be the value of <span class="math inline">k</span> if you
 change <code>up</code> quark in the previous collision to
 <code>top</code> quark, but keep everything else the same (i.e.
@@ -996,13 +1510,13 @@ change <code>up</code> quark in the previous collision to
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

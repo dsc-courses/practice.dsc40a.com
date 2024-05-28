@@ -102,9 +102,9 @@ In scope for the Spring 2024 Final Exam:
       </td>
     </tr>
     <tr>
-      <th scope="row">Fall 2022</th>
-      <td>Truong Son Hy, Mahdi Soleymani</td>
-      <td><a href='fa22-midterm/index.html'>Midterm</a>
+      <th scope="row">Winter 2023</th>
+      <td>Gal Mishne</td>
+      <td><a href='wi23-final/index.html'>Final</a>
       </td>
     </tr>
     <tr>
@@ -114,15 +114,21 @@ In scope for the Spring 2024 Final Exam:
       </td>
     </tr>
     <tr>
-      <th scope="row">Fall 2021</th>
-      <td>Suraj Rampure</td>
-      <td><a href="fa21-midterm/index.html">Midterm</a><br><a href="fa21-final/index.html">Final</a>
+      <th scope="row">Fall 2022</th>
+      <td>Truong Son Hy, Mahdi Soleymani</td>
+      <td><a href='fa22-midterm/index.html'>Midterm</a>
       </td>
     </tr>
     <tr>
       <th scope="row">Spring 2021</th>
       <td>Janine Tiefenbruck</td>
       <td><a href='sp21-midterm1/index.html'>Midterm 1</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Fall 2021</th>
+      <td>Suraj Rampure</td>
+      <td><a href="fa21-midterm/index.html">Midterm</a><br><a href="fa21-final/index.html">Final</a>
       </td>
     </tr>
   </tbody>

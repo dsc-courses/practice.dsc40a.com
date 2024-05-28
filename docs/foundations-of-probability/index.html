@@ -725,6 +725,86 @@ in green, which is just <span class="math inline">B</span>.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
+<!-- **Probability** -->
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 6</i></p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<center><img src="../assets/images/wi23-final/venn2.png" width="500"></center>
+<p>In the above figure, <span class="math inline">S</span> is the sample
+space. Two events are denoted by two circles: <span
+class="math inline">A</span> (Red + Blue) and <span
+class="math inline">B</span> (Green + Blue). Which area denotes the
+event <span class="math inline">\bar{A}\cap\bar{B}</span>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Orange stripes</p></li>
+<li><p><input type="radio" disabled="" /> Red stripes</p></li>
+<li><p><input type="radio" disabled="" /> Green stripes</p></li>
+<li><p><input type="radio" disabled="" /> Blue stripes</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Orange stripes.</p>
+<p><span class="math inline">\bar{A}</span> is the area with green
+stripes and orange stripes. <span class="math inline">\bar{B}</span> is
+the area with red stripes and orange stripes.</p>
+<p>Therefore <span class="math inline">\bar{A}\cap\bar{B}</span> is the
+area with orange stripes.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>Use the law of total probability to prove De Morgan’s law: <span
+class="math inline">P(\bar{A}\cap\bar{B})=1-P(A\cup B)</span>. You may
+use the figure above to visualize the statement, but your proof must use
+the law of total probability.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can write out the inclusion-exclusion principle. From there, we
+use the law of total probability to split up event <span class="math inline">B</span> as the regions <span class="math inline">A\cap B</span> and <span class="math inline">\bar{A}\cap B</span> and continue from there:</p>
+<p><span class="math display">\begin{align*}
+P(A\cup B)&amp;=P({A}) + P({B}) - P(A\cap B)\\
+&amp;=P({A}) + \left[ P(A\cap B)+P(\bar{A}\cap B) \right]- P(A\cap B)\\
+&amp;=P({A}) + P(\bar{A}\cap B) \\
+&amp;=\left[ 1-P(\bar{A}) \right] + P(\bar{A}\cap B) \\
+&amp;=1- \left[P(\bar{A}\cap B) + P(\bar{A}\cap \bar{B}) \right] +
+P(\bar{A}\cap B)\\
+&amp;=1-P(\bar{A}\cap\bar{B})
+\end{align*}</span></p>
+<p>Therefore <span class="math inline">P(\bar{A}\cap\bar{B})=1-P(A\cup
+B)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 1</i></p>
 <p>Consider an experiment where each of <span
@@ -739,7 +819,7 @@ class="math inline">n=3</span>, one possible result is:</p>
 <li><p>Person 3 selected a black pawn.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-8.1">Problem 8.1</h3>
 <p>How many results are possible for this experiment with <span
 class="math inline">n</span> people?</p>
 <ul class="task-list">
@@ -752,13 +832,13 @@ class="math inline">n</span> people?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -785,7 +865,7 @@ keep doing this for n persons we’ll get that there’s <span class="math inlin
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-8.2">Problem 8.2</h3>
 <p>As <span class="math inline">n</span> becomes large, what fraction of
 n people has selected a black pawn? Choose the answer that’s closest to
 the actual fraction.</p>
@@ -798,13 +878,13 @@ the actual fraction.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -826,7 +906,7 @@ still expect to see the black pawn <span class="math inline">\frac{1}{4}</span> 
 </div>
 </div>
 <p><br> <br></p>
-<h3 id="problem-7.3">Problem 7.3</h3>
+<h3 id="problem-8.3">Problem 8.3</h3>
 <p>True or False: Having two pawns is <strong>independent</strong> of
 having two white pieces.</p>
 <ul class="task-list">
@@ -835,13 +915,13 @@ having two white pieces.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse"
-aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -869,7 +949,7 @@ P(A|B) = \frac{1}{4} = P(A)
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../wi24-midterm2/index.html">Winter 2024 Midterm
 2</a>, Problem 3</i></p>
 <p>Schrödinger’s cat is a famous thought experiment in quantum mechanics
@@ -882,7 +962,7 @@ doesn’t, the cat lives.”</p>
 so a thought experiment. It has never been executed in the real world,
 and no cats have ever been harmed as a result of it.</p>
 <p><br></p>
-<h3 id="problem-8.1">Problem 8.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p>Suppose the cat has <span class="math inline">90 \%</span> of the
 chance to die if the decay happens. The cat also has <span
 class="math inline">10 \%</span> chance to die even if the decay does
@@ -892,13 +972,13 @@ you find the cat dead. What is the probability that the decay
 happened?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse"
-aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -936,7 +1016,7 @@ P(\text{Decay|Dead}) &amp;= \frac{0.9\cdot 0.2}{0.9 \cdot 0.2 + 0.1
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-8.2">Problem 8.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p>Quantum superposition is a mind-bending and counter-intuitive concept
 in physics. In the Schrödinger’s cat scenario, when the box is closed,
 the cat can be <strong>both dead and alive</strong> simultaneously.
@@ -959,13 +1039,13 @@ all that apply:</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1007,7 +1087,7 @@ above, so statement <span class="math inline">5</span> is false.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.3">Problem 8.3</h3>
+<h3 id="problem-9.3">Problem 9.3</h3>
 <p>You’re given the following probabilities:</p>
 <ul>
 <li><p><span class="math inline">P(\text{Cat Dead} \cup \text{Decay}) =
@@ -1025,13 +1105,13 @@ Schrodinger’s cat to be in the superposition state (i.e. both dead and
 alive):</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse"
-aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
