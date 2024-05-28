@@ -912,14 +912,12 @@ a person is sick. We use a representation based on four features per
 subject to describe an individual person. These features are "running
 nose", "coughing", and "fever", each of which can take the value true
 (‘+’) or false (‘–’).</p>
-<figure id="fig:my_label">
-<img src="Q5a" style="width:40.0%" alt="Symptoms dataset" />
-<figcaption aria-hidden="true">Symptoms dataset</figcaption>
-</figure>
+<center><img src="../assets/images/wi23-final/symptoms.png" width="500"></center>
 <p><br></p>
 <h3 id="problem-9.1">Problem 9.1</h3>
 <p>What is the predicted class for a person with running nose but no
-coughing, and no fever? Use Naive Bayes classifier.</p>
+coughing, and no fever: sick, or healthy? Use a Naive Bayes
+classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9_1">
@@ -933,19 +931,30 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>3.5in We have to compare <span class="math display">\begin{aligned}
+<p>The predicted class is Healthy(<span class="math inline">-</span>).</p>
+<p>If <span class="math inline">p_+</span> and <span class="math inline">p_-</span> are the numerators of the Naive Bayes
+comparison that represent a Sick(<span class="math inline">+</span>)
+prediction and a Healthy(<span class="math inline">-</span>) prediction,
+respectively, we have to compare: <span class="math display">\begin{aligned}
     p_+=P(N,\bar C,\bar F|+)P(+)\quad \text{and}\quad p_-=P(N,\bar
 C,\bar F|-)P(-).
-\end{aligned}</span> <span class="math display">\begin{aligned}
-    &amp;P(+)=\frac35 \quad P(-)=\frac25\quad P(N,\bar C,\bar
-F|+)=P(N|+)P(\bar C|+)P(\bar F|+)=\frac23\times
+\end{aligned}</span></p>
+<p>We can find: <span class="math display">\begin{aligned}
+    &amp;P(+)=\frac35\\
+    &amp;P(-)=\frac25 \\
+    &amp;P(N,\bar C,\bar F|+)=P(N|+)P(\bar C|+)P(\bar F|+)=\frac23\times
 \frac13\times\frac13=\frac{2}{27}\\
     &amp;P(N,\bar C,\bar F|-)=P(N|-)P(\bar C|-)P(\bar F|-)=\frac12\times
 \frac12\times 1=\frac{1}{4}.
-\end{aligned}</span> Then, <span class="math display">\begin{aligned}
-    p_+=\frac35\times\frac{2}{27}=\frac{2}{45}\quad
-p_-=\frac25\times\frac{1}{4}=\frac{1}{10}&gt;p_+
-\end{aligned}</span> So predicted class is Healthy(-).</p>
+\end{aligned}</span></p>
+<p>Then we can build up our comparison: <span class="math display">\begin{aligned}
+    p_+&amp;= P(+)P(N,\bar C,\bar F|+) =
+\frac35\times\frac{2}{27}=\frac{2}{45}\quad \\
+    p_-&amp;= P(-)P(N,\bar C,\bar F|-) =
+\frac25\times\frac{1}{4}=\frac{1}{10}\\
+    p_-&amp;&gt;p_+
+\end{aligned}</span></p>
+<p>So, the predicted class is Healthy(<span class="math inline">-</span>).</p>
 </div>
 </div>
 </div>
@@ -953,8 +962,8 @@ p_-=\frac25\times\frac{1}{4}=\frac{1}{10}&gt;p_+
 <p><br></p>
 <p><br></p>
 <h3 id="problem-9.2">Problem 9.2</h3>
-<p>What is the predicted class for a person with running nose, and fever
-but no coughing? Use Naive Bayes classifier.</p>
+<p>What is the predicted class for a person with a running nose and
+fever, but no coughing? Use a Naive Bayes classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9_2">
@@ -968,9 +977,19 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Since <span class="math inline">P(F|-)=0</span>, <span class="math inline">P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=0</span>
-whereas <span class="math inline">P(F|+)=2/3</span>. So <span class="math inline">p_+&gt;p_-</span>. So predicted class is
-Sick(+).</p>
+<p>The predicted class is Sick(<span class="math inline">+</span>).</p>
+<p>From the dataset we see <span class="math inline">P(F|-)=0</span>, so
+we know: <span class="math display">P(N,\bar C, F|-)=P(N|-)P(\bar
+C|-)P(F|-)=0</span></p>
+<p>This will make <span class="math inline">p_- = P(N,\bar C, F|-)P(-) =
+0</span></p>
+<p>Contrast this against <span class="math inline">P(F|+),
+P(N|+),</span> and <span class="math inline">P(\bar C|+)</span>, which
+are all nonzero values, making <span class="math inline">P(N,\bar C,
+F|+)</span>, (and therefore <span class="math inline">p_+</span>)
+nonzero.</p>
+<p>So <span class="math inline">p_+&gt;p_-</span>. This means our
+predicted class is Sick(<span class="math inline">+</span>).</p>
 </div>
 </div>
 </div>
@@ -978,9 +997,9 @@ Sick(+).</p>
 <p><br></p>
 <p><br></p>
 <h3 id="problem-9.3">Problem 9.3</h3>
-<p>To deal with cases of unseen feature, we used “smoothing" in class.
+<p>To deal with cases of unseen features, we used “smoothing" in class.
 If we use the”smoothing" method discussed in class, then what is the
-probability of a person having running nose, and fever but no coughing
+probability of a person having running nose and fever, but no coughing
 if that person was diagnosed “healthy"?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -995,21 +1014,30 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-$$ <span class="math display">
-<span class="math display">\begin{aligned}
+<p>With smoothing, the result is <span class="math inline">\dfrac{1}{16}</span>.</p>
+<p>To apply smoothing, we add <span class="math inline">1</span> to both
+the numerator and denominator of pesky <span class="math inline">0</span> probabilities. That way, other
+probabilities avoid being multiplied by zero.</p>
+<p><span class="math inline">P(F|-)=0</span> is a zero probability that
+needs to be smoothed. The smoothed version becomes: <span class="math display">P(F|-)= \frac{0}{3} \to \frac{0 + 1}{3 + 1} =
+\frac{1}{4}</span></p>
+<p>We carry on evaluating <span class="math inline">P(N,\bar C,
+F|-)</span>, just as the problem asks.</p>
+<p><span class="math display">\begin{aligned}
           P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=\frac24\times
 \frac24\times \frac14=\frac{1}{16}.
-     
-\end{aligned}</span>
-<p></span> <p>$$</p></p>
+\end{aligned}</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-9.4">Problem 9.4</h3>
-<p>In part (a), what are the odds of a person being “sick" who has
-running nose but no coughing, and no fever?</p>
+<p>In part (a), what are the <strong>odds</strong> of a person being
+“sick" who has running nose but no coughing, and no fever? <em>(Hint:
+the formula for the odds of an event <span class="math inline">A</span>
+is <span class="math inline">\text{odds}(A) = \frac{P(A)}{1 -
+P(A)}</span>)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9_4">
@@ -1023,20 +1051,18 @@ aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-Probability of being sick who has running nose but no coughing, and no
-fever, $$ <span class="math display">
-<span class="math display">\begin{aligned}
-         P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar
+<p><span class="math display">\text{Odds of being
+sick}=\frac27</span></p>
+<p>Using previous information, we have that the probability of a person
+being sick with a running nose but no coughing and no fever is:</p>
+<p><span class="math display">\begin{aligned}
+P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar
 F)}=\frac{\frac{2}{45}}{\frac{1}{5}}=\frac29.
-     
-\end{aligned}</span>
-</span> <span class="math display"> </span> <span class="math display">
-<span class="math display">\begin{aligned}
-            \text{Odds of being sick}=\frac{P(+|N,\bar C,\bar
-F)}{1-P(+|N,\bar C,\bar F)}=\frac27.
-        
-\end{aligned}</span>
-<p></span> <p>$$</p></p>
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+\text{Odds of being sick}=\frac{P(+|N,\bar C,\bar F)}{1-P(+|N,\bar
+C,\bar F)}=\frac27.   
+\end{aligned}</span></p>
 </div>
 </div>
 </div>
@@ -1044,20 +1070,18 @@ F)}{1-P(+|N,\bar C,\bar F)}=\frac27.
 <p><br></p>
 <p><br></p>
 <h3 id="problem-9.5">Problem 9.5</h3>
-Say someone fit a logistic regression model to a dataset containing
+<p>Say someone fit a logistic regression model to a dataset containing
 <span class="math inline">n</span> points <span
 class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where
 <span class="math inline">x_i</span>s are features and <span
 class="math inline">y_i\in\{-1,+1\}</span> are labels. The estimated
 parameters are <span class="math inline">w_0,~w_1</span>, that is, given
 feature <span class="math inline">x</span>, the predicted probability of
-belonging to class <span class="math inline">y=+1</span> is $$
-<span class="math display">\begin{aligned}
+belonging to class <span class="math inline">y=+1</span> is</p>
+<p><span class="math display">\begin{aligned}
         P(y=+1|x)=\frac{1}{1+\exp(-w_0-w_1x)}.
-    
-\end{aligned}</span>
-<p>$$ Interpret the meaning of <span
-class="math inline">w_1=1</span>.</p>
+\end{aligned}</span></p>
+<p>Interpret the meaning of <span class="math inline">w_1=1</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9_5">
@@ -1071,7 +1095,8 @@ aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>If <span class="math inline">x</span> is increased by <span class="math inline">1</span>, then the odd of <span class="math inline">y=+1</span> increases <span class="math inline">\exp(1)=2.718</span> times.</p>
+<p>One interpretation is as follows:</p>
+<p>“If <span class="math inline">x</span> is increased by <span class="math inline">1</span>, then the odds of <span class="math inline">y=+1</span> increases by a factor of <span class="math inline">\exp(1)=2.718</span>.”</p>
 </div>
 </div>
 </div>
