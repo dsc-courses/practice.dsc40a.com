@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-**Regression**
-
 <!-- Regression Question -->
 
 Reggie and Essie are given a dataset of real features
@@ -11,25 +9,15 @@ $$H_1(\alpha_0,\alpha_1) = \alpha_0 + \alpha_1 x_i.$$ and Reggie
 proposes to use $v_i=(x_i)^2$ and the prediction rule
 $$H_2(\gamma_0,\gamma_1) = \gamma_0 + \gamma_1 v_i.$$
 
-::: responsebox
-3.2in This question was based on midterm question 2b and homework 4
-problem 3.
-:::
-
 # BEGIN SUBPROB
 
-\[3 points\] Give an example of a dataset $\{(x_i,y_i)\}_{i=1}^n$ for
+Give an example of a dataset $\{(x_i,y_i)\}_{i=1}^n$ for
 which minimum MSE$(H_2) <$ minimum MSE$(H_1)$. Explain.
 
-::: responsebox
-3in
-
+# BEGIN SOLUTION
 Example: If the datapoints follow a quadratic form
 $y_i=x_i^2 \; \forall i$, then the $H_2$ prediction rule will achieve a
 zero error while $H_1>0$ since the data do not follow a linear form.
-:::
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 
@@ -37,11 +25,11 @@ zero error while $H_1>0$ since the data do not follow a linear form.
 
 # BEGIN SUBPROB
 
-\[3 points\] Give an example of a dataset $\{(x_i,y_i)\}_{i=1}^n$ for
+Give an example of a dataset $\{(x_i,y_i)\}_{i=1}^n$ for
 which minimum MSE$(H_2) =$ minimum MSE$(H_1)$. Explain.
 
-::: responsebox
-3in
+
+# BEGIN SOLUTION
 
 Example 1: If the response variables are constant $y_i=c \; \forall i$,
 then for both prediciton rules by setting $\alpha_0=\gamma_0=c$ and
@@ -50,17 +38,12 @@ $\alpha_1=\gamma_1=0$, both predictors will achieve MSE=0.
 Example 2: when every single value of the features $x_i$ and $x^2_
 i$ coincide in the dataset (this occurs when $x = 0$ or $x = 1$), the
 parameters of both prediction rules will be the same, as will the MSE.
-:::
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 
 # END SUBPROB
 
 # BEGIN SUBPROB
-
-\[4 points\]
 
 A new feature $z$ has been added to the dataset.
 
@@ -74,8 +57,9 @@ Reggie claims that having more features will lead to a smaller error,
 therefore the following prediction rule will give a smaller MSE:
 $$H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0 + \alpha_1 x_i +\alpha_2 z_i + \alpha_3 (2x_i-z_i)$$
 
-::: responsebox
-3in $H_4$ can be rewritten as
+# BEGIN SOLUTION
+
+$H_4$ can be rewritten as
 $$H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = \alpha_0 + (\alpha_1+2\alpha_3) x_i +(\alpha_2 - \alpha_3)z_i$$
 By setting $\tilde{\alpha}_1=\alpha_1+2\alpha_3$ and
 $\tilde{\alpha_2}= \alpha_2 - \alpha_3$ then
@@ -84,9 +68,6 @@ $$H_4(\alpha_0,\alpha_1,\alpha_2,\alpha_3) = H_4(\alpha_0,\tilde{\alpha}_1,\tild
 
 Thus $H_4$ and $H_3$ have the same normal equations and therefore the
 same minimum MSE.
-:::
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 

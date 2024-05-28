@@ -193,13 +193,13 @@ Let <span class="math inline">(x,y)</span> be a sample where <span
 class="math inline">x</span> is the feature and <span
 class="math inline">y</span> denotes the class. Consider the following
 loss function, known as Hinge loss, for a predictor <span
-class="math inline">z</span> of <span class="math inline">y</span>: $$
+class="math inline">z</span> of <span class="math inline">y</span>:
 <span class="math display">\begin{aligned}
         L(z)=\max(0,1-yz).
     
 \end{aligned}</span>
-<p>$$ For all the following questions assume <span
-class="math inline">y=1</span>.</p>
+<p><strong>For all the following questions assume <span
+class="math inline">y=1</span>.</strong></p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
 <p>Plot <span class="math inline">L(z)</span>.</p>
@@ -216,15 +216,15 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Intercept at (0,1)with slope of -1 until (1,0) where it plateaus to
-zero.</p>
+<center><img src="../assets/images/wi23-final/maxgraph.jpg" width="500"/></center>
+<p>The plot should have a y-intercept at <span class="math inline">(0,1)</span> with slope of <span class="math inline">-1</span> until <span class="math inline">(1,0)</span>, where it plateaus to zero.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-Consider the following smoothed version of Hinge loss. $$
+Consider the following smoothed version of Hinge loss.
 <span class="math display">\begin{aligned}
     L_s(z)=\begin{cases}
     0 &amp; \text{ if } z\geq 1\\
@@ -233,7 +233,6 @@ Consider the following smoothed version of Hinge loss. $$
     \end{cases}.
     
 \end{aligned}</span>
-<p>$$</p>
 <p>Is the global minima of <span class="math inline">L_s(z)</span>
 unique?</p>
 <div id="accordionExample" class="accordion">
@@ -249,7 +248,7 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The minima is not unique since the minimum value is 0 and any <span class="math inline">z\geq 1</span> achieves L(z)=0.</p>
+<p>The minima is not unique since the minimum value is 0 and any <span class="math inline">z\geq 1</span> achieves <span class="math inline">L(z)=0</span>.</p>
 </div>
 </div>
 </div>
@@ -274,14 +273,13 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>For <span class="math inline">x_0=-0.5</span> we are in the linear
-part of the function and <span class="math inline">L(z)=0.5-z</span>,
-therefore <span class="math inline">L'(z)=-1</span>. The update is
-then <span class="math display">x_1=x_0 - \alpha
-L'(z_0)=-0.5+1=0.5</span></p>
-<p>For <span class="math inline">x_0=0.5</span> we are in the quadratic
-part of the function and <span class="math inline">L(z)=0.5(1-z)^2</span>, therefore <span class="math inline">L'(z)=-(1-z)</span>. The update is then <span class="math display">x_2=x_1 - \alpha
-L'(z_1)=0.5+(1-0.5)=1</span></p>
+<p>For <span class="math inline">z_0=-0.5</span>, our point lies on the
+linear part of the function (<span class="math inline">L_s(z)=0.5-z</span>), therefore <span class="math inline">{L'}_s(z)=-1</span>. Our update is then: <span class="math display">z_1=z_0 - \alpha
+{L'}_s(z_0)=-0.5+1=0.5</span></p>
+<p>For <span class="math inline">z_1=0.5</span>, our point lies on the
+quadratic part of the function (<span class="math inline">L_s(z)=0.5(1-z)^2</span>), therefore <span class="math inline">{L'}_s(z)=-(1-z)</span>. The update is then
+<span class="math display">z_2=z_1 - \alpha
+{L'}_s(z_1)=0.5+(1-0.5)=1</span></p>
 </div>
 </div>
 </div>
