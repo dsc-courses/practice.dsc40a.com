@@ -51,3 +51,6 @@ SP24 Midterm
 - Zoe: Problems 1, 2, and 4 (q01 & q02 & q03 & q05 & q06)
     - COMPLETED
 - Javier: COMPLETED
+
+WI23 Final (NICK)
+COMPLETED
