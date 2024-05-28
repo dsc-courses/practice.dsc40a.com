@@ -740,14 +740,17 @@ winning 2 of the 4 preceding games.</p></li>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
 <!-- \[**Bayes theorem**\] -->
-<p>1% of the population have a certain genetic defect.</p>
+<p>Let’s say <span class="math inline">1\%</span> of the population has
+a certain genetic defect.</p>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
-<p>A test has been developed such that 90% of administered tests
-accurately detect the gene (true positives). What needs to be the false
-positive probability (administered test are positive though the patient
-doesn’t have a genetic defect) so that the posterior probability (a
-patient having the genetic defect given a positive result) is 90%?</p>
+<p>A test has been developed such that <span
+class="math inline">90\%</span> of administered tests accurately detect
+the gene (true positives). What needs to be the false positive rate
+(probability that the administered test is positive even though the
+patient doesn’t have a genetic defect) such that the probability that a
+patient having the genetic defect given a positive result is <span
+class="math inline">90\%</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_1">
@@ -761,39 +764,51 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>The false positive rate should be <span class="math inline">\approx
+0.001</span> to satisfy this condition.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
+<p>We know:</p>
 <ul>
-<li><p>Hypothesis: patient has the gene, <span class="math inline">P(H)
-= 0.01</span></p></li>
-<li><p>Evidence: patient got a positive test result</p></li>
-<li><p>True positive: Probability of positive test result if someone has
-the gene <span class="math inline">P(E|H)=0.9</span></p></li>
-<li><p>False positive: Probability of positive test result if someone
-doesn’t have the gene, denote <span class="math inline">P(E|\bar{H}) =
-p</span></p></li>
+<li><p><span class="math inline">P(A) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of a positive test result
+given someone has the genetic defect) can be modeled by <span class="math inline">P(B|A)=0.9</span></p></li>
+<li><p>The false positive rate (probability of positive test result
+given someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = p</span></p></li>
 </ul>
+<p>We want:</p>
+<ul>
+<li>The probability that a patient having the genetic defect given a
+positive result (<span class="math inline">P(A|B)</span>) is <span class="math inline">90\%</span></li>
+</ul>
+<p>Let’s set up a relationship between what we know and what we want by
+using Bayes’ Theorem:</p>
 <p><span class="math display">\begin{aligned}
-P(H|E)  &amp;= \frac{ P(E|H)P(H)}{P(E)} \\
-&amp;=\frac{ P(E|H)P(H)}{P(E|H)P(H)+ P(E|\bar{H})P(\bar{H})}\\
-&amp;=\frac{0.9 * 0.01}{0.9 * 0.01 + p * 0.99} =0.9
+P(A|B) &amp;= \frac{ P(B|A)P(A)}{P(B)} \\
+&amp;=\frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
+&amp;=\frac{0.9 \cdot 0.01}{0.9 \cdot 0.01 + p \cdot 0.99} =0.9
 \end{aligned}</span></p>
-<p>Rearranging the terms <span class="math display">\begin{aligned}
-0.9 * 0.01 &amp; = 0.9*(0.9 * 0.01 + p * 0.99)\\
-0.1 * 0.9 * 0.01 &amp; = 0.9* p * 0.99 \\
-p =P(E|\bar{H}) &amp;=\frac{0.1*0.01}{0.99}\approx0.001
+<p>Rearranging the terms:</p>
+<p><span class="math display">\begin{aligned}
+0.9 \cdot 0.01 &amp; = 0.9 \cdot (0.9 \cdot 0.01 + p \cdot 0.99)\\
+0.1 \cdot 0.9 \cdot 0.01 &amp; = 0.9 \cdot p \cdot 0.99 \\
+p = P(B|\bar{A}) &amp;=\frac{0.1 \cdot 0.01}{0.99} \approx 0.001
 \end{aligned}</span></p>
-<p>The probability of a false positive (positive result for someone who
-doesn’t have the gene) needs to be 0.001.</p>
+<p>We’ve found that the probability of a false positive (positive result
+for someone who doesn’t have the genetic defect) needs to be <span class="math inline">\approx 0.001</span> to satisfy our condition.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-8.2">Problem 8.2</h3>
-<p>A test has been developed such that 1% of administered tests are
-positive when the patient doesn’t have the gene (false positives). What
-needs to be the true positive probability so that the posterior
-probability (probability a patient having the genetic defect given a
-positive result) is 50%?</p>
+<p>A test has been developed such that <span
+class="math inline">1\%</span> of administered tests are positive when
+the patient doesn’t have the genetic defect (false positives). What
+needs to be the true positive probability so that the the probability a
+patient has the genetic defect given a positive result is <span
+class="math inline">50\%</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_2">
@@ -807,39 +822,43 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>The probability of a true positive needs to be <span class="math inline">0.99</span> to satisfy our condition.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
+<p>We know:</p>
 <ul>
-<li><p>Hypothesis: patient has the gene, <span class="math inline">P(H)
-= 0.01</span></p></li>
-<li><p>True positive: Probability of positive test result if someone has
-the gene, denote <span class="math inline">P(E|H)=p</span></p></li>
-<li><p>False positive: Probability of positive test result if someone
-doesn’t have the gene, denote <span class="math inline">P(E|\bar{H}) =
-0.01</span></p></li>
+<li><p><span class="math inline">P(A) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of positive test result if
+someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
+<li><p>The false positive rate (probability of positive test result if
+someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
 </ul>
+<p>We can set up Bayes’ Theorem again to gain more information:</p>
 <p><span class="math display">\begin{aligned}
-P(H|E)  &amp;= \frac{ P(E|H)P(H)}{P(E|H)P(H)+ P(E|\bar{H})P(\bar{H})}\\
-&amp;=\frac{p * 0.01}{p * 0.01 + 0.01 * 0.99} \\
-&amp;=\frac{p}{p  + 0.99} =0.5
+P(A|B)  &amp;= \frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
+&amp;=\frac{p \cdot 0.01}{p \cdot 0.01 + 0.01 \cdot 0.99} \\
+&amp;=\frac{p}{p  + 0.99} = 0.5
 \end{aligned}</span></p>
-<p>Rearranging the terms <span class="math display">\begin{aligned}
-p  &amp; = 0.5*(p  + 0.99)\\
-0.5 * p  &amp; = 0.5*  0.99 \\
-p =P(E|{H}) &amp;=0.99
+<p>Rearranging the terms: <span class="math display">\begin{aligned}
+p  &amp; = 0.5 \cdot (p  + 0.99)\\
+0.5 \cdot p  &amp; = 0.5 \cdot  0.99 \\
+p = P(B|{A}) &amp;=0.99
 \end{aligned}</span></p>
-<p>The probability of a true positive needs to be 0.99.</p>
+<p>We find that the probability of a true positive needs to be <span class="math inline">0.99</span> to satisfy our condition.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-8.3">Problem 8.3</h3>
-<p>1% of the population have a certain genetic defect. 1% of
-administered tests are positive when the patient doesn’t have the gene
-(false positives). Show that there is no true positive probability such
-that the probability of a patient having the genetic defect given a
-positive result (the posterior) can be 90%. (Hint: remember a
-probability <span class="math inline">p</span> needs to fulfill <span
-class="math inline">0\leq p \leq 1</span>.)</p>
+<p><span class="math inline">1\%</span> of administered tests are
+positive when the patient doesn’t have the gene (false positives). Show
+that there is no true positive probability such that the probability of
+a patient having the genetic defect given a positive result can be <span
+class="math inline">90\%</span>.</p>
+<!-- (Hint: remember a
+probability $p$ needs to fulfill $0 \leq p \leq 1$.) -->
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_3">
@@ -853,27 +872,33 @@ aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
+<p>We know:</p>
 <ul>
-<li><p>Hypothesis: patient has the gene, <span class="math inline">P(H)
-= 0.01</span></p></li>
-<li><p>True positive: Probability of positive test result if someone has
-the gene, denote <span class="math inline">P(E|H)=p</span></p></li>
-<li><p>False positive: Probability of positive test result if someone
-doesn’t have the gene, denote <span class="math inline">P(E|\bar{H}) =
-0.01</span></p></li>
+<li><p><span class="math inline">P(A) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of positive test result if
+someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
+<li><p>The false positive rate (probability of positive test result if
+someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
 </ul>
-<p>Let’s try solving as before: <span class="math display">\begin{aligned}
-P(H|E)  &amp;=\frac{ P(E|H)P(H)}{P(E|H)P(H)+ P(E|\bar{H})P(\bar{H})}\\
-&amp;=\frac{p * 0.01}{p * 0.01 + 0.01 * 0.99} \\
-&amp;=\frac{p}{p  + 0.99} =0.9
+<p>Let’s try solving as before:</p>
+<p><span class="math display">\begin{aligned}
+P(A|B)  &amp;=\frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
+&amp;=\frac{p \cdot 0.01}{p \cdot 0.01 + 0.01 \cdot 0.99} \\
+&amp;=\frac{p}{p + 0.99} = 0.9
 \end{aligned}</span></p>
-<p>Rearranging the terms <span class="math display">\begin{aligned}
-p  &amp; = 0.9*(p  + 0.99)\\
-0.1 * p  &amp; = 0.9*  0.99 \\
-p =P(E|{H}) &amp;= \frac{0.99 * 0.9}{0.1} = 8.91 &gt; 1
+<p>Rearranging the terms: <span class="math display">\begin{aligned}
+p  &amp; = 0.9 \cdot (p  + 0.99)\\
+0.1 \cdot p  &amp; = 0.9 \cdot  0.99 \\
+p = P(B|{A}) &amp;= \frac{0.99 \cdot 0.9}{0.1} = 8.91 &gt; 1
 \end{aligned}</span></p>
+<p>We have found that <span class="math inline">p</span>, a probability
+value, must be greater than 1, which is impossible!</p>
 <p>Given the rate of false positives, we cannot find a true positive
-rate such that the posterior is 0.9.</p>
+rate such that the probability of a patient having the genetic defect
+given a positive result is 0.9.</p>
 </div>
 </div>
 </div>
