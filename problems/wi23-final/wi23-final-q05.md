@@ -11,10 +11,9 @@ not data points).
 
 Which of the following facts are true about the cluster
 assignment during the first iteration, as determined by these initial
-centroids (circle all answers that are correct)? Explain your answer.
+centroids (circle all answers that are correct)? All 35 circles are data points. All 3 plus-sign shapes are the initial centroids. Explain your selected answer(s).
 
-![image](pics/K-means.png)
-
+<center><img src="../assets/images/wi23-final/k-means.jpg" width="500"></center>
 
 1.  Exactly one cluster contains 11 data points.
 
@@ -28,11 +27,12 @@ centroids (circle all answers that are correct)? Explain your answer.
 
 # BEGIN SOLUTION
 
+Option 4 is correct.
+
 The top cluster will contain 13 points. The left cluster will
 contain 10 points. The bottom right cluster will contain 12 points
 (including the outlier since it is closer to the bottom cross than to
-the left one). Therefore D is correct.
-
+the left one). Therefore option 4 is correct.
 
 # END SOLUTION
 
@@ -61,10 +61,12 @@ are true about the cluster assignment during the *second* iteration
 
 # BEGIN SOLUTION
 
+Options 2 and 3 are correct.
+
 The top cluster will contain 13 points. The left cluster will
 contain 11 points (the outlier has now moved to this cluster since it
 will be closer to its centroid). The bottom right cluster will contain
-11 points. Therefore B and C are correct.
+11 points. Therefore options 2 and 3 are correct.
 
 # END SOLUTION
 
