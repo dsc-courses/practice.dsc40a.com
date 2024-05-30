@@ -2,6 +2,8 @@
 
 <!-- Probabilitiy -->
 
+<!-- Split this one with two subprobs into one with four subprobs -->
+
 Two players A and B participate in the following game. There are three
 spinners. The first one, $S_1$, lands with equal probability on the
 numbers $9$, $5$ and $1$ when spun. The second one, $S_2$, lands with
@@ -19,7 +21,9 @@ winner.
 \[9 Points\] Compute the probability that A wins in all of the following
 situations.
 
--   A chooses $S_1$, B chooses $S_2$. # BEGIN SOLUTION
+-   A chooses $S_1$, B chooses $S_2$. 
+
+# BEGIN SOLUTION
 
     Let $W$ denote the event that player A wins. By using the law of
     total probability $$\begin{aligned}
@@ -28,9 +32,15 @@ situations.
            
     \end{aligned}$$
 
-    # END SOLUTION
+# END SOLUTION
 
--   A chooses $S_2$, B chooses $S_3$. # BEGIN SOLUTION
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+-   A chooses $S_2$, B chooses $S_3$. 
+
+# BEGIN SOLUTION
 
     Similarly by using the law of total probability $$\begin{aligned}
             P(W)&=P(W|S_3=3)P(S_3=3)+P(W|S_3=4)P(S_3=4)+P(W|S_3=8)P(S_3=8)\\
@@ -38,9 +48,15 @@ situations.
            
     \end{aligned}$$
 
-    # END SOLUTION
+# END SOLUTION
 
--   A chooses $S_3$, B chooses $S_1$. # BEGIN SOLUTION
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+-   A chooses $S_3$, B chooses $S_1$. 
+
+# BEGIN SOLUTION
 
     Similarly by using the law of total probability $$\begin{aligned}
             P(W)&=P(W|S_1=1)P(S_1=1)+P(W|S_1=5)P(S_1=5)+P(W|S_1=9)P(S_1=9)\\
@@ -48,25 +64,18 @@ situations.
            
     \end{aligned}$$
 
-    # END SOLUTION
-
-# BEGIN SOLUTION
-
 # END SOLUTION
 
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-\[2 Points\] Would you prefer to be player A or Player B? Why? # BEGIN
-SOLUTION
+\[2 Points\] Would you prefer to be player A or Player B? Why? 
+
+# BEGIN SOLUTION
 
 Player B. Because player B can always pick a spinner with probability of
 winning $\frac{5}{9}>\frac{1}{2}$.
-
-# END SOLUTION
-
-# BEGIN SOLUTION
 
 # END SOLUTION
 

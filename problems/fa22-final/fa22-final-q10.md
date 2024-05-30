@@ -39,7 +39,9 @@ is, is event A independent of event B; event A independent of event C;
 and B independent of event C?
 
 Hint: You can start by computing the probability of intersctions between
-each pair of these events. # BEGIN SOLUTION
+each pair of these events. 
+
+# BEGIN SOLUTION
 
 One can verify that
 $$P(A)=\frac{18}{36}=\frac{1}{2}, \quad P(B)=\frac{18}{36}=\frac{1}{2}, \quad  P(C)=\frac{18}{36}=\frac{1}{2},$$
@@ -51,33 +53,27 @@ $P(C \cap A)=P(C)P(A)$. Therefore $A, B, C$ are pairwise independent.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
+# END SUBPROB 
 
-# END SOLUTION
-
-# END SUBPROB # BEGIN SUBPROB
+# BEGIN SUBPROB
 
 \[3 Points\] Is $P(A \cap B \cap C)= P(A)P(B)P(C)$?
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB # BEGIN SOLUTION
-
 No.
 $$P(A \cap B \cap C)= \frac{|A \cap B \cap C|}{|S|}=\frac{4}{36}=\frac{1}{9} \neq P(A)P(B)P(C)=\frac{1}{8}$$
 
-# END SOLUTION # BEGIN SUBPROB
+# END SOLUTION 
+
+# END SUBPROB 
+
+# BEGIN SUBPROB
 
 \[4 Points\] Are the events $A$ and $B$ conditionally independent
 conditioned on $C$?
 
 # BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB # BEGIN SOLUTION
 
 No. Note that by using the definition of conditional probability one can
 write
@@ -88,10 +84,6 @@ they are not conditionally independent.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
+# END SUBPROB 
 
 # END PROB

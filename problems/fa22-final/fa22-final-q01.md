@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[**Empirical Risk Minimization**\]\[15 Points\]
+<!-- \[**Empirical Risk Minimization**\]\[15 Points\] -->
 
 Suppose we have a data of $n$ samples:
 $$\mathcal{D} = \{(\vec{x}_i, y_i)\}_{i = 1}^n,$$ in which
@@ -27,12 +27,6 @@ $$\bigg(\frac{u(x)}{v(x)}\bigg)' = \frac{u'(x)v(x) - u(x)v'(x)}{[v(x)]^2}.$$
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SOLUTION
-
 We have:
 $$\gamma'(z) = \bigg(\frac{e^{2z} - 1}{e^{2z} + 1}\bigg)' = \frac{(e^{2z} - 1)'(e^{2z} + 1) - (e^{2z} + 1)'(e^{2z} - 1)}{(e^{2z} + 1)^2} = \frac{2e^{2z}(e^{2z} + 1) - 2e^{2z}(e^{2z} - 1) }{(e^{2z} + 1)^2}$$
 $$\Leftrightarrow \gamma'(z) = \frac{4e^{2z}}{(e^{2z} + 1)^2} = \bigg(\frac{2e^z}{e^{2z} + 1}\bigg)^2 = \bigg(\frac{2}{e^{z} + e^{-z}}\bigg)^2.$$
@@ -44,16 +38,12 @@ an increasing function.
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[5 Points\] Derive: $$\frac{dh}{dw_0},$$ and
 $$\frac{\partial h}{\partial \vec{w}}.$$
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -63,16 +53,13 @@ $$\frac{\partial h}{\partial \vec{w}} = \gamma'(\vec{x} \cdot \vec{w} + w_0) \cd
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[5 Points\] Derive: $$\frac{dR}{dw_0},$$ and
 $$\frac{\partial R}{\partial \vec{w}}.$$
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -83,5 +70,7 @@ and
 $$\frac{\partial R}{\partial \vec{w}} = -\frac{2}{n} \sum_{i = 1}^n (y_i - h(\vec{x}_i)) \cdot \frac{\partial h}{\partial \vec{w}}(\vec{x}_i) = -\frac{2}{n} \sum_{i = 1}^n (y_i - h(\vec{x}_i)) \cdot \gamma'(\vec{x} \cdot \vec{w} + w_0) \cdot \vec{x}_i.$$
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB

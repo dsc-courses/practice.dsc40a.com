@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[**Gradient Descent**\]\[5 Points\]
+<!-- \[**Gradient Descent**\]\[5 Points\] -->
 
 Suppose we are given a function $g(x, y) = x^2 + y^2$.
 
@@ -8,11 +8,6 @@ Suppose we are given a function $g(x, y) = x^2 + y^2$.
 
 \[2 Points\] Write down the formula for gradient of $g$.
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -24,17 +19,13 @@ function.
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[2 Points\] Start from $(x_0, y_0) = (1, -1)$, with learning rate
 $\alpha = 1/4$, show the first 3 steps of gradient descent. Can the
 gradient descent converge? If yes, where?
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -52,16 +43,12 @@ $(x^*, y^*) = (0, 0)$.
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[1 Point\] Instead of gradient descent, find the global minimum in a
 closed-form manner (i.e. solving an equation).
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -70,5 +57,7 @@ $$\nabla g = \begin{pmatrix} \frac{\partial g}{\partial x} \\ \frac{\partial g}{
 $$\Leftrightarrow \begin{cases} 2x = 0 \\ 2y = 0 \end{cases} \Leftrightarrow \begin{cases} x = 0 \\ y = 0 \end{cases}.$$
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB

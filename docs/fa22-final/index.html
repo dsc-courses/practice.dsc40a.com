@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2022 Final</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="..\assets\theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2022 Final</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Truong Son Hy, Mahdi Soleymani</p>
+<p>This exam was administered in person. Students had <strong>180
+minutes</strong> to take this exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<!-- \[**Empirical Risk Minimization**\]\[15 Points\] -->
+<p>Suppose we have a data of <span class="math inline">n</span> samples:
+<span class="math display">\mathcal{D} = \{(\vec{x}_i, y_i)\}_{i =
+1}^n,</span> in which <span class="math inline">\vec{x}_i \in
+\mathbb{R}^d</span> and <span class="math inline">y_i \in
+\mathbb{R}</span>. We also know that <span
+class="math inline">y_i</span> is in the range of <span
+class="math inline">[-1, 1]</span>. Our hypothesis is: <span
+class="math display">\hat{y} = h(\vec{x}) = \gamma(\vec{x} \cdot \vec{w}
++ w_0),</span> where <span class="math inline">\vec{w} \in
+\mathbb{R}^d</span> and <span class="math inline">w_0 \in
+\mathbb{R}</span> are the parameters, <span class="math inline">\vec{x}
+\cdot \vec{w} = \sum_{i = 1}^d x_i w_i</span> is the inner product, and
+<span class="math inline">\gamma: \mathbb{R} \rightarrow
+\mathbb{R}</span> is the hyperbolic tangent function, i.e. <span
+class="math display">\gamma(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}} =
+\frac{e^{2z} - 1}{e^{2z} + 1}.</span> Note that we use <span
+class="math inline">\gamma</span> to make sure our prediction is in the
+range from <span class="math inline">-1</span> to <span
+class="math inline">1</span>. Given the square loss function <span
+class="math inline">L(y, h) = (y - h)^2</span>, the empirical risk is
+written as: <span class="math display">R(h) = R(\vec{w}, w_0) =
+\frac{1}{n} \sum_{i = 1}^n L(y_i, h(\vec{x}_i)).</span></p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>[5 Points] Derive for: <span class="math display">\gamma&#39;(z) =
+\frac{d\gamma}{dz}.</span> Furthermore, prove that <span
+class="math inline">\gamma</span> is an increasing function.<br />
+<br />
+<strong>Hint:</strong> Quotient rule for differentiation: <span
+class="math display">\bigg(\frac{u(x)}{v(x)}\bigg)&#39; =
+\frac{u&#39;(x)v(x) - u(x)v&#39;(x)}{[v(x)]^2}.</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We have: <span class="math display">\gamma'(z) =
+\bigg(\frac{e^{2z} - 1}{e^{2z} + 1}\bigg)' = \frac{(e^{2z} -
+1)'(e^{2z} + 1) - (e^{2z} + 1)'(e^{2z} - 1)}{(e^{2z} + 1)^2} =
+\frac{2e^{2z}(e^{2z} + 1) - 2e^{2z}(e^{2z} - 1) }{(e^{2z} + 1)^2}</span>
+<span class="math display">\Leftrightarrow \gamma'(z) =
+\frac{4e^{2z}}{(e^{2z} + 1)^2} = \bigg(\frac{2e^z}{e^{2z} + 1}\bigg)^2 =
+\bigg(\frac{2}{e^{z} + e^{-z}}\bigg)^2.</span> Furthermore, we have the
+hyperbolic cosine function: <span class="math display">\cosh z =
+\frac{e^z + e^{-z}}{2},</span> thus we can write: <span class="math display">\gamma'(z) = \frac{1}{\cosh^2 z}.</span>
+Because <span class="math inline">\gamma'(z)</span> is square of
+<span class="math inline">\cosh^{-1} x</span>, we have <span class="math inline">\gamma'(z) &gt; 0</span> for all <span class="math inline">z</span>. Thus, <span class="math inline">\gamma</span> is an increasing function.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>[5 Points] Derive: <span class="math display">\frac{dh}{dw_0},</span>
+and <span class="math display">\frac{\partial h}{\partial
+\vec{w}}.</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We have: <span class="math display">\frac{dh}{dw_0} =
+\gamma'(\vec{x} \cdot \vec{w} + w_0) \cdot \frac{\partial}{\partial
+w_0}(\vec{x} \cdot \vec{w} + w_0) = \gamma'(\vec{x} \cdot \vec{w} +
+w_0),</span> <span class="math display">\frac{\partial h}{\partial
+\vec{w}} = \gamma'(\vec{x} \cdot \vec{w} + w_0) \cdot
+\frac{\partial}{\partial \vec{w}}(\vec{x} \cdot \vec{w} + w_0) =
+\gamma'(\vec{x} \cdot \vec{w} + w_0) \cdot \vec{x}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>[5 Points] Derive: <span class="math display">\frac{dR}{dw_0},</span>
+and <span class="math display">\frac{\partial R}{\partial
+\vec{w}}.</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Given <span class="math display">R(h) = \frac{1}{n} \sum_{i = 1}^n
+(y_i - h(\vec{x}_i))^2,</span> we have: <span class="math display">\frac{dR}{dw_0} = -\frac{2}{n} \sum_{i = 1}^n (y_i
+- h(\vec{x}_i)) \cdot \frac{dh}{dw_0}(\vec{x}_i) = -\frac{2}{n} \sum_{i
+= 1}^n (y_i - h(\vec{x}_i)) \cdot \gamma'(\vec{x}_i \cdot \vec{w} +
+w_0),</span> and <span class="math display">\frac{\partial R}{\partial
+\vec{w}} = -\frac{2}{n} \sum_{i = 1}^n (y_i - h(\vec{x}_i)) \cdot
+\frac{\partial h}{\partial \vec{w}}(\vec{x}_i) = -\frac{2}{n} \sum_{i =
+1}^n (y_i - h(\vec{x}_i)) \cdot \gamma'(\vec{x} \cdot \vec{w} + w_0)
+\cdot \vec{x}_i.</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<!-- \[**Gradient Descent**\]\[5 Points\] -->
+<p>Suppose we are given a function <span class="math inline">g(x, y) =
+x^2 + y^2</span>.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>[2 Points] Write down the formula for gradient of <span
+class="math inline">g</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The gradient of <span class="math inline">g</span> is: <span class="math display">\nabla g = \begin{pmatrix} \frac{\partial
+g}{\partial x} \\ \frac{\partial g}{\partial y} \end{pmatrix},</span> in
+which: <span class="math display">\frac{\partial g}{\partial x} =
+2x,</span> <span class="math display">\frac{\partial g}{\partial y} =
+2y.</span> Indeed, <span class="math inline">g</span> is a convex
+function.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>[2 Points] Start from <span class="math inline">(x_0, y_0) = (1,
+-1)</span>, with learning rate <span class="math inline">\alpha =
+1/4</span>, show the first 3 steps of gradient descent. Can the gradient
+descent converge? If yes, where?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Step 0:</strong> <span class="math display">(x_0, y_0) = (1,
+-1)</span> <span class="math display">\nabla g = (2, -2)</span> <span class="math display">(x_1, y_1) = (x_0, y_0) - \alpha \cdot \nabla g
+(x_0, y_0) = (1, -1) - \frac{1}{4}(2, -2) = (1/2, -1/2)</span>
+<strong>Step 1:</strong> <span class="math display">(x_1, y_1) = (1/2,
+-1/2)</span> <span class="math display">\nabla g = (1, -1)</span> <span class="math display">(x_2, y_2) = (x_1, y_1) - \alpha \cdot \nabla g
+(x_1, y_1) = (1/2, -1/2) - \frac{1}{4} (1, -1) = (1/4, -1/4)</span>
+<strong>Step 2:</strong> <span class="math display">(x_2, y_2) = (1/4,
+-1/4)</span> <span class="math display">\nabla g = (1/2, -1/2)</span>
+<span class="math display">(x_3, y_3) = (x_2, y_2) - \alpha \cdot \nabla
+g (x_2, y_2) = (1/4, -1/4) - \frac{1}{4} (1/2, -1/2) = (1/8,
+-1/8)</span> <strong>Step 3:</strong> <span class="math display">(x_3,
+y_3) = (1/8, -1/8)</span> <span class="math display">\nabla g = (1/4,
+-1/4)</span> <span class="math display">(x_4, y_4) = (x_3, y_3) - \alpha
+\cdot \nabla g (x_3, y_3) = (1/8, -1/8) - \frac{1}{4} (1/4, -1/4) =
+(1/16, -1/16)</span> In general, at step <span class="math inline">k</span>-th, the gradient descent is at <span class="math inline">(x_k, y_k) = (2^{-k}, -2^{-k})</span>. The gradient
+descent converges at <span class="math inline">(x^*, y^*) = (0,
+0)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>[1 Point] Instead of gradient descent, find the global minimum in a
+closed-form manner (i.e. solving an equation).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We solve the equation: <span class="math display">\nabla g =
+\begin{pmatrix} \frac{\partial g}{\partial x} \\ \frac{\partial
+g}{\partial y} \end{pmatrix} = \begin{pmatrix} 2x \\ 2y \end{pmatrix} =
+\begin{pmatrix} 0 \\ 0 \end{pmatrix}</span> <span class="math display">\Leftrightarrow \begin{cases} 2x = 0 \\ 2y = 0
+\end{cases} \Leftrightarrow \begin{cases} x = 0 \\ y = 0
+\end{cases}.</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<!-- \[ **Linear regeression**\]\[13 Points\] -->
+<p>Given a <span class="math inline">2\times 2</span> matrix <span
+class="math display">A = \begin{pmatrix} a &amp; b \\ c &amp; d
+\end{pmatrix}.</span> Its inverse (if exists) is given by: <span
+class="math display">A^{-1} = \frac{1}{ad - bc}\begin{pmatrix} d &amp;
+-b \\ -c &amp; a \end{pmatrix}.</span> <strong>Hint:</strong> This
+matrix inversion formula is useful for this question.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>[2 Points] Suppose we are given data of 4 samples <span
+class="math display">\mathcal{D} = \{(x_i, y_i)\}_{i = 1}^n = \{(0, 1),
+(2, 2), (4, 3), (6, 4)\}.</span> We have our linear regression: <span
+class="math display">X\vec{w} = \vec{y}.</span> Write down the
+dimensions of <span class="math inline">X</span>, <span
+class="math inline">\vec{w}</span> and <span
+class="math inline">\vec{y}</span> in general (i.e. <span
+class="math inline">n</span> samples, <span class="math inline">d</span>
+features), and for this data. Write down <span
+class="math inline">X</span> and <span
+class="math inline">\vec{y}</span> explicitly for this data.<br />
+</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>For this data, we have the following dimensions: <span class="math inline">X \in \mathbb{R}^{4 \times 2}</span>, <span class="math inline">\vec{w} \in \mathbb{R}^2</span>, and <span class="math inline">\vec{y} \in \mathbb{R}^4</span>. It is also fine to
+write <span class="math inline">\vec{w} \in \mathbb{R}^{2 \times
+1}</span> and <span class="math inline">\vec{y} \in \mathbb{R}^{4 \times
+1}</span> (i.e. matrix with a single column).<br/>
+<br/>
+In general, with <span class="math inline">n</span> samples and the
+number of features as <span class="math inline">d</span>, the dimensions
+are: <span class="math inline">X \in \mathbb{R}^{n \times (d +
+1)}</span>, <span class="math inline">\vec{w} \in \mathbb{R}^{d +
+1}</span>, and <span class="math inline">\vec{y} \in
+\mathbb{R}^n</span>.<br/>
+<br/>
+For this data: <span class="math display">X = \begin{pmatrix} 1 &amp; 0
+\\ 1 &amp; 2 \\ 1 &amp; 4 \\ 1 &amp; 6 \end{pmatrix}, \ \ \ \ \vec{w} =
+\begin{pmatrix} w_0 \\ w_1 \end{pmatrix}, \ \ \ \ \vec{y} =
+\begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix}.</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>[1 Point] Write down the closed-form solution for <span
+class="math inline">\vec{w}</span> in matrix form.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The closed-form solution (i.e. matrix form) is given by: <span class="math display">\vec{w} = (X^TX)^{-1}X^T\vec{y},</span> where <span class="math inline">(X^TX)^{-1}X^T</span> is called the pseudo-inverse
+of <span class="math inline">X</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>[4 Points] Now, show step-by-step details of your calculation for
+<span class="math inline">\vec{w}</span> with matrix operations.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>First, we compute the covariance matrix <span class="math inline">X^TX</span>: <span class="math display">X^TX =
+\begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 2 &amp; 4 &amp; 6
+\end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 2 \\ 1 &amp; 4 \\ 1
+&amp; 6 \end{pmatrix} = \begin{pmatrix} 4 &amp; 12 \\ 12 &amp; 56
+\end{pmatrix}.</span> Now, we compute the inverse of the covariance
+matrix <span class="math inline">(X^TX)^{-1}</span> using the formula we
+have just proved in part a): <span class="math display">(X^TX)^{-1} =
+\frac{1}{4 \cdot 56 - 12 \cdot 12} \begin{pmatrix} 56 &amp; -12 \\ -12
+&amp; 4 \end{pmatrix} = \frac{1}{80} \begin{pmatrix} 56 &amp; -12 \\ -12
+&amp; 4 \end{pmatrix} = \frac{1}{20} \begin{pmatrix} 14 &amp; -3 \\ -3
+&amp; 1 \end{pmatrix}.</span> We can calculate the pseudo-inverse now:
+<span class="math display">(X^TX)^{-1}X^T = \frac{1}{20} \begin{pmatrix}
+14 &amp; -3 \\ -3 &amp; 1 \end{pmatrix} \begin{pmatrix} 1 &amp; 1 &amp;
+1 &amp; 1 \\ 0 &amp; 2 &amp; 4 &amp; 6 \end{pmatrix} = \frac{1}{20}
+\begin{pmatrix} 14 &amp; 8 &amp; 2 &amp; -4 \\ -3 &amp; -1 &amp; 1 &amp;
+3 \end{pmatrix}</span> Finally, we have our solution: <span class="math display">\vec{w} = (X^TX)^{-1}X^T\vec{y} = \frac{1}{20}
+\begin{pmatrix} 14 &amp; 8 &amp; 2 &amp; -4 \\ -3 &amp; -1 &amp; 1 &amp;
+3 \end{pmatrix} \begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix} =
+\frac{1}{20} \begin{pmatrix} 20 \\ 10 \end{pmatrix} = \begin{pmatrix} 1
+\\ 0.5 \end{pmatrix}.</span> The bias/intercept <span class="math inline">w_0 = 1</span> and the slope <span class="math inline">w_1 = 0.5</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.4">Problem 3.4</h3>
+<p>[3 Points] Instead of the matrix form, solve the linear regression
+with the following scheme:<br />
+<span class="math inline">\bar x = \phantom{\hspace{.5in}}</span><br />
+<span class="math inline">\bar y = \phantom{\hspace{.5in}}</span><br />
+<span class="math inline">w_1^* =</span><br />
+<span class="math inline">w_0^* =</span></p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">x_i</span></th>
+<th style="text-align: left;"><span class="math inline">y_i</span></th>
+<th style="text-align: left;"><span class="math inline">(x_i - \bar
+x)</span></th>
+<th style="text-align: left;"><span class="math inline">(y_i - \bar
+y)</span></th>
+<th style="text-align: left;"><span class="math inline">(x_i - \bar
+x)(y_i - \bar y)</span></th>
+<th style="text-align: left;"><span class="math inline">(x_i - \bar
+x)^2</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</div>
+<p>We should get the same answer as using the matrix form. Finally, what
+can we say about the correlation <span class="math inline">r</span> and
+the slope for this dataset (mathematically)?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\bar x = \frac{0 + 2 + 4 + 6}{4} =
+3</span> <span class="math display">\bar y = \frac{1 + 2 + 3 + 4}{4} =
+\frac{5}{2}</span></p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">x_i</span></th>
+<th style="text-align: center;"><span class="math inline">y_i</span></th>
+<th style="text-align: center;"><span class="math inline">(x_i - \bar
+x)</span></th>
+<th style="text-align: center;"><span class="math inline">(y_i - \bar
+y)</span></th>
+<th style="text-align: center;"><span class="math inline">(x_i - \bar
+x)(y_i - \bar y)</span></th>
+<th style="text-align: center;"><span class="math inline">(x_i - \bar
+x)^2</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">-3</span></td>
+<td style="text-align: center;"><span class="math inline">-3/2</span></td>
+<td style="text-align: center;"><span class="math inline">9/2</span></td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">-1</span></td>
+<td style="text-align: center;"><span class="math inline">-1/2</span></td>
+<td style="text-align: center;"><span class="math inline">1/2</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">1/2</span></td>
+<td style="text-align: center;"><span class="math inline">1/2</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">3/2</span></td>
+<td style="text-align: center;"><span class="math inline">9/2</span></td>
+<td style="text-align: center;">9</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+</p>
+</div>
+<p><span class="math display">w_1^* =
+\frac{
+\displaystyle
+\sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)
+}{
+\displaystyle
+\sum_{i=1}^n (x_i - \bar x)^2
+}
+= \frac{9/2 + 1/2 + 1/2 + 9/2}{9 + 1 + 1 + 9} = \frac{1}{2} = 0.5</span>
+<span class="math display">w_0^* = \bar y - w_1^* \bar x = \frac{5}{2} -
+\frac{1}{2} \cdot 3 = 1</span> We get exactly the same result as via the
+closed-form matrix solution. Because <span class="math inline">w_1^* = r
+\frac{\sigma_y}{\sigma_x}</span> where the standard deviations <span class="math inline">\sigma_y</span> and <span class="math inline">\sigma_x</span> are non-negative, and <span class="math inline">w_1^* = 0.5 &gt; 0</span>, thus the correlation
+<span class="math inline">r</span> is positive and the slope is
+positive.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.5">Problem 3.5</h3>
+<p>[2 Points] Given an arbitrary dataset of <span
+class="math inline">n</span> samples <span
+class="math inline">\mathcal{D} = \{(x_i, y_i)\}_{i = 1}^n</span>:</p>
+<ul>
+<li><p>How do the slope and the intercept (bias) change if we add <span
+class="math inline">\alpha \in \mathbb{R}</span> to each <span
+class="math inline">y_i</span>? Show an explanation for your
+claim!</p></li>
+<li><p>How does the slope change if we multiply <span
+class="math inline">\beta \in \mathbb{R}</span> to each <span
+class="math inline">x_i</span>? Show an explanation for your
+claim!</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_5" aria-expanded="true" aria-controls="collapse3_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_5" class="accordion-collapse collapse"
+aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<ul>
+<li><p>If we add <span class="math inline">\alpha \in \mathbb{R}</span>
+to each <span class="math inline">y_i</span>: <span class="math inline">\bar y^{\text{new}} = \bar y + \alpha</span> but
+<span class="math inline">y_i - \bar y^{\text{new}} = y_i - \bar
+y</span> stays the same. And we do not change anything on <span class="math inline">x_i</span>, so the slope <span class="math inline">w_1</span> stays the same, but the new bias is added
+<span class="math inline">\alpha</span>, i.e. <span class="math inline">{w_0}^{\text{new}} = w_0 + \alpha</span>.</p></li>
+<li><p>If we multiply <span class="math inline">\beta \in
+\mathbb{R}</span> to each <span class="math inline">x_i</span>, we have:
+<span class="math inline">x_i^{\text{new}} = \beta x_i</span> and <span class="math inline">\bar x^{\text{new}} = \beta \bar x</span>. Thus,
+<span class="math inline">x_i^{\text{new}} - \bar x^{\text{new}} =
+\beta(x_i - \bar x)</span>. The new slope is: <span class="math display">w_1^{\text{new}} =
+\frac{
+\displaystyle
+\sum_{i=1}^n (x_i^{\text{new}} - \bar x^{\text{new}})(y_i - \bar y)
+}{
+\displaystyle
+\sum_{i=1}^n (x_i^{\text{new}} - \bar x^{\text{new}})^2
+}
+=
+\frac{
+\displaystyle
+\beta \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y)
+}{
+\displaystyle
+\beta^2 \sum_{i=1}^n (x_i - \bar x)^2
+}
+=
+\frac{1}{\beta} w_1.</span> Therefore, the new slope is <span class="math inline">1/\beta</span> of the old slope.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.6">Problem 3.6</h3>
+<p>[1 Point] Suppose we have the hypothesis <span
+class="math inline">h(x) = w_0e^{w_1x}</span>. How can we apply linear
+regression to find <span class="math inline">w_0</span> and <span
+class="math inline">w_1</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_6" aria-expanded="true" aria-controls="collapse3_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_6" class="accordion-collapse collapse"
+aria-labelledby="heading3_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We apply the logarithm transformation to the hypothesis: <span class="math display">g(x) = \log(h(x)) = \log(w_0) + w_1x,</span> that
+is linear with respect to the parameters. Let <span class="math inline">b_0 = \log(w_0)</span> and <span class="math inline">b_1 = w_1</span>. We have: <span class="math inline">g(x) = b_1x + b_0</span>. We also apply the
+logarithm transformation to all <span class="math inline">y_i</span>.
+Then, we apply linear regression to find <span class="math inline">b_0^*</span> and <span class="math inline">b_1^*</span> for the new transformed data <span class="math inline">\{(x_i, \log(y_i))\}_{i = 1}^n</span>. Finally, we
+get <span class="math inline">w_0^* = e^{b_0^*}</span> and <span class="math inline">w_1^* = b_1^*</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<!-- \[**Clustering**\]\[7 Points\] -->
+<p>Given the data on 2-dimensional space:</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span
+class="math inline">x_1</span></th>
+<th style="text-align: center;"><span
+class="math inline">x_2</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">-8</td>
+<td style="text-align: center;">-6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">-2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;">-6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- ::: center
+![image](K-Means.png)
+::: -->
+<p>We want to apply K-Means to cluster this data. Suppose that <span
+class="math inline">k = 2</span> (two clusters).<br />
+</p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>[1 Point] Where should the centroids converge to intuitively? Write
+down the coordinates.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\mu_1^* = \bigg(-6,
+-\frac{14}{3}\bigg)</span> <span class="math display">\mu_2^* = \bigg(4,
+\frac{4}{3}\bigg)</span> <span class="math inline">\mu_1</span> is the
+average of 3 points on the bottom left, and <span class="math inline">\mu_2</span> is the average of 3 points on the top
+right.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>[2 Points] Explain the K-Means algorithm clearly in words. Remember
+to write down a condition to terminate the K-Means algorithm.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><strong>Lloyd’s Algorithm:</strong></p>
+<ol type="1">
+<li><p>Pick a value of <span class="math inline">k</span> and randomly
+initialize <span class="math inline">k</span> centroids.</p></li>
+<li><p>Keep the centroids fixed, and update the groups.</p>
+<ul>
+<li>Assign each point to the nearest centroid.</li>
+</ul></li>
+<li><p>Keep the groups fixed, and update the centroids.</p>
+<ul>
+<li>Move each centroid to the center of its group by averaging their
+coordinates.</li>
+</ul></li>
+<li><p>Repeat steps 2 and 3 until the centroids stop changing.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>[3 Points] Now, let’s show few steps of K-Means by filling out these
+following tables. Assume we start with <span class="math inline">\mu_1 =
+(2, 1)</span> and <span class="math inline">\mu_2 = (3, 4)</span> as the
+initial centers.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><span
+class="math inline">\mu_1</span></th>
+<th style="text-align: center;"><span
+class="math inline">\mu_2</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Iter 0</strong></td>
+<td style="text-align: center;"><span class="math inline">(2,
+1)</span></td>
+<td style="text-align: center;"><span class="math inline">(3,
+4)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Iter 1</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td><strong>Iter 2</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td><strong>Iter 3</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</div>
+<p>For each step, write down the new centers.</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span
+class="math inline">x_1</span></th>
+<th style="text-align: center;"><span
+class="math inline">x_2</span></th>
+<th style="text-align: center;"><strong>Iter 0</strong></th>
+<th style="text-align: center;"><strong>Iter 1</strong></th>
+<th style="text-align: center;"><strong>Iter 2</strong></th>
+<th style="text-align: center;"><strong>Iter 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">-8</td>
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</div>
+<p>For each step, write 1 if the point belongs to cluster 1, and write 2
+if the point belongs to cluster 2. The column for Iter 0 is already
+filled.</p>
+<div class="center">
+<figure>
+<img src="K-Means_Iter_0.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+</div>
+<div class="center">
+<p>K-Means at iteration 0.</p>
+</div>
+<p><strong>Note:</strong> You do not have to calculate the distances
+explicitly (i.e. you can use your intuition in determining which points
+belong to which clusters). It is also possible that you might not need
+to use all 3 iterations.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;"><span class="math inline">\mu_1</span></th>
+<th style="text-align: center;"><span class="math inline">\mu_2</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Iter 0</strong></td>
+<td style="text-align: center;"><span class="math inline">(2,
+1)</span></td>
+<td style="text-align: center;"><span class="math inline">(3,
+4)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Iter 1</strong></td>
+<td style="text-align: center;"><span class="math inline">(-2,
+-14/5)</span></td>
+<td style="text-align: center;"><span class="math inline">(4,
+4)</span></td>
+</tr>
+<tr class="odd">
+<td><strong>Iter 2</strong></td>
+<td style="text-align: center;"><span class="math inline">(-6,-14/3)</span></td>
+<td style="text-align: center;"><span class="math inline">(4,
+4/3)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Iter 3</strong></td>
+<td style="text-align: center;"><span class="math inline">(-6,
+-14/3)</span></td>
+<td style="text-align: center;"><span class="math inline">(4,
+4/3)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">x_1</span></th>
+<th style="text-align: center;"><span class="math inline">x_2</span></th>
+<th style="text-align: center;"><strong>Iter 0</strong></th>
+<th style="text-align: center;"><strong>Iter 1</strong></th>
+<th style="text-align: center;"><strong>Iter 2</strong></th>
+<th style="text-align: center;"><strong>Iter 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">-8</td>
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- ::: center
+![image](K-Means_Iter_final.png)
+::: -->
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>[1 Point] Depending on our initial centroids, K-Means may “converge”
+to a clustering that does <strong>not</strong> actually have the lowest
+possible inertia. In other words, like gradient descent, K-Means can get
+caught in a local minimum. Write down a solution to address this
+issue.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Some solutions:</p>
+<ul>
+<li><p>Run K-Means several times, each with different randomly chosen
+initial centroids. Keep track of the inertia of the final result in each
+attempt. Choose the attempt with the lowest inertia.</p></li>
+<li><p>Choose one initial centroid at random, and choose the remaining
+initial centroids by maximizing distance from all other
+centroids.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<!-- Probability -->
+<p>We have three boxes containing white and black balls. The first box
+has 3 white and 2 black balls, the second box has 2 white and 3 black
+balls, and, the third box has 4 white and 1 black balls. We pick a box
+uniformly at random and pick a ball from it. We observe that the ball is
+white. What is the probability that it came from the third box, i.e.,
+what is the probability of the third box was picked at the
+beginning?</p>
+<figure>
+<embed src="BlackandWhiteballs.pdf" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5" class="accordion-collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Let <span class="math display">\begin{align*}
+A:&amp; \text{ event that the chosen ball is white}\\
+E_1:&amp; \text{ event that the  ball is chosen from the first box}\\
+E_2:&amp; \text{ event that the  ball is chosen from the second box}\\
+E_3:&amp; \text{ event that the  ball is chosen from the third box}.
+\end{align*}</span></p>
+<p>Note that <span class="math inline">P(E_1)=P(E_2)=P(E_3)=\frac{1}{3}</span>. Also, <span class="math inline">P(A|E_1)=\frac{3}{5}</span>, <span class="math inline">P(A|E_2)=\frac{2}{5}</span>, and, <span class="math inline">P(A|E_3)=\frac{4}{5}</span>.</p>
+<p>By using the Bayes’ theorem <span class="math display">
+P(E_3|A)=\frac{P(A|E_3)P(E_3)}{P(A|E_1)P(E_1)+P(A|E_2)P(E_2)+P(A|E_3)P(E_3)}=
+\frac{4/5 \times 1/3 }{3/5 \times 1/3+2/5 \times 1/3+4/5 \times 1/3}=
+\frac{4}{9}.
+</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<!-- Naive Bayes/Conditional Independence -->
+<p>Consider the following email data set:</p>
+<ul>
+<li><p>I have my DSC 40A final exam today. Wish me luck! (ham)</p></li>
+<li><p>Your credit card were declined today. Let me know your SSN to
+help. (spam)</p></li>
+<li><p>I understand that I should bring my UCSD ID card to the exam.
+(ham)</p></li>
+<li><p>You can understand machine learning without learning about
+probability. (spam)</p></li>
+<li><p>You should bring your credit card to the exam.(spam)</p></li>
+</ul>
+<p>Consider the following dictionary</p>
+<p>{ final, card, exam, bring}.</p>
+<p>The dataset then can be illustrated by considering the bag-of-words
+model as in the following table</p>
+<div class="center">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Email ID</th>
+<th style="text-align: left;">final</th>
+<th style="text-align: left;">card</th>
+<th style="text-align: left;">exam</th>
+<th style="text-align: left;">bring</th>
+<th style="text-align: left;">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>ham</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">spam</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong>0</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;"><strong>ham</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">spam</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">spam</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+</div>
+<p>To answer the following questions, you <strong>should</strong> use
+smoothing for calculating the probability of both classes even if you
+run to the zero probability issue in only one of the classes. Otherwise,
+please do <strong>not</strong> use smoothing at all.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>[5 Points] Is “Please understand that you can not bring cellphone to
+exam." spam or ham? You should show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We represent the features with binary variables <span class="math inline">x_1, x_2, x_3, x_4</span>. Then, this sentence is
+represented by <span class="math inline">(x_1, x_2, x_3,
+x_4)=(0,0,1,1)</span> binary vector, which is denoted by <span class="math inline">0011</span> for the ease of notation. Let <span class="math inline">H</span> and <span class="math inline">S</span>
+denote the event that an email is a ham or spam, respectively. We
+calculate the conditional probability of both classes as follows: <span class="math display">\begin{aligned}
+P(H|0011)&amp; \propto P(0011|H) P(H)\\
+&amp;=P(x_1=0|H)P(x_2=0|H)P(x_3=1|H)P(x_4=1|H)P(H)\\
+&amp;=\frac{1}{2}\times
+\frac{1}{2}\times\frac{1}{1}\times\frac{1}{2}\times\frac{2}{5}=\frac{1}{20}
+\end{aligned}</span> Similarly, <span class="math display">\begin{aligned}
+P(S|0011)&amp; \propto P(0011|S) P(S)\\
+&amp;=P(x_1=0|S)P(x_2=0|S)P(x_3=1|S)P(x_4=1|S)P(S)\\
+&amp;=\frac{2}{3}\times
+\frac{1}{3}\times\frac{1}{3}\times\frac{1}{3}\times\frac{3}{5}=\frac{1}{45}.
+\end{aligned}</span> Since, <span class="math inline">P(S|0011) &lt;
+P(H|0011)</span> we predict the email is a ham. Note that we didnt need
+smoothing for this part.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>[5 Points] Is “I am working on probabilty problems in the final exam
+" spam or ham? You should show your work.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Similarly, this sample is denoted by <span class="math inline">1010</span>. Note that we should smooth the
+conditional probablities as there is no spam email that has word "final"
+in it but the sample email we want to predict has the word "final" in
+it. Thjat means, we will run to the zero probability issue if when
+computing <span class="math inline">P(1010|S)</span>. We calculate the
+conditional probability of both classes as follows:</p>
+<p><span class="math display">\begin{aligned}
+P(S|1010)&amp; \propto P(1010|S) P(S)\\
+&amp;=P(x_1=1|S)P(x_2=0|S)P(x_3=1|S)P(x_4=0|S)P(S)\\
+&amp;=\frac{1}{5}\times
+\frac{2}{5}\times\frac{2}{5}\times\frac{3}{5}\times\frac{3}{5}=\frac{36}{3125}.
+\end{aligned}</span> Similarly, <span class="math display">\begin{aligned}
+P(H|1010)&amp; \propto P(1010|H) P(H)\\
+&amp;=P(x_1=1|H)P(x_2=0|H)P(x_3=1|H)P(x_4=0|H)P(H)\\
+&amp;=\frac{2}{4}\times
+\frac{2}{4}\times\frac{3}{4}\times\frac{2}{4}\times\frac{2}{5}=\frac{3}{80}=\frac{36}{960}
+\end{aligned}</span> Since, <span class="math inline">P(S|1010) &lt;
+P(H|1010)</span> we predict the email is a ham.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<!-- \[**Combinatorics**\]\[9 Points\] -->
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>[3 Points] We toss a fair coin <span class="math inline">6</span>
+times and get a sequence of Heads (H) and Tails (T). How many sequences
+have at least <span class="math inline">2</span> heads?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>It is easier to count the number of possible outcomes in the
+complement event. Therefore, we should count the total number of
+sequences with <strong>exactly</strong> <span class="math inline">0</span> or <span class="math inline">1</span>
+Heads. We pick <span class="math inline">i</span> locations that
+represent the locations of Heads first for <span class="math inline">i=0,1</span>. The only choice for other locations is
+Tails. So, <span class="math display">\begin{aligned}
+    &amp;\text{# sequences with \textbf{
+exactly} $0$ Heads}= {6\choose 0}\\
+  &amp;\text{# sequences with \textbf{
+exactly} $1$ Heads}= {6\choose 1}
+\end{aligned}</span> Also, the total number of sequences is <span class="math inline">2^6</span>. Then, the total number of sequences with
+<strong>at least</strong> <span class="math inline">2</span> Heads is
+equal to <span class="math inline">2^6- {6\choose 0}-{6\choose 1}=64-
+1-6=57</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>[3 Points] We have a standard deck of <span
+class="math inline">52</span> cards. How many hands of <span
+class="math inline">6</span> cards are there that have a four-of-a-kind
+and <span class="math inline">3</span> cards of the same suit?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We have <span class="math inline">13</span> choices for a
+four-of-a-kind hand. Also, there are <span class="math inline">4</span>
+different suits, and <span class="math inline">12</span> cards from each
+suit is left. We should choose a suit and pick two remaining cards from
+that suit. We can do this in <span class="math inline">4 \times
+{12\choose 2}</span> ways. Then, we can pick such hands in <span class="math inline">13 \times 4 \times  {12\choose 2}</span> different
+ways.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>[3 Points] How many ways are there of rolling a <span
+class="math inline">6</span>-sided die <span
+class="math inline">6</span> times in a row such that there are
+<strong>exactly four</strong> <span class="math inline">3</span>s in a
+row somewhere, i.e., there are exactly four <span
+class="math inline">3</span>s <strong>and</strong> they are in a
+row?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>There are exactly <span class="math inline">3</span> possibilities
+for the location of four <span class="math inline">3</span>s in a
+row.</p>
+<p>Case 1: <span class="math display">3 \quad 3 \quad 3 \quad 3 \quad  -
+\quad -</span></p>
+<p>Case 2: <span class="math display">- \quad 3 \quad 3 \quad 3 \quad 3
+\quad  -</span></p>
+<p>Case 3: <span class="math display">- \quad - \quad 3 \quad 3 \quad 3
+\quad 3</span></p>
+<p>In all above cases, there are <span class="math inline">5</span>
+possibilities for the blanl spaces. Then we have <span class="math inline">5 \times 5 =25</span> possibilities in each case
+that result in <span class="math inline">3 \times 25 =75</span> total
+ossibilities.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<!-- Probability / Sample Space-->
+<p>There were 70 farmers in a La Jolla farmers market last week. We know
+that 52 of them farm arugula, 20 farm beets, 14 farm carrots, 8 farm
+arugula and carrots, 8 farm beets and carrots, and 6 farm arugula and
+beets.</p>
+<p>We pick a farmer uniformly at random. Determine the probability of
+this particular farmer farms all three crops, i.e., arugula, beets, and
+carrots.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Let <span class="math display"><span
+class="math display">\begin{align*}
+    A:&amp;amp; \text{ Farmers that grow arugula}\\
+    B:&amp;amp; \text{ Farmers that grow beet}\\
+    C:&amp;amp; \text{ Farmers that grow carrots}
+\end{align*}</span></span> One can drow the following Ven diagram (for
+simplicity, we represented the size of sets instead of probabilities.)
+<p>By setting the sum equal to <span class="math inline">70</span> we
+get:</p> <p><span class="math display"> 38-x+6-x+8-x+x+6+x+8-x-2+x=70
+x=6 </span> Therefore, the probability is equal to <span
+class="math inline">=</span>.</p></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<!-- Probabilitiy -->
+<!-- Split this one with two subprobs into one with four subprobs -->
+<p>Two players A and B participate in the following game. There are
+three spinners. The first one, <span class="math inline">S_1</span>,
+lands with equal probability on the numbers <span
+class="math inline">9</span>, <span class="math inline">5</span> and
+<span class="math inline">1</span> when spun. The second one, <span
+class="math inline">S_2</span>, lands with equal probability on the
+numbers <span class="math inline">7, 6</span> and <span
+class="math inline">2</span> when spun. The third one, <span
+class="math inline">S_3</span>, lands with equal probability on the
+numbers <span class="math inline">8, 4</span> and <span
+class="math inline">3</span> when spun. Player A chooses one of the
+three spinners and then player B chooses one of the remaining two
+spinners. Both players then spin their spinners and the one that lands
+on the higher number is declared the winner.</p>
+<figure>
+<embed src="Spin.pdf" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>[9 Points] Compute the probability that A wins in all of the
+following situations.</p>
+<ul>
+<li>A chooses <span class="math inline">S_1</span>, B chooses <span
+class="math inline">S_2</span>.</li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<pre><code>Let $W$ denote the event that player A wins. By using the law of
+total probability $$\begin{aligned}
+        P(W)&amp;=P(W|S_2=2)P(S_2=2)+P(W|S_2=6)P(S_2=6)+P(W|S_2=7)P(S_2=7)\\
+        &amp;=\frac{2}{3}\times\frac{1}{3}+\frac{1}{3}\times\frac{1}{3}+\frac{1}{3}\times\frac{1}{3}=\frac{4}{9}
+       
+\end{aligned}$$</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<ul>
+<li>A chooses <span class="math inline">S_2</span>, B chooses <span
+class="math inline">S_3</span>.</li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<pre><code>Similarly by using the law of total probability $$\begin{aligned}
+        P(W)&amp;=P(W|S_3=3)P(S_3=3)+P(W|S_3=4)P(S_3=4)+P(W|S_3=8)P(S_3=8)\\
+        &amp;=\frac{2}{3}\times\frac{1}{3}+\frac{2}{3}\times\frac{1}{3}+\frac{0}{3}\times\frac{1}{3}=\frac{4}{9}
+       
+\end{aligned}$$</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<ul>
+<li>A chooses <span class="math inline">S_3</span>, B chooses <span
+class="math inline">S_1</span>.</li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<pre><code>Similarly by using the law of total probability $$\begin{aligned}
+        P(W)&amp;=P(W|S_1=1)P(S_1=1)+P(W|S_1=5)P(S_1=5)+P(W|S_1=9)P(S_1=9)\\
+        &amp;=\frac{3}{3}\times\frac{1}{3}+\frac{1}{3}\times\frac{1}{3}+\frac{0}{3}\times\frac{1}{3}=\frac{4}{9}
+       
+\end{aligned}$$</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>[2 Points] Would you prefer to be player A or Player B? Why?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Player B. Because player B can always pick a spinner with probability
+of winning <span class="math inline">\frac{5}{9}&gt;\frac{1}{2}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<!-- \[ **Roulette Game**\]\[13 Points\] Conditional Probabilitiy-->
+<p>Consider a roulette wheel that has 36 numbers colored red (R) or
+black (B) according to the following pattern:</p>
+<div class="array">
+<p>cccccccccccccccccc <span class="math inline">1</span> &amp; <span
+class="math inline">2</span> &amp; <span class="math inline">3</span>
+&amp; <span class="math inline">4</span> &amp; <span
+class="math inline">5</span>&amp; <span
+class="math inline">6</span>&amp; <span
+class="math inline">7</span>&amp; <span
+class="math inline">8</span>&amp; <span
+class="math inline">9</span>&amp; <span
+class="math inline">10</span>&amp; <span
+class="math inline">11</span>&amp; <span
+class="math inline">12</span>&amp; <span
+class="math inline">13</span>&amp; <span
+class="math inline">14</span>&amp; <span
+class="math inline">15</span>&amp; <span
+class="math inline">16</span>&amp; <span
+class="math inline">17</span>&amp; <span
+class="math inline">18</span><br />
+R &amp; R&amp; R&amp; R&amp; R&amp; B &amp; B &amp; B &amp; B &amp; R
+&amp; R &amp; R &amp; R &amp; B &amp; B &amp; B&amp; B &amp; B<br />
+<span class="math inline">36</span> &amp; <span
+class="math inline">35</span>&amp; <span
+class="math inline">34</span>&amp; <span
+class="math inline">33</span>&amp; <span
+class="math inline">32</span>&amp; <span
+class="math inline">31</span>&amp; <span
+class="math inline">30</span>&amp; <span
+class="math inline">29</span>&amp; <span
+class="math inline">28</span>&amp; <span
+class="math inline">27</span>&amp; <span
+class="math inline">26</span>&amp; <span
+class="math inline">25</span>&amp; <span
+class="math inline">24</span>&amp; <span
+class="math inline">23</span>&amp; <span
+class="math inline">22</span>&amp; <span
+class="math inline">21</span>&amp; <span
+class="math inline">20</span>&amp; <span
+class="math inline">19</span><br />
+</p>
+</div>
+<p>(For example, this means the color of number <span
+class="math inline">2</span> is red or the color of number <span
+class="math inline">27</span> is black.)</p>
+<p>Define the following three events:</p>
+<ul>
+<li><p>Let A be the event that a spin of the wheel yields a RED number,
+<span class="math display">A = \{1, 2, 3, 4, 5, 10, 11, 12, 13, 24, 25,
+26, 27, 32, 33, 34, 35, 36
+\}.</span></p></li>
+<li><p>Let B be the event that a spin of the wheel yields an EVEN
+number, <span class="math display">B=
+\{2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36
+\}
+.</span></p></li>
+<li><p>Let C be the event that a spin of the wheel yields a number no
+greater than <span class="math inline">18</span>, <span
+class="math display">C=
+\{1, 2 ,3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,18
+\}.</span></p></li>
+</ul>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>[6 Points] Are the events A, B, and C "pairwise independent?" That
+is, is event A independent of event B; event A independent of event C;
+and B independent of event C?</p>
+<p>Hint: You can start by computing the probability of intersctions
+between each pair of these events.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>One can verify that <span class="math display">P(A)=\frac{18}{36}=\frac{1}{2}, \quad
+P(B)=\frac{18}{36}=\frac{1}{2},
+\quad  P(C)=\frac{18}{36}=\frac{1}{2},</span> and, <span class="math display">P(A \cap B)=\frac{9}{36}=\frac{1}{4}, \quad P(B
+\cap C)=\frac{9}{36}=\frac{1}{4},
+\quad  P(C)=\frac{9}{36}=\frac{1}{4}.</span></p>
+<p>Hence <span class="math inline">P(A \cap B)=P(A)P(B)</span>, <span class="math inline">P(B \cap C)=P(B)P(C)</span>, and, <span class="math inline">P(C \cap A)=P(C)P(A)</span>. Therefore <span class="math inline">A, B, C</span> are pairwise independent.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>[3 Points] Is <span class="math inline">P(A \cap B \cap C)=
+P(A)P(B)P(C)</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>No. <span class="math display">P(A \cap B \cap C)= \frac{|A \cap B
+\cap C|}{|S|}=\frac{4}{36}=\frac{1}{9} \neq
+P(A)P(B)P(C)=\frac{1}{8}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-10.3">Problem 10.3</h3>
+<p>[4 Points] Are the events <span class="math inline">A</span> and
+<span class="math inline">B</span> conditionally independent conditioned
+on <span class="math inline">C</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>No. Note that by using the definition of conditional probability one
+can write <span class="math display">P(A \cap B| C)=\frac{P(A \cap B
+\cap C)}{P(C)}=\frac{1/9}{1/2}=\frac{2}{9},</span> by using the results
+derived from part a) and b). Note also that <span class="math inline">P(A\cap B)=\frac{1}{4} \neq \frac{2}{9}=P(A \cap B|
+C)</span>. therefore, they are not conditionally independent.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>

@@ -24,10 +24,6 @@ $2^6- {6\choose 0}-{6\choose 1}=64- 1-6=57$.
 
 # END SOLUTION
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
 # END SUBPROB
 
 # BEGIN SUBPROB
@@ -35,12 +31,6 @@ $2^6- {6\choose 0}-{6\choose 1}=64- 1-6=57$.
 \[3 Points\] We have a standard deck of $52$ cards. How many hands of
 $6$ cards are there that have a four-of-a-kind and $3$ cards of the same
 suit?
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -52,17 +42,13 @@ $13 \times 4 \times  {12\choose 2}$ different ways.
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[3 Points\] How many ways are there of rolling a $6$-sided die $6$
 times in a row such that there are **exactly four** $3$s in a row
 somewhere, i.e., there are exactly four $3$s **and** they are in a row?
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -80,5 +66,7 @@ Then we have $5 \times 5 =25$ possibilities in each case that result in
 $3 \times 25 =75$ total ossibilities.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB

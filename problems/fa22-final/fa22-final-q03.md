@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-\[ **Linear regeression**\]\[13 Points\]
+<!-- \[ **Linear regeression**\]\[13 Points\] -->
 
 Given a $2\times 2$ matrix
 $$A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}.$$ Its inverse (if
@@ -16,11 +16,6 @@ We have our linear regression: $$X\vec{w} = \vec{y}.$$ Write down the
 dimensions of $X$, $\vec{w}$ and $\vec{y}$ in general (i.e. $n$ samples,
 $d$ features), and for this data. Write down $X$ and $\vec{y}$
 explicitly for this data.\
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -40,16 +35,15 @@ $$X = \begin{pmatrix} 1 & 0 \\ 1 & 2 \\ 1 & 4 \\ 1 & 6 \end{pmatrix}, \ \ \ \ \v
 
 # END SOLUTION
 
+
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[1 Point\] Write down the closed-form solution for $\vec{w}$ in matrix
 form.
 
-# BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -59,16 +53,12 @@ the pseudo-inverse of $X$.
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[4 Points\] Now, show step-by-step details of your calculation for
 $\vec{w}$ with matrix operations.
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -84,6 +74,8 @@ $$\vec{w} = (X^TX)^{-1}X^T\vec{y} = \frac{1}{20} \begin{pmatrix} 14 & 8 & 2 & -4
 The bias/intercept $w_0 = 1$ and the slope $w_1 = 0.5$.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # BEGIN SUBPROB
 
@@ -108,12 +100,6 @@ $w_0^* =$
 We should get the same answer as using the matrix form. Finally, what
 can we say about the correlation $r$ and the slope for this dataset
 (mathematically)?
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -149,6 +135,8 @@ positive.
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[2 Points\] Given an arbitrary dataset of $n$ samples
@@ -160,12 +148,6 @@ $\mathcal{D} = \{(x_i, y_i)\}_{i = 1}^n$:
 
 -   How does the slope change if we multiply $\beta \in \mathbb{R}$ to
     each $x_i$? Show an explanation for your claim!
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -202,16 +184,12 @@ $\mathcal{D} = \{(x_i, y_i)\}_{i = 1}^n$:
 
 # END SOLUTION
 
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 \[1 Point\] Suppose we have the hypothesis $h(x) = w_0e^{w_1x}$. How can
 we apply linear regression to find $w_0$ and $w_1$?
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -224,5 +202,7 @@ the new transformed data $\{(x_i, \log(y_i))\}_{i = 1}^n$. Finally, we
 get $w_0^* = e^{b_0^*}$ and $w_1^* = b_1^*$.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB

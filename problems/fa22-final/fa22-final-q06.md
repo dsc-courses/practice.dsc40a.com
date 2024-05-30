@@ -47,10 +47,6 @@ exam.\" spam or ham? You should show your work.
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB # BEGIN SOLUTION
-
 We represent the features with binary variables $x_1, x_2, x_3, x_4$.
 Then, this sentence is represented by $(x_1, x_2, x_3, x_4)=(0,0,1,1)$
 binary vector, which is denoted by $0011$ for the ease of notation. Let
@@ -67,16 +63,14 @@ as follows: $$\begin{aligned}
 \end{aligned}$$ Since, $P(S|0011) < P(H|0011)$ we predict the email is a
 ham. Note that we didnt need smoothing for this part.
 
-# END SOLUTION # BEGIN SUBPROB
+# END SOLUTION 
+
+# END SUBPROB 
+
+# BEGIN SUBPROB
 
 \[5 Points\] Is "I am working on probabilty problems in the final exam
 \" spam or ham? You should show your work.
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -99,5 +93,7 @@ $$\begin{aligned}
 ham.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB

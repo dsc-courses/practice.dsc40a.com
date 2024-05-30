@@ -15,9 +15,9 @@ Given the data on 2-dimensional space:
      6       0
 :::
 
-::: center
+<!-- ::: center
 ![image](K-Means.png)
-:::
+::: -->
 
 We want to apply K-Means to cluster this data. Suppose that $k = 2$ (two
 clusters).\
@@ -29,18 +29,14 @@ down the coordinates.
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SOLUTION
-
 $$\mu_1^* = \bigg(-6, -\frac{14}{3}\bigg)$$
 $$\mu_2^* = \bigg(4, \frac{4}{3}\bigg)$$ $\mu_1$ is the average of 3
 points on the bottom left, and $\mu_2$ is the average of 3 points on the
 top right.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # BEGIN SUBPROB
 
@@ -49,11 +45,6 @@ write down a condition to terminate the K-Means algorithm.
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SOLUTION
 
 **Lloyd's Algorithm:**
 
@@ -71,6 +62,8 @@ write down a condition to terminate the K-Means algorithm.
 4.  Repeat steps 2 and 3 until the centroids stop changing.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # BEGIN SUBPROB
 
@@ -122,12 +115,6 @@ iterations.
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SOLUTION
-
 ::: center
                    $\mu_1$       $\mu_2$
   ------------ --------------- ------------
@@ -148,11 +135,13 @@ iterations.
      6       0         1            2            2            2
 :::
 
-::: center
+<!-- ::: center
 ![image](K-Means_Iter_final.png)
-:::
+::: -->
 
 # END SOLUTION
+
+# END SUBPROB
 
 # BEGIN SUBPROB
 
@@ -160,12 +149,6 @@ iterations.
 to a clustering that does **not** actually have the lowest possible
 inertia. In other words, like gradient descent, K-Means can get caught
 in a local minimum. Write down a solution to address this issue.
-
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 # BEGIN SOLUTION
 
@@ -179,5 +162,7 @@ Some solutions:
     initial centroids by maximizing distance from all other centroids.
 
 # END SOLUTION
+
+# END SUBPROB
 
 # END PROB
