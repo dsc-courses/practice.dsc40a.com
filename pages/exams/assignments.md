@@ -2,7 +2,7 @@ Overleaf Link: https://www.overleaf.com/read/sxtxhfnpdncy#9530e5
 
 **NEWER TASKS:**
 
-TODO
+TODO 
 
 
 **OLDER TASKS:**
@@ -20,6 +20,7 @@ Zoe/Javier: Winter 2022 midterm 2 (mockmidterm2.tex)
 - Fixed Formatting
 
 Nick: the zip fa22-final.zip, attached, has the .tex for the Fall 2022 final (Final_revised.tex).
+    - Need: import photos, clean problems, bolster solns, topic-ization.
 
 **DONE:**
 
