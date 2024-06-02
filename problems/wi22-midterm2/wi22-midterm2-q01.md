@@ -43,7 +43,11 @@ color schemes include the color purple?
 
 $90$
 
-TODO
+To solve this problem we need to figure out two thigs. First, we need to get the number of groups of three colors that include purple, and then we need to calculate how many different color schemes can we make with three given colors.
+
+For the first part since we know we are using purple the only thing we need to do then is choose two colors from the remaining 6, and we know there's ${6 \choose 2}$ way's to do that. Then given any set of three colors, How many color schemes can we create? To answer this question you can think of the three possible meanings for a color as placesments on a line, thus if you have your three colors on a line, the first one means correct, the second one means incorrect placement for the letter, and the last one means the letter is not on the string, then the question becomes how many lines can you make with three elements, and it should be clear to you thet this is $3!$. Therefore the total number of schemes that include purple would be 
+
+${6 \choose 2} \cdot 3! = 90$ 
 
 # END SOLUTION
 

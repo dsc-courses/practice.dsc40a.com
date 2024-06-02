@@ -4,8 +4,8 @@ context: This exam was administered in person. Students had **90 minutes** to ta
 show_solution: true
 problems:
   # Commented problems are problems that are UNFINISHED, uncomment when complete :)
-  # - wi22-midterm2/wi22-midterm2-q01 
-  # - wi22-midterm2/wi22-midterm2-q02 
+  - wi22-midterm2/wi22-midterm2-q01 
+  - wi22-midterm2/wi22-midterm2-q02 
   # - wi22-midterm2/wi22-midterm2-q03 
   # - wi22-midterm2/wi22-midterm2-q04 
   # - wi22-midterm2/wi22-midterm2-q05 

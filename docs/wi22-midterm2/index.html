@@ -21,7 +21,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="..\assets\theme.css" />
+  <link rel="stylesheet" href="../assets/theme.css" />
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -70,6 +70,141 @@ minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
 <p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm
+2</a>, Problem 1</i></p>
+<p>In the game Stringle, players try to guess a randomly generated
+string. There is a new Stringle string available each day.</p>
+<p>Each day’s Stringle string is a <strong>six-letter string</strong>,
+where each letter is chosen uniformly at random, <strong>with
+replacement</strong>, from among the 26 letters of the English alphabet.
+This means Stringle strings can have repeated letters, and they do not
+need to have any meaning as an English word.</p>
+<p>Players input a guess, which can be any six-letter string, and get
+feedback on their guess, which is given by coloring the letters of the
+guessed string as follows:</p>
+<ul>
+<li><strong>green</strong> for letters in the correct position,</li>
+<li><strong>yellow</strong> for letters in the Stringle string, but in
+the incorrect position,</li>
+<li><strong>gray</strong> for letters not in the Stringle string.</li>
+</ul>
+<p>Based on this feedback, they can guess again, an
+<strong>unlimited</strong> number of times, until they guess the string
+correctly, at which point the game is over. Here’s an example of what
+happens when someone plays Stringle and guesses the string on their
+fifth guess:</p>
+<center><img src="../assets/images/wi22-midterm2/stringlewin.png" width="330" height="330"></center>
+<p>A player’s Stringle <strong>score</strong> is the number of guesses
+it took them to guess the word correctly. In the example above, the
+player’s score is 5.</p>
+<p>(1 point) Stringle uses the following color scheme, or assignment of
+colors to meanings:</p>
+<ul>
+<li><p><strong>green</strong> for letters in the correct
+position,</p></li>
+<li><p><strong>yellow</strong> for letters in the Stringle string, but
+in the incorrect position,</p></li>
+<li><p><strong>gray</strong> for letters not in the Stringle
+string.</p></li>
+</ul>
+<p>Suppose the game developers could have instead used any three colors
+from the set of seven colors <span class="math inline">\{</span>red,
+orange, yellow, green, blue, purple, gray<span
+class="math inline">\}</span>, so long as no color has multiple
+meanings. How many color schemes include the color purple?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">15</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">90</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">120</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">90</span></p>
+<p>To solve this problem we need to figure out two thigs. First, we need
+to get the number of groups of three colors that include purple, and
+then we need to calculate how many different color schemes can we make
+with three given colors.</p>
+<p>For the first part since we know we are using purple the only thing
+we need to do then is choose two colors from the remaining 6, and we
+know there’s <span class="math inline">{6 \choose 2}</span> way’s to do
+that. Then given any set of three colors, How many color schemes can we
+create? To answer this question you can think of the three possible
+meanings for a color as placesments on a line, thus if you have your
+three colors on a line, the first one means correct, the second one
+means incorrect placement for the letter, and the last one means the
+letter is not on the string, then the question becomes how many lines
+can you make with three elements, and it should be clear to you thet
+this is <span class="math inline">3!</span>. Therefore the total number
+of schemes that include purple would be</p>
+<p><span class="math inline">{6 \choose 2} \cdot 3! = 90</span></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm
+2</a>, Problem 2</i></p>
+<p>Suppose that every day, the Stringle string is chosen without
+replacement from among the set of all possible valid strings. What is
+the probability that DSCTEN was the Stringle string for one of the first
+100 days after the game’s release?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">
+\dfrac{100}{26^6} = 100\cdot \dfrac{P(26^6-1, 99)}{P(26^6, 100)} = 1 -
+\dfrac{P(26^6- 1, 100)}{P(26^6, 100)}
+</span></p>
+<p>Whenever you are thrying to calculated the probability of something
+happening <strong>at least once</strong> over a series of repeated
+trials, it is a very good idea to consider the <strong>complement
+rule</strong> because in most cases calculating the probability of
+something never happening is easier.</p>
+<p>Knowing that, let’s calculate the probability of not getting the
+string DSCTEN in any of the days. Well, the first part would be
+figuiring out how many possible strings exists, since there’s <span class="math inline">26</span> letters on the English alphabet, it should
+be clear that the total number of strings is <span class="math inline">26^6</span>, now the number of ways we can choose
+100 of them withouth chossing DSCTEN is <span class="math inline">{26^6-1 \choose 100}</span>, and therefore the
+probability of DSCTEN not being in our selection of 100 strings is <span class="math inline">\frac{26^6-1 \choose 100}{26^6 \choose 100}</span>.
+Notice that in this I’m thinking in terms of combinations, but it would
+be equally valid to think in therms of permutations, and in that case we
+would do the number of permutations wihtout the string DSCTEN over the
+total number of permutations (<span class="math inline">\dfrac{P(26^6-
+1, 100)}{P(26^6, 100)}</span>).</p>
+<p>Now we only need to use the complement rule, and we’ll get that the
+answer is <span class="math inline">1 - \frac{26^6-1 \choose 100}{26^6
+\choose 100} = 1 - \dfrac{P(26^6- 1, 100)}{P(26^6, 100)}</span></p>
+<p><strong>Note: P stands for permutation in this problem</strong></p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm
 2</a>, Problem 7</i></p>
 <p>Recall in the game Stringle, players try to guess a randomly
 generated string. There is a new Stringle string available each day.</p>
@@ -103,13 +238,13 @@ conditionally dependent</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+<h2 class="accordion-header" id="heading3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1" class="accordion-collapse collapse"
-aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div id="collapse3" class="accordion-collapse collapse"
+aria-labelledby="heading3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
