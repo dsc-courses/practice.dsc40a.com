@@ -889,7 +889,7 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\dfrac{1/4}</span></p>
+<p><span class="math inline">\frac{1/4}</span></p>
 <p>First, let’s calculate the probability of one person choosing a black
 pawn. We know that the complete chess set has 32 pieces, and out of
 those 32 there are 8 black pawns, which gives us a probability of <span class="math inline">\frac{8}{32} = \frac{1}{4}</span> of selecting a
@@ -954,9 +954,15 @@ P(B)</span>: <span class="math display">
 </span></p>
 <p>Recall we calculate <span class="math inline">P(A \cap B) = P(A)
 \cdot P(B|A)</span>.</p>
-<p>We solved for <span class="math inline">P(B|A)</span> in part A of
-the problem: <span class="math inline">\frac{7}{30}</span>. We also
-already solved for <span class="math inline">P(A)</span> above: <span class="math inline">\frac{15}{62}</span>.</p>
+<p>To find <span class="math inline">P(B|A)</span>, we assume that both
+pieces are white and imagine the probabilities of getting two pawns from
+that batch of white pieces. To get the first pawn, the probability is
+<span class="math inline">\frac{8}{16}</span> (8 pawns out of 16 white
+pieces). To get the second pawn, the probability is: <span class="math inline">\frac{7}{15}</span> (7 remaining pawns out of 15
+remaining white pieces). So, the probabilitiy of getting two pawns given
+we have two white pieces is <span class="math inline">P(B|A) =
+\frac{8}{16} \cdot \frac{7}{15} = \frac{7}{30}</span>. We also already
+solved for <span class="math inline">P(A)</span> above: <span class="math inline">\frac{15}{62}</span>.</p>
 <p><span class="math display">
 \frac{15}{62} \cdot \frac{7}{30} = \frac{7}{124}
 </span></p>

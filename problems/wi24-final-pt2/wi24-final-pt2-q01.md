@@ -50,7 +50,7 @@ As $n$ becomes large, what fraction of n people has selected a black pawn? Choos
 
 # BEGIN SOLUTION
 
-$\dfrac{1/4}$
+$\frac{1/4}$
 
 First, let's calculate the probability of one person choosing a black pawn. We know that the complete chess set has 32 pieces, and out of those 32 there are 8 black pawns, which gives us a probability of $\frac{8}{32} = \frac{1}{4}$ of selecting a black pawn. Now, think about how we interpret probabilities; for example, if we say that the probability of getting heads when flipping a coin is $\frac{1}{2}$ that just means that if we flip a coin over and over, we expect to see heads $\frac{1}{2}$ of the time. Similarly, when we say that the probability of choosing a black pawn is $\frac{1}{4}$, that means that if we were to <u>choose a chess piece over and over</u>, we expect to choose a black pawn $\frac{1}{4}$ of the time. 
 
@@ -87,7 +87,7 @@ $$
 
 Recall we calculate $P(A \cap B) = P(A) \cdot P(B|A)$.
 
-We solved for $P(B|A)$ in part A of the problem: $\frac{7}{30}$. We also already solved for $P(A)$ above: $\frac{15}{62}$.
+To find $P(B|A)$, we assume that both pieces are white and imagine the probabilities of getting two pawns from that batch of white pieces. To get the first pawn, the probability is $\frac{8}{16}$ (8 pawns out of 16 white pieces). To get the second pawn, the probability is: $\frac{7}{15}$ (7 remaining pawns out of 15 remaining white pieces). So, the probabilitiy of getting two pawns given we have two white pieces is $P(B|A) = \frac{8}{16} \cdot \frac{7}{15} = \frac{7}{30}$. We also already solved for $P(A)$ above: $\frac{15}{62}$.
 
 $$
 \frac{15}{62} \cdot \frac{7}{30} = \frac{7}{124}
