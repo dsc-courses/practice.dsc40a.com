@@ -50,13 +50,17 @@ As $n$ becomes large, what fraction of n people has selected a black pawn? Choos
 
 # BEGIN SOLUTION
 
-1/4 
+$\dfrac{1/4}$
 
-First lets calculate the probability of one person choosing a black pawn. Well, we know that the complete chess set has 32 pieces and from those 32 there's 8 black pawns, that gives us a probability of $\frac{8}{32} = \frac{1}{4}$. Now think about how we interpret probabilities, for example if I say that the probability of getting heads when flipping a coin is $\frac{1}{2}$ that just means that if I flip a coin undefinetely, I expect to see heads $\frac{1}{2}$ of the time. Similarly when we say that the probability of choosing a black pawn is $\frac{1}{4}$, that means that if we were to do the experiment undefinetely, we expect to choose a black pawn $\frac{1}{4}$ of the time, but it does not matter if you are doing it undefinetly or if you have an infinete amount of people doing it once the experiemnt remains the same, therefore you still expect to see the black pawn $\frac{1}{4}$ of the time.
+First, let's calculate the probability of one person choosing a black pawn. We know that the complete chess set has 32 pieces, and out of those 32 there are 8 black pawns, which gives us a probability of $\frac{8}{32} = \frac{1}{4}$ of selecting a black pawn. Now, think about how we interpret probabilities; for example, if we say that the probability of getting heads when flipping a coin is $\frac{1}{2}$ that just means that if we flip a coin over and over, we expect to see heads $\frac{1}{2}$ of the time. Similarly, when we say that the probability of choosing a black pawn is $\frac{1}{4}$, that means that if we were to <u>choose a chess piece over and over</u>, we expect to choose a black pawn $\frac{1}{4}$ of the time. 
+
+As $n$ becomes large, we <u>choose chess pieces over and over $n$ times</u>. Therefore, you still expect to see the black pawn $\frac{1}{4}$ of the time.
 
 # END SOLUTION
 
-# END SUBPROB # BEGIN SUBPROB
+# END SUBPROB 
+
+# BEGIN SUBPROB
 
 True or False: Having two pawns is **independent** of having two white pieces.
 
@@ -65,17 +69,31 @@ True or False: Having two pawns is **independent** of having two white pieces.
 
 # BEGIN SOLUTION
 
-True
+False.
 
-There are multiple ways to check the independence between two events, in this case I will use the fact that two events (A and B) are indepedent whenever $P(A|B) = P(A)$.
+We know that two probabilities are independent of each other if $P(A \cap B) = P(A) \cdot P(B)$.
 
-No lets define  A as the event where you choose two pawns, and B as the event of choosing two white pieces. Then if we have a white piece the probability of that white piece being also a pawn would be $\frac{8}{16}$ because there's 8 white pawns and 16 white pieces total, thus if we know that we have another white piece the probability for that piece to be also a pawn is $\frac{8}{16}$ again, Therefore $P(A|B) = (\frac{8}{16})^2 = \frac{1}{4} $. Now the probability of having a pawn is $\frac{16}{32}$ because there's 16 pawns and 32 total pieces, therefore the probability of doing that twice would be $(\frac{16}{32})^2 = \frac{1}{4}$. So we conclude that
+- Let $P(A)$ be the probability of getting a white piece twice in a row.
+- Let $P(B)$ be the probability of getting a pawn twice in a row.
 
-\begin{align*}
-P(A|B) = \frac{1}{4} = P(A)
-\end{align*}
+We can calculate the probability of getting a white piece twice in a row $P(A) = \frac{16}{32} \cdot \frac{15}{31} = \frac{15}{62}$. We get $\frac{16}{32}$ from the fact there are $16$ white pieces out of the $32$ total pieces. We get $\frac{15}{31}$ from the fact there are now $15$ white pieces out of the $31$ pieces left after taking out a white piece.
 
-which means A and B are independent.
+We can also calculate the probability of getting a pawn twice in a row. Note that the color of the pawn does not matter! $P(B) = \frac{16}{32} \cdot \frac{15}{31} = \frac{15}{62}$. We get $\frac{16}{32}$ from the fact there are $16$ pawns ($8$ black pawns plus $8$ white pawns) out of the $32$ total pieces. We get $\frac{15}{31}$ from the fact there are now $15$ pawns out of the $31$ pieces left after taking out a pawn.
+
+We can now calculate $P(A) \cdot P(B)$:
+$$
+\frac{15}{62} \cdot \frac{15}{62} = \frac{225}{3844}
+$$
+
+Recall we calculate $P(A \cap B) = P(A) \cdot P(B|A)$.
+
+We solved for $P(B|A)$ in part A of the problem: $\frac{7}{30}$. We also already solved for $P(A)$ above: $\frac{15}{62}$.
+
+$$
+\frac{15}{62} \cdot \frac{7}{30} = \frac{7}{124}
+$$
+
+We can see that $P(A \cap B) \neq P(A) \cdot P(B)$ because $\frac{7}{124} \neq \frac{225}{3844}$, so the answer is "False."
 
 # END SOLUTION
 
