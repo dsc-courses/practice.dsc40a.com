@@ -50,7 +50,7 @@ As $n$ becomes large, what fraction of n people has selected a black pawn? Choos
 
 # BEGIN SOLUTION
 
-$\frac{1/4}$
+$\frac{1}{4}$
 
 First, let's calculate the probability of one person choosing a black pawn. We know that the complete chess set has 32 pieces, and out of those 32 there are 8 black pawns, which gives us a probability of $\frac{8}{32} = \frac{1}{4}$ of selecting a black pawn. Now, think about how we interpret probabilities; for example, if we say that the probability of getting heads when flipping a coin is $\frac{1}{2}$ that just means that if we flip a coin over and over, we expect to see heads $\frac{1}{2}$ of the time. Similarly, when we say that the probability of choosing a black pawn is $\frac{1}{4}$, that means that if we were to <u>choose a chess piece over and over</u>, we expect to choose a black pawn $\frac{1}{4}$ of the time. 
 
