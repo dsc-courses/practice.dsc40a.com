@@ -3,7 +3,16 @@
 <i>Source: [Winter 2024 Final Part 2](../wi24-final-pt2/index.html), Problem 1</i>
 
 Consider an experiment where each of $n$ people selects
-one piece from their own set of 32 chess pieces, uniformly at random.
+one piece from their own set of chess pieces, uniformly at random.
+A chess set has $32$ pieces. $16$ of these are black and $16$ of these are white. **In each color**, the $16$ pieces are:
+
+- $8$ pawns,
+- $2$ bishops,
+- $2$ knights,
+- $2$ rooks,
+- $1$ queen, and 
+- $1$ king.
+
 The **result** of the experiment is a description of the **colors and
 types** of the pieces each person selected. For example, if $n=3$, one
 possible result is:

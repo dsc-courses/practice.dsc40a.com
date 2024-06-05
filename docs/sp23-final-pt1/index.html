@@ -496,8 +496,11 @@ to have different results because if you have a really large learning
 rate you might be hopping over the global minimum without properly
 converging. Your friend could choose a smaller learning rate, which will
 allow you to converge to the global minimum.</p>
-<p>If you and your friend chose the same initial predictions you are
-guaranteed to end up in the same spot.</p>
+<p>If you and your friend chose different initial predictions, you are
+guaranteed to end up in the same spot as long as the function is convex,
+but we do not know for this problem if our function is convex or not.
+So, on its own, this is answer is not enough to explain the difference
+in our results, because our function could have been convex.</p>
 <p>Because two of the options are possible the answer cannot be “None of
 the above.”</p>
 </div>
