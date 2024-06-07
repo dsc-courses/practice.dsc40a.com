@@ -10,18 +10,43 @@ Note that this is \textit{not} the simple linear regression hypothesis function,
 
 To do so, we will find the optimal parameter vector $\vec{w}^* = \begin{bmatrix} w_0^* \\ w_1^* \end{bmatrix}$ that satisfies the normal equations. The first 5 rows of our dataset are as follows, though note that our dataset has $n$ rows in total.
 
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|}
-\hline
-$x$ & $y$ \\ \hline
-2   & 4   \\ \hline
--1  & 4   \\ \hline
-3   & 4  \\ \hline
--7  & 4   \\ \hline
-3   & 4   \\ \hline
-\end{tabular}
-\end{table}
+<!-- | x  | y |
+|----|---|
+| 2  | 4 |
+| -1 | 4 |
+| 3  | 4 |
+| -7 | 4 |
+| 3  | 4 | -->
+
+<table style="border: 1px solid black; border-collapse: collapse; margin: auto; text-align: center;">
+  <tr>
+    <th style="border: 1px solid black; padding: 8px;">x</th>
+    <th style="border: 1px solid black; padding: 8px;">y</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">2</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">-1</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">3</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">-7</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 8px;">3</td>
+    <td style="border: 1px solid black; padding: 8px;">4</td>
+  </tr>
+</table>
+
+
+
 
 Suppose that $x_1, x_2, ..., x_n$ have a mean of $\bar{x} = 2$ and a variance of $\sigma_x^2 = 10$.
 
