@@ -80,10 +80,13 @@ no coughing if that person was diagnosed "healthy\"?
 
 With smoothing, the result is $\dfrac{1}{16}$.
 
-To apply smoothing, we add $1$ to both the numerator and denominator of pesky $0$ probabilities. That way, other probabilities avoid being multiplied by zero.
+To apply smoothing, we add $1$ to both the numerator and denominator of pesky $0$ probabilities. That way, other probabilities avoid being multiplied by zero. Let's smooth our three conditional probabilities:
 
-$P(F|-)=0$ is a zero probability that needs to be smoothed. The smoothed version becomes:
-$$P(F|-)= \frac{0}{3} \to \frac{0 + 1}{3 + 1} = \frac{1}{4}$$
+$$P(N|-)= \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}$$
+$$P(\bar C|-)= \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}$$
+
+$P(F|-)=0$ is a zero probability that also needs to be smoothed. The smoothed version becomes:
+$$P(F|-)= \frac{0}{2} \to \frac{0 + 1}{2 + 2} = \frac{1}{4}$$
 
 We carry on evaluating $P(N,\bar C, F|-)$, just as the problem asks.
 
