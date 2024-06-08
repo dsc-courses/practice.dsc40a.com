@@ -14,17 +14,17 @@ You and a friend independently perform gradient descent on the same function, bu
 
 # BEGIN SOLUTION
 
-Bubbles 1 and 3 are true: "The function is nonconvex" and "You and your friend chose different learning rates."
+Bubbles 3: "You and your friend chose different learning rates."
 
-If the function is nonconvex it is possible for you and your friend to end in different places if you start in different places. For example if you have a polynomial with a local minima and a global minimum then it is possible you could find the local minima and your friend could find the global minima, which would mean you have different results.
+If the function is nonconvex and you and your friend have the same initial prediction and learning rate you should end up in the same location local or global minimum.
 
 If the function is not differentiable then you cannot perform gradient descent, so this cannot be an answer.
 
 If you and your friend chose different learning rates it is possible to have different results because if you have a really large learning rate you might be hopping over the global minimum without properly converging. Your friend could choose a smaller learning rate, which will allow you to converge to the global minimum.
 
-If you and your friend chose different initial predictions, you are guaranteed to end up in the same spot as long as the function is convex, but we do not know for this problem if our function is convex or not. So, on its own, this is answer is not enough to explain the difference in our results, because our function could have been convex.
+If you and your friend chose the same initial predictions you are guaranteed to end up in the same spot.
 
-Because two of the options are possible the answer cannot be "None of the above."
+Because two of the option choices are possible the answer cannot be "None of the above."
 
 # END SOLUTION
 
