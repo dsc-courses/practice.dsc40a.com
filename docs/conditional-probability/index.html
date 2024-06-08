@@ -1210,10 +1210,13 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>With smoothing, the result is <span class="math inline">\dfrac{1}{16}</span>.</p>
-<p>To apply smoothing, we add <span class="math inline">1</span> to both
-the numerator and denominator of pesky <span class="math inline">0</span> probabilities. That way, other
-probabilities avoid being multiplied by zero. Let’s smooth our three
-conditional probabilities:</p>
+<p>To apply smoothing, we add <span class="math inline">1</span> to the
+numerator, and add the number of possible categories of the given event,
+sick (which would be <span class="math inline">2</span> possible options
+in this case: sick, or healthy) to the denominator of our
+<em>conditional</em> probabilities. That way, other probabilities avoid
+being multiplied by zero. Let’s smooth our three conditional
+probabilities:</p>
 <p><span class="math display">P(N|-)= \frac{1}{2} \to \frac{1 + 1}{2 +
 2} = \frac{2}{4}</span> <span class="math display">P(\bar C|-)=
 \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}</span></p>

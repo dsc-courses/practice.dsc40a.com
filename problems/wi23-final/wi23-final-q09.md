@@ -80,7 +80,7 @@ no coughing if that person was diagnosed "healthy\"?
 
 With smoothing, the result is $\dfrac{1}{16}$.
 
-To apply smoothing, we add $1$ to both the numerator and denominator of pesky $0$ probabilities. That way, other probabilities avoid being multiplied by zero. Let's smooth our three conditional probabilities:
+To apply smoothing, we add $1$ to the numerator, and add the number of possible categories of the given event, sick (which would be $2$ possible options in this case: sick, or healthy) to the denominator of our *conditional* probabilities. That way, other probabilities avoid being multiplied by zero. Let's smooth our three conditional probabilities:
 
 $$P(N|-)= \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}$$
 $$P(\bar C|-)= \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}$$
