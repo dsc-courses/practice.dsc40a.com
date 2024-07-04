@@ -1,6 +1,5 @@
 # BEGIN PROB
 
-\[(15 pts)\]
 
 Delta has released a line of trading cards. Each trading card has a
 picture of a plane and a color. There are 12 plane types, and for each
@@ -26,6 +25,8 @@ $\boxed{\text{box}}$ around your final answer.
 
 # BEGIN SOLUTION
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -41,6 +42,8 @@ work, and put a $\boxed{\text{box}}$ around your final answer.
 
 # BEGIN SOLUTION
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -54,6 +57,14 @@ work, and put a $\boxed{\text{box}}$ around your final answer.
 1in
 :::
 
+# BEGIN SOLUTION
+
+TODO
+
+# END SOLUTION
+
+# END SUBPROB
+
 # BEGIN SUBPROB
 
 How many sets of 6 cards have exactly 3 unique plane types, such that
@@ -66,11 +77,7 @@ $\boxed{\text{box}}$ around your final answer.
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
-# BEGIN SOLUTION
+TODO
 
 # END SOLUTION
 
@@ -89,6 +96,8 @@ addressed in part (d).*
 :::
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 

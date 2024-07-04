@@ -1,6 +1,5 @@
 # BEGIN PROB
 
-**\[Eligible for midterm redemption\]**\]
 
 Suppose we're given a dataset of $n$ points,
 $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$, where $\bar{x}$ is the mean
@@ -25,9 +24,17 @@ Suppose we were to fit a simple linear hypothesis function through the
 original dataset, $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$, again using
 squared loss. What would the optimal slope be?
 
-( ) 2 ( ) 4 ( ) 6 ( ) 8 ( ) 11 ( ) 12 ( ) 24
+( ) 2 
+( ) 4 
+( ) 6 
+( ) 8 
+( ) 11 
+( ) 12 
+( ) 24
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -45,6 +52,8 @@ Give your answer as an integer with no variables.
 $\bar{x} =$
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 

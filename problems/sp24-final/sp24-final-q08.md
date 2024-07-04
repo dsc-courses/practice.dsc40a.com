@@ -1,8 +1,5 @@
 # BEGIN PROB
 
-*(The first paragraph below has been copied from the previous
-question.)*
-
 Delta has released a line of trading cards. Each trading card has a
 picture of a plane and a color. There are 12 plane types, and for each
 plane type there are three possible colors (gold, silver, and platinum),
@@ -17,12 +14,6 @@ In this question, you may leave your answers unsimplified, in terms of
 fractions, exponents, the permutation formula $P(n, k)$, and the
 binomial coefficient ${n \choose k}$.
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
-
 # BEGIN SUBPROB
 
 Given that you receive a gold-colored card at least once, what is the
@@ -34,6 +25,8 @@ your work, and put a $\boxed{\text{box}}$ around your final answer.
 :::
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -53,6 +46,8 @@ $\boxed{\text{box}}$ around your final answer.
 :::
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 

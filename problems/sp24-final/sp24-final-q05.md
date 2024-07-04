@@ -15,6 +15,8 @@ $\nabla g\left( \begin{bmatrix} -1 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} 
 
 # BEGIN SOLUTION
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -34,6 +36,8 @@ $\boxed{\text{box}}$ around your final answer for $\vec{x}^{(1)}$.
 
 # BEGIN SOLUTION
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -44,14 +48,13 @@ Consider the function $f(t) = (t - 3)^2 + (t^2 - 1)^2$. Select the true
 statement below.
 
 ( ) $f(t)$ is convex and has a global minimum.
-
 ( ) correct$f(t)$ is not convex, but has a global minimum.
-
 ( ) $f(t)$ is convex, but doesn't have a global minimum.
-
 ( ) $f(t)$ is not convex and doesn't have a global minimum.
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 

@@ -31,10 +31,17 @@ will be early, on time, or late, given the weather conditions.
 
 $$\mathbb{P}(\text{heavy winds} \: | \: \text{early})$$
 
-( ) $\frac{2}{7}$ ( ) $\frac{5}{7}$ ( ) $\frac{3}{8}$ ( ) $\frac{3}{10}$
-( ) $\frac{14}{15}$ ( ) $\frac{3}{28}$ ( ) $\frac{5}{28}$
+( ) $\frac{2}{7}$ 
+( ) $\frac{5}{7}$ 
+( ) $\frac{3}{8}$ 
+( ) $\frac{3}{10}$
+( ) $\frac{14}{15}$ 
+( ) $\frac{3}{28}$ 
+( ) $\frac{5}{28}$
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -51,6 +58,8 @@ $\frac{9}{29}$ ( ) $\frac{9}{32}$ ( ) $\frac{31}{101}$ ( )
 $\frac{31}{104}$
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -82,6 +91,8 @@ you already found in **part (a)**.*
 :::
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 

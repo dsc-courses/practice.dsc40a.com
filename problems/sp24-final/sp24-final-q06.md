@@ -1,7 +1,5 @@
 # BEGIN PROB
 
-\[(13 pts)\]
-
 Atlanta, Detroit, and Minneapolis are the three largest hub airports for
 Delta Airlines. You survey a sample of $n$ students at UCSD, and find
 that:
@@ -19,12 +17,6 @@ that:
 
 Suppose you select one student at random from your sample of $n$.
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
-
 # BEGIN SUBPROB
 
 Suppose the event that the selected student has been to Atlanta and the
@@ -38,6 +30,8 @@ around your final answer, which should be an **integer**.
 :::
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -56,9 +50,17 @@ independent given that the selected student **has not** been to Detroit.
 
 Now, what is the value of $n$?
 
-( ) 12 ( ) 28 ( ) 30 ( ) 32 ( ) 42 ( ) 45 ( ) 56
+( ) 12 
+( ) 28 
+( ) 30 
+( ) 32 
+( ) 42 
+( ) 45 
+( ) 56
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -81,41 +83,15 @@ the complement, but that's hard to read on the exam.)
 Which of the following combinations of sets form a partition of the
 sample space?
 
-( )
-
-  -----
-  $A$
-  $D$
-  $M$
-  -----
-
-( )
-
-  -----------------------
-  $A \cap D^c \cap M^c$
-  $D$
-  $M$
-  -----------------------
-
-( )
-
-  -----------------------
-  $A \cap D$
-  $D^c$
-  $A^c \cap D \cap M^c$
-  -----------------------
-
-( )
-
-  ------------
-  $A^c$
-  $A \cap D$
-  $A \cap M$
-  ------------
-
+( ) $A$ $D$ $M$
+( ) $A \cap D^c \cap M^c$ $D$ $M$
+( ) $A \cap D$ $D^c$ $A^c \cap D \cap M^c$
+( ) $A^c$ $A \cap D$ $A \cap M$
 ( ) None of the above.
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 

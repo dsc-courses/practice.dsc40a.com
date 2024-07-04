@@ -1,6 +1,5 @@
 # BEGIN PROB
 
-\[(18 pts) **\[Eligible for midterm redemption\]**\]
 
 Consider the vectors $\vec{u}$ and $\vec{v}$, defined below.
 
@@ -22,6 +21,8 @@ $k =$
 
 # BEGIN SOLUTION
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -40,6 +41,8 @@ $A^{-1} = \begin{bmatrix} \frac{1}{a_1} & 0 \\ 0 & \frac{1}{a_2} \end{bmatrix}$.
 
 # BEGIN SOLUTION
 
+TODO
+
 # END SOLUTION
 
 # END SUBPROB
@@ -57,6 +60,8 @@ $a =$ $b =$
 
 # BEGIN SOLUTION
 
+TODO 
+
 # END SOLUTION
 
 # END SUBPROB
@@ -68,10 +73,16 @@ the values you found in part (c).
 
 What is $\lVert \vec{e} \rVert$?
 
-( ) 0 ( ) correct$3 \sqrt{2}$ ( ) $4 \sqrt{2}$ ( ) 6 ( ) $6 \sqrt{2}$ (
-) $2\sqrt{21}$
+( ) 0 
+( ) correct$3 \sqrt{2}$ 
+( ) $4 \sqrt{2}$ 
+( ) 6 
+( ) $6 \sqrt{2}$ 
+( ) $2\sqrt{21}$
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -84,20 +95,17 @@ scalars $c$ and $d$ such that the sum of the entries in the vector
 $\vec{y} - (c \vec u + d \vec v)$ is 0?
 
 ( ) Yes, because $\vec{u}$ and $\vec{v}$ are linearly independent.
-
 ( ) Yes, because $\vec{u}$ and $\vec{v}$ are orthogonal.
-
 ( ) Yes, but for a reason that isn't listed here.
-
 ( ) No, because $\vec{y}$ is not necessarily in
 $\text{span}(\vec{u}, \vec{v})$.
-
 ( ) No, because neither $\vec{u}$ nor $\vec{v}$ is equal to the vector
 $\begin{bmatrix} 1 & 1 & 1 \end{bmatrix}^T$.
-
 ( ) No, but for a reason that isn't listed here.
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
@@ -111,13 +119,19 @@ are the dimensions of the following product?
 
 $$\vec{s}^T Q \vec{f}$$
 
-  ---------------------------- --------------------------- ----------------------------
-  ( ) scalar                   ( ) $12 \times 1$ vector    ( ) $100 \times 1$ vector
-  ( ) $100 \times 12$ matrix   ( ) $12 \times 12$ matrix   ( ) $12 \times 100$ matrix
+ 
+  ( ) scalar                   
+  ( ) $12 \times 1$ vector    
+  ( ) $100 \times 1$ vector
+  ( ) $100 \times 12$ matrix   
+  ( ) $12 \times 12$ matrix   
+  ( ) $12 \times 100$ matrix
   ( ) undefined                                            
-  ---------------------------- --------------------------- ----------------------------
+
 
 # BEGIN SOLUTION
+
+TODO
 
 # END SOLUTION
 
