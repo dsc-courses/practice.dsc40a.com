@@ -27,7 +27,23 @@ around your final answer, which should be an **integer**.
 
 # BEGIN SOLUTION
 
-TODO
+$32$.
+
+There are a few ways to approach the problem, all of which involve a similar sequence of calculations – specifically, the principle of inclusion-exclusion for 3 sets.
+
+The key is remembering that there are two unknowns: the number of people overall, $n$, and the number of people who have been to both Atlanta and Detroit, which we'll call $k$.
+
+Many students drew Venn Diagrams, but ultimately they don't help answer the question directly; one needs to use the independence between Atlanta and Detroit.
+
+One way to proceed is:
+
+$$1 = \frac{20}{n} + \frac{16}{n} + \frac{10}{n} + \frac{1}{n} - \frac{5}{n} - \frac{k}{n}$$,
+
+where $\frac{k}{n} = \frac{20}{n} \cdot \frac{16}{n}$. **This is the key step!**
+
+Simplifying gives $1 = \frac{42}{n} - \frac{320}{n^2}$, which is equivalent to $n^2 - 42n + 320 = 0$.
+
+This factors into $(n - 32)(n - 10) = 0$, so $n = 32$.
 
 # END SOLUTION
 
@@ -56,7 +72,21 @@ Now, what is the value of $n$?
 
 # BEGIN SOLUTION
 
-TODO
+$28$.
+
+Without any assumptions on the value of $k$, the number of people who have been to Atlanta and Detroit, it can be shown that:
+
+$$n = 42 - k$$
+
+Using the conditional independence assumption given in this part, we have that $\frac{20-k}{n - 16} \cdot \frac{10}{n - 16} = \frac{5}{n - 16}$, which simplifies to $2(20 - k) = n - 16 \implies n = 56 - 2k$.
+
+We now have a system of equations:
+$$\begin{cases}
+n = 42 - k \\
+n = 56 - 2k
+\end{cases}$$
+
+Solving this system of equations for $n$ gives $n = 28$.
 
 # END SOLUTION
 
@@ -87,7 +117,9 @@ sample space?
 
 # BEGIN SOLUTION
 
-TODO
+Option 3 is correct ($A \cap D, D^c, A^c \cap D \cap M^c$).
+
+TODO: explain why.
 
 # END SOLUTION
 
