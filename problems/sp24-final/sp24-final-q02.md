@@ -49,7 +49,13 @@ Fill in the blanks:
 
 # BEGIN SOLUTION
 
-TODO
+The values of the three blanks are: $y_2$, $z_3$, and any value between $z_1$ and $z_2$ (inclusive).
+
+For the first blank, we know the median of the y-dataset minimizes mean absolute error of a constant prediction on the y-dataset. Since $y_1 < y_2 < y_3$, $y_2$ is the unique minimizer.
+
+For the second blank, we can also use the fact that the median of the z-dataset minimizes mean absolute error of a constant prediction on the z-dataset. Since $z_1 < z_2 < z_3 < z_4 < z_5$, $z_3$ is the unique minimizer.
+
+For the third blank, we know that when there are an odd number of data points in a dataset, any values between the middle two (inclusive) minimize mean absolute error. Here, the middle two in the full dataset of 8 are $z_1$ and $z_2$.
 
 # END SOLUTION
 
@@ -67,7 +73,12 @@ no variables.
 
 # BEGIN SOLUTION
 
-TODO
+$\alpha = \frac{3}{8}$, $\beta = \frac{5}{8}$.
+
+This comes from the fact that:
+$$T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) + \frac{5}{8} Z_\text{abs}(h)$$.
+
+TODO: show algebraic manipulation.
 
 # END SOLUTION
 
@@ -81,7 +92,9 @@ Show that $Y_\text{abs}(z_1) = z_1 - 2$.
 
 # BEGIN SOLUTION
 
-TODO
+TODO: show the proof
+
+Starts with $$Y_\text{abs}(z_1) = \frac{1}{3} \left( | z - y_1 | + | z - y_2 | + |z - y_3| \right)$$, realizes that since $$z_1 > y_3 > y_2 > y_1$$ all of the absolute values can be dropped and writes $$Y_\text{abs}(z_1) = \frac{1}{3} \left( (z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)$$, and then simplifies this to $$Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1 - (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot \bar{y}\right) = z_1 - \bar{y} = z_1 - 2$$.
 
 # END SOLUTION
 
@@ -95,18 +108,23 @@ of 8 values is 6. What is the value of $z_1$?
 *Hint: You'll need to use the results from earlier parts of this
 question.*
 
-( ) 2 
-( ) correct3 
-( ) 5 
-( ) 6 
-( ) 7 
-( ) 9 
-( ) 11
+( ) $2$ 
+( ) $3$ 
+( ) $5$ 
+( ) $6$ 
+( ) $7$ 
+( ) $9$ 
+( ) $11$
 
 # BEGIN SOLUTION
 
-TODO
+$3$.
 
+This comes from solving for $$z_1$$ in:
+
+$$\frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1) = 6$$
+
+TODO: show algebraic manipulation.
 # END SOLUTION
 
 # END SUBPROB
