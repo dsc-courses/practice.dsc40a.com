@@ -789,7 +789,21 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\nabla g(\vec{x}) = \begin{bmatrix} 2x_1 -6
++ 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2) \end{bmatrix}</span></p>
+<p>TODO: show the proof</p>
+<p>Shows that: - <span class="math display">\frac{\partial g}{\partial
+x_1} = 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1)</span> - <span class="math display">\frac{\partial g}{\partial x_2} = 2(x_1^2 -
+x_2)(-1)</span> - <span class="math display">\nabla g(\vec{x}) =
+\begin{bmatrix} 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1) \\ 2(x_1^2 - x_2)(-1)
+\end{bmatrix}</span> - Evaluated at <span class="math display">\begin{bmatrix} - 1 \\ 1 \end{bmatrix}</span>,
+<span class="math display">\nabla g = \begin{bmatrix} 2(-1 - 4) +
+2((-1)^2 - 1)(2(-1)) \\ 2((-1)^2 - 1) \end{bmatrix} = \begin{bmatrix} -8
+\\ 0 \end{bmatrix}</span>.</p>
+<p>Note: It’s fine if students simplified any of the expressions, e.g. a
+final answer of: <span class="math display">\nabla g(\vec{x}) =
+\begin{bmatrix} 2x_1 -6 + 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2)
+\end{bmatrix}</span></p>
 </div>
 </div>
 </div>
@@ -817,7 +831,17 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>TODO: show the gradient descent</p>
+<p>Writes that: - <span class="math display">\vec x^{(1)} =
+\vec{x}^{(0)} - \alpha \nabla g(\vec{x}^{(0)})</span> - Substitutes
+<span class="math display">\alpha = \frac{1}{2}</span> and <span class="math display">x^{(0)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix}</span> to get <span class="math display">\vec x^{(1)} =
+\begin{bmatrix} -1 \\ 1 \end{bmatrix} - \frac{1}{2} \nabla g(\vec x
+^{(0)})</span> - Recognizes or recomputes that <span class="math display">\nabla g(\vec x^{(0)}) = \begin{bmatrix} -8 \\ 0
+\end{bmatrix}</span> and substitutes that in the above, giving</p>
+<p><span class="math display">\vec{x}^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0 \end{bmatrix} =
+\begin{bmatrix} 3 \\ 1 \end{bmatrix}</span> as a final answer.</p>
 </div>
 </div>
 </div>
@@ -829,8 +853,8 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex and has a global
 minimum.</p></li>
-<li><p><input type="radio" disabled="" /> correct<span class="math inline">f(t)</span> is not convex, but has a
-global minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex, but has a global
+minimum.</p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex, but doesn’t have a
 global minimum.</p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex and doesn’t have
@@ -849,7 +873,18 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">f(t)</span> is not convex, but has a global
+minimum.</p>
+<p>It is seen that <span class="math inline">f(t)</span> isn’t convex,
+which can be verified using the second derivative test: <span class="math display">f'(t) = 2(t - 3) + 2(t^2 - 1) 2t = 2t - 6 +
+4t^3 - 4t = 4t^3 - 2t - 6</span> <span class="math display">f''(t) = 12t^2 - 2</span></p>
+<p>Clearly, <span class="math inline">f''(t) &lt; 0</span> for
+many values of <span class="math display">t</span> (e.g. <span class="math display">t = 0</span>), so <span class="math inline">f(t)</span> is not always convex.</p>
+<p>However, <span class="math inline">f(t)</span> does have a global
+minimum – its output is never less than 0. This is because it can be
+expressed as the sum of two squares, <span class="math inline">(t -
+3)^2</span> and <span class="math inline">(t^2 - 1)^2</span>,
+respectively, both of which are greater than or equal to 0.</p>
 </div>
 </div>
 </div>

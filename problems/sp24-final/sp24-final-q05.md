@@ -11,7 +11,19 @@ $\nabla g\left( \begin{bmatrix} -1 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} 
 
 # BEGIN SOLUTION
 
-TODO
+$\nabla g(\vec{x}) = \begin{bmatrix} 2x_1 -6 + 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2) \end{bmatrix}$
+
+TODO: show the proof
+
+Shows that:
+- $$\frac{\partial g}{\partial x_1} = 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1)$$
+- $$\frac{\partial g}{\partial x_2} = 2(x_1^2 - x_2)(-1)$$
+- $$\nabla g(\vec{x}) = \begin{bmatrix} 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1) \\ 2(x_1^2 - x_2)(-1) \end{bmatrix}$$
+- Evaluated at $$\begin{bmatrix} - 1 \\ 1 \end{bmatrix}$$, $$\nabla g = \begin{bmatrix} 2(-1 - 4) + 2((-1)^2 - 1)(2(-1)) \\ 2((-1)^2 - 1) \end{bmatrix} = \begin{bmatrix} -8 \\ 0 \end{bmatrix}$$.
+
+Note: It's fine if students simplified any of the expressions, e.g. a final answer of:
+$$\nabla g(\vec{x}) = \begin{bmatrix} 2x_1 -6 + 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2) \end{bmatrix}$$
+
 
 # END SOLUTION
 
@@ -28,7 +40,14 @@ rate $\alpha = \frac{1}{2}$. In other words, what is $\vec{x}^{(1)}$?
 
 # BEGIN SOLUTION
 
-TODO
+TODO: show the gradient descent
+
+Writes that:
+- $$\vec x^{(1)} = \vec{x}^{(0)} - \alpha \nabla g(\vec{x}^{(0)})$$
+- Substitutes $$\alpha = \frac{1}{2}$$ and $$x^{(0)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$$ to get $$\vec x^{(1)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} - \frac{1}{2} \nabla g(\vec x ^{(0)})$$
+- Recognizes or recomputes that $$\nabla g(\vec x^{(0)}) = \begin{bmatrix} -8 \\ 0 \end{bmatrix}$$ and substitutes that in the above, giving
+
+$$\vec{x}^{(1)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0 \end{bmatrix} = \begin{bmatrix} 3 \\ 1 \end{bmatrix}$$ as a final answer.
 
 # END SOLUTION
 
@@ -40,13 +59,21 @@ Consider the function $f(t) = (t - 3)^2 + (t^2 - 1)^2$. Select the true
 statement below.
 
 ( ) $f(t)$ is convex and has a global minimum.
-( ) correct$f(t)$ is not convex, but has a global minimum.
+( ) $f(t)$ is not convex, but has a global minimum.
 ( ) $f(t)$ is convex, but doesn't have a global minimum.
 ( ) $f(t)$ is not convex and doesn't have a global minimum.
 
 # BEGIN SOLUTION
 
-TODO
+$f(t)$ is not convex, but has a global minimum.
+
+It is seen that $f(t)$ isn't convex, which can be verified using the second derivative test:
+$$f'(t) = 2(t - 3) + 2(t^2 - 1) 2t = 2t - 6 + 4t^3 - 4t = 4t^3 - 2t - 6$$
+$$f''(t) = 12t^2 - 2$$
+
+Clearly, $f''(t) < 0$ for many values of $$t$$ (e.g. $$t = 0$$), so $f(t)$ is not always convex.
+
+However, $f(t)$ does have a global minimum – its output is never less than 0. This is because it can be expressed as the sum of two squares, $(t - 3)^2$ and $(t^2 - 1)^2$, respectively, both of which are greater than or equal to 0.
 
 # END SOLUTION
 
