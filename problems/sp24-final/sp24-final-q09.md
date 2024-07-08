@@ -14,9 +14,7 @@ Delta keeps track of:
 
 Information about 100 flights is summarized in the table below.
 
-::: center
-![image](final-images/naive-bayes.png){width="90%"}
-:::
+<center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 
 For instance, we're told that 6 flights in moderate winds and no
 precipitation landed late, and that there were 13 total flights in heavy
@@ -68,9 +66,7 @@ TODO
 For your convenience, the table from the previous page is repeated again
 below.
 
-::: center
-![image](final-images/naive-bayes.png){width="90%"}
-:::
+<center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 
 # BEGIN SUBPROB
 
@@ -86,9 +82,6 @@ winds and precipitation** is $\bf{\frac{7}{5}}$.
 *Hint: You'll end up needing to compute 6 probabilities, one of which
 you already found in **part (a)**.*
 
-::: responsebox
-3.75in
-:::
 
 # BEGIN SOLUTION
 
