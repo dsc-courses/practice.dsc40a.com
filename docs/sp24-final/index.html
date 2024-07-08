@@ -1366,7 +1366,10 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\frac{2}{7}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
 </div>
 </div>
 </div>
@@ -1398,7 +1401,12 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\frac{9}{32}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>.
+(The denominator is 28 + 4 since there are 4 possible wind conditions –
+none, light, moderate, and heavy.)</p>
 </div>
 </div>
 </div>
@@ -1433,7 +1441,33 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>TODO: show the proof</p>
+<p>Starts by recognizing that:</p>
+<p><span class="math inline">\frac{P(\text{late |
+conditions})}{P(\text{early | conditions})} \\ = \frac{P(\text{late})
+\cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation |
+late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot
+P(\text{precipitation | early})}</span></p>
+<p>and computes:</p>
+<ul>
+<li><p><span class="math inline">P(\text{late}) =
+\frac{32}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | late}) =
+\frac{8}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | late}) =
+\frac{16}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{early}) =
+\frac{28}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | early}) =
+\frac{8}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | early}) =
+\frac{10}{28}</span></p></li>
+</ul>
+<p>which gives:</p>
+<p><span class="math inline">\displaystyle\frac{\frac{32}{100} \cdot
+\frac{8}{32} \cdot \frac{16}{32}}{\frac{28}{100} \cdot \frac{8}{28}
+\cdot \frac{10}{28}} = \frac{\frac{1}{35}}{\frac{1}{25}} =
+\frac{7}{5}</span>.</p>
 </div>
 </div>
 </div>

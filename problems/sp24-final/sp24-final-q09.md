@@ -39,7 +39,9 @@ $$\mathbb{P}(\text{heavy winds} \: | \: \text{early})$$
 
 # BEGIN SOLUTION
 
-TODO
+$\frac{2}{7}$.
+
+There are $28$ flights that landed early, and of those, $5 + 3 = 8$ were in heavy winds, which means our estimate is $\frac{8}{28} = \frac{2}{7}$.
 
 # END SOLUTION
 
@@ -61,7 +63,9 @@ $$\mathbb{P}(\text{heavy winds} \: | \: \text{early})$$
 
 # BEGIN SOLUTION
 
-TODO
+$\frac{9}{32}$.
+
+There are $28$ flights that landed early, and of those, $5 + 3 = 8$ were in heavy winds, which means our estimate is $\displaystyle\frac{8+1}{28+4} = \frac{9}{32}$. (The denominator is 28 + 4 since there are 4 possible wind conditions – none, light, moderate, and heavy.)
 
 # END SOLUTION
 
@@ -89,7 +93,25 @@ you already found in **part (a)**.*
 
 # BEGIN SOLUTION
 
-TODO
+TODO: show the proof
+
+Starts by recognizing that:
+
+$\frac{P(\text{late | conditions})}{P(\text{early | conditions})} \\ = \frac{P(\text{late}) \cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation | late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot P(\text{precipitation | early})}$
+
+and computes:
+
+- $P(\text{late}) = \frac{32}{100}$
+- $P(\text{heavy winds | late}) = \frac{8}{32}$
+- $P(\text{precipitation | late}) = \frac{16}{32}$
+
+- $P(\text{early}) = \frac{28}{100}$
+- $P(\text{heavy winds | early}) = \frac{8}{28}$
+- $P(\text{precipitation | early}) = \frac{10}{28}$
+
+which gives:
+
+$\displaystyle\frac{\frac{32}{100} \cdot \frac{8}{32} \cdot \frac{16}{32}}{\frac{28}{100} \cdot \frac{8}{28} \cdot \frac{10}{28}} = \frac{\frac{1}{35}}{\frac{1}{25}} = \frac{7}{5}$.
 
 # END SOLUTION
 
