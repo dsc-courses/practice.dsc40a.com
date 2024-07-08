@@ -927,7 +927,25 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">32</span>.</p>
+<p>There are a few ways to approach the problem, all of which involve a
+similar sequence of calculations – specifically, the principle of
+inclusion-exclusion for 3 sets.</p>
+<p>The key is remembering that there are two unknowns: the number of
+people overall, <span class="math inline">n</span>, and the number of
+people who have been to both Atlanta and Detroit, which we’ll call <span class="math inline">k</span>.</p>
+<p>Many students drew Venn Diagrams, but ultimately they don’t help
+answer the question directly; one needs to use the independence between
+Atlanta and Detroit.</p>
+<p>One way to proceed is:</p>
+<p><span class="math display">1 = \frac{20}{n} + \frac{16}{n} +
+\frac{10}{n} + \frac{1}{n} - \frac{5}{n} - \frac{k}{n}</span>,</p>
+<p>where <span class="math inline">\frac{k}{n} = \frac{20}{n} \cdot
+\frac{16}{n}</span>. <strong>This is the key step!</strong></p>
+<p>Simplifying gives <span class="math inline">1 = \frac{42}{n} -
+\frac{320}{n^2}</span>, which is equivalent to <span class="math inline">n^2 - 42n + 320 = 0</span>.</p>
+<p>This factors into <span class="math inline">(n - 32)(n - 10) =
+0</span>, so <span class="math inline">n = 32</span>.</p>
 </div>
 </div>
 </div>
@@ -944,13 +962,13 @@ independent given that the selected student <strong>has not</strong>
 been to Detroit.</p>
 <p>Now, what is the value of <span class="math inline">n</span>?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> 12</p></li>
-<li><p><input type="radio" disabled="" /> 28</p></li>
-<li><p><input type="radio" disabled="" /> 30</p></li>
-<li><p><input type="radio" disabled="" /> 32</p></li>
-<li><p><input type="radio" disabled="" /> 42</p></li>
-<li><p><input type="radio" disabled="" /> 45</p></li>
-<li><p><input type="radio" disabled="" /> 56</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">28</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">32</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">42</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">45</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">56</span></p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -965,7 +983,19 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">28</span>.</p>
+<p>Without any assumptions on the value of <span class="math inline">k</span>, the number of people who have been to
+Atlanta and Detroit, it can be shown that:</p>
+<p><span class="math display">n = 42 - k</span></p>
+<p>Using the conditional independence assumption given in this part, we
+have that <span class="math inline">\frac{20-k}{n - 16} \cdot
+\frac{10}{n - 16} = \frac{5}{n - 16}</span>, which simplifies to <span class="math inline">2(20 - k) = n - 16 \implies n = 56 - 2k</span>.</p>
+<p>We now have a system of equations: <span class="math display">\begin{cases}
+n = 42 - k \\
+n = 56 - 2k
+\end{cases}</span></p>
+<p>Solving this system of equations for <span class="math inline">n</span> gives <span class="math inline">n =
+28</span>.</p>
 </div>
 </div>
 </div>
@@ -1014,7 +1044,9 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>Option 3 is correct (<span class="math inline">A \cap D, D^c, A^c
+\cap D \cap M^c</span>).</p>
+<p>TODO: explain why.</p>
 </div>
 </div>
 </div>
@@ -1051,7 +1083,12 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">{36 \choose 6} = \frac{36!}{6!30!} =
+\frac{36 \cdot 35 \cdot 34 \cdot 33 \cdot 32 \cdot 31}{6!} = \frac{P(36,
+6)}{6!}</span>. Any of these answers, or anything equivalent to them,
+are correct.</p>
+<p>There are 36 cards, and we must choose of 6 of them at random without
+replacement such that order matters.</p>
 </div>
 </div>
 </div>
@@ -1074,7 +1111,12 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">{12 \choose 6} \cdot 3^6</span>. Anything
+equivalent to this answer is also correct.</p>
+<p>Since we’re asking for the number of hands with unique types, we
+first pick 6 different types, which can be done <span class="math inline">{12 \choose 6}</span> ways. Then, for each chosen
+type, there are <span class="math inline">{3 \choose 1} = 3</span> ways
+of selecting the color. So, the colors can be chosen in <span class="math inline">3 \cdot 3 \cdot ... \cdot 3 = 3^6</span> ways.</p>
 </div>
 </div>
 </div>
@@ -1097,7 +1139,12 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">{12 \choose 2} = 66</span>. Anything
+equivalent to this answer is also correct.</p>
+<p>Once we pick 2 unique plane types, we need to choose 3 different
+colors per type, out of a set of 3 possibilities. This can be done, for
+each type, in <span class="math inline">{3 \choose 3} = 1</span>
+way.</p>
 </div>
 </div>
 </div>
@@ -1121,7 +1168,12 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">{12 \choose 3} \cdot  {3 \choose 2}^3 = {12
+\choose 3} 3^3</span>. Anything equivalent to this answer is also
+correct.</p>
+<p>First, we choose 3 distinct types, which can be done in $<span class="math inline">{12 \choose 3}</span> ways. Then, for each type, we
+choose 2 colors, which can be done in <span class="math inline">{3
+\choose 2}</span> ways per type.</p>
 </div>
 </div>
 </div>
@@ -1146,7 +1198,30 @@ aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3 + {12
+\choose 1}{11 \choose 1}{3 \choose 2}{10 \choose 1}{3 \choose 1}</span>.
+Anything equivalent to this answer is also correct.</p>
+<p>If we select 6 cards and end up with 3 unique plane types, there are
+two possibilities: - We get 2 of each type (e.g. xx yy zz). This is the
+case in part (d), so the total number of sets of 6 cards that fall here
+are <span class="math inline">{12 \choose 3} \cdot {3 \choose
+2}^3</span>. - We get 3 of one type, 2 of another, and 1 of the last one
+(e.g. xxx yy z). - xxx: There are 12 options for the type that appears 3
+times, so that can be selected in <span class="math inline">{12 \choose
+1}</span> ways. We must take all 3 of that types colors, which can be
+done in <span class="math inline">{3 \choose 3} = 1</span> way. - yy:
+There are now 11 options for the type that appears 2 times, and for that
+type, we must take 2 of its three colors, so there are <span class="math inline">{11 \choose 1}{3 \choose 2}</span> options. - z:
+There are now 10 options for the type that appears once, and for that
+type, we must take 1 of its three colors, so there are <span class="math inline">{10 \choose 1}{3 \choose 1}</span> options. - So,
+the total number of options for this case is <span class="math inline">{12 \choose 1}{11 \choose 1}{3 \choose 2}{10 \choose
+1}{3 \choose 1} = P(12, 3) 3^2 = {12 \choose 3} 3^3 \cdot 2</span>.</p>
+<p>So, the total number of options is <span class="math inline">{12
+\choose 3} \cdot {3 \choose 2}^3 + {12 \choose 1}{11 \choose 1}{3
+\choose 2}{10 \choose 1}{3 \choose 1}</span>, which can be simplified in
+various ways, including to <span class="math inline">{12 \choose
+3}3^4</span>. Any of these ways received full credit, as long as they
+showed all work and logic.</p>
 </div>
 </div>
 </div>

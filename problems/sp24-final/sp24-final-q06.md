@@ -62,13 +62,13 @@ independent given that the selected student **has not** been to Detroit.
 
 Now, what is the value of $n$?
 
-( ) 12 
-( ) 28 
-( ) 30 
-( ) 32 
-( ) 42 
-( ) 45 
-( ) 56
+( ) $12$ 
+( ) $28$ 
+( ) $30$ 
+( ) $32$ 
+( ) $42$ 
+( ) $45$ 
+( ) $56$
 
 # BEGIN SOLUTION
 
