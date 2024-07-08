@@ -24,17 +24,21 @@ Suppose we were to fit a simple linear hypothesis function through the
 original dataset, $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$, again using
 squared loss. What would the optimal slope be?
 
-( ) 2 
-( ) 4 
-( ) 6 
-( ) 8 
-( ) 11 
-( ) 12 
-( ) 24
+( ) $2$ 
+( ) $4$ 
+( ) $6$ 
+( ) $8$ 
+( ) $11$ 
+( ) $12$ 
+( ) $24$
 
 # BEGIN SOLUTION
 
-TODO
+$8.$
+
+Relative to the dataset with $x'$, the dataset with $x$ has an $x$-variable that's "compressed" by a factor of 4, so the slope increases by a factor of 4 to $2 \cdot 4 = 8$.
+
+Concretely, this can be shown by looking at the formula $2 = r\frac{SD(y')}{SD(x')}$, recognizing that $SD(y') = SD(y)$ since the $y$ values have the same spread in both datasets, and that $SD(x') = 4 SD(x)$.
 
 # END SOLUTION
 
@@ -51,7 +55,20 @@ Give your answer as an integer with no variables.
 
 # BEGIN SOLUTION
 
-TODO
+$5$.
+
+The key idea is that the regression line always passes through $(\text{mean } x, \text{mean } y)$ in the dataset we used to fit it. So, we know that: $2 \bar{x'} + 7 = \bar{y'}$. This first equation can be rewritten as: $2 \cdot (4\bar{x} - 3) + 7 = \bar{y} + 24$.
+
+We're also told this line passes through $(\bar{x}, \bar{y})$, which means that it's also true that: $2 \bar{x} + 7 = \bar{y}$.
+
+Now we have a system of two equations:
+
+$\begin{cases}
+2 \cdot (4\bar{x} - 3) + 7 = \bar{y} + 24 \\
+2 \bar{x} + 7 = \bar{y}
+\end{cases}$
+
+$\dots$ and solving our system of two equations gives: $$\bar{x} = 5$$.
 
 # END SOLUTION
 
