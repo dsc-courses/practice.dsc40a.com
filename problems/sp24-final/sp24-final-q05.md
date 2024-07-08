@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2024 Final](../sp24-final/index.html), Problem 5</i>
+
 Let $\vec{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$. Consider the
 function $g(\vec{x}) = (x_1 - 3)^2 + (x_1^2 - x_2)^2$.
 

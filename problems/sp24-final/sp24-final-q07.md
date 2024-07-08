@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2024 Final](../sp24-final/index.html), Problem 7</i>
+
 Delta has released a line of trading cards. Each trading card has a
 picture of a plane and a color. There are 12 plane types, and for each
 plane type there are three possible colors (gold, silver, and platinum),

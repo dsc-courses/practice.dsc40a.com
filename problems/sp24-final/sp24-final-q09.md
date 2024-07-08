@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2024 Final](../sp24-final/index.html), Problem 9</i>
+
 Delta's flight operations center keeps track of weather conditions, as
 they tend to impact whether or not flights are late. For each flight,
 Delta keeps track of:

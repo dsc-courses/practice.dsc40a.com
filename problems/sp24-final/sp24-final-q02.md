@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2024 Final](../sp24-final/index.html), Problem 2</i>
+
 Consider a dataset of 3 values, $y_1 < y_2 < y_3$, with a mean of 2. Let
 $Y_\text{abs}(h) = \frac{1}{3} \sum_{i = 1}^3 |y_i - h|$ represent the
 mean absolute error of a constant prediction $h$ on this dataset of 3

@@ -1,5 +1,6 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2024 Final](../sp24-final/index.html), Problem 4</i>
 
 Consider the vectors $\vec{u}$ and $\vec{v}$, defined below.
 

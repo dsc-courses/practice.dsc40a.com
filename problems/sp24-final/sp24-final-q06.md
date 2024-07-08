@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Spring 2024 Final](../sp24-final/index.html), Problem 6</i>
+
 Atlanta, Detroit, and Minneapolis are the three largest hub airports for
 Delta Airlines. You survey a sample of $n$ students at UCSD, and find
 that:
