@@ -20,9 +20,6 @@ Given that you receive a gold-colored card at least once, what is the
 probability that you receive a gold-colored card exactly 5 times? Show
 your work, and put a $\boxed{\text{box}}$ around your final answer.
 
-::: responsebox
-2in
-:::
 
 # BEGIN SOLUTION
 
@@ -41,9 +38,6 @@ What is the probability that you receive 2 *Airbus A350* cards, 4
 *Boeing 767* cards, and 3 *Airbus A330* cards? Show your work, and put a
 $\boxed{\text{box}}$ around your final answer.
 
-::: responsebox
-2in
-:::
 
 # BEGIN SOLUTION
 

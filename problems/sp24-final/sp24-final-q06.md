@@ -25,10 +25,6 @@ event that the selected student has been to Detroit are independent.
 What is the value of $n$? Show your work, and put a $\boxed{\text{box}}$
 around your final answer, which should be an **integer**.
 
-::: responsebox
-4.5in
-:::
-
 # BEGIN SOLUTION
 
 TODO
@@ -83,10 +79,10 @@ the complement, but that's hard to read on the exam.)
 Which of the following combinations of sets form a partition of the
 sample space?
 
-( ) $A$ $D$ $M$
-( ) $A \cap D^c \cap M^c$ $D$ $M$
-( ) $A \cap D$ $D^c$ $A^c \cap D \cap M^c$
-( ) $A^c$ $A \cap D$ $A \cap M$
+( ) $A$, $D$, $M$
+( ) $A \cap D^c \cap M^c$, $D$, $M$
+( ) $A \cap D$, $D^c$, $A^c \cap D \cap M^c$
+( ) $A^c$, $A \cap D$, $A \cap M$
 ( ) None of the above.
 
 # BEGIN SOLUTION

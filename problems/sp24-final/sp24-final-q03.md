@@ -49,8 +49,6 @@ $(x_1', y_1'), (x_2', y_2'), ..., (x_n', y_n')$. $H^*$ happens to pass
 through the point $(\bar{x}, \bar{y})$. What is the value of $\bar{x}$?
 Give your answer as an integer with no variables.
 
-$\bar{x} =$
-
 # BEGIN SOLUTION
 
 TODO

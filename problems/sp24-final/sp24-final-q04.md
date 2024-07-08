@@ -17,8 +17,6 @@ Find a scalar $k$ such that $\vec{y}$ is in
 $\text{span}(\vec u, \vec v)$. Give your answer as a constant with no
 variables.
 
-$k =$
-
 # BEGIN SOLUTION
 
 TODO
@@ -34,10 +32,6 @@ $$(X^TX)^{-1}X^T = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} \e
 
 *Hint: If $A = \begin{bmatrix} a_1 & 0 \\ 0 & a_2 \end{bmatrix}$, then
 $A^{-1} = \begin{bmatrix} \frac{1}{a_1} & 0 \\ 0 & \frac{1}{a_2} \end{bmatrix}$.*
-
-::: responsebox
-3.75in
-:::
 
 # BEGIN SOLUTION
 
@@ -55,8 +49,6 @@ $\vec{y} = \begin{bmatrix} 4 \\ 2 \\ 8 \end{bmatrix}$.
 Find scalars $a$ and $b$ such that $a \vec u + b \vec v$ is the vector
 in $\text{span}(\vec u, \vec v)$ that is as close to $\vec{y}$ as
 possible. Give your answers as constants with no variables.
-
-$a =$ $b =$
 
 # BEGIN SOLUTION
 
@@ -120,13 +112,13 @@ are the dimensions of the following product?
 $$\vec{s}^T Q \vec{f}$$
 
  
-  ( ) scalar                   
-  ( ) $12 \times 1$ vector    
-  ( ) $100 \times 1$ vector
-  ( ) $100 \times 12$ matrix   
-  ( ) $12 \times 12$ matrix   
-  ( ) $12 \times 100$ matrix
-  ( ) undefined                                            
+( ) scalar                   
+( ) $12 \times 1$ vector    
+( ) $100 \times 1$ vector
+( ) $100 \times 12$ matrix   
+( ) $12 \times 12$ matrix   
+( ) $12 \times 100$ matrix
+( ) undefined                                            
 
 
 # BEGIN SOLUTION

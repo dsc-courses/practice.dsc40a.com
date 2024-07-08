@@ -19,34 +19,33 @@ values, $y_1, ..., y_3, z_1, ..., z_5$.
 
 Fill in the blanks:
 
-::: center
-(i) minimizes $Y_\text{abs}(h)$, (ii) minimizes $Z_\text{abs}(h)$, and
-(iii) minimizes $T_\text{abs}(h)$.
-:::
+**"{ i } minimizes $Y_\text{abs}(h)$, { ii } minimizes $Z_\text{abs}(h)$, and
+{ iii } minimizes $T_\text{abs}(h)$."**
 
-1.  What goes in blank (i)?
 
-    ( ) $y_1$
-    ( ) any value between $y_1$ and $y_2$ (inclusive)
-    ( ) $y_2$
-    ( ) $y_3$
-    ( ) $z_1$
+1.  What goes in blank { i }?
 
-2.  What goes in blank (ii)?
+( ) $y_1$
+( ) any value between $y_1$ and $y_2$ (inclusive)
+( ) $y_2$
+( ) $y_3$
+( ) $z_1$
 
-    ( ) $z_1$
-    ( ) $z_2$
-    ( ) any value between $z_2$ and $z_3$ (inclusive)
-    ( ) any value between $z_2$ and $z_4$ (inclusive)
-    ( ) $z_3$
+2.  What goes in blank { ii }?
 
-3.  What goes in blank (iii)?
+( ) $z_1$
+( ) $z_2$
+( ) any value between $z_2$ and $z_3$ (inclusive)
+( ) any value between $z_2$ and $z_4$ (inclusive)
+( ) $z_3$
 
-    ( ) $y_2$
-    ( ) $y_3$
-    ( ) any value between $y_3$ and $z_1$ (inclusive)
-    ( ) any value between $z_1$ and $z_2$ (inclusive)
-    ( ) any value between $z_2$ and $z_3$ (inclusive)
+3.  What goes in blank { iii }?
+
+( ) $y_2$
+( ) $y_3$
+( ) any value between $y_3$ and $z_1$ (inclusive)
+( ) any value between $z_1$ and $z_2$ (inclusive)
+( ) any value between $z_2$ and $z_3$ (inclusive)
 
 # BEGIN SOLUTION
 
@@ -66,8 +65,6 @@ for some constants $\alpha$ and $\beta$. What are the values of $\alpha$
 and $\beta$? Give your answers as integers or simplified fractions with
 no variables.
 
-$\alpha =$ $\beta =$
-
 # BEGIN SOLUTION
 
 TODO
@@ -81,10 +78,6 @@ TODO
 Show that $Y_\text{abs}(z_1) = z_1 - 2$.
 
 *Hint: Use the fact that you know the mean of $y_1, y_2, y_3$.*
-
-::: responsebox
-1.5in
-:::
 
 # BEGIN SOLUTION
 
@@ -102,7 +95,13 @@ of 8 values is 6. What is the value of $z_1$?
 *Hint: You'll need to use the results from earlier parts of this
 question.*
 
-( ) 2 ( ) correct3 ( ) 5 ( ) 6 ( ) 7 ( ) 9 ( ) 11
+( ) 2 
+( ) correct3 
+( ) 5 
+( ) 6 
+( ) 7 
+( ) 9 
+( ) 11
 
 # BEGIN SOLUTION
 

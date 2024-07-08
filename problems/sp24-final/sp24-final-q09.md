@@ -51,9 +51,13 @@ TODO
 
 $$\mathbb{P}(\text{heavy winds} \: | \: \text{early})$$
 
-( ) $\frac{1}{3}$ ( ) $\frac{3}{8}$ ( ) $\frac{3}{11}$ ( )
-$\frac{9}{29}$ ( ) $\frac{9}{32}$ ( ) $\frac{31}{101}$ ( )
-$\frac{31}{104}$
+( ) $\frac{1}{3}$ 
+( ) $\frac{3}{8}$ 
+( ) $\frac{3}{11}$ 
+( ) $\frac{9}{29}$ 
+( ) $\frac{9}{32}$ 
+( ) $\frac{31}{101}$ 
+( ) $\frac{31}{104}$
 
 # BEGIN SOLUTION
 

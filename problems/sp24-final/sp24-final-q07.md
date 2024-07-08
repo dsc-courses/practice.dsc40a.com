@@ -1,6 +1,5 @@
 # BEGIN PROB
 
-
 Delta has released a line of trading cards. Each trading card has a
 picture of a plane and a color. There are 12 plane types, and for each
 plane type there are three possible colors (gold, silver, and platinum),
@@ -19,10 +18,6 @@ binomial coefficient ${n \choose k}$.
 How many sets of 6 cards are there in total? Show your work, and put a
 $\boxed{\text{box}}$ around your final answer.
 
-::: responsebox
-1in
-:::
-
 # BEGIN SOLUTION
 
 TODO
@@ -36,10 +31,6 @@ TODO
 How many sets of 6 cards have exactly 6 unique plane types? Show your
 work, and put a $\boxed{\text{box}}$ around your final answer.
 
-::: responsebox
-1in
-:::
-
 # BEGIN SOLUTION
 
 TODO
@@ -52,10 +43,6 @@ TODO
 
 How many sets of 6 cards have exactly 2 unique plane types? Show your
 work, and put a $\boxed{\text{box}}$ around your final answer.
-
-::: responsebox
-1in
-:::
 
 # BEGIN SOLUTION
 
@@ -71,9 +58,6 @@ How many sets of 6 cards have exactly 3 unique plane types, such that
 each plane type appears twice? Show your work, and put a
 $\boxed{\text{box}}$ around your final answer.
 
-::: responsebox
-2in
-:::
 
 # BEGIN SOLUTION
 
@@ -90,10 +74,6 @@ work, and put a $\boxed{\text{box}}$ around your final answer.
 
 *Hint: You'll need to consider multiple cases, one of which you
 addressed in part (d).*
-
-::: responsebox
-3in
-:::
 
 # BEGIN SOLUTION
 

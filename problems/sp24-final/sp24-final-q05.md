@@ -9,10 +9,6 @@ Find $\nabla g(\vec{x})$, the gradient of $g(\vec{x})$, and use it to
 show that
 $\nabla g\left( \begin{bmatrix} -1 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -8 \\ 0 \end{bmatrix}$.
 
-::: responsebox
-2.5in
-:::
-
 # BEGIN SOLUTION
 
 TODO
@@ -27,12 +23,8 @@ We'd like to find the vector $\vec{x}^*$ that minimizes $g(\vec{x})$
 using gradient descent. Perform one iteration of gradient descent by
 hand, using the initial guess
 $\vec{x}^{(0)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}$ and the learning
-rate $\alpha = \frac{1}{2}$. Show your work, and put a
-$\boxed{\text{box}}$ around your final answer for $\vec{x}^{(1)}$.
+rate $\alpha = \frac{1}{2}$. In other words, what is $\vec{x}^{(1)}$?
 
-::: responsebox
-2in
-:::
 
 # BEGIN SOLUTION
 
