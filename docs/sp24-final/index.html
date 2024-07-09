@@ -69,6 +69,8 @@
 minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 1</i></p>
 <p>Consider a dataset of <span class="math inline">n</span>
 <strong>integers</strong>, <span class="math inline">y_1, y_2, ...,
 y_n</span>, whose histogram is given below:</p>
@@ -224,6 +226,8 @@ infinity loss is the midrange, i.e. halfway between the min and max.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 2</i></p>
 <p>Consider a dataset of 3 values, <span class="math inline">y_1 &lt;
 y_2 &lt; y_3</span>, with a mean of 2. Let <span
 class="math inline">Y_\text{abs}(h) = \frac{1}{3} \sum_{i = 1}^3 |y_i -
@@ -332,9 +336,22 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\alpha = \frac{3}{8}</span>, <span class="math inline">\beta = \frac{5}{8}</span>.</p>
-<p>This comes from the fact that: <span class="math display">T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) +
-\frac{5}{8} Z_\text{abs}(h)</span>.</p>
-<p>TODO: show algebraic manipulation.</p>
+<p>To find <span class="math inline">\alpha</span> and <span class="math inline">\beta</span>, we need to construct a similar-looking
+equation to the one above. We can start by looking at our equation for
+<span class="math inline">T_\text{abs}(h)</span>:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \sum_{i =
+1}^8 |t_i - h|</span></p>
+<p>Now, we can split the sum on the right hand side into two sums, one
+for our <span class="math inline">y</span> data points and one for our
+<span class="math inline">z</span> data points:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8}
+\left(\sum_{i = 1}^3 |y_i - h| + \sum_{i = 1}^5 |z_i -
+h|\right)</span></p>
+<p>Each of these two mini sums can be represented in terms of <span class="math inline">Y_\text{abs}(h)</span> and <span class="math inline">Z_\text{abs}(h)</span>:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \left(3
+\cdot Y_\text{abs}(h) + 5 \cdot Z_\text{abs}(h)\right)</span> <span class="math display">T_\text{abs}(h) = \frac38 \cdot Y_\text{abs}(h) +
+\frac58 \cdot Z_\text{abs}(h)</span></p>
+<p>By looking at this final equation we’ve built, it is clear that <span class="math inline">\alpha = \frac{3}{8}</span> and <span class="math inline">\beta = \frac{5}{8}</span>.</p>
 </div>
 </div>
 </div>
@@ -358,15 +375,18 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO: show the proof</p>
-<p>Starts with <span class="math display">Y_\text{abs}(z_1) =
-\frac{1}{3} \left( | z - y_1 | + | z - y_2 | + |z - y_3| \right)</span>,
-realizes that since <span class="math display">z_1 &gt; y_3 &gt; y_2
-&gt; y_1</span> all of the absolute values can be dropped and writes
-<span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left( (z_1 -
-y_1) + (z_1 - y_2) + (z_3 - y_3) \right)</span>, and then simplifies
-this to <span class="math display">Y_\text{abs}(h) = \frac{1}{3} \left(
-3z_1 - (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot
+<p>We can start by plugging <span class="math inline">z_1</span> into
+<span class="math inline">Y_\text{abs}(h)</span>:</p>
+<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left( | z
+- y_1 | + | z - y_2 | + |z - y_3| \right)</span></p>
+<p>Since <span class="math display">z_1 &gt; y_3 &gt; y_2 &gt;
+y_1</span>, all of the absolute values can be dropped and we can
+write:</p>
+<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left(
+(z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)</span></p>
+<p>This can be simplified to:</p>
+<p><span class="math display">Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1
+- (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot
 \bar{y}\right) = z_1 - \bar{y} = z_1 - 2</span>.</p>
 </div>
 </div>
@@ -402,11 +422,33 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">3</span>.</p>
-<p>This comes from solving for <span class="math display">z_1</span>
-in:</p>
-<p><span class="math display">\frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 -
-z_1) = 6</span></p>
-<p>TODO: show algebraic manipulation.</p>
+<p>We are given that <span class="math inline">T_\text{abs}(\text{median}) = 6</span>. This means
+that any value (inclusive) between <span class="math inline">z_1</span>
+and <span class="math inline">z_2</span> minimize <span class="math inline">T_\text{abs}(h)</span>, with the output being always
+being 6. So, <span class="math inline">T_\text{abs}(z_1) = 6</span>.
+Let’s see what happens when we plug this into <span class="math inline">T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) +
+\frac{5}{8} Z_\text{abs}(h)</span> from earlier:</p>
+<p><span class="math display">T_\text{abs}(z_1) = \frac{3}{8}
+Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8}
+Z_\text{abs}(z_1)</span></p>
+<p>If we could write <span class="math inline">Y_\text{abs}(z_1)</span>
+and <span class="math inline">Z_\text{abs}(z_1)</span> in terms of <span class="math inline">z_1</span>, we could solve for <span class="math inline">z_1</span> and our work would be done, so let’s do
+that. <span class="math inline">Y_\text{abs}(z_1) = z_1 - 2</span> from
+earlier. <span class="math inline">Z_\text{abs}(z_1)</span> simplifies
+as follows (knowing that <span class="math inline">\bar{z} =
+12</span>):</p>
+<p><span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \sum_{i =
+1}^5 |z_i - z_1|</span> <span class="math display">Z_\text{abs}(z_1) =
+\frac{1}{5} \left(|z_1 - z_1| + |z_2 - z_1| + |z_3 - z_1| + |z_4 - z_1|
++ |z_5 - z_1|\right)</span> <span class="math display">Z_\text{abs}(z_1)
+= \frac{1}{5} \left(0 + (z_2 + z_3 + z_4 + z_5) - 4z_1\right)</span>
+<span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_2 +
+z_3 + z_4 + z_5) - 4z_1 + (z_1 - z_1)\right)</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_1 + z_2 +
+z_3 + z_4 + z_5) - 5z_1\right)</span> <span class="math display">Z_\text{abs}(z_1) = \bar{z} - z_1</span> <span class="math display">Z_\text{abs}(z_1) = (12) - z_1</span></p>
+<p>Subbing back into our main equation:</p>
+<p><span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) +
+\frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">6 =
+\frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1)</span> <span class="math display">z_1 = 3</span></p>
 </div>
 </div>
 </div>
@@ -414,6 +456,8 @@ z_1) = 6</span></p>
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 3</i></p>
 <p>Suppose we’re given a dataset of <span class="math inline">n</span>
 points, <span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_n,
 y_n)</span>, where <span class="math inline">\bar{x}</span> is the mean
@@ -522,6 +566,8 @@ equations gives: <span class="math display">\bar{x} = 5</span>.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 4</i></p>
 <p>Consider the vectors <span class="math inline">\vec{u}</span> and
 <span class="math inline">\vec{v}</span>, defined below.</p>
 <p><span class="math display">\vec{u} = \begin{bmatrix} 1 \\ 0 \\ 0
@@ -765,6 +811,8 @@ aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 5</i></p>
 <p>Let <span class="math inline">\vec{x} = \begin{bmatrix} x_1 \\ x_2
 \end{bmatrix}</span>. Consider the function <span
 class="math inline">g(\vec{x}) = (x_1 - 3)^2 + (x_1^2 -
@@ -892,6 +940,8 @@ respectively, both of which are greater than or equal to 0.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 6</i></p>
 <p>Atlanta, Detroit, and Minneapolis are the three largest hub airports
 for Delta Airlines. You survey a sample of <span
 class="math inline">n</span> students at UCSD, and find that:</p>
@@ -1054,6 +1104,8 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 7</i></p>
 <p>Delta has released a line of trading cards. Each trading card has a
 picture of a plane and a color. There are 12 plane types, and for each
 plane type there are three possible colors (gold, silver, and platinum),
@@ -1229,6 +1281,8 @@ showed all work and logic.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 8</i></p>
 <p>Delta has released a line of trading cards. Each trading card has a
 picture of a plane and a color. There are 12 plane types, and for each
 plane type there are three possible colors (gold, silver, and platinum),
@@ -1320,6 +1374,8 @@ too).</p>
 <p><br></p>
 <hr />
 <h2 id="problem-9">Problem 9</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 9</i></p>
 <p>Delta’s flight operations center keeps track of weather conditions,
 as they tend to impact whether or not flights are late. For each flight,
 Delta keeps track of:</p>

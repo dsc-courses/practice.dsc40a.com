@@ -77,10 +77,20 @@ no variables.
 
 $\alpha = \frac{3}{8}$, $\beta = \frac{5}{8}$.
 
-This comes from the fact that:
-$$T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) + \frac{5}{8} Z_\text{abs}(h)$$.
+To find $\alpha$ and $\beta$, we need to construct a similar-looking equation to the one above. We can start by looking at our equation for $T_\text{abs}(h)$:
 
-TODO: show algebraic manipulation.
+$$T_\text{abs}(h) = \frac{1}{8} \sum_{i = 1}^8 |t_i - h|$$
+
+Now, we can split the sum on the right hand side into two sums, one for our $y$ data points and one for our $z$ data points:
+
+$$T_\text{abs}(h) = \frac{1}{8} \left(\sum_{i = 1}^3 |y_i - h| + \sum_{i = 1}^5 |z_i - h|\right)$$
+
+Each of these two mini sums can be represented in terms of $Y_\text{abs}(h)$ and $Z_\text{abs}(h)$:
+
+$$T_\text{abs}(h) = \frac{1}{8} \left(3 \cdot Y_\text{abs}(h) + 5 \cdot Z_\text{abs}(h)\right)$$
+$$T_\text{abs}(h) = \frac38 \cdot Y_\text{abs}(h) + \frac58 \cdot Z_\text{abs}(h)$$
+
+By looking at this final equation we've built, it is clear that $\alpha = \frac{3}{8}$ and $\beta = \frac{5}{8}$.
 
 # END SOLUTION
 
@@ -94,9 +104,17 @@ Show that $Y_\text{abs}(z_1) = z_1 - 2$.
 
 # BEGIN SOLUTION
 
-TODO: show the proof
+We can start by plugging $z_1$ into $Y_\text{abs}(h)$: 
 
-Starts with $$Y_\text{abs}(z_1) = \frac{1}{3} \left( | z - y_1 | + | z - y_2 | + |z - y_3| \right)$$, realizes that since $$z_1 > y_3 > y_2 > y_1$$ all of the absolute values can be dropped and writes $$Y_\text{abs}(z_1) = \frac{1}{3} \left( (z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)$$, and then simplifies this to $$Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1 - (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot \bar{y}\right) = z_1 - \bar{y} = z_1 - 2$$.
+$$Y_\text{abs}(z_1) = \frac{1}{3} \left( | z - y_1 | + | z - y_2 | + |z - y_3| \right)$$
+
+Since $$z_1 > y_3 > y_2 > y_1$$, all of the absolute values can be dropped and we can write:
+
+$$Y_\text{abs}(z_1) = \frac{1}{3} \left( (z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)$$
+
+This can be simplified to:
+
+$$Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1 - (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot \bar{y}\right) = z_1 - \bar{y} = z_1 - 2$$.
 
 # END SOLUTION
 
@@ -122,11 +140,28 @@ question.*
 
 $3$.
 
-This comes from solving for $$z_1$$ in:
+We are given that $T_\text{abs}(\text{median}) = 6$. This means that any value (inclusive) between $z_1$ and $z_2$ minimize $T_\text{abs}(h)$, with the output being always being 6. So, $T_\text{abs}(z_1) = 6$.  Let's see what happens when we plug this into
+$T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) + \frac{5}{8} Z_\text{abs}(h)$ from earlier:
 
-$$\frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1) = 6$$
+$$T_\text{abs}(z_1) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)$$
+$$(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)$$
 
-TODO: show algebraic manipulation.
+If we could write $Y_\text{abs}(z_1)$ and $Z_\text{abs}(z_1)$ in terms of $z_1$, we could solve for $z_1$ and our work would be done, so let's do that. $Y_\text{abs}(z_1) = z_1 - 2$ from earlier. $Z_\text{abs}(z_1)$ simplifies as follows (knowing that $\bar{z} = 12$):
+
+$$Z_\text{abs}(z_1) = \frac{1}{5} \sum_{i = 1}^5 |z_i - z_1|$$
+$$Z_\text{abs}(z_1) = \frac{1}{5} \left(|z_1 - z_1| + |z_2 - z_1| + |z_3 - z_1| + |z_4 - z_1| + |z_5 - z_1|\right)$$
+$$Z_\text{abs}(z_1) = \frac{1}{5} \left(0 + (z_2 + z_3 + z_4 + z_5) - 4z_1\right)$$
+$$Z_\text{abs}(z_1) = \frac{1}{5} \left((z_2 + z_3 + z_4 + z_5) - 4z_1 + (z_1 - z_1)\right)$$
+$$Z_\text{abs}(z_1) = \frac{1}{5} \left((z_1 + z_2 + z_3 + z_4 + z_5) - 5z_1\right)$$
+$$Z_\text{abs}(z_1) = \bar{z} - z_1$$
+$$Z_\text{abs}(z_1) = (12) - z_1$$
+
+Subbing back into our main equation:
+
+$$(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)$$
+$$6 = \frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1)$$
+$$z_1 = 3$$
+
 # END SOLUTION
 
 # END SUBPROB
