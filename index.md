@@ -81,6 +81,7 @@ In scope for the Spring 2024 Final Exam:
       <th scope="row">Spring 2024</th>
       <td>Suraj Rampure</td>
       <td><a href='sp24-midterm/index.html'>Midterm </a>
+      <br><a href='sp24-final/index.html'>Final </a>
       </td>
     </tr>
     <tr>

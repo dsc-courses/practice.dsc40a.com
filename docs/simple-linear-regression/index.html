@@ -1989,6 +1989,116 @@ unchanged.</p>
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-11">Problem 11</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 3</i></p>
+<p>Suppose we’re given a dataset of <span class="math inline">n</span>
+points, <span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_n,
+y_n)</span>, where <span class="math inline">\bar{x}</span> is the mean
+of <span class="math inline">x_1, x_2, ..., x_n</span> and <span
+class="math inline">\bar{y}</span> is the mean of <span
+class="math inline">y_1, y_2, ..., y_n</span>.</p>
+<p>Using this dataset, we create a <em>transformed</em> dataset of <span
+class="math inline">n</span> points, <span
+class="math inline">(x_1&#39;, y_1&#39;), (x_2&#39;, y_2&#39;), ...,
+(x_n&#39;, y_n&#39;)</span>, where:</p>
+<p><span class="math display">x_i&#39; = 4x_i - 3 \qquad y_i&#39; = y_i
++ 24</span></p>
+<p>That is, the transformed dataset is of the form <span
+class="math inline">(4x_1 - 3, y_1 + 24), ..., (4x_n - 3, y_n +
+24)</span>.</p>
+<p>We decide to fit a simple linear hypothesis function <span
+class="math inline">H(x&#39;) = w_0 + w_1x&#39;</span> on the
+transformed dataset using squared loss. We find that <span
+class="math inline">w_0^* = 7</span> and <span class="math inline">w_1^*
+= 2</span>, so <span class="math inline">H^*(x&#39;) = 7 +
+2x&#39;</span>.</p>
+<p><br></p>
+<h3 id="problem-11.1">Problem 11.1</h3>
+<p>Suppose we were to fit a simple linear hypothesis function through
+the original dataset, <span class="math inline">(x_1, y_1), (x_2, y_2),
+..., (x_n, y_n)</span>, again using squared loss. What would the optimal
+slope be?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">4</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">8</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">11</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">12</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">24</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">8.</span></p>
+<p>Relative to the dataset with <span class="math inline">x'</span>,
+the dataset with <span class="math inline">x</span> has an <span class="math inline">x</span>-variable that’s “compressed” by a factor of
+4, so the slope increases by a factor of 4 to <span class="math inline">2 \cdot 4 = 8</span>.</p>
+<p>Concretely, this can be shown by looking at the formula <span class="math inline">2 = r\frac{SD(y')}{SD(x')}</span>,
+recognizing that <span class="math inline">SD(y') = SD(y)</span>
+since the <span class="math inline">y</span> values have the same spread
+in both datasets, and that <span class="math inline">SD(x') = 4
+SD(x)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.2">Problem 11.2</h3>
+<p>Recall, the hypothesis function <span class="math inline">H^*</span>
+was fit on the transformed dataset,</p>
+<p><span class="math inline">(x_1&#39;, y_1&#39;), (x_2&#39;, y_2&#39;),
+..., (x_n&#39;, y_n&#39;)</span>. <span class="math inline">H^*</span>
+happens to pass through the point <span class="math inline">(\bar{x},
+\bar{y})</span>. What is the value of <span
+class="math inline">\bar{x}</span>? Give your answer as an integer with
+no variables.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">5</span>.</p>
+<p>The key idea is that the regression line always passes through <span class="math inline">(\text{mean } x, \text{mean } y)</span> in the
+dataset we used to fit it. So, we know that: <span class="math inline">2
+\bar{x'} + 7 = \bar{y'}</span>. This first equation can be
+rewritten as: <span class="math inline">2 \cdot (4\bar{x} - 3) + 7 =
+\bar{y} + 24</span>.</p>
+<p>We’re also told this line passes through <span class="math inline">(\bar{x}, \bar{y})</span>, which means that it’s
+also true that: <span class="math inline">2 \bar{x} + 7 =
+\bar{y}</span>.</p>
+<p>Now we have a system of two equations:</p>
+<p><span class="math inline">\begin{cases}
+2 \cdot (4\bar{x} - 3) + 7 = \bar{y} + 24 \\
+2 \bar{x} + 7 = \bar{y}
+\end{cases}</span></p>
+<p><span class="math inline">\dots</span> and solving our system of two
+equations gives: <span class="math display">\bar{x} = 5</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋

@@ -991,6 +991,134 @@ functions and therefore also convex.</p>
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-11">Problem 11</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 5</i></p>
+<p>Let <span class="math inline">\vec{x} = \begin{bmatrix} x_1 \\ x_2
+\end{bmatrix}</span>. Consider the function <span
+class="math inline">g(\vec{x}) = (x_1 - 3)^2 + (x_1^2 -
+x_2)^2</span>.</p>
+<p><br></p>
+<h3 id="problem-11.1">Problem 11.1</h3>
+<p>Find <span class="math inline">\nabla g(\vec{x})</span>, the gradient
+of <span class="math inline">g(\vec{x})</span>, and use it to show that
+<span class="math inline">\nabla g\left( \begin{bmatrix} -1 \\ 1
+\end{bmatrix} \right) = \begin{bmatrix} -8 \\ 0
+\end{bmatrix}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\nabla g(\vec{x}) = \begin{bmatrix} 2x_1
+-6 + 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2) \end{bmatrix}</span></p>
+<p>We can find <span class="math inline">\nabla g(\vec{x})</span> by
+finding the partial derivatives of <span class="math inline">g(\vec{x})</span>:</p>
+<p><span class="math display">\frac{\partial g}{\partial x_1} = 2(x_1 -
+3) + 2(x_1^2 - x_2)(2 x_1)</span> <span class="math display">\frac{\partial g}{\partial x_2} = 2(x_1^2 -
+x_2)(-1)</span> <span class="math display">\nabla g(\vec{x}) =
+\begin{bmatrix} 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1) \\ 2(x_1^2 - x_2)(-1)
+\end{bmatrix}</span> <span class="math display">\nabla
+g\left(\begin{bmatrix} - 1 \\ 1 \end{bmatrix}\right) = \begin{bmatrix}
+2(-1 - 4) + 2((-1)^2 - 1)(2(-1)) \\ 2((-1)^2 - 1) \end{bmatrix} =
+\begin{bmatrix} -8 \\ 0 \end{bmatrix}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.2">Problem 11.2</h3>
+<p>We’d like to find the vector <span
+class="math inline">\vec{x}^*</span> that minimizes <span
+class="math inline">g(\vec{x})</span> using gradient descent. Perform
+one iteration of gradient descent by hand, using the initial guess <span
+class="math inline">\vec{x}^{(0)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix}</span> and the learning rate <span
+class="math inline">\alpha = \frac{1}{2}</span>. In other words, what is
+<span class="math inline">\vec{x}^{(1)}</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math display">\vec x^{(1)} = \begin{bmatrix} 3 \\ 1
+\end{bmatrix}</span></p>
+<p>Here’s the general form of gradient descent: <span class="math display">\vec x^{(1)} = \vec{x}^{(0)} - \alpha \nabla
+g(\vec{x}^{(0)})</span></p>
+<p>We can substitute <span class="math inline">\alpha =
+\frac{1}{2}</span> and <span class="math inline">x^{(0)} =
+\begin{bmatrix} -1 \\ 1 \end{bmatrix}</span> to get: <span class="math display">\vec x^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \nabla g(\vec x ^{(0)})</span> <span class="math display">\vec x^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0
+\end{bmatrix}</span></p>
+<p><span class="math display">\vec{x}^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0 \end{bmatrix} =
+\begin{bmatrix} 3 \\ 1 \end{bmatrix}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.3">Problem 11.3</h3>
+<p>Consider the function <span class="math inline">f(t) = (t - 3)^2 +
+(t^2 - 1)^2</span>. Select the true statement below.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex and has a global
+minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex, but has a global
+minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex, but doesn’t have a
+global minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex and doesn’t have
+a global minimum.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_3" class="accordion-collapse collapse"
+aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">f(t)</span> is not convex, but has a global
+minimum.</p>
+<p>It is seen that <span class="math inline">f(t)</span> isn’t convex,
+which can be verified using the second derivative test: <span class="math display">f'(t) = 2(t - 3) + 2(t^2 - 1) 2t = 2t - 6 +
+4t^3 - 4t = 4t^3 - 2t - 6</span> <span class="math display">f''(t) = 12t^2 - 2</span></p>
+<p>Clearly, <span class="math inline">f''(t) &lt; 0</span> for
+many values of <span class="math inline">t</span> (e.g. <span class="math inline">t = 0</span>), so <span class="math inline">f(t)</span> is not always convex.</p>
+<p>However, <span class="math inline">f(t)</span> does have a global
+minimum – its output is never less than 0. This is because it can be
+expressed as the sum of two squares, <span class="math inline">(t -
+3)^2</span> and <span class="math inline">(t^2 - 1)^2</span>,
+respectively, both of which are greater than or equal to 0.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋

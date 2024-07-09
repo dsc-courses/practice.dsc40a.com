@@ -1227,6 +1227,168 @@ P(\text{Dead}) - P(\text{Alive} \cup \text{Dead})\\
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-10">Problem 10</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 6</i></p>
+<p>Atlanta, Detroit, and Minneapolis are the three largest hub airports
+for Delta Airlines. You survey a sample of <span
+class="math inline">n</span> students at UCSD, and find that:</p>
+<ul>
+<li><p>20 students have been to Atlanta.</p></li>
+<li><p>16 students have been to Detroit.</p></li>
+<li><p>10 students have been to Minneapolis.</p></li>
+<li><p>1 student hasn’t been to any of these three cities.</p></li>
+<li><p>Of the 10 students who have been to Minneapolis, none have been
+to Detroit and 5 have been to Atlanta.</p></li>
+</ul>
+<p>Suppose you select one student at random from your sample of <span
+class="math inline">n</span>.</p>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>Suppose the event that the selected student has been to Atlanta and
+the event that the selected student has been to Detroit are
+independent.</p>
+<p>What is the value of <span class="math inline">n</span>? Your answer
+should be an <strong>integer</strong>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">32</span>.</p>
+<p>There are a few ways to approach the problem, all of which involve a
+similar sequence of calculations – specifically, the principle of
+inclusion-exclusion for 3 sets.</p>
+<p>The key is remembering that there are two unknowns: the number of
+people overall, <span class="math inline">n</span>, and the number of
+people who have been to both Atlanta and Detroit, which we’ll call <span class="math inline">k</span>.</p>
+<p>Many students drew Venn Diagrams, but ultimately they don’t help
+answer the question directly; one needs to use the independence between
+Atlanta and Detroit.</p>
+<p>One way to proceed is:</p>
+<p><span class="math display">1 = \frac{20}{n} + \frac{16}{n} +
+\frac{10}{n} + \frac{1}{n} - \frac{5}{n} - \frac{k}{n}</span>,</p>
+<p>where <span class="math inline">\frac{k}{n} = \frac{20}{n} \cdot
+\frac{16}{n}</span>. <strong>This is the key step!</strong></p>
+<p>Simplifying gives <span class="math inline">1 = \frac{42}{n} -
+\frac{320}{n^2}</span>, which is equivalent to <span class="math inline">n^2 - 42n + 320 = 0</span>.</p>
+<p>This factors into <span class="math inline">(n - 32)(n - 10) =
+0</span>, so <span class="math inline">n = 32</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>Now, suppose the event that the selected student has been to Atlanta
+and the event that the selected student has been to Detroit are not
+independent, meaning that <span class="math inline">n</span> is no
+longer necessarily your answer from part (a).</p>
+<p>The event that the selected student has been to Atlanta and the event
+that the selected student has been to Minneapolis are conditionally
+independent given that the selected student <strong>has not</strong>
+been to Detroit.</p>
+<p>Now, what is the value of <span class="math inline">n</span>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">12</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">28</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">32</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">42</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">45</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">56</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">28</span>.</p>
+<p>Without any assumptions on the value of <span class="math inline">k</span>, the number of people who have been to
+Atlanta and Detroit, it can be shown that:</p>
+<p><span class="math display">n = 42 - k</span></p>
+<p>Using the conditional independence assumption given in this part, we
+have that <span class="math inline">\frac{20-k}{n - 16} \cdot
+\frac{10}{n - 16} = \frac{5}{n - 16}</span>, which simplifies to <span class="math inline">2(20 - k) = n - 16 \implies n = 56 - 2k</span>.</p>
+<p>We now have a system of equations: <span class="math display">\begin{cases}
+n = 42 - k \\
+n = 56 - 2k
+\end{cases}</span></p>
+<p>Solving this system of equations for <span class="math inline">n</span> gives <span class="math inline">n =
+28</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.3">Problem 10.3</h3>
+<p>Consider the events <span class="math inline">A</span>, <span
+class="math inline">D</span>, and <span class="math inline">M</span>,
+defined as follows:</p>
+<ul>
+<li><p><span class="math inline">A</span>: The event that the selected
+student has been to Atlanta.</p></li>
+<li><p><span class="math inline">D</span>: The event that the selected
+student has been to Detroit.</p></li>
+<li><p><span class="math inline">M</span>: The event that the selected
+student has been to Minneapolis.</p></li>
+</ul>
+<p>Let <span class="math inline">A^c</span>, <span
+class="math inline">D^c</span>, and <span class="math inline">M^c</span>
+represent the complements of events <span class="math inline">A</span>,
+<span class="math inline">D</span>, and <span
+class="math inline">M</span>, respectively. (In class, we used <span
+class="math inline">\bar{A}</span> to represent the complement, but
+that’s hard to read on the exam.)</p>
+<p>Which of the following combinations of sets form a partition of the
+sample space?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span>   <span class="math inline">D</span>   <span class="math inline">M</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D^c \cap M^c</span>   <span class="math inline">D</span>   <span class="math inline">M</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D</span>   <span class="math inline">D^c</span>   <span class="math inline">A^c \cap D
+\cap M^c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A^c</span>   <span class="math inline">A
+\cap D</span>   <span class="math inline">A \cap M</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Option 3 is correct (<span class="math inline">A \cap D</span>  
+<span class="math inline">D^c</span>   <span class="math inline">A^c
+\cap D \cap M^c</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
