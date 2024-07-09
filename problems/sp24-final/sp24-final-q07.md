@@ -17,8 +17,7 @@ binomial coefficient ${n \choose k}$.
 
 # BEGIN SUBPROB
 
-How many sets of 6 cards are there in total? Show your work, and put a
-$\boxed{\text{box}}$ around your final answer.
+How many sets of 6 cards are there in total?
 
 # BEGIN SOLUTION
 
@@ -32,8 +31,7 @@ There are 36 cards, and we must choose of 6 of them at random without replacemen
 
 # BEGIN SUBPROB
 
-How many sets of 6 cards have exactly 6 unique plane types? Show your
-work, and put a $\boxed{\text{box}}$ around your final answer.
+How many sets of 6 cards have exactly 6 unique plane types?
 
 # BEGIN SOLUTION
 
@@ -47,8 +45,7 @@ Since we're asking for the number of hands with unique types, we first pick 6 di
 
 # BEGIN SUBPROB
 
-How many sets of 6 cards have exactly 2 unique plane types? Show your
-work, and put a $\boxed{\text{box}}$ around your final answer.
+How many sets of 6 cards have exactly 2 unique plane types?
 
 # BEGIN SOLUTION
 
@@ -63,8 +60,7 @@ Once we pick 2 unique plane types, we need to choose 3 different colors per type
 # BEGIN SUBPROB
 
 How many sets of 6 cards have exactly 3 unique plane types, such that
-each plane type appears twice? Show your work, and put a
-$\boxed{\text{box}}$ around your final answer.
+each plane type appears twice?
 
 
 # BEGIN SOLUTION
@@ -79,8 +75,7 @@ First, we choose 3 distinct types, which can be done in $${12 \choose 3}$ ways. 
 
 # BEGIN SUBPROB
 
-How many sets of 6 cards have exactly 3 unique plane types? Show your
-work, and put a $\boxed{\text{box}}$ around your final answer.
+How many sets of 6 cards have exactly 3 unique plane types? 
 
 *Hint: You'll need to consider multiple cases, one of which you
 addressed in part (d).*
