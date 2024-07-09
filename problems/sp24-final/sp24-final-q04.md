@@ -78,10 +78,10 @@ the values you found in part (c).
 
 What is $\lVert \vec{e} \rVert$?
 
-( ) 0 
+( ) $0$ 
 ( ) $3 \sqrt{2}$ 
 ( ) $4 \sqrt{2}$ 
-( ) 6 
+( ) $6$ 
 ( ) $6 \sqrt{2}$ 
 ( ) $2\sqrt{21}$
 

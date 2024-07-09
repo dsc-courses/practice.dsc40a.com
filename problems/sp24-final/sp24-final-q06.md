@@ -24,8 +24,7 @@ Suppose you select one student at random from your sample of $n$.
 Suppose the event that the selected student has been to Atlanta and the
 event that the selected student has been to Detroit are independent.
 
-What is the value of $n$? Show your work, and put a $\boxed{\text{box}}$
-around your final answer, which should be an **integer**.
+What is the value of $n$? Your answer should be an **integer**.
 
 # BEGIN SOLUTION
 
