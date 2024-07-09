@@ -38,13 +38,13 @@ $A^{-1} = \begin{bmatrix} \frac{1}{a_1} & 0 \\ 0 & \frac{1}{a_2} \end{bmatrix}$.
 
 # BEGIN SOLUTION
 
-TODO: show this proof
+We can construct the following series of matrices to get $(X^TX)^{-1}X^T$.
 
-- States that $X^T = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \end{bmatrix}$ and $X = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 1 \end{bmatrix}$.
-- States that $X^TX = \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix}$.
-- States that $(X^TX)^{-1} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1}{2} \end{bmatrix}$.
-- States that $(X^TX)^{-1}X^T = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} \end{bmatrix}$.
-
+- $X = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 1 \end{bmatrix}$ 
+- $X^T = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \end{bmatrix}$
+- $X^TX = \begin{bmatrix} 1 & 0 \\ 0 & 2 \end{bmatrix}$
+- $(X^TX)^{-1} = \begin{bmatrix} 1 & 0 \\ 0 & \frac{1}{2} \end{bmatrix}$
+- $(X^TX)^{-1}X^T = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} \end{bmatrix}$
 
 # END SOLUTION
 
@@ -66,7 +66,6 @@ $a = 4$, $b = 5$.
 The result from the part (b) implies that when using the normal equations to find coefficients for $\vec u$ and $\vec v$ – which we know from lecture produce an error vector whose length is minimized – the coefficient on $\vec u$ must be $y_1$ and the coefficient on $\vec v$ must be $\frac{y_2 + y_3}{2}$. This can be shown by taking the result from part (b), $\begin{bmatrix} 1 & 0 & 0 \\ 0 & \frac{1}{2} & \frac{1}{2} \end{bmatrix}$, and multiplying it by the vector $\vec y = \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}$.
 
 Here, $y_1 = 4$, so $a = 4$. We also know $y_2 = 2$ and $y_3 = 8$, so $b = \frac{2+8}{2} = 5$.
-
 
 # END SOLUTION
 
