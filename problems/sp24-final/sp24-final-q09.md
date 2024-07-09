@@ -95,13 +95,11 @@ you already found in **part (a)**.*
 
 # BEGIN SOLUTION
 
-TODO: show the proof
+We can recognize that:
 
-Starts by recognizing that:
+$$\displaystyle\frac{P(\text{late | conditions})}{P(\text{early | conditions})} \\ = \displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation | late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot P(\text{precipitation | early})}$$
 
-$\frac{P(\text{late | conditions})}{P(\text{early | conditions})} \\ = \frac{P(\text{late}) \cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation | late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot P(\text{precipitation | early})}$
-
-and computes:
+and compute the following:
 
 - $P(\text{late}) = \frac{32}{100}$
 - $P(\text{heavy winds | late}) = \frac{8}{32}$
@@ -113,7 +111,7 @@ and computes:
 
 which gives:
 
-$\displaystyle\frac{\frac{32}{100} \cdot \frac{8}{32} \cdot \frac{16}{32}}{\frac{28}{100} \cdot \frac{8}{28} \cdot \frac{10}{28}} = \frac{\frac{1}{35}}{\frac{1}{25}} = \frac{7}{5}$.
+$$\displaystyle\frac{\displaystyle\frac{32}{100} \cdot \displaystyle\frac{8}{32} \cdot \displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot \displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} = \displaystyle\frac{\displaystyle\frac{1}{35}}{\displaystyle\frac{1}{25}} = \displaystyle\frac{7}{5}$$.
 
 # END SOLUTION
 
