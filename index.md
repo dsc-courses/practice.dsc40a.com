@@ -29,7 +29,7 @@ Furthermore, note that different exams were offered in different formats (remote
 **In Summer 2024, the Midterm Exam will be 80 minutes long, and students are allowed to bring _one_ two-sided index card (4 inches by 6 inches) of notes that they write by hand (no iPad).**
 <!-- **In Summer 2024, the Final Exam will be 180 minutes long, and students are allowed to bring 2 two-sided index cards (4 inches by 6 inches each) of notes that they write by hand (no iPad).** -->
 
-To get a rough sense of the format of the exam, you can see this [**past exam PDF**](../assets/exams/sp24-40a-midterm-soln.pdf).
+To get a rough sense of the format of the exam, you can see this [**past exam PDF**](https://drive.google.com/file/d/1afhWI9nonDIKACvdQrSusMInztgkqMZt/view?usp=sharing).
 
 ---
 
