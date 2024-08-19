@@ -29,7 +29,7 @@ Furthermore, note that different exams were offered in different formats (remote
 **In Summer 2024, the Midterm Exam will be 80 minutes long, and students are allowed to bring _one_ two-sided index card (4 inches by 6 inches) of notes that they write by hand (no iPad).**
 <!-- **In Summer 2024, the Final Exam will be 180 minutes long, and students are allowed to bring 2 two-sided index cards (4 inches by 6 inches each) of notes that they write by hand (no iPad).** -->
 
-To get a rough sense of the format of the exam, you can see this [**past exam PDF**](https://drive.google.com/file/d/1izK0af67J0ub0keAVkO-T7piaG_PIIGF/view).
+To get a rough sense of the format of the exam, you can see this [**past exam PDF**](../assets/sp24-40a-midterm-soln.pdf).
 
 ---
 
@@ -44,6 +44,7 @@ In scope for the Summer 2024 Midterm Exam:
 
 
 Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
+
 - [Gradient Descent and Convexity](gradient-descent-convexity/index.html)
 - [Foundations of Probability](foundations-of-probability/index.html)
 - [Conditional Probability](conditional-probability/index.html)
