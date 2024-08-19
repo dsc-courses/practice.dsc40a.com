@@ -22,9 +22,11 @@ Note that some offerings in the past had one Midterm Exam and one Final Exam, wh
 - Midterm 2s and Final Part 2s cover the latter 5 weeks of the course (mostly probability).
 - Offerings with a single Final Exam were typically cumulative.
 
-**Note that in Spring 2024**, we've covered more linear algebra concepts (e.g. projecting a vector onto the span of other vectors) than were covered in the past, and our exams will reflect this. Note that gradient descent was not in scope for the midterm, but we did cover it so **gradient descent will appear on the final.** We did not cover clustering; **clustering will not appear on the final.**
+**Note that in Spring and Summer 2024**, 40A covered more linear algebra concepts (e.g. projecting a vector onto the span of other vectors) than were covered in the past, and our exams will reflect this. Note that gradient descent was not in scope for the midterm, but we did cover it so **gradient descent will appear on the final.** We did not cover clustering; **clustering will not appear on the final.**
 
-Furthermore, note that different exams were offered in different formats (remote vs. in-person) with different time limits (50 minutes vs. 80 minutes vs. 180 minutes) and different levels of allowed resources (student-created notes sheets allowed vs. instructor-created reference sheets only vs. no notes). **In Spring 2024, the Final Exam will be 180 minutes long, and students are allowed to bring 2 two-sided index cards (4 inches by 6 inches each) of notes that they write by hand (no iPad).**
+Furthermore, note that different exams were offered in different formats (remote vs. in-person) with different time limits (50 minutes vs. 80 minutes vs. 180 minutes) and different levels of allowed resources (student-created notes sheets allowed vs. instructor-created reference sheets only vs. no notes).
+**In Summer 2024, the Midterm Exam will be 80 minutes long, and students are allowed to bring one two-sided index cards (4 inches by 6 inches each) of notes that they write by hand (no iPad).**
+<!-- **In Summer 2024, the Final Exam will be 180 minutes long, and students are allowed to bring 2 two-sided index cards (4 inches by 6 inches each) of notes that they write by hand (no iPad).** -->
 
 To get a rough sense of the format of the exam, you can see this [**past exam PDF**](https://drive.google.com/file/d/1izK0af67J0ub0keAVkO-T7piaG_PIIGF/view).
 
@@ -32,20 +34,21 @@ To get a rough sense of the format of the exam, you can see this [**past exam PD
 
 ## 📊 Topics
 
-In scope for the Spring 2024 Final Exam:
+In scope for the Summer 2024 Midterm Exam:
 
 - [Summary Statistics and the Constant Model](summary-statistics-and-the-constant-model/index.html)
 - [Simple Linear Regression](simple-linear-regression/index.html)
 - [Multiple Linear Regression and the Normal Equations](multiple-linear-regression-and-the-normal-equations/index.html)
 - [Dimensions of Matrix-Vector Products (taken from DSC 140A)](https://dsc140a.com/practice/tags/object%20type.html)
+
+
+Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
 - [Gradient Descent and Convexity](gradient-descent-convexity/index.html)
 - [Foundations of Probability](foundations-of-probability/index.html)
 - [Conditional Probability](conditional-probability/index.html)
 - [Combinatorics](combinatorics/index.html)
 
 <!-- - [Clustering](clustering/index.html) -->
-
-<!-- Topics not in scope for the Midterm Exam, but in scope for the Final Exam: -->
 
 
 - More to come!
