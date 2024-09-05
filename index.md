@@ -47,11 +47,10 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
 
 - [Gradient Descent and Convexity](gradient-descent-convexity/index.html)
 - [Foundations of Probability](foundations-of-probability/index.html)
-- [Conditional Probability](conditional-probability/index.html)
+- [Conditional Probability and Naive Bayes](conditional-probability/index.html)
 - [Combinatorics](combinatorics/index.html)
 - Independence and Conditional Independence
 - Bayes' Theorem
-- Naive Bayes Classifiers
 
 <!-- - [Clustering](clustering/index.html) -->
 <!-- - [] -->
