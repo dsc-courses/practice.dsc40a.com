@@ -44,7 +44,7 @@
 
 \pstitle{%
     Midterm Exam
-}{DSC 40A, Spring 2024}
+}{DSC 40A, Summer 2024}
 
 \vspace{-.3in}
 
@@ -52,7 +52,7 @@
     Full Name: & \inlineresponsebox[4in]{Solutions}\\
     PID: & \inlineresponsebox[4in]{A12345678}\\
     Seat Number: & \inlineresponsebox[4in]{A1}
-    % Lecture: & ( ) A (10AM)} ( ) B (9AM)} \bubble{C (1PM)} \bubble{D (8AM) \vspace{.3in \\ 
+    % Lecture: & \bubble{A (10AM)} \bubble{B (9AM)} \bubble{C (1PM)} \bubble{D (8AM)} \vspace{.3in} \\ 
 \end{tabular}
 
 \vspace{.1in}
@@ -70,7 +70,7 @@
         \begin{itemize}
             \item For questions that ask you to show your work, correct answers with no work shown will receive no credit.
             \item When asked to do so, please place your final answer in a $\boxed{\text{box}}$.
-            \item ( ) In multiple choice questions, select only one option and completely fill in the corresponding bubble --- if we cannot tell which option you selected, you may not receive credit.
+            \item \bubble{In multiple choice questions, select only one option and completely fill in the corresponding bubble --- if we cannot tell which option you selected, you may not receive credit.}
         \end{itemize}
         \item You may refer to a single two-sided index card of maximum size 4 inches by 6 inches that you wrote on by hand by yourself. Other than that, you may not refer to any resources or technology during the exam (no phones, no smart watches, no computers, and no calculators).
     \end{itemize}
@@ -99,31 +99,25 @@ Please do not open your exam until instructed to do so.
 
 \newpage
 
+\begin{probset}
 
-
-# BEGIN PROB
-
-[(14 pts)]
+\begin{prob}[(14 pts)]
 
 Vectors get lonely, and so we will give each vector one friend to keep them company.
 
 Specifically, if $\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$, $\vec{v_f}$ is the friend of $\vec{v}$, where $\vec{v_f} = \begin{bmatrix} -v_2 \\ v_1 \end{bmatrix}$.
 
+\begin{subprobset}
 
-
-# BEGIN SUBPROB
-
- Prove that $\vec{v}$ and $\vec{v_f}$ are orthogonal.
+\begin{subprob}(2 pts) Prove that $\vec{v}$ and $\vec{v_f}$ are orthogonal.
 
 \begin{responsebox}{1in}
     
 \end{responsebox}
     
+\end{subprob}
 
-
-# END SUBPROB
-
-
+\end{subprobset}
 
 Consider the vectors $\vec{c}$ and $\vec{d}$, defined below.
 
@@ -131,11 +125,9 @@ $$\vec{c} = \begin{bmatrix} 1 \\ 7 \end{bmatrix} \qquad \vec{d} = \begin{bmatrix
 
 The next few parts ask you to write various vectors as scalar multiples of either $\vec{c}$, $\vec{c_f}$, $\vec{d}$, or $\vec{d_f}$, where $\vec{c_f}$ and $\vec{d_f}$ are the friends of $\vec{c}$ and $\vec{d}$, respectively. In each part, write \textbf{one number} in the box, and fill in \textbf{one bubble}. Part (b) has already been done for you.
 
+\begin{subprobset}
 
-
-# BEGIN SUBPROB
-
-A vector in $\text{span}(\vec{d})$ that is twice as long as $\vec{d}$.
+\begin{subprob}A vector in $\text{span}(\vec{d})$ that is twice as long as $\vec{d}$.
 
 \tikz[baseline=-.5em]{
     \node[
@@ -148,63 +140,41 @@ A vector in $\text{span}(\vec{d})$ that is twice as long as $\vec{d}$.
         ([shift={(1mm,1mm)}]current bounding box.north east)
         rectangle 
         ([shift={(-1mm,-1mm)}]current bounding box.south west);
-} $\times$ ( ) $\vec{c}$} ( ) $\vec{c_f}$} \bubble[fill=black!90]{$\vec{d}$} \bubble{$\vec{d_f$
+} $\times$ \bubble{$\vec{c}$} \bubble{$\vec{c_f}$} \bubble[fill=black!90]{$\vec{d}$} \bubble{$\vec{d_f}$}
 
+\end{subprob}
 
+\begin{subprob}(3 pts) The projection of $\vec{c}$ onto $\text{span}(\vec{d})$.
 
-# END SUBPROB
+\inlineresponsebox[1.5in]{1in} $\times$ \bubble{$\vec{c}$} \bubble{$\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f}$}
 
-# BEGIN SUBPROB
+\end{subprob}
 
- The projection of $\vec{c}$ onto $\text{span}(\vec{d})$.
+\begin{subprob}(3 pts) The error vector of the projection of $\vec{c}$ onto $\text{span}(\vec{d})$.
 
-\inlineresponsebox[1.5in]{1in} $\times$ ( ) $\vec{c}$} ( ) $\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f$
+\inlineresponsebox[1.5in]{1in} $\times$ \bubble{$\vec{c}$} \bubble{$\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f}$}
 
+\end{subprob}
 
+\begin{subprob}(3 pts) The projection of $\vec{d}$ onto $\text{span}(\vec{c})$.
 
-# END SUBPROB
+\inlineresponsebox[1.5in]{1in} $\times$ \bubble{$\vec{c}$} \bubble{$\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f}$}
 
-# BEGIN SUBPROB
+\end{subprob}
 
- The error vector of the projection of $\vec{c}$ onto $\text{span}(\vec{d})$.
+\begin{subprob}(3 pts) The error vector of the projection of $\vec{d}$ onto $\text{span}(\vec{c})$.
 
-\inlineresponsebox[1.5in]{1in} $\times$ ( ) $\vec{c}$} ( ) $\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f$
+\inlineresponsebox[1.5in]{1in} $\times$ \bubble{$\vec{c}$} \bubble{$\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f}$}
 
-
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
- The projection of $\vec{d}$ onto $\text{span}(\vec{c})$.
-
-\inlineresponsebox[1.5in]{1in} $\times$ ( ) $\vec{c}$} ( ) $\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f$
-
-
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
- The error vector of the projection of $\vec{d}$ onto $\text{span}(\vec{c})$.
-
-\inlineresponsebox[1.5in]{1in} $\times$ ( ) $\vec{c}$} ( ) $\vec{c_f}$} \bubble{$\vec{d}$} \bubble{$\vec{d_f$
-
-
-
-# END SUBPROB
+\end{subprob}
     
-
+\end{subprobset}
     
-
-
-# END PROB
+\end{prob}
 
 \newpage
 
-# BEGIN PROB
-
-[(11 pts)]
+\begin{prob}[(11 pts)]
 
 Consider a dataset of $n$ values, $y_1, y_2, ..., y_n$, all of which are non-negative. We're interested in fitting a constant model, $H(x) = h$, to the data, using the new ``Sun God" loss function:
 
@@ -216,25 +186,19 @@ Here, $w_i$ corresponds to the ``weight" assigned to the data point $y_i$, the i
 
 For example, for the dataset $y_1 = 1, y_2 = 5, y_3 = 2$, we will end up with different values of $h^*$ when we use the weights $w_1 = w_2 = w_3 = 1$ and when we use weights $w_1 = 8, w_2 = 4, w_3 = 3$.
 
+\begin{subprobset}
 
-
-# BEGIN SUBPROB
-
- Find $\frac{\partial L_\text{sungod}}{\partial h}$, the derivative of the Sun God loss function with respect to $h$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
+\begin{subprob}(3 pts) Find $\frac{\partial L_\text{sungod}}{\partial h}$, the derivative of the Sun God loss function with respect to $h$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
 
 \begin{responsebox}{3in}
 
 \end{responsebox}
     
-
-
-# END SUBPROB
+\end{subprob}
 
 \newpage
 
-# BEGIN SUBPROB
-
- Prove that the constant prediction that minimizes empirical risk for the Sun God loss function is:
+\begin{subprob}(6 pts) Prove that the constant prediction that minimizes empirical risk for the Sun God loss function is:
 
 $$h^* = \sqrt{\frac{\sum_{i = 1}^n w_i y_i^2}{\sum_{i = 1}^n w_i}}$$
 
@@ -249,42 +213,32 @@ $$h^* = \sqrt{\frac{\sum_{i = 1}^n w_i y_i^2}{\sum_{i = 1}^n w_i}}$$
 
 \end{responsebox}
     
+\end{subprob}
 
+\begin{subprob}(2 pts) For a dataset of non-negative values $y_1, y_2, ..., y_n$ with weights $w_1, 1, ..., 1$, evaluate: $$\displaystyle \lim_{w_1 \rightarrow \infty} h^*$$
 
-# END SUBPROB
+\bubble{The maximum of $y_1, y_2, ..., y_n$}
 
-# BEGIN SUBPROB
+\bubble{The mean of $y_1, y_2, ..., y_{n-1}$}
 
- For a dataset of non-negative values $y_1, y_2, ..., y_n$ with weights $w_1, 1, ..., 1$, evaluate: $$\displaystyle \lim_{w_1 \rightarrow \infty} h^*$$
+\bubble{The mean of $y_2, y_3, ..., y_n$}
 
-( ) The maximum of $y_1, y_2, ..., y_n$
+\bubble{The mean of $y_2, y_3, ..., y_n$, multiplied by $\frac{n}{n-1}$}
 
-( ) The mean of $y_1, y_2, ..., y_{n-1}$
+\bubble{$y_1$}
 
-( ) The mean of $y_2, y_3, ..., y_n$
-
-( ) The mean of $y_2, y_3, ..., y_n$, multiplied by $\frac{n}{n-1}$
-
-( ) $y_1$
-
-( ) $y_n$
+\bubble{$y_n$}
 
     
-
-
-# END SUBPROB
+\end{subprob}
     
-
+\end{subprobset}
     
-
-
-# END PROB
+\end{prob}
 
 \newpage
 
-# BEGIN PROB
-
-[(12 pts)]
+\begin{prob}[(12 pts)]
 
 Consider a dataset of $n$ values, $y_1, y_2, ..., y_n$, where $y_1 < y_2 < ... < y_n$. Let $R_\text{abs}(h)$ be the mean absolute error of a constant prediction $h$ on this dataset of $n$ values.
 
@@ -299,22 +253,16 @@ We're given that:
     \item The slope of $S_\text{abs}(h)$ on the line segment immediately to the right of $\alpha$ is $\frac{5-n}{1 + n}$.
 \end{itemize}
 
+\begin{subprobset}
 
+\begin{subprob}(2 pts) In the problem statement, we were told that ``all values between 7 and 9 minimize $S_\text{abs}(h)$." More specifically, what interval of values $h$ minimize $S_\text{abs}(h)$? 
 
-# BEGIN SUBPROB
-
- In the problem statement, we were told that ``all values between 7 and 9 minimize $S_\text{abs}(h)$." More specifically, what interval of values $h$ minimize $S_\text{abs}(h)$? 
-
-( ) $7 < h < 9$} ( ) $7 \leq h < 9$} \bubble{$7 < h \leq 9$ \bubble{$7 \leq h \leq 9$
+\bubble{$7 < h < 9$} \bubble{$7 \leq h < 9$} \bubble{$7 < h \leq 9$} \bubble{$7 \leq h \leq 9$}
 
     
+\end{subprob}
 
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
- Which value(s) minimize $R_\text{abs}(h)$? Give your answer(s) as integer(s) with no variables. Show your work, and put a $\boxed{\text{box}}$ around your final answer(s).
+\begin{subprob}(4 pts) Which value(s) minimize $R_\text{abs}(h)$? Give your answer(s) as integer(s) with no variables. Show your work, and put a $\boxed{\text{box}}$ around your final answer(s).
 
 \textit{Hint: Don't start by trying to expand $\frac{1}{n} \sum_{i = 1}^n |y_i - h|$ --- instead, think about what removing $\alpha$ does.}
 
@@ -322,29 +270,21 @@ We're given that:
     
 \end{responsebox}
     
-
-
-# END SUBPROB
+\end{subprob}
 
 \newpage
 
-# BEGIN SUBPROB
-
- What is the slope of $S_\text{abs}(h)$ on the line segment immediately to the left of $\alpha$? Give your answer in the form of an expression involving $n$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
+\begin{subprob}(6 pts) What is the slope of $S_\text{abs}(h)$ on the line segment immediately to the left of $\alpha$? Give your answer in the form of an expression involving $n$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
 
 \begin{responsebox}{5in}
     
 \end{responsebox}
     
-
-
-# END SUBPROB
+\end{subprob}
 
 % \newpage
 
-% # BEGIN SUBPROB
-
-
+% \begin{subprob}
 
 % Suppose, just in part (d), that $\alpha = 2$ and that the minimum value of $S_\text{abs}(h)$ is 16. What is the value of $n$? Give your answer as an integer with no variables.
 
@@ -354,21 +294,15 @@ We're given that:
     
 % \end{responsebox}
     
-% 
-
-# END SUBPROB
+% \end{subprob}
     
-
+\end{subprobset}
     
-
-
-# END PROB
+\end{prob}
 
 \newpage
 
-# BEGIN PROB
-
-[(19 pts)]
+\begin{prob}[(19 pts)]
 
 Suppose we want to fit a hypothesis function of the form:
 
@@ -393,23 +327,17 @@ $x$ & $y$ \\ \hline
 
 Suppose that $x_1, x_2, ..., x_n$ have a mean of $\bar{x} = 2$ and a variance of $\sigma_x^2 = 10$.
 
+\begin{subprobset}
 
-
-# BEGIN SUBPROB
-
- Write out the first 5 rows of the design matrix, $X$.
+\begin{subprob}(3 pts) Write out the first 5 rows of the design matrix, $X$.
 
 \begin{responsebox}{1.5in}
     
 \end{responsebox}
 
+\end{subprob}
 
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
- Suppose, just in part (b), that after solving the normal equations, we find $\vec{w}^* = \begin{bmatrix} 2 \\ -5 \end{bmatrix}$. What is the predicted $y$ value for the augmented feature vector $\text{Aug}(\vec{x}) =  \begin{bmatrix} 1 \\ 4 \end{bmatrix}$? Give your answer as an integer with no variables. Show your work, and put 
+\begin{subprob}(3 pts) Suppose, just in part (b), that after solving the normal equations, we find $\vec{w}^* = \begin{bmatrix} 2 \\ -5 \end{bmatrix}$. What is the predicted $y$ value for the augmented feature vector $\text{Aug}(\vec{x}) =  \begin{bmatrix} 1 \\ 4 \end{bmatrix}$? Give your answer as an integer with no variables. Show your work, and put 
 
 a $\boxed{\text{box}}$ around your final answer.
 
@@ -417,27 +345,19 @@ a $\boxed{\text{box}}$ around your final answer.
     
 \end{responsebox}
     
-
-
-# END SUBPROB
+\end{subprob}
 
 \newpage
 
-# BEGIN SUBPROB
-
- Let $X_\text{tri} = 3 X$. Using the fact that $\sum_{i = 1}^n x_i^2 = n \sigma_x^2 + n \bar{x}^2$, determine the value of the bottom-left value in the matrix $X_\text{tri}^T X_\text{tri}$, i.e. the value in the second row and first column. Give your answer as an expression involving $n$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
+\begin{subprob}(5 pts) Let $X_\text{tri} = 3 X$. Using the fact that $\sum_{i = 1}^n x_i^2 = n \sigma_x^2 + n \bar{x}^2$, determine the value of the bottom-left value in the matrix $X_\text{tri}^T X_\text{tri}$, i.e. the value in the second row and first column. Give your answer as an expression involving $n$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
 
 \begin{responsebox}{3.5in}
     
 \end{responsebox}
     
+\end{subprob}
 
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
- Consider the following four hypothesis functions:
+\begin{subprob}(8 pts) Consider the following four hypothesis functions:
 
 \begin{itemize}
     \item $H_1(x) = H(x) = w_0 + w_1 x^2$
@@ -454,41 +374,35 @@ Let $H_1^*$, $H_2^*$, $H_3^*$, and $H_4^*$ be the versions of all four hypothesi
     \item The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_2^*$.
 
     \begin{tabular}{lll}
-    ( ) greater than} & ( ) greater than or equal to} & \bubble{equal to} \\ \bubble{less than} & \bubble{less than or equal to & \bubble{impossible to tell
+    \bubble{greater than} & \bubble{greater than or equal to} & \bubble{equal to} \\ \bubble{less than} & \bubble{less than or equal to} & \bubble{impossible to tell}
     \end{tabular}
 
     \item The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_3^*$.
 
     \begin{tabular}{lll}
-    ( ) greater than} & ( ) greater than or equal to} & \bubble{equal to} \\ \bubble{less than} & \bubble{less than or equal to & \bubble{impossible to tell
+    \bubble{greater than} & \bubble{greater than or equal to} & \bubble{equal to} \\ \bubble{less than} & \bubble{less than or equal to} & \bubble{impossible to tell}
     \end{tabular}
 
     \item The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_4^*$.
 
     \begin{tabular}{lll}
-    ( ) greater than} & ( ) greater than or equal to} & \bubble{equal to} \\ \bubble{less than} & \bubble{less than or equal to & \bubble{impossible to tell
+    \bubble{greater than} & \bubble{greater than or equal to} & \bubble{equal to} \\ \bubble{less than} & \bubble{less than or equal to} & \bubble{impossible to tell}
     \end{tabular}
 
     \item In \_\_\_\_ of the hypothesis functions $H_1^*$,$ H_2^*$, $H_3^*$, and $H_4^*$, the sum of the residuals of the function's predictions is 0.
 
-    ( ) none} ( ) 1} \bubble{2} \bubble{3 \bubble{all 4
+    \bubble{none} \bubble{1} \bubble{2} \bubble{3} \bubble{all 4}
 \end{enumerate}
     
-
-
-# END SUBPROB
+\end{subprob}
     
-
+\end{subprobset}
     
-
-
-# END PROB
+\end{prob}
 
 \newpage
 
-# BEGIN PROB
-
-
+\begin{prob}[(8 pts)]
 
 Consider a dataset of $n$ points, $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$ where:
 
@@ -525,9 +439,7 @@ Put your proof for Question 5 in the box below.
     
 \end{responsebox}
     
-
-
-# END PROB
+\end{prob}
 
 \newpage
 
@@ -541,6 +453,6 @@ And here's a free point!
     
 \end{responsebox}
 
-
+\end{probset}
 
 \end{document}
