@@ -1,32 +1,21 @@
 # BEGIN PROB
 
- Consider the following four hypothesis functions:
+Fill in the blanks for each set of vectors below to accurately describe their relationship and span.
 
-\begin{itemize}
-    \item $H_1(x) = H(x) = w_0 + w_1 x^2$
-    \item $H_2(x) = w_0$
-    \item $H_3(x) = w_0 + w_1 x$
-    \item $H_4(x) = w_0 + w_1x + w_2x^2$
-\end{itemize}
+$$\vec{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}$$
 
-Let $H_1^*$, $H_2^*$, $H_3^*$, and $H_4^*$ be the versions of all four hypothesis functions that are using optimal parameters. In the subparts below, fill in the blanks.
-
-<!-- % mean squared error is being computed on the dataset of $n$ points used to find the optimal parameters. -->
+``$\vec{a}$ and $\vec{b}$ are \underline{ \ \ (i) \ \ }, meaning they span a \underline{ \ \ (ii) \ \ }. The vector  $\vec{a} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}$ \underline{ \ \ (iii) \ \ } in the span of $\vec{a}$ and $\vec{b}$. $\vec{a}$ and $\vec{b}$ are \underline{ \ \ (iv) \ \ }, meaning the angle between them is \underline{ \ \ (v) \ \ }"
 
 # BEGIN SUBPROB
 
-The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_2^*$.
+What goes in \_\_(i)\_\_?
 
-( ) greater than
-( ) greater than or equal to
-( ) equal to
-( ) less than
-( ) less than or equal to
-( ) impossible to tell
+( ) linearly independent
+( ) linearly dependent
 
 # BEGIN SOLUTION
 
-TODO
+Linearly Independent
 
 # END SOLUTION
 
@@ -34,18 +23,16 @@ TODO
 
 # BEGIN SUBPROB
 
-The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_3^*$.
+What goes in \_\_(ii)\_\_?
 
-( ) greater than
-( ) greater than or equal to
-( ) equal to
-( ) less than
-( ) less than or equal to
-( ) impossible to tell
+( ) line
+( ) plane
+( ) cube
+( ) unknown
 
 # BEGIN SOLUTION
 
-TODO
+Plane
 
 # END SOLUTION
 
@@ -53,18 +40,15 @@ TODO
 
 # BEGIN SUBPROB
 
-The mean squared error of $H_1^*$ is \_\_\_\_ the mean squared error of $H_4^*$.
+What goes in \_\_(iii)\_\_?
 
-( ) greater than
-( ) greater than or equal to
-( ) equal to
-( ) less than
-( ) less than or equal to
-( ) impossible to tell
+( ) is
+( ) is not
+( ) may be
 
 # BEGIN SOLUTION
 
-TODO
+is
 
 # END SOLUTION
 
@@ -72,17 +56,31 @@ TODO
 
 # BEGIN SUBPROB
 
-In \_\_\_\_ of the hypothesis functions $H_1^*$,$ H_2^*$, $H_3^*$, and $H_4^*$, the sum of the residuals of the function's predictions is 0.
+What goes in \_\_(iv)\_\_?
 
-( ) none
-( ) 1
-( ) 2
-( ) 3
-( ) all 4
+( ) orthogonal
+( ) collinear
+( ) neither orthogonal nor collinear
 
 # BEGIN SOLUTION
 
-TODO
+neither orthogonal nor collinear
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+What goes in \_\_(v)\_\_?
+
+( ) 0 or 180 degrees
+( ) something else
+( ) 90 degrees
+
+# BEGIN SOLUTION
+
+something else
 
 # END SOLUTION
 

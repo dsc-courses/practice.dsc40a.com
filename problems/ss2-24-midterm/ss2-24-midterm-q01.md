@@ -1,14 +1,22 @@
 # BEGIN PROB
 
-Vectors get lonely, and so we will give each vector one friend to keep them company.
+Consider a dataset of $n$ values, $y_1, y_2, \dots, y_n$, all of which are non-negative. We are interested in fitting a constant model, $H(x) = h$, to the data using the ``Jack" loss function, defined as:
 
-Specifically, if $$\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}$$, $$\vec{v_f}$$ is the friend of $$\vec{v}$$, where $$\vec{v_f} = \begin{bmatrix} -v_2 \\ v_1 \end{bmatrix}$$.
+\[
+L_{\text{Jack}}(y_i, h) =
+\begin{cases} 
+\alpha \cdot (y_i - h)^2 & \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 & \text{if } y_i < h,
+\end{cases}
+\]
 
-
+where $\alpha$ and $\beta$ are positive constants that weight the squared and cubic loss components differently depending on whether the prediction $h$ underestimates or overestimates the true value $y_i$.
 
 # BEGIN SUBPROB
 
- Prove that $$\vec{v}$$ and $$\vec{v_f}$$ are orthogonal.
+Find $\frac{d L_\text{Jack}}{d h}$, the derivative of the Jack loss function with respect to $h$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
+
+\textit{Hint: The derivative of a piecewise function is also a piecewise function.}
 
 # BEGIN SOLUTION
 
@@ -21,46 +29,13 @@ TODO
 # END SUBPROB
 
 
-
-Consider the vectors $$\vec{c}$$ and $$\vec{d}$$, defined below.
-
-$$\vec{c} = \begin{bmatrix} 1 \\ 7 \end{bmatrix} \qquad \vec{d} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}$$
-
-The next few parts ask you to write various vectors as scalar multiples of either $$\vec{c}$$, $$\vec{c_f}$$, $$\vec{d}$$, or $$\vec{d_f}$$, where $$\vec{c_f}$$ and $$\vec{d_f}$$ are the friends of $$\vec{c}$$ and $$\vec{d}$$, respectively. In each part, write \textbf{one number} in the box, and fill in \textbf{one bubble}.
-
-
-
-<!-- # BEGIN SUBPROB
-
-A vector in $\text{span}(\vec{d})$ that is twice as long as $\vec{d}$.
-
-\_\_\_ $\times$
-
-( ) $\vec{c}$
-( ) $\vec{c_f}$ 
-( ) $\vec{d}$
-( ) $\vec{d_f}$
-
-# BEGIN SOLUTION
-
-$\vec{d}$
-
-# END SOLUTION
-
-
-
-# END SUBPROB -->
-
 # BEGIN SUBPROB
 
- The projection of $$\vec{c}$$ onto $$\text{span}(\vec{d})$$.
+Prove that for the constant prediction $h^*$ minimizing empirical risk for the Jack loss function, the following quantities sum to 0:
+1) the sum of the derivatives of the losses for the overestimated values (when $h^* > y_i$), and
+2) the sum of the derivatives of the losses for the underestimated values (when $h^* \leq y_i$).
 
-\_\_\_ $$\times$$
-
-( ) $$\vec{c}$$
-( ) $$\vec{c_f}$$
-( ) $$\vec{d}$$
-( ) $$\vec{d_f}$$
+\textit{Hint: You do not need to solve for the optimal value of $h^*$. Instead, walk through the general process of minimizing a risk function, and think about the equations you come across.}
 
 # BEGIN SOLUTION
 
@@ -74,18 +49,18 @@ TODO
 
 # BEGIN SUBPROB
 
- The error vector of the projection of $$\vec{c}$$ onto $$\text{span}(\vec{d})$$.
+For any set of values $y_1, y_2, ..., y_n$ in sorted order $y_1 \leq y_2 \leq ... \leq y_n$, evaluate $h^*$ when $\alpha = 0$.
 
-\_\_\_ $$\times$$
-
-( ) $$\vec{c}$$
-( ) $$\vec{c_f}$$
-( ) $$\vec{d}$$
-( ) $$\vec{d_f}$$
+( ) 0
+( ) Median({$y_i$})
+( ) Any number $\leq y_1$
+( ) Any number $\geq y_n$
+( ) $\overline y$
+( ) Impossible to tell
 
 # BEGIN SOLUTION
 
-TODO
+Any number $\leq y_1$
 
 # END SOLUTION
 
@@ -95,39 +70,18 @@ TODO
 
 # BEGIN SUBPROB
 
- The projection of $$\vec{d}$$ onto $$\text{span}(\vec{c})$$.
+For any set of values $y_1, y_2, ..., y_n$ in sorted order $y_1 \leq y_2 \leq ... \leq y_n$, evaluate $h^*$ when $\beta = 0$.
 
-\_\_\_ $$\times$$
-
-( ) $$\vec{c}$$
-( ) $$\vec{c_f}$$
-( ) $$\vec{d}$$
-( ) $$\vec{d_f}$$
-
-# BEGIN SOLUTION
-
-TODO
-
-# END SOLUTION
-
-
-
-# END SUBPROB
-
-# BEGIN SUBPROB
-
- The error vector of the projection of $$\vec{d}$$ onto $$\text{span}(\vec{c})$$.
-
-\_\_\_ $$\times$$
-
-( ) $$\vec{c}$$
-( ) $$\vec{c_f}$$
-( ) $$\vec{d}$$
-( ) $$\vec{d_f}$$
+( ) 0
+( ) Median({$y_i$})
+( ) Any number $\leq y_1$
+( ) Any number $\geq y_n$
+( ) $\overline y$
+( ) Impossible to tell
 
 # BEGIN SOLUTION
 
-TODO
+Any number $\geq y_n$
 
 # END SOLUTION
 

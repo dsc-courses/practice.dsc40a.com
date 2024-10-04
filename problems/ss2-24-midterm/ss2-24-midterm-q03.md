@@ -1,33 +1,31 @@
 # BEGIN PROB
 
-Consider a dataset of $n$ values, $y_1, y_2, ..., y_n$, where $y_1 < y_2 < ... < y_n$. Let $R_\text{abs}(h)$ be the mean absolute error of a constant prediction $h$ on this dataset of $n$ values.
+Consider the following information:
+- $\vec{v}$ is an $n$-dimensional vector.
+- $M$ is an $m \times n$ matrix.
+- $N$ is an $n \times n$ matrix.
+- $s$ is a scalar.
 
-Suppose that we introduce a new value to the dataset, $\alpha$. Let $S_\text{abs}(h)$ be the mean absolute error of a constant prediction $h$ on this new dataset of $n + 1$ values.
-
-We're given that:
-
-\begin{itemize}
-    \item $n > 5$.
-    \item $\alpha$ is not equal to any of $y_1, y_2, ..., y_n$. 
-    \item All values of $h$ between 7 and 9 minimize $S_\text{abs}(h)$.
-    \item The slope of $S_\text{abs}(h)$ on the line segment immediately to the right of $\alpha$ is $\frac{5-n}{1 + n}$.
-\end{itemize}
+Select the dimensionality of each of the objects below:
 
 
 
 # BEGIN SUBPROB
 
- In the problem statement, we were told that ``all values between 7 and 9 minimize $S_\text{abs}(h)$." More specifically, what interval of values $h$ minimize $S_\text{abs}(h)$? 
+$M \vec{v}$
 
-( ) $7 < h < 9$
-( ) $7 \leq h < 9$
-( ) $7 < h \leq 9$
-( ) $7 \leq h \leq 9$
+( ) An $n \times n$ matrix
+( ) An $m \times m$ matrix
+( ) An $n \times m$ matrix
+( ) An $m$-dimensional vector
+( ) An $n$-dimensional vector
+( ) A scalar
+( ) Invalid operation
 
     
 # BEGIN SOLUTION
 
-TODO
+An $m$-dimensional vector
 
 # END SOLUTION
 
@@ -35,13 +33,19 @@ TODO
 
 # BEGIN SUBPROB
 
- Which value(s) minimize $R_\text{abs}(h)$? Give your answer(s) as integer(s) with no variables. Show your work, and put a $\boxed{\text{box}}$ around your final answer(s).
+$M^T M$
 
-\textit{Hint: Don't start by trying to expand $\frac{1}{n} \sum_{i = 1}^n |y_i - h|$ --- instead, think about what removing $\alpha$ does.}
+( ) An $n \times n$ matrix
+( ) An $m \times m$ matrix
+( ) An $n \times m$ matrix
+( ) An $m$-dimensional vector
+( ) An $n$-dimensional vector
+( ) A scalar
+( ) Invalid operation
 
 # BEGIN SOLUTION
 
-TODO
+An $n \times n$ matrix
 
 # END SOLUTION
     
@@ -49,15 +53,66 @@ TODO
 
 # END SUBPROB
 
-\newpage
 
 # BEGIN SUBPROB
 
- What is the slope of $S_\text{abs}(h)$ on the line segment immediately to the left of $\alpha$? Give your answer in the form of an expression involving $n$. Show your work, and put a $\boxed{\text{box}}$ around your final answer.
+$\vec{v}^T N \vec{v}$
+
+( ) An $n \times n$ matrix
+( ) An $m \times m$ matrix
+( ) An $n \times m$ matrix
+( ) An $m$-dimensional vector
+( ) An $n$-dimensional vector
+( ) A scalar
+( ) Invalid operation
 
 # BEGIN SOLUTION
 
-TODO
+A scalar
+
+# END SOLUTION
+    
+
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+$N \vec{v} + s \vec{v}$
+
+( ) An $n \times n$ matrix
+( ) An $m \times m$ matrix
+( ) An $n \times m$ matrix
+( ) An $m$-dimensional vector
+( ) An $n$-dimensional vector
+( ) A scalar
+( ) Invalid operation
+
+# BEGIN SOLUTION
+
+An $n$-dimensional vector
+
+# END SOLUTION
+    
+
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+$M^T M \vec{v}$
+
+( ) An $n \times n$ matrix
+( ) An $m \times m$ matrix
+( ) An $n \times m$ matrix
+( ) An $m$-dimensional vector
+( ) An $n$-dimensional vector
+( ) A scalar
+( ) Invalid operation
+
+# BEGIN SOLUTION
+
+An $n$-dimensional vector
 
 # END SOLUTION
     

@@ -1,10 +1,10 @@
 # BEGIN PROB
 
-Fill in the blanks for each set of vectors below to accurately describe their relationship and span.
+ Fill in the blanks for each set of vectors below to accurately describe their relationship and span.
 
-$$\vec{a} = \begin{bmatrix} -2 \\ 1.5 \\ 4 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 1 \\ 2 \\ -2.5 \end{bmatrix} \qquad \vec{c} = \begin{bmatrix} -4 \\ 10 \\ 11 \end{bmatrix}$$
+$$\vec{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}$$
 
-``$\vec{a}$, $\vec{b}$, and $\vec{c}$ are \underline{ \ \ (i) \ \ }, meaning they span a \underline{ \ \ (ii) \ \ }. The vector  $\vec{a} = \begin{bmatrix} -2 \\ 15 \\ -7 \end{bmatrix}$ \underline{ \ \ (iii) \ \ } in the span of $\vec{a}$, $\vec{b}$, and $\vec{c}$. $\vec{a}$, $\vec{b}$, and $\vec{c}$ are \textbf{all} \underline{ \ \ (iv) \ \ }, meaning the angle between them is \underline{ \ \ (v) \ \ }"
+``$\vec{a}$ and $\vec{b}$ are \underline{ \ \ (i) \ \ }, meaning they span a \underline{ \ \ (ii) \ \ }. The vector  $\vec{a} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}$ \underline{ \ \ (iii) \ \ } in the span of $\vec{a}$ and $\vec{b}$. $\vec{a}$ and $\vec{b}$ are \underline{ \ \ (iv) \ \ }, meaning the angle between them is \underline{ \ \ (v) \ \ }"
 
 # BEGIN SUBPROB
 
@@ -15,7 +15,7 @@ What goes in \_\_(i)\_\_?
 
 # BEGIN SOLUTION
 
-Linearly Dependent
+Linearly Independent
 
 # END SOLUTION
 
@@ -25,7 +25,6 @@ Linearly Dependent
 
 What goes in \_\_(ii)\_\_?
 
-( ) line
 ( ) plane
 ( ) cube
 ( ) unknown
