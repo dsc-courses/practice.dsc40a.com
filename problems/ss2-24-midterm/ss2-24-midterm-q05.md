@@ -4,7 +4,7 @@ Fill in the blanks for each set of vectors below to accurately describe their re
 
 $$\vec{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}$$
 
-``$\vec{a}$ and $\vec{b}$ are \underline{ \ \ (i) \ \ }, meaning they span a \underline{ \ \ (ii) \ \ }. The vector  $\vec{a} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}$ \underline{ \ \ (iii) \ \ } in the span of $\vec{a}$ and $\vec{b}$. $\vec{a}$ and $\vec{b}$ are \underline{ \ \ (iv) \ \ }, meaning the angle between them is \underline{ \ \ (v) \ \ }"
+"$\vec{a}$ and $\vec{b}$ are \_\_(i)\_\_, meaning they span a \_\_(ii)\_\_. The vector  $\vec{a} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}$  \_\_(iii)\_\_ in the span of $\vec{a}$ and $\vec{b}$. $\vec{a}$ and $\vec{b}$ are  \_\_(iv)\_\_, meaning the angle between them is  \_\_(v)\_\_"
 
 # BEGIN SUBPROB
 

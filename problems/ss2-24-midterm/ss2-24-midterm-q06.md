@@ -4,7 +4,7 @@ Fill in the blanks for each set of vectors below to accurately describe their re
 
 $$\vec{a} = \begin{bmatrix} -2 \\ 1.5 \\ 4 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 1 \\ 2 \\ -2.5 \end{bmatrix} \qquad \vec{c} = \begin{bmatrix} -4 \\ 10 \\ 11 \end{bmatrix}$$
 
-``$\vec{a}$, $\vec{b}$, and $\vec{c}$ are \underline{ \ \ (i) \ \ }, meaning they span a \underline{ \ \ (ii) \ \ }. The vector  $\vec{a} = \begin{bmatrix} -2 \\ 15 \\ -7 \end{bmatrix}$ \underline{ \ \ (iii) \ \ } in the span of $\vec{a}$, $\vec{b}$, and $\vec{c}$. $\vec{a}$, $\vec{b}$, and $\vec{c}$ are \textbf{all} \underline{ \ \ (iv) \ \ }, meaning the angle between them is \underline{ \ \ (v) \ \ }"
+"$\vec{a}$, $\vec{b}$, and $\vec{c}$ are  \_\_(i)\_\_, meaning they span a  \_\_(ii)\_\_. The vector  $\vec{a} = \begin{bmatrix} -2 \\ 15 \\ -7 \end{bmatrix}$  \_\_(iii)\_\_ in the span of $\vec{a}$, $\vec{b}$, and $\vec{c}$. $\vec{a}$, $\vec{b}$, and $\vec{c}$ are \textbf{all}  \_\_(iv)\_\_, meaning the angle between them is  \_\_(v)\_\_"
 
 # BEGIN SUBPROB
 

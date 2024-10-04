@@ -1,6 +1,7 @@
 # BEGIN PROB
 
 Consider the following information:
+
 - $A$ is an $m \times n$ matrix.
 - $\vec{b}$ is an arbitrary $n$-dimensional vector
 - $\vec{c}$ is the $m$-dimensional vector formed by multiplying $A$ with $\vec{b}$.

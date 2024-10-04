@@ -1,37 +1,89 @@
 # BEGIN PROB
 
-Consider a dataset of $n$ points, $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$ where:
+Fill in the blanks for each set of vectors below to accurately describe their relationship and span.
 
-\begin{itemize}
-    \item $x_1 < x_2 < ... < x_n$, and $x_1, x_2, ..., x_n$ have a variance of $\sigma_x^2 = 15$ and a range of 20 (the range of a collection of values is the difference between the largest and smallest value).
-    \item $y_1 > y_2 > ... > y_n$, and $y_1, y_2, ..., y_n$ have a variance of $\sigma_y^2 = 8$ and a range of 6.
-\end{itemize}
+$$\vec{a} = \begin{bmatrix} -3 \\ -2 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 3 \end{bmatrix}$$
 
-We fit two linear hypothesis functions using squared loss:
+"$\vec{a}$ and $\vec{b}$ are  \_\_(i)\_\_, meaning they span a  \_\_(ii)\_\_. The vector  $\vec{a} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$  \_\_(iii)\_\_ in the span of $\vec{a}$ and $\vec{b}$. $\vec{a}$ and $\vec{b}$ are  \_\_(iv)\_\_, meaning the angle between them is \_\_(v)\_\_"
 
-\begin{itemize}
-\item One hypothesis function is fit with a ``swapped" version of the dataset, where $x_1$ and $x_n$ are swapped --- that is, it uses the dataset $(x_n, y_1), (x_2, y_2), ..., (x_{n-1}, y_{n-1}), (x_1, y_n)$. Note that only two of the points in this dataset are different than in the original dataset. We'll call the optimal slope and intercept of this hypothesis function $w_1^\text{swap}$ and $w_0^\text{swap}$, respectively.
-\item Another hypothesis function is fit with the original dataset, 
+# BEGIN SUBPROB
 
-$(x_1, y_1), (x_2, y_2), ..., (x_{n-1}, y_{n-1}), (x_n, y_n)$. We'll call the optimal slope and intercept of this hypothesis function $w_1^\text{orig}$ and $w_0^\text{orig}$, respectively. 
-\end{itemize}
+What goes in \_\_(i)\_\_?
 
-On the next page, in the space provided, prove that:
-
-$$\displaystyle | w_1^\text{swap} - w_1^\text{orig} | = \frac{8}{n}$$
-
-\textit{Hint: Approach this problem similarly to Problem 2 on Homework 3 (``Shout for Stroud"). Also, think about how you can express $\sum_{i = 1}^n (x_i - \bar{x})^2$ in terms of $n$ and $\sigma_x^2$.}
-
-Feel free to use the space here for scratch work, but we will only grade what appears in the box on the next page.
-
-Put your proof for Question 5 in the box below.
+( ) linearly independent
+( ) linearly dependent
 
 # BEGIN SOLUTION
 
-TODO
+Linearly Independent
 
 # END SOLUTION
-    
 
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+What goes in \_\_(ii)\_\_?
+
+( ) line
+( ) plane
+( ) cube
+( ) unknown
+
+# BEGIN SOLUTION
+
+Plane
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+What goes in \_\_(iii)\_\_?
+
+( ) is
+( ) is not
+( ) may be
+
+# BEGIN SOLUTION
+
+is
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+What goes in \_\_(iv)\_\_?
+
+( ) orthogonal
+( ) collinear
+( ) neither orthogonal nor collinear
+
+# BEGIN SOLUTION
+
+Orthogonal
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+What goes in \_\_(v)\_\_?
+
+( ) 0 or 180 degrees
+( ) something else
+( ) 90 degrees
+
+# BEGIN SOLUTION
+
+90 degrees
+
+# END SOLUTION
+
+# END SUBPROB
 
 # END PROB

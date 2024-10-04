@@ -1,13 +1,13 @@
 # BEGIN PROB
 
 Consider the following information:
+
 - $\vec{v}$ is an $n$-dimensional vector.
 - $M$ is an $m \times n$ matrix.
 - $N$ is an $n \times n$ matrix.
 - $s$ is a scalar.
 
 Select the dimensionality of each of the objects below:
-
 
 
 # BEGIN SUBPROB

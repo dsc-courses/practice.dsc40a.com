@@ -3,19 +3,14 @@
 Suppose we want to fit a hypothesis function of the form: $$H(x) = w_0 + w_1 x^{(1)} + w_2 x^{(2)} + w_3 (x^{(1)})^2 + w_4 (x^{(1)} x^{(2)})^2$$
 \vspace{-0.3cm}
 Our dataset looks like this: 
-\begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-\rule{0pt}{2.5ex} % Adjust the height of the row
-$x^{(1)}$ & $x^{(2)}$ & $y$ \\ \hline
-1  &  6  & 7   \\ \hline
--3 &  8  & 2   \\ \hline
-4  &  1  & 9   \\ \hline
--2 &  7  & 5   \\ \hline
-0  &  4  & 6   \\ \hline
-\end{tabular}
-\end{table}
+
+| $x^{(1)}$ | $x^{(2)}$ | $y$ |
+|-----------|------------|-----|
+| 1         | 6          | 7   |
+| -3        | 8          | 2   |
+| 4         | 1          | 9   |
+| -2        | 7          | 5   |
+| 0         | 4          | 6   |
 
 # BEGIN SUBPROB
 
