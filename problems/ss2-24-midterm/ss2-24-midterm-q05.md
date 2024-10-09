@@ -17,6 +17,8 @@ What goes in \_\_(i)\_\_?
 
 Linearly Independent
 
+Because I said so - Zoe
+
 # END SOLUTION
 
 # END SUBPROB
