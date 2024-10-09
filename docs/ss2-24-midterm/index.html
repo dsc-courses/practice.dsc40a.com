@@ -105,7 +105,48 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p><span class="math inline">\frac{L_{\text{Jack}}}{\partial h} =
+\begin{cases}
+-2 \alpha(y_i = h) &amp; \text{if } y_i \geq h, \\
+3 \beta |h - y_i|^2 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>Looking at the loss function (displayed again for your convenience),
+we can start by taking the derivative of the first case, when <span class="math inline">y_i \geq h</span>:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>To find the derivative of the first case we will use chain rule.
+Chain rule states <span class="math inline">F'(x) = f'(g(x))
+\times g'(x)</span>. We start with <span class="math inline">\frac{\partial}{\partial h} \alpha(y_i - h)^2</span>
+and treat <span class="math inline">f(x) = x^2</span> and <span class="math inline">g(x) = (y_i - h)</span>. We can easily find <span class="math inline">f'(x) = 2</span> and <span class="math inline">g'(x) = -1</span>. When combining all of these
+parts we get</p>
+<p><span class="math display">\frac{\partial}{\partial h} \alpha(y_i -
+h)^2 \rightarrow -2 \alpha(y_i = h)</span></p>
+<p>We can now look at the second case, when <span class="math inline">y_i &lt; h</span>. Once again we will use the chain
+rule. We start with <span class="math inline">\frac{\partial}{\partial
+h} \beta \cdot |y_i - h|^3</span> and treat <span class="math inline">f(x) = x^3</span> and <span class="math inline">g(x)
+= |y_i - h|</span>. We can easily find <span class="math inline">f'(x) = 3</span>, but <span class="math inline">g'(x)</span> is a bit trickier.</p>
+<p>This requires you to know when <span class="math inline">h =
+y_i</span> the line is undefined. This means we have a piecewise
+function.</p>
+<p><span class="math display">g'(x) = \begin{cases}
+1 &amp; \text{if } y_i &gt; h, \\
+\text{undefined} &amp; \text{if } y_i = h\\
+-1 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>Since we only care about when <span class="math inline">y_i &gt;
+h</span> we can replace <span class="math inline">g'(x)</span> with
+<span class="math inline">1</span>! This means we have</p>
+<p><span class="math display">\frac{\partial}{\partial h} \beta \cdot
+|y_i - h|^3 \rightarrow 3 \beta |h - y_i|^2</span></p>
+<p><span class="math display">\boxed{\frac{L_{\text{Jack}}}{\partial h}
+=
+\begin{cases}
+-2 \alpha(y_i = h) &amp; \text{if } y_i \geq h, \\
+3 \beta |h - y_i|^2 &amp; \text{if } y_i &lt; h,
+\end{cases}}</span></p>
 </div>
 </div>
 </div>
@@ -139,7 +180,41 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>TODO</p>
+<p>Once again, recall Jack loss:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>We can rewrite this to say:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\alpha \cdot (y_i - h)^2 +
+\beta \cdot |y_i - h|^3 </span></p>
+<p>From here we can now set up the equation for risk. We are told in the
+hint to go through the motions of finding <span class="math inline">h^*</span> without doing all of the calculations.
+Recall risk follows the equation: <span class="math inline">R_{\text{f(x)}} = \frac{1}{n} \sum_{i = 1}^{n}
+f(x)</span>. Once we have this equation we take the derivative and set
+it equal to zero to solve for <span class="math inline">h^*</span>.</p>
+<p><span class="math display">\begin{align*}
+R_{L_{\text{Jack}}} &amp;= \frac{1}{n} \sum_{i = 1}^{n} \alpha \cdot
+(y_i - h)^2 + \beta \cdot |y_i - h|^3\\
+&amp;=\frac{1}{n} (\sum_{\text{if }y_i \geq h} \alpha \cdot (y_i - h)^2
++ \sum_{\text{if }y_i &lt; h} \beta \cdot |y_i - h|^3)\\
+&amp;\text{To get the derivative use part a!}\\
+&amp;= \frac{1}{n} (\sum_{\text{if }y_i \geq h} -2 \alpha(y_i - h) +
+\sum_{\text{if }y_i &lt; h} 3 \beta |h - y_i|^2)\\
+\end{align*}</span></p>
+<p>From here we can set <span class="math inline">R_{L_{\text{Jack}}}</span> to zero.</p>
+<p><span class="math display">\begin{align*}
+0 &amp;= R_{L_{\text{Jack}}} \\
+0 &amp;= \frac{1}{n} (\sum_{\text{if }y_i \geq h} -2 \alpha(y_i - h) +
+\sum_{\text{if }y_i &lt;&gt; h} 3 \beta |h - y_i|^2) \\
+0 &amp;= -2 \alpha \sum_{\text{if }y_i \geq h} (y_i - h) + 3 \beta
+\sum_{\text{if }y_i &lt; h} |h - y_i|^2
+\end{align*}</span></p>
+<p>We know <span class="math inline">h^*</span> minimizes empirical risk
+and makes it 0, so <span class="math inline">h^*</span> will make the
+sum of these two derivative parts sum up to zero.</p>
 </div>
 </div>
 </div>
