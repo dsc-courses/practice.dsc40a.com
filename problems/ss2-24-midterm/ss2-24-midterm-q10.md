@@ -42,6 +42,24 @@ First weight $s_0$ after solving normal equations corresponds to the term in $H(
 
 $(x^{(1)} x^{(2)})^2$
 
+The first column inside of our $X_\text{shuffled}$ represents $s_0$, so we want to figure out how to create these values. We can easily eliminate intercept, $x^{(1)}$, and $x^{(2)}$ because none of these numbers match. From here we can calculate $(x^{(1)})^2$ and $(x^{(1)} x^{(2)})^2$ to determine which element creates $s_0$.
+
+\begin{align*}
+(x^{(1)})^2 &= \begin{bmatrix} 1^2 = 1 \\
+(-3)^2 = 9\\
+4^2 = 16\\
+(-2)^2 = 4\\
+0^2 = 0 \end{bmatrix} \\
+&\text{and}\\
+(x^{(1)} x^{(2)})^2 &= \begin{bmatrix} (1 \times 6)^2 = 36 \\
+(-3 \times 8)^2 = 576 \\
+(4 \times 1)^2 = 16 \\
+(-2 \times 7 )^2 = 196 \\
+(0 \times 4)^2 = 0 \end{bmatrix}
+\end{align*}
+
+From this we can see the answer is clearly $(x^{(1)} x^{(2)})^2$.
+
 # END SOLUTION
     
 
@@ -63,6 +81,8 @@ Second weight $s_1$ after solving normal equations corresponds to the term in $H
 
 $x^{(2)}$
 
+The second column inside of our $X_\text{shuffled}$ represents $s_1$, so we want to figure out how to create these values. We can see this is the same as $x^{(2)}$.
+
 # END SOLUTION
 
 
@@ -83,6 +103,8 @@ Third weight $s_2$ after solving normal equations corresponds to the term in $H(
 
 $x^{(1)}$
 
+The third column inside of our $X_\text{shuffled}$ represents $s_2$, so we want to figure out how to create these values. We can see this is the same as $x^{(1)}$.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -101,6 +123,8 @@ Fourth weight $s_3$ after solving normal equations corresponds to the term in $H
 
 intercept
 
+The fourth column inside of our $X_\text{shuffled}$ represents $s_3$, so we want to figure out how to create these values. We know the intercept is a vector of ones, which matches!
+
 # END SOLUTION
 
 # END SUBPROB
@@ -117,7 +141,15 @@ Fifth weight $s_4$ after solving normal equations corresponds to the term in $H(
 
 # BEGIN SOLUTION
 
-intercept
+$(x^{(1)})^2$
+
+From process of elimination we can find the answer or from our first calculation.
+
+$$(x^{(1)})^2 = \begin{bmatrix} 1^2 = 1 \\
+(-3)^2 = 9\\
+4^2 = 16\\
+(-2)^2 = 4\\
+0^2 = 0 \end{bmatrix}$$
 
 # END SOLUTION
 
