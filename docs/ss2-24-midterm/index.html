@@ -8,49 +8,37 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="..\assets\theme.css" />
-  <script defer=""
-  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
   </script>
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Summer Session 2 2024 Midterm Exam</h1>
 </header>
-<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- add after bootstrap.min.css -->
-<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
-<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
-<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!-- add after bootstrap.min.css --> <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/> <!-- add after bootstrap.min.js or bootstrap.bundle.min.js --> <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
 <!-- for difficulty gauges-->
 <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -65,31 +53,16 @@
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
 <p><strong>Instructor(s):</strong> Nishant Kheterpal</p>
-<p>This exam was administered in person. Students had <strong>90
-minutes</strong> to take this exam.</p>
+<p>This exam was administered in person. Students had <strong>90 minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>Fill in the blanks for each set of vectors below to accurately
-describe their relationship and span.</p>
-<p><span class="math display">\vec{a} = \begin{bmatrix} 1 \\ 3
-\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 1
-\end{bmatrix}</span></p>
-<p>“<span class="math inline">\vec{a}</span> and <span
-class="math inline">\vec{b}</span> are __(i)__, meaning they span a
-__(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix}
--6 \\ 11 \end{bmatrix}</span> __(iii)__ in the span of <span
-class="math inline">\vec{a}</span> and <span
-class="math inline">\vec{b}</span>. <span
-class="math inline">\vec{a}</span> and <span
-class="math inline">\vec{b}</span> are __(iv)__, meaning the angle
-between them is __(v)__”</p>
+<p>Consider a dataset of <span class="math inline">n</span> values, <span class="math inline">y_1, y_2, \dots, y_n</span>, all of which are non-negative. We are interested in fitting a constant model, <span class="math inline">H(x) = h</span>, to the data using the ``Jack" loss function, defined as:</p>
+<p><span class="math inline">L_{\text{Jack}}(y_i, h) = \begin{cases} \alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\ \beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h, \end{cases}</span></p>
+<p>where <span class="math inline">\alpha</span> and <span class="math inline">\beta</span> are positive constants that weight the squared and cubic loss components differently depending on whether the prediction <span class="math inline">h</span> underestimates or overestimates the true value <span class="math inline">y_i</span>.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>What goes in __(i)__?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> linearly independent</p></li>
-<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
-</ul>
+<p>Find <span class="math inline">\frac{d L_\text{Jack}}{d h}</span>, the derivative of the Jack loss function with respect to <span class="math inline">h</span>. Show your work, and put a <span class="math inline">\boxed{\text{box}}</span> around your final answer.</p>
+<p></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -97,20 +70,489 @@ between them is __(v)__”</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
-aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div id="collapse1_1" class="accordion-collapse collapse collapse" aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Linearly Independent</p>
-<p>Because I said so - Zoe</p>
+<p><span class="math inline">\frac{L_{\text{Jack}}}{\partial h} = \begin{cases} -2 \alpha(y_i = h) &amp; \text{if } y_i \geq h, \\ 3 \beta |h - y_i|^2 &amp; \text{if } y_i &lt; h, \end{cases}</span></p>
+<p>Looking at the loss function (displayed again for your convenience), we can start by taking the derivative of the first case, when <span class="math inline">y_i \geq h</span>:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases} 
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>To find the derivative of the first case we will use chain rule. Chain rule states <span class="math inline">F'(x) = f'(g(x)) \times g'(x)</span>. We start with <span class="math inline">\frac{\partial}{\partial h} \alpha(y_i - h)^2</span> and treat <span class="math inline">f(x) = x^2</span> and <span class="math inline">g(x) = (y_i - h)</span>. We can easily find <span class="math inline">f'(x) = 2</span> and <span class="math inline">g'(x) = -1</span>. When combining all of these parts we get</p>
+<p><span class="math display">\frac{\partial}{\partial h} \alpha(y_i - h)^2 \rightarrow -2 \alpha(y_i = h)</span></p>
+<p>We can now look at the second case, when <span class="math inline">y_i &lt; h</span>. Once again we will use the chain rule. We start with <span class="math inline">\frac{\partial}{\partial h} \beta \cdot |y_i - h|^3</span> and treat <span class="math inline">f(x) = x^3</span> and <span class="math inline">g(x) = |y_i - h|</span>. We can easily find <span class="math inline">f'(x) = 3</span>, but <span class="math inline">g'(x)</span> is a bit trickier.</p>
+<p>This requires you to know when <span class="math inline">h = y_i</span> the line is undefined. This means we have a piecewise function.</p>
+<p><span class="math display">g'(x) = \begin{cases} 
+1 &amp; \text{if } y_i &gt; h, \\
+\text{undefined} &amp; \text{if } y_i = h\\
+-1 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>Since we only care about when <span class="math inline">y_i &gt; h</span> we can replace <span class="math inline">g'(x)</span> with <span class="math inline">1</span>! This means we have</p>
+<p><span class="math display">\frac{\partial}{\partial h} \beta \cdot |y_i - h|^3 \rightarrow 3 \beta |h - y_i|^2</span></p>
+<p><span class="math display">\boxed{\frac{L_{\text{Jack}}}{\partial h} =
+\begin{cases} 
+-2 \alpha(y_i = h) &amp; \text{if } y_i \geq h, \\
+3 \beta |h - y_i|^2 &amp; \text{if } y_i &lt; h,
+\end{cases}}</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
+<p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
+<p>Prove that for the constant prediction <span class="math inline">h^*</span> minimizing empirical risk for the Jack loss function, the following quantities sum to 0:</p>
+<ol type="1">
+<li>the sum of the derivatives of the losses for the overestimated values (when <span class="math inline">h^* &gt; y_i</span>), and</li>
+<li>the sum of the derivatives of the losses for the underestimated values (when <span class="math inline">h^* \leq y_i</span>).</li>
+</ol>
+<p><em>Hint: You do not need to solve for the optimal value of <span class="math inline">h^*</span>. Instead, walk through the general process of minimizing a risk function, and think about the equations you come across.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse collapse" aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Once again, recall Jack loss:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases} 
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>We can rewrite this to say:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\alpha \cdot (y_i - h)^2 +
+\beta \cdot |y_i - h|^3 </span></p>
+<p>From here we can now set up the equation for risk. We are told in the hint to go through the motions of finding <span class="math inline">h^*</span> without doing all of the calculations. Recall risk follows the equation: <span class="math inline">R_{\text{f(x)}} = \frac{1}{n} \sum_{i = 1}^{n} f(x)</span>. Once we have this equation we take the derivative and set it equal to zero to solve for <span class="math inline">h^*</span>.</p>
+<p></p>
+<p>From here we can set <span class="math inline">R_{L_{\text{Jack}}}</span> to zero.</p>
+<p></p>
+<p>We know <span class="math inline">h^*</span> minimizes empirical risk and makes it 0, so <span class="math inline">h^*</span> will make the sum of these two derivative parts sum up to zero.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>For any set of values <span class="math inline">y_1, y_2, ..., y_n</span> in sorted order <span class="math inline">y_1 \leq y_2 \leq ... \leq y_n</span>, evaluate <span class="math inline">h^*</span> when <span class="math inline">\alpha = 0</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> Median({<span class="math inline">y_i</span>})</p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\leq y_1</span></p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\geq y_n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\overline y</span></p></li>
+<li><p><input type="radio" disabled="" /> Impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse collapse" aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Any number <span class="math inline">\leq y_1</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>For any set of values <span class="math inline">y_1, y_2, ..., y_n</span> in sorted order <span class="math inline">y_1 \leq y_2 \leq ... \leq y_n</span>, evaluate <span class="math inline">h^*</span> when <span class="math inline">\beta = 0</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> Median({<span class="math inline">y_i</span>})</p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\leq y_1</span></p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\geq y_n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\overline y</span></p></li>
+<li><p><input type="radio" disabled="" /> Impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse collapse" aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Any number <span class="math inline">\geq y_n</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>Prove the following statement or provide a counterexample:</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>If a vector <span class="math inline">\vec{v}</span> is orthogonal to a vector <span class="math inline">\vec{w}</span>, then <span class="math inline">\vec{v}</span> is also orthogonal to the projection of an arbitrary vector <span class="math inline">\vec{u}</span> onto <span class="math inline">\vec{w}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse collapse" aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The statement above is true.</p>
+<p>Let the following information hold:</p>
+<ul>
+<li><span class="math inline">c</span> is a scalar.</li>
+<li><span class="math inline">c\vec{w}</span> is the projection of <span class="math inline">\vec{u}</span> onto <span class="math inline">\vec{w}</span>.</li>
+</ul>
+<p>When a vector is orthogonal to another their dot product will equal zero. This means <span class="math inline">\vec{v} \cdot \vec{w} = 0</span>.</p>
+<p>From lecture we know: <span class="math display">c\vec{w} = \frac{\vec{w} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \cdot \vec{w}</span></p>
+<p>So, now we can solve <span class="math inline">c\vec{w} \cdot \vec{v} = \frac{\vec{w} \cdot \vec{u} \cdot \vec{w} \cdot \vec{v}}{\vec{u} \cdot \vec{u}}</span>. The numerator becomes zero because <span class="math inline">\vec{v} \cdot \vec{w} = 0</span> and anything multiplied by zero will also be zero. This means the projection of <span class="math inline">\vec{u}</span> onto <span class="math inline">\vec{w}</span> is orthogonal to <span class="math inline">\vec v</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>If a vector <span class="math inline">\vec{v}</span> is orthogonal to a vector <span class="math inline">\vec{w}</span>, then <span class="math inline">\vec{v}</span> is also orthogonal to the projection of <span class="math inline">\vec{w}</span> onto an arbitrary vector <span class="math inline">\vec{u}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse collapse" aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>Consider the following information:</p>
+<ul>
+<li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
+<li><span class="math inline">M</span> is an <span class="math inline">m \times n</span> matrix.</li>
+<li><span class="math inline">N</span> is an <span class="math inline">n \times n</span> matrix.</li>
+<li><span class="math inline">s</span> is a scalar.</li>
+</ul>
+<p>Select the dimensionality of each of the objects below:</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p><span class="math inline">M \vec{v}</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> A scalar.</p></li>
+<li><p><input type="radio" disabled="" /> Invalid operation.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse collapse" aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>An <span class="math inline">m</span>-dimensional vector.</p>
+<p>We know the following information:</p>
+<ul>
+<li><span class="math inline">M</span> is an <span class="math inline">m \times n</span> matrix.</li>
+<li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
+</ul>
+<p>This means:</p>
+<p><span class="math display">
+M = \left[ \begin{matrix}
+\end{matrix} \right]_{m \times n}
+\text{ and }
+\vec{v} = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times 1}
+</span></p>
+<p>When you multiply <span class="math inline">M \vec{v}</span> the <span class="math inline">n</span> will both cancel out leaving you with an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{m \times 1}</span>, which is an <span class="math inline">m</span>-dimensional vector.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p><span class="math inline">M^T M</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> A scalar.</p></li>
+<li><p><input type="radio" disabled="" /> Invalid operation.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse collapse" aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>An <span class="math inline">n \times n</span> matrix.</p>
+<p>We know the following information:</p>
+<ul>
+<li><span class="math inline">M</span> is an <span class="math inline">m \times n</span> matrix.</li>
+</ul>
+<p>This means:</p>
+<p><span class="math display">
+M^T = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times m}
+\text{ and }
+M = \left[ \begin{matrix}
+\end{matrix} \right]_{m \times n}
+</span></p>
+<p>When you multiply <span class="math inline">M^T M</span> the <span class="math inline">m</span> will both cancel out leaving you with an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times n}</span>, which is an <span class="math inline">n \times n</span> matrix.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p><span class="math inline">\vec{v}^T N \vec{v}</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> A scalar.</p></li>
+<li><p><input type="radio" disabled="" /> Invalid operation.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse collapse" aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>A scalar.</p>
+<p>We know the following information:</p>
+<ul>
+<li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
+<li><span class="math inline">N</span> is an <span class="math inline">n \times n</span> matrix.</li>
+</ul>
+<p>This means:</p>
+<p><span class="math display">
+\vec{v}^T = \left[ \begin{matrix}
+\end{matrix} \right]_{1 \times n}
+\text{, }
+N = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times n}
+\text{, and }
+\vec{v} = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times 1}
+</span></p>
+<p>When you multiply <span class="math inline">\vec{v}^T N</span> the <span class="math inline">n</span> will both cancel out leaving you with an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{1 \times n}</span>. When you multiply this object by <span class="math inline">\vec{v}</span> the <span class="math inline">n</span> will cancel out again leaving you with an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{1 \times 1}</span>, which is a scalar.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.4">Problem 3.4</h3>
+<p><span class="math inline">N \vec{v} + s \vec{v}</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> A scalar.</p></li>
+<li><p><input type="radio" disabled="" /> Invalid operation.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_4" class="accordion-collapse collapse collapse" aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>An <span class="math inline">n</span>-dimensional vector.</p>
+<p>We know the following information:</p>
+<ul>
+<li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
+<li><span class="math inline">N</span> is an <span class="math inline">n \times n</span> matrix.</li>
+<li><span class="math inline">s</span> is a scalar.</li>
+</ul>
+<p>This means:</p>
+<p><span class="math display">
+\vec{v} = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times 1}
+\text{, }
+N = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times n}
+\text{, and }
+s = \left[ \begin{matrix}
+\end{matrix} \right]_{1 \times 1}
+</span></p>
+<p>When you multiply <span class="math inline">N \vec{v}</span> the <span class="math inline">n</span> will both cancel out leaving you with an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times 1}</span>. When you multiply <span class="math inline">\s \vec{v}</span> the dimensions of <span class="math inline">\vec{v}</span> does not change, so you will have an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times 1}</span>. When you add these vectors the dimension will not change, so you are left with an <span class="math inline">n</span>-dimensional vector.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.5">Problem 3.5</h3>
+<p><span class="math inline">M^T M \vec{v}</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n \times m</span> matrix.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">m</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> An <span class="math inline">n</span>-dimensional vector.</p></li>
+<li><p><input type="radio" disabled="" /> A scalar.</p></li>
+<li><p><input type="radio" disabled="" /> Invalid operation.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_5" aria-expanded="true" aria-controls="collapse3_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_5" class="accordion-collapse collapse collapse" aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>An <span class="math inline">n</span>-dimensional vector.</p>
+<p>We know the following information:</p>
+<ul>
+<li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
+<li><span class="math inline">N</span> is an <span class="math inline">n \times n</span> matrix.</li>
+<li><span class="math inline">s</span> is a scalar.</li>
+</ul>
+<p>This means:</p>
+<p><span class="math display">
+M^T = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times m}
+\text{, }
+M = \left[ \begin{matrix}
+\end{matrix} \right]_{m \times n}
+\text{, and }
+\vec{v} = \left[ \begin{matrix}
+\end{matrix} \right]_{n \times 1}
+</span></p>
+<p>When you multiply <span class="math inline">M^T M</span> the <span class="math inline">m</span> will both cancel out leaving you with an object with the size <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times n}</span>, which is an <span class="math inline">n \times n</span> matrix. When you multiply <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times n} \times \vec{v}_{n \times 1}</span> the <span class="math inline">n</span> will cancel out leaving you with an <span class="math inline">n</span>-dimensional vector.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>Consider the following information:</p>
+<ul>
+<li><span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix.</li>
+<li><span class="math inline">\vec{b}</span> is an arbitrary <span class="math inline">n</span>-dimensional vector</li>
+<li><span class="math inline">\vec{c}</span> is the <span class="math inline">m</span>-dimensional vector formed by multiplying <span class="math inline">A</span> with <span class="math inline">\vec{b}</span>.</li>
+<li><span class="math inline">\vec{d}</span> is an arbitrary <span class="math inline">m</span>-dimensional vector.</li>
+<li><span class="math inline">\vec{e}</span> is the <span class="math inline">m</span>-dimensional vector formed by <span class="math inline">\vec{d} - \vec{c}</span>.</li>
+</ul>
+<p>If <span class="math inline">\vec{e}</span> is orthogonal to every column in <span class="math inline">A</span>, prove that <span class="math inline">\vec{b}</span> must satisfy the following equation:</p>
+<p><span class="math display">
+A^T A \vec{b} = A^T \vec{d}.
+</span></p>
+<p>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4" class="accordion-collapse collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>Fill in the blanks for each set of vectors below to accurately describe their relationship and span.</p>
+<p><span class="math display">\vec{a} = \begin{bmatrix} 1 \\ 3 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}</span></p>
+<p>“<span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are __(i)__, meaning they span a __(ii)__. The vector <span class="math inline">\vec{c} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}</span> __(iii)__ in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>. <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are __(iv)__, meaning the angle between them is __(v)__”</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>What goes in __(i)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> linearly independent</p></li>
+<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse collapse" aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Linearly Independent</p>
+<p>Vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are linearly independent because they aren’t multiples of each other. They each point in different directions, so we can’t express either vector as a scalar multiple of the other.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>What goes in __(ii)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> line</p></li>
@@ -120,13 +562,148 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse collapse" aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Plane</p>
+<p>Any two linearly independent vectors must span a plane. Geometrically, we can think of all scalar multiples of a single vector to lie along a single line. Then, linear combinations of any two vectors pointing in different directions must lie on the same plane.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>What goes in __(iii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> is</p></li>
+<li><p><input type="radio" disabled="" /> is not</p></li>
+<li><p><input type="radio" disabled="" /> may be</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse collapse" aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>is</p>
+<p>We can check if <span class="math inline">\vec{c}</span> lies in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> if there exists some constants <span class="math inline">c_1</span> and <span class="math inline">c_2</span> such that <span class="math inline">c_1 \vec{a} + c_2 \vec{b} = \vec{c}</span>. Plugging in what we know: <span class="math display">c_1 \begin{bmatrix} 1 \\ 3 \end{bmatrix} + c_2 \begin{bmatrix} -2 \\ 1 \end{bmatrix} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}</span> This gives us the system of equations: <span class="math display">c_1 (1) + c_2 (-2) = -6</span> <span class="math display">c_1 (3) + c_2 (1) = 11</span> Solving this system gives us <span class="math inline">c_1 = \frac{16}{7}</span>, <span class="math inline">c_2 = \frac{29}{7}</span>, which means <span class="math inline">\vec{c}</span> does lie in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.4">Problem 5.4</h3>
+<p>What goes in __(iv)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> orthogonal</p></li>
+<li><p><input type="radio" disabled="" /> collinear</p></li>
+<li><p><input type="radio" disabled="" /> neither orthogonal nor collinear</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_4" aria-expanded="true" aria-controls="collapse5_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_4" class="accordion-collapse collapse collapse" aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>neither orthogonal nor collinear</p>
+<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal if <span class="math inline">\vec{a} \cdot \vec{b} = 0</span>. We can compute <span class="math inline">\vec{a} \cdot \vec{b} = (1)(-2) + (3)(1) = 1 \neq 0</span>, so <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are not orthogonal.</p>
+<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are collinear if we can write one vector as a scalar multiple of the other. But we already know <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are linearly independent, so they don’t lie along the same line and aren’t collinear.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.5">Problem 5.5</h3>
+<p>What goes in __(v)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0 or 180 degrees</p></li>
+<li><p><input type="radio" disabled="" /> something else</p></li>
+<li><p><input type="radio" disabled="" /> 90 degrees</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_5" aria-expanded="true" aria-controls="collapse5_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_5" class="accordion-collapse collapse collapse" aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>something else</p>
+<p>If two vectors are orthogonal, the angle between them is 90 degrees. If two vectors are collinear, the angle between them is 0 or 180 degrees. Since <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are neither of these, then the angle between them must be something else.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>Fill in the blanks for each set of vectors below to accurately describe their relationship and span.</p>
+<p><span class="math display">\vec{a} = \begin{bmatrix} -2 \\ 1.5 \\ 4 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 1 \\ 2 \\ -2.5 \end{bmatrix} \qquad \vec{c} = \begin{bmatrix} -4 \\ 10 \\ 11 \end{bmatrix}</span></p>
+<p>“<span class="math inline">\vec{a}</span>, <span class="math inline">\vec{b}</span>, and <span class="math inline">\vec{c}</span> are __(i)__, meaning they span a __(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix} -2 \\ 15 \\ -7 \end{bmatrix}</span> __(iii)__ in the span of <span class="math inline">\vec{a}</span>, <span class="math inline">\vec{b}</span>, and <span class="math inline">\vec{c}</span>. <span class="math inline">\vec{a}</span>, <span class="math inline">\vec{b}</span>, and <span class="math inline">\vec{c}</span> are  __(iv)__, meaning the angle between them is __(v)__”</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>What goes in __(i)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> linearly independent</p></li>
+<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse collapse" aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Linearly Dependent</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>What goes in __(ii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> line</p></li>
+<li><p><input type="radio" disabled="" /> plane</p></li>
+<li><p><input type="radio" disabled="" /> cube</p></li>
+<li><p><input type="radio" disabled="" /> unknown</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse collapse" aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -137,7 +714,7 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.3">Problem 1.3</h3>
+<h3 id="problem-6.3">Problem 6.3</h3>
 <p>What goes in __(iii)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> is</p></li>
@@ -146,13 +723,12 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse"
-aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div id="collapse6_3" class="accordion-collapse collapse collapse" aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -163,7 +739,7 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.4">Problem 1.4</h3>
+<h3 id="problem-6.4">Problem 6.4</h3>
 <p>What goes in __(iv)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> orthogonal</p></li>
@@ -172,13 +748,12 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse"
-aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div id="collapse6_4" class="accordion-collapse collapse collapse" aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -189,7 +764,7 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.5">Problem 1.5</h3>
+<h3 id="problem-6.5">Problem 6.5</h3>
 <p>What goes in __(v)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> 0 or 180 degrees</p></li>
@@ -198,13 +773,12 @@ aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+<h2 class="accordion-header" id="heading6_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_5" aria-expanded="true" aria-controls="collapse6_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse"
-aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div id="collapse6_5" class="accordion-collapse collapse collapse" aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -216,12 +790,678 @@ aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>Fill in the blanks for each set of vectors below to accurately describe their relationship and span.</p>
+<p><span class="math display">\vec{a} = \begin{bmatrix} -1 \\ 4 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 0.5 \\ -2 \end{bmatrix}</span></p>
+<p>“<span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are __(i)__, meaning they span a __(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix} -3 \\ 4 \end{bmatrix}</span> __(iii)__ in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>. <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are __(iv)__, meaning the angle between them is __(v)__”</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>What goes in __(i)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> linearly independent</p></li>
+<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse collapse" aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Linearly Independent</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>What goes in __(ii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> line</p></li>
+<li><p><input type="radio" disabled="" /> plane</p></li>
+<li><p><input type="radio" disabled="" /> cube</p></li>
+<li><p><input type="radio" disabled="" /> unknown</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse collapse" aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Line</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>What goes in __(iii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> is</p></li>
+<li><p><input type="radio" disabled="" /> is not</p></li>
+<li><p><input type="radio" disabled="" /> may be</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse collapse" aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>is not</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.4">Problem 7.4</h3>
+<p>What goes in __(iv)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> orthogonal</p></li>
+<li><p><input type="radio" disabled="" /> collinear</p></li>
+<li><p><input type="radio" disabled="" /> neither orthogonal nor collinear</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_4" aria-expanded="true" aria-controls="collapse7_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_4" class="accordion-collapse collapse collapse" aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Collinear</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.5">Problem 7.5</h3>
+<p>What goes in __(v)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0 or 180 degrees</p></li>
+<li><p><input type="radio" disabled="" /> something else</p></li>
+<li><p><input type="radio" disabled="" /> 90 degrees</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_5" aria-expanded="true" aria-controls="collapse7_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_5" class="accordion-collapse collapse collapse" aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>0 or 180 degrees</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>Fill in the blanks for each set of vectors below to accurately describe their relationship and span.</p>
+<p><span class="math display">\vec{a} = \begin{bmatrix} -3 \\ -2 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 3 \end{bmatrix}</span></p>
+<p>“<span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are __(i)__, meaning they span a __(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span> __(iii)__ in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>. <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are __(iv)__, meaning the angle between them is __(v)__”</p>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>What goes in __(i)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> linearly independent</p></li>
+<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse collapse" aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Linearly Independent</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>What goes in __(ii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> line</p></li>
+<li><p><input type="radio" disabled="" /> plane</p></li>
+<li><p><input type="radio" disabled="" /> cube</p></li>
+<li><p><input type="radio" disabled="" /> unknown</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse collapse" aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Plane</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>What goes in __(iii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> is</p></li>
+<li><p><input type="radio" disabled="" /> is not</p></li>
+<li><p><input type="radio" disabled="" /> may be</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse collapse" aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>is</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.4">Problem 8.4</h3>
+<p>What goes in __(iv)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> orthogonal</p></li>
+<li><p><input type="radio" disabled="" /> collinear</p></li>
+<li><p><input type="radio" disabled="" /> neither orthogonal nor collinear</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_4" aria-expanded="true" aria-controls="collapse8_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_4" class="accordion-collapse collapse collapse" aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Orthogonal</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.5">Problem 8.5</h3>
+<p>What goes in __(v)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0 or 180 degrees</p></li>
+<li><p><input type="radio" disabled="" /> something else</p></li>
+<li><p><input type="radio" disabled="" /> 90 degrees</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_5" aria-expanded="true" aria-controls="collapse8_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_5" class="accordion-collapse collapse collapse" aria-labelledby="heading8_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>90 degrees</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>Suppose we want to fit a hypothesis function of the form: <span class="math display">H(x) = w_0 + w_1 x^{(1)} + w_2 x^{(2)} + w_3 (x^{(1)})^2 + w_4 (x^{(1)} x^{(2)})^2</span>  Our dataset looks like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">x^{(1)}</span></th>
+<th><span class="math inline">x^{(2)}</span></th>
+<th><span class="math inline">y</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>-3</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>-2</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>4</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Suppose we found <span class="math inline">w_2^* = 15.6</span> using multiple linear regression. Now, suppose we rescaled our data so feature vector <span class="math inline">\vec{x^{(2)}}</span> became <span class="math inline">\left[60,\  80,\  10,\  70,\  40\right]^T</span>, and performed multiple linear regression in the same setting. What would the new value of <span class="math inline">w_2^*</span> (the weight on feature <span class="math inline">x^{(2)}</span> in <span class="math inline">H(x)</span>) be? You do not need to simplify your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse collapse" aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">w_2^* = 1.56</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>Suppose we found <span class="math inline">w_4^* = 72</span> using multiple linear regression. Now, suppose we rescaled our data so feature vector <span class="math inline">\vec{x^{(1)}}</span> became <span class="math inline">\left[ \frac{1}{2},\  -\frac{3}{2},\  2,\  -1,\  0 \right]</span> and <span class="math inline">\vec{x^{(2)}}</span> now became <span class="math inline">\left[36, \ 48, \  6, \ 42, \ 24\right]^T</span>, and performed multiple linear regression in the same setting. What would the new value of <span class="math inline">w_4^*</span> (the weight on feature <span class="math inline">(x^{(1)} x^{(2)})^2</span> in <span class="math inline">H(x)</span>) be? You do not need to simplify your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse collapse" aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">w_4^* = \frac{72}{(\frac{6}{2})^2}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>Suppose we found <span class="math inline">w_0^* = 4.47</span> using multiple linear regression. Now, suppose our observation vector <span class="math inline">\vec{y}</span> now became <span class="math inline">\left[12, \ 7, \ 14, \ 10, \ 11\right]^T</span>, and performed multiple linear regression in the same setting. What would the new value of <span class="math inline">w_0^*</span> be? You do not need to simplify your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse collapse" aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">w_0^* = 9.47</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>Suppose we found <span class="math inline">w_1^* = 0.428</span> using multiple linear regression. Now, suppose our observation vector <span class="math inline">\vec{y}</span> now became <span class="math inline">\left[12, \ 7, \ 14, \ 10, \ 11\right]^T</span>, and performed multiple linear regression in the same setting. What would the new value of <span class="math inline">w_1^*</span> (the weight on feature <span class="math inline">x^{(1)}</span> in <span class="math inline">H(x)</span>) be? You do not need to simplify your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse collapse" aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">w_1^* = 0.428</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p>Suppose we want to fit a hypothesis function of the form: <span class="math display">H(x) = w_0 + w_1 x^{(1)} + w_2 x^{(2)} + w_3 (x^{(1)})^2 + w_4 (x^{(1)} x^{(2)})^2</span></p>
+<p>Our dataset looks like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">x^{(1)}</span></th>
+<th><span class="math inline">x^{(2)}</span></th>
+<th><span class="math inline">y</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>-3</td>
+<td>8</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>1</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>-2</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>4</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>We know we need to find an optimal parameter vector <span class="math inline">\vec{w}^* = \left[w_0^* \ \  w_1^* \ \  w_2^* \ \  w_3^* \ \ w_4^* \right]^T</span> that satisfies the normal equations. To do so, we build a design matrix, but our columns get all shuffled due to an error with our computer! Our resulting design matrix is</p>
+<p><span class="math display"> X_\text{shuffled} = 
+\begin{bmatrix}
+36 &amp; 6 &amp; 1 &amp; 1 &amp; 1   \\ 
+576 &amp; 8 &amp; -3&amp; 1 &amp; 9  \\ 
+16 &amp; 1 &amp; 4 &amp; 1 &amp; 16  \\ 
+196 &amp; 7 &amp; -2&amp; 1 &amp; 4  \\ 
+0 &amp; 4 &amp; 0 &amp; 1 &amp; 0   
+\end{bmatrix}
+</span></p>
+<p>If we solved the normal equations using this shuffled design matrix <span class="math inline">X_\text{shuffled}</span>, we would not get our parameter vector <span class="math inline">\vec{w}^* = \left[w_0^* \ \  w_1^* \ \  w_2^* \ \  w_3^* \ \ w_4^* \right]^T</span> in the correct order. Let $ = $ be the parameter vector we find instead. Let’s figure out which features correspond to the weight vector <span class="math inline">\vec{s}</span> that we found using the shuffled design matrix <span class="math inline">X_\text{shuffled}</span>. Fill in the bubbles below.</p>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>First weight <span class="math inline">s_0</span> after solving normal equations corresponds to the term in <span class="math inline">H(x)</span>:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> intercept</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(1)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(2)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)})^2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)} x^{(2)})^2</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse collapse" aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">(x^{(1)} x^{(2)})^2</span></p>
+<p>The first column inside of our <span class="math inline">X_\text{shuffled}</span> represents <span class="math inline">s_0</span>, so we want to figure out how to create these values. We can easily eliminate intercept, <span class="math inline">x^{(1)}</span>, and <span class="math inline">x^{(2)}</span> because none of these numbers match. From here we can calculate <span class="math inline">(x^{(1)})^2</span> and <span class="math inline">(x^{(1)} x^{(2)})^2</span> to determine which element creates <span class="math inline">s_0</span>.</p>
+<p></p>
+<p>From this we can see the answer is clearly <span class="math inline">(x^{(1)} x^{(2)})^2</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>Second weight <span class="math inline">s_1</span> after solving normal equations corresponds to the term in <span class="math inline">H(x)</span>:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> intercept</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(1)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(2)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)})^2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)} x^{(2)})^2</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse collapse" aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">x^{(2)}</span></p>
+<p>The second column inside of our <span class="math inline">X_\text{shuffled}</span> represents <span class="math inline">s_1</span>, so we want to figure out how to create these values. We can see this is the same as <span class="math inline">x^{(2)}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.3">Problem 10.3</h3>
+<p>Third weight <span class="math inline">s_2</span> after solving normal equations corresponds to the term in <span class="math inline">H(x)</span>:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> intercept</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(1)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(2)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)})^2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)} x^{(2)})^2</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_3" class="accordion-collapse collapse collapse" aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">x^{(1)}</span></p>
+<p>The third column inside of our <span class="math inline">X_\text{shuffled}</span> represents <span class="math inline">s_2</span>, so we want to figure out how to create these values. We can see this is the same as <span class="math inline">x^{(1)}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.4">Problem 10.4</h3>
+<p>Fourth weight <span class="math inline">s_3</span> after solving normal equations corresponds to the term in <span class="math inline">H(x)</span>:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> intercept</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(1)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(2)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)})^2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)} x^{(2)})^2</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_4" aria-expanded="true" aria-controls="collapse10_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_4" class="accordion-collapse collapse collapse" aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>intercept</p>
+<p>The fourth column inside of our <span class="math inline">X_\text{shuffled}</span> represents <span class="math inline">s_3</span>, so we want to figure out how to create these values. We know the intercept is a vector of ones, which matches!</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.5">Problem 10.5</h3>
+<p>Fifth weight <span class="math inline">s_4</span> after solving normal equations corresponds to the term in <span class="math inline">H(x)</span>:</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> intercept</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(1)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">x^{(2)}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)})^2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">(x^{(1)} x^{(2)})^2</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_5" aria-expanded="true" aria-controls="collapse10_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_5" class="accordion-collapse collapse collapse" aria-labelledby="heading10_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">(x^{(1)})^2</span></p>
+<p>From process of elimination we can find the answer or from our first calculation.</p>
+<p><span class="math display">(x^{(1)})^2 = \begin{bmatrix} 1^2 = 1 \\
+(-3)^2 = 9\\
+4^2 = 16\\
+(-2)^2 = 4\\
+0^2 = 0 \end{bmatrix}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-11">Problem 11</h2>
+<p>Suppose we have already fit a multiple regression hypothesis function of the form: <span class="math display">H(x) = w_0 + w_1 x^{(1)} + w_2 x^{(2)}</span></p>
+<p>Now, suppose we add the feature <span class="math inline">(x^{(1)} + x^{(2)})</span> when performing multiple regression. Below, answer ``Yes/No" to the following questions and rigorously justify why certain behavior will or will not occur. Your answer must mention linear algebra concepts such as rank and linear independence in relation to the design matrix, weight vector <span class="math inline">\vec{w^*}</span>, and hypothesis function <span class="math inline">H(x)</span>.</p>
+<p><br></p>
+<h3 id="problem-11.1">Problem 11.1</h3>
+<p>Which of the following are true about the new design matrix <span class="math inline">X_\text{new}</span> with our added feature <span class="math inline">(x^{(1)} + x^{(2)})</span>?</p>
+<ul class="task-list">
+<li><p><input type="checkbox" disabled="" /> The columns of <span class="math inline">X_\text{new}</span> are linearly independent.</p></li>
+<li><p><input type="checkbox" disabled="" /> The columns of <span class="math inline">X_\text{new}</span> are linearly dependent.</p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">\vec{y}</span> is orthogonal to all the columns of <span class="math inline">X_\text{new}</span>.</p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">\vec{y}</span> is orthogonal to all the columns of the original design matrix <span class="math inline">X</span>.</p></li>
+<li><p><input type="checkbox" disabled="" /> The columns of <span class="math inline">X_\text{new}</span> have the same span as the original design matrix <span class="math inline">X</span>.</p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">X_\text{new}^TX_\text{new}</span> is a full-rank matrix.</p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">X_\text{new}^TX_\text{new}</span> is not a full-rank matrix.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_1" class="accordion-collapse collapse collapse" aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The columns of <span class="math inline">X_\text{new}</span> are linearly dependent. The columns of <span class="math inline">X_\text{new}</span> have the same span as the original design matrix <span class="math inline">X</span>. <span class="math inline">X_\text{new}^TX_\text{new}</span> is not a full-rank matrix.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-11.2">Problem 11.2</h3>
+<p>Is there more than one optimal weight vector <span class="math inline">\vec{w^*}</span> that produces the lowest mean squared error hypothesis function <span class="math inline">H(x) = w_0^* + w_1^* x^{(1)} + w_2^* x^{(2)} + w_4^*(x^{(1)} + x^{(2)})</span>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<p>Explain your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_2" class="accordion-collapse collapse collapse" aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Yes</p>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-11.3">Problem 11.3</h3>
+<p>Does the best possible mean squared error of the new hypothesis function differ from that of the previous hypothesis function?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<p>Explain your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse11_3" class="accordion-collapse collapse collapse" aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>No</p>
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
-<h4
-id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
-Feedback: Find an error? Still confused? Have a suggestion?
-<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
-here</u></a>.</h4>
+<h4 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋 Feedback: Find an error? Still confused? Have a suggestion? <a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know here</u></a>.</h4>
 <hr />
 </body>
 </html>
