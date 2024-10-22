@@ -1425,6 +1425,16 @@ aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">w_2^* = 1.56</span></p>
+<p>Recall in linear regression, when a feature is rescaled by a factor
+of <span class="math inline">c</span>, the corresponding weight is
+inversely scaled by <span class="math inline">\frac{1}{c}</span>. This
+is because the coefficient adjusts to maintain the overall contribution
+of the feature to the prediction. In this problem we can see that <span class="math inline">x^{(2)}</span> has been scaled by a factor of 10! It
+changed from <span class="math inline">\left[6,\  8,\  1,\  7,\  4\right]^T</span> to <span class="math inline">\left[60,\  80,\  10,\  70,\  40\right]^T</span>.
+This means our <span class="math inline">w_2</span> will be scaled by
+<span class="math inline">\frac{1}{10}</span>. We can easily calculate
+<span class="math inline">\frac{1}{10}w_2^* = \frac{1}{10}\cdot 15.6 =
+1.56</span>.</p>
 </div>
 </div>
 </div>
@@ -1459,6 +1469,24 @@ aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">w_4^* =
 \frac{72}{(\frac{6}{2})^2}</span></p>
+<p>Similar to the first part of the problem we need to find how <span class="math inline">\vec{x^{(1)}}</span> and <span class="math inline">\vec{x^{(2)}}</span> changed. We can then inversely
+scale <span class="math inline">w_4^*</span> by those values.</p>
+<p>Let’s start with <span class="math inline">\vec{x^{(1)}}</span>.
+Originally <span class="math inline">\vec{x^{(1)}}</span> was <span class="math inline">\left[1,\  -3,\  4,\  -2,\  0\right]^T</span>, but
+it becomes <span class="math inline">\left[
+\frac{1}{2},\  -\frac{3}{2},\  2,\  -1,\  0 \right]</span>. We can see
+the values were scaled by <span class="math inline">\frac{1}{2}</span>.</p>
+<p>We can now look at <span class="math inline">\vec{x^{(2)}}</span>.
+Originally <span class="math inline">\vec{x^{(2)}}</span> was <span class="math inline">\left[6,\  8,\  1,\  7,\  4\right]^T</span>, but it
+becomes <span class="math inline">\left[36, \ 48, \   6, \ 42, \
+24\right]^T</span>. We can see the values were scaled by <span class="math inline">6</span>.</p>
+<p>We know <span class="math inline">w_4^*</span> is attached to the
+variable <span class="math inline">(x^{(1)} x^{(2)})^2</span>. This
+means we need to multiply the scaled values we found and then square it.
+<span class="math inline">(\frac{1}{2} \cdot 6)^2 = (3)^2 =
+9</span>.</p>
+<p>From here we simply inversely scale <span class="math inline">w_4^*</span>. Originally <span class="math inline">w_4^* = 72</span>, so we multiply by <span class="math inline">\frac{1}{9}</span> to get <span class="math inline">72 \cdot \frac{1}{9} = \frac{72}{9}</span> (which is
+equal to <span class="math inline">\frac{72}{(\frac{6}{2})^2}</span>).</p>
 </div>
 </div>
 </div>
@@ -1486,6 +1514,23 @@ aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">w_0^* = 9.47</span></p>
+<p>Recall <span class="math inline">w_0^*</span> is the intercept term
+and represents the value of the prediction <span class="math inline">H(x)</span> when all the features (<span class="math inline">\vec{x^{(1)}}</span> and <span class="math inline">\vec{x^{(2)}}</span>) are zero. If all other
+features (the w_1^* and w_2^*) remain unchanged then the intercept
+adjusts to reflect the shifts in the mean of the observed <span class="math inline">\vec y</span>.</p>
+<p>Our original <span class="math inline">\vec y</span> was <span class="math inline">\left[7, \ 2, \ 9, \ 5, \ 6\right]^T</span>, but
+became <span class="math inline">\left[12, \ 7, \ 14, \ 10, \
+11\right]^T</span>. We need to calculate the original <span class="math inline">\vec y</span>’s mean and the new <span class="math inline">\vec y</span>’s mean.</p>
+<p>Old <span class="math inline">\vec y</span>’s mean: <span class="math display">
+\frac{7 + 2 + 9 + 5 + 6}{5} = \frac{29}{5} = 5.8
+</span></p>
+<p>New <span class="math inline">\vec y</span>’s mean: <span class="math display">
+\frac{12 + 7 + 14 + 10 + 11}{5} = \frac{54}{5} = 10.8
+</span></p>
+<p>Our new <span class="math inline">w_0^*</span> is found by taking the
+old one and adding the difference of <span class="math inline">10.8 -
+5.8</span>. This means: <span class="math inline">w_0^* = 4.47 + (10.8 -
+5.8) = 4.47 + 5 = 9.47</span>.</p>
 </div>
 </div>
 </div>
@@ -1515,6 +1560,14 @@ aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">w_1^* = 0.428</span></p>
+<p>Our old <span class="math inline">\vec y</span> was <span class="math inline">\left[7, \ 2, \ 9, \ 5, \ 6\right]^T</span> and our
+new <span class="math inline">\vec y</span> is <span class="math inline">\left[12, \ 7, \ 14, \ 10, \ 11\right]^T</span>. We
+can see that our old <span class="math inline">\vec y</span> has five
+added to each value to get our new <span class="math inline">\vec
+y</span>.</p>
+<p>Recall the slope (<span class="math inline">w_1^*</span>) does not
+change if our <span class="math inline">y_i</span> shifts by a constant
+amount! This means <span class="math inline">w_1^* = 0.428</span>.</p>
 </div>
 </div>
 </div>
@@ -1820,6 +1873,44 @@ aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 linearly dependent. The columns of <span class="math inline">X_\text{new}</span> have the same span as the
 original design matrix <span class="math inline">X</span>. <span class="math inline">X_\text{new}^TX_\text{new}</span> is not a full-rank
 matrix.</p>
+<p>Let’s go through each of the options and determine if they are true
+or false.</p>
+<p><strong>The columns of <span class="math inline">X_\text{new}</span>
+are linearly independent.</strong></p>
+<p>This statement is false because <span class="math inline">(x^{(1)} +
+x^{(2)})</span> is a linear combination of the original features
+(linearly dependent). This means the added feature does not provide any
+new, independent information to the model.</p>
+<p><strong>The columns of <span class="math inline">X_\text{new}</span>
+are linearly dependent.</strong></p>
+<p>This statement is true because <span class="math inline">(x^{(1)} +
+x^{(2)})</span> is a linear combination of the original features.</p>
+<p><strong><span class="math inline">\vec{y}</span> is orthogonal to all
+the columns of <span class="math inline">X_\text{new}</span>.</strong></p>
+<p>This statement is false because there is no justification for
+othogonality. It is usually not the case that <span class="math inline">\vec y</span> is orthogonal to the columns of <span class="math inline">X_\text{new}</span> because the goal of regression
+is to find a linear relatiionship between the predictors and the
+response variable. Since we have some regression coefficients (<span class="math inline">w_0, w_1, w_2</span>) this implies there exists a
+relationship between <span class="math inline">\vec y</span> and <span class="math inline">X_\text{new}</span>.</p>
+<p><strong><span class="math inline">\vec{y}</span> is orthogonal to all
+the columns of the original design matrix <span class="math inline">X</span>.</strong></p>
+<p>This statement is false because there is no justification for
+othogonality. It is usually not the case that <span class="math inline">\vec y</span> is orthogonal to the columns of <span class="math inline">X</span> because the goal of regression is to find a
+linear relatiionship between the predictors and the response variable.
+Since we have some regression coefficients (<span class="math inline">w_0, w_1, w_2</span>) this implies there exists a
+relationship between <span class="math inline">\vec y</span> and <span class="math inline">X</span>.</p>
+<p><strong>The columns of <span class="math inline">X_\text{new}</span>
+have the same span as the original design matrix <span class="math inline">X</span>.</strong></p>
+<p>This statement is true because <span class="math inline">(x^{(1)} +
+x^{(2)})</span> is a linear combination of the original features the
+span does not change.</p>
+<p><strong><span class="math inline">X_\text{new}^TX_\text{new}</span>
+is a full-rank matrix.</strong></p>
+<p>This statement is false because there is a linearly dependent
+column!</p>
+<p><strong><span class="math inline">X_\text{new}^TX_\text{new}</span>
+is not a full-rank matrix.</strong></p>
+<p>This statement is true because of linear dependence.</p>
 </div>
 </div>
 </div>
@@ -1850,7 +1941,11 @@ aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Yes</p>
-<p>TODO</p>
+<p>There can be multiple optimal weight vectors <span class="math inline">\vec w^*</span> that achieve the lowest mean squared
+error for the hypothesis function because of the linear dependence
+between the columns in the design matrix. This results in non-unique
+solutions for the weight coefficients, allowing for various combinations
+of weights that produce the same optimal prediction outcome.</p>
 </div>
 </div>
 </div>
@@ -1878,7 +1973,13 @@ aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>No</p>
-<p>TODO</p>
+<p>When we have a linear combination <span class="math inline">(x^{(1)}
++ x^{(2)})</span> we are not enhancing the model’s capavility to fit the
+data in a way that would lower the best possible mean squared error.
+This means both models are capturing the same underlying relationship
+between the predictors and the response variable. Making it so that the
+mean squared error of the new hypothesis function does not differ from
+that of the previous hypothesis function.</p>
 </div>
 </div>
 </div>
