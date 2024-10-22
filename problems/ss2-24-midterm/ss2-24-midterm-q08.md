@@ -17,6 +17,8 @@ What goes in \_\_(i)\_\_?
 
 Linearly Independent
 
+<average>75</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -34,6 +36,8 @@ What goes in \_\_(ii)\_\_?
 
 Plane
 
+<average>87</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -49,6 +53,8 @@ What goes in \_\_(iii)\_\_?
 # BEGIN SOLUTION
 
 is
+
+<average>75</average>
 
 # END SOLUTION
 
@@ -66,6 +72,8 @@ What goes in \_\_(iv)\_\_?
 
 Orthogonal
 
+<average>87</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -81,6 +89,8 @@ What goes in \_\_(v)\_\_?
 # BEGIN SOLUTION
 
 90 degrees
+
+<average>87</average>
 
 # END SOLUTION
 

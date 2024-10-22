@@ -56,6 +56,8 @@ $$\boxed{\frac{L_{\text{Jack}}}{\partial h} =
 3 \beta |h - y_i|^2 & \text{if } y_i < h,
 \end{cases}}$$
 
+<average>66</average>
+
 # END SOLUTION
     
 
@@ -107,6 +109,7 @@ From here we can set $R_{L_{\text{Jack}}}$ to zero.
 
 We know $h^*$ minimizes empirical risk and makes it 0, so $h^*$ will make the sum of these two derivative parts sum up to zero.
 
+<average>34</average>
 
 # END SOLUTION
 
@@ -141,6 +144,8 @@ This means if $y_i \geq h$ then the loss for every data point is $0$. In contras
 
 For example, if you had the dataset $2, 4, 6, 8, 10$ and we chose $h^* = 1$ then when we check which function to use we will always get $0$.
 
+<average>6</average>
+
 # END SOLUTION
 
 
@@ -174,6 +179,8 @@ $$L_{\text{Jack}}(y_i, h) =
 This means if $y_i < h$ then the loss for every data point is $0$. In contrast if $y_i \geq h$ then the loss will increase by the function $\alpha \cdot (y_i - h)^2$. We want the loss to be as small as possible. This means we want an $h^*$ that will avoid any positive contribution to the loss term. If we did an $h^*$ more than any value in the dataset then $y_i$ will be less than them. This leads to a loss of 0. This means we want any number $\geq y_n$.
 
 For example, if you had the dataset $2, 4, 6, 8, 10$ and we chose $h^* = 12$ then when we check which function to use we will always get $0$.
+
+<average>6</average>
 
 # END SOLUTION
 

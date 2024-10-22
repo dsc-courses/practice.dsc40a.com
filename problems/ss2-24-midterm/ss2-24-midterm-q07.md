@@ -17,6 +17,8 @@ What goes in \_\_(i)\_\_?
 
 Linearly Independent
 
+<average>81</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -34,6 +36,8 @@ What goes in \_\_(ii)\_\_?
 
 Line
 
+<average>87</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -49,6 +53,8 @@ What goes in \_\_(iii)\_\_?
 # BEGIN SOLUTION
 
 is not
+
+<average>93</average>
 
 # END SOLUTION
 
@@ -66,6 +72,8 @@ What goes in \_\_(iv)\_\_?
 
 Collinear
 
+<average>62</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -81,6 +89,8 @@ What goes in \_\_(v)\_\_?
 # BEGIN SOLUTION
 
 0 or 180 degrees
+
+<average>81</average>
 
 # END SOLUTION
 

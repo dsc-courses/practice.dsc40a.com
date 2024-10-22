@@ -60,6 +60,8 @@ The first column inside of our $X_\text{shuffled}$ represents $s_0$, so we want 
 
 From this we can see the answer is clearly $(x^{(1)} x^{(2)})^2$.
 
+<average>87</average>
+
 # END SOLUTION
     
 
@@ -83,6 +85,8 @@ $x^{(2)}$
 
 The second column inside of our $X_\text{shuffled}$ represents $s_1$, so we want to figure out how to create these values. We can see this is the same as $x^{(2)}$.
 
+<average>93</average>
+
 # END SOLUTION
 
 
@@ -105,6 +109,8 @@ $x^{(1)}$
 
 The third column inside of our $X_\text{shuffled}$ represents $s_2$, so we want to figure out how to create these values. We can see this is the same as $x^{(1)}$.
 
+<average>87</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -124,6 +130,8 @@ Fourth weight $s_3$ after solving normal equations corresponds to the term in $H
 intercept
 
 The fourth column inside of our $X_\text{shuffled}$ represents $s_3$, so we want to figure out how to create these values. We know the intercept is a vector of ones, which matches!
+
+<average>93</average>
 
 # END SOLUTION
 
@@ -150,6 +158,8 @@ $$(x^{(1)})^2 = \begin{bmatrix} 1^2 = 1 \\
 4^2 = 16\\
 (-2)^2 = 4\\
 0^2 = 0 \end{bmatrix}$$
+
+<average>87</average>
 
 # END SOLUTION
 

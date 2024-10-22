@@ -44,6 +44,8 @@ $$
 
 When you multiply $M \vec{v}$ the $n$ will both cancel out leaving you with an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{m \times 1}$, which is an $m$-dimensional vector.
 
+<average>87</average>
+
 
 # END SOLUTION
 
@@ -80,6 +82,8 @@ M = \left[ \begin{matrix}
 $$
 
 When you multiply $M^T M$ the $m$ will both cancel out leaving you with an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{n \times n}$, which is an $n \times n$ matrix.
+
+<average>87</average>
 
 # END SOLUTION
     
@@ -124,6 +128,8 @@ $$
 
 When you multiply $\vec{v}^T N$ the $n$ will both cancel out leaving you with an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{1 \times n}$. When you multiply this object by $\vec{v}$ the $n$ will cancel out again leaving you with an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{1 \times 1}$, which is a scalar.
 
+<average>93</average>
+
 # END SOLUTION
     
 
@@ -167,6 +173,8 @@ $$
 
 When you multiply $N \vec{v}$ the $n$ will both cancel out leaving you with an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{n \times 1}$. When you multiply $\s \vec{v}$ the dimensions of $\vec{v}$ does not change, so you will have an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{n \times 1}$. When you add these vectors the dimension will not change, so you are left with an $n$-dimensional vector.
 
+<average>87</average>
+
 # END SOLUTION
     
 
@@ -209,6 +217,8 @@ M = \left[ \begin{matrix}
 $$
 
 When you multiply $M^T M$ the $m$ will both cancel out leaving you with an object with the size $\left[ \begin{matrix} \end{matrix} \right]_{n \times n}$, which is an $n \times n$ matrix. When you multiply $\left[ \begin{matrix} \end{matrix} \right]_{n \times n} \times \vec{v}_{n \times 1}$ the $n$ will cancel out leaving you with an $n$-dimensional vector.
+
+<average>81</average>
 
 # END SOLUTION
     

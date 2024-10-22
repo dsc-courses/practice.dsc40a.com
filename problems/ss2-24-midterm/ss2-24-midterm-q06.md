@@ -17,6 +17,8 @@ What goes in \_\_(i)\_\_?
 
 Linearly Dependent
 
+<average>100</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -34,6 +36,8 @@ What goes in \_\_(ii)\_\_?
 
 Plane
 
+<average>100</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -49,6 +53,8 @@ What goes in \_\_(iii)\_\_?
 # BEGIN SOLUTION
 
 is
+
+<average>50</average>
 
 # END SOLUTION
 
@@ -66,6 +72,8 @@ What goes in \_\_(iv)\_\_?
 
 neither orthogonal nor collinear
 
+<average>81</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -81,6 +89,8 @@ What goes in \_\_(v)\_\_?
 # BEGIN SOLUTION
 
 something else
+
+<average>81</average>
 
 # END SOLUTION
 

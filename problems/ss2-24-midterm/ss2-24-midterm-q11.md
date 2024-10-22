@@ -52,6 +52,7 @@ This statement is false because there is a linearly dependent column!
 
 This statement is true because of linear dependence.
 
+<average>70</average>
 
 # END SOLUTION
     
@@ -67,13 +68,25 @@ Is there more than one optimal weight vector $\vec{w^*}$ that produces the lowes
 ( ) Yes
 ( ) No
 
-Explain your answer.
-
 # BEGIN SOLUTION
 
 Yes
 
-There can be multiple optimal weight vectors $\vec w^*$ that achieve the lowest mean squared error for the hypothesis function because of the linear dependence between the columns in the design matrix. This results in non-unique solutions for the weight coefficients, allowing for various combinations of weights that produce the same optimal prediction outcome.
+<average>81</average>
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+Explain your answer above.
+
+# BEGIN SOLUTION
+
+There can be multiple optimal weight vectors $\vec w^*$ that achieve the lowest mean squared error for the hypothesis function because of the linear dependence between the columns in the design matrix. This means the matrix is not full rank, so there are infinite solutions. This also results in non-unique solutions for the weight coefficients, allowing for various combinations of weights that produce the same optimal prediction outcome.
+
+<average>62</average>
 
 # END SOLUTION
 
@@ -88,13 +101,25 @@ Does the best possible mean squared error of the new hypothesis function differ 
 ( ) Yes
 ( ) No
 
-Explain your answer.
-
 # BEGIN SOLUTION
 
 No
 
+<average>37</average>
+
+# END SOLUTION
+
+# END SUBPROB
+
+# BEGIN SUBPROB
+
+Explain your answer above.
+
+# BEGIN SOLUTION
+
 When we have a linear combination $(x^{(1)} + x^{(2)})$ we are not enhancing the model's capavility to fit the data in a way that would lower the best possible mean squared error. This means both models are capturing the same underlying relationship between the predictors and the response variable. Making it so that the mean squared error of the new hypothesis function does not differ from that of the previous hypothesis function.
+
+<average>31</average>
 
 # END SOLUTION
 

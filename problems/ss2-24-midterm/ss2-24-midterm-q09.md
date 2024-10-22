@@ -22,6 +22,8 @@ $w_2^* = 1.56$
 
 Recall in linear regression, when a feature is rescaled by a factor of $c$, the corresponding weight is inversely scaled by $\frac{1}{c}$. This is because the coefficient adjusts to maintain the overall contribution of the feature to the prediction. In this problem we can see that $x^{(2)}$ has been scaled by a factor of 10! It changed from $\left[6,\  8,\  1,\  7,\  4\right]^T$ to $\left[60,\  80,\  10,\  70,\  40\right]^T$. This means our $w_2$ will be scaled by $\frac{1}{10}$. We can easily calculate $\frac{1}{10}w_2^* = \frac{1}{10}\cdot 15.6 = 1.56$.
 
+<average>81</average>
+
 # END SOLUTION
 
 
@@ -45,6 +47,8 @@ We can now look at $\vec{x^{(2)}}$. Originally $\vec{x^{(2)}}$ was $\left[6,\  8
 We know $w_4^*$ is attached to the variable $(x^{(1)} x^{(2)})^2$. This means we need to multiply the scaled values we found and then square it. $(\frac{1}{2} \cdot 6)^2 = (3)^2 = 9$.
 
 From here we simply inversely scale $w_4^*$. Originally $w_4^* = 72$, so we multiply by $\frac{1}{9}$ to get $72 \cdot \frac{1}{9} = \frac{72}{9}$ (which is equal to $\frac{72}{(\frac{6}{2})^2}$).
+
+<average>35</average>
 
 # END SOLUTION
 
@@ -76,6 +80,8 @@ $$
 
 Our new $w_0^*$ is found by taking the old one and adding the difference of $10.8 - 5.8$. This means: $w_0^* = 4.47 + (10.8 - 5.8) = 4.47 + 5 = 9.47$.
 
+<average>62</average>
+
 # END SOLUTION
 
 
@@ -93,6 +99,8 @@ $w_1^* = 0.428$
 Our old $\vec y$ was $\left[7, \ 2, \ 9, \ 5, \ 6\right]^T$ and our new $\vec y$ is $\left[12, \ 7, \ 14, \ 10, \ 11\right]^T$. We can see that our old $\vec y$ has five added to each value to get our new $\vec y$.
 
 Recall the slope ($w_1^*$) does not change if our $y_i$ shifts by a constant amount! This means $w_1^* = 0.428$.
+
+<average>50</average>
 
 # END SOLUTION
 

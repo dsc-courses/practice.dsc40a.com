@@ -19,6 +19,8 @@ Linearly Independent
 
 Vectors $\vec{a}$ and $\vec{b}$ are linearly independent because they aren't multiples of each other. They each point in different directions, so we can't express either vector as a scalar multiple of the other.
 
+<average>81</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -37,6 +39,8 @@ What goes in \_\_(ii)\_\_?
 Plane
 
 Any two linearly independent vectors must span a plane. Geometrically, we can think of all scalar multiples of a single vector to lie along a single line. Then, linear combinations of any two vectors pointing in different directions must lie on the same plane.
+
+<average>81</average>
 
 # END SOLUTION
 
@@ -60,6 +64,8 @@ $$c_1 (1) + c_2 (-2) = -6$$
 $$c_1 (3) + c_2 (1) = 11$$
 Solving this system gives us $c_1 = \frac{16}{7}$, $c_2 = \frac{29}{7}$, which means $\vec{c}$ does lie in the span of $\vec{a}$ and $\vec{b}$.
 
+<average>68</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -80,6 +86,8 @@ The vectors $\vec{a}$ and $\vec{b}$ are orthogonal if $\vec{a} \cdot \vec{b} = 0
 
 The vectors $\vec{a}$ and $\vec{b}$ are collinear if we can write one vector as a scalar multiple of the other. But we already know $\vec{a}$ and $\vec{b}$ are linearly independent, so they don't lie along the same line and aren't collinear.
 
+<average>68</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -97,6 +105,8 @@ What goes in \_\_(v)\_\_?
 something else
 
 If two vectors are orthogonal, the angle between them is 90 degrees. If two vectors are collinear, the angle between them is 0 or 180 degrees. Since $\vec{a}$ and $\vec{b}$ are neither of these, then the angle between them must be something else.
+
+<average>81</average>
 
 # END SOLUTION
 
