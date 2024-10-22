@@ -33,7 +33,21 @@ If a vector $\vec{v}$ is orthogonal to a vector $\vec{w}$, then $\vec{v}$ is als
 
 # BEGIN SOLUTION
 
-TODO
+This statement is true.
+
+The projection of $\vec w$ onto $\vec u$ gives us the formula $\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u$. This projection is a scalar multiple of $\vec u$. This means that the projection of $\vec w$ onto $\vec u$ lies along the direction of $\vec u$.
+
+Furthermore, we know that $\vec v$ is orthogonal to $\vec w$, which means $\vec v \cdot \vec w = 0$.
+
+We need to prove that $\vec v \cdot \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u = 0$ to say the statement is true. To do this we simplify the equation. Recall that $\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u}$ is just a scalar!
+
+$$
+\vec v \cdot \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u = \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} (\vec v \cdot \vec u)
+$$
+
+We can pull scalars out of the dot product!
+
+Since we know $\vec v$ is orthogonal to $\vec w$, this implies that $\vec v$ is also orthogonal to any component of $\vec w$. This means $\vec v$ is also orthogonal to the projection of $\vec w$ onto $\vec u$.
 
 # END SOLUTION
     

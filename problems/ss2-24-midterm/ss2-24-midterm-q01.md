@@ -129,7 +129,20 @@ For any set of values $y_1, y_2, ..., y_n$ in sorted order $y_1 \leq y_2 \leq ..
 
 Any number $\leq y_1$
 
+When $\alpha = 0$ the loss function becomes:
+
+$$L_{\text{Jack}}(y_i, h) =
+\begin{cases} 
+0 & \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 & \text{if } y_i < h,
+\end{cases}$$
+
+This means if $y_i \geq h$ then the loss for every data point is $0$. In contrast if $y_i < h$ then the loss will increase by the function $\beta \cdot |y_i - h|^3$. We want the loss to be as small as possible. This means we want an $h^*$ that will avoid any positive contribution to the loss term. If we did an $h^*$ less than any value in the dataset then $y_i$ will be greater than them. This leads to a loss of 0. This means we want any number $\leq y_1$.
+
+For example, if you had the dataset $2, 4, 6, 8, 10$ and we chose $h^* = 1$ then when we check which function to use we will always get $0$.
+
 # END SOLUTION
+
 
 
 
@@ -150,8 +163,19 @@ For any set of values $y_1, y_2, ..., y_n$ in sorted order $y_1 \leq y_2 \leq ..
 
 Any number $\geq y_n$
 
-# END SOLUTION
+When $\beta = 0$ the loss function becomes:
 
+$$L_{\text{Jack}}(y_i, h) =
+\begin{cases} 
+\alpha \cdot (y_i - h)^2 & \text{if } y_i \geq h, \\
+0 & \text{if } y_i < h,
+\end{cases}$$
+
+This means if $y_i < h$ then the loss for every data point is $0$. In contrast if $y_i \geq h$ then the loss will increase by the function $\alpha \cdot (y_i - h)^2$. We want the loss to be as small as possible. This means we want an $h^*$ that will avoid any positive contribution to the loss term. If we did an $h^*$ more than any value in the dataset then $y_i$ will be less than them. This leads to a loss of 0. This means we want any number $\geq y_n$.
+
+For example, if you had the dataset $2, 4, 6, 8, 10$ and we chose $h^* = 12$ then when we check which function to use we will always get $0$.
+
+# END SOLUTION
 
 
 # END SUBPROB
