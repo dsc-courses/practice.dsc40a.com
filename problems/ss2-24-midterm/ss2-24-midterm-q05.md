@@ -17,7 +17,7 @@ What goes in \_\_(i)\_\_?
 
 Linearly Independent
 
-Vectors $\vec{a}$ and $\vec{b}$ are linearly independent because they aren't multiples of each other. They each point in different directions, so we can't express either vector as a scalar multiple of the other.
+Vectors $\vec{a}$ and $\vec{b}$ are linearly independent because they aren't multiples of each other. They each point in different (but not opposite) directions, so we can't express either vector as a scalar multiple of the other.
 
 <average>81</average>
 
@@ -58,7 +58,9 @@ What goes in \_\_(iii)\_\_?
 
 is
 
-We can check if $\vec{c}$ lies in the span of $\vec{a}$ and $\vec{b}$ if there exists some constants $c_1$ and $c_2$ such that $c_1 \vec{a} + c_2 \vec{b} = \vec{c}$. Plugging in what we know: $$c_1 \begin{bmatrix} 1 \\ 3 \end{bmatrix} + c_2 \begin{bmatrix} -2 \\ 1 \end{bmatrix} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}$$ 
+A quick way to know that $\vec{c}$ lies in the span of $\vec{a}$ and $\vec{b}$ is because we are dealing with 2-dimensional vectors and we know that $\vec{a}$ and $\vec{b}$ span a plane (so they must span all of $\mathbb{R}^2$). $\vec{c}$ exists in 2-dimensional space, so it must exist in the span of $\vec{a}$ and $\vec{b}$.
+
+We can also directly check if $\vec{c}$ lies in the span of $\vec{a}$ and $\vec{b}$ if there exists some constants $c_1$ and $c_2$ such that $c_1 \vec{a} + c_2 \vec{b} = \vec{c}$. Plugging in what we know: $$c_1 \begin{bmatrix} 1 \\ 3 \end{bmatrix} + c_2 \begin{bmatrix} -2 \\ 1 \end{bmatrix} = \begin{bmatrix} -6 \\ 11 \end{bmatrix}$$ 
 This gives us the system of equations:
 $$c_1 (1) + c_2 (-2) = -6$$ 
 $$c_1 (3) + c_2 (1) = 11$$
