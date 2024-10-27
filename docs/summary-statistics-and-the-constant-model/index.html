@@ -68,6 +68,283 @@
 Constant Model.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
+2024 Midterm</a>, Problem 1a-d</i></p>
+<p>Consider a dataset of <span class="math inline">n</span> values,
+<span class="math inline">y_1, y_2, \dots, y_n</span>, all of which are
+non-negative. We are interested in fitting a constant model, <span
+class="math inline">H(x) = h</span>, to the data using the ``Jack” loss
+function, defined as:</p>
+<p><span class="math inline">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>where <span class="math inline">\alpha</span> and <span
+class="math inline">\beta</span> are positive constants that weight the
+squared and cubic loss components differently depending on whether the
+prediction <span class="math inline">h</span> underestimates or
+overestimates the true value <span class="math inline">y_i</span>.</p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>Find <span class="math inline">\frac{d L_\text{Jack}}{d h}</span>,
+the derivative of the Jack loss function with respect to <span
+class="math inline">h</span>. Show your work, and put a <span
+class="math inline">\boxed{\text{box}}</span> around your final
+answer.</p>
+<p></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\frac{L_{\text{Jack}}}{\partial h} =
+\begin{cases}
+-2 \alpha(y_i = h) &amp; \text{if } y_i \geq h, \\
+3 \beta |h - y_i|^2 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>Looking at the loss function (displayed again for your convenience),
+we can start by taking the derivative of the first case, when <span class="math inline">y_i \geq h</span>:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>To find the derivative of the first case we will use chain rule.
+Chain rule states <span class="math inline">F'(x) = f'(g(x))
+\times g'(x)</span>. We start with <span class="math inline">\frac{\partial}{\partial h} \alpha(y_i - h)^2</span>
+and treat <span class="math inline">f(x) = x^2</span> and <span class="math inline">g(x) = (y_i - h)</span>. We can easily find <span class="math inline">f'(x) = 2</span> and <span class="math inline">g'(x) = -1</span>. When combining all of these
+parts we get</p>
+<p><span class="math display">\frac{\partial}{\partial h} \alpha(y_i -
+h)^2 \rightarrow -2 \alpha(y_i = h)</span></p>
+<p>We can now look at the second case, when <span class="math inline">y_i &lt; h</span>. Once again we will use the chain
+rule. We start with <span class="math inline">\frac{\partial}{\partial
+h} \beta \cdot |y_i - h|^3</span> and treat <span class="math inline">f(x) = x^3</span> and <span class="math inline">g(x)
+= |y_i - h|</span>. We can easily find <span class="math inline">f'(x) = 3</span>, but <span class="math inline">g'(x)</span> is a bit trickier.</p>
+<p>This requires you to know when <span class="math inline">h =
+y_i</span> the line is undefined. This means we have a piecewise
+function.</p>
+<p><span class="math display">g'(x) = \begin{cases}
+1 &amp; \text{if } y_i &gt; h, \\
+\text{undefined} &amp; \text{if } y_i = h\\
+-1 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>Since we only care about when <span class="math inline">y_i &gt;
+h</span> we can replace <span class="math inline">g'(x)</span> with
+<span class="math inline">1</span>! This means we have</p>
+<p><span class="math display">\frac{\partial}{\partial h} \beta \cdot
+|y_i - h|^3 \rightarrow 3 \beta |h - y_i|^2</span></p>
+<p><span class="math display">\boxed{\frac{L_{\text{Jack}}}{\partial h}
+=
+\begin{cases}
+-2 \alpha(y_i = h) &amp; \text{if } y_i \geq h, \\
+3 \beta |h - y_i|^2 &amp; \text{if } y_i &lt; h,
+\end{cases}}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 66%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Prove that for the constant prediction <span
+class="math inline">h^*</span> minimizing empirical risk for the Jack
+loss function, the following quantities sum to 0:</p>
+<ol type="1">
+<li>the sum of the derivatives of the losses for the overestimated
+values (when <span class="math inline">h^* &gt; y_i</span>), and</li>
+<li>the sum of the derivatives of the losses for the underestimated
+values (when <span class="math inline">h^* \leq y_i</span>).</li>
+</ol>
+<p><em>Hint: You do not need to solve for the optimal value of <span
+class="math inline">h^*</span>. Instead, walk through the general
+process of minimizing a risk function, and think about the equations you
+come across.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Once again, recall Jack loss:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>We can rewrite this to say:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\alpha \cdot (y_i - h)^2 +
+\beta \cdot |y_i - h|^3 </span></p>
+<p>From here we can now set up the equation for risk. We are told in the
+hint to go through the motions of finding <span class="math inline">h^*</span> without doing all of the calculations.
+Recall risk follows the equation: <span class="math inline">R_{\text{f(x)}} = \frac{1}{n} \sum_{i = 1}^{n}
+f(x)</span>. Once we have this equation we take the derivative and set
+it equal to zero to solve for <span class="math inline">h^*</span>.</p>
+<p><span class="math display">\begin{align*}
+R_{L_{\text{Jack}}} &amp;= \frac{1}{n} \sum_{i = 1}^{n} \alpha \cdot
+(y_i - h)^2 + \beta \cdot |y_i - h|^3\\
+&amp;=\frac{1}{n} (\sum_{\text{if }y_i \geq h} \alpha \cdot (y_i - h)^2
++ \sum_{\text{if }y_i &lt; h} \beta \cdot |y_i - h|^3)\\
+&amp;\text{To get the derivative use part a!}\\
+&amp;= \frac{1}{n} (\sum_{\text{if }y_i \geq h} -2 \alpha(y_i - h) +
+\sum_{\text{if }y_i &lt; h} 3 \beta |h - y_i|^2)\\
+\end{align*}</span></p>
+<p>From here we can set <span class="math inline">R_{L_{\text{Jack}}}</span> to zero.</p>
+<p><span class="math display">\begin{align*}
+0 &amp;= R_{L_{\text{Jack}}} \\
+0 &amp;= \frac{1}{n} (\sum_{\text{if }y_i \geq h} -2 \alpha(y_i - h) +
+\sum_{\text{if }y_i &lt;&gt; h} 3 \beta |h - y_i|^2) \\
+0 &amp;= -2 \alpha \sum_{\text{if }y_i \geq h} (y_i - h) + 3 \beta
+\sum_{\text{if }y_i &lt; h} |h - y_i|^2
+\end{align*}</span></p>
+<p>We know <span class="math inline">h^*</span> minimizes empirical risk
+and makes it 0, so <span class="math inline">h^*</span> will make the
+sum of these two derivative parts sum up to zero.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 34%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>For any set of values <span class="math inline">y_1, y_2, ...,
+y_n</span> in sorted order <span class="math inline">y_1 \leq y_2 \leq
+... \leq y_n</span>, evaluate <span class="math inline">h^*</span> when
+<span class="math inline">\alpha = 0</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> Median({<span class="math inline">y_i</span>})</p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\leq y_1</span></p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\geq y_n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\overline y</span></p></li>
+<li><p><input type="radio" disabled="" /> Impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Any number <span class="math inline">\leq y_1</span></p>
+<p>When <span class="math inline">\alpha = 0</span> the loss function
+becomes:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+0 &amp; \text{if } y_i \geq h, \\
+\beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>This means if <span class="math inline">y_i \geq h</span> then the
+loss for every data point is <span class="math inline">0</span>. In
+contrast if <span class="math inline">y_i &lt; h</span> then the loss
+will increase by the function <span class="math inline">\beta \cdot |y_i
+- h|^3</span>. We want the loss to be as small as possible. This means
+we want an <span class="math inline">h^*</span> that will avoid any
+positive contribution to the loss term. If we did an <span class="math inline">h^*</span> less than any value in the dataset then
+<span class="math inline">y_i</span> will be greater than them. This
+leads to a loss of 0. This means we want any number <span class="math inline">\leq y_1</span>.</p>
+<p>For example, if you had the dataset <span class="math inline">2, 4,
+6, 8, 10</span> and we chose <span class="math inline">h^* = 1</span>
+then when we check which function to use we will always get <span class="math inline">0</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 6%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>For any set of values <span class="math inline">y_1, y_2, ...,
+y_n</span> in sorted order <span class="math inline">y_1 \leq y_2 \leq
+... \leq y_n</span>, evaluate <span class="math inline">h^*</span> when
+<span class="math inline">\beta = 0</span>.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0</p></li>
+<li><p><input type="radio" disabled="" /> Median({<span class="math inline">y_i</span>})</p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\leq y_1</span></p></li>
+<li><p><input type="radio" disabled="" /> Any number <span class="math inline">\geq y_n</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\overline y</span></p></li>
+<li><p><input type="radio" disabled="" /> Impossible to tell</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Any number <span class="math inline">\geq y_n</span></p>
+<p>When <span class="math inline">\beta = 0</span> the loss function
+becomes:</p>
+<p><span class="math display">L_{\text{Jack}}(y_i, h) =
+\begin{cases}
+\alpha \cdot (y_i - h)^2 &amp; \text{if } y_i \geq h, \\
+0 &amp; \text{if } y_i &lt; h,
+\end{cases}</span></p>
+<p>This means if <span class="math inline">y_i &lt; h</span> then the
+loss for every data point is <span class="math inline">0</span>. In
+contrast if <span class="math inline">y_i \geq h</span> then the loss
+will increase by the function <span class="math inline">\alpha \cdot
+(y_i - h)^2</span>. We want the loss to be as small as possible. This
+means we want an <span class="math inline">h^*</span> that will avoid
+any positive contribution to the loss term. If we did an <span class="math inline">h^*</span> more than any value in the dataset then
+<span class="math inline">y_i</span> will be less than them. This leads
+to a loss of 0. This means we want any number <span class="math inline">\geq y_n</span>.</p>
+<p>For example, if you had the dataset <span class="math inline">2, 4,
+6, 8, 10</span> and we chose <span class="math inline">h^* = 12</span>
+then when we check which function to use we will always get <span class="math inline">0</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 6%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
 <p><i>Source: <a href="../fa21-midterm/index.html">Fall 2021
 Midterm</a>, Problem 1</i></p>
 <p>King Triton just made an Instagram account and has been keeping track
@@ -85,17 +362,17 @@ believe you need more information to answer the question or that there
 is no minimizer, state that clearly. <strong>Give a brief justification
 for each answer.</strong></p>
 <p><br></p>
-<h3 id="problem-1.1">Problem 1.1</h3>
+<h3 id="problem-2.1">Problem 2.1</h3>
 <p><span class="math inline">L(h, y) = |y - h|</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
-aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -110,17 +387,17 @@ mean absolute error, which is the median, 15.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.2">Problem 1.2</h3>
+<h3 id="problem-2.2">Problem 2.2</h3>
 <p><span class="math inline">L(h, y) = (y - h)^2</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -135,17 +412,17 @@ mean squared error, which is the mean, 16.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.3">Problem 1.3</h3>
+<h3 id="problem-2.3">Problem 2.3</h3>
 <p><span class="math inline">L(h, y) = 4(y - h)^2</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse"
-aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -177,18 +454,18 @@ place.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.4">Problem 1.4</h3>
+<h3 id="problem-2.4">Problem 2.4</h3>
 <p><span class="math inline">L(h, y) = \begin{cases} 0 &amp; h = y \\
 100 &amp; h \neq y \end{cases}</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse"
-aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div id="collapse2_4" class="accordion-collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -204,17 +481,17 @@ i.e. the most common value, is 12.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.5">Problem 1.5</h3>
+<h3 id="problem-2.5">Problem 2.5</h3>
 <p><span class="math inline">L(h, y) = (3y - 4h)^2</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+<h2 class="accordion-header" id="heading2_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_5" class="accordion-collapse collapse"
-aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div id="collapse2_5" class="accordion-collapse collapse"
+aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -233,18 +510,18 @@ Using the same principle as in the last part, we can say that <span class="math 
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.6">Problem 1.6</h3>
+<h3 id="problem-2.6">Problem 2.6</h3>
 <p><span class="math inline">L(h, y) = (y - h)^3</span></p>
 <p><em>Hint: Do not spend too long on this subpart.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_6" aria-expanded="true" aria-controls="collapse1_6">
+<h2 class="accordion-header" id="heading2_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_6" aria-expanded="true" aria-controls="collapse2_6">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_6" class="accordion-collapse collapse"
-aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
+<div id="collapse2_6" class="accordion-collapse collapse"
+aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -262,7 +539,7 @@ larger we make <span class="math inline">h</span>, the more negative
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
+<h2 id="problem-3">Problem 3</h2>
 <p><i>Source: <a href="../fa21-midterm/index.html">Fall 2021
 Midterm</a>, Problem 2</i></p>
 <p>Consider a set of 23 data points <span class="math inline">y_1, y_2,
@@ -274,7 +551,7 @@ class="math inline">y_1, y_1, y_2, y_2, ..., y_{23}, y_{23}</span>.</p>
 <p>Answer the following questions regarding the relationship between
 Dataset A and Dataset B. <strong>Justify your answers.</strong></p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p>Suppose the minimizer of mean absolute error <span
 class="math inline">R_{abs}(h)</span> for Dataset A is 5. What is the
 minimizer of mean absolute error for Dataset B? If you believe there are
@@ -282,13 +559,13 @@ multiple minimizers, specify them all. If you believe you need more
 information to answer the question, state that clearly.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -305,20 +582,20 @@ MAE.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>Suppose the <em>mean absolute deviation from the median</em> for
 Dataset A is 17. What is the <em>mean absolute deviation from the
 median</em> for Dataset B? If you believe you need more information to
 answer the question, state that clearly.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -340,7 +617,7 @@ the end result is the same as for Dataset A.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.3">Problem 2.3</h3>
+<h3 id="problem-3.3">Problem 3.3</h3>
 <p>Suppose the function <span class="math inline">R_A(h)</span>
 represents mean absolute error for Dataset A and <span
 class="math inline">R_B(h)</span> represents mean absolute error for
@@ -352,13 +629,13 @@ class="math inline">R_B(h)</span> identical?) Explain your
 reasoning.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse"
-aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -384,7 +661,7 @@ h| + |y_2 - h| + |y_2 - h| + ... + |y_{23} - h| + |y_{23} - h| \right)
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../fa21-final/index.html">Fall 2021 Final
 Exam</a>, Problem 1</i></p>
 <p>The mean of 12 non-negative numbers is 45. Suppose we remove 2 of
@@ -392,13 +669,13 @@ these numbers. What is the largest possible value of the mean of the
 remaining 10 numbers? Show your work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse"
-aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div id="collapse4" class="accordion-collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -417,7 +694,7 @@ mean of the remaining 10 is</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-5">Problem 5</h2>
 <p><i>Source: <a href="../fa21-final/index.html">Fall 2021 Final
 Exam</a>, Problem 2</i></p>
 <p>Consider a set of 8 data points, <span class="math inline">y_1, y_2,
@@ -436,13 +713,13 @@ class="math inline">R</span> at <span
 class="math inline">h</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4" class="accordion-collapse collapse"
-aria-labelledby="heading4" data-bs-parent="#accordionExample">
+<div id="collapse5" class="accordion-collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -473,7 +750,7 @@ graph.</a></p>
 </div>
 </div>
 <hr />
-<h2 id="problem-5">Problem 5</h2>
+<h2 id="problem-6">Problem 6</h2>
 <p><i>Source: <a href="../fa21-final/index.html">Fall 2021 Final
 Exam</a>, Problem 4</i></p>
 <p>You may find the following properties of logarithms helpful in this
@@ -498,18 +775,18 @@ class="math inline">L_B(h, y)</span>, defined as follows:</p>
 <p>Throughout this problem, assume that all <span
 class="math inline">y</span>s are positive.</p>
 <p><br></p>
-<h3 id="problem-5.1">Problem 5.1</h3>
+<h3 id="problem-6.1">Problem 6.1</h3>
 <p>Show that: <span class="math display">\frac{d}{dh} L_B(h, y) = -
 \frac{2}{h} \log \left( \frac{y}{h} \right)</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
-aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -530,7 +807,7 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-5.2">Problem 5.2</h3>
+<h3 id="problem-6.2">Problem 6.2</h3>
 <p>Show that the constant prediction <span
 class="math inline">h^*</span> that minimizes for Billy loss is:</p>
 <p><span class="math display">h^* = \left(y_1 \cdot y_2 \cdot ... \cdot
@@ -543,13 +820,13 @@ class="math inline">(3 \cdot 5 \cdot 16)^{\frac{1}{3}} =
 240^{\frac{1}{3}} \approx 6.214</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
-aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -578,7 +855,7 @@ h^* &amp;= (y_1 \cdot y_2 \cdot ... \cdot y_n)^{\frac{1}{n}}
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-6">Problem 6</h2>
+<h2 id="problem-7">Problem 7</h2>
 <p><i>Source: <a href="../fa22-midterm/index.html">Fall 2022
 Midterm</a>, Problem 3</i></p>
 <p>Mahdi runs a local pastry shop near UCSD and sells traditional desert
@@ -595,19 +872,19 @@ following questions and give a <strong>brief justification</strong> for
 each part. <strong>This problem has many parts, if you get stuck, move
 on and come back later!</strong></p>
 <p><br></p>
-<h3 id="problem-6.1">Problem 6.1</h3>
+<h3 id="problem-7.1">Problem 7.1</h3>
 <p>Let <span class="math inline">L(h,y)=|y-h|</span>. What is <span
 class="math inline">h^*</span>? (We’ll later refer to this prediction as
 <span class="math inline">h_1^*</span>).</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse"
-aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -620,19 +897,19 @@ risk function. <span class="math display">h^*_1=\text{Median}(y_1,
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.2">Problem 6.2</h3>
+<h3 id="problem-7.2">Problem 7.2</h3>
 <p>Let <span class="math inline">L(h,y)=(y-h)^2</span>. What is <span
 class="math inline">h^*</span>? (We’ll later refer to this prediction as
 <span class="math inline">h_2^*</span>).</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse"
-aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -645,7 +922,7 @@ y_7).</span></p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.3">Problem 6.3</h3>
+<h3 id="problem-7.3">Problem 7.3</h3>
 <p><strong>True</strong> or <strong>False</strong>: Removing <span
 class="math inline">y_1</span> and <span class="math inline">y_3</span>
 from the dataset does not change <span
@@ -656,13 +933,13 @@ class="math inline">h_2^*</span>.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse"
-aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -675,7 +952,7 @@ changed.)</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.4">Problem 6.4</h3>
+<h3 id="problem-7.4">Problem 7.4</h3>
 <p>Mahdi thinks that <span class="math inline">y_7</span> is an outlier.
 Hence, he asks you to remove <span class="math inline">y_7</span> and
 update your predictions in parts (a) and (b) accordingly. Without
@@ -684,13 +961,13 @@ changes <em>more</em>? <span class="math inline">h^*_1</span> or <span
 class="math inline">h_2^*</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+<h2 class="accordion-header" id="heading7_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_4" aria-expanded="true" aria-controls="collapse7_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_4" class="accordion-collapse collapse"
-aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div id="collapse7_4" class="accordion-collapse collapse"
+aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -703,7 +980,7 @@ changes the mean more.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.5">Problem 6.5</h3>
+<h3 id="problem-7.5">Problem 7.5</h3>
 <p><strong>True</strong> or <strong>False</strong>: Let <span
 class="math inline">L(y,h)=|y-h|^3</span>. You can use the Gradient
 descent algorithm to find <span class="math inline">h^*</span>.</p>
@@ -713,13 +990,13 @@ descent algorithm to find <span class="math inline">h^*</span>.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_5" aria-expanded="true" aria-controls="collapse6_5">
+<h2 class="accordion-header" id="heading7_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_5" aria-expanded="true" aria-controls="collapse7_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_5" class="accordion-collapse collapse"
-aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
+<div id="collapse7_5" class="accordion-collapse collapse"
+aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -732,7 +1009,7 @@ the minimum.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.6">Problem 6.6</h3>
+<h3 id="problem-7.6">Problem 7.6</h3>
 <p><strong>True</strong> or <strong>False</strong>: Let <span
 class="math inline">L(y,h)=\sin(y-h)</span>. The Gradient descent
 algorithm is guaranteed to converge, provided that a proper learning
@@ -744,13 +1021,13 @@ rate is given.<br />
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_6" aria-expanded="true" aria-controls="collapse6_6">
+<h2 class="accordion-header" id="heading7_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_6" aria-expanded="true" aria-controls="collapse7_6">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_6" class="accordion-collapse collapse"
-aria-labelledby="heading6_6" data-bs-parent="#accordionExample">
+<div id="collapse7_6" class="accordion-collapse collapse"
+aria-labelledby="heading7_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -762,7 +1039,7 @@ is not guaranteed to converge.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.7">Problem 6.7</h3>
+<h3 id="problem-7.7">Problem 7.7</h3>
 <p>Mahdi has noticed that Baklava daily sale is associated with weather
 temperature. So he asks you to incorporate this feature to get a better
 prediction. Suppose the last week’s daily temperatures are <span
@@ -776,13 +1053,13 @@ class="math inline">r</span>) between <span class="math inline">x</span>
 and <span class="math inline">y</span>? What does that mean?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_7">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_7" aria-expanded="true" aria-controls="collapse6_7">
+<h2 class="accordion-header" id="heading7_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_7" aria-expanded="true" aria-controls="collapse7_7">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_7" class="accordion-collapse collapse"
-aria-labelledby="heading6_7" data-bs-parent="#accordionExample">
+<div id="collapse7_7" class="accordion-collapse collapse"
+aria-labelledby="heading7_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -805,7 +1082,7 @@ negatively correlated.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.8">Problem 6.8</h3>
+<h3 id="problem-7.8">Problem 7.8</h3>
 <p><strong>True</strong> or <strong>False</strong>: The unit of <span
 class="math inline">r</span> is <span
 class="math inline">\frac{lb}{F}</span> (Pound per Fahrenheit).</p>
@@ -815,13 +1092,13 @@ class="math inline">\frac{lb}{F}</span> (Pound per Fahrenheit).</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_8">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_8" aria-expanded="true" aria-controls="collapse6_8">
+<h2 class="accordion-header" id="heading7_8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_8" aria-expanded="true" aria-controls="collapse7_8">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_8" class="accordion-collapse collapse"
-aria-labelledby="heading6_8" data-bs-parent="#accordionExample">
+<div id="collapse7_8" class="accordion-collapse collapse"
+aria-labelledby="heading7_8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -833,19 +1110,19 @@ unitless number in <span class="math inline">[-1,1]</span> range.)</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.9">Problem 6.9</h3>
+<h3 id="problem-7.9">Problem 7.9</h3>
 <p>Find <span class="math inline">w^*_0</span>. <em>(Hint: You’ll need
 to find <span class="math inline">\bar y</span> for the given
 dataset)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_9">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_9" aria-expanded="true" aria-controls="collapse6_9">
+<h2 class="accordion-header" id="heading7_9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_9" aria-expanded="true" aria-controls="collapse7_9">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_9" class="accordion-collapse collapse"
-aria-labelledby="heading6_9" data-bs-parent="#accordionExample">
+<div id="collapse7_9" class="accordion-collapse collapse"
+aria-labelledby="heading7_9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -860,20 +1137,20 @@ Therefore, <span class="math display">\begin{aligned}
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.10">Problem 6.10</h3>
+<h3 id="problem-7.10">Problem 7.10</h3>
 <p>What would the best linear prediction <span
 class="math inline">H^*(x)</span> be if we multiply all <span
 class="math inline">x_i</span>’s by <span
 class="math inline">2</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_10">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_10" aria-expanded="true" aria-controls="collapse6_10">
+<h2 class="accordion-header" id="heading7_10">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_10" aria-expanded="true" aria-controls="collapse7_10">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_10" class="accordion-collapse collapse"
-aria-labelledby="heading6_10" data-bs-parent="#accordionExample">
+<div id="collapse7_10" class="accordion-collapse collapse"
+aria-labelledby="heading7_10" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -904,20 +1181,20 @@ w_0'^*&amp;=280
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.11">Problem 6.11</h3>
+<h3 id="problem-7.11">Problem 7.11</h3>
 <p>What would the best linear prediction <span
 class="math inline">H^*(x)</span> be if we add <span
 class="math inline">20</span> to all <span
 class="math inline">x_i</span>’s?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_11">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_11" aria-expanded="true" aria-controls="collapse6_11">
+<h2 class="accordion-header" id="heading7_11">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_11" aria-expanded="true" aria-controls="collapse7_11">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_11" class="accordion-collapse collapse"
-aria-labelledby="heading6_11" data-bs-parent="#accordionExample">
+<div id="collapse7_11" class="accordion-collapse collapse"
+aria-labelledby="heading7_11" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -939,7 +1216,7 @@ w_0^*&amp;=340
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-7">Problem 7</h2>
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../fa22-midterm/index.html">Fall 2022
 Midterm</a>, Problem 4</i></p>
 <p>Consider a dataset that consists of <span class="math inline">y_1,
@@ -950,19 +1227,19 @@ approach to a slightly different loss function defined below: <span
 class="math display">L_{\text{midterm}}(y,h)=(\alpha y - h)^2+\lambda
 h</span></p>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-8.1">Problem 8.1</h3>
 <p>Write down the empiricial risk <span
 class="math inline">R_{\text{midterm}}(h)</span> by using the above loss
 function.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -975,7 +1252,7 @@ y_i - h)^2+\lambda h]=[\frac{1}{n}\sum_{i=1}^{n}(\alpha y_i - h)^2]
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-8.2">Problem 8.2</h3>
 <p>The mean of dataset is <span class="math inline">\bar{y}</span>, i.e.
 <span class="math inline">\bar{y} = \frac{1}{n} \sum_{i = 1}^n
 y_i</span>. Find <span class="math inline">h^*</span> that minimizes
@@ -986,13 +1263,13 @@ class="math inline">\alpha</span> and <span
 class="math inline">\lambda</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1017,7 +1294,7 @@ h^*=\alpha \bar{y} - \frac{\lambda}{2}.</span></p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../sp23-midterm1/index.html">Spring 2023 Midterm
 1</a>, Problem 1</i></p>
 <p>Consider a dataset such that <span class="math inline">60 \leq y_1
@@ -1027,18 +1304,18 @@ of a constant prediction <span class="math inline">h</span> on this
 dataset. Suppose we know that <span class="math inline">R_{abs}(27) =
 94.</span></p>
 <p><br></p>
-<h3 id="problem-8.1">Problem 8.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p>Find <span class="math inline">\bar y</span>, or the mean of <span
 class="math inline">\{y_1, y_2, \dots, y_n\}</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse"
-aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1068,17 +1345,17 @@ that <span class="math inline">\bar y = 121</span>.</p>
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-8.2">Problem 8.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p>Find <span class="math inline">R_{abs}(58)</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1099,7 +1376,7 @@ distance to <span class="math inline">58</span> is <span class="math inline">121
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-8.3">Problem 8.3</h3>
+<h3 id="problem-9.3">Problem 9.3</h3>
 <p>Which of the following <em>could</em> be the mean absolute deviation
 from the median for this dataset? There is only one correct answer.</p>
 <ul class="task-list">
@@ -1110,13 +1387,13 @@ from the median for this dataset? There is only one correct answer.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse"
-aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1144,7 +1421,7 @@ be the case that <span class="math inline">R(h^*) \leq 61</span>.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-9">Problem 9</h2>
+<h2 id="problem-10">Problem 10</h2>
 <p><i>Source: <a href="../sp23-midterm1/index.html">Spring 2023 Midterm
 1</a>, Problem 2</i></p>
 <p>Let <span class="math inline">R_{sq}(h)</span> represent the mean
@@ -1155,13 +1432,13 @@ class="math inline">R_{sq}(h)</span> has its minimum at the point <span
 class="math inline">(7,16)</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+<h2 class="accordion-header" id="heading10">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse"
-aria-labelledby="heading9" data-bs-parent="#accordionExample">
+<div id="collapse10" class="accordion-collapse collapse"
+aria-labelledby="heading10" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1185,7 +1462,7 @@ and solves a system of two equations:</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-10">Problem 10</h2>
+<h2 id="problem-11">Problem 11</h2>
 <p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
 Part 1</a>, Problem 1</i></p>
 <p>For a given dataset <span class="math inline">\{y_1, y_2, \dots,
@@ -1194,18 +1471,18 @@ the <strong>median</strong> absolute error of the constant prediction
 <span class="math inline">h</span> on that dataset (as opposed to the
 mean absolute error <span class="math inline">R_{abs}(h)</span>).</p>
 <p><br></p>
-<h3 id="problem-10.1">Problem 10.1</h3>
+<h3 id="problem-11.1">Problem 11.1</h3>
 <p>For the dataset <span class="math inline">\{4, 9, 10, 14,
 15\}</span>, what is <span class="math inline">M_{abs}(9)</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse"
-aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1227,19 +1504,19 @@ aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.2">Problem 10.2</h3>
+<h3 id="problem-11.2">Problem 11.2</h3>
 <p>For the same dataset <span class="math inline">\{4, 9, 10, 14,
 15\}</span>, find another integer <span class="math inline">h</span>
 such that <span class="math inline">M_{abs}(9) = M_{abs}(h)</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse"
-aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1282,19 +1559,19 @@ already. We can see the median is <span class="math inline">5</span>, so
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.3">Problem 10.3</h3>
+<h3 id="problem-11.3">Problem 11.3</h3>
 <p>Based on your answers to parts (a) and (b), discuss in <strong>at
 most two sentences</strong> what is problematic about using the median
 absolute error to make predictions.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_3" class="accordion-collapse collapse"
-aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div id="collapse11_3" class="accordion-collapse collapse"
+aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1311,13 +1588,13 @@ does not recognize that.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-11">Problem 11</h2>
+<h2 id="problem-12">Problem 12</h2>
 <p><i>Source: <a href="../sp23-final-pt1/index.html">Spring 2023 Final
 Part 1</a>, Problem 2</i></p>
 <p>Match each dataset with the graph of its mean absolute error, <span
 class="math inline">R_{abs}(h)</span>.</p>
 <p><br></p>
-<h3 id="problem-11.1">Problem 11.1</h3>
+<h3 id="problem-12.1">Problem 12.1</h3>
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 <p><br></p>
 <p><span class="math inline">\{4, 7, 9, 10, 11\}</span></p>
@@ -1329,13 +1606,13 @@ class="math inline">R_{abs}(h)</span>.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading11_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+<h2 class="accordion-header" id="heading12_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_1" aria-expanded="true" aria-controls="collapse12_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_1" class="accordion-collapse collapse"
-aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div id="collapse12_1" class="accordion-collapse collapse"
+aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1382,7 +1659,7 @@ matches Graph 2.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-11.2">Problem 11.2</h3>
+<h3 id="problem-12.2">Problem 12.2</h3>
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 <p><br></p>
 <p><span class="math inline">\{-3, 1, 9, 11, 20\}</span></p>
@@ -1394,13 +1671,13 @@ matches Graph 2.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading11_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+<h2 class="accordion-header" id="heading12_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_2" aria-expanded="true" aria-controls="collapse12_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_2" class="accordion-collapse collapse"
-aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div id="collapse12_2" class="accordion-collapse collapse"
+aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1444,7 +1721,7 @@ matches Graph 1.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-11.3">Problem 11.3</h3>
+<h3 id="problem-12.3">Problem 12.3</h3>
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 <p><br></p>
 <p><span class="math inline">\{8, 9, 12, 13, 15\}</span></p>
@@ -1456,13 +1733,13 @@ matches Graph 1.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading11_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
+<h2 class="accordion-header" id="heading12_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_3" aria-expanded="true" aria-controls="collapse12_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_3" class="accordion-collapse collapse"
-aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
+<div id="collapse12_3" class="accordion-collapse collapse"
+aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1506,7 +1783,7 @@ matches Graph 3.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-11.4">Problem 11.4</h3>
+<h3 id="problem-12.4">Problem 12.4</h3>
 <center><img src="../assets/images/sp23-final-pt1/matching.jpg" width="500" height="350"></center>
 <p><br></p>
 <p><span class="math inline">\{11, 12, 12, 13, 14\}</span></p>
@@ -1518,13 +1795,13 @@ matches Graph 3.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading11_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_4" aria-expanded="true" aria-controls="collapse11_4">
+<h2 class="accordion-header" id="heading12_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_4" aria-expanded="true" aria-controls="collapse12_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_4" class="accordion-collapse collapse"
-aria-labelledby="heading11_4" data-bs-parent="#accordionExample">
+<div id="collapse12_4" class="accordion-collapse collapse"
+aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1569,7 +1846,7 @@ chosen in the other parts yet!</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-12">Problem 12</h2>
+<h2 id="problem-13">Problem 13</h2>
 <p><i>Source: <a href="../wi22-midterm1/index.html">Winter 2022 Midterm
 1</a>, Problem 1</i></p>
 <p>Define the extreme mean (<span class="math inline">EM</span>) of a
@@ -1580,13 +1857,13 @@ class="math display">EM(f(x_1), f(x_2), \dots, f(x_n)) = f(EM(x_1, x_2,
 \dots, x_n)).</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading12">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="true" aria-controls="collapse12">
+<h2 class="accordion-header" id="heading13">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="true" aria-controls="collapse13">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12" class="accordion-collapse collapse"
-aria-labelledby="heading12" data-bs-parent="#accordionExample">
+<div id="collapse13" class="accordion-collapse collapse"
+aria-labelledby="heading13" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1607,7 +1884,7 @@ x_n)+ 4\\ &amp;= f(EM(x_1, x_2, \dots, x_n)). \end{aligned}</span></p>
 </div>
 </div>
 <hr />
-<h2 id="problem-13">Problem 13</h2>
+<h2 id="problem-14">Problem 14</h2>
 <p><i>Source: <a href="../wi22-midterm1/index.html">Winter 2022 Midterm
 1</a>, Problem 2</i></p>
 <p>Consider a new loss function, <span class="math display">L(h, y) =
@@ -1615,19 +1892,19 @@ e^{(h-y)^2}.</span> Given a dataset <span class="math inline">y_1, y_2,
 \dots, y_n</span>, let <span class="math inline">R(h)</span> represent
 the empirical risk for the dataset using this loss function.</p>
 <p><br></p>
-<h3 id="problem-13.1">Problem 13.1</h3>
+<h3 id="problem-14.1">Problem 14.1</h3>
 <p>For the dataset <span class="math inline">\{1, 3, 4\}</span>,
 calculate <span class="math inline">R(2).</span> Simplify your answer as
 much as possible without a calculator.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading13_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13_1" aria-expanded="true" aria-controls="collapse13_1">
+<h2 class="accordion-header" id="heading14_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_1" aria-expanded="true" aria-controls="collapse14_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse13_1" class="accordion-collapse collapse"
-aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
+<div id="collapse14_1" class="accordion-collapse collapse"
+aria-labelledby="heading14_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1676,7 +1953,7 @@ records the necessary information:</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-13.2">Problem 13.2</h3>
+<h3 id="problem-14.2">Problem 14.2</h3>
 <p>For the same dataset <span class="math inline">\{1, 3, 4\}</span>,
 perform one iteration of gradient descent on <span
 class="math inline">R(h)</span>, starting at an initial prediction of
@@ -1685,13 +1962,13 @@ class="math inline">\alpha=\frac{1}{2}</span>. Show your work and
 simplify your answer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading13_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13_2" aria-expanded="true" aria-controls="collapse13_2">
+<h2 class="accordion-header" id="heading14_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_2" aria-expanded="true" aria-controls="collapse14_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse13_2" class="accordion-collapse collapse"
-aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
+<div id="collapse14_2" class="accordion-collapse collapse"
+aria-labelledby="heading14_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1764,7 +2041,7 @@ R'(h_0) \\ &amp;= 2 - \frac{1}{2}\cdot \frac{-4e^4}{3} \\ &amp;= 2 +
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-14">Problem 14</h2>
+<h2 id="problem-15">Problem 15</h2>
 <!-- Empirical Risk Minimization Problem -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 1</i></p>
@@ -1774,7 +2051,7 @@ the corresponding empirical risk with respect to the data <span
 class="math inline">y_1 = -3, y_2 = 2, y_3 = 2, y_4 = -2</span>, <span
 class="math inline">y_5 = -6</span> .</p>
 <p><br></p>
-<h3 id="problem-14.1">Problem 14.1</h3>
+<h3 id="problem-15.1">Problem 15.1</h3>
 <p>The <strong><span class="math inline">\alpha</span>-absolute</strong>
 loss is defined as follows: <span
 class="math display">L_{\alpha-\text{abs} }(h, y) = |h - (y-\alpha)
@@ -1784,13 +2061,13 @@ class="math display">L_{\alpha-\text{abs} }(h, y) = |h - (y-\alpha)
 $R_{\alpha-\text{abs}} (h^*)$? -->
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading14_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_1" aria-expanded="true" aria-controls="collapse14_1">
+<h2 class="accordion-header" id="heading15_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_1" aria-expanded="true" aria-controls="collapse15_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14_1" class="accordion-collapse collapse"
-aria-labelledby="heading14_1" data-bs-parent="#accordionExample">
+<div id="collapse15_1" class="accordion-collapse collapse"
+aria-labelledby="heading15_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1804,7 +2081,7 @@ solution that minimizes this loss is the median (-2) shifted by <span class="mat
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-14.2">Problem 14.2</h3>
+<h3 id="problem-15.2">Problem 15.2</h3>
 The <strong><span class="math inline">\beta</span>-zero-one</strong>
 loss is defined as follows:
 <span class="math display">\begin{aligned}
@@ -1820,13 +2097,13 @@ empirical risk function for <span class="math inline">y\in[-6,
 <!-- Bonus \[2 points\]: What is the empirical risk $R_{\beta- 01} (h^*)$? -->
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading14_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_2" aria-expanded="true" aria-controls="collapse14_2">
+<h2 class="accordion-header" id="heading15_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_2" aria-expanded="true" aria-controls="collapse15_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14_2" class="accordion-collapse collapse"
-aria-labelledby="heading14_2" data-bs-parent="#accordionExample">
+<div id="collapse15_2" class="accordion-collapse collapse"
+aria-labelledby="heading15_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1841,7 +2118,7 @@ that minimizes this loss is the mode scaled by <span class="math inline">\beta</
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-15">Problem 15</h2>
+<h2 id="problem-16">Problem 16</h2>
 <p><i>Source: <a href="../wi24-final-pt1/index.html">Winter 2024 Final
 Part 1</a>, Problem 1</i></p>
 <p>Suppose there is a dataset containing 10000 integers:</p>
@@ -1851,17 +2128,17 @@ Part 1</a>, Problem 1</i></p>
 <li>4500 of them are <span class="math inline">7</span>s</li>
 <li>500 of them are <span class="math inline">9</span>s. <br></li>
 </ul>
-<h3 id="problem-15.1">Problem 15.1</h3>
+<h3 id="problem-16.1">Problem 16.1</h3>
 <p>Calculate the median of this dataset.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading15_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_1" aria-expanded="true" aria-controls="collapse15_1">
+<h2 class="accordion-header" id="heading16_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16_1" aria-expanded="true" aria-controls="collapse16_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse15_1" class="accordion-collapse collapse"
-aria-labelledby="heading15_1" data-bs-parent="#accordionExample">
+<div id="collapse16_1" class="accordion-collapse collapse"
+aria-labelledby="heading16_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1882,7 +2159,7 @@ the equation: <span class="math display">\frac{x_{5000} + x_{5001}}{2} =
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-15.2">Problem 15.2</h3>
+<h3 id="problem-16.2">Problem 16.2</h3>
 <p>How does the mean of this dataset compared to its median?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> The mean is larger than the median</p></li>
@@ -1891,13 +2168,13 @@ the equation: <span class="math display">\frac{x_{5000} + x_{5001}}{2} =
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading15_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_2" aria-expanded="true" aria-controls="collapse15_2">
+<h2 class="accordion-header" id="heading16_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16_2" aria-expanded="true" aria-controls="collapse16_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse15_2" class="accordion-collapse collapse"
-aria-labelledby="heading15_2" data-bs-parent="#accordionExample">
+<div id="collapse16_2" class="accordion-collapse collapse"
+aria-labelledby="heading16_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1912,7 +2189,7 @@ than the median.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-16">Problem 16</h2>
+<h2 id="problem-17">Problem 17</h2>
 <p><i>Source: <a href="../wi24-midterm1/index.html">Winter 2024 Midterm
 1</a>, Problem 1</i></p>
 <p>Consider a dataset <span class="math inline">D</span> with <span
@@ -1921,19 +2198,19 @@ class="math inline">\{7,5,1,2,a\}</span>, where a is a positive real
 number. Note that <span class="math inline">a</span> is not necessarily
 an integer.</p>
 <p><br></p>
-<h3 id="problem-16.1">Problem 16.1</h3>
+<h3 id="problem-17.1">Problem 17.1</h3>
 <p>Express the mean of <span class="math inline">D</span> as a function
 of <span class="math inline">a</span>, simplify the expression as much
 as possible.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading16_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16_1" aria-expanded="true" aria-controls="collapse16_1">
+<h2 class="accordion-header" id="heading17_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17_1" aria-expanded="true" aria-controls="collapse17_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse16_1" class="accordion-collapse collapse"
-aria-labelledby="heading16_1" data-bs-parent="#accordionExample">
+<div id="collapse17_1" class="accordion-collapse collapse"
+aria-labelledby="heading17_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1946,7 +2223,7 @@ aria-labelledby="heading16_1" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-16.2">Problem 16.2</h3>
+<h3 id="problem-17.2">Problem 17.2</h3>
 <p>Depending on the range of <span class="math inline">a</span>, the
 median of <span class="math inline">D</span> could assume one of three
 possible values. Write out all possible median of <span
@@ -1956,13 +2233,13 @@ double inequalities, e.g., i.e. <span
 class="math inline">3&lt;a\leq8</span>:</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading16_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16_2" aria-expanded="true" aria-controls="collapse16_2">
+<h2 class="accordion-header" id="heading17_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17_2" aria-expanded="true" aria-controls="collapse17_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse16_2" class="accordion-collapse collapse"
-aria-labelledby="heading16_2" data-bs-parent="#accordionExample">
+<div id="collapse17_2" class="accordion-collapse collapse"
+aria-labelledby="heading17_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1980,19 +2257,19 @@ aria-labelledby="heading16_2" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-16.3">Problem 16.3</h3>
+<h3 id="problem-17.3">Problem 17.3</h3>
 <p>Determine the range of <span class="math inline">a</span> that
 satisfies: <span class="math display">\text{Mean}(D) &lt;
 \text{Median}(D)</span> Make sure to show your work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading16_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16_3" aria-expanded="true" aria-controls="collapse16_3">
+<h2 class="accordion-header" id="heading17_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17_3" aria-expanded="true" aria-controls="collapse17_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse16_3" class="accordion-collapse collapse"
-aria-labelledby="heading16_3" data-bs-parent="#accordionExample">
+<div id="collapse17_3" class="accordion-collapse collapse"
+aria-labelledby="heading17_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2033,7 +2310,7 @@ answer.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-17">Problem 17</h2>
+<h2 id="problem-18">Problem 18</h2>
 <p><i>Source: <a href="../wi24-midterm1/index.html">Winter 2024 Midterm
 1</a>, Problem 2</i></p>
 <p>Let <span class="math inline">R_{sq}(h)</span> represent the mean
@@ -2046,13 +2323,13 @@ class="math inline">y_{1}</span> and <span
 class="math inline">r_{1}</span></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading17">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse17" aria-expanded="true" aria-controls="collapse17">
+<h2 class="accordion-header" id="heading18">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18" aria-expanded="true" aria-controls="collapse18">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse17" class="accordion-collapse collapse"
-aria-labelledby="heading17" data-bs-parent="#accordionExample">
+<div id="collapse18" class="accordion-collapse collapse"
+aria-labelledby="heading18" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2086,7 +2363,7 @@ calculate <span class="math inline">r_1</span> with:</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-18">Problem 18</h2>
+<h2 id="problem-19">Problem 19</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 1</i></p>
 <p>Consider a dataset of <span class="math inline">n</span>
@@ -2094,7 +2371,7 @@ Problem 1</i></p>
 y_n</span>, whose histogram is given below:</p>
 <center><img src='../assets/images/sp24-final/hist-dist.png' width=900></center>
 <p><br></p>
-<h3 id="problem-18.1">Problem 18.1</h3>
+<h3 id="problem-19.1">Problem 19.1</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes:</p>
 <p><span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n
@@ -2111,13 +2388,13 @@ class="math inline">h^*</span> that minimizes:</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading18_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18_1" aria-expanded="true" aria-controls="collapse18_1">
+<h2 class="accordion-header" id="heading19_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_1" aria-expanded="true" aria-controls="collapse19_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse18_1" class="accordion-collapse collapse"
-aria-labelledby="heading18_1" data-bs-parent="#accordionExample">
+<div id="collapse19_1" class="accordion-collapse collapse"
+aria-labelledby="heading19_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2130,7 +2407,7 @@ zero-one loss is the mode.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-18.2">Problem 18.2</h3>
+<h3 id="problem-19.2">Problem 19.2</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes: <span
 class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n |y_i -
@@ -2146,13 +2423,13 @@ h|</span></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading18_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18_2" aria-expanded="true" aria-controls="collapse18_2">
+<h2 class="accordion-header" id="heading19_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_2" aria-expanded="true" aria-controls="collapse19_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse18_2" class="accordion-collapse collapse"
-aria-labelledby="heading18_2" data-bs-parent="#accordionExample">
+<div id="collapse19_2" class="accordion-collapse collapse"
+aria-labelledby="heading19_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2167,7 +2444,7 @@ slightly, to 7.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-18.3">Problem 18.3</h3>
+<h3 id="problem-19.3">Problem 19.3</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes: <span
 class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n (y_i -
@@ -2183,13 +2460,13 @@ h)^2</span></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading18_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18_3" aria-expanded="true" aria-controls="collapse18_3">
+<h2 class="accordion-header" id="heading19_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_3" aria-expanded="true" aria-controls="collapse19_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse18_3" class="accordion-collapse collapse"
-aria-labelledby="heading18_3" data-bs-parent="#accordionExample">
+<div id="collapse19_3" class="accordion-collapse collapse"
+aria-labelledby="heading19_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2207,7 +2484,7 @@ option.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-18.4">Problem 18.4</h3>
+<h3 id="problem-19.4">Problem 19.4</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes: <span
 class="math display">\displaystyle \lim_{p \rightarrow \infty}
@@ -2223,13 +2500,13 @@ class="math display">\displaystyle \lim_{p \rightarrow \infty}
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading18_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse18_4" aria-expanded="true" aria-controls="collapse18_4">
+<h2 class="accordion-header" id="heading19_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_4" aria-expanded="true" aria-controls="collapse19_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse18_4" class="accordion-collapse collapse"
-aria-labelledby="heading18_4" data-bs-parent="#accordionExample">
+<div id="collapse19_4" class="accordion-collapse collapse"
+aria-labelledby="heading19_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2243,7 +2520,7 @@ infinity loss is the midrange, i.e. halfway between the min and max.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-19">Problem 19</h2>
+<h2 id="problem-20">Problem 20</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 2</i></p>
 <p>Consider a dataset of 3 values, <span class="math inline">y_1 &lt;
@@ -2263,7 +2540,7 @@ absolute error of a constant prediction <span
 class="math inline">h</span> on the combined dataset of 8 values, <span
 class="math inline">y_1, ..., y_3, z_1, ..., z_5</span>.</p>
 <p><br></p>
-<h3 id="problem-19.1">Problem 19.1</h3>
+<h3 id="problem-20.1">Problem 20.1</h3>
 <p>Fill in the blanks:</p>
 <p><strong>“{ i } minimizes <span
 class="math inline">Y_\text{abs}(h)</span>, { ii } minimizes <span
@@ -2301,13 +2578,13 @@ class="math inline">T_\text{abs}(h)</span>.”</strong></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading19_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_1" aria-expanded="true" aria-controls="collapse19_1">
+<h2 class="accordion-header" id="heading20_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20_1" aria-expanded="true" aria-controls="collapse20_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse19_1" class="accordion-collapse collapse"
-aria-labelledby="heading19_1" data-bs-parent="#accordionExample">
+<div id="collapse20_1" class="accordion-collapse collapse"
+aria-labelledby="heading20_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2331,7 +2608,7 @@ of 8 are <span class="math inline">z_1</span> and <span class="math inline">z_2<
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-19.2">Problem 19.2</h3>
+<h3 id="problem-20.2">Problem 20.2</h3>
 <p>For any <span class="math inline">h</span>, it is true that:</p>
 <p><span class="math display">T_\text{abs}(h) = \alpha Y_\text{abs}(h) +
 \beta Z_\text{abs}(h)</span></p>
@@ -2342,13 +2619,13 @@ class="math inline">\beta</span>? Give your answers as integers or
 simplified fractions with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading19_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_2" aria-expanded="true" aria-controls="collapse19_2">
+<h2 class="accordion-header" id="heading20_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20_2" aria-expanded="true" aria-controls="collapse20_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse19_2" class="accordion-collapse collapse"
-aria-labelledby="heading19_2" data-bs-parent="#accordionExample">
+<div id="collapse20_2" class="accordion-collapse collapse"
+aria-labelledby="heading20_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2375,20 +2652,20 @@ h|\right)</span></p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-19.3">Problem 19.3</h3>
+<h3 id="problem-20.3">Problem 20.3</h3>
 <p>Show that <span class="math inline">Y_\text{abs}(z_1) = z_1 -
 2</span>.</p>
 <p><em>Hint: Use the fact that you know the mean of <span
 class="math inline">y_1, y_2, y_3</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading19_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_3" aria-expanded="true" aria-controls="collapse19_3">
+<h2 class="accordion-header" id="heading20_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20_3" aria-expanded="true" aria-controls="collapse20_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse19_3" class="accordion-collapse collapse"
-aria-labelledby="heading19_3" data-bs-parent="#accordionExample">
+<div id="collapse20_3" class="accordion-collapse collapse"
+aria-labelledby="heading20_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -2411,7 +2688,7 @@ write:</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-19.4">Problem 19.4</h3>
+<h3 id="problem-20.4">Problem 20.4</h3>
 <p>Suppose the mean absolute deviation from the median in the full
 dataset of 8 values is 6. What is the value of <span
 class="math inline">z_1</span>?</p>
@@ -2428,13 +2705,13 @@ question.</em></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading19_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse19_4" aria-expanded="true" aria-controls="collapse19_4">
+<h2 class="accordion-header" id="heading20_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse20_4" aria-expanded="true" aria-controls="collapse20_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse19_4" class="accordion-collapse collapse"
-aria-labelledby="heading19_4" data-bs-parent="#accordionExample">
+<div id="collapse20_4" class="accordion-collapse collapse"
+aria-labelledby="heading20_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
