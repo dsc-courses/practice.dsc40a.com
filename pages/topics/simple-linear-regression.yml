@@ -3,6 +3,7 @@ context: This page contains all problems about Simple Linear Regression.
 show_solution: true
 problems:
   - sp24-final/sp24-final-q03
+  - sp24-final/sp24-final-q05
   - fa22-midterm/fa22-midterm-q03
   - fa21-final/q05
   - fa21-midterm/fa21-midterm-q04

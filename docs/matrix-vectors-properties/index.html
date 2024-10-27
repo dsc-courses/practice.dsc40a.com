@@ -1599,6 +1599,393 @@ aria-labelledby="heading8_6" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-9">Problem 9</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 1</i></p>
+<p>Consider a dataset of <span class="math inline">n</span>
+<strong>integers</strong>, <span class="math inline">y_1, y_2, ...,
+y_n</span>, whose histogram is given below:</p>
+<center><img src='../assets/images/sp24-final/hist-dist.png' width=900></center>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes:</p>
+<p><span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n
+\begin{cases} 0 &amp; y_i = h \\ 1 &amp; y_i \neq h
+\end{cases}</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">11</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">15</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">30.</span></p>
+<p>The minimizer of empirical risk for the constant model when using
+zero-one loss is the mode.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.2">Problem 9.2</h3>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes: <span
+class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n |y_i -
+h|</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">11</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">15</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">7.</span></p>
+<p>The minimizer of empirical risk for the constant model when using
+absolute loss is the median. If the bar at 30 wasn’t there, the median
+would be 6, but the existence of that bar drags the “halfway” point up
+slightly, to 7.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.3">Problem 9.3</h3>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes: <span
+class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n (y_i -
+h)^2</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">11</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">15</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">11.</span></p>
+<p>The minimizer of empirical risk for the constant model when using
+squared loss is the mean. The mean is heavily influenced by the presence
+of outliers, of which there are many at 30, dragging the mean up to 11.
+While you can’t calculate the mean here, given the large right tail,
+this question can be answered by understanding that the mean must be
+larger than the median, which is 7, and 11 is the next biggest
+option.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-9.4">Problem 9.4</h3>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes: <span
+class="math display">\displaystyle \lim_{p \rightarrow \infty}
+\frac{1}{n} \sum_{i = 1}^n |y_i - h|^p</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">11</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">15</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">15.</span></p>
+<p>The minimizer of empirical risk for the constant model when using
+infinity loss is the midrange, i.e. halfway between the min and max.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-10">Problem 10</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 2</i></p>
+<p>Consider a dataset of 3 values, <span class="math inline">y_1 &lt;
+y_2 &lt; y_3</span>, with a mean of 2. Let <span
+class="math inline">Y_\text{abs}(h) = \frac{1}{3} \sum_{i = 1}^3 |y_i -
+h|</span> represent the mean absolute error of a constant prediction
+<span class="math inline">h</span> on this dataset of 3 values.</p>
+<p>Similarly, consider another dataset of 5 values, <span
+class="math inline">z_1 &lt; z_2 &lt; z_3 &lt; z_4 &lt; z_5</span>, with
+a mean of 12. Let <span class="math inline">Z_\text{abs}(h) =
+\frac{1}{5} \sum_{i = 1}^5 |z_i - h|</span> represent the mean absolute
+error of a constant prediction <span class="math inline">h</span> on
+this dataset of 5 values.</p>
+<p>Suppose that <span class="math inline">y_3 &lt; z_1</span>, and that
+<span class="math inline">T_\text{abs}(h)</span> represents the mean
+absolute error of a constant prediction <span
+class="math inline">h</span> on the combined dataset of 8 values, <span
+class="math inline">y_1, ..., y_3, z_1, ..., z_5</span>.</p>
+<p><br></p>
+<h3 id="problem-10.1">Problem 10.1</h3>
+<p>Fill in the blanks:</p>
+<p><strong>“{ i } minimizes <span
+class="math inline">Y_\text{abs}(h)</span>, { ii } minimizes <span
+class="math inline">Z_\text{abs}(h)</span>, and { iii } minimizes <span
+class="math inline">T_\text{abs}(h)</span>.”</strong></p>
+<ol type="1">
+<li>What goes in blank { i }?</li>
+</ol>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_1</span></p></li>
+<li><p><input type="radio" disabled="" /> any value between <span class="math inline">y_1</span> and <span class="math inline">y_2</span> (inclusive)</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_3</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">z_1</span></p></li>
+</ul>
+<ol start="2" type="1">
+<li>What goes in blank { ii }?</li>
+</ol>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">z_1</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">z_2</span></p></li>
+<li><p><input type="radio" disabled="" /> any value between <span class="math inline">z_2</span> and <span class="math inline">z_3</span> (inclusive)</p></li>
+<li><p><input type="radio" disabled="" /> any value between <span class="math inline">z_2</span> and <span class="math inline">z_4</span> (inclusive)</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">z_3</span></p></li>
+</ul>
+<ol start="3" type="1">
+<li>What goes in blank { iii }?</li>
+</ol>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">y_3</span></p></li>
+<li><p><input type="radio" disabled="" /> any value between <span class="math inline">y_3</span> and <span class="math inline">z_1</span> (inclusive)</p></li>
+<li><p><input type="radio" disabled="" /> any value between <span class="math inline">z_1</span> and <span class="math inline">z_2</span> (inclusive)</p></li>
+<li><p><input type="radio" disabled="" /> any value between <span class="math inline">z_2</span> and <span class="math inline">z_3</span> (inclusive)</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The values of the three blanks are: <span class="math inline">y_2</span>, <span class="math inline">z_3</span>,
+and any value between <span class="math inline">z_1</span> and <span class="math inline">z_2</span> (inclusive).</p>
+<p>For the first blank, we know the median of the y-dataset minimizes
+mean absolute error of a constant prediction on the y-dataset. Since
+<span class="math inline">y_1 &lt; y_2 &lt; y_3</span>, <span class="math inline">y_2</span> is the unique minimizer.</p>
+<p>For the second blank, we can also use the fact that the median of the
+z-dataset minimizes mean absolute error of a constant prediction on the
+z-dataset. Since <span class="math inline">z_1 &lt; z_2 &lt; z_3 &lt;
+z_4 &lt; z_5</span>, <span class="math inline">z_3</span> is the unique
+minimizer.</p>
+<p>For the third blank, we know that when there are an odd number of
+data points in a dataset, any values between the middle two (inclusive)
+minimize mean absolute error. Here, the middle two in the full dataset
+of 8 are <span class="math inline">z_1</span> and <span class="math inline">z_2</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.2">Problem 10.2</h3>
+<p>For any <span class="math inline">h</span>, it is true that:</p>
+<p><span class="math display">T_\text{abs}(h) = \alpha Y_\text{abs}(h) +
+\beta Z_\text{abs}(h)</span></p>
+<p>for some constants <span class="math inline">\alpha</span> and <span
+class="math inline">\beta</span>. What are the values of <span
+class="math inline">\alpha</span> and <span
+class="math inline">\beta</span>? Give your answers as integers or
+simplified fractions with no variables.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\alpha = \frac{3}{8}</span>, <span class="math inline">\beta = \frac{5}{8}</span>.</p>
+<p>To find <span class="math inline">\alpha</span> and <span class="math inline">\beta</span>, we need to construct a similar-looking
+equation to the one above. We can start by looking at our equation for
+<span class="math inline">T_\text{abs}(h)</span>:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \sum_{i =
+1}^8 |t_i - h|</span></p>
+<p>Now, we can split the sum on the right hand side into two sums, one
+for our <span class="math inline">y</span> data points and one for our
+<span class="math inline">z</span> data points:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8}
+\left(\sum_{i = 1}^3 |y_i - h| + \sum_{i = 1}^5 |z_i -
+h|\right)</span></p>
+<p>Each of these two mini sums can be represented in terms of <span class="math inline">Y_\text{abs}(h)</span> and <span class="math inline">Z_\text{abs}(h)</span>:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \left(3
+\cdot Y_\text{abs}(h) + 5 \cdot Z_\text{abs}(h)\right)</span> <span class="math display">T_\text{abs}(h) = \frac38 \cdot Y_\text{abs}(h) +
+\frac58 \cdot Z_\text{abs}(h)</span></p>
+<p>By looking at this final equation we’ve built, it is clear that <span class="math inline">\alpha = \frac{3}{8}</span> and <span class="math inline">\beta = \frac{5}{8}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.3">Problem 10.3</h3>
+<p>Show that <span class="math inline">Y_\text{abs}(z_1) = z_1 -
+2</span>.</p>
+<p><em>Hint: Use the fact that you know the mean of <span
+class="math inline">y_1, y_2, y_3</span>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can start by plugging <span class="math inline">z_1</span> into
+<span class="math inline">Y_\text{abs}(h)</span>:</p>
+<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left( | z
+- y_1 | + | z - y_2 | + |z - y_3| \right)</span></p>
+<p>Since <span class="math display">z_1 &gt; y_3 &gt; y_2 &gt;
+y_1</span>, all of the absolute values can be dropped and we can
+write:</p>
+<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left(
+(z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)</span></p>
+<p>This can be simplified to:</p>
+<p><span class="math display">Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1
+- (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot
+\bar{y}\right) = z_1 - \bar{y} = z_1 - 2</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-10.4">Problem 10.4</h3>
+<p>Suppose the mean absolute deviation from the median in the full
+dataset of 8 values is 6. What is the value of <span
+class="math inline">z_1</span>?</p>
+<p><em>Hint: You’ll need to use the results from earlier parts of this
+question.</em></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">3</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">6</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">7</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">9</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">11</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading10_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_4" aria-expanded="true" aria-controls="collapse10_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse10_4" class="accordion-collapse collapse"
+aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">3</span>.</p>
+<p>We are given that <span class="math inline">T_\text{abs}(\text{median}) = 6</span>. This means
+that any value (inclusive) between <span class="math inline">z_1</span>
+and <span class="math inline">z_2</span> minimize <span class="math inline">T_\text{abs}(h)</span>, with the output being always
+being 6. So, <span class="math inline">T_\text{abs}(z_1) = 6</span>.
+Let’s see what happens when we plug this into <span class="math inline">T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) +
+\frac{5}{8} Z_\text{abs}(h)</span> from earlier:</p>
+<p><span class="math display">T_\text{abs}(z_1) = \frac{3}{8}
+Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8}
+Z_\text{abs}(z_1)</span></p>
+<p>If we could write <span class="math inline">Y_\text{abs}(z_1)</span>
+and <span class="math inline">Z_\text{abs}(z_1)</span> in terms of <span class="math inline">z_1</span>, we could solve for <span class="math inline">z_1</span> and our work would be done, so let’s do
+that. <span class="math inline">Y_\text{abs}(z_1) = z_1 - 2</span> from
+earlier. <span class="math inline">Z_\text{abs}(z_1)</span> simplifies
+as follows (knowing that <span class="math inline">\bar{z} =
+12</span>):</p>
+<p><span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \sum_{i =
+1}^5 |z_i - z_1|</span> <span class="math display">Z_\text{abs}(z_1) =
+\frac{1}{5} \left(|z_1 - z_1| + |z_2 - z_1| + |z_3 - z_1| + |z_4 - z_1|
++ |z_5 - z_1|\right)</span> <span class="math display">Z_\text{abs}(z_1)
+= \frac{1}{5} \left(0 + (z_2 + z_3 + z_4 + z_5) - 4z_1\right)</span>
+<span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_2 +
+z_3 + z_4 + z_5) - 4z_1 + (z_1 - z_1)\right)</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_1 + z_2 +
+z_3 + z_4 + z_5) - 5z_1\right)</span> <span class="math display">Z_\text{abs}(z_1) = \bar{z} - z_1</span> <span class="math display">Z_\text{abs}(z_1) = (12) - z_1</span></p>
+<p>Subbing back into our main equation:</p>
+<p><span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) +
+\frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">6 =
+\frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1)</span> <span class="math display">z_1 = 3</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
