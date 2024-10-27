@@ -67,12 +67,22 @@
 <p>This page contains all problems about Combinatorics.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
-Part 2</a>, Problem 2</i></p>
-<p>You roll a 12-sided die 8 times.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 7</i></p>
+<p>Delta has released a line of trading cards. Each trading card has a
+picture of a plane and a color. There are 12 plane types, and for each
+plane type there are three possible colors (gold, silver, and platinum),
+meaning there are 36 trading cards total.</p>
+<p>After your next flight, a pilot hands you a set of <strong>6</strong>
+cards, drawn at random <strong>without replacement</strong> from the set
+of 36 possible cards. The order of cards in a set does not matter.</p>
+<p>In this question, you may leave your answers unsimplified, in terms
+of fractions, exponents, the permutation formula <span
+class="math inline">P(n, k)</span>, and the binomial coefficient <span
+class="math inline">{n \choose k}</span>.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>What is the probability you roll 8 distinct values?</p>
+<p>How many sets of 6 cards are there in total?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -82,6 +92,256 @@ Click to view the solution.
 </h2>
 <div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{36 \choose 6} = \frac{36!}{6!30!} =
+\frac{36 \cdot 35 \cdot 34 \cdot 33 \cdot 32 \cdot 31}{6!} = \frac{P(36,
+6)}{6!}</span>. Any of these answers, or anything equivalent to them,
+are correct.</p>
+<p>There are 36 cards, and we must choose of 6 of them at random without
+replacement such that order matters.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>How many sets of 6 cards have exactly 6 unique plane types?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{12 \choose 6} \cdot 3^6</span>. Anything
+equivalent to this answer is also correct.</p>
+<p>Since we’re asking for the number of hands with unique types, we
+first pick 6 different types, which can be done <span class="math inline">{12 \choose 6}</span> ways. Then, for each chosen
+type, there are <span class="math inline">{3 \choose 1} = 3</span> ways
+of selecting the color. So, the colors can be chosen in <span class="math inline">3 \cdot 3 \cdot ... \cdot 3 = 3^6</span> ways.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>How many sets of 6 cards have exactly 2 unique plane types?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{12 \choose 2} = 66</span>. Anything
+equivalent to this answer is also correct.</p>
+<p>Once we pick 2 unique plane types, we need to choose 3 different
+colors per type, out of a set of 3 possibilities. This can be done, for
+each type, in <span class="math inline">{3 \choose 3} = 1</span>
+way.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>How many sets of 6 cards have exactly 3 unique plane types, such that
+each plane type appears twice?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{12 \choose 3} \cdot  {3 \choose 2}^3 = {12
+\choose 3} 3^3</span>. Anything equivalent to this answer is also
+correct.</p>
+<p>First, we choose 3 distinct types, which can be done in $<span class="math inline">{12 \choose 3}</span> ways. Then, for each type, we
+choose 2 colors, which can be done in <span class="math inline">{3
+\choose 2}</span> ways per type.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>How many sets of 6 cards have exactly 3 unique plane types?</p>
+<p><em>Hint: You’ll need to consider multiple cases, one of which you
+addressed in part (d).</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3 + {12
+\choose 1}{11 \choose 1}{3 \choose 2}{10 \choose 1}{3 \choose 1}</span>.
+Anything equivalent to this answer is also correct.</p>
+<p>If we select 6 cards and end up with 3 unique plane types, there are
+two possibilities: - We get 2 of each type (e.g. xx yy zz). This is the
+case in part (d), so the total number of sets of 6 cards that fall here
+are <span class="math inline">{12 \choose 3} \cdot {3 \choose
+2}^3</span>. - We get 3 of one type, 2 of another, and 1 of the last one
+(e.g. xxx yy z). - xxx: There are 12 options for the type that appears 3
+times, so that can be selected in <span class="math inline">{12 \choose
+1}</span> ways. We must take all 3 of that types colors, which can be
+done in <span class="math inline">{3 \choose 3} = 1</span> way. - yy:
+There are now 11 options for the type that appears 2 times, and for that
+type, we must take 2 of its three colors, so there are <span class="math inline">{11 \choose 1}{3 \choose 2}</span> options. - z:
+There are now 10 options for the type that appears once, and for that
+type, we must take 1 of its three colors, so there are <span class="math inline">{10 \choose 1}{3 \choose 1}</span> options. - So,
+the total number of options for this case is <span class="math inline">{12 \choose 1}{11 \choose 1}{3 \choose 2}{10 \choose
+1}{3 \choose 1} = P(12, 3) 3^2 = {12 \choose 3} 3^3 \cdot 2</span>.</p>
+<p>So, the total number of options is <span class="math inline">{12
+\choose 3} \cdot {3 \choose 2}^3 + {12 \choose 1}{11 \choose 1}{3
+\choose 2}{10 \choose 1}{3 \choose 1}</span>, which can be simplified in
+various ways, including to <span class="math inline">{12 \choose
+3}3^4</span>. Any of these ways received full credit, as long as they
+showed all work and logic.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 8</i></p>
+<p>Delta has released a line of trading cards. Each trading card has a
+picture of a plane and a color. There are 12 plane types, and for each
+plane type there are three possible colors (gold, silver, and platinum),
+meaning there are 36 trading cards total.</p>
+<p>Now, suppose that each time you board a flight, a pilot hands you 1
+card drawn at random from the set of possible cards. You fly 9 times,
+which gives you <strong>9</strong> cards drawn at random <strong>with
+replacement</strong> from the set of possible cards.</p>
+<p>In this question, you may leave your answers unsimplified, in terms
+of fractions, exponents, the permutation formula <span
+class="math inline">P(n, k)</span>, and the binomial coefficient <span
+class="math inline">{n \choose k}</span>.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Given that you receive a gold-colored card at least once, what is the
+probability that you receive a gold-colored card exactly 5 times? Show
+your work, and put a <span class="math inline">\boxed{\text{box}}</span>
+around your final answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\displaystyle\frac{{9 \choose 5} \left(
+\frac{1}{3} \right)^5 \left( \frac{2}{3} \right)^4}{1 - \left(
+\frac{2}{3} \right)^9}</span>. Anything equivalent to this answer
+received full credit.</p>
+<p>This boils down to recognizing that <span class="math inline">P(\text{exactly 5 gold cards | at least one gold
+card}) = \frac{P(\text{exactly 5 gold cards})}{P(\text{at least one gold
+card})}</span>, then breaking down the numerator and denominator.</p>
+<p>The numerator, <span class="math inline">P(\text{exactly 5 gold
+cards})</span>, is equal to <span class="math inline">{9 \choose 5}
+\left( \frac{1}{3} \right)^5 \left( \frac{2}{3} \right)^4</span>.</p>
+<p>The denominator, <span class="math inline">P(\text{at least one gold
+card})</span>, is equal to <span class="math inline">1 - P(\text{no gold
+cards}) = 1 - \left( \frac{2}{3} \right)^9</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>The <em>Airbus A350</em>, the <em>Boeing 767</em>, and the <em>Airbus
+A330</em> are 3 of the 12 plane types that Delta made trading cards
+for.</p>
+<p>What is the probability that you receive 2 <em>Airbus A350</em>
+cards, 4 <em>Boeing 767</em> cards, and 3 <em>Airbus A330</em> cards?
+Show your work, and put a <span
+class="math inline">\boxed{\text{box}}</span> around your final
+answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\displaystyle\frac{9!}{2!4!3!}
+(\frac{1}{12})^9</span>. Anything equivalent to this answer received
+full credit, such as ${9 }{5 }{3 } ()^9 $ or <span class="math inline">{9 \choose 3}{6 \choose 4}
+(\frac{1}{12})^9</span>.</p>
+<p>On one individual draw, the probability of receiving one particular
+plane type is <span class="math inline">\frac{3}{36} =
+\frac{1}{12}</span>, so the probability of seeing a particular sequence
+of 9 plane types – like A350, B767, A330, A330, B767, A350, A330, B767,
+B767 – is <span class="math inline">(\frac{1}{12})^9</span>.</p>
+<p>But, we need to account for the number of ways we can arrange 2 A350,
+4 B767, and 3 A330 cards, which is <span class="math inline">\frac{9!}{2!4!3!} = {9 \choose 2} {7 \choose 4}{3
+\choose 3}</span> (which can also be expressed a few other ways,
+too).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
+Part 2</a>, Problem 2</i></p>
+<p>You roll a 12-sided die 8 times.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>What is the probability you roll 8 distinct values?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -108,17 +368,17 @@ you’ll get <span class="math inline">\dfrac{12}{12}\cdot\dfrac{11}{12}\cdot\df
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.2">Problem 1.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>What is the probability you roll exactly 7 distinct values?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -160,7 +420,7 @@ actions and divide by total number of outcomes and you’ll get <span class="mat
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 4</i></p>
 <p>At Panda Express, there are <span class="math inline">18</span> items
@@ -168,7 +428,7 @@ available on the menu. Food is served on plates that are divided into
 three equal sections, and all sections of the plate must contain exactly
 one menu item.</p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-4.1">Problem 4.1</h3>
 <p>Suppose each section of the plate is a different color (in a
 clockwise order around the plate, the sections are red, yellow, blue).
 How many different-looking plates of food can be created, if we must
@@ -178,13 +438,13 @@ Kung Pao Chicken in the yellow section, and brown rice in the blue
 section.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -209,20 +469,20 @@ for each segment getting a total of <span class="math display">\begin{align*}
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-4.2">Problem 4.2</h3>
 <p>Suppose each section of the plate is a different color (in a
 clockwise order around the plate, the sections are red, yellow, blue).
 How many different-looking plates of food can be created, if we are
 allowed to have the same food in multiple sections?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -242,7 +502,7 @@ sequence’s of lenght k from a pool of n elements is <span class="math inline">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.3">Problem 2.3</h3>
+<h3 id="problem-4.3">Problem 4.3</h3>
 <p>Suppose each section of the plate is the same color (white). How many
 different-looking plates of food can be created, if we must have three
 different menu items on the plate?</p>
@@ -253,13 +513,13 @@ Eggplant Tofu, because one plate can be rotated to look like the other
 (this counts as the same.)</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse"
-aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -297,7 +557,7 @@ items getting <span class="math inline">2 \cdot {18 \choose
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.4">Problem 2.4</h3>
+<h3 id="problem-4.4">Problem 4.4</h3>
 <p>Suppose each section of the plate is the same color (white). Now we’d
 like to consider what happens if we can have the same food in multiple
 sections. What do we need to <strong>add to 4.3’s answer</strong> to get
@@ -307,13 +567,13 @@ we are allowed to have the same food in multiple sections?</p>
 count as the same.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse"
-aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -347,7 +607,7 @@ number you need to add to your answer from 4.3. <strong>Answer</strong>:
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-5">Problem 5</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 1</i></p>
 <p>A set of chess pieces has <span class="math inline">32</span> pieces.
@@ -388,13 +648,13 @@ class="math inline">n</span> people?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+<h2 class="accordion-header" id="heading5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse"
-aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div id="collapse5" class="accordion-collapse collapse"
+aria-labelledby="heading5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -422,7 +682,7 @@ select 12 unique combinations.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-6">Problem 6</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 2</i></p>
 <p>A set of chess pieces has <span class="math inline">32</span> pieces.
@@ -444,19 +704,19 @@ they are <strong>indistinguishable</strong> from one another.</p>
 from a set of <span class="math inline">32</span> chess pieces,
 <strong>without replacement</strong>.</p>
 <p><br></p>
-<h3 id="problem-4.1">Problem 4.1</h3>
+<h3 id="problem-6.1">Problem 6.1</h3>
 <p>You glance at the pieces just long enough to see that both pieces are
 white. What is the probability that you have <span
 class="math inline">2</span> pawns?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
-aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -484,7 +744,7 @@ getting another white pawn.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.2">Problem 4.2</h3>
+<h3 id="problem-6.2">Problem 6.2</h3>
 <p>True or False: Having two pawns is <strong>independent</strong> of
 having two white pieces.</p>
 <ul class="task-list">
@@ -493,13 +753,13 @@ having two white pieces.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
-aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -544,12 +804,12 @@ P(B)</span> because <span class="math inline">\frac{7}{124} \neq
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-5">Problem 5</h2>
+<h2 id="problem-7">Problem 7</h2>
 <!-- **Probability and Counting** -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 7</i></p>
 <p><br></p>
-<h3 id="problem-5.1">Problem 5.1</h3>
+<h3 id="problem-7.1">Problem 7.1</h3>
 <p>There is one box of bolts that contains some long and some short
 bolts. A manager is unable to open the box at present, so she asks her
 employees what is the composition of the box. One employee says that it
@@ -563,13 +823,13 @@ the event that the box contains 10 long and 20 short bolts. What is the
 probability that the first bolt selected is long?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
-aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -589,7 +849,7 @@ P(B_1)+P(\text{long}|B_2) \cdot P(B_2)
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-5.2">Problem 5.2</h3>
+<h3 id="problem-7.2">Problem 7.2</h3>
 <p>How many ways can one arrange the letters <span
 class="math inline">A</span>, <span class="math inline">B</span>, <span
 class="math inline">C</span>, <span class="math inline">D</span>, <span
@@ -598,13 +858,13 @@ class="math inline">A</span>, <span class="math inline">B</span>, and
 <span class="math inline">C</span> are all together (in any order)?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
-aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -634,7 +894,7 @@ permutations of <span class="math inline">ABCDE</span> where <span class="math i
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-5.3">Problem 5.3</h3>
+<h3 id="problem-7.3">Problem 7.3</h3>
 <p>Two chess players <span class="math inline">A</span> and <span
 class="math inline">B</span> play a series of chess matches against each
 other until one of them wins 3 matches. Every match ends when one of the
@@ -646,13 +906,13 @@ class="math inline">B</span> wins, <span class="math inline">A</span>
 wins. In how many different ways can the series occur?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_3" class="accordion-collapse collapse"
-aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -689,7 +949,7 @@ winning 2 of the 4 preceding games.</p></li>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-6">Problem 6</h2>
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 1</i></p>
 <p>Consider an experiment where each of <span
@@ -717,7 +977,7 @@ result is:</p>
 <li><p>Person 3 selected a black pawn.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-6.1">Problem 6.1</h3>
+<h3 id="problem-8.1">Problem 8.1</h3>
 <p>How many results are possible for this experiment with <span
 class="math inline">n</span> people?</p>
 <ul class="task-list">
@@ -730,13 +990,13 @@ class="math inline">n</span> people?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse"
-aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -763,7 +1023,7 @@ keep doing this for n persons we’ll get that there’s <span class="math inlin
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-6.2">Problem 6.2</h3>
+<h3 id="problem-8.2">Problem 8.2</h3>
 <p>As <span class="math inline">n</span> becomes large, what fraction of
 n people has selected a black pawn? Choose the answer that’s closest to
 the actual fraction.</p>
@@ -776,13 +1036,13 @@ the actual fraction.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse"
-aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -807,7 +1067,7 @@ Therefore, you still expect to see the black pawn <span class="math inline">\fra
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-6.3">Problem 6.3</h3>
+<h3 id="problem-8.3">Problem 8.3</h3>
 <p>True or False: Having two pawns is <strong>independent</strong> of
 having two white pieces.</p>
 <ul class="task-list">
@@ -816,13 +1076,13 @@ having two white pieces.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse"
-aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -873,7 +1133,7 @@ P(B)</span> because <span class="math inline">\frac{7}{124} \neq
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-7">Problem 7</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../wi24-midterm2/index.html">Winter 2024 Midterm
 2</a>, Problem 1</i></p>
 <p>Quarks are one of the smallest fundamental particles in physics.
@@ -882,7 +1142,7 @@ quarks: up, down, top, bottom, strange, charm. Each one of the <span
 class="math inline">6</span> types of quarks can be in two
 <strong>states</strong>: quark or antiquark.</p>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p>Consider an experiment where we select <span
 class="math inline">n</span> quarks uniformly at random. The
 <strong>result</strong> of the experiment is a description of the
@@ -905,13 +1165,13 @@ class="math inline">n</span> quarks?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -928,7 +1188,7 @@ experiment is <span class="math inline">12^n</span>.</p>
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p>A meson is formed by combining two quarks. In order to form a meson,
 the two quarks must satisfy the following rules:</p>
 <ul>
@@ -952,13 +1212,13 @@ results are possible for this experiment?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -982,7 +1242,7 @@ not matter, it would instead have <span class="math inline">\frac{72}{2}
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-10">Problem 10</h2>
 <p><i>Source: <a href="../wi24-midterm2/index.html">Winter 2024 Midterm
 2</a>, Problem 2</i></p>
 <p>A special poker card deck contains the <span
@@ -1011,18 +1271,18 @@ K, A</td>
 <p>…plus two wildcards: a Red Joker and a Black Joker. The total number
 of cards in this card deck is <span class="math inline">54</span>.</p>
 <p><br></p>
-<h3 id="problem-8.1">Problem 8.1</h3>
+<h3 id="problem-10.1">Problem 10.1</h3>
 <p>How many different four-card hands can be selected from this deck?
 (Note: order does not matter in a card hand.)</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse"
-aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1045,19 +1305,19 @@ different hands, which we don’t want. To correct this, we divide by
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-8.2">Problem 8.2</h3>
+<h3 id="problem-10.2">Problem 10.2</h3>
 <p>For this deck, how many <span class="math inline">5</span> card hands
 are there that include four-of-a-kind (four cards of the same
 <em>value</em>)? Show your work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1071,7 +1331,7 @@ four-of-a-kind (same number), there are <span class="math inline">13</span> ways
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.3">Problem 8.3</h3>
+<h3 id="problem-10.3">Problem 10.3</h3>
 <p>In certain poker rules, a bomb is defined as either four-of-a-kind,
 or two wildcards (red joker and black joker). Suppose you randomly draw
 a <span class="math inline">4</span> card hand and you found a bomb in
@@ -1079,13 +1339,13 @@ it, what is the probability that the bomb is four-of-a-kind? Show your
 work.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse"
-aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1124,7 +1384,7 @@ $$\begin{aligned}
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-9">Problem 9</h2>
+<h2 id="problem-11">Problem 11</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 7</i></p>
 <p>Delta has released a line of trading cards. Each trading card has a
@@ -1139,17 +1399,17 @@ of fractions, exponents, the permutation formula <span
 class="math inline">P(n, k)</span>, and the binomial coefficient <span
 class="math inline">{n \choose k}</span>.</p>
 <p><br></p>
-<h3 id="problem-9.1">Problem 9.1</h3>
+<h3 id="problem-11.1">Problem 11.1</h3>
 <p>How many sets of 6 cards are there in total?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse"
-aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1165,17 +1425,17 @@ replacement such that order matters.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.2">Problem 9.2</h3>
+<h3 id="problem-11.2">Problem 11.2</h3>
 <p>How many sets of 6 cards have exactly 6 unique plane types?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse"
-aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1191,17 +1451,17 @@ of selecting the color. So, the colors can be chosen in <span class="math inline
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.3">Problem 9.3</h3>
+<h3 id="problem-11.3">Problem 11.3</h3>
 <p>How many sets of 6 cards have exactly 2 unique plane types?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse"
-aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div id="collapse11_3" class="accordion-collapse collapse"
+aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1217,18 +1477,18 @@ way.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.4">Problem 9.4</h3>
+<h3 id="problem-11.4">Problem 11.4</h3>
 <p>How many sets of 6 cards have exactly 3 unique plane types, such that
 each plane type appears twice?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+<h2 class="accordion-header" id="heading11_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_4" aria-expanded="true" aria-controls="collapse11_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_4" class="accordion-collapse collapse"
-aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div id="collapse11_4" class="accordion-collapse collapse"
+aria-labelledby="heading11_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1244,19 +1504,19 @@ choose 2 colors, which can be done in <span class="math inline">{3
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.5">Problem 9.5</h3>
+<h3 id="problem-11.5">Problem 11.5</h3>
 <p>How many sets of 6 cards have exactly 3 unique plane types?</p>
 <p><em>Hint: You’ll need to consider multiple cases, one of which you
 addressed in part (d).</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_5" aria-expanded="true" aria-controls="collapse9_5">
+<h2 class="accordion-header" id="heading11_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_5" aria-expanded="true" aria-controls="collapse11_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_5" class="accordion-collapse collapse"
-aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
+<div id="collapse11_5" class="accordion-collapse collapse"
+aria-labelledby="heading11_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1291,7 +1551,7 @@ showed all work and logic.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-10">Problem 10</h2>
+<h2 id="problem-12">Problem 12</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 8</i></p>
 <p>Delta has released a line of trading cards. Each trading card has a
@@ -1307,20 +1567,20 @@ of fractions, exponents, the permutation formula <span
 class="math inline">P(n, k)</span>, and the binomial coefficient <span
 class="math inline">{n \choose k}</span>.</p>
 <p><br></p>
-<h3 id="problem-10.1">Problem 10.1</h3>
+<h3 id="problem-12.1">Problem 12.1</h3>
 <p>Given that you receive a gold-colored card at least once, what is the
 probability that you receive a gold-colored card exactly 5 times? Show
 your work, and put a <span class="math inline">\boxed{\text{box}}</span>
 around your final answer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+<h2 class="accordion-header" id="heading12_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_1" aria-expanded="true" aria-controls="collapse12_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse"
-aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div id="collapse12_1" class="accordion-collapse collapse"
+aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1343,7 +1603,7 @@ cards}) = 1 - \left( \frac{2}{3} \right)^9</span>.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.2">Problem 10.2</h3>
+<h3 id="problem-12.2">Problem 12.2</h3>
 <p>The <em>Airbus A350</em>, the <em>Boeing 767</em>, and the <em>Airbus
 A330</em> are 3 of the 12 plane types that Delta made trading cards
 for.</p>
@@ -1354,13 +1614,13 @@ class="math inline">\boxed{\text{box}}</span> around your final
 answer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+<h2 class="accordion-header" id="heading12_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_2" aria-expanded="true" aria-controls="collapse12_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse"
-aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div id="collapse12_2" class="accordion-collapse collapse"
+aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

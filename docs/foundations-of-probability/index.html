@@ -67,12 +67,28 @@
 <p>This page contains all problems about Foundations of Probability.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
-Part 2</a>, Problem 2</i></p>
-<p>You roll a 12-sided die 8 times.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 6</i></p>
+<p>Atlanta, Detroit, and Minneapolis are the three largest hub airports
+for Delta Airlines. You survey a sample of <span
+class="math inline">n</span> students at UCSD, and find that:</p>
+<ul>
+<li><p>20 students have been to Atlanta.</p></li>
+<li><p>16 students have been to Detroit.</p></li>
+<li><p>10 students have been to Minneapolis.</p></li>
+<li><p>1 student hasn’t been to any of these three cities.</p></li>
+<li><p>Of the 10 students who have been to Minneapolis, none have been
+to Detroit and 5 have been to Atlanta.</p></li>
+</ul>
+<p>Suppose you select one student at random from your sample of <span
+class="math inline">n</span>.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>What is the probability you roll 8 distinct values?</p>
+<p>Suppose the event that the selected student has been to Atlanta and
+the event that the selected student has been to Detroit are
+independent.</p>
+<p>What is the value of <span class="math inline">n</span>? Your answer
+should be an <strong>integer</strong>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -82,6 +98,152 @@ Click to view the solution.
 </h2>
 <div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">32</span>.</p>
+<p>There are a few ways to approach the problem, all of which involve a
+similar sequence of calculations – specifically, the principle of
+inclusion-exclusion for 3 sets.</p>
+<p>The key is remembering that there are two unknowns: the number of
+people overall, <span class="math inline">n</span>, and the number of
+people who have been to both Atlanta and Detroit, which we’ll call <span class="math inline">k</span>.</p>
+<p>Many students drew Venn Diagrams, but ultimately they don’t help
+answer the question directly; one needs to use the independence between
+Atlanta and Detroit.</p>
+<p>One way to proceed is:</p>
+<p><span class="math display">1 = \frac{20}{n} + \frac{16}{n} +
+\frac{10}{n} + \frac{1}{n} - \frac{5}{n} - \frac{k}{n}</span>,</p>
+<p>where <span class="math inline">\frac{k}{n} = \frac{20}{n} \cdot
+\frac{16}{n}</span>. <strong>This is the key step!</strong></p>
+<p>Simplifying gives <span class="math inline">1 = \frac{42}{n} -
+\frac{320}{n^2}</span>, which is equivalent to <span class="math inline">n^2 - 42n + 320 = 0</span>.</p>
+<p>This factors into <span class="math inline">(n - 32)(n - 10) =
+0</span>, so <span class="math inline">n = 32</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Now, suppose the event that the selected student has been to Atlanta
+and the event that the selected student has been to Detroit are not
+independent, meaning that <span class="math inline">n</span> is no
+longer necessarily your answer from part (a).</p>
+<p>The event that the selected student has been to Atlanta and the event
+that the selected student has been to Minneapolis are conditionally
+independent given that the selected student <strong>has not</strong>
+been to Detroit.</p>
+<p>Now, what is the value of <span class="math inline">n</span>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">12</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">28</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">30</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">32</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">42</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">45</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">56</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">28</span>.</p>
+<p>Without any assumptions on the value of <span class="math inline">k</span>, the number of people who have been to
+Atlanta and Detroit, it can be shown that:</p>
+<p><span class="math display">n = 42 - k</span></p>
+<p>Using the conditional independence assumption given in this part, we
+have that <span class="math inline">\frac{20-k}{n - 16} \cdot
+\frac{10}{n - 16} = \frac{5}{n - 16}</span>, which simplifies to <span class="math inline">2(20 - k) = n - 16 \implies n = 56 - 2k</span>.</p>
+<p>We now have a system of equations: <span class="math display">\begin{cases}
+n = 42 - k \\
+n = 56 - 2k
+\end{cases}</span></p>
+<p>Solving this system of equations for <span class="math inline">n</span> gives <span class="math inline">n =
+28</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Consider the events <span class="math inline">A</span>, <span
+class="math inline">D</span>, and <span class="math inline">M</span>,
+defined as follows:</p>
+<ul>
+<li><p><span class="math inline">A</span>: The event that the selected
+student has been to Atlanta.</p></li>
+<li><p><span class="math inline">D</span>: The event that the selected
+student has been to Detroit.</p></li>
+<li><p><span class="math inline">M</span>: The event that the selected
+student has been to Minneapolis.</p></li>
+</ul>
+<p>Let <span class="math inline">A^c</span>, <span
+class="math inline">D^c</span>, and <span class="math inline">M^c</span>
+represent the complements of events <span class="math inline">A</span>,
+<span class="math inline">D</span>, and <span
+class="math inline">M</span>, respectively. (In class, we used <span
+class="math inline">\bar{A}</span> to represent the complement, but
+that’s hard to read on the exam.)</p>
+<p>Which of the following combinations of sets form a partition of the
+sample space?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span>   <span class="math inline">D</span>   <span class="math inline">M</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D^c \cap M^c</span>   <span class="math inline">D</span>   <span class="math inline">M</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D</span>   <span class="math inline">D^c</span>   <span class="math inline">A^c \cap D
+\cap M^c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A^c</span>   <span class="math inline">A
+\cap D</span>   <span class="math inline">A \cap M</span></p></li>
+<li><p><input type="radio" disabled="" /> None of the above.</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Option 3 is correct (<span class="math inline">A \cap D</span>  
+<span class="math inline">D^c</span>   <span class="math inline">A^c
+\cap D \cap M^c</span>).</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
+Part 2</a>, Problem 2</i></p>
+<p>You roll a 12-sided die 8 times.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>What is the probability you roll 8 distinct values?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -108,17 +270,17 @@ you’ll get <span class="math inline">\dfrac{12}{12}\cdot\dfrac{11}{12}\cdot\df
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.2">Problem 1.2</h3>
+<h3 id="problem-2.2">Problem 2.2</h3>
 <p>What is the probability you roll exactly 7 distinct values?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -160,13 +322,13 @@ actions and divide by total number of outcomes and you’ll get <span class="mat
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
+<h2 id="problem-3">Problem 3</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 3</i></p>
 <p>Consider three events <span class="math inline">A, B,</span> and
 <span class="math inline">C</span> in the same sample space.</p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p>Which of the following is equivalent to <span
 class="math inline">P((A\cap B)|(B \cap C))</span>? <strong>Select all
 that apply.</strong></p>
@@ -179,13 +341,13 @@ that apply.</strong></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -228,7 +390,7 @@ the Above!</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>Suppose <span class="math inline">P((A \cap B)|C) = P(A|(B \cap
 C))*P(B)</span>. Which of the following pairs of events <strong>must be
 independent</strong>?</p>
@@ -240,13 +402,13 @@ independent</strong>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -277,7 +439,7 @@ to us that <span class="math inline">B</span> and <span class="math inline">C</s
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 6</i></p>
 <p>Suppose UCSD implements a new graduation requirement for data science
@@ -305,13 +467,13 @@ on their list.</li>
 <p>How many data science majors submitted a list?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse"
-aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div id="collapse4" class="accordion-collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -357,7 +519,7 @@ science majors is <span class="math inline">220  + 60 = 280</span>.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-5">Problem 5</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 2</i></p>
 <p>A set of chess pieces has <span class="math inline">32</span> pieces.
@@ -379,19 +541,19 @@ they are <strong>indistinguishable</strong> from one another.</p>
 from a set of <span class="math inline">32</span> chess pieces,
 <strong>without replacement</strong>.</p>
 <p><br></p>
-<h3 id="problem-4.1">Problem 4.1</h3>
+<h3 id="problem-5.1">Problem 5.1</h3>
 <p>You glance at the pieces just long enough to see that both pieces are
 white. What is the probability that you have <span
 class="math inline">2</span> pawns?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
-aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -419,7 +581,7 @@ getting another white pawn.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.2">Problem 4.2</h3>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>True or False: Having two pawns is <strong>independent</strong> of
 having two white pieces.</p>
 <ul class="task-list">
@@ -428,13 +590,13 @@ having two white pieces.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
-aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -479,7 +641,7 @@ P(B)</span> because <span class="math inline">\frac{7}{124} \neq
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-5">Problem 5</h2>
+<h2 id="problem-6">Problem 6</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 4</i></p>
 <p>Suppose that there are three possible experience levels in chess
@@ -495,7 +657,7 @@ tournament are beginners, <strong>40%</strong> are intermediate, and
 tournament, players are <strong>randomly paired up</strong> for a game
 of chess.</p>
 <p><br></p>
-<h3 id="problem-5.1">Problem 5.1</h3>
+<h3 id="problem-6.1">Problem 6.1</h3>
 <p>What is the probability that Avi wins in the first round of the
 tournament?</p>
 <ul class="task-list">
@@ -507,13 +669,13 @@ tournament?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
-aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -544,7 +706,7 @@ amount of people in the tournament of that level.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-5.2">Problem 5.2</h3>
+<h3 id="problem-6.2">Problem 6.2</h3>
 <p>It turns out that, sadly, Avi loses to his opponent in the first
 round. What is the probability that Avi’s opponent is an advanced
 player? Choose the <strong>closest answer</strong> among the choices
@@ -557,13 +719,13 @@ listed.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
-aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -617,7 +779,7 @@ P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-6">Problem 6</h2>
+<h2 id="problem-7">Problem 7</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 6</i></p>
 <p>The Avocado Cup is organized into rounds. In each round, players who
@@ -635,7 +797,7 @@ tournament.</p></li>
 round.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-6.1">Problem 6.1</h3>
+<h3 id="problem-7.1">Problem 7.1</h3>
 <p>Which of the following statements is true? <strong>Select all that
 apply.</strong></p>
 <ul class="task-list">
@@ -647,13 +809,13 @@ form a partition of the sample space.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse"
-aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -676,7 +838,7 @@ above.”</p>
 </div>
 </div>
 <p><br> <br></p>
-<h3 id="problem-6.2">Problem 6.2</h3>
+<h3 id="problem-7.2">Problem 7.2</h3>
 <p>The events <span class="math inline">A</span> and <span
 class="math inline">B</span> are mutually exclusive, or disjoint. More
 generally, for <strong>any</strong> two disjoint events <span
@@ -687,13 +849,13 @@ class="math inline">P(B)</span> <strong>only</strong>. For this problem
 only, <strong>show your work and justify each step.</strong></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse"
-aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -724,12 +886,12 @@ in green, which is just <span class="math inline">B</span>.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-7">Problem 7</h2>
+<h2 id="problem-8">Problem 8</h2>
 <!-- **Probability** -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 6</i></p>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-8.1">Problem 8.1</h3>
 <center><img src="../assets/images/wi23-final/venn2.png" width="500"></center>
 <p>In the above figure, <span class="math inline">S</span> is the sample
 space. Two events are denoted by two circles: <span
@@ -744,13 +906,13 @@ event <span class="math inline">\bar{A}\cap\bar{B}</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -767,20 +929,20 @@ area with orange stripes.</p>
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-8.2">Problem 8.2</h3>
 <p>Use the law of total probability to prove De Morgan’s law: <span
 class="math inline">P(\bar{A}\cap\bar{B})=1-P(A\cup B)</span>. You may
 use the figure above to visualize the statement, but your proof must use
 the law of total probability.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -804,7 +966,7 @@ B)</span>.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 1</i></p>
 <p>Consider an experiment where each of <span
@@ -832,7 +994,7 @@ result is:</p>
 <li><p>Person 3 selected a black pawn.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-8.1">Problem 8.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p>How many results are possible for this experiment with <span
 class="math inline">n</span> people?</p>
 <ul class="task-list">
@@ -845,13 +1007,13 @@ class="math inline">n</span> people?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse"
-aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -878,7 +1040,7 @@ keep doing this for n persons we’ll get that there’s <span class="math inlin
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.2">Problem 8.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p>As <span class="math inline">n</span> becomes large, what fraction of
 n people has selected a black pawn? Choose the answer that’s closest to
 the actual fraction.</p>
@@ -891,13 +1053,13 @@ the actual fraction.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -922,7 +1084,7 @@ Therefore, you still expect to see the black pawn <span class="math inline">\fra
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-8.3">Problem 8.3</h3>
+<h3 id="problem-9.3">Problem 9.3</h3>
 <p>True or False: Having two pawns is <strong>independent</strong> of
 having two white pieces.</p>
 <ul class="task-list">
@@ -931,13 +1093,13 @@ having two white pieces.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse"
-aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -988,7 +1150,7 @@ P(B)</span> because <span class="math inline">\frac{7}{124} \neq
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-9">Problem 9</h2>
+<h2 id="problem-10">Problem 10</h2>
 <p><i>Source: <a href="../wi24-midterm2/index.html">Winter 2024 Midterm
 2</a>, Problem 3</i></p>
 <p>Schrödinger’s cat is a famous thought experiment in quantum mechanics
@@ -1001,7 +1163,7 @@ doesn’t, the cat lives.”</p>
 so a thought experiment. It has never been executed in the real world,
 and no cats have ever been harmed as a result of it.</p>
 <p><br></p>
-<h3 id="problem-9.1">Problem 9.1</h3>
+<h3 id="problem-10.1">Problem 10.1</h3>
 <p>Suppose the cat has <span class="math inline">90 \%</span> of the
 chance to die if the decay happens. The cat also has <span
 class="math inline">10 \%</span> chance to die even if the decay does
@@ -1011,13 +1173,13 @@ you find the cat dead. What is the probability that the decay
 happened?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse"
-aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1055,7 +1217,7 @@ P(\text{Decay|Dead}) &amp;= \frac{0.9\cdot 0.2}{0.9 \cdot 0.2 + 0.1
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-9.2">Problem 9.2</h3>
+<h3 id="problem-10.2">Problem 10.2</h3>
 <p>Quantum superposition is a mind-bending and counter-intuitive concept
 in physics. In the Schrödinger’s cat scenario, when the box is closed,
 the cat can be <strong>both dead and alive</strong> simultaneously.
@@ -1078,13 +1240,13 @@ all that apply:</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse"
-aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1126,7 +1288,7 @@ above, so statement <span class="math inline">5</span> is false.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.3">Problem 9.3</h3>
+<h3 id="problem-10.3">Problem 10.3</h3>
 <p>You’re given the following probabilities:</p>
 <ul>
 <li><p><span class="math inline">P(\text{Cat Dead} \cup \text{Decay}) =
@@ -1144,13 +1306,13 @@ Schrodinger’s cat to be in the superposition state (i.e. both dead and
 alive):</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse"
-aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1227,7 +1389,7 @@ P(\text{Dead}) - P(\text{Alive} \cup \text{Dead})\\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-10">Problem 10</h2>
+<h2 id="problem-11">Problem 11</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 6</i></p>
 <p>Atlanta, Detroit, and Minneapolis are the three largest hub airports
@@ -1244,7 +1406,7 @@ to Detroit and 5 have been to Atlanta.</p></li>
 <p>Suppose you select one student at random from your sample of <span
 class="math inline">n</span>.</p>
 <p><br></p>
-<h3 id="problem-10.1">Problem 10.1</h3>
+<h3 id="problem-11.1">Problem 11.1</h3>
 <p>Suppose the event that the selected student has been to Atlanta and
 the event that the selected student has been to Detroit are
 independent.</p>
@@ -1252,13 +1414,13 @@ independent.</p>
 should be an <strong>integer</strong>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse"
-aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1287,7 +1449,7 @@ Atlanta and Detroit.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.2">Problem 10.2</h3>
+<h3 id="problem-11.2">Problem 11.2</h3>
 <p>Now, suppose the event that the selected student has been to Atlanta
 and the event that the selected student has been to Detroit are not
 independent, meaning that <span class="math inline">n</span> is no
@@ -1308,13 +1470,13 @@ been to Detroit.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse"
-aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1337,7 +1499,7 @@ n = 56 - 2k
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.3">Problem 10.3</h3>
+<h3 id="problem-11.3">Problem 11.3</h3>
 <p>Consider the events <span class="math inline">A</span>, <span
 class="math inline">D</span>, and <span class="math inline">M</span>,
 defined as follows:</p>
@@ -1369,13 +1531,13 @@ sample space?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_3" class="accordion-collapse collapse"
-aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div id="collapse11_3" class="accordion-collapse collapse"
+aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

@@ -846,6 +846,165 @@ conditionally dependent given <span class="math inline">C</span>.</p>
 </div>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 9</i></p>
+<p>Delta’s flight operations center keeps track of weather conditions,
+as they tend to impact whether or not flights are late. For each flight,
+Delta keeps track of:</p>
+<ul>
+<li><p>Whether or not there was <strong>precipitation</strong> — i.e.,
+rain, snow, or hail.</p></li>
+<li><p>The <strong>wind conditions</strong> — either no winds, light
+winds, moderate winds, or heavy winds.</p></li>
+<li><p>The flight’s <strong>status</strong> — whether it was early, on
+time, or late.</p></li>
+</ul>
+<p>Information about 100 flights is summarized in the table below.</p>
+<center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
+<p>For instance, we’re told that 6 flights in moderate winds and no
+precipitation landed late, and that there were 13 total flights in heavy
+winds and precipitation.</p>
+<p>Delta would like to use this information to predict whether a new
+flight will be early, on time, or late, given the weather
+conditions.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p><strong>Without smoothing</strong>, what is:</p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{7}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{7}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{10}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{14}{15}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{28}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{28}</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\frac{2}{7}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p><strong>With smoothing</strong>, what is:</p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{3}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{11}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{9}{29}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{9}{32}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{31}{101}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{31}{104}</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\frac{9}{32}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>.
+(The denominator is 28 + 4 since there are 4 possible wind conditions –
+none, light, moderate, and heavy.)</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For your convenience, the table from the previous page is repeated
+again below.</p>
+<center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>An airline’s late-to-early ratio, given a set of weather conditions,
+is defined as:</p>
+<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
+\text{conditions})}{\mathbb{P}(\text{early} \: | \:
+\text{conditions})}</span></p>
+<p>Using the assumptions of the Naïve Bayes classifier <strong>without
+smoothing</strong>, show that Delta’s late-early ratio for flights in
+<strong>heavy winds and precipitation</strong> is <span
+class="math inline">\bf{\frac{7}{5}}</span>.</p>
+<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of
+which you already found in <strong>part (a)</strong>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can recognize that:</p>
+<p><span class="math display">\displaystyle\frac{P(\text{late |
+conditions})}{P(\text{early | conditions})} \\ =
+\displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late})
+\cdot P(\text{precipitation | late})}{P(\text{early}) \cdot
+P(\text{heavy winds | early}) \cdot P(\text{precipitation |
+early})}</span></p>
+<p>and compute the following:</p>
+<ul>
+<li><p><span class="math inline">P(\text{late}) =
+\frac{32}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | late}) =
+\frac{8}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | late}) =
+\frac{16}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{early}) =
+\frac{28}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | early}) =
+\frac{8}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | early}) =
+\frac{10}{28}</span></p></li>
+</ul>
+<p>which gives:</p>
+<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100}
+\cdot \displaystyle\frac{8}{32} \cdot
+\displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot
+\displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} =
+\displaystyle\frac{\displaystyle\frac{1}{35}}{\displaystyle\frac{1}{25}}
+= \displaystyle\frac{7}{5}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 5</i></p>
 <p>You have a large historical dataset of all competitors in past years
@@ -878,13 +1037,13 @@ winners.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7" class="accordion-collapse collapse"
-aria-labelledby="heading7" data-bs-parent="#accordionExample">
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -899,7 +1058,7 @@ lost because of their birthday and level.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 5</i></p>
 <p>You’re interested in seeing the Milky Way in the night sky, which you
@@ -1023,13 +1182,13 @@ class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+<h2 class="accordion-header" id="heading9">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8" class="accordion-collapse collapse"
-aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div id="collapse9" class="accordion-collapse collapse"
+aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1098,7 +1257,7 @@ successful.”</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-9">Problem 9</h2>
+<h2 id="problem-10">Problem 10</h2>
 <!-- **Naive Bayes Classifier** -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 9</i></p>
@@ -1109,19 +1268,19 @@ nose", "coughing", and "fever", each of which can take the value true
 (‘+’) or false (‘–’).</p>
 <center><img src="../assets/images/wi23-final/symptoms.png" width="500"></center>
 <p><br></p>
-<h3 id="problem-9.1">Problem 9.1</h3>
+<h3 id="problem-10.1">Problem 10.1</h3>
 <p>What is the predicted class for a person with running nose but no
 coughing, and no fever: sick, or healthy? Use a Naive Bayes
 classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse"
-aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1156,18 +1315,18 @@ C,\bar F|-)P(-).
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-9.2">Problem 9.2</h3>
+<h3 id="problem-10.2">Problem 10.2</h3>
 <p>What is the predicted class for a person with a running nose and
 fever, but no coughing? Use a Naive Bayes classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse"
-aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1191,20 +1350,20 @@ predicted class is Sick(<span class="math inline">+</span>).</p>
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-9.3">Problem 9.3</h3>
+<h3 id="problem-10.3">Problem 10.3</h3>
 <p>To deal with cases of unseen features, we used “smoothing" in class.
 If we use the”smoothing" method discussed in class, then what is the
 probability of a person having running nose and fever, but no coughing
 if that person was diagnosed “healthy"?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse"
-aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1234,7 +1393,7 @@ F|-)</span>, just as the problem asks.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.4">Problem 9.4</h3>
+<h3 id="problem-10.4">Problem 10.4</h3>
 <p>In part (a), what are the <strong>odds</strong> of a person being
 “sick" who has running nose but no coughing, and no fever? <em>(Hint:
 the formula for the odds of an event <span class="math inline">A</span>
@@ -1242,13 +1401,13 @@ is <span class="math inline">\text{odds}(A) = \frac{P(A)}{1 -
 P(A)}</span>)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+<h2 class="accordion-header" id="heading10_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_4" aria-expanded="true" aria-controls="collapse10_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_4" class="accordion-collapse collapse"
-aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div id="collapse10_4" class="accordion-collapse collapse"
+aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1271,7 +1430,7 @@ C,\bar F)}=\frac27.
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-9.5">Problem 9.5</h3>
+<h3 id="problem-10.5">Problem 10.5</h3>
 <p>Say someone fit a logistic regression model to a dataset containing
 <span class="math inline">n</span> points <span
 class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where
@@ -1286,13 +1445,13 @@ belonging to class <span class="math inline">y=+1</span> is</p>
 <p>Interpret the meaning of <span class="math inline">w_1=1</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_5" aria-expanded="true" aria-controls="collapse9_5">
+<h2 class="accordion-header" id="heading10_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_5" aria-expanded="true" aria-controls="collapse10_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_5" class="accordion-collapse collapse"
-aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
+<div id="collapse10_5" class="accordion-collapse collapse"
+aria-labelledby="heading10_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1305,7 +1464,7 @@ aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-10">Problem 10</h2>
+<h2 id="problem-11">Problem 11</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 3</i></p>
 <p>With the help of the Alien from Bayesian Galaxy, Issac built a Little
@@ -1413,7 +1572,7 @@ a hadron under the following quark conditions:</p>
 <li>the color is <code>blue</code></li>
 </ul>
 <p><br></p>
-<h3 id="problem-10.1">Problem 10.1</h3>
+<h3 id="problem-11.1">Problem 11.1</h3>
 <p>Naive Bayes predicts that, given a <code>up-particle-blue</code>
 quark, the probability a hadron formed is <span
 class="math inline">k</span> times the probability a hadron is not
@@ -1427,13 +1586,13 @@ is <span class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse"
-aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1504,7 +1663,7 @@ should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.2">Problem 10.2</h3>
+<h3 id="problem-11.2">Problem 11.2</h3>
 <p>What would be the value of <span class="math inline">k</span> if you
 change <code>up</code> quark in the previous collision to
 <code>top</code> quark, but keep everything else the same (i.e.
@@ -1517,13 +1676,13 @@ change <code>up</code> quark in the previous collision to
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse"
-aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1558,6 +1717,165 @@ P(\text{blue}|\text{not formed hadron})\\
 \end{align*}</span></p>
 <p>We can do this by solving the equation <span class="math inline">k *
 \frac{2}{125} = \frac{6}{125}</span>. You should find <span class="math inline">k=3</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-12">Problem 12</h2>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 9</i></p>
+<p>Delta’s flight operations center keeps track of weather conditions,
+as they tend to impact whether or not flights are late. For each flight,
+Delta keeps track of:</p>
+<ul>
+<li><p>Whether or not there was <strong>precipitation</strong> — i.e.,
+rain, snow, or hail.</p></li>
+<li><p>The <strong>wind conditions</strong> — either no winds, light
+winds, moderate winds, or heavy winds.</p></li>
+<li><p>The flight’s <strong>status</strong> — whether it was early, on
+time, or late.</p></li>
+</ul>
+<p>Information about 100 flights is summarized in the table below.</p>
+<center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
+<p>For instance, we’re told that 6 flights in moderate winds and no
+precipitation landed late, and that there were 13 total flights in heavy
+winds and precipitation.</p>
+<p>Delta would like to use this information to predict whether a new
+flight will be early, on time, or late, given the weather
+conditions.</p>
+<p><br></p>
+<h3 id="problem-12.1">Problem 12.1</h3>
+<p><strong>Without smoothing</strong>, what is:</p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{7}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{7}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{10}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{14}{15}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{28}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{28}</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_1" aria-expanded="true" aria-controls="collapse12_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_1" class="accordion-collapse collapse"
+aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\frac{2}{7}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-12.2">Problem 12.2</h3>
+<p><strong>With smoothing</strong>, what is:</p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{3}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{11}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{9}{29}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{9}{32}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{31}{101}</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">\frac{31}{104}</span></p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_2" aria-expanded="true" aria-controls="collapse12_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_2" class="accordion-collapse collapse"
+aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\frac{9}{32}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>.
+(The denominator is 28 + 4 since there are 4 possible wind conditions –
+none, light, moderate, and heavy.)</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For your convenience, the table from the previous page is repeated
+again below.</p>
+<center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
+<p><br></p>
+<h3 id="problem-12.3">Problem 12.3</h3>
+<p>An airline’s late-to-early ratio, given a set of weather conditions,
+is defined as:</p>
+<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
+\text{conditions})}{\mathbb{P}(\text{early} \: | \:
+\text{conditions})}</span></p>
+<p>Using the assumptions of the Naïve Bayes classifier <strong>without
+smoothing</strong>, show that Delta’s late-early ratio for flights in
+<strong>heavy winds and precipitation</strong> is <span
+class="math inline">\bf{\frac{7}{5}}</span>.</p>
+<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of
+which you already found in <strong>part (a)</strong>.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading12_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_3" aria-expanded="true" aria-controls="collapse12_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse12_3" class="accordion-collapse collapse"
+aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can recognize that:</p>
+<p><span class="math display">\displaystyle\frac{P(\text{late |
+conditions})}{P(\text{early | conditions})} \\ =
+\displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late})
+\cdot P(\text{precipitation | late})}{P(\text{early}) \cdot
+P(\text{heavy winds | early}) \cdot P(\text{precipitation |
+early})}</span></p>
+<p>and compute the following:</p>
+<ul>
+<li><p><span class="math inline">P(\text{late}) =
+\frac{32}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | late}) =
+\frac{8}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | late}) =
+\frac{16}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{early}) =
+\frac{28}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | early}) =
+\frac{8}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | early}) =
+\frac{10}{28}</span></p></li>
+</ul>
+<p>which gives:</p>
+<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100}
+\cdot \displaystyle\frac{8}{32} \cdot
+\displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot
+\displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} =
+\displaystyle\frac{\displaystyle\frac{1}{35}}{\displaystyle\frac{1}{25}}
+= \displaystyle\frac{7}{5}</span>.</p>
 </div>
 </div>
 </div>
