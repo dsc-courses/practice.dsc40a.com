@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 2c</i>
+
 Consider the following information:
 
 - $\vec{v}$ is an $n$-dimensional vector.

@@ -1,4 +1,7 @@
 # BEGIN PROB
+
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 2a-b</i>
+
 Prove the following statement or provide a counterexample: 
 
 # BEGIN SUBPROB

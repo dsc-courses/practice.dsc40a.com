@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 5a-e</i>
+
 Suppose we want to fit a hypothesis function of the form: $$H(x) = w_0 + w_1 x^{(1)} + w_2 x^{(2)} + w_3 (x^{(1)})^2 + w_4 (x^{(1)} x^{(2)})^2$$
 
 Our dataset looks like this: 

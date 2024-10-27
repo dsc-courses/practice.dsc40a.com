@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 2d</i>
+
 Consider the following information:
 
 - $A$ is an $m \times n$ matrix.

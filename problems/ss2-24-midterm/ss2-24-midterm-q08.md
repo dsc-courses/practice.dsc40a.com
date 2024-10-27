@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 3d</i>
+
 Fill in the blanks for each set of vectors below to accurately describe their relationship and span.
 
 $$\vec{a} = \begin{bmatrix} -3 \\ -2 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 3 \end{bmatrix}$$

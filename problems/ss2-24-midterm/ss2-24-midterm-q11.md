@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 6a-c</i>
+
 Suppose we have already fit a multiple regression hypothesis function of the form: $$H(x) = w_0 + w_1 x^{(1)} + w_2 x^{(2)}$$
 
 Now, suppose we add the feature $(x^{(1)} + x^{(2)})$ when performing multiple regression. Below, answer ``Yes/No" to the following questions and rigorously justify why certain behavior will or will not occur. Your answer must mention linear algebra concepts such as rank and linear independence in relation to the design matrix, weight vector $\vec{w^*}$, and hypothesis function $H(x)$.

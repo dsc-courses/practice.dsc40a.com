@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 1a-d</i>
+
 Consider a dataset of $n$ values, $y_1, y_2, \dots, y_n$, all of which are non-negative. We are interested in fitting a constant model, $H(x) = h$, to the data using the ``Jack" loss function, defined as:
 
 $L_{\text{Jack}}(y_i, h) =

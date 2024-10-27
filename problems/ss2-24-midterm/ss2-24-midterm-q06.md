@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Midterm](../ss2-24-midterm/index.html), Problem 3b</i>
+
 Fill in the blanks for each set of vectors below to accurately describe their relationship and span.
 
 $$\vec{a} = \begin{bmatrix} -2 \\ 1.5 \\ 4 \end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 1 \\ 2 \\ -2.5 \end{bmatrix} \qquad \vec{c} = \begin{bmatrix} -6 \\ 10 \\ 11 \end{bmatrix}$$
