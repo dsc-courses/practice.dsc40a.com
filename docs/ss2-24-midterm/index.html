@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Summer Session 2 2024 Midterm Exam</title>
+  <title>Summer Session 2024 Midterm Exam</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -43,7 +43,7 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Summer Session 2 2024 Midterm Exam</h1>
+<h1 class="title">Summer Session 2024 Midterm Exam</h1>
 </header>
 <p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -494,16 +494,21 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-M = \left[ \begin{matrix}
-\end{matrix} \right]_{m \times n}
+M = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{m \times n}
 \text{ and }
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">M \vec{v}</span> the
 <span class="math inline">n</span> will both cancel out leaving you with
-an object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{m \times 1}</span>, which is an <span class="math inline">m</span>-dimensional vector.</p>
+an object with the size <span class="math inline">\begin{bmatrix}&amp;
+\\&amp; \\&amp; \\\end{bmatrix}_{m \times 1}</span>, which is an <span class="math inline">m</span>-dimensional vector.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -546,15 +551,21 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-M^T = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times m}
+M^T = \begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{n \times m}
 \text{ and }
-M = \left[ \begin{matrix}
-\end{matrix} \right]_{m \times n}
+M = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{m \times n}
 </span></p>
 <p>When you multiply <span class="math inline">M^T M</span> the <span class="math inline">m</span> will both cancel out leaving you with an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}</span>, which is an <span class="math inline">n \times n</span> matrix.</p>
+object with the size <span class="math inline">\begin{bmatrix}&amp;
+&amp; \\&amp; &amp; \\\end{bmatrix}_{n \times n}</span>, which is an
+<span class="math inline">n \times n</span> matrix.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -599,22 +610,27 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-\vec{v}^T = \left[ \begin{matrix}
-\end{matrix} \right]_{1 \times n}
+\vec{v}^T = \begin{bmatrix}
+&amp; &amp;
+\end{bmatrix}_{1 \times n}
 \text{, }
-N = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}
+N = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{n \times n}
 \text{, and }
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">\vec{v}^T N</span> the
 <span class="math inline">n</span> will both cancel out leaving you with
-an object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{1 \times n}</span>. When you multiply this object
-by <span class="math inline">\vec{v}</span> the <span class="math inline">n</span> will cancel out again leaving you with an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{1 \times 1}</span>, which is a scalar.</p>
+an object with the size <span class="math inline">\begin{bmatrix}&amp;
+&amp;\end{bmatrix}_{1 \times n}</span>. When you multiply this object by
+<span class="math inline">\vec{v}</span> the <span class="math inline">n</span> will cancel out again leaving you with an
+object with the size <span class="math inline">\begin{bmatrix}&amp;\end{bmatrix}_{1 \times
+1}</span>, which is a scalar.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -659,22 +675,27 @@ aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 \text{, }
-N = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}
+N = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{n \times n}
 \text{, and }
-s = \left[ \begin{matrix}
-\end{matrix} \right]_{1 \times 1}
+s = \begin{bmatrix}
+&amp;
+\end{bmatrix}_{1 \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">N \vec{v}</span> the
 <span class="math inline">n</span> will both cancel out leaving you with
-an object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}</span>. When you multiply <span class="math inline">\s \vec{v}</span> the dimensions of <span class="math inline">\vec{v}</span> does not change, so you will have an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}</span>. When you add these vectors the
-dimension will not change, so you are left with an <span class="math inline">n</span>-dimensional vector.</p>
+an object with the size <span class="math inline">\begin{bmatrix}&amp;
+\\&amp; \\\end{bmatrix}_{n \times 1}</span>. When you multiply <span class="math inline">s \vec{v}</span> the dimensions of <span class="math inline">\vec{v}</span> does not change, so you will have an
+object with the size <span class="math inline">\begin{bmatrix}&amp;
+\\&amp; \\\end{bmatrix}_{n \times 1}</span>. When you add these vectors
+the dimension will not change, so you are left with an <span class="math inline">n</span>-dimensional vector.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -713,25 +734,37 @@ aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
 <p>We know the following information:</p>
 <ul>
 <li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
-<li><span class="math inline">N</span> is an <span class="math inline">n
+<li><span class="math inline">M</span> is an <span class="math inline">m
 \times n</span> matrix.</li>
-<li><span class="math inline">s</span> is a scalar.</li>
+<li><span class="math inline">M^T</span> is an <span class="math inline">n \times m</span> matrix.</li>
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-M^T = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times m}
+M^T = \begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{n \times m}
 \text{, }
-M = \left[ \begin{matrix}
-\end{matrix} \right]_{m \times n}
+M = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{m \times n}
 \text{, and }
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">M^T M</span> the <span class="math inline">m</span> will both cancel out leaving you with an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}</span>, which is an <span class="math inline">n \times n</span> matrix. When you multiply <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times
-n} \times \vec{v}_{n \times 1}</span> the <span class="math inline">n</span> will cancel out leaving you with an <span class="math inline">n</span>-dimensional vector.</p>
+object with the size <span class="math inline">\begin{bmatrix}&amp;
+&amp; \\&amp; &amp; \\\end{bmatrix}_{n \times n}</span>, which is an
+<span class="math inline">n \times n</span> matrix.</p>
+<p>When you multiply <span class="math inline">\begin{bmatrix}&amp;
+&amp; \\&amp; &amp; \\\end{bmatrix}_{n \times n} \times
+\begin{bmatrix}&amp; \\&amp;\\\end{bmatrix}_{n \times 1}</span> the
+<span class="math inline">n</span> will cancel out leaving you with an
+<span class="math inline">n</span>-dimensional vector.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
