@@ -26,7 +26,7 @@ To begin with, we know from the bullet points above that $A^T \vec e = 0$ in ord
 
 We then distribute $A^T$ to get $A^T \vec d - A^T \vec c = 0$. From here we can move $A^T \vec c$ to the right to get $A^T \vec d = A^T \vec c$.
 
-From the third bullet point we find $\vec c = A\vec{b}$, so we can write $A^T \vec d = A^T A \vec b$. Thus we have proved if $\vec{e}$ is orthogonal to every column in $A$, prove that $\vec{b}$ must satisfy the following equation: $A^T A \vec{b} = A^T \vec{d}.$
+From the third bullet point we find $\vec c = A\vec{b}$, so we can write $A^T \vec d = A^T A \vec b$. Thus we have proved if $\vec{e}$ is orthogonal to every column in $A$ that $\vec{b}$ must satisfy the following equation: $A^T A \vec{b} = A^T \vec{d}.$
 
 <average>58</average>
 
