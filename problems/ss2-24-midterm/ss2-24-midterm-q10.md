@@ -28,7 +28,7 @@ $$ X_\text{shuffled} =
 \end{bmatrix}
 $$
 
-If we solved the normal equations using this shuffled design matrix $X_\text{shuffled}$, we would not get our parameter vector $\vec{w}^* = \left[w_0^* \ \  w_1^* \ \   w_2^* \ \  w_3^* \ \ w_4^* \right]^T$ in the correct order. Let $\vec{s} = \left[ s_0 \ \ s_1 \ \ s_2 \ \ s_3 \ \ s_4 \right] $ be the parameter vector we find instead. Let's figure out which features correspond to the weight vector $\vec{s}$ that we found using the shuffled design matrix $X_\text{shuffled}$. Fill in the bubbles below.
+If we solved the normal equations using this shuffled design matrix $X_\text{shuffled}$, we would not get our parameter vector $\vec{w}^* = \left[w_0^* \ \  w_1^* \ \   w_2^* \ \  w_3^* \ \ w_4^* \right]^T$ in the correct order. Let $\vec{s} = \left[ s_0 \ \ s_1 \ \ s_2 \ \ s_3 \ \ s_4 \right]$ be the parameter vector we find instead. Let's figure out which features correspond to the weight vector $\vec{s}$ that we found using the shuffled design matrix $X_\text{shuffled}$. Fill in the bubbles below.
 
 # BEGIN SUBPROB
 
