@@ -119,26 +119,26 @@ we can start by taking the derivative of the first case, when <span class="math 
 \beta \cdot |y_i - h|^3 &amp; \text{if } y_i &lt; h,
 \end{cases}</span></p>
 <p>To find the derivative of the first case we will use chain rule.
-Chain rule states <span class="math inline">F'(x) = f'(g(x))
-\times g'(x)</span>. We start with <span class="math inline">\frac{\partial}{\partial h} \alpha(y_i - h)^2</span>
-and treat <span class="math inline">f(x) = x^2</span> and <span class="math inline">g(x) = (y_i - h)</span>. We can easily find <span class="math inline">f'(x) = 2x</span> and <span class="math inline">g'(x) = -1</span>. When combining all of these
+Chain rule states <span class="math inline">F'(h) = f'(g(h))
+\times g'(h)</span>. We start with <span class="math inline">\frac{\partial}{\partial h} \alpha(y_i - h)^2</span>
+and treat <span class="math inline">f(h) = h^2</span> and <span class="math inline">g(h) = (y_i - h)</span>. We can easily find <span class="math inline">f'(h) = 2h</span> and <span class="math inline">g'(h) = -1</span>. When combining all of these
 parts we get</p>
 <p><span class="math display">\frac{\partial}{\partial h} \alpha(y_i -
 h)^2 \rightarrow -2 \alpha(y_i - h)</span></p>
 <p>We can now look at the second case, when <span class="math inline">y_i &lt; h</span>. Once again we will use the chain
 rule. We start with <span class="math inline">\frac{\partial}{\partial
-h} \beta \cdot |y_i - h|^3</span> and treat <span class="math inline">f(x) = x^3</span> and <span class="math inline">g(x)
-= |y_i - h|</span>. We can easily find <span class="math inline">f'(x) = 3x</span>, but <span class="math inline">g'(x)</span> is a bit trickier.</p>
+h} \beta \cdot |y_i - h|^3</span> and treat <span class="math inline">f(h) = h^3</span> and <span class="math inline">g(h)
+= |y_i - h|</span>. We can easily find <span class="math inline">f'(h) = 3h</span>, but <span class="math inline">g'(h)</span> is a bit trickier.</p>
 <p>This requires you to know when <span class="math inline">h =
 y_i</span> the line is undefined. This means we have a piecewise
 function.</p>
-<p><span class="math display">g'(x) = \begin{cases}
+<p><span class="math display">g'(h) = \begin{cases}
 -1 &amp; \text{if } y_i &gt; h, \\
 \text{undefined} &amp; \text{if } y_i = h\\
 1 &amp; \text{if } y_i &lt; h,
 \end{cases}</span></p>
 <p>Since we only care about when <span class="math inline">y_i &lt;
-h</span> we can replace <span class="math inline">g'(x)</span> with
+h</span> we can replace <span class="math inline">g'(h)</span> with
 <span class="math inline">1</span>! This means we have</p>
 <p><span class="math display">\frac{\partial}{\partial h} \beta \cdot
 |y_i - h|^3 \rightarrow 3 \beta |h - y_i|^2</span></p>

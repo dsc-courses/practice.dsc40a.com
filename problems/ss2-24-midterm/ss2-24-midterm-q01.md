@@ -34,21 +34,21 @@ $$L_{\text{Jack}}(y_i, h) =
 \beta \cdot |y_i - h|^3 & \text{if } y_i < h,
 \end{cases}$$
 
-To find the derivative of the first case we will use chain rule. Chain rule states $F'(x) = f'(g(x)) \times g'(x)$. We start with $\frac{\partial}{\partial h} \alpha(y_i - h)^2$ and treat $f(x) = x^2$ and $g(x) = (y_i - h)$. We can easily find $f'(x) = 2x$ and $g'(x) = -1$. When combining all of these parts we get
+To find the derivative of the first case we will use chain rule. Chain rule states $F'(h) = f'(g(h)) \times g'(h)$. We start with $\frac{\partial}{\partial h} \alpha(y_i - h)^2$ and treat $f(h) = h^2$ and $g(h) = (y_i - h)$. We can easily find $f'(h) = 2h$ and $g'(h) = -1$. When combining all of these parts we get
 
 $$\frac{\partial}{\partial h} \alpha(y_i - h)^2 \rightarrow -2 \alpha(y_i - h)$$
 
-We can now look at the second case, when $y_i < h$. Once again we will use the chain rule. We start with $\frac{\partial}{\partial h} \beta \cdot |y_i - h|^3$ and treat $f(x) = x^3$ and $g(x) = |y_i - h|$. We can easily find $f'(x) = 3x$, but $g'(x)$ is a bit trickier.
+We can now look at the second case, when $y_i < h$. Once again we will use the chain rule. We start with $\frac{\partial}{\partial h} \beta \cdot |y_i - h|^3$ and treat $f(h) = h^3$ and $g(h) = |y_i - h|$. We can easily find $f'(h) = 3h$, but $g'(h)$ is a bit trickier.
 
 This requires you to know when $h = y_i$ the line is undefined. This means we have a piecewise function.
 
-$$g'(x) = \begin{cases} 
+$$g'(h) = \begin{cases} 
 -1 & \text{if } y_i > h, \\
 \text{undefined} & \text{if } y_i = h\\
 1 & \text{if } y_i < h,
 \end{cases}$$
 
-Since we only care about when $y_i < h$ we can replace $g'(x)$ with $1$! This means we have
+Since we only care about when $y_i < h$ we can replace $g'(h)$ with $1$! This means we have
 
 $$\frac{\partial}{\partial h} \beta \cdot |y_i - h|^3 \rightarrow 3 \beta |h - y_i|^2$$
 
