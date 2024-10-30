@@ -101,11 +101,11 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 zero. This means <span class="math inline">\vec{v} \cdot \vec{w} =
 0</span>.</p>
 <p>From lecture we know: <span class="math display">c\vec{w} =
-\frac{\vec{w} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \cdot
+\frac{\vec{w} \cdot \vec{u}}{\vec{w} \cdot \vec{w}} \cdot
 \vec{w}</span></p>
 <p>So, now we can solve <span class="math inline">c\vec{w} \cdot \vec{v}
-= \frac{\vec{w} \cdot \vec{u} \cdot \vec{w} \cdot \vec{v}}{\vec{u} \cdot
-\vec{u}}</span>. The numerator becomes zero because <span class="math inline">\vec{v} \cdot \vec{w} = 0</span> and anything
+= \frac{\vec{w} \cdot \vec{u} \cdot \vec{w} \cdot \vec{v}}{\vec{w} \cdot
+\vec{w}}</span>. The numerator becomes zero because <span class="math inline">\vec{v} \cdot \vec{w} = 0</span> and anything
 multiplied by zero will also be zero. This means the projection of <span class="math inline">\vec{u}</span> onto <span class="math inline">\vec{w}</span> is orthogonal to <span class="math inline">\vec v</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
@@ -216,16 +216,21 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-M = \left[ \begin{matrix}
-\end{matrix} \right]_{m \times n}
+M = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{m \times n}
 \text{ and }
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">M \vec{v}</span> the
 <span class="math inline">n</span> will both cancel out leaving you with
-an object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{m \times 1}</span>, which is an <span class="math inline">m</span>-dimensional vector.</p>
+an object with the size <span class="math inline">\begin{bmatrix}&amp;
+\\&amp; \\&amp; \\\end{bmatrix}_{m \times 1}</span>, which is an <span class="math inline">m</span>-dimensional vector.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -268,15 +273,21 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-M^T = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times m}
+M^T = \begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{n \times m}
 \text{ and }
-M = \left[ \begin{matrix}
-\end{matrix} \right]_{m \times n}
+M = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{m \times n}
 </span></p>
 <p>When you multiply <span class="math inline">M^T M</span> the <span class="math inline">m</span> will both cancel out leaving you with an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}</span>, which is an <span class="math inline">n \times n</span> matrix.</p>
+object with the size <span class="math inline">\begin{bmatrix}&amp;
+&amp; \\&amp; &amp; \\\end{bmatrix}_{n \times n}</span>, which is an
+<span class="math inline">n \times n</span> matrix.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -321,22 +332,27 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-\vec{v}^T = \left[ \begin{matrix}
-\end{matrix} \right]_{1 \times n}
+\vec{v}^T = \begin{bmatrix}
+&amp; &amp;
+\end{bmatrix}_{1 \times n}
 \text{, }
-N = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}
+N = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{n \times n}
 \text{, and }
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">\vec{v}^T N</span> the
 <span class="math inline">n</span> will both cancel out leaving you with
-an object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{1 \times n}</span>. When you multiply this object
-by <span class="math inline">\vec{v}</span> the <span class="math inline">n</span> will cancel out again leaving you with an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{1 \times 1}</span>, which is a scalar.</p>
+an object with the size <span class="math inline">\begin{bmatrix}&amp;
+&amp;\end{bmatrix}_{1 \times n}</span>. When you multiply this object by
+<span class="math inline">\vec{v}</span> the <span class="math inline">n</span> will cancel out again leaving you with an
+object with the size <span class="math inline">\begin{bmatrix}&amp;\end{bmatrix}_{1 \times
+1}</span>, which is a scalar.</p>
 <hr/>
 <h5>Difficulty: ⭐️</h5>
 <p>
@@ -381,22 +397,27 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 \text{, }
-N = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}
+N = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{n \times n}
 \text{, and }
-s = \left[ \begin{matrix}
-\end{matrix} \right]_{1 \times 1}
+s = \begin{bmatrix}
+&amp;
+\end{bmatrix}_{1 \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">N \vec{v}</span> the
 <span class="math inline">n</span> will both cancel out leaving you with
-an object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}</span>. When you multiply <span class="math inline">\s \vec{v}</span> the dimensions of <span class="math inline">\vec{v}</span> does not change, so you will have an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}</span>. When you add these vectors the
-dimension will not change, so you are left with an <span class="math inline">n</span>-dimensional vector.</p>
+an object with the size <span class="math inline">\begin{bmatrix}&amp;
+\\&amp; \\\end{bmatrix}_{n \times 1}</span>. When you multiply <span class="math inline">s \vec{v}</span> the dimensions of <span class="math inline">\vec{v}</span> does not change, so you will have an
+object with the size <span class="math inline">\begin{bmatrix}&amp;
+\\&amp; \\\end{bmatrix}_{n \times 1}</span>. When you add these vectors
+the dimension will not change, so you are left with an <span class="math inline">n</span>-dimensional vector.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -435,25 +456,37 @@ aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <p>We know the following information:</p>
 <ul>
 <li><span class="math inline">\vec{v}</span> is an <span class="math inline">n</span>-dimensional vector.</li>
-<li><span class="math inline">N</span> is an <span class="math inline">n
+<li><span class="math inline">M</span> is an <span class="math inline">m
 \times n</span> matrix.</li>
-<li><span class="math inline">s</span> is a scalar.</li>
+<li><span class="math inline">M^T</span> is an <span class="math inline">n \times m</span> matrix.</li>
 </ul>
 <p>This means:</p>
 <p><span class="math display">
-M^T = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times m}
+M^T = \begin{bmatrix}
+&amp; &amp; &amp; \\
+&amp; &amp; &amp; \\
+\end{bmatrix}_{n \times m}
 \text{, }
-M = \left[ \begin{matrix}
-\end{matrix} \right]_{m \times n}
+M = \begin{bmatrix}
+&amp; &amp; \\
+&amp; &amp; \\
+&amp; &amp; \\
+\end{bmatrix}_{m \times n}
 \text{, and }
-\vec{v} = \left[ \begin{matrix}
-\end{matrix} \right]_{n \times 1}
+\vec{v} = \begin{bmatrix}
+&amp; \\
+&amp; \\
+\end{bmatrix}_{n \times 1}
 </span></p>
 <p>When you multiply <span class="math inline">M^T M</span> the <span class="math inline">m</span> will both cancel out leaving you with an
-object with the size <span class="math inline">\left[ \begin{matrix}
-\end{matrix} \right]_{n \times n}</span>, which is an <span class="math inline">n \times n</span> matrix. When you multiply <span class="math inline">\left[ \begin{matrix} \end{matrix} \right]_{n \times
-n} \times \vec{v}_{n \times 1}</span> the <span class="math inline">n</span> will cancel out leaving you with an <span class="math inline">n</span>-dimensional vector.</p>
+object with the size <span class="math inline">\begin{bmatrix}&amp;
+&amp; \\&amp; &amp; \\\end{bmatrix}_{n \times n}</span>, which is an
+<span class="math inline">n \times n</span> matrix.</p>
+<p>When you multiply <span class="math inline">\begin{bmatrix}&amp;
+&amp; \\&amp; &amp; \\\end{bmatrix}_{n \times n} \times
+\begin{bmatrix}&amp; \\&amp;\\\end{bmatrix}_{n \times 1}</span> the
+<span class="math inline">n</span> will cancel out leaving you with an
+<span class="math inline">n</span>-dimensional vector.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -517,7 +550,7 @@ move <span class="math inline">A^T \vec c</span> to the right to get
 <p>From the third bullet point we find <span class="math inline">\vec c
 = A\vec{b}</span>, so we can write <span class="math inline">A^T \vec d
 = A^T A \vec b</span>. Thus we have proved if <span class="math inline">\vec{e}</span> is orthogonal to every column in
-<span class="math inline">A</span>, prove that <span class="math inline">\vec{b}</span> must satisfy the following equation:
+<span class="math inline">A</span> that <span class="math inline">\vec{b}</span> must satisfy the following equation:
 <span class="math inline">A^T A \vec{b} = A^T \vec{d}.</span></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
