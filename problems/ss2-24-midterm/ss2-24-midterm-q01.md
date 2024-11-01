@@ -43,9 +43,9 @@ We can now look at the second case, when $y_i < h$. Once again we will use the c
 This requires you to know when $h = y_i$ the line is undefined. This means we have a piecewise function.
 
 $$g'(h) = \begin{cases} 
--1 & \text{if } y_i > h, \\
+-3 \beta & \text{if } y_i > h, \\
 \text{undefined} & \text{if } y_i = h\\
-1 & \text{if } y_i < h,
+3 \beta & \text{if } y_i < h,
 \end{cases}$$
 
 Since we only care about when $y_i < h$ we can replace $g'(h)$ with $1$! This means we have
