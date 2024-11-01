@@ -415,26 +415,39 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>This statement is true.</p>
-<p>The projection of <span class="math inline">\vec w</span> onto <span class="math inline">\vec u</span> gives us the formula <span class="math inline">\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec
-u</span>. This projection is a scalar multiple of <span class="math inline">\vec u</span>. This means that the projection of
-<span class="math inline">\vec w</span> onto <span class="math inline">\vec u</span> lies along the direction of <span class="math inline">\vec u</span>.</p>
-<p>Furthermore, we know that <span class="math inline">\vec v</span> is
-orthogonal to <span class="math inline">\vec w</span>, which means <span class="math inline">\vec v \cdot \vec w = 0</span>.</p>
-<p>We need to prove that <span class="math inline">\vec v \cdot
-\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u = 0</span> to say
-the statement is true. To do this we simplify the equation. Recall that
-<span class="math inline">\frac{\vec w \cdot \vec u}{\vec u \cdot \vec
-u}</span> is just a scalar!</p>
-<p><span class="math display">
-\vec v \cdot \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u =
-\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} (\vec v \cdot \vec u)
-</span></p>
-<p>We can pull scalars out of the dot product!</p>
-<p>Since we know <span class="math inline">\vec v</span> is orthogonal
-to <span class="math inline">\vec w</span>, this implies that <span class="math inline">\vec v</span> is also orthogonal to any component of
-<span class="math inline">\vec w</span>. This means <span class="math inline">\vec v</span> is also orthogonal to the projection
-of <span class="math inline">\vec w</span> onto <span class="math inline">\vec u</span>.</p>
+<p>The statement above is false.</p>
+<p>Let the following hold:</p>
+<ul>
+<li><span class="math inline">\vec v = \begin{bmatrix} 1 \\ 2
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec w = \begin{bmatrix} -2 \\ 1
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec u = \begin{bmatrix} 0 \\ 1
+\end{bmatrix}</span></li>
+</ul>
+<p>Let’s check if <span class="math inline">\vec w \cdot \vec v =
+0</span>. <span class="math display">
+(1)(-2)+(1)(2) = 0
+</span> That works! Now we can calculate the projection of <span class="math inline">\vec w</span> onto <span class="math inline">\vec
+u</span>.</p>
+<p><span class="math display">\begin{align*}
+\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u}\vec u &amp;=
+\frac{(-2)(0)+(1)(1)}{(0)(0)+(1)(1)} \cdot \begin{bmatrix} 0 \\ 1
+\end{bmatrix}\\
+&amp;= -1 \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
+&amp;= \begin{bmatrix} 0 \\ -1 \end{bmatrix}
+\end{align*}</span></p>
+<p>Now we can check to see if <span class="math inline">\vec v
+\cdot</span> the projection of <span class="math inline">\vec w</span>
+onto <span class="math inline">\vec u</span> is equal to zero.</p>
+<p><span class="math display">\begin{align*}
+&amp;\begin{bmatrix} 0 \\ -1 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 2
+\end{bmatrix}\\
+&amp;= (0)(1) + (2)(-1) = -1\\
+&amp;\text{and } -1 \neq 0
+\end{align*}</span></p>
+<p>We can see that <span class="math inline">\vec v \cdot</span> the
+projection of <span class="math inline">\vec w</span> onto <span class="math inline">\vec u</span> is not equal to zero.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>

@@ -38,21 +38,36 @@ If a vector $\vec{v}$ is orthogonal to a vector $\vec{w}$, then $\vec{v}$ is als
 
 # BEGIN SOLUTION
 
-This statement is true.
+The statement above is false.
 
-The projection of $\vec w$ onto $\vec u$ gives us the formula $\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u$. This projection is a scalar multiple of $\vec u$. This means that the projection of $\vec w$ onto $\vec u$ lies along the direction of $\vec u$.
+Let the following hold:
 
-Furthermore, we know that $\vec v$ is orthogonal to $\vec w$, which means $\vec v \cdot \vec w = 0$.
+- $\vec v = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$
+- $\vec w = \begin{bmatrix} -2 \\ 1 \end{bmatrix}$
+- $\vec u = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$
 
-We need to prove that $\vec v \cdot \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u = 0$ to say the statement is true. To do this we simplify the equation. Recall that $\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u}$ is just a scalar!
-
+Let's check if $\vec w \cdot \vec v = 0$.
 $$
-\vec v \cdot \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} \vec u = \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u} (\vec v \cdot \vec u)
+(1)(-2)+(1)(2) = 0
 $$
+That works! Now we can calculate the projection of $\vec w$ onto $\vec u$.
 
-We can pull scalars out of the dot product!
+\begin{align*}
+\frac{\vec w \cdot \vec u}{\vec u \cdot \vec u}\vec u &= \frac{(-2)(0)+(1)(1)}{(0)(0)+(1)(1)} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
+&= -1 \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
+&= \begin{bmatrix} 0 \\ -1 \end{bmatrix}
+\end{align*}
 
-Since we know $\vec v$ is orthogonal to $\vec w$, this implies that $\vec v$ is also orthogonal to any component of $\vec w$. This means $\vec v$ is also orthogonal to the projection of $\vec w$ onto $\vec u$.
+Now we can check to see if $\vec v \cdot$ the projection of $\vec w$ onto $\vec u$ is equal to zero.
+
+\begin{align*}
+&\begin{bmatrix} 0 \\ -1 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 2 \end{bmatrix}\\
+&= (0)(1) + (2)(-1) = -1\\
+&\text{and } -1 \neq 0
+\end{align*}
+
+We can see that $\vec v \cdot$ the projection of $\vec w$ onto $\vec u$ is not equal to zero.
+
 
 <average>50</average>
 
