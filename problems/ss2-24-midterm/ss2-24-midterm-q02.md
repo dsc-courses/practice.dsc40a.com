@@ -50,7 +50,7 @@ Let's check if $\vec w \cdot \vec v = 0$.
 $$
 (1)(-2)+(1)(2) = 0
 $$
-That works! Now we can calculate the projection of $\vec w$ onto $\vec u$.
+That worked! Now we can calculate the projection of $\vec w$ onto $\vec u$.
 
 \begin{align*}
 \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u}\vec u &= \frac{(-2)(0)+(1)(1)}{(0)(0)+(1)(1)} \cdot \begin{bmatrix} 0 \\ 1 \end{bmatrix}\\
