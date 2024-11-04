@@ -22,7 +22,7 @@ Find $\frac{d L_\text{Jack}}{d h}$, the derivative of the Jack loss function wit
 
 $\frac{L_{\text{Jack}}}{\partial h} =
 \begin{cases} 
--2 \alpha(y_i = h) & \text{if } y_i \geq h, \\
+-2 \alpha(y_i - h) & \text{if } y_i \geq h, \\
 3 \beta |h - y_i|^2 & \text{if } y_i < h,
 \end{cases}$
 
