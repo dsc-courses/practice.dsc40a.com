@@ -1,0 +1,388 @@
+
+\documentclass[twoside,12pt]{article}
+
+\usepackage{../dsctemplate}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{minted, latex2pydata}
+\usetikzlibrary{quotes,angles,positioning,arrows.meta}
+\usetikzlibrary{calc}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{dirtytalk}
+\usepackage{comment}
+\usepackage{graphicx}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{url}
+\usepackage{scrextend}
+\usepackage{multido}
+\usepackage{graphbox}
+\usepackage{pdfpages}
+\usepackage{gensymb}
+\usepackage{hhline}
+\usepackage{multicol}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{xleftmargin=.5in}
+\newlist{multiplechoice}{itemize}{2}
+\setlist[multiplechoice]{label=$\square$}
+
+% configuration
+% ------------------------------------------------------------------------------
+
+% control whether solutions are shown or hidden
+\showsolntrue
+
+% page headers only on odd pages
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{PID: \rule{3in}{.5pt}}
+\renewcommand{\headrulewidth}{0pt}
+% \pagenumbering{gobble}
+
+\usepackage{xcolor, soul}
+\newcommand{\hlc}[2][yellow]{{%
+		\colorlet{foo}{#1}%
+		\sethlcolor{foo}\hl{#2}}%
+}
+
+\newcommand{\sawyer}[1] {{ \textcolor{blue}{\hlc[blue!15]{\sf [SJR:] #1}}}}
+\newcommand{\attn}[1] {{ \textcolor{black}{\hlc[yellow!75]{\sf #1}}}}
+
+\newcommand{\python}[1]{\mintinline{python}{#1}}
+
+\usepackage{multido}
+\usetikzlibrary{positioning}
+
+\newcommand{\avocado}{%
+  \begingroup\normalfont
+  \includegraphics[height=2\fontcharht\font`\B, align=c]{pics/avo.png}%
+  \endgroup
+}
+
+\newcommand{\avo}[1]{\multido{}{#1}{\avocado}\hspace{0.2em}}
+
+% ------------------------------------------------------------------------------
+%\showsolntrue
+
+\begin{document}
+
+
+\thispagestyle{empty}
+
+\vspace{-5.5in}
+
+\pstitle{%
+    Midterm Exam
+}{DSC 40A, Fall 2024}
+
+\vspace{-.3in}
+
+\begin{tabular}{rl}
+    Full Name: & \inlineresponsebox[4in]{Solutions}\\
+    PID: & \inlineresponsebox[4in]{A12345678}\\
+    Seat Number: & \inlineresponsebox[4in]{A1}
+    % Lecture: & \bubble{A (10AM)} \bubble{B (9AM)} \bubble{C (1PM)} \bubble{D (8AM)} \vspace{.3in} \\ 
+\end{tabular}
+
+\vspace{.1in}
+
+\vspace{.1in}
+
+
+\textbf{Instructions:}
+    \begin{itemize}
+        \item This exam consists of {3} questions, worth a total of {30} points. \textbf{Advice: Read all of the questions before starting to work, because the questions are not sorted by difficulty.}
+        \item Write your PID in the top right corner of each page in the space provided.
+        \item Please write \textbf{clearly} in the provided answer boxes; we will not grade work that appears elsewhere.
+        \begin{itemize}
+            \item For questions that ask you to show your work, correct answers with no work shown will receive no credit.
+            %\item When asked to do so, please place your final answer in a $\boxed{\text{box}}$.
+            %\item \bubble{In multiple choice questions, select only one option and completely fill in the corresponding bubble --- if we cannot tell which option you selected, you may not receive credit.}
+        \end{itemize}
+        \item {You may use a single two-sided cheat sheet. Other than that, you may not refer to any resources or technology during the exam (no phones, no smart watches, no computers, and no calculators).}
+    \end{itemize}
+
+\vspace{.1in}
+
+\vspace{.2in}
+
+\noindent By signing below, you are agreeing that you will behave honestly and fairly during
+and after this exam. 
+
+\begin{tabular}{rl}
+    \: \: \: \: \: Signature: & \inlineresponsebox[4in]{}\\
+\end{tabular}
+
+\vfill
+
+\begin{center}
+{\huge Version A} \vspace{.2in}
+
+Please do not open your exam until instructed to do so.
+
+\end{center}
+
+\newpage
+
+
+\begin{probset}
+
+    \begin{prob}[({10} points)]
+        Let $\vec{y}_1, \vec{y}_2, \dotsc, \vec{y}_n \in\mathbb{R}^2$ be a collection of two-dimensional vectors and let $\overline{y} = \frac{1}{n}\sum_{i=1}^n \vec{y}_i$. Suppose we wish to model the $\vec{y}_i$'s using a single \textit{vector} of the form $c\vec{z}$ where $\vec{z} = \begin{bmatrix} -1 & 1 \end{bmatrix}^T$ and $c\in\mathbb{R}$ is a real number (to be determined). 
+
+        \begin{subprobset}
+
+            \begin{subprob}\avo{2}
+                Suppose we use the loss function $L_{\mathrm{sq}}(\vec{y}_i, c) = |\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2 $. Write down the empirical risk function $R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c)$.
+            \end{subprob}
+            
+            \begin{soln}
+                $R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c) = \frac{1}{n}\sum_{i=1}^n \left(|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2\right)$.
+            \end{soln}
+
+            \begin{responsebox}{1in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{4}
+                Show that $c^\ast = \frac{1}{2}\vec{z}^T \overline{y}$ is the only critical point for the empirical risk function $R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c)$ you found in part \textbf{(a)}.
+           \end{subprob}
+
+           \begin{soln}
+                \begin{align*}
+                    \frac{d}{dc} R_{\mathrm{sq}}((\vec{y}_i), c) &= \frac{d}{dc} \frac{1}{n}\sum_{i=1}^n \left(|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2\right)\\
+                    &= \frac{1}{n}\sum_{i=1}^n \left( 2(\vec{y}_i^{(1)} + c)- 2(\vec{y}_i^{(2)} - c)\right)\\
+                    &= 4c - \frac{2}{n}\sum_{i=1}^n\mathbf{1}^T \vec{y}_i\\
+                    &=4c - 2\vec{z}^T \overline{y}.
+                \end{align*}
+                Therefore, the one critical point occurs when $c = \frac{1}{2}\vec{z}^T \overline{y}$.
+            \end{soln}
+
+            \begin{responsebox}{4in}
+                
+            \end{responsebox}
+
+            \newpage
+            \begin{subprob}\avo{4}
+                Given the dataset: 
+                $$\vec{y_1}=\begin{bmatrix}
+                    1 \\ - 2
+                \end{bmatrix}
+                \quad
+                \vec{y_2}=\begin{bmatrix}
+                    -3 \\ 4
+                \end{bmatrix}
+                \quad
+                \vec{y_3}=\begin{bmatrix}
+                    2 \\ - 2
+                \end{bmatrix}
+                $$
+                what is $R_{\mathrm{sq}}(\{\vec{y}_1, \vec{y}_2, \vec{y}_3\}, c^\ast)$? 
+           \end{subprob}
+
+        \begin{soln}
+        
+            \overline{y} = \begin{bmatrix}
+            0 \\ 0
+        \end{bmatrix}
+        
+        $c^*=\frac{1}{2}\vec{z}^T \overline{y} = 0$
+        
+         \begin{align}
+             R_{\mathrm{sq}}((\vec{y}_i), c)  & = \frac{1}{n}\sum_{i=1}^n \left(|\vec{y}_i^{(1)} - c|^2 + |\vec{y}_i^{(2)} - c|^2\right) \\ 
+             & = \frac{1}{3} \left( (1^2+2^2) + (3^2+4^2) + (2^2+2^2) \right) = \frac{38}{3}
+         \end{align}
+        
+        \end{soln}
+
+           \begin{responsebox}{4in}
+                
+           \end{responsebox}
+
+     %       \begin{subprob}\avo{3}
+     %           After doing all of the hard work to find $c^\ast$, your colleague informs you that instead of minimizing empirical risk, you should instead minimize the \textit{root residual}, given by
+     %               \begin{align*}
+     %                   R_{\mathrm{res}}(\{\vec{y}_i\}_{i=1}^n, c)&=\sqrt{\sum_{i=1}^n 4 \left(|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2\right)}.
+     %               \end{align*}
+     %           Find the minimizer $c^\ast$ for $R_{\mathrm{res}}(\{\vec{y}_i\}_{i=1}^n, c)$ in terms of the data $\{y_i\}_{i=1}^n$.
+                %Use the second derivative test to show that the value $c^\ast$ found in part \textbf{(b)} is a true minimizer of $R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c)$.
+      %     \end{subprob}
+
+
+       %    \begin{responsebox}{2.25in}
+                
+        %   \end{responsebox}
+           
+
+        \end{subprobset}
+
+    \end{prob}
+\end{probset}
+
+ \newpage
+
+\begin{probset}
+
+    \begin{prob}[({10} points)]
+
+        \begin{itemize}
+            \item For each of the following statements, \textbf{\textit{clearly}} circle \textbf{TRUE} or \textbf{FALSE} in the right-hand column. 
+            \item The \textbf{maximum} number of points you can earn on this problem is \textbf{10}, so you can get up to two statements incorrect and still earn full credit.
+            \item You do not need to show any work to earn full credit, but you can provide justification to possibly earn partial credit.
+            \item \textbf{For all statements to follow}, assume $\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}$ are $d$-dimensional vectors, and each has a scalar response value $y_1,\dotsc, y_n$. Consider the multiple linear regression problem where 
+                \begin{align*}
+                    H(\vec{x}_i) = w_0 + w_1 \vec{x}_i^{(1)} + w_2 \vec{x}_i^{(2)} + \cdots + w_{d}\vec{x}_i^{(d)}.
+                \end{align*}
+            \item Let $X$ denote the design matrix and let $\vec{w}^\ast$ denote the optimal parameter vector with respect to MSE.
+        \end{itemize}
+        
+        % For all statements to follow, assume $\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}$ are $d$-dimensional vectors, and each has a scalar response value $y_1,\dotsc, y_n$. Consider the multiple linear regression problem where 
+        %     \begin{align}
+        %         H(\vec{x}_i) = w_0 + w_1 \vec{x}_i^{(1)} + w_2 \vec{x}_i^{(2)} + \cdots + w_{d}\vec{x}_i^{(d)}.
+        %     \end{align}
+
+        \begin{subprobset}
+
+            \begin{subprob}\avo{2}
+                If $X^TX$ is invertible, the matrix {\hfill TRUE\hspace{.5in}FALSE}
+                
+                $P = X(X^TX)^{-1}X^T$ satisfies the equations
+                
+                $P^2 = P$ and $P^T = P$. 
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{2}
+                The residual vector $\vec{r} = \vec{y} - X\vec{w}^\ast$ is {\hfill TRUE\hspace{.5in}FALSE}
+
+                orthogonal to the rows of $X$.
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{2}
+                The equation $\|\vec{x}_i + \vec{w}^\ast\|^2 = \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2${\hfill TRUE\hspace{.5in}FALSE} 
+                
+                holds for each $1\leq i\leq n$.
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{2}
+                The gradient of $f(\vec{w}) = y_i - H(\vec{x}_i)$ with {\hfill TRUE\hspace{.5in}FALSE} 
+                
+                respect to $\vec{w}$ is $\vec{x}_i$.
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{2}
+                $\vec{w}^\ast$ is the orthogonal projection of $\vec{y}$ onto {\hfill TRUE\hspace{.5in}FALSE} 
+                
+                the span of the columns of $X$.
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{2}
+                The empirical risk function $R_{\mathrm{sq}}$ can be {\hfill TRUE\hspace{.5in}FALSE} 
+                
+                written in the form $R_{\mathrm{sq}}(\vec{w}) = \frac{1}{n}\| X\vec{w}\|^2$.
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+            \begin{subprob}\avo{2}
+                If $n \geq d+1$ then $(X^TX)^{-1}$ exists. {\hfill TRUE\hspace{.5in}FALSE} 
+            \end{subprob}
+
+            \begin{responsebox}{0.85in}
+                
+            \end{responsebox}
+
+        \end{subprobset}
+
+    \end{prob}
+
+\newpage
+\begin{prob}[({10} points)]
+
+% You have a dataset of $n$ individuals where each individual has $d$ features $\{\vec{x}_1,...,\vec{x}_n\}, \vec{x}_i \in \mathbb{R}^d$, for which you measure response variables $\{y_i,...,y_n \}$.
+
+Assume you have a dataset $\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}$ of $d$-dimensional vectors for $n$ individuals, and that each has a scalar response value $y_1,\dotsc, y_n$. You then fit a multiple linear regression prediction rule $H_1(\vec{x}) = \vec{w}^T\text{Aug}(\vec{x})$, with optimal parameters $\vec{w}^*$ whose MSE is $c_1$.
+
+\begin{subprobset}
+    \begin{subprob}\avo{6}
+        Due to privacy reasons it turns out you are unable to use the feature $x^{(d)}$, so you need to find a way to modify your model so that it does not incorporate this feature. Your friend Minnie suggests using the parameters of the prediction rule you learned already and simply setting $w_d=0$:
+            \[
+                H_2(\vec{x}) = \begin{bmatrix}
+                    w_0^* & w_1^* & \ldots & w_{d-1}^* & 0
+                \end{bmatrix}^T \text{Aug}(\vec{x}).
+            \]
+        Denote the MSE of the model $H_2(\vec{x})$ by $c_2$.
+        
+        \vspace*{.125in}
+        
+        Meanwhile, your friend Maxine recommends fitting a new prediction rule $H_3$ to the data with only the first $d-1$ features, with MSE $c_3$. 
+        
+        Order the three errors $c_1, c_2, c_3$ from least to greatest. Explain your solution. \textit{(Use $<$ if the error is strictly smaller, $=$ if the errors are equal or $\leq$ if the errors may be equal.)}
+    \end{subprob}
+    
+    \begin{soln}
+    $c_1 \leq c_3 \leq c_2$.
+    
+    The prediction rule $H_1$ uses an additional feature compared to $H_3$. The MSE cannot increase by adding a feature (HW4), therefore $c_1 \leq c_3$.
+    
+    The MSE $c_3$ is as small as it can possibly be when using $d-1$ features. 
+    If we were to pick other coefficients -- \emph{whatever} they may be -- the MSE cannot be smaller. So if we picked the coefficients $(w^*_0, w^*_1, \ldots, w^*_{d-1})$, note that setting $w_d=0$ in $H_2$ is the same as setting a prediction rule with $d-1$ features and the first $d$ parameters of $w^*$. Since this prediction rule is using $d-1$ features, 
+    the MSE $c_2$ of this model cannot be smaller than $c_3$.
+    
+    \end{soln}
+
+            \begin{responsebox}{2in}
+                
+            \end{responsebox}
+
+
+        
+         \begin{subprob}\avo{4}
+         You are able to add \textbf{5 additional individuals} to your datasets, so that now you have $n+5$ \textbf{individuals}. 
+You fit a new prediction rule to the data whose MSE is $c_4$. Can $c_4< c_1$?  Explain.
+
+        \end{subprob}
+
+\begin{soln}
+   In the case you add 5 individuals that exactly match the prediction rule, their added squared errors are all zero and therefore the \emph{mean} squared error is smaller $c_4 = \frac{n c_1}{n+5}$.
+
+\end{soln}
+
+            \begin{responsebox}{1.9in}
+                
+            \end{responsebox}
+
+        
+           \end{subprobset}
+\end{prob}
+\end{probset}
+
+\end{document}
