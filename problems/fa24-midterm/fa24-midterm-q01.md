@@ -25,7 +25,7 @@ Show that $c^\ast = \frac{1}{2}\vec{z}^T \overline{y}$ is the only critical poin
 # BEGIN SOLUTION
 
 \begin{align*}
-\frac{d}{dc} R_{\mathrm{sq}}((\vec{y}_i), c) &= \frac{d}{dc} \frac{1}{n}\sum_{i=1}^n (|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2)\\
+\frac{\partial}{\partial c} R_{\mathrm{sq}}((\vec{y}_i), c) &= \frac{\partial}{\partial c} \frac{1}{n}\sum_{i=1}^n (|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2)\\
 &= \frac{1}{n}\sum_{i=1}^n \left( 2(\vec{y}_i^{(1)} + c)- 2(\vec{y}_i^{(2)} - c)\right)\\
 &= 4c - \frac{2}{n}\sum_{i=1}^n\mathbf{1}^T \vec{y}_i\\
 &=4c - 2\vec{z}^T \overline{y}.          
