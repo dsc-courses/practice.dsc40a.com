@@ -1,23 +1,16 @@
 # BEGIN PROB
 
--   For each of the following statements, ***clearly*** bubble **TRUE**
-    or **FALSE**.
+-   For each of the following statements, ***clearly*** bubble **TRUE** or **FALSE**.
 
--   The **maximum** number of points you can earn on this problem is
-    **10**, so you can get up to two statements incorrect and still earn
-    full credit.
+-   The **maximum** number of points you can earn on this problem is **10**, so you can get up to two statements incorrect and still earn full credit.
 
--   You do not need to show any work to earn full credit, but you can
-    provide justification to possibly earn partial credit.
+-   You do not need to show any work to earn full credit, but you can provide justification to possibly earn partial credit.
 
--   **For all statements to follow**, assume
-    $\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}$ are
-    $d$-dimensional vectors, and each has a scalar response value
-    $y_1,\dotsc, y_n$. Consider the multiple linear regression problem
-    where $$\begin{aligned}
-                        H(\vec{x}_i) = w_0 + w_1 \vec{x}_i^{(1)} + w_2 \vec{x}_i^{(2)} + \cdots + w_{d}\vec{x}_i^{(d)}.
-                    
-    \end{aligned}$$
+-   **For all statements to follow**, assume $\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}$ are $d$-dimensional vectors, and each has a scalar response value $y_1,\dotsc, y_n$. Consider the multiple linear regression problem where
+
+\begin{align*}
+H(\vec{x}_i) = w_0 + w_1 \vec{x}_i^{(1)} + w_2 \vec{x}_i^{(2)} + \cdots + w_{d}\vec{x}_i^{(d)}.
+\end{align*}
 
 -   Let $X$ denote the design matrix and let $\vec{w}^\ast$ denote the
     optimal parameter vector with respect to MSE.
