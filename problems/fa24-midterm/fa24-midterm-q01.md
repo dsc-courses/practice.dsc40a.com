@@ -72,6 +72,4 @@ $$\begin{aligned}
 
 # END SUBPROB
 
-# END SUBPROB
-
 # END PROB

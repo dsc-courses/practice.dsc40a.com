@@ -3,6 +3,6 @@ instructors: Gal Mishne
 context: This exam was administered in person. They had a two sided 11in by 8.5in cheat sheet. Students had **50 minutes** to take this exam.
 show_solution: true
 problems:
-  - fa24-midteerm/fa24-midterm-q01
-  - fa24-midteerm/fa24-midterm-q02
-  - fa24-midteerm/fa24-midterm-q03
+  - fa24-midterm\fa24-midterm-q01
+  - fa24-midterm\fa24-midterm-q02
+  - fa24-midterm\fa24-midterm-q03
