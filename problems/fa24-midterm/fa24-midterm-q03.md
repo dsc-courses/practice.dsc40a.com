@@ -43,6 +43,8 @@ is the same as setting a prediction rule with $d-1$ features and the
 first $d$ parameters of $w^*$. Since this prediction rule is using $d-1$
 features, the MSE $c_2$ of this model cannot be smaller than $c_3$.
 
+<average>65</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -57,7 +59,9 @@ to the data whose MSE is $c_4$. Can $c_4< c_1$? Explain.
 
 In the case you add 5 individuals that exactly match the prediction
 rule, their added squared errors are all zero and therefore the *mean*
-squared error is smaller $c_4 = \frac{n c_1}{n+5}$.
+squared error is smaller $c_4 = \frac{n c_1}{n+5}$.;
+
+<average>41</average>
 
 # END SOLUTION
 

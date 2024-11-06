@@ -12,6 +12,8 @@ $R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c) = \frac{1}{n}\sum_{i=1}^n (|\vec{y}_i
 
 Recall risk follows the formula $R_{L(h)}(h) = \frac{1}{n} \sum_{i=1}^n L(h)$. All we have to do is put the loss function in a summation and divide it by $n$. It is important to put parenthesis around the loss function.
 
+<average>71</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -31,6 +33,8 @@ Show that $c^\ast = \frac{1}{2}\vec{z}^T \overline{y}$ is the only critical poin
 &=4c - 2\vec{z}^T \overline{y}.          
 \end{align*}
 Therefore, the one critical point occurs when $c = \frac{1}{2}\vec{z}^T \overline{y}$.
+
+<average>63</average>
 
 # END SOLUTION
 
@@ -65,6 +69,8 @@ $c^*=\frac{1}{2}\vec{z}^T \overline{y} = 0$
              & = \frac{1}{3} \left( (1^2+2^2) + (3^2+4^2) + (2^2+2^2) \right) = \frac{38}{3}
          
 \end{align*}
+
+<average>57</average>
 
 # END SOLUTION
 
