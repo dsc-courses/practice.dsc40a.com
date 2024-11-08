@@ -41,13 +41,15 @@ The residual vector $\vec{r} = \vec{y} - X\vec{w}^\ast$ is orthogonal to the row
 
 FALSE
 
+The wording here is tricky! Recall the residual vector, $\vec r$, is the same as the error vector $\vec e = \vec y - X \vec w^*$. We know $\vec e$ is orthogonal to the columns of $X$. Recall $X^T(\vec e) = 0$. This means the rows of $X^T \times \vec e$ will give us zero. However, when you transpose $X^T$ to get $X$ then the columns of $X \cdot \vec e = 0$.
+
 # END SOLUTION
 
 # END SUBPROB
 
 # BEGIN SUBPROB
 
-The equation $\|\vec{x}_i + \vec{w}^\ast\|^2 = \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2$holds for each $1\leq i\leq n$.
+The equation $\|\vec{x}_i + \vec{w}^\ast\|^2 = \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2$ holds for each $1\leq i\leq n$.
 
 ( ) TRUE
 ( ) FALSE
@@ -55,6 +57,34 @@ The equation $\|\vec{x}_i + \vec{w}^\ast\|^2 = \|\vec{x}_i\|^2 + \|\vec{w}^\ast\
 # BEGIN SOLUTION
 
 FALSE
+
+This is not always true. This would be true if $\vec x_i$ and $\vec w^*$ were orthogonal. Here is an example when they are not:
+
+Let the following hold:
+
+- $\vec x_i = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$
+- $\vec w^* = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$
+
+Looking at the left side:
+
+\begin{align*}
+\|\vec{x}_i + \vec{w}^\ast\|^2 &= \|\begin{bmatrix} 1 \\ 0 \end{bmatrix} + \begin{bmatrix}1 \\ 1\end{bmatrix}\|\\
+&= \|\begin{bmatrix} 2 \\ 1 \end{bmatrix}\|\\
+&= 2^2 + 1^2\\
+&= 4 + 1\\
+&= 5
+\end{align*}
+
+Looking at the right side:
+
+\begin{align*}
+\|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2 &= \|\begin{bmatrix} 1 \\ 0 \end{bmatrix}\|^2 + \|\begin{bmatrix} 1 \\ 1 \end{bmatrix}\|^2\\
+&= 1^2 + (1^2 + 1^2)\\
+&= 1 + 2\\
+&= 3
+\end{align*}
+
+As we know $5 \neq 3$, so it is not always true. $\|\vec{x}_i + \vec{w}^\ast\|^2 \neq \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2$
 
 # END SOLUTION
 
@@ -71,6 +101,8 @@ The gradient of $f(\vec{w}) = y_i - H(\vec{x}_i)$ with respect to $\vec{w}$ is $
 
 FALSE
 
+
+
 # END SOLUTION
 
 # END SUBPROB
@@ -85,6 +117,8 @@ $\vec{w}^\ast$ is the orthogonal projection of $\vec{y}$ onto the span of the co
 # BEGIN SOLUTION
 
 FALSE
+
+$\vec w^*$ represents the vector of coefficients that would give the prest approximation of $\vec y$ (prediction) in terms of the columns of $X$. If $\vec w^*$ were orthogonal to $\vec y$ then it would mean $\vec y$ and $X$ may not have a relation to one another. No matter what $\vec w$ we choose $X \vec w$ could not approximate $\vec y$.
 
 # END SOLUTION
 
@@ -101,6 +135,8 @@ The empirical risk function $R_{\mathrm{sq}}$ can be written in the form $R_{\ma
 
 FALSE
 
+An important aspect of risk (and loss) is the difference between the actual value ($\vec y$) and our prediction ($X \vec w$). We want to measure how far away our prediction is from our actual value. This equation only measures the length of $X \vec w$, so it ignores the difference, which means it does not help us quantify how "wrong we are" and is not the same as risk.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -115,6 +151,10 @@ If $n \geq d+1$ then $(X^TX)^{-1}$ exists.
 # BEGIN SOLUTION
 
 FALSE
+
+This is false because $n \geq d+1$ alone does not guarantee $(X^TX)^{-1}$.= exists.
+
+Recall $X$ is an $n \times d$ matrix (with $n$ samples and $d$ features). For $(X^TX)^{-1}$ to exist $X$ must have $d$ linearly independent columns (span the $d$-dimensional space), which would make $X^TX$ full rank.
 
 # END SOLUTION
 

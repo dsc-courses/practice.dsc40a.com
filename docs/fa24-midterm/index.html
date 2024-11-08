@@ -108,6 +108,11 @@ c|^2)</span>.</p>
 = \frac{1}{n} \sum_{i=1}^n L(h)</span>. All we have to do is put the
 loss function in a summation and divide it by <span class="math inline">n</span>. It is important to put parenthesis around
 the loss function.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 71%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -142,6 +147,11 @@ c|^2 + |\vec{y}_i^{(2)} - c|^2)\\
 &amp;= 4c - \frac{2}{n}\sum_{i=1}^n\mathbf{1}^T \vec{y}_i\\
 &amp;=4c - 2\vec{z}^T \overline{y}.          
 \end{align*}</span> Therefore, the one critical point occurs when <span class="math inline">c = \frac{1}{2}\vec{z}^T \overline{y}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 63%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -189,6 +199,11 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 (2^2+2^2) \right) = \frac{38}{3}
          
 \end{align*}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 57%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -272,6 +287,10 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
+<p>The wording here is tricky! Recall the residual vector, <span class="math inline">\vec r</span>, is the same as the error vector <span class="math inline">\vec e = \vec y - X \vec w^*</span>. We know <span class="math inline">\vec e</span> is orthogonal to the columns of <span class="math inline">X</span>. Recall <span class="math inline">X^T(\vec
+e) = 0</span>. This means the rows of <span class="math inline">X^T
+\times \vec e</span> will give us zero. However, when you transpose
+<span class="math inline">X^T</span> to get <span class="math inline">X</span> then the columns of <span class="math inline">X \cdot \vec e = 0</span>.</p>
 </div>
 </div>
 </div>
@@ -279,7 +298,7 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
 <p>The equation <span class="math inline">\|\vec{x}_i + \vec{w}^\ast\|^2
-= \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span>holds for each <span
+= \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span> holds for each <span
 class="math inline">1\leq i\leq n</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
@@ -299,6 +318,35 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
+<p>This is not always true. This would be true if <span class="math inline">\vec x_i</span> and <span class="math inline">\vec
+w^*</span> were orthogonal. Here is an example when they are not:</p>
+<p>Let the following hold:</p>
+<ul>
+<li><span class="math inline">\vec x_i = \begin{bmatrix} 1 \\ 0
+\end{bmatrix}</span></li>
+<li><span class="math inline">\vec w^* = \begin{bmatrix} 1 \\ 1
+\end{bmatrix}</span></li>
+</ul>
+<p>Looking at the left side:</p>
+<p><span class="math display">\begin{align*}
+\|\vec{x}_i + \vec{w}^\ast\|^2 &amp;= \|\begin{bmatrix} 1 \\ 0
+\end{bmatrix} + \begin{bmatrix}1 \\ 1\end{bmatrix}\|\\
+&amp;= \|\begin{bmatrix} 2 \\ 1 \end{bmatrix}\|\\
+&amp;= 2^2 + 1^2\\
+&amp;= 4 + 1\\
+&amp;= 5
+\end{align*}</span></p>
+<p>Looking at the right side:</p>
+<p><span class="math display">\begin{align*}
+\|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2 &amp;= \|\begin{bmatrix} 1 \\ 0
+\end{bmatrix}\|^2 + \|\begin{bmatrix} 1 \\ 1 \end{bmatrix}\|^2\\
+&amp;= 1^2 + (1^2 + 1^2)\\
+&amp;= 1 + 2\\
+&amp;= 3
+\end{align*}</span></p>
+<p>As we know <span class="math inline">5 \neq 3</span>, so it is not
+always true. <span class="math inline">\|\vec{x}_i + \vec{w}^\ast\|^2
+\neq \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span></p>
 </div>
 </div>
 </div>
@@ -354,6 +402,12 @@ aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
+<p><span class="math inline">\vec w^*</span> represents the vector of
+coefficients that would give the prest approximation of <span class="math inline">\vec y</span> (prediction) in terms of the columns
+of <span class="math inline">X</span>. If <span class="math inline">\vec
+w^*</span> were orthogonal to <span class="math inline">\vec y</span>
+then it would mean <span class="math inline">\vec y</span> and <span class="math inline">X</span> may not have a relation to one another. No
+matter what <span class="math inline">\vec w</span> we choose <span class="math inline">X \vec w</span> could not approximate <span class="math inline">\vec y</span>.</p>
 </div>
 </div>
 </div>
@@ -382,6 +436,13 @@ aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
+<p>An important aspect of risk (and loss) is the difference between the
+actual value (<span class="math inline">\vec y</span>) and our
+prediction (<span class="math inline">X \vec w</span>). We want to
+measure how far away our prediction is from our actual value. This
+equation only measures the length of <span class="math inline">X \vec
+w</span>, so it ignores the difference, which means it does not help us
+quantify how “wrong we are” and is not the same as risk.</p>
 </div>
 </div>
 </div>
@@ -408,6 +469,12 @@ aria-labelledby="heading2_7" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
+<p>This is false because <span class="math inline">n \geq d+1</span>
+alone does not guarantee <span class="math inline">(X^TX)^{-1}</span>.=
+exists.</p>
+<p>Recall <span class="math inline">X</span> is an <span class="math inline">n \times d</span> matrix (with <span class="math inline">n</span> samples and <span class="math inline">d</span> features). For <span class="math inline">(X^TX)^{-1}</span> to exist <span class="math inline">X</span> must have <span class="math inline">d</span> linearly independent columns (span the
+<span class="math inline">d</span>-dimensional space), which would make
+<span class="math inline">X^TX</span> full rank.</p>
 </div>
 </div>
 </div>
@@ -472,6 +539,11 @@ setting <span class="math inline">w_d=0</span> in <span class="math inline">H_2<
 with <span class="math inline">d-1</span> features and the first <span class="math inline">d</span> parameters of <span class="math inline">w^*</span>. Since this prediction rule is using
 <span class="math inline">d-1</span> features, the MSE <span class="math inline">c_2</span> of this model cannot be smaller than
 <span class="math inline">c_3</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 65%.</p>
+</p>
 </div>
 </div>
 </div>
@@ -499,7 +571,12 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <p>In the case you add 5 individuals that exactly match the prediction
 rule, their added squared errors are all zero and therefore the
 <em>mean</em> squared error is smaller <span class="math inline">c_4 =
-\frac{n c_1}{n+5}</span>.</p>
+\frac{n c_1}{n+5}</span>.;</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 41%.</p>
+</p>
 </div>
 </div>
 </div>
