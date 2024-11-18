@@ -26,6 +26,14 @@ If $X^TX$ is invertible, the matrix $P = X(X^TX)^{-1}X^T$ satisfies the equation
 
 TRUE
 
+To see if this statement is true, we can plug in our definition for $P$ and check if these equations hold using various properties of matrix multiplication.
+
+First, we see $P^2 = (X(X^TX)^{-1}X^T)(X(X^TX)^{-1}X^T) = X(X^TX)^{-1}(X^TX)(X^TX)^{-1}X^T$, using the asociative property. We can notice that $(X^TX)(X^TX)^{-1} = I$. Therefore: $$P^2 = X(X^TX)^{-1}(X^TX)(X^TX)^{-1}X^T = X(X^TX)^{-1}X^T = P$$
+So $P^2 = P$ is true.
+
+Next, we check $P^T$. A useful fact for this problem is that for any invertible matrix $A$, we have $(A^{-1})^T = (A^T)^{-1}$. Then we see $$P^T = (X(X^TX)^{-1}X^T)^T = X((X^TX)^{-1})^T X^T = X((X^TX)^T)^{-1} X^T = X(X^TX)^{-1}X^T = P$$
+So $P^T = P$ is true.
+
 # END SOLUTION
 
 # END SUBPROB
@@ -101,7 +109,7 @@ The gradient of $f(\vec{w}) = y_i - H(\vec{x}_i)$ with respect to $\vec{w}$ is $
 
 FALSE
 
-
+Let $H(\vec{x}) = \vec{w} \cdot Aug(\vec{x}) = w_0 + w_1 x^{(1)} + \cdots + w_d x^{(d)}$ be our hypothesis function. We can see that the gradient with respect to $\vec{w}$ is $Aug(\vec{x})$. Since $H$ is multiplied by $-1$ in our function $f(\vec{w})$, the gradient of $f(\vec{w})$ would be $-Aug(\vec{x}_i)$. Therefore, the statement is false.
 
 # END SOLUTION
 
@@ -152,7 +160,7 @@ If $n \geq d+1$ then $(X^TX)^{-1}$ exists.
 
 FALSE
 
-This is false because $n \geq d+1$ alone does not guarantee $(X^TX)^{-1}$.= exists.
+This is false because $n \geq d+1$ alone does not guarantee $(X^TX)^{-1}$ = exists.
 
 Recall $X$ is an $n \times d$ matrix (with $n$ samples and $d$ features). For $(X^TX)^{-1}$ to exist $X$ must have $d$ linearly independent columns (span the $d$-dimensional space), which would make $X^TX$ full rank.
 

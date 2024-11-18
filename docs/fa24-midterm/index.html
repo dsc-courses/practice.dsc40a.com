@@ -8,49 +8,37 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
+    ul.task-list{list-style: none;}
   </style>
   <link rel="stylesheet" href="..\assets\theme.css" />
-  <script defer=""
-  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
+   var mathElements = document.getElementsByClassName("math");
+   var macros = [];
+   for (var i = 0; i < mathElements.length; i++) {
+    var texText = mathElements[i].firstChild;
+    if (mathElements[i].tagName == "SPAN") {
+     katex.render(texText.data, mathElements[i], {
+      displayMode: mathElements[i].classList.contains('display'),
+      throwOnError: false,
+      macros: macros,
+      fleqn: false
+     });
+  }}});
   </script>
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Fall 2024 Midterm</h1>
 </header>
-<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- add after bootstrap.min.css -->
-<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
-<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
-<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!-- add after bootstrap.min.css --> <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/> <!-- add after bootstrap.min.js or bootstrap.bundle.min.js --> <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
 <!-- for difficulty gauges-->
 <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -65,29 +53,13 @@
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
 <p><strong>Instructor(s):</strong> Gal Mishne</p>
-<p>This exam was administered in person. They had a two sided 11in by
-8.5in cheat sheet. Students had <strong>50 minutes</strong> to take this
-exam.</p>
+<p>This exam was administered in person. They had a two sided 11in by 8.5in cheat sheet. Students had <strong>50 minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p>Let <span class="math inline">\vec{y}_1, \vec{y}_2, \dotsc, \vec{y}_n
-\in\mathbb{R}^2</span> be a collection of two-dimensional vectors and
-let <span class="math inline">\overline{y} = \frac{1}{n}\sum_{i=1}^n
-\vec{y}_i</span>. Suppose we wish to model the <span
-class="math inline">\vec{y}_i</span>’s using a single <em>vector</em> of
-the form <span class="math inline">c\vec{z}</span> where <span
-class="math inline">\vec{z} = \begin{bmatrix} -1 &amp; 1
-\end{bmatrix}^T</span> and <span
-class="math inline">c\in\mathbb{R}</span> is a real number (to be
-determined).</p>
+<p>Let <span class="math inline">\vec{y}_1, \vec{y}_2, \dotsc, \vec{y}_n \in\mathbb{R}^2</span> be a collection of two-dimensional vectors and let <span class="math inline">\overline{y} = \frac{1}{n}\sum_{i=1}^n \vec{y}_i</span>. Suppose we wish to model the <span class="math inline">\vec{y}_i</span>’s using a single <em>vector</em> of the form <span class="math inline">c\vec{z}</span> where <span class="math inline">\vec{z} = \begin{bmatrix} -1 &amp; 1 \end{bmatrix}^T</span> and <span class="math inline">c\in\mathbb{R}</span> is a real number (to be determined).</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>Suppose we use the loss function <span
-class="math inline">L_{\mathrm{sq}}(\vec{y}_i, c) = |\vec{y}_i^{(1)} +
-c|^2 + |\vec{y}_i^{(2)} - c|^2</span>. Write down the empirical risk
-function <span
-class="math inline">R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n,
-c)</span>.</p>
+<p>Suppose we use the loss function <span class="math inline">L_{\mathrm{sq}}(\vec{y}_i, c) = |\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2</span>. Write down the empirical risk function <span class="math inline">R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c)</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -95,19 +67,13 @@ c)</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
-aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div id="collapse1_1" class="accordion-collapse collapse collapse" aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c) =
-\frac{1}{n}\sum_{i=1}^n (|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} -
-c|^2)</span>.</p>
-<p>Recall risk follows the formula <span class="math inline">R_{L(h)}(h)
-= \frac{1}{n} \sum_{i=1}^n L(h)</span>. All we have to do is put the
-loss function in a summation and divide it by <span class="math inline">n</span>. It is important to put parenthesis around
-the loss function.</p>
+<p><span class="math inline">R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c) = \frac{1}{n}\sum_{i=1}^n (|\vec{y}_i^{(1)} + c|^2 + |\vec{y}_i^{(2)} - c|^2)</span>.</p>
+<p>Recall risk follows the formula <span class="math inline">R_{L(h)}(h) = \frac{1}{n} \sum_{i=1}^n L(h)</span>. All we have to do is put the loss function in a summation and divide it by <span class="math inline">n</span>. It is important to put parenthesis around the loss function.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -120,11 +86,7 @@ the loss function.</p>
 <p><br></p>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
-<p>Show that <span class="math inline">c^\ast = \frac{1}{2}\vec{z}^T
-\overline{y}</span> is the only critical point for the empirical risk
-function <span
-class="math inline">R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c)</span> you
-found in part <strong>(a)</strong>.</p>
+<p>Show that <span class="math inline">c^\ast = \frac{1}{2}\vec{z}^T \overline{y}</span> is the only critical point for the empirical risk function <span class="math inline">R_{\mathrm{sq}}(\{\vec{y}_i\}_{i=1}^n, c)</span> you found in part <strong>(a)</strong>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_2">
@@ -132,21 +94,12 @@ found in part <strong>(a)</strong>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse1_2" class="accordion-collapse collapse collapse" aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">\begin{align*}
-\frac{\partial}{\partial c} R_{\mathrm{sq}}((\vec{y}_i), c) &amp;=
-\frac{\partial}{\partial c} \frac{1}{n}\sum_{i=1}^n (|\vec{y}_i^{(1)} +
-c|^2 + |\vec{y}_i^{(2)} - c|^2)\\
-&amp;= \frac{1}{n}\sum_{i=1}^n \left( 2(\vec{y}_i^{(1)} + c)-
-2(\vec{y}_i^{(2)} - c)\right)\\
-&amp;= 4c - \frac{2}{n}\sum_{i=1}^n\mathbf{1}^T \vec{y}_i\\
-&amp;=4c - 2\vec{z}^T \overline{y}.          
-\end{align*}</span> Therefore, the one critical point occurs when <span class="math inline">c = \frac{1}{2}\vec{z}^T \overline{y}</span>.</p>
+<p> Therefore, the one critical point occurs when <span class="math inline">c = \frac{1}{2}\vec{z}^T \overline{y}</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -158,8 +111,7 @@ c|^2 + |\vec{y}_i^{(2)} - c|^2)\\
 </div>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
-<p>Given the dataset: <span
-class="math display">\vec{y_1}=\begin{bmatrix}
+<p>Given the dataset: <span class="math display">\vec{y_1}=\begin{bmatrix}
                     1 \\ - 2
                 \end{bmatrix}
                 \quad
@@ -169,9 +121,7 @@ class="math display">\vec{y_1}=\begin{bmatrix}
                 \quad
                 \vec{y_3}=\begin{bmatrix}
                     2 \\ - 2
-                \end{bmatrix}</span> what is <span
-class="math inline">R_{\mathrm{sq}}(\{\vec{y}_1, \vec{y}_2, \vec{y}_3\},
-c^\ast)</span>?</p>
+                \end{bmatrix}</span> what is <span class="math inline">R_{\mathrm{sq}}(\{\vec{y}_1, \vec{y}_2, \vec{y}_3\}, c^\ast)</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_3">
@@ -179,26 +129,14 @@ c^\ast)</span>?</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse"
-aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div id="collapse1_3" class="accordion-collapse collapse collapse" aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\vec y = \begin{bmatrix}
-0\\
-0
-\end{bmatrix}</span></p>
-<p><span class="math inline">c^*=\frac{1}{2}\vec{z}^T \overline{y} =
-0</span></p>
-<p><span class="math display">\begin{align*}
-             R_{\mathrm{sq}}((\vec{y}_i), c)  &amp; =
-\frac{1}{n}\sum_{i=1}^n \left(|\vec{y}_i^{(1)} - c|^2 + |\vec{y}_i^{(2)}
-- c|^2\right) \\
-             &amp; = \frac{1}{3} \left( (1^2+2^2) + (3^2+4^2) +
-(2^2+2^2) \right) = \frac{38}{3}
-         
-\end{align*}</span></p>
+<p><span class="math inline">\vec y = \begin{bmatrix} 0\\ 0 \end{bmatrix}</span></p>
+<p><span class="math inline">c^*=\frac{1}{2}\vec{z}^T \overline{y} = 0</span></p>
+<p></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -212,36 +150,18 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <hr />
 <h2 id="problem-2">Problem 2</h2>
 <ul>
-<li><p>For each of the following statements,
-<strong><em>clearly</em></strong> bubble <strong>TRUE</strong> or
-<strong>FALSE</strong>.</p></li>
-<li><p>The <strong>maximum</strong> number of points you can earn on
-this problem is <strong>10</strong>, so you can get up to two statements
-incorrect and still earn full credit.</p></li>
-<li><p>You do not need to show any work to earn full credit, but you can
-provide justification to possibly earn partial credit.</p></li>
-<li><p><strong>For all statements to follow</strong>, assume <span
-class="math inline">\vec{x}_1, \vec{x}_2, \dotsc,
-\vec{x}_n\in\mathbb{R}^{d}</span> are <span
-class="math inline">d</span>-dimensional vectors, and each has a scalar
-response value <span class="math inline">y_1,\dotsc, y_n</span>.
-Consider the multiple linear regression problem where</p></li>
+<li><p>For each of the following statements, <strong><em>clearly</em></strong> bubble <strong>TRUE</strong> or <strong>FALSE</strong>.</p></li>
+<li><p>The <strong>maximum</strong> number of points you can earn on this problem is <strong>10</strong>, so you can get up to two statements incorrect and still earn full credit.</p></li>
+<li><p>You do not need to show any work to earn full credit, but you can provide justification to possibly earn partial credit.</p></li>
+<li><p><strong>For all statements to follow</strong>, assume <span class="math inline">\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}</span> are <span class="math inline">d</span>-dimensional vectors, and each has a scalar response value <span class="math inline">y_1,\dotsc, y_n</span>. Consider the multiple linear regression problem where</p></li>
 </ul>
-<p><span class="math display">\begin{align*}
-H(\vec{x}_i) = w_0 + w_1 \vec{x}_i^{(1)} + w_2 \vec{x}_i^{(2)} + \cdots
-+ w_{d}\vec{x}_i^{(d)}.
-\end{align*}</span></p>
+<p></p>
 <ul>
-<li>Let <span class="math inline">X</span> denote the design matrix and
-let <span class="math inline">\vec{w}^\ast</span> denote the optimal
-parameter vector with respect to MSE.</li>
+<li>Let <span class="math inline">X</span> denote the design matrix and let <span class="math inline">\vec{w}^\ast</span> denote the optimal parameter vector with respect to MSE.</li>
 </ul>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
-<p>If <span class="math inline">X^TX</span> is invertible, the matrix
-<span class="math inline">P = X(X^TX)^{-1}X^T</span> satisfies the
-equations <span class="math inline">P^2 = P</span> and <span
-class="math inline">P^T = P</span>.</p>
+<p>If <span class="math inline">X^TX</span> is invertible, the matrix <span class="math inline">P = X(X^TX)^{-1}X^T</span> satisfies the equations <span class="math inline">P^2 = P</span> and <span class="math inline">P^T = P</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -253,22 +173,22 @@ class="math inline">P^T = P</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse2_1" class="accordion-collapse collapse collapse" aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>TRUE</p>
+<p>To see if this statement is true, we can plug in our definition for <span class="math inline">P</span> and check if these equations hold using various properties of matrix multiplication.</p>
+<p>First, we see <span class="math inline">P^2 = (X(X^TX)^{-1}X^T)(X(X^TX)^{-1}X^T) = X(X^TX)^{-1}(X^TX)(X^TX)^{-1}X^T</span>, using the asociative property. We can notice that <span class="math inline">(X^TX)(X^TX)^{-1} = I</span>. Therefore: <span class="math display">P^2 = X(X^TX)^{-1}(X^TX)(X^TX)^{-1}X^T = X(X^TX)^{-1}X^T = P</span> So <span class="math inline">P^2 = P</span> is true.</p>
+<p>Next, we check <span class="math inline">P^T</span>. A useful fact for this problem is that for any invertible matrix <span class="math inline">A</span>, we have <span class="math inline">(A^{-1})^T = (A^T)^{-1}</span>. Then we see <span class="math display">P^T = (X(X^TX)^{-1}X^T)^T = X((X^TX)^{-1})^T X^T = X((X^TX)^T)^{-1} X^T = X(X^TX)^{-1}X^T = P</span> So <span class="math inline">P^T = P</span> is true.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
-<p>The residual vector <span class="math inline">\vec{r} = \vec{y} -
-X\vec{w}^\ast</span> is orthogonal to the rows of <span
-class="math inline">X</span>.</p>
+<p>The residual vector <span class="math inline">\vec{r} = \vec{y} - X\vec{w}^\ast</span> is orthogonal to the rows of <span class="math inline">X</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -280,26 +200,20 @@ class="math inline">X</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse2_2" class="accordion-collapse collapse collapse" aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
-<p>The wording here is tricky! Recall the residual vector, <span class="math inline">\vec r</span>, is the same as the error vector <span class="math inline">\vec e = \vec y - X \vec w^*</span>. We know <span class="math inline">\vec e</span> is orthogonal to the columns of <span class="math inline">X</span>. Recall <span class="math inline">X^T(\vec
-e) = 0</span>. This means the rows of <span class="math inline">X^T
-\times \vec e</span> will give us zero. However, when you transpose
-<span class="math inline">X^T</span> to get <span class="math inline">X</span> then the columns of <span class="math inline">X \cdot \vec e = 0</span>.</p>
+<p>The wording here is tricky! Recall the residual vector, <span class="math inline">\vec r</span>, is the same as the error vector <span class="math inline">\vec e = \vec y - X \vec w^*</span>. We know <span class="math inline">\vec e</span> is orthogonal to the columns of <span class="math inline">X</span>. Recall <span class="math inline">X^T(\vec e) = 0</span>. This means the rows of <span class="math inline">X^T \times \vec e</span> will give us zero. However, when you transpose <span class="math inline">X^T</span> to get <span class="math inline">X</span> then the columns of <span class="math inline">X \cdot \vec e = 0</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
-<p>The equation <span class="math inline">\|\vec{x}_i + \vec{w}^\ast\|^2
-= \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span> holds for each <span
-class="math inline">1\leq i\leq n</span>.</p>
+<p>The equation <span class="math inline">\|\vec{x}_i + \vec{w}^\ast\|^2 = \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span> holds for each <span class="math inline">1\leq i\leq n</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -311,52 +225,30 @@ class="math inline">1\leq i\leq n</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse"
-aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div id="collapse2_3" class="accordion-collapse collapse collapse" aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
-<p>This is not always true. This would be true if <span class="math inline">\vec x_i</span> and <span class="math inline">\vec
-w^*</span> were orthogonal. Here is an example when they are not:</p>
+<p>This is not always true. This would be true if <span class="math inline">\vec x_i</span> and <span class="math inline">\vec w^*</span> were orthogonal. Here is an example when they are not:</p>
 <p>Let the following hold:</p>
 <ul>
-<li><span class="math inline">\vec x_i = \begin{bmatrix} 1 \\ 0
-\end{bmatrix}</span></li>
-<li><span class="math inline">\vec w^* = \begin{bmatrix} 1 \\ 1
-\end{bmatrix}</span></li>
+<li><span class="math inline">\vec x_i = \begin{bmatrix} 1 \\ 0 \end{bmatrix}</span></li>
+<li><span class="math inline">\vec w^* = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span></li>
 </ul>
 <p>Looking at the left side:</p>
-<p><span class="math display">\begin{align*}
-\|\vec{x}_i + \vec{w}^\ast\|^2 &amp;= \|\begin{bmatrix} 1 \\ 0
-\end{bmatrix} + \begin{bmatrix}1 \\ 1\end{bmatrix}\|\\
-&amp;= \|\begin{bmatrix} 2 \\ 1 \end{bmatrix}\|\\
-&amp;= 2^2 + 1^2\\
-&amp;= 4 + 1\\
-&amp;= 5
-\end{align*}</span></p>
+<p></p>
 <p>Looking at the right side:</p>
-<p><span class="math display">\begin{align*}
-\|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2 &amp;= \|\begin{bmatrix} 1 \\ 0
-\end{bmatrix}\|^2 + \|\begin{bmatrix} 1 \\ 1 \end{bmatrix}\|^2\\
-&amp;= 1^2 + (1^2 + 1^2)\\
-&amp;= 1 + 2\\
-&amp;= 3
-\end{align*}</span></p>
-<p>As we know <span class="math inline">5 \neq 3</span>, so it is not
-always true. <span class="math inline">\|\vec{x}_i + \vec{w}^\ast\|^2
-\neq \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span></p>
+<p></p>
+<p>As we know <span class="math inline">5 \neq 3</span>, so it is not always true. <span class="math inline">\|\vec{x}_i + \vec{w}^\ast\|^2 \neq \|\vec{x}_i\|^2 + \|\vec{w}^\ast\|^2</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.4">Problem 2.4</h3>
-<p>The gradient of <span class="math inline">f(\vec{w}) = y_i -
-H(\vec{x}_i)</span> with respect to <span
-class="math inline">\vec{w}</span> is <span
-class="math inline">\vec{x}_i</span>.</p>
+<p>The gradient of <span class="math inline">f(\vec{w}) = y_i - H(\vec{x}_i)</span> with respect to <span class="math inline">\vec{w}</span> is <span class="math inline">\vec{x}_i</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -368,22 +260,20 @@ class="math inline">\vec{x}_i</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse"
-aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div id="collapse2_4" class="accordion-collapse collapse collapse" aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
+<p>Let <span class="math inline">H(\vec{x}) = \vec{w} \cdot Aug(\vec{x}) = w_0 + w_1 x^{(1)} + \cdots + w_d x^{(d)}</span> be our hypothesis function. We can see that the gradient with respect to <span class="math inline">\vec{w}</span> is <span class="math inline">Aug(\vec{x})</span>. Since <span class="math inline">H</span> is multiplied by <span class="math inline">-1</span> in our function <span class="math inline">f(\vec{w})</span>, the gradient of <span class="math inline">f(\vec{w})</span> would be <span class="math inline">-Aug(\vec{x}_i)</span>. Therefore, the statement is false.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.5">Problem 2.5</h3>
-<p><span class="math inline">\vec{w}^\ast</span> is the orthogonal
-projection of <span class="math inline">\vec{y}</span> onto the span of
-the columns of <span class="math inline">X</span>.</p>
+<p><span class="math inline">\vec{w}^\ast</span> is the orthogonal projection of <span class="math inline">\vec{y}</span> onto the span of the columns of <span class="math inline">X</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -395,29 +285,20 @@ the columns of <span class="math inline">X</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse"
-aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div id="collapse2_5" class="accordion-collapse collapse collapse" aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
-<p><span class="math inline">\vec w^*</span> represents the vector of
-coefficients that would give the prest approximation of <span class="math inline">\vec y</span> (prediction) in terms of the columns
-of <span class="math inline">X</span>. If <span class="math inline">\vec
-w^*</span> were orthogonal to <span class="math inline">\vec y</span>
-then it would mean <span class="math inline">\vec y</span> and <span class="math inline">X</span> may not have a relation to one another. No
-matter what <span class="math inline">\vec w</span> we choose <span class="math inline">X \vec w</span> could not approximate <span class="math inline">\vec y</span>.</p>
+<p><span class="math inline">\vec w^*</span> represents the vector of coefficients that would give the prest approximation of <span class="math inline">\vec y</span> (prediction) in terms of the columns of <span class="math inline">X</span>. If <span class="math inline">\vec w^*</span> were orthogonal to <span class="math inline">\vec y</span> then it would mean <span class="math inline">\vec y</span> and <span class="math inline">X</span> may not have a relation to one another. No matter what <span class="math inline">\vec w</span> we choose <span class="math inline">X \vec w</span> could not approximate <span class="math inline">\vec y</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.6">Problem 2.6</h3>
-<p>The empirical risk function <span
-class="math inline">R_{\mathrm{sq}}</span> can be written in the form
-<span class="math inline">R_{\mathrm{sq}}(\vec{w}) = \frac{1}{n}\|
-X\vec{w}\|^2</span>.</p>
+<p>The empirical risk function <span class="math inline">R_{\mathrm{sq}}</span> can be written in the form <span class="math inline">R_{\mathrm{sq}}(\vec{w}) = \frac{1}{n}\| X\vec{w}\|^2</span>.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -429,28 +310,20 @@ X\vec{w}\|^2</span>.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_6" class="accordion-collapse collapse"
-aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
+<div id="collapse2_6" class="accordion-collapse collapse collapse" aria-labelledby="heading2_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
-<p>An important aspect of risk (and loss) is the difference between the
-actual value (<span class="math inline">\vec y</span>) and our
-prediction (<span class="math inline">X \vec w</span>). We want to
-measure how far away our prediction is from our actual value. This
-equation only measures the length of <span class="math inline">X \vec
-w</span>, so it ignores the difference, which means it does not help us
-quantify how “wrong we are” and is not the same as risk.</p>
+<p>An important aspect of risk (and loss) is the difference between the actual value (<span class="math inline">\vec y</span>) and our prediction (<span class="math inline">X \vec w</span>). We want to measure how far away our prediction is from our actual value. This equation only measures the length of <span class="math inline">X \vec w</span>, so it ignores the difference, which means it does not help us quantify how “wrong we are” and is not the same as risk.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.7">Problem 2.7</h3>
-<p>If <span class="math inline">n \geq d+1</span> then <span
-class="math inline">(X^TX)^{-1}</span> exists.</p>
+<p>If <span class="math inline">n \geq d+1</span> then <span class="math inline">(X^TX)^{-1}</span> exists.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> TRUE</p></li>
 <li><p><input type="radio" disabled="" /> FALSE</p></li>
@@ -462,19 +335,14 @@ class="math inline">(X^TX)^{-1}</span> exists.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_7" class="accordion-collapse collapse"
-aria-labelledby="heading2_7" data-bs-parent="#accordionExample">
+<div id="collapse2_7" class="accordion-collapse collapse collapse" aria-labelledby="heading2_7" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>FALSE</p>
-<p>This is false because <span class="math inline">n \geq d+1</span>
-alone does not guarantee <span class="math inline">(X^TX)^{-1}</span>.=
-exists.</p>
-<p>Recall <span class="math inline">X</span> is an <span class="math inline">n \times d</span> matrix (with <span class="math inline">n</span> samples and <span class="math inline">d</span> features). For <span class="math inline">(X^TX)^{-1}</span> to exist <span class="math inline">X</span> must have <span class="math inline">d</span> linearly independent columns (span the
-<span class="math inline">d</span>-dimensional space), which would make
-<span class="math inline">X^TX</span> full rank.</p>
+<p>This is false because <span class="math inline">n \geq d+1</span> alone does not guarantee <span class="math inline">(X^TX)^{-1}</span> = exists.</p>
+<p>Recall <span class="math inline">X</span> is an <span class="math inline">n \times d</span> matrix (with <span class="math inline">n</span> samples and <span class="math inline">d</span> features). For <span class="math inline">(X^TX)^{-1}</span> to exist <span class="math inline">X</span> must have <span class="math inline">d</span> linearly independent columns (span the <span class="math inline">d</span>-dimensional space), which would make <span class="math inline">X^TX</span> full rank.</p>
 </div>
 </div>
 </div>
@@ -482,38 +350,14 @@ exists.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p>Assume you have a dataset <span class="math inline">\vec{x}_1,
-\vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}</span> of <span
-class="math inline">d</span>-dimensional vectors for <span
-class="math inline">n</span> individuals, and that each has a scalar
-response value <span class="math inline">y_1,\dotsc, y_n</span>. You
-then fit a multiple linear regression prediction rule <span
-class="math inline">H_1(\vec{x}) = \vec{w}^T\text{Aug}(\vec{x})</span>,
-with optimal parameters <span class="math inline">\vec{w}^*</span> whose
-MSE is <span class="math inline">c_1</span>.</p>
+<p>Assume you have a dataset <span class="math inline">\vec{x}_1, \vec{x}_2, \dotsc, \vec{x}_n\in\mathbb{R}^{d}</span> of <span class="math inline">d</span>-dimensional vectors for <span class="math inline">n</span> individuals, and that each has a scalar response value <span class="math inline">y_1,\dotsc, y_n</span>. You then fit a multiple linear regression prediction rule <span class="math inline">H_1(\vec{x}) = \vec{w}^T\text{Aug}(\vec{x})</span>, with optimal parameters <span class="math inline">\vec{w}^*</span> whose MSE is <span class="math inline">c_1</span>.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>Due to privacy reasons it turns out you are unable to use the feature
-<span class="math inline">x^{(d)}</span>, so you need to find a way to
-modify your model so that it does not incorporate this feature. Your
-friend Minnie suggests using the parameters of the prediction rule you
-learned already and simply setting <span
-class="math inline">w_d=0</span>: <span
-class="math display">H_2(\vec{x}) = \begin{bmatrix}
-                    w_0^* &amp; w_1^* &amp; \ldots &amp; w_{d-1}^* &amp;
-0
-                \end{bmatrix}^T \text{Aug}(\vec{x}).</span> Denote the
-MSE of the model <span class="math inline">H_2(\vec{x})</span> by <span
-class="math inline">c_2</span>.</p>
-<p>Meanwhile, your friend Maxine recommends fitting a new prediction
-rule <span class="math inline">H_3</span> to the data with only the
-first <span class="math inline">d-1</span> features, with MSE <span
-class="math inline">c_3</span>.</p>
-<p>Order the three errors <span class="math inline">c_1, c_2, c_3</span>
-from least to greatest. Explain your solution. <em>(Use <span
-class="math inline">&lt;</span> if the error is strictly smaller, <span
-class="math inline">=</span> if the errors are equal or <span
-class="math inline">\leq</span> if the errors may be equal.)</em></p>
+<p>Due to privacy reasons it turns out you are unable to use the feature <span class="math inline">x^{(d)}</span>, so you need to find a way to modify your model so that it does not incorporate this feature. Your friend Minnie suggests using the parameters of the prediction rule you learned already and simply setting <span class="math inline">w_d=0</span>: <span class="math display">H_2(\vec{x}) = \begin{bmatrix}
+                    w_0^* &amp; w_1^* &amp; \ldots &amp; w_{d-1}^* &amp; 0
+                \end{bmatrix}^T \text{Aug}(\vec{x}).</span> Denote the MSE of the model <span class="math inline">H_2(\vec{x})</span> by <span class="math inline">c_2</span>.</p>
+<p>Meanwhile, your friend Maxine recommends fitting a new prediction rule <span class="math inline">H_3</span> to the data with only the first <span class="math inline">d-1</span> features, with MSE <span class="math inline">c_3</span>.</p>
+<p>Order the three errors <span class="math inline">c_1, c_2, c_3</span> from least to greatest. Explain your solution. <em>(Use <span class="math inline">&lt;</span> if the error is strictly smaller, <span class="math inline">=</span> if the errors are equal or <span class="math inline">\leq</span> if the errors may be equal.)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_1">
@@ -521,24 +365,14 @@ class="math inline">\leq</span> if the errors may be equal.)</em></p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse collapse" aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">c_1 \leq c_3 \leq c_2</span>.</p>
-<p>The prediction rule <span class="math inline">H_1</span> uses an
-additional feature compared to <span class="math inline">H_3</span>. The
-MSE cannot increase by adding a feature (HW4), therefore <span class="math inline">c_1 \leq c_3</span>.</p>
-<p>The MSE <span class="math inline">c_3</span> is as small as it can
-possibly be when using <span class="math inline">d-1</span> features. If
-we were to pick other coefficients – <em>whatever</em> they may be – the
-MSE cannot be smaller. So if we picked the coefficients <span class="math inline">(w^*_0, w^*_1, \ldots, w^*_{d-1})</span>, note that
-setting <span class="math inline">w_d=0</span> in <span class="math inline">H_2</span> is the same as setting a prediction rule
-with <span class="math inline">d-1</span> features and the first <span class="math inline">d</span> parameters of <span class="math inline">w^*</span>. Since this prediction rule is using
-<span class="math inline">d-1</span> features, the MSE <span class="math inline">c_2</span> of this model cannot be smaller than
-<span class="math inline">c_3</span>.</p>
+<p>The prediction rule <span class="math inline">H_1</span> uses an additional feature compared to <span class="math inline">H_3</span>. The MSE cannot increase by adding a feature (HW4), therefore <span class="math inline">c_1 \leq c_3</span>.</p>
+<p>The MSE <span class="math inline">c_3</span> is as small as it can possibly be when using <span class="math inline">d-1</span> features. If we were to pick other coefficients – <em>whatever</em> they may be – the MSE cannot be smaller. So if we picked the coefficients <span class="math inline">(w^*_0, w^*_1, \ldots, w^*_{d-1})</span>, note that setting <span class="math inline">w_d=0</span> in <span class="math inline">H_2</span> is the same as setting a prediction rule with <span class="math inline">d-1</span> features and the first <span class="math inline">d</span> parameters of <span class="math inline">w^*</span>. Since this prediction rule is using <span class="math inline">d-1</span> features, the MSE <span class="math inline">c_2</span> of this model cannot be smaller than <span class="math inline">c_3</span>.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -550,11 +384,7 @@ with <span class="math inline">d-1</span> features and the first <span class="ma
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>You are able to add <strong>5 additional individuals</strong> to your
-datasets, so that now you have <span class="math inline">n+5</span>
-<strong>individuals</strong>. You fit a new prediction rule to the data
-whose MSE is <span class="math inline">c_4</span>. Can <span
-class="math inline">c_4&lt; c_1</span>? Explain.</p>
+<p>You are able to add <strong>5 additional individuals</strong> to your datasets, so that now you have <span class="math inline">n+5</span> <strong>individuals</strong>. You fit a new prediction rule to the data whose MSE is <span class="math inline">c_4</span>. Can <span class="math inline">c_4&lt; c_1</span>? Explain.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
@@ -562,16 +392,12 @@ class="math inline">c_4&lt; c_1</span>? Explain.</p>
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse collapse" aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>In the case you add 5 individuals that exactly match the prediction
-rule, their added squared errors are all zero and therefore the
-<em>mean</em> squared error is smaller <span class="math inline">c_4 =
-\frac{n c_1}{n+5}</span>.;</p>
+<p>In the case you add 5 individuals that exactly match the prediction rule, their added squared errors are all zero and therefore the <em>mean</em> squared error is smaller <span class="math inline">c_4 = \frac{n c_1}{n+5}</span>.;</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️⭐️</h5>
 <p>
@@ -584,11 +410,7 @@ rule, their added squared errors are all zero and therefore the
 <p><br></p>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
-<h4
-id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
-Feedback: Find an error? Still confused? Have a suggestion?
-<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
-here</u></a>.</h4>
+<h4 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋 Feedback: Find an error? Still confused? Have a suggestion? <a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know here</u></a>.</h4>
 <hr />
 </body>
 </html>
