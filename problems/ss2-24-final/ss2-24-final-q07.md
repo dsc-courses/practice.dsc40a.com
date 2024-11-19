@@ -38,6 +38,9 @@ answer.
 
 # BEGIN SOLUTION
 
+Correctly uses law of total probability: 
+P(Lemur) = P(Lemur|Plains)P(Plains) + P(Lemur|Forest)P(Forest) + P(Lemur|Jungle)P(Jungle)= $$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}$$.
+
 TODO
 
 # END SOLUTION
@@ -51,6 +54,14 @@ probability you are at the African Plains? Show your work, and put a
 around your final answer.
 
 # BEGIN SOLUTION
+
+Correctly uses Bayes' Theorem and answer using Law of Total Probability from above: 
+Correctly uses law of total probability: 
+P(Plains | Lemur) = $$\frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur)}} = \frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur|Plains)P(Plains) + P(Lemur|Forest)P(Forest) + P(Lemur|Jungle)P(Jungle)}}$$
+
+$$ = \frac{\frac{1}{10}\cdot\frac{3}{5}}{\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}} = \frac{12}{29}$$.
+
+Not penalized again if an incorrect answer in **a** above is reused.
 
 TODO
 
@@ -95,6 +106,12 @@ final answer.
 
 # BEGIN SOLUTION
 
+Correct: $$1 - (\frac{3}{5})^4 = 1 - (1 - \frac{2}{5})^4$$
+
+$$ = 1 - (1 - P(\text{Fruit Bat | Hidden Jungle}))^4$$
+
+$$ = P(\text{at least 1 Fruit Bat} | \text{Hidden Jungle})$$
+
 TODO
 
 # END SOLUTION
@@ -108,6 +125,10 @@ Rhino or a Gazelle? Assume the two events are independent. Show your
 work, and put a around your final answer.
 
 # BEGIN SOLUTION
+
+Correctly uses inclusion-exclusion for addition rule:
+
+P(Rhino OR Gazelle) = P(Rhino) + P(Gazelle) - P(Rhino AND Gazelle) = $$\frac{3}{10} + \frac{1}{2} - \frac{3}{10} \cdot \frac{1}{2} =\frac{6}{20} + \frac{10}{20} - \frac{3}{20} = \frac{13}{20}$$
 
 TODO
 
@@ -127,6 +148,8 @@ two events conditionally independent?
 ( ) No
 
 # BEGIN SOLUTION
+
+Correct: answers "No", since $$\frac{3}{5} \neq \frac{2}{5} \times \frac{7}{10}$$.
 
 TODO
 

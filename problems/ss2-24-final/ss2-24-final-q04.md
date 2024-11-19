@@ -68,6 +68,8 @@ Which design matrix corresponds to $H_A(u, v)$?
 
 # BEGIN SOLUTION
 
+$X_1$
+
 # END SOLUTION
 
 # END SUBPROB
@@ -82,6 +84,8 @@ Which design matrix corresponds to $H_B(u, v)$?
 ( ) $X_4$
 
 # BEGIN SOLUTION
+
+$X_3$
 
 # END SOLUTION
 
@@ -98,6 +102,8 @@ Which design matrix corresponds to $H_C(u, v)$?
 
 # BEGIN SOLUTION
 
+$X_4$
+
 # END SOLUTION
 
 # END SUBPROB
@@ -112,6 +118,8 @@ Which design matrix corresponds to $H_D(u, v)$?
 ( ) $X_4$
 
 # BEGIN SOLUTION
+
+$X_2$
 
 # END SOLUTION
 
@@ -145,6 +153,8 @@ briefly justify your answer in the space below.
 
 # BEGIN SOLUTION
 
+Correct: $$H_E(u, v)$$ includes all features so it can (at least) express any lower-MSE hypothesis function like $$H_A, H_B, H_C, H_D$$. Because $$H_E$$ is the most "flexible" hypothesis function, it's also the most expressive and can fit our data the best, with the lowest mean squared error.
+
 TODO
 
 # END SOLUTION
@@ -158,6 +168,8 @@ prediction for a new point $(u_\text{new}, v_\text{new}) = (10, 15)$. Is
 this prediction likely to be accurate? Justify your answer.
 
 # BEGIN SOLUTION
+
+Argues "no" and provides justification: because of overfitting or extrapolation issues: if the lowest-MSE hypothesis function has too many terms, it may overfit (think of a high-degree polynomial overfitting a linear trend).
 
 TODO
 

@@ -12,6 +12,8 @@ $\nabla g\left( \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right) = \begin{bmatrix} 0
 
 # BEGIN SOLUTION
 
+$\begin{bmatrix} 2x_1 + x_2 - 4 \\ 2x_2 + x_1 - 6 \end{bmatrix}$
+
 TODO
 
 # END SOLUTION
@@ -28,6 +30,8 @@ rate $\alpha = \frac{1}{4}$. Show your work, and put a
 $\boxed{\text{box}}$ around your final answer for $\vec{x}^{(1)}$.
 
 # BEGIN SOLUTION
+
+Correctly finds $$\vec x^{(1)} = \begin{pmatrix} 1 \\ \frac94\end{pmatrix}$$
 
 TODO
 

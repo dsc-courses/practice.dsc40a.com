@@ -28,6 +28,18 @@ the binomial coefficient ${n \choose k}$.
 
 # BEGIN SOLUTION
 
+Correctly calculates the probabilities for each stage of development:
+
+$$P(\text{Young}) \propto \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{16}{50}$$ 
+
+$$P(\text{Adolescent}) \propto \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{17}{50}$$ 
+
+$$P(\text{Mature}) \propto \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{17}{50}$$
+
+And predicts Mature 
+
+If a student does not receive this rubric item, they should only receive **one** of the other rubric items.
+
 TODO
 
 # END SOLUTION

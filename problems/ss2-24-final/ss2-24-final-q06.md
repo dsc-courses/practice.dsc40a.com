@@ -19,6 +19,8 @@ How many possible hands of 5 cards are there in total?
 
 # BEGIN SOLUTION
 
+Correct $$\binom{24}{5}$$
+
 TODO
 
 # END SOLUTION
@@ -32,6 +34,8 @@ the same suit?
 
 # BEGIN SOLUTION
 
+Correct $$\frac{\binom{6}{5}\binom{4}{1}}{\binom{24}{5}}$$
+
 TODO
 
 # END SOLUTION
@@ -44,6 +48,10 @@ What is the probability that exactly two cards in a hand of Euchre are
 from the same suit?
 
 # BEGIN SOLUTION
+
+Correctly identifies the probability to be
+
+$$\frac{\binom{4}{1} \cdot \binom{6}{2} \cdot \binom{3}{3} \cdot \binom{6}{1}^3}{\binom{24}{5}}$$
 
 TODO
 
@@ -59,6 +67,10 @@ four remaining cards are Jacks (the strongest card in Euchre)?
 
 
 # BEGIN SOLUTION
+
+Correctly identifies the probability to be
+
+$$\frac{4}{24} \cdot \frac{3}{23} \cdot \frac{2}{22} \cdot \frac{1}{21}$$
 
 TODO
 
