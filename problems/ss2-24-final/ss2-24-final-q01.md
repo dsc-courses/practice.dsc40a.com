@@ -20,7 +20,11 @@ $$L(y_i, h) = \begin{cases} 0 & y_i = h \\ 1 & y_i \neq h \end{cases}$$
 ( ) $x_5$
 ( ) Not possible
 
+Include an explanation.
+
 # BEGIN SOLUTION
+
+Chooses any $$x_i\ne x_4$$ and does not select "not possible"
 
 TODO
 
@@ -38,6 +42,8 @@ $$L(y_i, h) = (y_i - h)^2$$
 
 # BEGIN SOLUTION
 
+$x_5$ should be modified to 20
+
 TODO
 
 # END SOLUTION
@@ -53,6 +59,8 @@ empirical risk?
 $$L(y_i, h) = (y_i - h)^2$$
 
 # BEGIN SOLUTION
+
+$x_1$ should be modified to 16
 
 TODO
 
@@ -81,7 +89,11 @@ $$L(y_i, h) = |y_i - h|$$
 ( ) $x_5$
 ( ) Not possible
 
+Include an explanation.
+
 # BEGIN SOLUTION
+
+$x_3$
 
 TODO
 
@@ -105,7 +117,11 @@ $$L(y_i, h) = |y_i - h|$$
 ( ) $x_5$
 ( ) Not possible
 
+Include an explanation.
+
 # BEGIN SOLUTION
+
+Not Possible
 
 TODO
 
@@ -122,6 +138,8 @@ $$L(y_i, h) = (y_i - h)^2$$
 
 # BEGIN SOLUTION
 
+The mean of the dataset: $$\frac{13}{14}$$
+
 TODO
 
 # END SOLUTION
@@ -135,7 +153,19 @@ $x_1 = 1, x_2=2, x_4=4, x_5=5$. Which of the following values of $h^*$
 minimize the following loss function and corresponding empirical risk?
 $$L(y_i, h) = |y_i - h|$$
 
+[ ] 1
+[ ] 1.5
+[ ] 2
+[ ] 2.5
+[ ] 3
+[ ] 3.5
+[ ] 4
+[ ] 4.5
+[ ] 5
+
 # BEGIN SOLUTION
+
+Selected: 2, 2.5, 3, 3.5, 4
 
 TODO
 

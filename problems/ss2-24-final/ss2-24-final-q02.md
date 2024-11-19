@@ -32,6 +32,8 @@ $$Z(h) = \frac{1}{7} \sum_{i = 1}^7 (h - z_i)$$
 
 # BEGIN SOLUTION
 
+Without an absolute value sign, the empirical risk is minimized when $$h$$ is as small as possible, so $h^* = -\infty$.
+
 TODO
 
 # END SOLUTION
@@ -51,6 +53,8 @@ What value of $h$ minimizes **mean absolute error**, $T_\text{abs}(h)$?
 
 # BEGIN SOLUTION
 
+$$y_3$$, the median of the dataset.
+
 TODO
 
 # END SOLUTION
@@ -68,6 +72,9 @@ $T_\text{abs}(h)$ be **at the point whose $x$-value is $h_p$**, given
 this assumption?
 
 # BEGIN SOLUTION
+
+$$-\frac{3}{7}$$
+Explanation: slope of $$T_{abs}(h)$$ (number of points to the left of h - number of points to the right of h) / 7. If the slope of $$T_{abs}(h)$$ was originally $$-\frac17$$, there must have been four points to the right of h and 3 points to the left of h, meaning $$y_2<h<y_3$$. It follows that in the modified dataset there are 5 points to the right of h and 2 points to the left of h, meaning the slope of $$T_{abs}(h)$$ must be $$-\frac37$$
 
 TODO
 
@@ -107,6 +114,10 @@ point whose $x$-value is $h_p$**, given this assumption?
 
 # BEGIN SOLUTION
 
+Correct case 1: assumes that $$x_3$$ and $$x_4$$ are still in the dataset and finds the answer to be $$-\frac{1}{11}$$
+
+Correct case 2: does not assume that $$x_3$$ and $$x_4$$ are still in the dataset and finds the answer to be $$\frac{1}{9}$$
+
 TODO
 
 # END SOLUTION
@@ -130,6 +141,8 @@ respectively.
 ( ) $\text{slope of }X_\text{abs}(h) < \text{slope of } Y_\text{abs}(h) < \text{slope of } T_\text{abs}(h)$
 
 # BEGIN SOLUTION
+
+Correct, slope of $$T_{abs}(h)$$ < slope of $$Y_{abs}(h)$$ < slope of $$X_{abs}(h)$$
 
 TODO
 
