@@ -818,7 +818,6 @@ saying <span class="math display">\begin{bmatrix}3\\15\\18\end{bmatrix}
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p><strong>[Eligible for midterm redemption]</strong></p>
 <p>You are given a dataset with the following data points and want to
 fit a variety of hypothesis functions to predict <span
 class="math inline">y</span> from features <span
@@ -898,6 +897,48 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">X_1</span></p>
+<p>We can easily create the design matrix from <span class="math inline">H_A(u, v) = w_0 + w_1 u + w_2 u^2 + w_3 u^3</span>
+by viewing the order of variables and how they are being manipulated. We
+can see there is a <span class="math inline">w_0</span> term, which
+means that the first column should be a vector of ones.</p>
+<p>This means we know:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>This immediately eliminates <span class="math inline">X_3</span>. We
+now see that the second column should be <span class="math inline">\vec
+u</span>. We are told the values inside of the vector at the top, which
+means we get:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  1 &amp; ? &amp; ? \\
+    1 &amp;  3 &amp; ? &amp; ? \\
+    1 &amp;  2 &amp; ? &amp; ? \\
+    1 &amp;  4 &amp; ? &amp; ? \\
+    1 &amp;  5 &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>This does not eliminate any of our values, so we look to see the next
+column will be <span class="math inline">\vec u^2</span>. This
+means:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  1 &amp; (1)^2 &amp; ? \\
+    1 &amp;  3 &amp; (3)^2 &amp; ? \\
+    1 &amp;  2 &amp; (2)^2 &amp; ? \\
+    1 &amp;  4 &amp; (4)^2 &amp; ? \\
+    1 &amp;  5 &amp; (5)^2 &amp; ?
+    \end{bmatrix} = \begin{bmatrix}
+    1 &amp;  1 &amp; 1 &amp; ? \\
+    1 &amp;  3 &amp; 9 &amp; ? \\
+    1 &amp;  2 &amp; 4 &amp; ? \\
+    1 &amp;  4 &amp; 16 &amp; ? \\
+    1 &amp;  5 &amp; 25 &amp; ?
+    \end{bmatrix}</span></p>
+<p>Here we can now eliminate <span class="math inline">X_2</span> and
+<span class="math inline">X_4</span>, so we know the answer must be
+<span class="math inline">X_1</span>!</p>
 </div>
 </div>
 </div>
@@ -926,6 +967,27 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">X_3</span></p>
+<p>We can easily create the design matrix from <span class="math inline">H_B(u, v) = w_0 u + w_1 u^2 + w_2 u^3 + w_3 u
+v</span> by viewing the order of variables and how they are being
+manipulated. We can see there is a <span class="math inline">w_0</span>
+term that is being modified, which means that the first column should be
+a vector of ones multiplied by <span class="math inline">\vec
+u</span>.</p>
+<p>This means we know:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 * 1 &amp;  ? &amp; ? &amp; ? \\
+    1 * 3 &amp;  ? &amp; ? &amp; ? \\
+    1 * 2 &amp;  ? &amp; ? &amp; ? \\
+    1 *4 &amp;  ? &amp; ? &amp; ? \\
+    1 * 5 &amp;  ? &amp; ? &amp; ?
+    \end{bmatrix} = \begin{bmatrix}
+    1 &amp;  ? &amp; ? &amp; ? \\
+    3 &amp;  ? &amp; ? &amp; ? \\
+    2 &amp;  ? &amp; ? &amp; ? \\
+    4 &amp;  ? &amp; ? &amp; ? \\
+    5 &amp;  ? &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>We can see the only design matrix with this first column is <span class="math inline">X_3</span>.</p>
 </div>
 </div>
 </div>
@@ -954,6 +1016,39 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">X_4</span></p>
+<p>We can easily create the design matrix from <span class="math inline">H_C(u, v) = w_0 + w_1 u + w_2 v + w_3 v^2</span> by
+viewing the order of variables and how they are being manipulated. We
+can see there is a <span class="math inline">w_0</span> term, which
+means that the first column should be a vector of ones.</p>
+<p>This means we know:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>This immediately eliminates <span class="math inline">X_3</span>. We
+now see that the second column should be <span class="math inline">\vec
+u</span>. We are told the values inside of the vector at the top, which
+means we get:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  1 &amp; ? &amp; ? \\
+    1 &amp;  3 &amp; ? &amp; ? \\
+    1 &amp;  2 &amp; ? &amp; ? \\
+    1 &amp;  4 &amp; ? &amp; ? \\
+    1 &amp;  5 &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>This does not eliminate any of our values, so we look to see the next
+column will be <span class="math inline">\vec v</span>. This means:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  1 &amp; 3 &amp; ? \\
+    1 &amp;  3 &amp; 0 &amp; ? \\
+    1 &amp;  2 &amp; 2 &amp; ? \\
+    1 &amp;  4 &amp; -4 &amp; ? \\
+    1 &amp;  5 &amp; -1 &amp; ?
+    \end{bmatrix}</span></p>
+<p>Here we can eliminate <span class="math inline">X_1</span> and <span class="math inline">X_2</span>, which means our answer is <span class="math inline">X_4</span>.</p>
 </div>
 </div>
 </div>
@@ -982,14 +1077,56 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">X_2</span></p>
+<p>We can easily create the design matrix from <span class="math inline">H_D(u, v) = w_0 + w_1 u + w_2 u^3 + w_3 u v</span>
+by viewing the order of variables and how they are being manipulated. We
+can see there is a <span class="math inline">w_0</span> term, which
+means that the first column should be a vector of ones.</p>
+<p>This means we know:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ? \\
+    1 &amp;  ? &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>This immediately eliminates <span class="math inline">X_3</span>. We
+now see that the second column should be <span class="math inline">\vec
+u</span>. We are told the values inside of the vector at the top, which
+means we get:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  1 &amp; ? &amp; ? \\
+    1 &amp;  3 &amp; ? &amp; ? \\
+    1 &amp;  2 &amp; ? &amp; ? \\
+    1 &amp;  4 &amp; ? &amp; ? \\
+    1 &amp;  5 &amp; ? &amp; ?
+    \end{bmatrix}</span></p>
+<p>We cannot eliminate any of the design matrices, so we move to the
+next column, which is <span class="math inline">\vec u^3</span>. This
+means:</p>
+<p><span class="math display">X_? = \begin{bmatrix}
+    1 &amp;  1 &amp; (1)^3 &amp; ? \\
+    1 &amp;  3 &amp; (3)^3 &amp; ? \\
+    1 &amp;  2 &amp; (2)^3 &amp; ? \\
+    1 &amp;  4 &amp; (4)^3 &amp; ? \\
+    1 &amp;  5 &amp; (5)^3 &amp; ?
+    \end{bmatrix}
+    = \begin{bmatrix}
+    1 &amp;  1 &amp; 1 &amp; ? \\
+    1 &amp;  3 &amp; 27 &amp; ? \\
+    1 &amp;  2 &amp; 8 &amp; ? \\
+    1 &amp;  4 &amp; 64 &amp; ? \\
+    1 &amp;  5 &amp; 125 &amp; ?
+    \end{bmatrix}</span></p>
+<p>Now we can eliminate the design matrices <span class="math inline">X_1</span> and <span class="math inline">X_4</span>,
+which means the answer is <span class="math inline">X_2</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <p>The following hypothesis functions are repeated from the previous
-page, for your convenience, plus an additional hypothesis function <span
-class="math inline">H_E</span>:</p>
+subparts, for your convenience, plus an additional hypothesis function
+<span class="math inline">H_E</span>:</p>
 <ol type="1">
 <li><p><span class="math inline">H_A(u, v) = w_0 + w_1 u + w_2 u^2 + w_3
 u^3</span></p></li>
@@ -1013,6 +1150,7 @@ the space below.</p>
 <li><p><input type="radio" disabled="" /> <span class="math inline">H_B(u, v)</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">H_C(u, v)</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">H_D(u, v)</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">H_E(u, v)</span></p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -1027,12 +1165,12 @@ aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correct: <span class="math display">H_E(u, v)</span> includes all
-features so it can (at least) express any lower-MSE hypothesis function
-like <span class="math display">H_A, H_B, H_C, H_D</span>. Because <span class="math display">H_E</span> is the most “flexible” hypothesis
-function, it’s also the most expressive and can fit our data the best,
-with the lowest mean squared error.</p>
-<p>TODO</p>
+<p><span class="math inline">H_E(u, v)</span></p>
+<p><span class="math inline">H_E(u, v)</span> contains the most
+information. <span class="math inline">H_E</span> has <span class="math inline">\vec u</span> and <span class="math inline">\vec
+v</span>.This means we have information about both variables. We also
+see it has every component present in the other functions (<span class="math inline">H_A, H_B, H_C, H_D</span>). This makes <span class="math inline">H_E</span> the most expressive, which will allow it
+to fit our data the best.</p>
 </div>
 </div>
 </div>
@@ -1056,11 +1194,12 @@ aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Argues “no” and provides justification: because of overfitting or
-extrapolation issues: if the lowest-MSE hypothesis function has too many
-terms, it may overfit (think of a high-degree polynomial overfitting a
-linear trend).</p>
-<p>TODO</p>
+<p>No</p>
+<p>This prediction is not likely to be accurate due to overfitting or
+extrapolation issues. If there are too many terms there is a higher
+chance the function is overfitting the training data and will not
+generalize well to new points. You can think of a high-degree polynomial
+overfitting a linear trend.</p>
 </div>
 </div>
 </div>
