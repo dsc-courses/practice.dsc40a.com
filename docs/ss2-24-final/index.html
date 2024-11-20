@@ -69,9 +69,8 @@
 minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><strong>[Eligible for midterm redemption]</strong> Consider the
-dataset <span class="math inline">x_1 = 1, x_2 = 2, x_3 = 3, x_4 = 4,
-x_5 = 5</span>.</p>
+<p>Consider the dataset <span class="math inline">x_1 = 1, x_2 = 2, x_3
+= 3, x_4 = 4, x_5 = 5</span>.</p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
 <p>Which single element of the dataset would you change, and to what
@@ -79,11 +78,10 @@ value, to make <span class="math inline">h^* = 4</span> the single
 minimizing value for the following loss function and corresponding
 empirical risk? Bubble in your choice of <span
 class="math inline">x_i</span>, if possible, and provide the new value
-of that <span class="math inline">x_i</span> in the box below. If no
-such <span class="math inline">x_i</span> is possible, bubble in “Not
-possible" and explain why in the box below. <span
-class="math display">L(y_i, h) = \begin{cases} 0 &amp; y_i = h \\ 1
-&amp; y_i \neq h \end{cases}</span></p>
+of that <span class="math inline">x_i</span>. If no such <span
+class="math inline">x_i</span> is possible, bubble in “Not possible" and
+explain why. <span class="math display">L(y_i, h) = \begin{cases} 0
+&amp; y_i = h \\ 1 &amp; y_i \neq h \end{cases}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">x_1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">x_2</span></p></li>
@@ -106,9 +104,16 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Chooses any <span class="math display">x_i\ne x_4</span> and does not
-select “not possible”</p>
-<p>TODO</p>
+<p><span class="math inline">x_1 = 4</span> or <span class="math inline">x_2 = 4</span> or <span class="math inline">x_3 =
+4</span> or <span class="math inline">x_5 = 4</span></p>
+<p>Recall from lecture 0-1 loss ( <span class="math display">L(y_i, h) =
+\begin{cases} 0 &amp; y_i = h \\ 1 &amp; y_i \neq h \end{cases}</span> )
+is minimized by the mode. This means we want to maximize the number of
+matches between <span class="math inline">h</span> and <span class="math inline">y_i</span>. If <span class="math inline">h^* =
+4</span> then we want to change values that are not equal to <span class="math inline">4</span> into <span class="math inline">4</span>.
+This means any answer that is not <span class="math inline">x_4</span>
+can be changed to equal <span class="math inline">4</span> and it is
+possible.</p>
 </div>
 </div>
 </div>
@@ -134,7 +139,20 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">x_5</span> should be modified to 20</p>
-<p>TODO</p>
+<p>We know that <span class="math inline">L(y_i, h) = (y_i - h)^2</span>
+is minimized by the mean. This means <span class="math inline">h^* =
+\frac{1}{n} \sum_{i = 1}^n x_i</span>.</p>
+<p>We can make the equation <span class="math inline">h^* =6</span> by
+writing <span class="math inline">6 = \frac{1 + 2 + 3 + 4 +
+x_5'}{5}</span>. From here we simply solve for <span class="math inline">x_5'</span>.</p>
+<p><span class="math display">\begin{align*}
+6 &amp;= \frac{1 + 2 + 3 + 4 + x_5'}{5}\\
+30 &amp;= 1 + 2 + 3 + 4 + x_5'\\
+30 &amp;= 10 + x_5 \\
+20 &amp;= x_5
+\end{align*}</span></p>
+<p>Here we can see that <span class="math inline">x_5</span> should be
+changed to 20.</p>
 </div>
 </div>
 </div>
@@ -160,18 +178,27 @@ aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">x_1</span> should be modified to 16</p>
-<p>TODO</p>
+<p>Once again we know that <span class="math inline">L(y_i, h) = (y_i -
+h)^2</span> is minimized by the mean. This means <span class="math inline">h^* = \frac{1}{n} \sum_{i = 1}^n x_i</span>.</p>
+<p>We can make the equation <span class="math inline">h^* =6</span> by
+writing <span class="math inline">6 = \frac{x_1' + 2 + 3 + 4 +
+5}{5}</span>. From here we simply solve for <span class="math inline">x_1'</span>.</p>
+<p><span class="math display">\begin{align*}
+6 &amp;= \frac{x_1' + 2 + 3 + 4 + 5}{5}\\
+30 &amp;= x_1 + 2 + 3 + 4 + 5\\
+30 &amp;= x_1 + 14 \\
+16 &amp;= x_1
+\end{align*}</span></p>
+<p>Here we can see that <span class="math inline">x_1</span> should be
+changed to 16.</p>
 </div>
 </div>
 </div>
 </div>
-<p><br></p>
-<p><em>The following information is repeated from the previous page, for
-your convenience.</em></p>
-<p>Consider the dataset <span class="math inline">x_1 = 1, x_2 = 2, x_3
-= 3, x_4 = 4, x_5 = 5</span>.</p>
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
+<p>Consider the dataset <span class="math inline">x_1 = 1, x_2 = 2, x_3
+= 3, x_4 = 4, x_5 = 5</span>.</p>
 <p>Which single element of the dataset would you change, and to what
 value, to make <span class="math inline">h^* = 4</span> for the
 following loss function and corresponding empirical risk? Bubble in your
