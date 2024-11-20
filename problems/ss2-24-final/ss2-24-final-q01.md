@@ -158,11 +158,11 @@ $$L(y_i, h) = (y_i - h)^2$$
 
 # BEGIN SOLUTION
 
-The mean of the dataset: $$\frac{13}{14}$$
+The mean of the dataset: $\frac{13}{4}$
 
 Once again we know that $L(y_i, h) = (y_i - h)^2$ is minimized by the mean. This means $h^* = \frac{1}{n} \sum_{i = 1}^n x_i$.
 
-TODO
+If we delete $x_2$ this means our equation becomes $\frac{1 + 3 + 4 + 5}{4} = \frac{13}{4}$.
 
 # END SOLUTION
 
@@ -187,9 +187,9 @@ $$L(y_i, h) = |y_i - h|$$
 
 # BEGIN SOLUTION
 
-Selected: 2, 2.5, 3, 3.5, 4
+2, 2.5, 3, 3.5, 4
 
-TODO
+Once again, recall $L(y_i, h) = |y_i - h|$ is minimized by the median. The new dataset is even and has a median between $2$ and $4$, which means any answer in-between these values should be selected.
 
 # END SOLUTION
 
