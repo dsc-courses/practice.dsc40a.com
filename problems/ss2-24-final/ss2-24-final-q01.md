@@ -189,7 +189,7 @@ $$L(y_i, h) = |y_i - h|$$
 
 2, 2.5, 3, 3.5, 4
 
-Once again, recall $L(y_i, h) = |y_i - h|$ is minimized by the median. The new dataset is even and has a median between $2$ and $4$, which means any answer in-between these values should be selected.
+Once again, recall $L(y_i, h) = |y_i - h|$ is minimized by the median. The new dataset is even and has a median between $2$ and $4$, which means any answer in-between (and including) these values should be selected.
 
 # END SOLUTION
 
