@@ -3,18 +3,14 @@
 Information about a sample of 50 cheetahs in the San Diego Safari Park
 is summarized in the table below.
 
-<!-- ::: center
-![image](final-images/su24_bayes.png){width="90%"}
-::: -->
-
-(In the assets/images/su-final)
+<center><img src="../assets/images/su24-final/su24_bayes.png" width="500" height="350"></center>
 
 For instance, we're told that 10 cheetahs with dark fur and short claws
 are young and that there were 11 cheetahs with golden fur and short
 claws.
 
 Given its other characteristics, San Diego Safari Park would like to use
-this information to predict whether a cheetah new to the Park is young,
+this information to predict whether a new cheetah to the Park is young,
 adolescent, or mature.
 
 A new cheetah is observed with **golden fur** and **long claws**. Using
@@ -39,6 +35,8 @@ $$P(\text{Mature}) \propto \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{17}{50}
 And predicts Mature 
 
 If a student does not receive this rubric item, they should only receive **one** of the other rubric items.
+
+$P(\text{feature | stage}) = \frac{\text{count(feature and stage)} + 1}{\text{total count(stage) + number of categories for feature}}
 
 TODO
 
