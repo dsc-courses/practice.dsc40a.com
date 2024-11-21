@@ -17,9 +17,9 @@ a box.
 
 # BEGIN SOLUTION
 
-Correctly explains that vectors are linearly independent for any $$\alpha \neq 1$$.
+The vectors are linearly independent for any $\alpha \neq 1$.
 
-TODO
+To be linearly independent it means there is not a linear combination between any of the vectors. We can see that if we add $\vec v_1$ and $\vec v_2$ it looks almost like $\vec v_3$, so as long as we can make it so $$\alpha \neq 1$ then the vectors will be independent.
 
 # END SOLUTION
 
@@ -32,9 +32,11 @@ orthogonal? Show your work, and put your answer in a box.
 
 # BEGIN SOLUTION
 
-Correctly notes there are no values of $$\alpha$$ for which $$\vec{v}_1, \vec{v}_3$$ are orthogonal, as the first component containing $$\alpha$$ is multiplied by 0.
+We know for $\vec v_1$ and $\vec v_3$ to be orthogonal their dot product should equal zero.
 
-TODO
+$$\vec v_1 \cdot \vec v_3 = (0)(\alpha) + (1)(1) + (1)(2) = 0$$
+
+There are no values of $\alpha$ for which $\vec{v}_1, \vec{v}_3$ are orthogonal. We can see $(0)(\alpha) = 0$, which means that we cannot manipulate $\alpha$ in any way to make the vectors orthogonal.
 
 # END SOLUTION
 
@@ -47,9 +49,25 @@ orthogonal? Show your work, and put your answer in a box.
 
 # BEGIN SOLUTION
 
-Correctly notes $$\alpha = -2$$ for this question, as this makes the dot product of $$\vec{v_1} \cdot \vec{v_3} = 0$$.
+$\alpha = -2$
 
-TODO
+We know for $\vec v_2$ and $\vec v_3$ to be orthogonal their dot product should equal zero.
+
+The dot product is:
+
+$$
+\vec v_2 \cdot \vec v_3 = (1)(\alpha) + (0)(1) + (1)(2)
+$$
+
+So we can do:
+
+\begin{align*}
+0 &= (1)(\alpha) + (0)(1) + (1)(2)\\
+0 &=\alpha + 0 + 2\\
+-2 &= \alpha
+\end{align*}
+
+We can clearly see when $\alpha = -2$ then the dot product will equal zero.
 
 # END SOLUTION
 
@@ -69,9 +87,9 @@ Is the vector $\begin{bmatrix}
 
 # BEGIN SOLUTION
 
-Correct: answered yes because any vector in $$\mathbb{R}^3$$ is in the span of 3 linearly independent vectors in $$\mathbb{R}^3$$.
+Yes
 
-TODO
+If $\alpha = 3$ and all three vectors are independent from one another then any vector in $\mathbb{R}^3$ is in the span of 3 linearly independent vectors in $\mathbb{R}^3$.
 
 # END SOLUTION
 
@@ -94,13 +112,18 @@ What is the projection of the vector $\begin{bmatrix}
 5 \\
 8
 \end{bmatrix}$ onto $\vec{v}_1$? Provide your answer in the form of a
-vector. Show your work, and put your answer in a .
+vector. Show your work, and put your answer in a box.
 
 # BEGIN SOLUTION
 
-Correctly projects $\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix}$ onto $$\vec{v_1}$$: $$\frac{\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix} \cdot \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}}{\begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}\cdot \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}} \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix} = \frac{13}{2}  \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix}0 \\ 6.5 \\ 6.5 \end{bmatrix}$$
+$\begin{bmatrix}0 \\ 6.5 \\ 6.5 \end{bmatrix}$
 
-TODO
+We follow the equation  $\frac{\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix} \cdot \vec v_1}{\vec v_1 \cdot \vec v_1} \vec v_1$ to find the projection of $\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix}$ onto $\vec{v_1}$:
+
+\begin{align*}
+\frac{\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix} \cdot \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}}{\begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}\cdot \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}} \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix} &= \frac{13}{2}  \begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}\\
+&= \begin{bmatrix}0 \\ 6.5 \\ 6.5 \end{bmatrix}
+\end{align*}
 
 # END SOLUTION
 
