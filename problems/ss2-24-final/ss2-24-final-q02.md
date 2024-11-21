@@ -1,15 +1,15 @@
 # BEGIN PROB
 
-**\[Eligible for midterm redemption\]**
-
 Consider a dataset of 4 values, $y_1 < y_2 < y_3 < y_4$, with a mean of
-6.\
+6.
+
 Let $Y_\text{abs}(h) = \frac{1}{4} \sum_{i = 1}^4 |y_i - h|$ represent
 the mean absolute error of a constant prediction $h$ on this dataset of
 4 values.
 
 Similarly, consider another dataset of 3 values, $x_1 < x_2 < x_3$, that
-also has a mean of 6.\
+also has a mean of 6.
+
 Let $X_\text{abs}(h) = \frac{1}{3} \sum_{i = 1}^3 |x_i - h|$ represent
 the mean absolute error of a constant prediction $h$ on this dataset of
 3 values.
@@ -32,9 +32,9 @@ $$Z(h) = \frac{1}{7} \sum_{i = 1}^7 (h - z_i)$$
 
 # BEGIN SOLUTION
 
-Without an absolute value sign, the empirical risk is minimized when $$h$$ is as small as possible, so $h^* = -\infty$.
+$Z(h) = \frac{1}{7} \sum_{i = 1}^7 (h - z_i)$ is minimized when $h$ is as small as possible. If $h$ is smaller than $z_i$ then it will make a negative risk! This means the smaller $h$ is the smaller the difference will be!
 
-TODO
+When looking at our answers available the smallest risk would be $h^* = -\infty$.
 
 # END SOLUTION
 
@@ -53,18 +53,20 @@ What value of $h$ minimizes **mean absolute error**, $T_\text{abs}(h)$?
 
 # BEGIN SOLUTION
 
-$$y_3$$, the median of the dataset.
+$y_3$, the median of the dataset.
 
-TODO
+Recall $h^*$ for $T_\text{abs}(h)$ is the median of the dataset!
+
+Our dataset is: $x_1, y_1, y_2, y_3, y_4, x_2, x_3$. Our median is $y_3$, which means $h^* = y_3$.
 
 # END SOLUTION
 
 # END SUBPROB
 
+# BEGIN SUBPROB
+
 Suppose the slope of $T_\text{abs}(h)$ is $-\frac{1}{7}$ at some $h_p$.
 *Hint: think about what values of $h$ could have this slope.*
-
-# BEGIN SUBPROB
 
 Suppose the dataset is now modified by moving the $\{x_i\}$ such that\
 $y_1 < y_2 < y_3 < y_4 < x_1 < x_2 < x_3$. What would the slope of
@@ -74,13 +76,14 @@ this assumption?
 # BEGIN SOLUTION
 
 $$-\frac{3}{7}$$
-Explanation: slope of $$T_{abs}(h)$$ (number of points to the left of h - number of points to the right of h) / 7. If the slope of $$T_{abs}(h)$$ was originally $$-\frac17$$, there must have been four points to the right of h and 3 points to the left of h, meaning $$y_2<h<y_3$$. It follows that in the modified dataset there are 5 points to the right of h and 2 points to the left of h, meaning the slope of $$T_{abs}(h)$$ must be $$-\frac37$$
 
-TODO
+Slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of points to the left of h - number of points to the right of h)}$. If the slope of $$T_{abs}(h)$$ was originally $$-\frac{1}{7}$$, there must have been four points to the right of h and 3 points to the left of h, meaning $$y_2<h<y_3$$. It follows that in the modified dataset there are 5 points to the right of h and 2 points to the left of h, meaning the slope of $$T_{abs}(h)$$ must be $$-\frac{3}{7}$$
 
 # END SOLUTION
 
 # END SUBPROB
+
+# BEGIN SUBPROB
 
 *The following information is repeated from the previous page, for your
 convenience.*
@@ -104,15 +107,14 @@ denote these 7 values as $\{ z_1, z_2, z_3, z_4, z_5, z_6, z_7 \}$.
 Suppose the slope of $T_\text{abs}(h)$ is $-\frac{1}{7}$ at some $h_p$.
 *Hint: think about what values of $h$ could have this slope.*
 
-# BEGIN SUBPROB
-
 Suppose the dataset is now modified by repeating each value $y_i$ such
 that it now contains $x_1, y_1, y_1, y_2, y_2, y_3, y_3, y_4, y_4$, in
-ascending order; the ordering of the points is the same as the beginning
-of this question. What would the slope of $T_\text{abs}(h)$ be **at the
+ascending order; the ordering of the points is the same as the beginning of this question. What would the slope of $T_\text{abs}(h)$ be **at the
 point whose $x$-value is $h_p$**, given this assumption?
 
 # BEGIN SOLUTION
+
+There are two answers based on if you believed $x_3$ and $x_4$ was still in the dataset.
 
 Correct case 1: assumes that $$x_3$$ and $$x_4$$ are still in the dataset and finds the answer to be $$-\frac{1}{11}$$
 
