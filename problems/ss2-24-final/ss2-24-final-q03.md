@@ -1,6 +1,6 @@
 # BEGIN PROB
 
-**\[Eligible for midterm redemption\]**
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 3a-g</i>
 
 Consider the following vectors in $\mathbb{R}^3$, where
 $\alpha \in \mathbb{R}$ is a scalar:
@@ -19,7 +19,7 @@ a box.
 
 The vectors are linearly independent for any $\alpha \neq 1$.
 
-To be linearly independent it means there is not a linear combination between any of the vectors. We can see that if we add $\vec v_1$ and $\vec v_2$ it looks almost like $\vec v_3$, so as long as we can make it so $$\alpha \neq 1$ then the vectors will be independent.
+To be linearly independent it means there is not a linear combination between any of the vectors. We can see that if we add $\vec v_1$ and $\vec v_2$ it looks almost like $\vec v_3$, so as long as we can make it so $\alpha \neq 1$ then the vectors will be independent.
 
 # END SOLUTION
 

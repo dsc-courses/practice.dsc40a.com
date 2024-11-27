@@ -69,6 +69,8 @@
 minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 1a-g</i></p>
 <p>Consider the dataset <span class="math inline">x_1 = 1, x_2 = 2, x_3
 = 3, x_4 = 4, x_5 = 5</span>.</p>
 <p><br></p>
@@ -106,8 +108,8 @@ aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 </header>
 <p><span class="math inline">x_1 = 4</span> or <span class="math inline">x_2 = 4</span> or <span class="math inline">x_3 =
 4</span> or <span class="math inline">x_5 = 4</span></p>
-<p>Recall from lecture 0-1 loss ( <span class="math display">L(y_i, h) =
-\begin{cases} 0 &amp; y_i = h \\ 1 &amp; y_i \neq h \end{cases}</span> )
+<p>Recall from lecture 0-1 loss <span class="math display">L(y_i, h) =
+\begin{cases} 0 &amp; y_i = h \\ 1 &amp; y_i \neq h \end{cases}</span>
 is minimized by the mode. This means we want to maximize the number of
 matches between <span class="math inline">h</span> and <span class="math inline">y_i</span>. If <span class="math inline">h^* =
 4</span> then we want to change values that are not equal to <span class="math inline">4</span> into <span class="math inline">4</span>.
@@ -361,6 +363,8 @@ including) these values should be selected.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 2a-e</i></p>
 <p>Consider a dataset of 4 values, <span class="math inline">y_1 &lt;
 y_2 &lt; y_3 &lt; y_4</span>, with a mean of 6.</p>
 <p>Let <span class="math inline">Y_\text{abs}(h) = \frac{1}{4} \sum_{i =
@@ -485,10 +489,10 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <p>Slope of <span class="math inline">T_{abs}(h)</span> is equal to
 <span class="math inline">\frac{1}{7} * \text{(number of points to the
 left of h - number of points to the right of h)}</span>. If the slope of
-<span class="math display">T_{abs}(h)</span> was originally <span class="math display">-\frac{1}{7}</span>, there must have been four
-points to the right of h and 3 points to the left of h, meaning <span class="math display">y_2&lt;h&lt;y_3</span>. It follows that in the
+<span class="math inline">T_{abs}(h)</span> was originally <span class="math inline">-\frac{1}{7}</span>, there must have been four
+points to the right of h and 3 points to the left of h, meaning <span class="math inline">y_2&lt;h&lt;y_3</span>. It follows that in the
 modified dataset there are 5 points to the right of h and 2 points to
-the left of h, meaning the slope of <span class="math display">T_{abs}(h)</span> must be <span class="math display">-\frac{3}{7}</span></p>
+the left of h, meaning the slope of <span class="math inline">T_{abs}(h)</span> must be <span class="math inline">-\frac{3}{7}</span></p>
 </div>
 </div>
 </div>
@@ -609,7 +613,8 @@ slope of <span class="math display">Y_{abs}(h)</span> &lt; slope of
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p><strong>[Eligible for midterm redemption]</strong></p>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 3a-g</i></p>
 <p>Consider the following vectors in <span
 class="math inline">\mathbb{R}^3</span>, where <span
 class="math inline">\alpha \in \mathbb{R}</span> is a scalar:</p>
@@ -640,7 +645,7 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <p>To be linearly independent it means there is not a linear combination
 between any of the vectors. We can see that if we add <span class="math inline">\vec v_1</span> and <span class="math inline">\vec
 v_2</span> it looks almost like <span class="math inline">\vec
-v_3</span>, so as long as we can make it so $<span class="math inline">\alpha \neq 1</span> then the vectors will be
+v_3</span>, so as long as we can make it so <span class="math inline">\alpha \neq 1</span> then the vectors will be
 independent.</p>
 </div>
 </div>
@@ -899,6 +904,8 @@ saying <span class="math display">\begin{bmatrix}3\\15\\18\end{bmatrix}
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 4a-f</i></p>
 <p>You are given a dataset with the following data points and want to
 fit a variety of hypothesis functions to predict <span
 class="math inline">y</span> from features <span
@@ -1288,6 +1295,8 @@ overfitting a linear trend.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 5a-c</i></p>
 <p>Let <span class="math inline">\vec{x} = \begin{bmatrix} x_1 \\ x_2
 \end{bmatrix}</span>. Consider the function <span
 class="math inline">g(\vec{x}) = x_1^2 + x_2^2 + x_1 x_2 - 4x_1 - 6x_2 +
@@ -1402,8 +1411,7 @@ b\in\mathbb{R}</span>.</p>
 (1-t) g(c) + t g(d) &amp;= (1-t)(af(c) + b) + t(af(d) + b)\\
 &amp;= (1-t)(af(c)) + (1-t)b + t(af(d)) + tb\\
 &amp;= (1-t)(af(c)) + t(af(d)) + b - tb + tb\\
-&amp;= a((1-t)f(c) + tf(d)) + b\\
-&amp;/geq af((1-t)c + td) + b\\
+&amp;= a((1-t)f(c) + tf(d)) + b \geq af((1-t)c + td) + b\\
 &amp;= g((1-t)c + td)
 \end{align*}</span></p>
 </div>
@@ -1413,10 +1421,12 @@ b\in\mathbb{R}</span>.</p>
 <p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
-<p>[(12 pts)] Euchre is a card game popular in the Midwest United States
-and is played with a partial deck of 24 cards: the 9, 10, Jack, Queen,
-King, and Ace of all four suits (Hearts, Diamonds, Spades, Clubs). A
-hand of cards in Euchre is 5 cards.</p>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 6a-d</i></p>
+<p>Euchre is a card game popular in the Midwest United States and is
+played with a partial deck of 24 cards: the 9, 10, Jack, Queen, King,
+and Ace of all four suits (Hearts, Diamonds, Spades, Clubs). A hand of
+cards in Euchre is 5 cards.</p>
 <p>Assume cards are dealt by drawing at random <strong>without
 replacement</strong> from the set of 24 possible cards. The order of
 cards in a hand does not matter.</p>
@@ -1546,6 +1556,8 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 7a-e</i></p>
 <p>You go to the (world-renowned) San Diego Safari Park. The animals you
 see there appear at random, depending on the exhibit. The probabilities
 of seeing an animal in a given exhibit (Plains, Forest, and Jungle) are
@@ -1860,6 +1872,8 @@ aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <p><br></p>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 8</i></p>
 <p>The San Diego Safari Park has one of the world’s most successful
 cheetah breeding programs. To support this, they keep track of their
 cheetahs’ characteristics. For each cheetah, the Safari Park keeps track
@@ -1924,9 +1938,11 @@ receive <strong>one</strong> of the other rubric items.</p>
 </div>
 <hr />
 <h2 id="problem-9">Problem 9</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 9</i></p>
 <p>Information about a sample of 50 cheetahs in the San Diego Safari
 Park is summarized in the table below.</p>
-<center><img src="../assets/images/su24-final/su24_bayes.png" width="500" height="350"></center>
+<center><img src="..\assets\images\su24-final\su24_bayes.png" width="500" height="350"></center>
 <p>For instance, we’re told that 10 cheetahs with dark fur and short
 claws are young and that there were 11 cheetahs with golden fur and
 short claws.</p>

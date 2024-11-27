@@ -1,6 +1,8 @@
 # BEGIN PROB
 
-\[(12 pts)\] Euchre is a card game popular in the Midwest United States
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 6a-d</i>
+
+Euchre is a card game popular in the Midwest United States
 and is played with a partial deck of 24 cards: the 9, 10, Jack, Queen,
 King, and Ace of all four suits (Hearts, Diamonds, Spades, Clubs). A
 hand of cards in Euchre is 5 cards.

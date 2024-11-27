@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 7a-e</i>
+
 You go to the (world-renowned) San Diego Safari Park. The
 animals you see there appear at random, depending on the exhibit. The
 probabilities of seeing an animal in a given exhibit (Plains, Forest,

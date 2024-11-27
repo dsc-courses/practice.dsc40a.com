@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 1a-g</i>
+
 Consider the dataset $x_1 = 1, x_2 = 2, x_3 = 3, x_4 = 4, x_5 = 5$.
 
 # BEGIN SUBPROB
@@ -24,9 +26,9 @@ Include an explanation.
 
 $x_1 = 4$ or $x_2 = 4$ or $x_3 = 4$ or $x_5 = 4$
 
-Recall from lecture 0-1 loss (
+Recall from lecture 0-1 loss
 $$L(y_i, h) = \begin{cases} 0 & y_i = h \\ 1 & y_i \neq h \end{cases}$$
-) is minimized by the mode. This means we want to maximize the number of matches between $h$ and $y_i$. If $h^* = 4$ then we want to change values that are not equal to $4$ into $4$. This means any answer that is not $x_4$ can be changed to equal $4$ and it is possible.
+is minimized by the mode. This means we want to maximize the number of matches between $h$ and $y_i$. If $h^* = 4$ then we want to change values that are not equal to $4$ into $4$. This means any answer that is not $x_4$ can be changed to equal $4$ and it is possible.
 
 # END SOLUTION
 

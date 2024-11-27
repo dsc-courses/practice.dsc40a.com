@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 8</i>
+
 The San Diego Safari Park has one of the world's most successful cheetah
 breeding programs. To support this, they keep track of their cheetahs'
 characteristics. For each cheetah, the Safari Park keeps track of:

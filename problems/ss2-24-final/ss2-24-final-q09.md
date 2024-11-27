@@ -1,9 +1,11 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 9</i>
+
 Information about a sample of 50 cheetahs in the San Diego Safari Park
 is summarized in the table below.
 
-<center><img src="../assets/images/su24-final/su24_bayes.png" width="500" height="350"></center>
+<center><img src="..\assets\images\su24-final\su24_bayes.png" width="500" height="350"></center>
 
 For instance, we're told that 10 cheetahs with dark fur and short claws
 are young and that there were 11 cheetahs with golden fur and short

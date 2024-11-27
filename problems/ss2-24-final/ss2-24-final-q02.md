@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 2a-e</i>
+
 Consider a dataset of 4 values, $y_1 < y_2 < y_3 < y_4$, with a mean of
 6.
 
@@ -77,7 +79,7 @@ this assumption?
 
 $$-\frac{3}{7}$$
 
-Slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of points to the left of h - number of points to the right of h)}$. If the slope of $$T_{abs}(h)$$ was originally $$-\frac{1}{7}$$, there must have been four points to the right of h and 3 points to the left of h, meaning $$y_2<h<y_3$$. It follows that in the modified dataset there are 5 points to the right of h and 2 points to the left of h, meaning the slope of $$T_{abs}(h)$$ must be $$-\frac{3}{7}$$
+Slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of points to the left of h - number of points to the right of h)}$. If the slope of $T_{abs}(h)$ was originally $-\frac{1}{7}$, there must have been four points to the right of h and 3 points to the left of h, meaning $y_2<h<y_3$. It follows that in the modified dataset there are 5 points to the right of h and 2 points to the left of h, meaning the slope of $T_{abs}(h)$ must be $-\frac{3}{7}$
 
 # END SOLUTION
 

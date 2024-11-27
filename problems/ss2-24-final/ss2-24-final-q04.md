@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 4a-f</i>
+
 You are given a dataset with the following data points and want to fit a
 variety of hypothesis functions to predict $y$ from features $u$ and
 $v$:

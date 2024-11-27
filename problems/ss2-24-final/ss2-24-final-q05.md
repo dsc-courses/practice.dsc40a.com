@@ -1,5 +1,7 @@
 # BEGIN PROB
 
+<i>Source: [Summer Session 2 2024 Final](../ss2-24-final/index.html), Problem 5a-c</i>
+
 Let $\vec{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$. Consider the
 function $g(\vec{x}) = x_1^2 + x_2^2 + x_1 x_2 - 4x_1 - 6x_2 + 8$.
 
@@ -72,8 +74,7 @@ Let $t\in[0, 1], a\in\mathbb{R}, b\in\mathbb{R}$.
 (1-t) g(c) + t g(d) &= (1-t)(af(c) + b) + t(af(d) + b)\\
 &= (1-t)(af(c)) + (1-t)b + t(af(d)) + tb\\
 &= (1-t)(af(c)) + t(af(d)) + b - tb + tb\\
-&= a((1-t)f(c) + tf(d)) + b\\
-&/geq af((1-t)c + td) + b\\
+&= a((1-t)f(c) + tf(d)) + b \geq af((1-t)c + td) + b\\
 &= g((1-t)c + td)
 \end{align*}
 
