@@ -129,8 +129,7 @@ We follow the equation  $\frac{\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix} \cdot \ve
 
 # END SUBPROB
 
-*The following information is repeated from the previous page, for your
-convenience.*
+*The following information is repeated from the previous page, for your convenience.*
 
 Consider the following vectors in $\mathbb{R}^3$, where
 $\alpha \in \mathbb{R}$ is some scalar:
@@ -163,9 +162,14 @@ What goes in $\_\_(a)\_\_$ and $\_\_(b)\_\_$?
 
 # BEGIN SOLUTION
 
-Fully correct work using normal equations: $$(X^T X)^{-1}X^T \begin{bmatrix}3 \\ 15 \\ 18\end{bmatrix} = \begin{bmatrix}15 \\ 3 \end{bmatrix}$$.
+To find what goes in $\_\_(a)\_\_$ and $\_\_(b)\_\_$ we need to multiply $(X^T X)^{-1}X^T$ and $\vec y$.
 
-TODO
+\begin{align*}
+\begin{bmatrix} a \\ b \end{bmatrix} &= (X^T X)^{-1}X^T \begin{bmatrix}3 \\ 15 \\ 18\end{bmatrix}\\
+\begin{bmatrix} a \\ b \end{bmatrix} &= \begin{bmatrix} -\frac{1}{3}(3) & \frac{2}{3}(15) & \frac{1}{3}(18) \\ \frac{2}{3}(3) & -\frac{1}{3}(15) & \frac{1}{3}(18) \end{bmatrix}\\
+\begin{bmatrix} a \\ b \end{bmatrix} &= \begin{bmatrix} -1 + 10 + 15 \\ 2 - 5 + 6 \end{bmatrix}\\
+\begin{bmatrix} a \\ b \end{bmatrix} &= \begin{bmatrix} 15 \\ 3 \end{bmatrix}\\
+\end{align*}
 
 # END SOLUTION
 
