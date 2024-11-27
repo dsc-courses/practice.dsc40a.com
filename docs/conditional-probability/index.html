@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Conditional Probability</title>
+  <title>Conditional Probability - Bayes Theorem, Conditional Independence, &amp; Naive Bayes</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -43,7 +43,8 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Conditional Probability</h1>
+<h1 class="title">Conditional Probability - Bayes Theorem, Conditional
+Independence, &amp; Naive Bayes</h1>
 </header>
 <p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -67,12 +68,342 @@
 <p>This page contains all problems about Conditional Probability.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 8</i></p>
+<p>The San Diego Safari Park has one of the world’s most successful
+cheetah breeding programs. To support this, they keep track of their
+cheetahs’ characteristics. For each cheetah, the Safari Park keeps track
+of:</p>
+<ul>
+<li><p>Whether <strong>color</strong> of the cheetah’s fur; golden or
+dark.</p></li>
+<li><p>The <strong>length</strong> of the cheetah’s claws; short or
+long.</p></li>
+<li><p>The cheetah’s <strong>development</strong>; whether it is young,
+adolescent, or mature.</p></li>
+</ul>
+<p>We’re given the following information about the cheetahs in the
+park:</p>
+<ul>
+<li><p><span class="math inline">P(\text{Young}) = 0.25</span></p></li>
+<li><p><span class="math inline">P(\text{Adolescent}) =
+0.40</span></p></li>
+<li><p><span class="math inline">P(\text{Mature}) = 0.35</span></p></li>
+<li><p><span class="math inline">P(\text{Short Claws} \mid \text{Young})
+= 0.70</span></p></li>
+<li><p><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) =
+0.80</span></p></li>
+<li><p><span class="math inline">P(\text{Long Claws} \mid
+\text{Adolescent}) = 0.40</span></p></li>
+<li><p><span class="math inline">P(\text{Golden Fur} \mid
+\text{Adolescent}) = 0.50</span></p></li>
+<li><p><span class="math inline">P(\text{Long Claws} \mid \text{Mature})
+= 1</span></p></li>
+<li><p><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) =
+0.10</span></p></li>
+</ul>
+<p>A new cheetah is observed with <strong>dark fur</strong> and
+<strong>short claws</strong>. Assuming conditional independence of
+features (color, length) within a class (development), calculate the
+probability that this cheetah is <strong>young</strong> using Bayes’
+Theorem. In this question, you may leave your answers unsimplified, in
+terms of fractions, exponents, factorials, the permutation formula <span
+class="math inline">P(n, k)</span>, and the binomial coefficient <span
+class="math inline">{n \choose k}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\frac{7}{13}</span></p>
+<p>To calculate the probability that a cheetah is young given that it
+has dark fur and short claws we can use Bayes’ Theorem!</p>
+<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short
+Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap
+\text{Short Claws})}</span></p>
+<p>We first need to calculate: <span class="math inline">P(\text{Dark
+Fur} \cap \text{Short Claws} | \text{Young})</span>.</p>
+<p>We can do this using the equation: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} |
+\text{Young}) = P(\text{Dark Fur} | \text{Young}) \cdot P(\text{Short
+Claws} | \text{Young})</span>.</p>
+<p>We are given:</p>
+<ul>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) =
+0.80</span></li>
+<li><span class="math inline">P(\text{Short Claws} \mid \text{Young}) =
+0.70</span></li>
+</ul>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) = 0.8 \cdot 0.7 = 0.56</span></p>
+<p>Notice the denominator of our Bayes’ Theorem is <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws})</span>
+this means we need to probability of seeing Dark Fur or Short Claws
+regardless of the development stage.</p>
+<p>This follows the equation for the law of total probability:</p>
+<p><span class="math display">\begin{align*}
+P(\text{Dark Fur} \cap \text{Short Claws}) &amp;= P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) * P(\text{Young})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) *
+P(\text{Adolescent})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) *
+P(\text{Mature})
+\end{align*}</span></p>
+<p>This means we need to calculate: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} |
+\text{Adolescent})</span> and <span class="math inline">P(\text{Dark
+Fur} \cap \text{Short Claws} | \text{Mature})</span>.</p>
+<p><strong>For Adolescent we are given:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Golden Fur} \mid
+\text{Adolescent}) = 0.50</span></li>
+<li><span class="math inline">P(\text{Long Claws} \mid
+\text{Adolescent}) = 0.40</span></li>
+</ul>
+<p>We have to take the compliments of these qualities to get short claws
+and dark fur!</p>
+<ul>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Adolescent})
+= 1 - P(\text{Golden Fur} \mid \text{Adolescent}) = 1 - 0.50 =
+0.5</span></li>
+<li><span class="math inline">P(\text{Short Claws} \mid
+\text{Adolescent}) = 1 - P(\text{Long Claws} \mid \text{Adolescent}) = 1
+- 0.40 = 0.6</span></li>
+</ul>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Adolescent}) = 0.5 \cdot 0.6 = 0.3</span></p>
+<p><strong>For Mature we are given:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Long Claws} \mid \text{Mature}) =
+1</span></li>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) =
+0.10</span></li>
+</ul>
+<p>We have to take the compliments of long claws to get short claws!</p>
+<ul>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) = 1
+- P(\text{Golden Fur} \mid \text{Mature}) = 1 - 1 = 0</span></li>
+</ul>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Mature}) = 0 \cdot 0.1 = 0</span></p>
+<p>To finally calculate the denominator we need these probabilities:</p>
+<ul>
+<li><span class="math inline">P(\text{Young}) = 0.25</span></li>
+<li><span class="math inline">P(\text{Adolescent}) = 0.40</span></li>
+<li><span class="math inline">P(\text{Mature}) = 0.35</span></li>
+</ul>
+<p>Now we can simply plug our numbers into the equation!</p>
+<p><span class="math display">\begin{align*}
+P(\text{Dark Fur} \cap \text{Short Claws}) &amp;= P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) * P(\text{Young})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) *
+P(\text{Adolescent})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) *
+P(\text{Mature})\\
+&amp;= 0.56 \cdot 0.25 + 0.3 * 0.4 + 0 * 0.35 \\
+&amp;= 0.14 + 0.12\\
+&amp;= 0.26
+\end{align*}</span></p>
+<p>Now we have all the components to answer the question:</p>
+<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short
+Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap
+\text{Short Claws})} = \frac{0.56 \cdot 0.25}{0.26} =
+\frac{7}{13}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 50%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 9</i></p>
+<p>Information about a sample of <span class="math inline">50</span>
+cheetahs in the San Diego Safari Park is summarized in the table
+below.</p>
+<p><br></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Golden Fur</th>
+<th></th>
+<th>Dark Fur</th>
+<th></th>
+<th>Sum of Row</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>Short Claws</strong></td>
+<td><strong>Long Claws</strong></td>
+<td><strong>Short Claws</strong></td>
+<td><strong>Long Claws</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Young</strong></td>
+<td>2</td>
+<td>0</td>
+<td>10</td>
+<td>4</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td><strong>Adolescent</strong></td>
+<td>6</td>
+<td>3</td>
+<td>2</td>
+<td>6</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td><strong>Mature</strong></td>
+<td>3</td>
+<td>12</td>
+<td>0</td>
+<td>2</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum of Column</strong></td>
+<td>11</td>
+<td>15</td>
+<td>12</td>
+<td>12</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>For instance, we’re told that <span class="math inline">10</span>
+cheetahs with dark fur and short claws are young and that there were
+<span class="math inline">11</span> cheetahs with golden fur and short
+claws.</p>
+<p>Given its other characteristics, San Diego Safari Park would like to
+use this information to predict whether a new cheetah to the Park is
+young, adolescent, or mature.</p>
+<p>A new cheetah is observed with <strong>golden fur</strong> and
+<strong>long claws</strong>. Using the data in the table and assuming
+conditional independence of features, use the Naive Bayes formula
+<strong>with smoothing</strong> to determine which developmental stage
+is most likely for the new cheetah. In this question, you may leave your
+answers unsimplified, in terms of fractions, exponents, factorials, the
+permutation formula <span class="math inline">P(n, k)</span>, and the
+binomial coefficient <span class="math inline">{n \choose k}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Mature</p>
+<p>To figure out if the new cheetah is young, adolescent, or mature we
+need to find the probabilities for each stage of development.</p>
+<p>This means we need to find the probability of a young cheetah having
+golden fur and long claws, the probability of a adolenscent cheetah
+having golden fur and long claws, and the probability of a mature
+cheetah having golden fur and long claws.</p>
+<p>Let Age represent either Young, Adolescent, or Mature. We need to
+then follow the equation: <span class="math display">P(\text{Age}|\text{Golden Fur} \cap \text{Long
+Claws}) = P(\text{Age}) \cdot P(\text{Golden Fur}|\text{Age}) \cdot
+P(\text{Long Claws}|\text{Age})</span> for all the different ages.</p>
+<p>Recall we will also be using smoothing! This means:</p>
+<p><span class="math display">P(\text{Feature}|\text{Class}) =
+\frac{\text{Count of Features in Class} + 1}{\text{Total in Class} +
+\text{Number of Possible Feature Values}}</span></p>
+<p><strong>When Age = Young:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Young}) =
+\frac{16}{50}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Young}) =
+\frac{2 + 0 + 1}{16 + 2} = \frac{3}{18}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Young}) =
+\frac{0 + 1}{16 + 2} = \frac{5}{18}</span></li>
+</ul>
+<p><span class="math display">\begin{align*}
+P(\text{Young}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Young}) \cdot P(\text{Golden Fur}|\text{Young}) \cdot
+P(\text{Long Claws}|\text{Young})\\
+&amp;= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{16}{50}\\
+&amp;= \frac{2}{135}
+\end{align*}</span></p>
+<p><strong>When Age = Adolescent:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Adolescent}) =
+\frac{17}{50}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Adolescent}) =
+\frac{6 + 3 + 1}{17 + 2} = \frac{10}{19}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Adolescent}) =
+\frac{3 + 6 + 1}{17 + 2} = \frac{10}{19}</span></li>
+</ul>
+<p><span class="math display">\begin{align*}
+P(\text{Adolescent}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Adolescent}) \cdot P(\text{Golden Fur}|\text{Adolescent}) \cdot
+P(\text{Long Claws}|\text{Adolescent})\\
+&amp;= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{17}{50}\\
+&amp;= \frac{34}{361}
+\end{align*}</span></p>
+<p><strong>When Age = Mature:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Mature}) =
+\frac{17}{50}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Mature}) =
+\frac{3 + 12 + 1}{17 + 2} = \frac{16}{19}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Mature}) =
+\frac{12 + 2 + 1}{17 + 2} = \frac{15}{19}</span></li>
+</ul>
+<p><span class="math display">\begin{align*}
+P(\text{Mature}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Mature}) \cdot P(\text{Golden Fur}|\text{Mature}) \cdot
+P(\text{Long Claws}|\text{Mature})\\
+&amp;= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{17}{50}\\
+&amp;= \frac{408}{1805}
+\end{align*}</span></p>
+<p>When age is Mature then it has the highest probability, which means
+we predict the new cheetah is mature.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 59%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 3</i></p>
 <p>Consider three events <span class="math inline">A, B,</span> and
 <span class="math inline">C</span> in the same sample space.</p>
 <p><br></p>
-<h3 id="problem-1.1">Problem 1.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p>Which of the following is equivalent to <span
 class="math inline">P((A\cap B)|(B \cap C))</span>? <strong>Select all
 that apply.</strong></p>
@@ -85,13 +416,13 @@ that apply.</strong></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse"
-aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -134,7 +465,7 @@ the Above!</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-1.2">Problem 1.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p>Suppose <span class="math inline">P((A \cap B)|C) = P(A|(B \cap
 C))*P(B)</span>. Which of the following pairs of events <strong>must be
 independent</strong>?</p>
@@ -146,13 +477,13 @@ independent</strong>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -183,7 +514,7 @@ to us that <span class="math inline">B</span> and <span class="math inline">C</s
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 4</i></p>
 <p>Suppose that there are three possible experience levels in chess
@@ -199,7 +530,7 @@ tournament are beginners, <strong>40%</strong> are intermediate, and
 tournament, players are <strong>randomly paired up</strong> for a game
 of chess.</p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-4.1">Problem 4.1</h3>
 <p>What is the probability that Avi wins in the first round of the
 tournament?</p>
 <ul class="task-list">
@@ -211,13 +542,13 @@ tournament?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -248,7 +579,7 @@ amount of people in the tournament of that level.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-4.2">Problem 4.2</h3>
 <p>It turns out that, sadly, Avi loses to his opponent in the first
 round. What is the probability that Avi’s opponent is an advanced
 player? Choose the <strong>closest answer</strong> among the choices
@@ -261,13 +592,13 @@ listed.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -321,12 +652,12 @@ P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-5">Problem 5</h2>
 <!-- **Probability and Counting** -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 7</i></p>
 <p><br></p>
-<h3 id="problem-3.1">Problem 3.1</h3>
+<h3 id="problem-5.1">Problem 5.1</h3>
 <p>There is one box of bolts that contains some long and some short
 bolts. A manager is unable to open the box at present, so she asks her
 employees what is the composition of the box. One employee says that it
@@ -340,13 +671,13 @@ the event that the box contains 10 long and 20 short bolts. What is the
 probability that the first bolt selected is long?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse"
-aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -366,7 +697,7 @@ P(B_1)+P(\text{long}|B_2) \cdot P(B_2)
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-3.2">Problem 3.2</h3>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>How many ways can one arrange the letters <span
 class="math inline">A</span>, <span class="math inline">B</span>, <span
 class="math inline">C</span>, <span class="math inline">D</span>, <span
@@ -375,13 +706,13 @@ class="math inline">A</span>, <span class="math inline">B</span>, and
 <span class="math inline">C</span> are all together (in any order)?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse"
-aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -411,7 +742,7 @@ permutations of <span class="math inline">ABCDE</span> where <span class="math i
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-3.3">Problem 3.3</h3>
+<h3 id="problem-5.3">Problem 5.3</h3>
 <p>Two chess players <span class="math inline">A</span> and <span
 class="math inline">B</span> play a series of chess matches against each
 other until one of them wins 3 matches. Every match ends when one of the
@@ -423,13 +754,13 @@ class="math inline">B</span> wins, <span class="math inline">A</span>
 wins. In how many different ways can the series occur?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_3" class="accordion-collapse collapse"
-aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -466,14 +797,14 @@ winning 2 of the 4 preceding games.</p></li>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-6">Problem 6</h2>
 <!-- \[**Bayes theorem**\] -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 8</i></p>
 <p>Let’s say <span class="math inline">1\%</span> of the population has
 a certain genetic defect.</p>
 <p><br></p>
-<h3 id="problem-4.1">Problem 4.1</h3>
+<h3 id="problem-6.1">Problem 6.1</h3>
 <p>A test has been developed such that <span
 class="math inline">90\%</span> of administered tests accurately detect
 the gene (true positives). What needs to be the false positive rate
@@ -483,13 +814,13 @@ patient having the genetic defect given a positive result is <span
 class="math inline">90\%</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
-aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -532,7 +863,7 @@ for someone who doesn’t have the genetic defect) needs to be <span class="math
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.2">Problem 4.2</h3>
+<h3 id="problem-6.2">Problem 6.2</h3>
 <p>A test has been developed such that <span
 class="math inline">1\%</span> of administered tests are positive when
 the patient doesn’t have the genetic defect (false positives). What
@@ -541,13 +872,13 @@ patient has the genetic defect given a positive result is <span
 class="math inline">50\%</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
-aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -581,7 +912,7 @@ p = P(B|{A}) &amp;=0.99
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.3">Problem 4.3</h3>
+<h3 id="problem-6.3">Problem 6.3</h3>
 <p><span class="math inline">1\%</span> of administered tests are
 positive when the patient doesn’t have the gene (false positives). Show
 that there is no true positive probability such that the probability of
@@ -591,13 +922,13 @@ class="math inline">90\%</span>.</p>
 probability $p$ needs to fulfill $0 \leq p \leq 1$.) -->
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse"
-aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -635,7 +966,7 @@ given a positive result is 0.9.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-5">Problem 5</h2>
+<h2 id="problem-7">Problem 7</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 6</i></p>
 <p>The Avocado Cup is organized into rounds. In each round, players who
@@ -653,7 +984,7 @@ tournament.</p></li>
 round.</p></li>
 </ul>
 <p><br></p>
-<h3 id="problem-5.1">Problem 5.1</h3>
+<h3 id="problem-7.1">Problem 7.1</h3>
 <p>Which of the following statements is true? <strong>Select all that
 apply.</strong></p>
 <ul class="task-list">
@@ -665,13 +996,13 @@ form a partition of the sample space.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
-aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -694,7 +1025,7 @@ above.”</p>
 </div>
 </div>
 <p><br> <br></p>
-<h3 id="problem-5.2">Problem 5.2</h3>
+<h3 id="problem-7.2">Problem 7.2</h3>
 <p>The events <span class="math inline">A</span> and <span
 class="math inline">B</span> are mutually exclusive, or disjoint. More
 generally, for <strong>any</strong> two disjoint events <span
@@ -705,13 +1036,13 @@ class="math inline">P(B)</span> <strong>only</strong>. For this problem
 only, <strong>show your work and justify each step.</strong></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading5_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
-aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -742,7 +1073,7 @@ in green, which is just <span class="math inline">B</span>.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-6">Problem 6</h2>
+<h2 id="problem-8">Problem 8</h2>
 <p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm
 2</a>, Problem 7</i></p>
 <p>Recall in the game Stringle, players try to guess a randomly
@@ -777,13 +1108,13 @@ conditionally dependent</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+<h2 class="accordion-header" id="heading8">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6" class="accordion-collapse collapse"
-aria-labelledby="heading6" data-bs-parent="#accordionExample">
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -845,7 +1176,7 @@ conditionally dependent given <span class="math inline">C</span>.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-7">Problem 7</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 9</i></p>
 <p>Delta’s flight operations center keeps track of weather conditions,
@@ -868,7 +1199,7 @@ winds and precipitation.</p>
 flight will be early, on time, or late, given the weather
 conditions.</p>
 <p><br></p>
-<h3 id="problem-7.1">Problem 7.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p><strong>Without smoothing</strong>, what is:</p>
 <p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
 \text{early})</span></p>
@@ -883,13 +1214,13 @@ conditions.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse"
-aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -903,7 +1234,7 @@ heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} 
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-7.2">Problem 7.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p><strong>With smoothing</strong>, what is:</p>
 <p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
 \text{early})</span></p>
@@ -918,13 +1249,13 @@ heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} 
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse"
-aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -944,7 +1275,7 @@ none, light, moderate, and heavy.)</p>
 again below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 <p><br></p>
-<h3 id="problem-7.3">Problem 7.3</h3>
+<h3 id="problem-9.3">Problem 9.3</h3>
 <p>An airline’s late-to-early ratio, given a set of weather conditions,
 is defined as:</p>
 <p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
@@ -958,13 +1289,13 @@ class="math inline">\bf{\frac{7}{5}}</span>.</p>
 which you already found in <strong>part (a)</strong>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading7_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse"
-aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1004,7 +1335,7 @@ early})}</span></p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-10">Problem 10</h2>
 <p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
 2</a>, Problem 5</i></p>
 <p>You have a large historical dataset of all competitors in past years
@@ -1037,13 +1368,13 @@ winners.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="true" aria-controls="collapse8">
+<h2 class="accordion-header" id="heading10">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8" class="accordion-collapse collapse"
-aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div id="collapse10" class="accordion-collapse collapse"
+aria-labelledby="heading10" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1058,7 +1389,7 @@ lost because of their birthday and level.</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-9">Problem 9</h2>
+<h2 id="problem-11">Problem 11</h2>
 <p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
 Part 2</a>, Problem 5</i></p>
 <p>You’re interested in seeing the Milky Way in the night sky, which you
@@ -1182,13 +1513,13 @@ class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+<h2 class="accordion-header" id="heading11">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="true" aria-controls="collapse11">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9" class="accordion-collapse collapse"
-aria-labelledby="heading9" data-bs-parent="#accordionExample">
+<div id="collapse11" class="accordion-collapse collapse"
+aria-labelledby="heading11" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1257,7 +1588,7 @@ successful.”</p>
 </div>
 </div>
 <hr />
-<h2 id="problem-10">Problem 10</h2>
+<h2 id="problem-12">Problem 12</h2>
 <!-- **Naive Bayes Classifier** -->
 <p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
 Problem 9</i></p>
@@ -1268,19 +1599,19 @@ nose", "coughing", and "fever", each of which can take the value true
 (‘+’) or false (‘–’).</p>
 <center><img src="../assets/images/wi23-final/symptoms.png" width="500"></center>
 <p><br></p>
-<h3 id="problem-10.1">Problem 10.1</h3>
+<h3 id="problem-12.1">Problem 12.1</h3>
 <p>What is the predicted class for a person with running nose but no
 coughing, and no fever: sick, or healthy? Use a Naive Bayes
 classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+<h2 class="accordion-header" id="heading12_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_1" aria-expanded="true" aria-controls="collapse12_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse"
-aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div id="collapse12_1" class="accordion-collapse collapse"
+aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1315,18 +1646,18 @@ C,\bar F|-)P(-).
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-10.2">Problem 10.2</h3>
+<h3 id="problem-12.2">Problem 12.2</h3>
 <p>What is the predicted class for a person with a running nose and
 fever, but no coughing? Use a Naive Bayes classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+<h2 class="accordion-header" id="heading12_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_2" aria-expanded="true" aria-controls="collapse12_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse"
-aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div id="collapse12_2" class="accordion-collapse collapse"
+aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1350,20 +1681,20 @@ predicted class is Sick(<span class="math inline">+</span>).</p>
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-10.3">Problem 10.3</h3>
+<h3 id="problem-12.3">Problem 12.3</h3>
 <p>To deal with cases of unseen features, we used “smoothing" in class.
 If we use the”smoothing" method discussed in class, then what is the
 probability of a person having running nose and fever, but no coughing
 if that person was diagnosed “healthy"?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+<h2 class="accordion-header" id="heading12_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_3" aria-expanded="true" aria-controls="collapse12_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_3" class="accordion-collapse collapse"
-aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div id="collapse12_3" class="accordion-collapse collapse"
+aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1393,7 +1724,7 @@ F|-)</span>, just as the problem asks.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.4">Problem 10.4</h3>
+<h3 id="problem-12.4">Problem 12.4</h3>
 <p>In part (a), what are the <strong>odds</strong> of a person being
 “sick" who has running nose but no coughing, and no fever? <em>(Hint:
 the formula for the odds of an event <span class="math inline">A</span>
@@ -1401,13 +1732,13 @@ is <span class="math inline">\text{odds}(A) = \frac{P(A)}{1 -
 P(A)}</span>)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_4" aria-expanded="true" aria-controls="collapse10_4">
+<h2 class="accordion-header" id="heading12_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_4" aria-expanded="true" aria-controls="collapse12_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_4" class="accordion-collapse collapse"
-aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
+<div id="collapse12_4" class="accordion-collapse collapse"
+aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1430,7 +1761,7 @@ C,\bar F)}=\frac27.
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-10.5">Problem 10.5</h3>
+<h3 id="problem-12.5">Problem 12.5</h3>
 <p>Say someone fit a logistic regression model to a dataset containing
 <span class="math inline">n</span> points <span
 class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where
@@ -1445,13 +1776,13 @@ belonging to class <span class="math inline">y=+1</span> is</p>
 <p>Interpret the meaning of <span class="math inline">w_1=1</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_5" aria-expanded="true" aria-controls="collapse10_5">
+<h2 class="accordion-header" id="heading12_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_5" aria-expanded="true" aria-controls="collapse12_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_5" class="accordion-collapse collapse"
-aria-labelledby="heading10_5" data-bs-parent="#accordionExample">
+<div id="collapse12_5" class="accordion-collapse collapse"
+aria-labelledby="heading12_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1464,7 +1795,7 @@ aria-labelledby="heading10_5" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-11">Problem 11</h2>
+<h2 id="problem-13">Problem 13</h2>
 <p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
 Part 2</a>, Problem 3</i></p>
 <p>With the help of the Alien from Bayesian Galaxy, Issac built a Little
@@ -1572,7 +1903,7 @@ a hadron under the following quark conditions:</p>
 <li>the color is <code>blue</code></li>
 </ul>
 <p><br></p>
-<h3 id="problem-11.1">Problem 11.1</h3>
+<h3 id="problem-13.1">Problem 13.1</h3>
 <p>Naive Bayes predicts that, given a <code>up-particle-blue</code>
 quark, the probability a hadron formed is <span
 class="math inline">k</span> times the probability a hadron is not
@@ -1586,13 +1917,13 @@ is <span class="math inline">k</span>?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading11_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
+<h2 class="accordion-header" id="heading13_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13_1" aria-expanded="true" aria-controls="collapse13_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_1" class="accordion-collapse collapse"
-aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
+<div id="collapse13_1" class="accordion-collapse collapse"
+aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1663,7 +1994,7 @@ should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-11.2">Problem 11.2</h3>
+<h3 id="problem-13.2">Problem 13.2</h3>
 <p>What would be the value of <span class="math inline">k</span> if you
 change <code>up</code> quark in the previous collision to
 <code>top</code> quark, but keep everything else the same (i.e.
@@ -1676,13 +2007,13 @@ change <code>up</code> quark in the previous collision to
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading11_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
+<h2 class="accordion-header" id="heading13_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13_2" aria-expanded="true" aria-controls="collapse13_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11_2" class="accordion-collapse collapse"
-aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
+<div id="collapse13_2" class="accordion-collapse collapse"
+aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1723,7 +2054,7 @@ P(\text{blue}|\text{not formed hadron})\\
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-12">Problem 12</h2>
+<h2 id="problem-14">Problem 14</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 9</i></p>
 <p>Delta’s flight operations center keeps track of weather conditions,
@@ -1746,7 +2077,7 @@ winds and precipitation.</p>
 flight will be early, on time, or late, given the weather
 conditions.</p>
 <p><br></p>
-<h3 id="problem-12.1">Problem 12.1</h3>
+<h3 id="problem-14.1">Problem 14.1</h3>
 <p><strong>Without smoothing</strong>, what is:</p>
 <p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
 \text{early})</span></p>
@@ -1761,13 +2092,13 @@ conditions.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading12_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_1" aria-expanded="true" aria-controls="collapse12_1">
+<h2 class="accordion-header" id="heading14_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_1" aria-expanded="true" aria-controls="collapse14_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_1" class="accordion-collapse collapse"
-aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
+<div id="collapse14_1" class="accordion-collapse collapse"
+aria-labelledby="heading14_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1781,7 +2112,7 @@ heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} 
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-12.2">Problem 12.2</h3>
+<h3 id="problem-14.2">Problem 14.2</h3>
 <p><strong>With smoothing</strong>, what is:</p>
 <p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
 \text{early})</span></p>
@@ -1796,13 +2127,13 @@ heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} 
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading12_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_2" aria-expanded="true" aria-controls="collapse12_2">
+<h2 class="accordion-header" id="heading14_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_2" aria-expanded="true" aria-controls="collapse14_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_2" class="accordion-collapse collapse"
-aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
+<div id="collapse14_2" class="accordion-collapse collapse"
+aria-labelledby="heading14_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1822,7 +2153,7 @@ none, light, moderate, and heavy.)</p>
 again below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 <p><br></p>
-<h3 id="problem-12.3">Problem 12.3</h3>
+<h3 id="problem-14.3">Problem 14.3</h3>
 <p>An airline’s late-to-early ratio, given a set of weather conditions,
 is defined as:</p>
 <p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
@@ -1836,13 +2167,13 @@ class="math inline">\bf{\frac{7}{5}}</span>.</p>
 which you already found in <strong>part (a)</strong>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading12_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12_3" aria-expanded="true" aria-controls="collapse12_3">
+<h2 class="accordion-header" id="heading14_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14_3" aria-expanded="true" aria-controls="collapse14_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_3" class="accordion-collapse collapse"
-aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
+<div id="collapse14_3" class="accordion-collapse collapse"
+aria-labelledby="heading14_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

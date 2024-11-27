@@ -1,8 +1,11 @@
-title: 'Conditional Probability'
+title: 'Conditional Probability - Bayes Theorem, Conditional Independence, & Naive Bayes'
 context: This page contains all problems about Conditional Probability.
 show_solution: true
 problems:
   # Commented problems are problems that are UNFINISHED, uncomment when complete :)
+
+  - ss2-24-final/ss2-24-final-q08
+  - ss2-24-final/ss2-24-final-q09
 
    # Bayes Theorem
   - sp23-final-pt2/sp23-final-pt2-q03

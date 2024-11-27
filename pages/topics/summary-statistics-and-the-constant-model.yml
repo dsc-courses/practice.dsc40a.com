@@ -4,6 +4,8 @@ show_solution: true
 problems:
   - fa24-midterm/fa24-midterm-q01
   - fa24-midterm/fa24-midterm-q03
+  - ss2-24-final/ss2-24-final-q01
+  - ss2-24-final/ss2-24-final-q02
   - ss2-24-midterm/ss2-24-midterm-q01
   - sp24-final/sp24-final-q01
   - sp24-final/sp24-final-q02

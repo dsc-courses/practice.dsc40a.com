@@ -68,16 +68,21 @@
 Properties.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
-2024 Midterm</a>, Problem 2a-b</i></p>
-<p>Prove the following statement or provide a counterexample:</p>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 3a-g</i></p>
+<p>Consider the following vectors in <span
+class="math inline">\mathbb{R}^3</span>, where <span
+class="math inline">\alpha \in \mathbb{R}</span> is a scalar:</p>
+<p><span class="math display">\vec{v}_1 = \begin{bmatrix} 0 \\ 1 \\ 1
+\end{bmatrix}, \quad
+\vec{v}_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \quad
+\vec{v}_3 = \begin{bmatrix} \alpha \\ 1 \\ 2 \end{bmatrix}</span></p>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>If a vector <span class="math inline">\vec{v}</span> is orthogonal to
-a vector <span class="math inline">\vec{w}</span>, then <span
-class="math inline">\vec{v}</span> is also orthogonal to the projection
-of an arbitrary vector <span class="math inline">\vec{u}</span> onto
-<span class="math inline">\vec{w}</span>.</p>
+<p>For what value(s) of <span class="math inline">\alpha</span> are
+<span class="math inline">\vec{v}_1, \vec{v}_2,</span> and <span
+class="math inline">\vec{v}_3</span> linearly independent? Show your
+work, and put your answer in a box.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1_1">
@@ -87,6 +92,342 @@ Click to view the solution.
 </h2>
 <div id="collapse1_1" class="accordion-collapse collapse"
 aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The vectors are linearly independent for any <span class="math inline">\alpha \neq 1</span>.</p>
+<p>To be linearly independent it means there is not a linear combination
+between any of the vectors. We can see that if we add <span class="math inline">\vec v_1</span> and <span class="math inline">\vec
+v_2</span> it looks almost like <span class="math inline">\vec
+v_3</span>, so as long as we can make it so <span class="math inline">\alpha \neq 1</span> then the vectors will be
+independent.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 69%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>For what value(s) of <span class="math inline">\alpha</span> are
+<span class="math inline">\vec{v}_1</span> and <span
+class="math inline">\vec{v}_3</span> orthogonal? Show your work, and put
+your answer in a box.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We know for <span class="math inline">\vec v_1</span> and <span class="math inline">\vec v_3</span> to be orthogonal their dot product
+should equal zero.</p>
+<p><span class="math display">\vec v_1 \cdot \vec v_3 = (0)(\alpha) +
+(1)(1) + (1)(2) = 0</span></p>
+<p>There are no values of <span class="math inline">\alpha</span> for
+which <span class="math inline">\vec{v}_1, \vec{v}_3</span> are
+orthogonal. We can see <span class="math inline">(0)(\alpha) = 0</span>,
+which means that we cannot manipulate <span class="math inline">\alpha</span> in any way to make the vectors
+orthogonal.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 88%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>For what value(s) of <span class="math inline">\alpha</span> are
+<span class="math inline">\vec{v}_2</span> and <span
+class="math inline">\vec{v}_3</span> orthogonal? Show your work, and put
+your answer in a box.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\alpha = -2</span></p>
+<p>We know for <span class="math inline">\vec v_2</span> and <span class="math inline">\vec v_3</span> to be orthogonal their dot product
+should equal zero.</p>
+<p>The dot product is:</p>
+<p><span class="math display">
+\vec v_2 \cdot \vec v_3 = (1)(\alpha) + (0)(1) + (1)(2)
+</span></p>
+<p>So we can do:</p>
+<p><span class="math display">\begin{align*}
+0 &amp;= (1)(\alpha) + (0)(1) + (1)(2)\\
+0 &amp;=\alpha + 0 + 2\\
+-2 &amp;= \alpha
+\end{align*}</span></p>
+<p>We can clearly see when <span class="math inline">\alpha = -2</span>
+then the dot product will equal zero.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 100%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>Regardless of your answer above, assume in this part that <span
+class="math inline">\alpha = 3</span>. Is the vector <span
+class="math inline">\begin{bmatrix}
+3 \\
+5 \\
+8
+\end{bmatrix}</span> in <span
+class="math inline">\textbf{span}(\vec{v}_1, \vec{v}_2,
+\vec{v}_3)</span>?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Yes</p>
+<p>If <span class="math inline">\alpha = 3</span> and all three vectors
+are independent from one another then any vector in <span class="math inline">\mathbb{R}^3</span> is in the span of 3 linearly
+independent vectors in <span class="math inline">\mathbb{R}^3</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️</h5>
+<p>
+<p>The average score on this problem was 94%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><em>The following information is repeated from the previous page, for
+your convenience.</em></p>
+<p>Consider the following vectors in <span
+class="math inline">\mathbb{R}^3</span>, where <span
+class="math inline">\alpha \in \mathbb{R}</span> is some scalar:</p>
+<p><span class="math display">\vec{v}_1 = \begin{bmatrix} 0 \\ 1 \\ 1
+\end{bmatrix}, \quad
+\vec{v}_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \quad
+\vec{v}_3 = \begin{bmatrix} \alpha \\ 1 \\ 2 \end{bmatrix}</span></p>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>What is the projection of the vector <span
+class="math inline">\begin{bmatrix}
+3 \\
+5 \\
+8
+\end{bmatrix}</span> onto <span class="math inline">\vec{v}_1</span>?
+Provide your answer in the form of a vector. Show your work, and put
+your answer in a box.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><span class="math inline">\begin{bmatrix}0 \\ 6.5 \\ 6.5
+\end{bmatrix}</span></p>
+<p>We follow the equation <span class="math inline">\frac{\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix} \cdot
+\vec v_1}{\vec v_1 \cdot \vec v_1} \vec v_1</span> to find the
+projection of <span class="math inline">\begin{bmatrix}3 \\ 5 \\
+8\end{bmatrix}</span> onto <span class="math inline">\vec{v_1}</span>:</p>
+<p><span class="math display">\begin{align*}
+\frac{\begin{bmatrix}3 \\ 5 \\ 8\end{bmatrix} \cdot \begin{bmatrix}0 \\
+1 \\ 1 \end{bmatrix}}{\begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}\cdot
+\begin{bmatrix}0 \\ 1 \\ 1 \end{bmatrix}} \begin{bmatrix}0 \\ 1 \\ 1
+\end{bmatrix} &amp;= \frac{13}{2}  \begin{bmatrix}0 \\ 1 \\ 1
+\end{bmatrix}\\
+&amp;= \begin{bmatrix}0 \\ 6.5 \\ 6.5 \end{bmatrix}
+\end{align*}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 58%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.6">Problem 1.6</h3>
+<p><em>The following information is repeated from the previous page, for
+your convenience.</em></p>
+<p>Consider the following vectors in <span
+class="math inline">\mathbb{R}^3</span>, where <span
+class="math inline">\alpha \in \mathbb{R}</span> is some scalar:</p>
+<p><span class="math display">\vec{v}_1 = \begin{bmatrix} 0 \\ 1 \\ 1
+\end{bmatrix}, \quad
+\vec{v}_2 = \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}, \quad
+\vec{v}_3 = \begin{bmatrix} \alpha \\ 1 \\ 2 \end{bmatrix}</span></p>
+<p>What is the orthogonal projection of the vector <span
+class="math inline">\begin{bmatrix}
+3 \\
+15 \\
+18
+\end{bmatrix}</span> onto <span
+class="math inline">\textbf{span}(\vec{v}_1, \vec{v}_2)</span>? Note
+that for <span class="math inline">X = \begin{bmatrix}
+            0 &amp; 1 \\ 1 &amp; 0 \\ 1 &amp; 1
+        \end{bmatrix}</span>, we have</p>
+<p><span class="math display">(X^T X) ^{-1}X^T = \begin{bmatrix}
+            -\frac{1}{3} &amp; \frac{2}{3} &amp; \frac{1}{3} \\[6pt]
+            \frac{2}{3} &amp; -\frac{1}{3} &amp; \frac{1}{3}  
+        \end{bmatrix}</span> Write your answer in the form of
+coefficients that multiply <span class="math inline">\vec{v}_1</span>
+and <span class="math inline">\vec{v}_2</span> and yield a vector <span
+class="math inline">\vec{p}</span> that is the orthogonal projection
+requested above.</p>
+<p><span class="math inline">\vec{p} = \_\_(a)\_\_ \cdot \vec{v}_1 +
+\_\_(b)\_\_ \cdot \vec{v}_2</span></p>
+<p>What goes in <span class="math inline">\_\_(a)\_\_</span> and <span
+class="math inline">\_\_(b)\_\_</span>?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_6" aria-expanded="true" aria-controls="collapse1_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_6" class="accordion-collapse collapse"
+aria-labelledby="heading1_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>To find what goes in <span class="math inline">\_\_(a)\_\_</span> and
+<span class="math inline">\_\_(b)\_\_</span> we need to multiply <span class="math inline">(X^T X)^{-1}X^T</span> and <span class="math inline">\vec y</span>.</p>
+<p><span class="math display">\begin{align*}
+\begin{bmatrix} a \\ b \end{bmatrix} &amp;= (X^T X)^{-1}X^T
+\begin{bmatrix}3 \\ 15 \\ 18\end{bmatrix}\\
+\begin{bmatrix} a \\ b \end{bmatrix} &amp;= \begin{bmatrix}
+-\frac{1}{3}(3) &amp; \frac{2}{3}(15) &amp; \frac{1}{3}(18) \\
+\frac{2}{3}(3) &amp; -\frac{1}{3}(15) &amp; \frac{1}{3}(18)
+\end{bmatrix}\\
+\begin{bmatrix} a \\ b \end{bmatrix} &amp;= \begin{bmatrix} -1 + 10 + 15
+\\ 2 - 5 + 6 \end{bmatrix}\\
+\begin{bmatrix} a \\ b \end{bmatrix} &amp;= \begin{bmatrix} 15 \\ 3
+\end{bmatrix}\\
+\end{align*}</span></p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 73%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.7">Problem 1.7</h3>
+<p>Is it true that, for the orthogonal projection <span
+class="math inline">\vec{p}</span> from above, the entries of <span
+class="math inline">\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18
+\end{bmatrix}</span> sum to <span class="math inline">0</span>? Explain
+why or why not. Your answer must mention characteristics of <span
+class="math inline">\vec{v}_1,\vec{v}_2,</span> and/or <span
+class="math inline">X</span> to receive full credit.</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> Yes</p></li>
+<li><p><input type="radio" disabled="" /> No</p></li>
+</ul>
+<p>Explain your answer</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_7">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_7" aria-expanded="true" aria-controls="collapse1_7">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_7" class="accordion-collapse collapse"
+aria-labelledby="heading1_7" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Yes</p>
+<p><em>Note: Design matrix <span class="math inline">X</span> lacks a
+column of all 1s (and the span of its columns does not include all 1s),
+so residuals don’t necessarily not sum to 0. This means we need more
+evidence!</em></p>
+<p><span class="math inline">\vec{p}</span> is the orthogonal projection
+of <span class="math inline">\begin{bmatrix}3\\15\\18\end{bmatrix}</span> onto
+<span class="math inline">\text{span}(\vec{v_1}, \vec{v_2})</span> where
+<span class="math inline">\vec{v_1}</span> and <span class="math inline">\vec{v_2}</span> are the column of the matrix <span class="math inline">X</span>. From the instructions we know: <span class="math inline">\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18
+\end{bmatrix}</span>. This means if <span class="math inline">\begin{bmatrix}3\\15\\18\end{bmatrix}</span> lies in
+<span class="math inline">\text{span}(\vec{v_1}, \vec{v_2})</span> then
+<span class="math inline">\vec{e} = \vec{0}</span>. We know <span class="math inline">\vec{p}</span> is exactly <span class="math inline">\begin{bmatrix}3\\15\\18\end{bmatrix}</span>, which
+means the sum of residuals equals 0.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 69%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
+2024 Midterm</a>, Problem 2a-b</i></p>
+<p>Prove the following statement or provide a counterexample:</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>If a vector <span class="math inline">\vec{v}</span> is orthogonal to
+a vector <span class="math inline">\vec{w}</span>, then <span
+class="math inline">\vec{v}</span> is also orthogonal to the projection
+of an arbitrary vector <span class="math inline">\vec{u}</span> onto
+<span class="math inline">\vec{w}</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -118,7 +459,7 @@ multiplied by zero will also be zero. This means the projection of <span class="
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-1.2">Problem 1.2</h3>
+<h3 id="problem-2.2">Problem 2.2</h3>
 <p>If a vector <span class="math inline">\vec{v}</span> is orthogonal to
 a vector <span class="math inline">\vec{w}</span>, then <span
 class="math inline">\vec{v}</span> is also orthogonal to the projection
@@ -126,13 +467,13 @@ of <span class="math inline">\vec{w}</span> onto an arbitrary vector
 <span class="math inline">\vec{u}</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading1_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse"
-aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -150,7 +491,7 @@ aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <p>Let’s check if <span class="math inline">\vec w \cdot \vec v =
 0</span>. <span class="math display">
 (1)(-2)+(1)(2) = 0
-</span> That works! Now we can calculate the projection of <span class="math inline">\vec w</span> onto <span class="math inline">\vec
+</span> That worked! Now we can calculate the projection of <span class="math inline">\vec w</span> onto <span class="math inline">\vec
 u</span>.</p>
 <p><span class="math display">\begin{align*}
 \frac{\vec w \cdot \vec u}{\vec u \cdot \vec u}\vec u &amp;=
@@ -181,7 +522,7 @@ projection of <span class="math inline">\vec w</span> onto <span class="math inl
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-2">Problem 2</h2>
+<h2 id="problem-3">Problem 3</h2>
 <p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
 2024 Midterm</a>, Problem 2c</i></p>
 <p>Consider the following information:</p>
@@ -196,7 +537,7 @@ class="math inline">n</span>-dimensional vector.</li>
 </ul>
 <p>Select the dimensionality of each of the objects below:</p>
 <p><br></p>
-<h3 id="problem-2.1">Problem 2.1</h3>
+<h3 id="problem-3.1">Problem 3.1</h3>
 <p><span class="math inline">M \vec{v}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
@@ -209,13 +550,13 @@ class="math inline">n</span>-dimensional vector.</li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse"
-aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -254,7 +595,7 @@ an object with the size <span class="math inline">\begin{bmatrix}&amp;
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.2">Problem 2.2</h3>
+<h3 id="problem-3.2">Problem 3.2</h3>
 <p><span class="math inline">M^T M</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
@@ -267,13 +608,13 @@ an object with the size <span class="math inline">\begin{bmatrix}&amp;
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse"
-aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -312,7 +653,7 @@ object with the size <span class="math inline">\begin{bmatrix}&amp;
 </div>
 <p><br></p>
 <p><br></p>
-<h3 id="problem-2.3">Problem 2.3</h3>
+<h3 id="problem-3.3">Problem 3.3</h3>
 <p><span class="math inline">\vec{v}^T N \vec{v}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
@@ -325,13 +666,13 @@ object with the size <span class="math inline">\begin{bmatrix}&amp;
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse"
-aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -376,7 +717,7 @@ object with the size <span class="math inline">\begin{bmatrix}&amp;\end{bmatrix}
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.4">Problem 2.4</h3>
+<h3 id="problem-3.4">Problem 3.4</h3>
 <p><span class="math inline">N \vec{v} + s \vec{v}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
@@ -389,13 +730,13 @@ object with the size <span class="math inline">\begin{bmatrix}&amp;\end{bmatrix}
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse"
-aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -441,7 +782,7 @@ the dimension will not change, so you are left with an <span class="math inline"
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-2.5">Problem 2.5</h3>
+<h3 id="problem-3.5">Problem 3.5</h3>
 <p><span class="math inline">M^T M \vec{v}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> An <span class="math inline">n \times n</span> matrix.</p></li>
@@ -454,13 +795,13 @@ the dimension will not change, so you are left with an <span class="math inline"
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading2_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
+<h2 class="accordion-header" id="heading3_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_5" aria-expanded="true" aria-controls="collapse3_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_5" class="accordion-collapse collapse"
-aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div id="collapse3_5" class="accordion-collapse collapse"
+aria-labelledby="heading3_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -511,7 +852,7 @@ object with the size <span class="math inline">\begin{bmatrix}&amp;
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-3">Problem 3</h2>
+<h2 id="problem-4">Problem 4</h2>
 <p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
 2024 Midterm</a>, Problem 2d</i></p>
 <p>Consider the following information:</p>
@@ -543,13 +884,13 @@ class="math inline">\vec{v}</span>, then <span class="math inline">A^T
 \vec{v} = 0</span></em>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+<h2 class="accordion-header" id="heading4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3" class="accordion-collapse collapse"
-aria-labelledby="heading3" data-bs-parent="#accordionExample">
+<div id="collapse4" class="accordion-collapse collapse"
+aria-labelledby="heading4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -575,7 +916,7 @@ move <span class="math inline">A^T \vec c</span> to the right to get
 </div>
 </div>
 <hr />
-<h2 id="problem-4">Problem 4</h2>
+<h2 id="problem-5">Problem 5</h2>
 <p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
 2024 Midterm</a>, Problem 3a</i></p>
 <p>Fill in the blanks for each set of vectors below to accurately
@@ -593,7 +934,7 @@ class="math inline">\vec{a}</span> and <span
 class="math inline">\vec{b}</span> are __(iv)__, meaning the angle
 between them is __(v)__”</p>
 <p><br></p>
-<h3 id="problem-4.1">Problem 4.1</h3>
+<h3 id="problem-5.1">Problem 5.1</h3>
 <p>What goes in __(i)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> linearly independent</p></li>
@@ -601,13 +942,13 @@ between them is __(v)__”</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse"
-aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -627,7 +968,7 @@ multiple of the other.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.2">Problem 4.2</h3>
+<h3 id="problem-5.2">Problem 5.2</h3>
 <p>What goes in __(ii)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> line</p></li>
@@ -637,13 +978,13 @@ multiple of the other.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse"
-aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -663,7 +1004,7 @@ pointing in different directions must lie on the same plane.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.3">Problem 4.3</h3>
+<h3 id="problem-5.3">Problem 5.3</h3>
 <p>What goes in __(iii)__?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> is</p></li>
@@ -672,13 +1013,13 @@ pointing in different directions must lie on the same plane.</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading4_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse"
-aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -710,223 +1051,6 @@ us the system of equations: <span class="math display">c_1 (1) + c_2
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-4.4">Problem 4.4</h3>
-<p>What goes in __(iv)__?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> orthogonal</p></li>
-<li><p><input type="radio" disabled="" /> collinear</p></li>
-<li><p><input type="radio" disabled="" /> neither orthogonal nor collinear</p></li>
-</ul>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading4_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse4_4" class="accordion-collapse collapse"
-aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>neither orthogonal nor collinear</p>
-<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal if <span class="math inline">\vec{a} \cdot \vec{b} = 0</span>. We can compute
-<span class="math inline">\vec{a} \cdot \vec{b} = (1)(-2) + (3)(1) = 1
-\neq 0</span>, so <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are not orthogonal.</p>
-<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are collinear if we can write one
-vector as a scalar multiple of the other. But we already know <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are linearly independent, so they
-don’t lie along the same line and aren’t collinear.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 68%.</p>
-</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-4.5">Problem 4.5</h3>
-<p>What goes in __(v)__?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> 0 or 180 degrees</p></li>
-<li><p><input type="radio" disabled="" /> something else</p></li>
-<li><p><input type="radio" disabled="" /> 90 degrees</p></li>
-</ul>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading4_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_5" aria-expanded="true" aria-controls="collapse4_5">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse4_5" class="accordion-collapse collapse"
-aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>something else</p>
-<p>If two vectors are orthogonal, the angle between them is 90 degrees.
-If two vectors are collinear, the angle between them is 0 or 180
-degrees. Since <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are neither of these, then the angle
-between them must be something else.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 81%.</p>
-</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<hr />
-<h2 id="problem-5">Problem 5</h2>
-<p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
-2024 Midterm</a>, Problem 3b</i></p>
-<p>Fill in the blanks for each set of vectors below to accurately
-describe their relationship and span.</p>
-<p><span class="math display">\vec{a} = \begin{bmatrix} -2 \\ 1.5 \\ 4
-\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 1 \\ 2 \\ -2.5
-\end{bmatrix} \qquad \vec{c} = \begin{bmatrix} -6 \\ 10 \\ 11
-\end{bmatrix}</span></p>
-<p>“<span class="math inline">\vec{a}</span>, <span
-class="math inline">\vec{b}</span>, and <span
-class="math inline">\vec{c}</span> are __(i)__, meaning they span a
-__(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix}
--2 \\ 15 \\ -7 \end{bmatrix}</span> __(iii)__ in the span of <span
-class="math inline">\vec{a}</span>, <span
-class="math inline">\vec{b}</span>, and <span
-class="math inline">\vec{c}</span>. <span
-class="math inline">\vec{a}</span>, <span
-class="math inline">\vec{b}</span>, and <span
-class="math inline">\vec{c}</span> are __(iv)__, meaning the angle
-between them is __(v)__”</p>
-<p><br></p>
-<h3 id="problem-5.1">Problem 5.1</h3>
-<p>What goes in __(i)__?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> linearly independent</p></li>
-<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
-</ul>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading5_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse5_1" class="accordion-collapse collapse"
-aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>Linearly Dependent</p>
-<p>To check if <span class="math inline">\vec{a}, \vec{b},
-\vec{c}</span> are linearly independent or dependent, it is possible to
-try a few different linear combinations of two vectors, and see if it
-equals the third vector. In this case, we can see that <span class="math inline">4\vec{a} + 2\vec{b} = \vec{c}</span>, so they are
-linearly dependent. For a more straight-forward computation, we can
-arrange these vectors as the columns of a matrix and compute their rank:
-<span class="math display">A = \begin{bmatrix} -2 &amp; 1 &amp; -6 \\
-1.5 &amp; 2 &amp; 10 \\ 4 &amp; -2.5 &amp; 11\end{bmatrix}</span> Then,
-we can perform row operations to reduce the matrix <span class="math inline">A</span>. This gives us <span class="math display">RREF(A) = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0
-&amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{bmatrix}</span> From here, we
-see that there only two columns with leading 1s, which implies the
-vectors are linearly dependent.</p>
-<hr/>
-<h5>Difficulty: ⭐️</h5>
-<p>
-<p>The average score on this problem was 94%.</p>
-</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-5.2">Problem 5.2</h3>
-<p>What goes in __(ii)__?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> line</p></li>
-<li><p><input type="radio" disabled="" /> plane</p></li>
-<li><p><input type="radio" disabled="" /> cube</p></li>
-<li><p><input type="radio" disabled="" /> unknown</p></li>
-</ul>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading5_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse5_2" class="accordion-collapse collapse"
-aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>Plane</p>
-<p>We know from above that the three vectors are linearly dependent. It
-is clear that they all do not lie on the same line, since we can’t
-multiply any single vector by a constant to obtain another vector. If
-all three vectors were independent, they would span all of <span class="math inline">\mathbb{R}^3</span>, or 3-dimensional space. Since
-this isn’t the case, they must span a plane.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 63%.</p>
-</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<h3 id="problem-5.3">Problem 5.3</h3>
-<p>What goes in __(iii)__?</p>
-<ul class="task-list">
-<li><p><input type="radio" disabled="" /> is</p></li>
-<li><p><input type="radio" disabled="" /> is not</p></li>
-<li><p><input type="radio" disabled="" /> may be</p></li>
-</ul>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading5_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse5_3" class="accordion-collapse collapse"
-aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
-<p>is not</p>
-<p>If <span class="math inline">\vec{d}</span> was in the span of <span class="math inline">\vec{a}, \vec{b}, \vec{c}</span>, then there should
-exist constants to fulfill the equation: <span class="math display">c_1
-\vec{a} + c_2 \vec{b} + c_3 \vec{c} = \vec{d}</span> We can set this up
-as an augmented matrix: <span class="math display">A = \begin{bmatrix}
--2 &amp; 1 &amp; -6 &amp; -2 \\ 1.5 &amp; 2 &amp; 10 &amp; 15 \\ 4 &amp;
--2.5 &amp; 11 &amp; -7 \end{bmatrix}</span> After performing row
-operations, we obtain: <span class="math display">RREF(A) =
-\begin{bmatrix} 1 &amp; 0 &amp; 4 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0
-\\ 0 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}</span> This tells us our
-system of equations is inconsistent because the last row implies <span class="math inline">0=1</span>. Therefore, there does not exist a
-solution, and <span class="math inline">\vec{d}</span> is not in the
-span of <span class="math inline">\vec{a}, \vec{b}, \vec{c}</span>.</p>
-<hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
-<p>
-<p>The average score on this problem was 50%.</p>
-</p>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
 <h3 id="problem-5.4">Problem 5.4</h3>
 <p>What goes in __(iv)__?</p>
 <ul class="task-list">
@@ -948,18 +1072,16 @@ aria-labelledby="heading5_4" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>neither orthogonal nor collinear</p>
-<p>We can tell that <span class="math inline">\vec{a}, \vec{b},
-\vec{c}</span> are not collinear because their span isn’t a line. In
-order to check if these vectors are orthogonal, we can compute the dot
-product between each pair of vectors; if any of the three dot products
-are not equal to 0, then they are not orthogonal.</p>
-<p>We see that <span class="math inline">\vec{a} \cdot \vec{b} = (-2)(1)
-+ (1.5)(2) + (4)(-2.5) = -9 \neq 0</span>, so the three vectors together
-are not orthogonal.</p>
+<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal if <span class="math inline">\vec{a} \cdot \vec{b} = 0</span>. We can compute
+<span class="math inline">\vec{a} \cdot \vec{b} = (1)(-2) + (3)(1) = 1
+\neq 0</span>, so <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are not orthogonal.</p>
+<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are collinear if we can write one
+vector as a scalar multiple of the other. But we already know <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are linearly independent, so they
+don’t lie along the same line and aren’t collinear.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 81%.</p>
+<p>The average score on this problem was 68%.</p>
 </p>
 </div>
 </div>
@@ -989,8 +1111,8 @@ aria-labelledby="heading5_5" data-bs-parent="#accordionExample">
 <p>something else</p>
 <p>If two vectors are orthogonal, the angle between them is 90 degrees.
 If two vectors are collinear, the angle between them is 0 or 180
-degrees. Since each pair of the vectors <span class="math inline">\vec{a}, \vec{b}, \vec{c}</span> are neither of
-these, then the angles between them must be something else.</p>
+degrees. Since <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are neither of these, then the angle
+between them must be something else.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1004,20 +1126,24 @@ these, then the angles between them must be something else.</p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
 <p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
-2024 Midterm</a>, Problem 3c</i></p>
+2024 Midterm</a>, Problem 3b</i></p>
 <p>Fill in the blanks for each set of vectors below to accurately
 describe their relationship and span.</p>
-<p><span class="math display">\vec{a} = \begin{bmatrix} -1 \\ 4
-\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 0.5 \\ -2
+<p><span class="math display">\vec{a} = \begin{bmatrix} -2 \\ 1.5 \\ 4
+\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 1 \\ 2 \\ -2.5
+\end{bmatrix} \qquad \vec{c} = \begin{bmatrix} -6 \\ 10 \\ 11
 \end{bmatrix}</span></p>
-<p>“<span class="math inline">\vec{a}</span> and <span
-class="math inline">\vec{b}</span> are __(i)__, meaning they span a
-__(ii)__. The vector <span class="math inline">\vec{c} = \begin{bmatrix}
--3 \\ 4 \end{bmatrix}</span> __(iii)__ in the span of <span
-class="math inline">\vec{a}</span> and <span
-class="math inline">\vec{b}</span>. <span
-class="math inline">\vec{a}</span> and <span
-class="math inline">\vec{b}</span> are __(iv)__, meaning the angle
+<p>“<span class="math inline">\vec{a}</span>, <span
+class="math inline">\vec{b}</span>, and <span
+class="math inline">\vec{c}</span> are __(i)__, meaning they span a
+__(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix}
+-2 \\ 15 \\ -7 \end{bmatrix}</span> __(iii)__ in the span of <span
+class="math inline">\vec{a}</span>, <span
+class="math inline">\vec{b}</span>, and <span
+class="math inline">\vec{c}</span>. <span
+class="math inline">\vec{a}</span>, <span
+class="math inline">\vec{b}</span>, and <span
+class="math inline">\vec{c}</span> are __(iv)__, meaning the angle
 between them is __(v)__”</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
@@ -1040,13 +1166,22 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Linearly Dependent</p>
-<p>Upon inspection, we can see that <span class="math inline">\vec{b} =
--\frac{1}{2}\vec{a}</span>. Therefore, these vectors are linearly
-dependent.</p>
+<p>To check if <span class="math inline">\vec{a}, \vec{b},
+\vec{c}</span> are linearly independent or dependent, it is possible to
+try a few different linear combinations of two vectors, and see if it
+equals the third vector. In this case, we can see that <span class="math inline">4\vec{a} + 2\vec{b} = \vec{c}</span>, so they are
+linearly dependent. For a more straight-forward computation, we can
+arrange these vectors as the columns of a matrix and compute their rank:
+<span class="math display">A = \begin{bmatrix} -2 &amp; 1 &amp; -6 \\
+1.5 &amp; 2 &amp; 10 \\ 4 &amp; -2.5 &amp; 11\end{bmatrix}</span> Then,
+we can perform row operations to reduce the matrix <span class="math inline">A</span>. This gives us <span class="math display">RREF(A) = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0
+&amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0\end{bmatrix}</span> From here, we
+see that there only two columns with leading 1s, which implies the
+vectors are linearly dependent.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
-<p>The average score on this problem was 81%.</p>
+<p>The average score on this problem was 94%.</p>
 </p>
 </div>
 </div>
@@ -1074,14 +1209,16 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Line</p>
-<p>Since we found that <span class="math inline">\vec{a}</span> and
-<span class="math inline">\vec{b}</span> are linearly dependent, they
-must span a space of only 1-dimension. This means that <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> lie the same line.</p>
+<p>Plane</p>
+<p>We know from above that the three vectors are linearly dependent. It
+is clear that they all do not lie on the same line, since we can’t
+multiply any single vector by a constant to obtain another vector. If
+all three vectors were independent, they would span all of <span class="math inline">\mathbb{R}^3</span>, or 3-dimensional space. Since
+this isn’t the case, they must span a plane.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 87%.</p>
+<p>The average score on this problem was 63%.</p>
 </p>
 </div>
 </div>
@@ -1109,18 +1246,22 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>is not</p>
-<p>We know that <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> span a line consisting only of
-vectors that are scalar multiples of <span class="math inline">\vec{a}</span> or <span class="math inline">\vec{b}</span>. We can see that the first component
-of <span class="math inline">\vec{c}</span> is three times larger than
-the first component of <span class="math inline">\vec{a}</span>, but
-they both share the same second component. This means it is not possible
-to scale <span class="math inline">\vec{a}</span> by a constant to
-obtain <span class="math inline">\vec{c}</span>, and so <span class="math inline">\vec{c}</span> does not lie on the same line spanned
-by <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>.</p>
+<p>If <span class="math inline">\vec{d}</span> was in the span of <span class="math inline">\vec{a}, \vec{b}, \vec{c}</span>, then there should
+exist constants to fulfill the equation: <span class="math display">c_1
+\vec{a} + c_2 \vec{b} + c_3 \vec{c} = \vec{d}</span> We can set this up
+as an augmented matrix: <span class="math display">A = \begin{bmatrix}
+-2 &amp; 1 &amp; -6 &amp; -2 \\ 1.5 &amp; 2 &amp; 10 &amp; 15 \\ 4 &amp;
+-2.5 &amp; 11 &amp; -7 \end{bmatrix}</span> After performing row
+operations, we obtain: <span class="math display">RREF(A) =
+\begin{bmatrix} 1 &amp; 0 &amp; 4 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 0
+\\ 0 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}</span> This tells us our
+system of equations is inconsistent because the last row implies <span class="math inline">0=1</span>. Therefore, there does not exist a
+solution, and <span class="math inline">\vec{d}</span> is not in the
+span of <span class="math inline">\vec{a}, \vec{b}, \vec{c}</span>.</p>
 <hr/>
-<h5>Difficulty: ⭐️</h5>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 93%.</p>
+<p>The average score on this problem was 50%.</p>
 </p>
 </div>
 </div>
@@ -1147,14 +1288,19 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Collinear</p>
-<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are collinear if we can write one
-vector as a scalar multiple of the other. We saw that <span class="math inline">\vec{b} = -\frac{1}{2}\vec{a}</span>, so they are
-collinear.</p>
+<p>neither orthogonal nor collinear</p>
+<p>We can tell that <span class="math inline">\vec{a}, \vec{b},
+\vec{c}</span> are not collinear because their span isn’t a line. In
+order to check if these vectors are orthogonal, we can compute the dot
+product between each pair of vectors; if any of the three dot products
+are not equal to 0, then they are not orthogonal.</p>
+<p>We see that <span class="math inline">\vec{a} \cdot \vec{b} = (-2)(1)
++ (1.5)(2) + (4)(-2.5) = -9 \neq 0</span>, so the three vectors together
+are not orthogonal.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 62%.</p>
+<p>The average score on this problem was 81%.</p>
 </p>
 </div>
 </div>
@@ -1181,10 +1327,11 @@ aria-labelledby="heading6_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>0 or 180 degrees</p>
-<p>If two vectors are collinear, the angle between them is 0 or 180
-degrees. This is because they lie on the same line and either point in
-the same or opposite directions from the origin.</p>
+<p>something else</p>
+<p>If two vectors are orthogonal, the angle between them is 90 degrees.
+If two vectors are collinear, the angle between them is 0 or 180
+degrees. Since each pair of the vectors <span class="math inline">\vec{a}, \vec{b}, \vec{c}</span> are neither of
+these, then the angles between them must be something else.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1198,16 +1345,16 @@ the same or opposite directions from the origin.</p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
 <p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
-2024 Midterm</a>, Problem 3d</i></p>
+2024 Midterm</a>, Problem 3c</i></p>
 <p>Fill in the blanks for each set of vectors below to accurately
 describe their relationship and span.</p>
-<p><span class="math display">\vec{a} = \begin{bmatrix} -3 \\ -2
-\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 3
+<p><span class="math display">\vec{a} = \begin{bmatrix} -1 \\ 4
+\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} 0.5 \\ -2
 \end{bmatrix}</span></p>
 <p>“<span class="math inline">\vec{a}</span> and <span
 class="math inline">\vec{b}</span> are __(i)__, meaning they span a
-__(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix}
-1 \\ 1 \end{bmatrix}</span> __(iii)__ in the span of <span
+__(ii)__. The vector <span class="math inline">\vec{c} = \begin{bmatrix}
+-3 \\ 4 \end{bmatrix}</span> __(iii)__ in the span of <span
 class="math inline">\vec{a}</span> and <span
 class="math inline">\vec{b}</span>. <span
 class="math inline">\vec{a}</span> and <span
@@ -1233,16 +1380,14 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Linearly Independent</p>
-<p>We can see that one vector is not a scalar multiple of the other.
-<span class="math inline">\vec{a}</span> has both negative components,
-so we would only be able to obtain scalar multiples with both negative
-or both positive components. On the other hand, <span class="math inline">\vec{b}</span> has one negative and one positive
-component. So they must be linearly independent.</p>
+<p>Linearly Dependent</p>
+<p>Upon inspection, we can see that <span class="math inline">\vec{b} =
+-\frac{1}{2}\vec{a}</span>. Therefore, these vectors are linearly
+dependent.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 75%.</p>
+<p>The average score on this problem was 81%.</p>
 </p>
 </div>
 </div>
@@ -1270,11 +1415,10 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Plane</p>
-<p>Any two linearly independent vectors must span a plane.
-Geometrically, we can think of all scalar multiples of a single vector
-to lie along a single line. Then, linear combinations of any two vectors
-pointing in different directions must lie on the same plane.</p>
+<p>Line</p>
+<p>Since we found that <span class="math inline">\vec{a}</span> and
+<span class="math inline">\vec{b}</span> are linearly dependent, they
+must span a space of only 1-dimension. This means that <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> lie the same line.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️</h5>
 <p>
@@ -1305,26 +1449,19 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>is</p>
-<p>Similar to Q5, we can tell that <span class="math inline">\vec{c}</span> lies in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> because we are dealing with
-2-dimensional vectors, and we know that <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> span a plane (so they must span all
-of <span class="math inline">\mathbb{R}^2</span>). <span class="math inline">\vec{c}</span> exists in 2-dimensional space, so it
-must exist in the span of <span class="math inline">\vec{a}</span> and
-<span class="math inline">\vec{b}</span>.</p>
-<p>We can also directly check if <span class="math inline">\vec{c}</span> lies in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> if there exists some constants <span class="math inline">c_1</span> and <span class="math inline">c_2</span>
-such that <span class="math inline">c_1 \vec{a} + c_2 \vec{b} =
-\vec{c}</span>. Plugging in what we know: <span class="math display">c_1
-\begin{bmatrix} -3 \\ -2 \end{bmatrix} + c_2 \begin{bmatrix} -2 \\ 3
-\end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>$ This gives
-us the system of equations: <span class="math display">c_1 (-3) + c_2
-(-2) = 1</span> <span class="math display">c_1 (-2) + c_2 (3) = 1</span>
-Solving this system gives us <span class="math inline">c_1 =
--\frac{5}{13}</span>, <span class="math inline">c_2 =
-\frac{1}{13}</span>, which means <span class="math inline">\vec{c}</span> does lie in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>.</p>
+<p>is not</p>
+<p>We know that <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> span a line consisting only of
+vectors that are scalar multiples of <span class="math inline">\vec{a}</span> or <span class="math inline">\vec{b}</span>. We can see that the first component
+of <span class="math inline">\vec{c}</span> is three times larger than
+the first component of <span class="math inline">\vec{a}</span>, but
+they both share the same second component. This means it is not possible
+to scale <span class="math inline">\vec{a}</span> by a constant to
+obtain <span class="math inline">\vec{c}</span>, and so <span class="math inline">\vec{c}</span> does not lie on the same line spanned
+by <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️</h5>
 <p>
-<p>The average score on this problem was 75%.</p>
+<p>The average score on this problem was 93%.</p>
 </p>
 </div>
 </div>
@@ -1351,14 +1488,14 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Orthogonal</p>
-<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal if <span class="math inline">\vec{a} \cdot \vec{b} = 0</span>. We can compute
-<span class="math inline">\vec{a} \cdot \vec{b} = (-3)(-2) + (-2)(3) = 6
-- 6 = 0</span>, so <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal.</p>
+<p>Collinear</p>
+<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are collinear if we can write one
+vector as a scalar multiple of the other. We saw that <span class="math inline">\vec{b} = -\frac{1}{2}\vec{a}</span>, so they are
+collinear.</p>
 <hr/>
-<h5>Difficulty: ⭐️⭐️</h5>
+<h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
-<p>The average score on this problem was 87%.</p>
+<p>The average score on this problem was 62%.</p>
 </p>
 </div>
 </div>
@@ -1385,6 +1522,210 @@ aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>0 or 180 degrees</p>
+<p>If two vectors are collinear, the angle between them is 0 or 180
+degrees. This is because they lie on the same line and either point in
+the same or opposite directions from the origin.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 81%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p><i>Source: <a href="../ss2-24-midterm/index.html">Summer Session 2
+2024 Midterm</a>, Problem 3d</i></p>
+<p>Fill in the blanks for each set of vectors below to accurately
+describe their relationship and span.</p>
+<p><span class="math display">\vec{a} = \begin{bmatrix} -3 \\ -2
+\end{bmatrix} \qquad \vec{b} = \begin{bmatrix} -2 \\ 3
+\end{bmatrix}</span></p>
+<p>“<span class="math inline">\vec{a}</span> and <span
+class="math inline">\vec{b}</span> are __(i)__, meaning they span a
+__(ii)__. The vector <span class="math inline">\vec{a} = \begin{bmatrix}
+1 \\ 1 \end{bmatrix}</span> __(iii)__ in the span of <span
+class="math inline">\vec{a}</span> and <span
+class="math inline">\vec{b}</span>. <span
+class="math inline">\vec{a}</span> and <span
+class="math inline">\vec{b}</span> are __(iv)__, meaning the angle
+between them is __(v)__”</p>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>What goes in __(i)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> linearly independent</p></li>
+<li><p><input type="radio" disabled="" /> linearly dependent</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Linearly Independent</p>
+<p>We can see that one vector is not a scalar multiple of the other.
+<span class="math inline">\vec{a}</span> has both negative components,
+so we would only be able to obtain scalar multiples with both negative
+or both positive components. On the other hand, <span class="math inline">\vec{b}</span> has one negative and one positive
+component. So they must be linearly independent.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 75%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>What goes in __(ii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> line</p></li>
+<li><p><input type="radio" disabled="" /> plane</p></li>
+<li><p><input type="radio" disabled="" /> cube</p></li>
+<li><p><input type="radio" disabled="" /> unknown</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Plane</p>
+<p>Any two linearly independent vectors must span a plane.
+Geometrically, we can think of all scalar multiples of a single vector
+to lie along a single line. Then, linear combinations of any two vectors
+pointing in different directions must lie on the same plane.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 87%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>What goes in __(iii)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> is</p></li>
+<li><p><input type="radio" disabled="" /> is not</p></li>
+<li><p><input type="radio" disabled="" /> may be</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>is</p>
+<p>Similar to Q5, we can tell that <span class="math inline">\vec{c}</span> lies in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> because we are dealing with
+2-dimensional vectors, and we know that <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> span a plane (so they must span all
+of <span class="math inline">\mathbb{R}^2</span>). <span class="math inline">\vec{c}</span> exists in 2-dimensional space, so it
+must exist in the span of <span class="math inline">\vec{a}</span> and
+<span class="math inline">\vec{b}</span>.</p>
+<p>We can also directly check if <span class="math inline">\vec{c}</span> lies in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> if there exists some constants <span class="math inline">c_1</span> and <span class="math inline">c_2</span>
+such that <span class="math inline">c_1 \vec{a} + c_2 \vec{b} =
+\vec{c}</span>. Plugging in what we know: <span class="math display">c_1
+\begin{bmatrix} -3 \\ -2 \end{bmatrix} + c_2 \begin{bmatrix} -2 \\ 3
+\end{bmatrix} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}</span>$ This gives
+us the system of equations: <span class="math display">c_1 (-3) + c_2
+(-2) = 1</span> <span class="math display">c_1 (-2) + c_2 (3) = 1</span>
+Solving this system gives us <span class="math inline">c_1 =
+-\frac{5}{13}</span>, <span class="math inline">c_2 =
+\frac{1}{13}</span>, which means <span class="math inline">\vec{c}</span> does lie in the span of <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span>.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 75%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.4">Problem 8.4</h3>
+<p>What goes in __(iv)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> orthogonal</p></li>
+<li><p><input type="radio" disabled="" /> collinear</p></li>
+<li><p><input type="radio" disabled="" /> neither orthogonal nor collinear</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_4" aria-expanded="true" aria-controls="collapse8_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_4" class="accordion-collapse collapse"
+aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Orthogonal</p>
+<p>The vectors <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal if <span class="math inline">\vec{a} \cdot \vec{b} = 0</span>. We can compute
+<span class="math inline">\vec{a} \cdot \vec{b} = (-3)(-2) + (-2)(3) = 6
+- 6 = 0</span>, so <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal.</p>
+<hr/>
+<h5>Difficulty: ⭐️⭐️</h5>
+<p>
+<p>The average score on this problem was 87%.</p>
+</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.5">Problem 8.5</h3>
+<p>What goes in __(v)__?</p>
+<ul class="task-list">
+<li><p><input type="radio" disabled="" /> 0 or 180 degrees</p></li>
+<li><p><input type="radio" disabled="" /> something else</p></li>
+<li><p><input type="radio" disabled="" /> 90 degrees</p></li>
+</ul>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_5" aria-expanded="true" aria-controls="collapse8_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_5" class="accordion-collapse collapse"
+aria-labelledby="heading8_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
 <p>90 degrees</p>
 <p>Since <span class="math inline">\vec{a}</span> and <span class="math inline">\vec{b}</span> are orthogonal, the angle between
 them is 90 degrees.</p>
@@ -1399,7 +1740,7 @@ them is 90 degrees.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-8">Problem 8</h2>
+<h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 4</i></p>
 <p>Consider the vectors <span class="math inline">\vec{u}</span> and
@@ -1412,7 +1753,7 @@ Problem 4</i></p>
 class="math inline">\vec u</span> and whose second column is <span
 class="math inline">\vec v</span>.</p>
 <p><br></p>
-<h3 id="problem-8.1">Problem 8.1</h3>
+<h3 id="problem-9.1">Problem 9.1</h3>
 <p>In this part only, let <span class="math inline">\vec{y} =
 \begin{bmatrix} -1 \\ k \\ 252 \end{bmatrix}</span>.</p>
 <p>Find a scalar <span class="math inline">k</span> such that <span
@@ -1421,13 +1762,13 @@ class="math inline">\text{span}(\vec u, \vec v)</span>. Give your answer
 as a constant with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse"
-aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1441,7 +1782,7 @@ component is 252, so the second must be as well.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.2">Problem 8.2</h3>
+<h3 id="problem-9.2">Problem 9.2</h3>
 <p>Show that: <span class="math display">(X^TX)^{-1}X^T =
 \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp;
 \frac{1}{2} \end{bmatrix}</span></p>
@@ -1451,13 +1792,13 @@ class="math inline">A^{-1} = \begin{bmatrix} \frac{1}{a_1} &amp; 0 \\ 0
 &amp; \frac{1}{a_2} \end{bmatrix}</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+<h2 class="accordion-header" id="heading9_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1481,7 +1822,7 @@ aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.3">Problem 8.3</h3>
+<h3 id="problem-9.3">Problem 9.3</h3>
 <p>In parts (c) and (d) only, let <span class="math inline">\vec{y} =
 \begin{bmatrix} 4 \\ 2 \\ 8 \end{bmatrix}</span>.</p>
 <p>Find scalars <span class="math inline">a</span> and <span
@@ -1492,13 +1833,13 @@ to <span class="math inline">\vec{y}</span> as possible. Give your
 answers as constants with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+<h2 class="accordion-header" id="heading9_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_3" class="accordion-collapse collapse"
-aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1521,7 +1862,7 @@ y_2 \\ y_3 \end{bmatrix}</span>.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.4">Problem 8.4</h3>
+<h3 id="problem-9.4">Problem 9.4</h3>
 <p>Let <span class="math inline">\vec{e} = \vec{y} - (a \vec u + b \vec
 v)</span>, where <span class="math inline">a</span> and <span
 class="math inline">b</span> are the values you found in part (c).</p>
@@ -1536,13 +1877,13 @@ class="math inline">b</span> are the values you found in part (c).</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_4" aria-expanded="true" aria-controls="collapse8_4">
+<h2 class="accordion-header" id="heading9_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_4" class="accordion-collapse collapse"
-aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
+<div id="collapse9_4" class="accordion-collapse collapse"
+aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1557,7 +1898,7 @@ aria-labelledby="heading8_4" data-bs-parent="#accordionExample">
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.5">Problem 8.5</h3>
+<h3 id="problem-9.5">Problem 9.5</h3>
 <p>Is it true that, for any vector <span class="math inline">\vec{y} \in
 \mathbb{R}^3</span>, we can find scalars <span
 class="math inline">c</span> and <span class="math inline">d</span> such
@@ -1575,13 +1916,13 @@ necessarily in</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_5">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_5" aria-expanded="true" aria-controls="collapse8_5">
+<h2 class="accordion-header" id="heading9_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_5" aria-expanded="true" aria-controls="collapse9_5">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_5" class="accordion-collapse collapse"
-aria-labelledby="heading8_5" data-bs-parent="#accordionExample">
+<div id="collapse9_5" class="accordion-collapse collapse"
+aria-labelledby="heading9_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1603,7 +1944,7 @@ which means that <span class="math inline">\vec{1}^T \vec{e} = 0
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-8.6">Problem 8.6</h3>
+<h3 id="problem-9.6">Problem 9.6</h3>
 <p>Suppose that <span class="math inline">Q \in \mathbb{R}^{100 \times
 12}</span>, <span class="math inline">\vec{s} \in
 \mathbb{R}^{100}</span>, and <span class="math inline">\vec{f} \in
@@ -1621,13 +1962,13 @@ product?</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading8_6">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_6" aria-expanded="true" aria-controls="collapse8_6">
+<h2 class="accordion-header" id="heading9_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_6" aria-expanded="true" aria-controls="collapse9_6">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_6" class="accordion-collapse collapse"
-aria-labelledby="heading8_6" data-bs-parent="#accordionExample">
+<div id="collapse9_6" class="accordion-collapse collapse"
+aria-labelledby="heading9_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1645,7 +1986,7 @@ aria-labelledby="heading8_6" data-bs-parent="#accordionExample">
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-9">Problem 9</h2>
+<h2 id="problem-10">Problem 10</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 1</i></p>
 <p>Consider a dataset of <span class="math inline">n</span>
@@ -1653,7 +1994,7 @@ Problem 1</i></p>
 y_n</span>, whose histogram is given below:</p>
 <center><img src='../assets/images/sp24-final/hist-dist.png' width=900></center>
 <p><br></p>
-<h3 id="problem-9.1">Problem 9.1</h3>
+<h3 id="problem-10.1">Problem 10.1</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes:</p>
 <p><span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n
@@ -1670,13 +2011,13 @@ class="math inline">h^*</span> that minimizes:</p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+<h2 class="accordion-header" id="heading10_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse"
-aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div id="collapse10_1" class="accordion-collapse collapse"
+aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1689,7 +2030,7 @@ zero-one loss is the mode.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.2">Problem 9.2</h3>
+<h3 id="problem-10.2">Problem 10.2</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes: <span
 class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n |y_i -
@@ -1705,13 +2046,13 @@ h|</span></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_2" aria-expanded="true" aria-controls="collapse9_2">
+<h2 class="accordion-header" id="heading10_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse"
-aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div id="collapse10_2" class="accordion-collapse collapse"
+aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1726,7 +2067,7 @@ slightly, to 7.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.3">Problem 9.3</h3>
+<h3 id="problem-10.3">Problem 10.3</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes: <span
 class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n (y_i -
@@ -1742,13 +2083,13 @@ h)^2</span></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_3" aria-expanded="true" aria-controls="collapse9_3">
+<h2 class="accordion-header" id="heading10_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse"
-aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div id="collapse10_3" class="accordion-collapse collapse"
+aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1766,7 +2107,7 @@ option.</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-9.4">Problem 9.4</h3>
+<h3 id="problem-10.4">Problem 10.4</h3>
 <p>Which of the following is closest to the constant prediction <span
 class="math inline">h^*</span> that minimizes: <span
 class="math display">\displaystyle \lim_{p \rightarrow \infty}
@@ -1782,13 +2123,13 @@ class="math display">\displaystyle \lim_{p \rightarrow \infty}
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading9_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_4" aria-expanded="true" aria-controls="collapse9_4">
+<h2 class="accordion-header" id="heading10_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_4" aria-expanded="true" aria-controls="collapse10_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_4" class="accordion-collapse collapse"
-aria-labelledby="heading9_4" data-bs-parent="#accordionExample">
+<div id="collapse10_4" class="accordion-collapse collapse"
+aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1802,7 +2143,7 @@ infinity loss is the midrange, i.e. halfway between the min and max.</p>
 </div>
 <p><br></p>
 <hr />
-<h2 id="problem-10">Problem 10</h2>
+<h2 id="problem-11">Problem 11</h2>
 <p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
 Problem 2</i></p>
 <p>Consider a dataset of 3 values, <span class="math inline">y_1 &lt;
@@ -1822,7 +2163,7 @@ absolute error of a constant prediction <span
 class="math inline">h</span> on the combined dataset of 8 values, <span
 class="math inline">y_1, ..., y_3, z_1, ..., z_5</span>.</p>
 <p><br></p>
-<h3 id="problem-10.1">Problem 10.1</h3>
+<h3 id="problem-11.1">Problem 11.1</h3>
 <p>Fill in the blanks:</p>
 <p><strong>“{ i } minimizes <span
 class="math inline">Y_\text{abs}(h)</span>, { ii } minimizes <span
@@ -1860,13 +2201,13 @@ class="math inline">T_\text{abs}(h)</span>.”</strong></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_1" aria-expanded="true" aria-controls="collapse10_1">
+<h2 class="accordion-header" id="heading11_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_1" aria-expanded="true" aria-controls="collapse11_1">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_1" class="accordion-collapse collapse"
-aria-labelledby="heading10_1" data-bs-parent="#accordionExample">
+<div id="collapse11_1" class="accordion-collapse collapse"
+aria-labelledby="heading11_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1890,7 +2231,7 @@ of 8 are <span class="math inline">z_1</span> and <span class="math inline">z_2<
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.2">Problem 10.2</h3>
+<h3 id="problem-11.2">Problem 11.2</h3>
 <p>For any <span class="math inline">h</span>, it is true that:</p>
 <p><span class="math display">T_\text{abs}(h) = \alpha Y_\text{abs}(h) +
 \beta Z_\text{abs}(h)</span></p>
@@ -1901,13 +2242,13 @@ class="math inline">\beta</span>? Give your answers as integers or
 simplified fractions with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_2" aria-expanded="true" aria-controls="collapse10_2">
+<h2 class="accordion-header" id="heading11_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_2" aria-expanded="true" aria-controls="collapse11_2">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_2" class="accordion-collapse collapse"
-aria-labelledby="heading10_2" data-bs-parent="#accordionExample">
+<div id="collapse11_2" class="accordion-collapse collapse"
+aria-labelledby="heading11_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1934,20 +2275,20 @@ h|\right)</span></p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.3">Problem 10.3</h3>
+<h3 id="problem-11.3">Problem 11.3</h3>
 <p>Show that <span class="math inline">Y_\text{abs}(z_1) = z_1 -
 2</span>.</p>
 <p><em>Hint: Use the fact that you know the mean of <span
 class="math inline">y_1, y_2, y_3</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_3">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_3" aria-expanded="true" aria-controls="collapse10_3">
+<h2 class="accordion-header" id="heading11_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_3" aria-expanded="true" aria-controls="collapse11_3">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_3" class="accordion-collapse collapse"
-aria-labelledby="heading10_3" data-bs-parent="#accordionExample">
+<div id="collapse11_3" class="accordion-collapse collapse"
+aria-labelledby="heading11_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1970,7 +2311,7 @@ write:</p>
 </div>
 </div>
 <p><br></p>
-<h3 id="problem-10.4">Problem 10.4</h3>
+<h3 id="problem-11.4">Problem 11.4</h3>
 <p>Suppose the mean absolute deviation from the median in the full
 dataset of 8 values is 6. What is the value of <span
 class="math inline">z_1</span>?</p>
@@ -1987,13 +2328,13 @@ question.</em></p>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
-<h2 class="accordion-header" id="heading10_4">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10_4" aria-expanded="true" aria-controls="collapse10_4">
+<h2 class="accordion-header" id="heading11_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11_4" aria-expanded="true" aria-controls="collapse11_4">
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10_4" class="accordion-collapse collapse"
-aria-labelledby="heading10_4" data-bs-parent="#accordionExample">
+<div id="collapse11_4" class="accordion-collapse collapse"
+aria-labelledby="heading11_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>

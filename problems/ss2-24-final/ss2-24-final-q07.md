@@ -38,7 +38,7 @@ answer.
 
 # BEGIN SOLUTION
 
-$$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}$
+$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}$
 
 To solve this problem we need to use the law of total probability. Recall the law of total probability is: $P(A) = \sum_{i=1}^n P(A \mid B_i) P(B_i)$ where $B_i$ is a partition of a sample sapce that are mutually exclusive and collectively exhaustive.
 
@@ -104,6 +104,8 @@ $$\frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur)}} = \frac{\frac{3}{50}
 
 # END SUBPROB
 
+# BEGIN SUBPROB
+
 *The following information is repeated from the previous page, for your convenience.*
 
 You go to the (world-renowned) San Diego Safari Park. The animals you
@@ -131,8 +133,6 @@ $\frac{3}{10}$.
 :::
 
 []{#tab:animal_probs_transposed label="tab:animal_probs_transposed"}
-
-# BEGIN SUBPROB
 
 Suppose you visit the Hidden Jungle four times. What is the probability
 you see a Fruit Bat at least once? Show your work, and put a around your

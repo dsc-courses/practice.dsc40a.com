@@ -3,6 +3,7 @@ context: This page contains all problems about Matrices, Vectors, and their Prop
 show_solution: true
 problems:
   # Commented problems are problems that are UNFINISHED, uncomment when complete :)
+  - ss2-24-final/ss2-24-final-q03
   - ss2-24-midterm/ss2-24-midterm-q02
   - ss2-24-midterm/ss2-24-midterm-q03
   - ss2-24-midterm/ss2-24-midterm-q04
