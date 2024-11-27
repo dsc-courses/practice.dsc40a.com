@@ -50,8 +50,8 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
 - [Foundations of Probability](foundations-of-probability/index.html)
 - [Conditional Probability and Naive Bayes](conditional-probability/index.html)
 - [Combinatorics](combinatorics/index.html)
-- Independence and Conditional Independence
-- Bayes' Theorem
+<!-- - Independence and Conditional Independence
+- Bayes' Theorem -->
 
 <!-- - [Clustering](clustering/index.html) -->
 <!-- - [] -->
@@ -93,7 +93,7 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
       <th scope="row">Summer Session 2 2024</th>
       <td>Nishant Kheterpal</td>
       <td><a href='ss2-24-midterm/index.html'>Midterm </a>
-      <!-- <br><a href='sp24-final/index.html'>Final </a> -->
+      <br><a href='ss2-24-final/index.html'>Final </a>
       </td>
     </tr>
   <tr>
