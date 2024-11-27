@@ -38,6 +38,8 @@ $Z(h) = \frac{1}{7} \sum_{i = 1}^7 (h - z_i)$ is minimized when $h$ is as small 
 
 When looking at our answers available the smallest risk would be $h^* = -\infty$.
 
+<average>16</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -61,6 +63,8 @@ Recall $h^*$ for $T_\text{abs}(h)$ is the median of the dataset!
 
 Our dataset is: $x_1, y_1, y_2, y_3, y_4, x_2, x_3$. Our median is $y_3$, which means $h^* = y_3$.
 
+<average>77</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -80,6 +84,8 @@ this assumption?
 $$-\frac{3}{7}$$
 
 Slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of points to the left of h - number of points to the right of h)}$. If the slope of $T_{abs}(h)$ was originally $-\frac{1}{7}$, there must have been four points to the right of h and 3 points to the left of h, meaning $y_2<h<y_3$. It follows that in the modified dataset there are 5 points to the right of h and 2 points to the left of h, meaning the slope of $T_{abs}(h)$ must be $-\frac{3}{7}$
+
+<average>44</average>
 
 # END SOLUTION
 
@@ -134,6 +140,8 @@ Recall the slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of poi
 - We assume $h_p$ does not change, this means that it would look like: $x_1, y_1, y_1, y_2, y_2, h_p, y_3, y_3, y_4, y_4$
 - We can see there are five points to the left of $h_p$ and four points to the right of $h_p$, this means we have $\frac{1}{9} (5 - 4) = \frac{1}{9}$
 
+<average>31</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -165,6 +173,8 @@ $T_{abs}(h)$ represents the combined dataset (both the $x$'s and the $y$'s), so 
 $Y_{abs}(h)$ represents only the $y$'s. There are 4 $y$ values and we know these points are closer together than the $x$ values. Because the $y$ values are more concentrated the slope will be larger! (Recall that the mean for these 4 points is 6).
 
 $X_{abs}(h)$represents only the $x$'s. There are 3 $x$ values and we know these points are farther apart than the $y$ values. Because the $x$ values are more spread out the slope will be smaller! (Recall that the mean for these 3 points is 6).
+
+<average>38</average>
 
 # END SOLUTION
 

@@ -110,6 +110,8 @@ $$X_? = \begin{bmatrix}
 
 Here we can now eliminate $X_2$ and $X_4$, so we know the answer must be $X_1$!
 
+<average>100</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -146,6 +148,8 @@ $$X_? = \begin{bmatrix}
     \end{bmatrix}$$
 
 We can see the only design matrix with this first column is $X_3$.
+
+<average>100</average>
 
 # END SOLUTION
 
@@ -197,6 +201,8 @@ $$X_? = \begin{bmatrix}
     \end{bmatrix}$$
 
 Here we can eliminate $X_1$ and $X_2$, which means our answer is $X_4$.
+
+<average>100</average>
 
 # END SOLUTION
 
@@ -256,6 +262,8 @@ $$X_? = \begin{bmatrix}
 
 Now we can eliminate the design matrices $X_1$ and $X_4$, which means the answer is $X_2$.
 
+<average>100</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -291,6 +299,8 @@ $H_E(u, v)$
 
 $H_E(u, v)$ contains the most information. $H_E$ has $\vec u$ and $\vec v$.This means we have information about both variables. We also see it has every component present in the other functions ($H_A, H_B, H_C, H_D$). This makes $H_E$ the most expressive, which will allow it to fit our data the best.
 
+<average>56</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -306,6 +316,8 @@ this prediction likely to be accurate? Justify your answer.
 No
 
 This prediction is not likely to be accurate due to overfitting or extrapolation issues. If there are too many terms there is a higher chance the function is overfitting the training data and will not generalize well to new points. You can think of a high-degree polynomial overfitting a linear trend.
+
+<average>77</average>
 
 # END SOLUTION
 

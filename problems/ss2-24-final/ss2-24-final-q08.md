@@ -46,7 +46,7 @@ ${n \choose k}$.
 Correctly calculates all of the probabilities for 
 $$\frac{P(\text{Dark Fur} \cap \text{Short Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap \text{Short Claws})}$$, and arrives at the correct answer of $$\frac{7}{13}$$, or an equivalent form.
 
-If a student does not receive this rubric item, they should only receive **one** of the other rubric items.
+<average>50</average>
 
 # END SOLUTION
 

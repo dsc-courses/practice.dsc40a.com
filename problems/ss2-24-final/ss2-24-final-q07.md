@@ -64,6 +64,8 @@ $$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot
 
 Recall we can leave our answer unsimplified!
 
+<average>81</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -95,6 +97,8 @@ and that $P(\text{Lemur}|\text{Plains}) = \frac{1}{10}$.
 All we have to do is now combine them!
 
 $$\frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur)}} = \frac{\frac{3}{50}}{\frac{29}{200}} = \frac{12}{29}$$
+
+<average>75</average>
 
 # END SOLUTION
 
@@ -142,6 +146,8 @@ The best way to solve this problem is by using the compliment rule. We can calcu
 
 Essentially, $1 - (1 - P(\text{Fruit Bat | Hidden Jungle}))^4 = P(\text{at least 1 Fruit Bat} | \text{Hidden Jungle})$.
 
+<average>63</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -173,6 +179,8 @@ P(\text{Rhino} \cup \text{Gazelle}) &= P(\text{Rhino}) + P(\text{Gazelle}) - P(\
 &= \frac{6}{20} + \frac{10}{20} - \frac{3}{20}\\
 &= \frac{13}{20}
 \end{align*}
+
+<average>65</average>
 
 # END SOLUTION
 
@@ -206,6 +214,8 @@ We are given:
 We can simply plug the given values into the equation to see if it holds: $$\frac{2}{5} \cdot \frac{7}{10} = \frac{7}{25}$$
 
 This means the answer is "No" because $\frac{3}{5} \neq \frac{7}{25}$.
+
+<average>77</average>
 
 # END SOLUTION
 

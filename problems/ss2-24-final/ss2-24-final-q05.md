@@ -23,6 +23,8 @@ Writing these as a vector, we obtain the gradient above.
 
 We can verify that $\nabla g\left( \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right) = \begin{bmatrix} 2(1) + (2) - 4 \\ 2(2) + (1) - 6 \end{bmatrix} = \begin{bmatrix} 0 \\ -1 \end{bmatrix}$.
 
+<average>88</average>
+
 # END SOLUTION
 
 # END SUBPROB
@@ -45,6 +47,8 @@ Our first step of gradient descent is given by the equation: $\vec{x}^{(1)} = \v
 From the previous problem, we found that $\nabla g\left( \begin{bmatrix} 1 \\ 2 \end{bmatrix} \right) = \begin{bmatrix} 0 \\ -1 \end{bmatrix}$.
 
 Plugging in what we have: $\vec{x}^{(1)} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} - \left(\frac{1}{4} \right) \begin{bmatrix} 0 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 \\ 2 \end{bmatrix} - \begin{bmatrix} 0 \\ - \frac14\end{bmatrix} = \begin{pmatrix} 1 \\ \frac94\end{pmatrix}$
+
+<average>87</average>
 
 # END SOLUTION
 
@@ -77,6 +81,8 @@ Let $t\in[0, 1], a\in\mathbb{R}, b\in\mathbb{R}$.
 &= a((1-t)f(c) + tf(d)) + b \geq af((1-t)c + td) + b\\
 &= g((1-t)c + td)
 \end{align*}
+
+<average>49</average>
 
 # END SOLUTION
 

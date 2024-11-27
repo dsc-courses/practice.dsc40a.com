@@ -85,6 +85,8 @@ P(\text{Mature}|\text{Golden Fur} \cap \text{Long Claws}) &= P(\text{Mature}) \c
 
 When age is Mature then it has the highest probability, which means we predict the new cheetah is mature.
 
+<average>59</average>
+
 # END SOLUTION
 
 # END PROB
