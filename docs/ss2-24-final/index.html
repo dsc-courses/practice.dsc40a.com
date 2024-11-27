@@ -2250,9 +2250,97 @@ aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correctly calculates all of the probabilities for <span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short Claws} |
-\text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap \text{Short
-Claws})}</span>, and arrives at the correct answer of <span class="math display">\frac{7}{13}</span>, or an equivalent form.</p>
+<p><span class="math inline">\frac{7}{13}</span></p>
+<p>To calculate the probability that a cheetah is young given that it
+has dark fur and short claws we can use Bayes’ Theorem!</p>
+<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short
+Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap
+\text{Short Claws})}</span></p>
+<p>We first need to calculate: <span class="math inline">P(\text{Dark
+Fur} \cap \text{Short Claws} | \text{Young})</span>.</p>
+<p>We can do this using the equation: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} |
+\text{Young}) = P(\text{Dark Fur} | \text{Young}) \cdot P(\text{Short
+Claws} | \text{Young})</span>.</p>
+<p>We are given:</p>
+<ul>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) =
+0.80</span></li>
+<li><span class="math inline">P(\text{Short Claws} \mid \text{Young}) =
+0.70</span></li>
+</ul>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) = 0.8 \cdot 0.7 = 0.56</span></p>
+<p>Notice the denominator of our Bayes’ Theorem is <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws})</span>
+this means we need to probability of seeing Dark Fur or Short Claws
+regardless of the development stage.</p>
+<p>This follows the equation for the law of total probability:</p>
+<p><span class="math display">\begin{align*}
+P(\text{Dark Fur} \cap \text{Short Claws}) &amp;= P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) * P(\text{Young})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) *
+P(\text{Adolescent})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) *
+P(\text{Mature})
+\end{align*}</span></p>
+<p>This means we need to calculate: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} |
+\text{Adolescent})</span> and <span class="math inline">P(\text{Dark
+Fur} \cap \text{Short Claws} | \text{Mature})</span>.</p>
+<p><strong>For Adolescent we are given:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Golden Fur} \mid
+\text{Adolescent}) = 0.50</span></li>
+<li><span class="math inline">P(\text{Long Claws} \mid
+\text{Adolescent}) = 0.40</span></li>
+</ul>
+<p>We have to take the compliments of these qualities to get short claws
+and dark fur!</p>
+<ul>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Adolescent})
+= 1 - P(\text{Golden Fur} \mid \text{Adolescent}) = 1 - 0.50 =
+0.5</span></li>
+<li><span class="math inline">P(\text{Short Claws} \mid
+\text{Adolescent}) = 1 - P(\text{Long Claws} \mid \text{Adolescent}) = 1
+- 0.40 = 0.6</span></li>
+</ul>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Adolescent}) = 0.5 \cdot 0.6 = 0.3</span></p>
+<p><strong>For Mature we are given:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Long Claws} \mid \text{Mature}) =
+1</span></li>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) =
+0.10</span></li>
+</ul>
+<p>We have to take the compliments of long claws to get short claws!</p>
+<ul>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) = 1
+- P(\text{Golden Fur} \mid \text{Mature}) = 1 - 1 = 0</span></li>
+</ul>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Mature}) = 0 \cdot 0.1 = 0</span></p>
+<p>To finally calculate the denominator we need these probabilities:</p>
+<ul>
+<li><span class="math inline">P(\text{Young}) = 0.25</span></li>
+<li><span class="math inline">P(\text{Adolescent}) = 0.40</span></li>
+<li><span class="math inline">P(\text{Mature}) = 0.35</span></li>
+</ul>
+<p>Now we can simply plug our numbers into the equation!</p>
+<p><span class="math display">\begin{align*}
+P(\text{Dark Fur} \cap \text{Short Claws}) &amp;= P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) * P(\text{Young})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) *
+P(\text{Adolescent})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) *
+P(\text{Mature})\\
+&amp;= 0.56 \cdot 0.25 + 0.3 * 0.4 + 0 * 0.35 \\
+&amp;= 0.14 + 0.12\\
+&amp;= 0.26
+\end{align*}</span></p>
+<p>Now we have all the components to answer the question:</p>
+<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short
+Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap
+\text{Short Claws})} = \frac{0.56 \cdot 0.25}{0.26} =
+\frac{7}{13}</span></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
