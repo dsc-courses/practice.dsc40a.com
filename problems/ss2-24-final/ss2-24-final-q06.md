@@ -79,7 +79,9 @@ four remaining cards are Jacks (the strongest card in Euchre)?
 
 $\frac{4}{24} \cdot \frac{3}{23} \cdot \frac{2}{22} \cdot \frac{1}{21}$
 
-TODO
+The way to think about this problem is if there are 4 Jacks in 24 cards when the first card is dealt the probability that this card is a Jack is $\frac{4}{24}$. After the first card is delt there are 23 remaining. If that first card was a Jack then the probability the second card is a Jack is $\frac{3}{24}$. Following the same logic we find if the third card was a Jack then the probability becomes $\frac{2}{22}$ and if the fourth card was a Jack then the probability becomes $\frac{1}{21}$.
+
+Each probability represents the likelihood of a Jack being left in the deck as the cards are dealt. Since the cards are being dealt without replacement, the number of available Jacks decreases with each deal, and the total number of remaining cards also decreases. This is why the probability for each successive card is calculated based on the remaining number of Jacks and the remaining cards in the deck.
 
 <average>22</average>
 
