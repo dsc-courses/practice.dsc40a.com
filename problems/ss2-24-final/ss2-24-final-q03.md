@@ -178,8 +178,7 @@ To find what goes in $\_\_(a)\_\_$ and $\_\_(b)\_\_$ we need to multiply $(X^T X
 # BEGIN SUBPROB
 
 Is it true that, for the orthogonal projection $\vec{p}$ from above, the
-entries of\
-$\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18 \end{bmatrix}$ sum
+entries of $\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18 \end{bmatrix}$ sum
 to $0$? Explain why or why not. Your answer must mention characteristics
 of $\vec{v}_1,\vec{v}_2,$ and/or $X$ to receive full credit.
 
@@ -192,9 +191,9 @@ Explain your answer
 
 Yes
 
-Correctly explains that design matrix $$X$$ lacks a column of all 1s (and the span of its columns does not include all 1s), so residuals don't necessarily not sum to 0. Full credit also given for showing that $$\vec{p}$$ is exactly $$\begin{bmatrix}3\\15\\18\end{bmatrix}$$, so error vector $$\vec{e} = \vec{0}$$, or saying $$\begin{bmatrix}3\\15\\18\end{bmatrix} \in \text{span}(\vec{v_1}, \vec{v_2})$$ .
+*Note: Design matrix $X$ lacks a column of all 1s (and the span of its columns does not include all 1s), so residuals don't necessarily not sum to 0. This means we need more evidence!*
 
-TODO
+$\vec{p}$ is the orthogonal projection of $\begin{bmatrix}3\\15\\18\end{bmatrix}$ onto $\text{span}(\vec{v_1}, \vec{v_2})$ where $\vec{v_1}$ and $\vec{v_2}$ are the column of the matrix $X$. From the instructions we know: $\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18 \end{bmatrix}$. This means if $\begin{bmatrix}3\\15\\18\end{bmatrix}$ lies in $\text{span}(\vec{v_1}, \vec{v_2})$ then $\vec{e} = \vec{0}$. We know $\vec{p}$ is exactly $\begin{bmatrix}3\\15\\18\end{bmatrix}$, which means the sum of residuals equals 0.
 
 # END SOLUTION
 

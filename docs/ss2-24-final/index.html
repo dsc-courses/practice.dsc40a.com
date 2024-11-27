@@ -923,11 +923,11 @@ aria-labelledby="heading3_6" data-bs-parent="#accordionExample">
 <p><br></p>
 <h3 id="problem-3.7">Problem 3.7</h3>
 <p>Is it true that, for the orthogonal projection <span
-class="math inline">\vec{p}</span> from above, the entries of<br />
-<span class="math inline">\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15
-\\ 18 \end{bmatrix}</span> sum to <span class="math inline">0</span>?
-Explain why or why not. Your answer must mention characteristics of
-<span class="math inline">\vec{v}_1,\vec{v}_2,</span> and/or <span
+class="math inline">\vec{p}</span> from above, the entries of <span
+class="math inline">\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18
+\end{bmatrix}</span> sum to <span class="math inline">0</span>? Explain
+why or why not. Your answer must mention characteristics of <span
+class="math inline">\vec{v}_1,\vec{v}_2,</span> and/or <span
 class="math inline">X</span> to receive full credit.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Yes</p></li>
@@ -948,13 +948,18 @@ aria-labelledby="heading3_7" data-bs-parent="#accordionExample">
 <h1 class="title"> </h1>
 </header>
 <p>Yes</p>
-<p>Correctly explains that design matrix <span class="math display">X</span> lacks a column of all 1s (and the span of
-its columns does not include all 1s), so residuals don’t necessarily not
-sum to 0. Full credit also given for showing that <span class="math display">\vec{p}</span> is exactly <span class="math display">\begin{bmatrix}3\\15\\18\end{bmatrix}</span>, so
-error vector <span class="math display">\vec{e} = \vec{0}</span>, or
-saying <span class="math display">\begin{bmatrix}3\\15\\18\end{bmatrix}
-\in \text{span}(\vec{v_1}, \vec{v_2})</span> .</p>
-<p>TODO</p>
+<p><em>Note: Design matrix <span class="math inline">X</span> lacks a
+column of all 1s (and the span of its columns does not include all 1s),
+so residuals don’t necessarily not sum to 0. This means we need more
+evidence!</em></p>
+<p><span class="math inline">\vec{p}</span> is the orthogonal projection
+of <span class="math inline">\begin{bmatrix}3\\15\\18\end{bmatrix}</span> onto
+<span class="math inline">\text{span}(\vec{v_1}, \vec{v_2})</span> where
+<span class="math inline">\vec{v_1}</span> and <span class="math inline">\vec{v_2}</span> are the column of the matrix <span class="math inline">X</span>. From the instructions we know: <span class="math inline">\vec{e} = \vec{p} \ - \begin{bmatrix} 3 \\ 15 \\ 18
+\end{bmatrix}</span>. This means if <span class="math inline">\begin{bmatrix}3\\15\\18\end{bmatrix}</span> lies in
+<span class="math inline">\text{span}(\vec{v_1}, \vec{v_2})</span> then
+<span class="math inline">\vec{e} = \vec{0}</span>. We know <span class="math inline">\vec{p}</span> is exactly <span class="math inline">\begin{bmatrix}3\\15\\18\end{bmatrix}</span>, which
+means the sum of residuals equals 0.</p>
 </div>
 </div>
 </div>
@@ -1690,8 +1695,6 @@ class="math inline">\frac{2}{5}</span></td>
 </tbody>
 </table>
 </div>
-<p><span id="tab:animal_probs_transposed"
-label="tab:animal_probs_transposed"></span></p>
 <p>In this question, you may leave your answers unsimplified, in terms
 of fractions, exponents, factorials, the permutation formula <span
 class="math inline">P(n, k)</span>, and the binomial coefficient <span
@@ -1714,11 +1717,41 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correctly uses law of total probability: P(Lemur) =
-P(Lemur|Plains)P(Plains) + P(Lemur|Forest)P(Forest) +
-P(Lemur|Jungle)P(Jungle)= <span class="math display">\frac{1}{10}\cdot\frac{3}{5} +
-\frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}</span>.</p>
-<p>TODO</p>
+<p>$<span class="math inline">\frac{1}{10}\cdot\frac{3}{5} +
+\frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}</span></p>
+<p>To solve this problem we need to use the law of total probability.
+Recall the law of total probability is: <span class="math inline">P(A) =
+\sum_{i=1}^n P(A \mid B_i) P(B_i)</span> where <span class="math inline">B_i</span> is a partition of a sample sapce that are
+mutually exclusive and collectively exhaustive.</p>
+<p>To use the law of total probability here we need to look at the three
+different instances one may see a lemur! We can see that the lemur is
+present in the Plains, Forest, and Jungle. This means our equation will
+look like:</p>
+<p><span class="math display">P(\text{Lemur}) =
+P(\text{Lemur}|\text{Plains})P(\text{Plains}) +
+P(\text{Lemur}|\text{Forest})P(\text{Forest}) +
+P(\text{Lemur}|\text{Jungle})P(\text{Jungle})</span></p>
+<p>We are given the conditional probabilities in the table:</p>
+<ul>
+<li><span class="math inline">P(\text{Lemur}|\text{Plains}) =
+\frac{1}{10}</span></li>
+<li><span class="math inline">P(\text{Lemur}|\text{Forest})=
+\frac{1}{4}</span></li>
+<li><span class="math inline">P(\text{Lemur}|\text{Jungle}) =
+\frac{1}{5}</span></li>
+</ul>
+<p>In the directions we are given:</p>
+<ul>
+<li><span class="math inline">P(\text{Plains}) = \frac{3}{5}</span></li>
+<li><span class="math inline">P(\text{Forest}) =
+\frac{1}{10}</span></li>
+<li><span class="math inline">P(\text{Jungle}) =
+\frac{3}{10}</span></li>
+</ul>
+<p>Now all we have to do is plug them into the equation!</p>
+<p><span class="math display">\frac{1}{10}\cdot\frac{3}{5} +
+\frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}</span></p>
+<p>Recall we can leave our answer unsimplified!</p>
 </div>
 </div>
 </div>
@@ -1741,19 +1774,25 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correctly uses Bayes’ Theorem and answer using Law of Total
-Probability from above: Correctly uses law of total probability:
-P(Plains | Lemur) = <span class="math display">\frac{\text{P(Lemur |
-Plains)P(Plains)}}{\text{P(Lemur)}} = \frac{\text{P(Lemur |
-Plains)P(Plains)}}{\text{P(Lemur|Plains)P(Plains) +
-P(Lemur|Forest)P(Forest) + P(Lemur|Jungle)P(Jungle)}}</span></p>
-<p><span class="math display"> =
-\frac{\frac{1}{10}\cdot\frac{3}{5}}{\frac{1}{10}\cdot\frac{3}{5} +
-\frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}} =
-\frac{12}{29}</span>.</p>
-<p>Not penalized again if an incorrect answer in <strong>a</strong>
-above is reused.</p>
-<p>TODO</p>
+<p><span class="math inline">\frac{\frac{1}{10}\cdot\frac{3}{5}}{\frac{1}{10}\cdot\frac{3}{5}
++ \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}} =
+\frac{12}{29}</span></p>
+<p>To solve this question we need to use Bayes’ Theorem and the law of
+total probability from part a.</p>
+<p><span class="math display">\frac{P(\text{Lemur}|\text{Plains})}{P(\text{Lemur})}</span></p>
+<p>We know from part a that:</p>
+<p><span class="math display">\begin{align*}
+P(\text{Lemur}) &amp;= \frac{1}{10}\cdot\frac{3}{5} +
+\frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}\\
+&amp;= \frac{3}{50}+\frac{1}{40}+\frac{3}{50}\\
+&amp;= \frac{29}{200}
+\end{align*}</span></p>
+<p>and that <span class="math inline">P(\text{Lemur}|\text{Plains}) =
+\frac{1}{10}</span>.</p>
+<p>All we have to do is now combine them!</p>
+<p><span class="math display">\frac{\text{P(Lemur |
+Plains)P(Plains)}}{\text{P(Lemur)}} =
+\frac{\frac{3}{50}}{\frac{29}{200}} = \frac{12}{29}</span></p>
 </div>
 </div>
 </div>
@@ -1855,13 +1894,20 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correct: <span class="math display">1 - (\frac{3}{5})^4 = 1 - (1 -
-\frac{2}{5})^4</span></p>
-<p><span class="math display"> = 1 - (1 - P(\text{Fruit Bat | Hidden
-Jungle}))^4</span></p>
-<p><span class="math display"> = P(\text{at least 1 Fruit Bat} |
-\text{Hidden Jungle})</span></p>
-<p>TODO</p>
+<p><span class="math inline">1 - (\frac{3}{5})^4</span></p>
+<p>The best way to solve this problem is by using the compliment rule.
+We can calculate the probability of not seeing a Fruit Bat in the Hidden
+Jungle: <span class="math inline">1 - P(\text{Fruit Bat | Hidden
+Jungle}) = 1 - \frac{2}{5} = \frac{3}{5}</span>. We then need to put
+this fraction to the power of <span class="math inline">4</span> for the
+four independent observations. <span class="math inline">\frac{3}{5}^4</span> says we never see the Fruit Bat
+in the four times we have been to the Hidden Jungle. Now we use the
+compliment rule again! <span class="math inline">1 -
+\frac{3}{5}^4</span> gives us the probability of seeing at least one
+Fruit Bat in 4 observations!</p>
+<p>Essentially, <span class="math inline">1 - (1 - P(\text{Fruit Bat |
+Hidden Jungle}))^4 = P(\text{at least 1 Fruit Bat} | \text{Hidden
+Jungle})</span>.</p>
 </div>
 </div>
 </div>
@@ -1884,12 +1930,30 @@ aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correctly uses inclusion-exclusion for addition rule:</p>
-<p>P(Rhino OR Gazelle) = P(Rhino) + P(Gazelle) - P(Rhino AND Gazelle) =
-<span class="math display">\frac{3}{10} + \frac{1}{2} - \frac{3}{10}
+<p><span class="math inline">\frac{3}{10} + \frac{1}{2} - \frac{3}{10}
 \cdot \frac{1}{2} =\frac{6}{20} + \frac{10}{20} - \frac{3}{20} =
 \frac{13}{20}</span></p>
-<p>TODO</p>
+<p>To solve this problem we know we will need to use Inclusion-Exclusion
+Principle (<span class="math inline">P(\text{Rhino} \cup \text{Gazelle})
+= P(\text{Rhino}) + P(\text{Gazelle}) - P(\text{Rhino} \cap
+\text{Gazelle})</span>).</p>
+<p>We are in the African Plains! This means:</p>
+<ul>
+<li><span class="math inline">P(\text{Rhino}) = \frac{3}{10}</span></li>
+<li><span class="math inline">P(\text{Gazelle}) =
+\frac{1}{2}</span></li>
+</ul>
+<p>Since we are told the two events are independent we can do: <span class="math inline">P(\text{Rhino} \cap \text{Gazelle}) =
+P(\text{Rhino}) \cdot P(\text{Gazelle}) = \frac{3}{10} \cdot \frac{1}{2}
+= \frac{3}{20}</span>.</p>
+<p>Now we just plug into the Inclusion-Exclusion Principle:</p>
+<p><span class="math display">\begin{align*}
+P(\text{Rhino} \cup \text{Gazelle}) &amp;= P(\text{Rhino}) +
+P(\text{Gazelle}) - P(\text{Rhino} \cap \text{Gazelle})\\
+&amp;= \frac{3}{10} + \frac{1}{2} - \frac{3}{10} \cdot \frac{1}{2} \\
+&amp;= \frac{6}{20} + \frac{10}{20} - \frac{3}{20}\\
+&amp;= \frac{13}{20}
+\end{align*}</span></p>
 </div>
 </div>
 </div>
@@ -1920,9 +1984,26 @@ aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correct: answers “No”, since <span class="math display">\frac{3}{5}
-\neq \frac{2}{5} \times \frac{7}{10}</span>.</p>
-<p>TODO</p>
+<p>No</p>
+<p>Two events are conditionally independent given a third event if:
+<span class="math inline">P(A \cap B | C) = P(A|C) \cdot
+P(B|C)</span>.</p>
+<p>We can replace the variables for our scenario: <span class="math inline">P(\text{Rhino} \cap \text{Camel})|\text{Gazelle} =
+P(\text{Rhino}|\text{Gazelle}) \cdot
+P(\text{Camel}|\text{Gazelle})</span>.</p>
+<p>We are given:</p>
+<ul>
+<li><span class="math inline">P(\text{Rhino}|\text{Gazelle}) =
+\frac{2}{5}</span></li>
+<li><span class="math inline">P(\text{Camel}|\text{Gazelle}) =
+\frac{7}{10}</span></li>
+<li><span class="math inline">P(\text{Rhino} \cap
+\text{Camel})|\text{Gazelle} = \frac{3}{5}</span></li>
+</ul>
+<p>We can simply plug the given values into the equation to see if it
+holds: <span class="math display">\frac{2}{5} \cdot \frac{7}{10} =
+\frac{7}{25}</span></p>
+<p>This means the answer is “No” because <span class="math inline">\frac{3}{5} \neq \frac{7}{25}</span>.</p>
 </div>
 </div>
 </div>

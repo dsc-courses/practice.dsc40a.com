@@ -26,8 +26,6 @@ $\frac{3}{10}$.
    Hidden Jungle          \-               \-              \-         $\frac{1}{5}$    $\frac{2}{5}$          \-
 :::
 
-[]{#tab:animal_probs_transposed label="tab:animal_probs_transposed"}
-
 In this question, you may leave your answers unsimplified, in terms of
 fractions, exponents, factorials, the permutation formula $P(n, k)$, and
 the binomial coefficient ${n \choose k}$.
@@ -40,10 +38,31 @@ answer.
 
 # BEGIN SOLUTION
 
-Correctly uses law of total probability: 
-P(Lemur) = P(Lemur|Plains)P(Plains) + P(Lemur|Forest)P(Forest) + P(Lemur|Jungle)P(Jungle)= $$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}$$.
+$$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}$
 
-TODO
+To solve this problem we need to use the law of total probability. Recall the law of total probability is: $P(A) = \sum_{i=1}^n P(A \mid B_i) P(B_i)$ where $B_i$ is a partition of a sample sapce that are mutually exclusive and collectively exhaustive.
+
+To use the law of total probability here we need to look at the three different instances one may see a lemur! We can see that the lemur is present in the Plains, Forest, and Jungle. This means our equation will look like:
+
+$$P(\text{Lemur}) = P(\text{Lemur}|\text{Plains})P(\text{Plains}) + P(\text{Lemur}|\text{Forest})P(\text{Forest}) + P(\text{Lemur}|\text{Jungle})P(\text{Jungle})$$
+
+We are given the conditional probabilities in the table:
+
+- $P(\text{Lemur}|\text{Plains}) = \frac{1}{10}$
+- $P(\text{Lemur}|\text{Forest})= \frac{1}{4}$
+- $P(\text{Lemur}|\text{Jungle}) = \frac{1}{5}$
+
+In the directions we are given:
+
+- $P(\text{Plains}) = \frac{3}{5}$
+- $P(\text{Forest}) = \frac{1}{10}$
+- $P(\text{Jungle}) = \frac{3}{10}$
+
+Now all we have to do is plug them into the equation!
+
+$$\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}$$
+
+Recall we can leave our answer unsimplified!
 
 # END SOLUTION
 
@@ -57,22 +76,31 @@ around your final answer.
 
 # BEGIN SOLUTION
 
-Correctly uses Bayes' Theorem and answer using Law of Total Probability from above: 
-Correctly uses law of total probability: 
-P(Plains | Lemur) = $$\frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur)}} = \frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur|Plains)P(Plains) + P(Lemur|Forest)P(Forest) + P(Lemur|Jungle)P(Jungle)}}$$
+$\frac{\frac{1}{10}\cdot\frac{3}{5}}{\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}} = \frac{12}{29}$
 
-$$ = \frac{\frac{1}{10}\cdot\frac{3}{5}}{\frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}} = \frac{12}{29}$$.
+To solve this question we need to use Bayes' Theorem and the law of total probability from part a.
 
-Not penalized again if an incorrect answer in **a** above is reused.
+$$\frac{P(\text{Lemur}|\text{Plains})}{P(\text{Lemur})}$$
 
-TODO
+We know from part a that:
+
+\begin{align*}
+P(\text{Lemur}) &= \frac{1}{10}\cdot\frac{3}{5} + \frac{1}{4}\cdot\frac{1}{10} + \frac{1}{5}\cdot\frac{3}{10}\\
+&= \frac{3}{50}+\frac{1}{40}+\frac{3}{50}\\
+&= \frac{29}{200}
+\end{align*}
+
+and that $P(\text{Lemur}|\text{Plains}) = \frac{1}{10}$.
+
+All we have to do is now combine them!
+
+$$\frac{\text{P(Lemur | Plains)P(Plains)}}{\text{P(Lemur)}} = \frac{\frac{3}{50}}{\frac{29}{200}} = \frac{12}{29}$$
 
 # END SOLUTION
 
 # END SUBPROB
 
-*The following information is repeated from the previous page, for your
-convenience.*
+*The following information is repeated from the previous page, for your convenience.*
 
 You go to the (world-renowned) San Diego Safari Park. The animals you
 see there appear at random, depending on the exhibit. The probabilities
@@ -108,13 +136,11 @@ final answer.
 
 # BEGIN SOLUTION
 
-Correct: $$1 - (\frac{3}{5})^4 = 1 - (1 - \frac{2}{5})^4$$
+$1 - (\frac{3}{5})^4$
 
-$$ = 1 - (1 - P(\text{Fruit Bat | Hidden Jungle}))^4$$
+The best way to solve this problem is by using the compliment rule. We can calculate the probability of not seeing a Fruit Bat in the Hidden Jungle: $1 - P(\text{Fruit Bat | Hidden Jungle}) = 1 - \frac{2}{5} = \frac{3}{5}$. We then need to put this fraction to the power of $4$ for the four independent observations. $\frac{3}{5}^4$ says we never see the Fruit Bat in the four times we have been to the Hidden Jungle. Now we use the compliment rule again! $1 - \frac{3}{5}^4$ gives us the probability of seeing at least one Fruit Bat in 4 observations!
 
-$$ = P(\text{at least 1 Fruit Bat} | \text{Hidden Jungle})$$
-
-TODO
+Essentially, $1 - (1 - P(\text{Fruit Bat | Hidden Jungle}))^4 = P(\text{at least 1 Fruit Bat} | \text{Hidden Jungle})$.
 
 # END SOLUTION
 
@@ -128,11 +154,25 @@ work, and put a around your final answer.
 
 # BEGIN SOLUTION
 
-Correctly uses inclusion-exclusion for addition rule:
+$\frac{3}{10} + \frac{1}{2} - \frac{3}{10} \cdot \frac{1}{2} =\frac{6}{20} + \frac{10}{20} - \frac{3}{20} = \frac{13}{20}$
 
-P(Rhino OR Gazelle) = P(Rhino) + P(Gazelle) - P(Rhino AND Gazelle) = $$\frac{3}{10} + \frac{1}{2} - \frac{3}{10} \cdot \frac{1}{2} =\frac{6}{20} + \frac{10}{20} - \frac{3}{20} = \frac{13}{20}$$
+To solve this problem we know we will need to use Inclusion-Exclusion Principle ($P(\text{Rhino} \cup \text{Gazelle}) = P(\text{Rhino}) + P(\text{Gazelle}) - P(\text{Rhino} \cap \text{Gazelle})$).
 
-TODO
+We are in the African Plains! This means:
+
+- $P(\text{Rhino}) = \frac{3}{10}$
+- $P(\text{Gazelle}) = \frac{1}{2}$
+
+Since we are told the two events are independent we can do: $P(\text{Rhino} \cap \text{Gazelle}) = P(\text{Rhino}) \cdot P(\text{Gazelle}) = \frac{3}{10} \cdot \frac{1}{2} = \frac{3}{20}$.
+
+Now we just plug into the Inclusion-Exclusion Principle:
+
+\begin{align*}
+P(\text{Rhino} \cup \text{Gazelle}) &= P(\text{Rhino}) + P(\text{Gazelle}) - P(\text{Rhino} \cap \text{Gazelle})\\
+&= \frac{3}{10} + \frac{1}{2} - \frac{3}{10} \cdot \frac{1}{2} \\
+&= \frac{6}{20} + \frac{10}{20} - \frac{3}{20}\\
+&= \frac{13}{20}
+\end{align*}
 
 # END SOLUTION
 
@@ -151,9 +191,21 @@ two events conditionally independent?
 
 # BEGIN SOLUTION
 
-Correct: answers "No", since $$\frac{3}{5} \neq \frac{2}{5} \times \frac{7}{10}$$.
+No
 
-TODO
+Two events are conditionally independent given a third event if: $P(A \cap B | C) = P(A|C) \cdot P(B|C)$.
+
+We can replace the variables for our scenario: $P(\text{Rhino} \cap \text{Camel})|\text{Gazelle} = P(\text{Rhino}|\text{Gazelle}) \cdot P(\text{Camel}|\text{Gazelle})$.
+
+We are given:
+
+- $P(\text{Rhino}|\text{Gazelle}) = \frac{2}{5}$
+- $P(\text{Camel}|\text{Gazelle}) = \frac{7}{10}$
+- $P(\text{Rhino} \cap \text{Camel})|\text{Gazelle} = \frac{3}{5}$
+
+We can simply plug the given values into the equation to see if it holds: $$\frac{2}{5} \cdot \frac{7}{10} = \frac{7}{25}$$
+
+This means the answer is "No" because $\frac{3}{5} \neq \frac{7}{25}$.
 
 # END SOLUTION
 
