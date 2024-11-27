@@ -90,8 +90,7 @@ Slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of points to the 
 *The following information is repeated from the previous page, for your
 convenience.*
 
-Consider a dataset of 4 values, $y_1 < y_2 < y_3 < y_4$, with a mean of
-6. Let $Y_\text{abs}(h) = \frac{1}{4} \sum_{i = 1}^4 |y_i - h|$
+Consider a dataset of 4 values, $y_1 < y_2 < y_3 < y_4$, with a mean of 6. Let $Y_\text{abs}(h) = \frac{1}{4} \sum_{i = 1}^4 |y_i - h|$
 represent the mean absolute error of a constant prediction $h$ on this
 dataset of 4 values.
 
@@ -111,18 +110,29 @@ Suppose the slope of $T_\text{abs}(h)$ is $-\frac{1}{7}$ at some $h_p$.
 
 Suppose the dataset is now modified by repeating each value $y_i$ such
 that it now contains $x_1, y_1, y_1, y_2, y_2, y_3, y_3, y_4, y_4$, in
-ascending order; the ordering of the points is the same as the beginning of this question. What would the slope of $T_\text{abs}(h)$ be **at the
-point whose $x$-value is $h_p$**, given this assumption?
+ascending order; the ordering of the points is the same as the beginning of this question. What would the slope of $T_\text{abs}(h)$ be **at the point whose $x$-value is $h_p$**, given this assumption?
 
 # BEGIN SOLUTION
 
-There are two answers based on if you believed $x_3$ and $x_4$ was still in the dataset.
+There are two answers based on if you believed  $x_2$ and $x_3$ was still in the dataset.
 
-Correct case 1: assumes that $$x_3$$ and $$x_4$$ are still in the dataset and finds the answer to be $$-\frac{1}{11}$$
+Recall the slope of $T_{abs}(h)$ is equal to $\frac{1}{7} * \text{(number of points to the left of h - number of points to the right of h)}$.
 
-Correct case 2: does not assume that $$x_3$$ and $$x_4$$ are still in the dataset and finds the answer to be $$\frac{1}{9}$$
+**Correct case 1:** assumes that  $x_2$ and $x_3$ are still in the dataset and finds the answer to be $-\frac{1}{11}$
 
-TODO
+- In our original dataset the slope at $h_p = - \frac{1}{7}$, this reflects there were four points to the left of $h_p$ and three points to the right of $h_p$
+    - This would mean $h_p$ would be in between $y_2$ and $y_3$ of the original dataset ($x_1, y_1, y_2, y_3, y_4, x_2, x_3$)
+- Our new dataset would become $x_1, y_1, y_1, y_2, y_2, y_3, y_3, y_4, y_4, x_2, x_3$
+- We assume $h_p$ does not change, this means that it would look like: $x_1, y_1, y_1, y_2, y_2, h_p, y_3, y_3, y_4, y_4, x_2, x_3$
+- We can see there are five points to the left of $h_p$ and six points to the right of $h_p$, this means we have $\frac{1}{11} (5 - 6) = -\frac{1}{11}$
+
+**Correct case 2:** does not assume that $x_2$ and $x_3$ are still in the dataset and finds the answer to be $\frac{1}{9}$
+
+- In our original dataset the slope at $h_p = - \frac{1}{7}$, this reflects there were four points to the left of $h_p$ and three points to the right of $h_p$
+    - This would mean $h_p$ would be in between $y_2$ and $y_3$ of the original dataset ($x_1, y_1, y_2, y_3, y_4, x_2, x_3$)
+- Our new dataset would become $x_1, y_1, y_1, y_2, y_2, y_3, y_3, y_4, y_4$
+- We assume $h_p$ does not change, this means that it would look like: $x_1, y_1, y_1, y_2, y_2, h_p, y_3, y_3, y_4, y_4$
+- We can see there are five points to the left of $h_p$ and four points to the right of $h_p$, this means we have $\frac{1}{9} (5 - 4) = \frac{1}{9}$
 
 # END SOLUTION
 
@@ -146,9 +156,15 @@ respectively.
 
 # BEGIN SOLUTION
 
-Correct, slope of $$T_{abs}(h)$$ < slope of $$Y_{abs}(h)$$ < slope of $$X_{abs}(h)$$
+Slope of $T_{abs}(h)$ < slope of $Y_{abs}(h)$ < slope of $X_{abs}(h)$
 
-TODO
+There is a key insight to make here: the slope of the mean absolute error is influenced by the distribution of points above and below $h$.
+
+$T_{abs}(h)$ represents the combined dataset (both the $x$'s and the $y$'s), so the slope reflects the overall balance between the two datasets. This means the distribution of points above and below $h$ will be smoothed out. As a result the slope will be the least steep.
+
+$Y_{abs}(h)$ represents only the $y$'s. There are 4 $y$ values and we know these points are closer together than the $x$ values. Because the $y$ values are more concentrated the slope will be larger! (Recall that the mean for these 4 points is 6).
+
+$X_{abs}(h)$represents only the $x$'s. There are 3 $x$ values and we know these points are farther apart than the $y$ values. Because the $x$ values are more spread out the slope will be smaller! (Recall that the mean for these 3 points is 6).
 
 # END SOLUTION
 

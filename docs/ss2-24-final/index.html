@@ -545,14 +545,47 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>There are two answers based on if you believed <span class="math inline">x_3</span> and <span class="math inline">x_4</span>
+<p>There are two answers based on if you believed <span class="math inline">x_2</span> and <span class="math inline">x_3</span>
 was still in the dataset.</p>
-<p>Correct case 1: assumes that <span class="math display">x_3</span>
-and <span class="math display">x_4</span> are still in the dataset and
-finds the answer to be <span class="math display">-\frac{1}{11}</span></p>
-<p>Correct case 2: does not assume that <span class="math display">x_3</span> and <span class="math display">x_4</span> are still in the dataset and finds the
-answer to be <span class="math display">\frac{1}{9}</span></p>
-<p>TODO</p>
+<p>Recall the slope of <span class="math inline">T_{abs}(h)</span> is
+equal to <span class="math inline">\frac{1}{7} * \text{(number of points
+to the left of h - number of points to the right of h)}</span>.</p>
+<p><strong>Correct case 1:</strong> assumes that <span class="math inline">x_2</span> and <span class="math inline">x_3</span>
+are still in the dataset and finds the answer to be <span class="math inline">-\frac{1}{11}</span></p>
+<ul>
+<li>In our original dataset the slope at <span class="math inline">h_p =
+- \frac{1}{7}</span>, this reflects there were four points to the left
+of <span class="math inline">h_p</span> and three points to the right of
+<span class="math inline">h_p</span>
+<ul>
+<li>This would mean <span class="math inline">h_p</span> would be in
+between <span class="math inline">y_2</span> and <span class="math inline">y_3</span> of the original dataset (<span class="math inline">x_1, y_1, y_2, y_3, y_4, x_2, x_3</span>)</li>
+</ul></li>
+<li>Our new dataset would become <span class="math inline">x_1, y_1,
+y_1, y_2, y_2, y_3, y_3, y_4, y_4, x_2, x_3</span></li>
+<li>We assume <span class="math inline">h_p</span> does not change, this
+means that it would look like: <span class="math inline">x_1, y_1, y_1,
+y_2, y_2, h_p, y_3, y_3, y_4, y_4, x_2, x_3</span></li>
+<li>We can see there are five points to the left of <span class="math inline">h_p</span> and six points to the right of <span class="math inline">h_p</span>, this means we have <span class="math inline">\frac{1}{11} (5 - 6) = -\frac{1}{11}</span></li>
+</ul>
+<p><strong>Correct case 2:</strong> does not assume that <span class="math inline">x_2</span> and <span class="math inline">x_3</span>
+are still in the dataset and finds the answer to be <span class="math inline">\frac{1}{9}</span></p>
+<ul>
+<li>In our original dataset the slope at <span class="math inline">h_p =
+- \frac{1}{7}</span>, this reflects there were four points to the left
+of <span class="math inline">h_p</span> and three points to the right of
+<span class="math inline">h_p</span>
+<ul>
+<li>This would mean <span class="math inline">h_p</span> would be in
+between <span class="math inline">y_2</span> and <span class="math inline">y_3</span> of the original dataset (<span class="math inline">x_1, y_1, y_2, y_3, y_4, x_2, x_3</span>)</li>
+</ul></li>
+<li>Our new dataset would become <span class="math inline">x_1, y_1,
+y_1, y_2, y_2, y_3, y_3, y_4, y_4</span></li>
+<li>We assume <span class="math inline">h_p</span> does not change, this
+means that it would look like: <span class="math inline">x_1, y_1, y_1,
+y_2, y_2, h_p, y_3, y_3, y_4, y_4</span></li>
+<li>We can see there are five points to the left of <span class="math inline">h_p</span> and four points to the right of <span class="math inline">h_p</span>, this means we have <span class="math inline">\frac{1}{9} (5 - 4) = \frac{1}{9}</span></li>
+</ul>
 </div>
 </div>
 </div>
@@ -602,10 +635,24 @@ aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correct, slope of <span class="math display">T_{abs}(h)</span> &lt;
-slope of <span class="math display">Y_{abs}(h)</span> &lt; slope of
-<span class="math display">X_{abs}(h)</span></p>
-<p>TODO</p>
+<p>Slope of <span class="math inline">T_{abs}(h)</span> &lt; slope of
+<span class="math inline">Y_{abs}(h)</span> &lt; slope of <span class="math inline">X_{abs}(h)</span></p>
+<p>There is a key insight to make here: the slope of the mean absolute
+error is influenced by the distribution of points above and below <span class="math inline">h</span>.</p>
+<p><span class="math inline">T_{abs}(h)</span> represents the combined
+dataset (both the <span class="math inline">x</span>’s and the <span class="math inline">y</span>’s), so the slope reflects the overall
+balance between the two datasets. This means the distribution of points
+above and below <span class="math inline">h</span> will be smoothed out.
+As a result the slope will be the least steep.</p>
+<p><span class="math inline">Y_{abs}(h)</span> represents only the <span class="math inline">y</span>’s. There are 4 <span class="math inline">y</span> values and we know these points are closer
+together than the <span class="math inline">x</span> values. Because the
+<span class="math inline">y</span> values are more concentrated the
+slope will be larger! (Recall that the mean for these 4 points is
+6).</p>
+<p><span class="math inline">X_{abs}(h)</span>represents only the <span class="math inline">x</span>’s. There are 3 <span class="math inline">x</span> values and we know these points are farther
+apart than the <span class="math inline">y</span> values. Because the
+<span class="math inline">x</span> values are more spread out the slope
+will be smaller! (Recall that the mean for these 3 points is 6).</p>
 </div>
 </div>
 </div>
