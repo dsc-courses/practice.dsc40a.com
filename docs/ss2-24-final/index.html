@@ -2079,12 +2079,77 @@ receive <strong>one</strong> of the other rubric items.</p>
 <h2 id="problem-9">Problem 9</h2>
 <p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
 Final</a>, Problem 9</i></p>
-<p>Information about a sample of 50 cheetahs in the San Diego Safari
-Park is summarized in the table below.</p>
-<center><img src="..\assets\images\su24-final\su24_bayes.png" width="500" height="350"></center>
-<p>For instance, we’re told that 10 cheetahs with dark fur and short
-claws are young and that there were 11 cheetahs with golden fur and
-short claws.</p>
+<p>Information about a sample of <span class="math inline">50</span>
+cheetahs in the San Diego Safari Park is summarized in the table
+below.</p>
+<p><br></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Golden Fur</th>
+<th></th>
+<th>Dark Fur</th>
+<th></th>
+<th>Sum of Row</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>Short Claws</strong></td>
+<td><strong>Long Claws</strong></td>
+<td><strong>Short Claws</strong></td>
+<td><strong>Long Claws</strong></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Young</strong></td>
+<td>2</td>
+<td>0</td>
+<td>10</td>
+<td>4</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td><strong>Adolescent</strong></td>
+<td>6</td>
+<td>3</td>
+<td>2</td>
+<td>6</td>
+<td>17</td>
+</tr>
+<tr class="even">
+<td><strong>Mature</strong></td>
+<td>3</td>
+<td>12</td>
+<td>0</td>
+<td>2</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td><strong>Sum of Column</strong></td>
+<td>11</td>
+<td>15</td>
+<td>12</td>
+<td>12</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>For instance, we’re told that <span class="math inline">10</span>
+cheetahs with dark fur and short claws are young and that there were
+<span class="math inline">11</span> cheetahs with golden fur and short
+claws.</p>
 <p>Given its other characteristics, San Diego Safari Park would like to
 use this information to predict whether a new cheetah to the Park is
 young, adolescent, or mature.</p>
@@ -2109,19 +2174,71 @@ aria-labelledby="heading9" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Correctly calculates the probabilities for each stage of
-development:</p>
-<p><span class="math display">P(\text{Young}) \propto \frac{3}{18} \cdot
-\frac{5}{18} \cdot \frac{16}{50}</span></p>
-<p><span class="math display">P(\text{Adolescent}) \propto \frac{10}{19}
-\cdot \frac{10}{19} \cdot \frac{17}{50}</span></p>
-<p><span class="math display">P(\text{Mature}) \propto \frac{16}{19}
-\cdot \frac{15}{19} \cdot \frac{17}{50}</span></p>
-<p>And predicts Mature</p>
-<p>If a student does not receive this rubric item, they should only
-receive <strong>one</strong> of the other rubric items.</p>
-<p>$P() = </p>
-<p>TODO</p>
+<p>Mature</p>
+<p>To figure out if the new cheetah is young, adolescent, or mature we
+need to find the probabilities for each stage of development.</p>
+<p>This means we need to find the probability of a young cheetah having
+golden fur and long claws, the probability of a adolenscent cheetah
+having golden fur and long claws, and the probability of a mature
+cheetah having golden fur and long claws.</p>
+<p>Let Age represent either Young, Adolescent, or Mature. We need to
+then follow the equation: <span class="math display">P(\text{Age}|\text{Golden Fur} \cap \text{Long
+Claws}) = P(\text{Age}) \cdot P(\text{Golden Fur}|\text{Age}) \cdot
+P(\text{Long Claws}|\text{Age})</span> for all the different ages.</p>
+<p>Recall we will also be using smoothing! This means:</p>
+<p><span class="math display">P(\text{Feature}|\text{Class}) =
+\frac{\text{Count of Features in Class} + 1}{\text{Total in Class} +
+\text{Number of Possible Feature Values}}</span></p>
+<p><strong>When Age = Young:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Young}) =
+\frac{16}{50}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Young}) =
+\frac{2 + 0 + 1}{16 + 2} = \frac{3}{18}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Young}) =
+\frac{0 + 1}{16 + 2} = \frac{5}{18}</span></li>
+</ul>
+<p><span class="math display">\begin{align*}
+P(\text{Young}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Young}) \cdot P(\text{Golden Fur}|\text{Young}) \cdot
+P(\text{Long Claws}|\text{Young})\\
+&amp;= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{16}{50}\\
+&amp;= \frac{2}{135}
+\end{align*}</span></p>
+<p><strong>When Age = Adolescent:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Adolescent}) =
+\frac{17}{50}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Adolescent}) =
+\frac{6 + 3 + 1}{17 + 2} = \frac{10}{19}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Adolescent}) =
+\frac{3 + 6 + 1}{17 + 2} = \frac{10}{19}</span></li>
+</ul>
+<p><span class="math display">\begin{align*}
+P(\text{Adolescent}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Adolescent}) \cdot P(\text{Golden Fur}|\text{Adolescent}) \cdot
+P(\text{Long Claws}|\text{Adolescent})\\
+&amp;= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{17}{50}\\
+&amp;= \frac{34}{361}
+\end{align*}</span></p>
+<p><strong>When Age = Mature:</strong></p>
+<ul>
+<li><span class="math inline">P(\text{Mature}) =
+\frac{17}{50}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Mature}) =
+\frac{3 + 12 + 1}{17 + 2} = \frac{16}{19}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Mature}) =
+\frac{12 + 2 + 1}{17 + 2} = \frac{15}{19}</span></li>
+</ul>
+<p><span class="math display">\begin{align*}
+P(\text{Mature}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Mature}) \cdot P(\text{Golden Fur}|\text{Mature}) \cdot
+P(\text{Long Claws}|\text{Mature})\\
+&amp;= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{17}{50}\\
+&amp;= \frac{408}{1805}
+\end{align*}</span></p>
+<p>When age is Mature then it has the highest probability, which means
+we predict the new cheetah is mature.</p>
 </div>
 </div>
 </div>
