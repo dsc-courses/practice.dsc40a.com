@@ -339,8 +339,8 @@ P(\text{Long Claws}|\text{Age})</span> for all the different ages.</p>
 \text{Number of Possible Feature Values}}</span></p>
 <p><strong>When Age = Young:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Young}) =
-\frac{16}{50}</span></li>
+<li><span class="math inline">P(\text{Young}) = \frac{16+1}{50+3} =
+\frac{17}{53}</span></li>
 <li><span class="math inline">P(\text{Golden Fur}|\text{Young}) =
 \frac{2 + 0 + 1}{16 + 2} = \frac{3}{18}</span></li>
 <li><span class="math inline">P(\text{Long Claws}|\text{Young}) =
@@ -350,13 +350,13 @@ P(\text{Long Claws}|\text{Age})</span> for all the different ages.</p>
 P(\text{Young}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
 P(\text{Young}) \cdot P(\text{Golden Fur}|\text{Young}) \cdot
 P(\text{Long Claws}|\text{Young})\\
-&amp;= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{16}{50}\\
-&amp;= \frac{2}{135}
+&amp;= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{17}{53}\\
+&amp;= \frac{85}{5724}
 \end{align*}</span></p>
 <p><strong>When Age = Adolescent:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Adolescent}) =
-\frac{17}{50}</span></li>
+<li><span class="math inline">P(\text{Adolescent}) = \frac{17 + 1}{50 +
+3} = \frac{18}{53}</span></li>
 <li><span class="math inline">P(\text{Golden Fur}|\text{Adolescent}) =
 \frac{6 + 3 + 1}{17 + 2} = \frac{10}{19}</span></li>
 <li><span class="math inline">P(\text{Long Claws}|\text{Adolescent}) =
@@ -366,13 +366,13 @@ P(\text{Long Claws}|\text{Young})\\
 P(\text{Adolescent}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
 P(\text{Adolescent}) \cdot P(\text{Golden Fur}|\text{Adolescent}) \cdot
 P(\text{Long Claws}|\text{Adolescent})\\
-&amp;= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{17}{50}\\
-&amp;= \frac{34}{361}
+&amp;= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{18}{53}\\
+&amp;= \frac{1800}{19133}
 \end{align*}</span></p>
 <p><strong>When Age = Mature:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Mature}) =
-\frac{17}{50}</span></li>
+<li><span class="math inline">P(\text{Mature}) = \frac{17+1}{50+3} =
+\frac{18}{53}</span></li>
 <li><span class="math inline">P(\text{Golden Fur}|\text{Mature}) =
 \frac{3 + 12 + 1}{17 + 2} = \frac{16}{19}</span></li>
 <li><span class="math inline">P(\text{Long Claws}|\text{Mature}) =
@@ -382,8 +382,8 @@ P(\text{Long Claws}|\text{Adolescent})\\
 P(\text{Mature}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
 P(\text{Mature}) \cdot P(\text{Golden Fur}|\text{Mature}) \cdot
 P(\text{Long Claws}|\text{Mature})\\
-&amp;= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{17}{50}\\
-&amp;= \frac{408}{1805}
+&amp;= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{18}{53}\\
+&amp;= \frac{4320}{19133}
 \end{align*}</span></p>
 <p>When age is Mature then it has the highest probability, which means
 we predict the new cheetah is mature.</p>
