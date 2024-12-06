@@ -49,38 +49,38 @@ $$P(\text{Feature}|\text{Class}) = \frac{\text{Count of Features in Class} + 1}{
 
 **When Age = Young:**
 
-- $P(\text{Young}) = \frac{16}{50}$
+- $P(\text{Young}) = \frac{16+1}{50+3} = \frac{17}{53}$
 - $P(\text{Golden Fur}|\text{Young}) = \frac{2 + 0 + 1}{16 + 2} = \frac{3}{18}$
 - $P(\text{Long Claws}|\text{Young}) = \frac{0 + 1}{16 + 2} = \frac{5}{18}$
 
 \begin{align*}
 P(\text{Young}|\text{Golden Fur} \cap \text{Long Claws}) &= P(\text{Young}) \cdot P(\text{Golden Fur}|\text{Young}) \cdot P(\text{Long Claws}|\text{Young})\\
-&= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{16}{50}\\
-&= \frac{2}{135}
+&= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{17}{53}\\
+&= \frac{85}{5724}
 \end{align*}
 
 **When Age = Adolescent:**
 
-- $P(\text{Adolescent}) = \frac{17}{50}$
+- $P(\text{Adolescent}) = \frac{17 + 1}{50 + 3} = \frac{18}{53}$
 - $P(\text{Golden Fur}|\text{Adolescent}) = \frac{6 + 3 + 1}{17 + 2} = \frac{10}{19}$
 - $P(\text{Long Claws}|\text{Adolescent}) = \frac{3 + 6 + 1}{17 + 2} = \frac{10}{19}$
 
 \begin{align*}
 P(\text{Adolescent}|\text{Golden Fur} \cap \text{Long Claws}) &= P(\text{Adolescent}) \cdot P(\text{Golden Fur}|\text{Adolescent}) \cdot P(\text{Long Claws}|\text{Adolescent})\\
-&= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{17}{50}\\
-&= \frac{34}{361}
+&= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{18}{53}\\
+&= \frac{1800}{19133}
 \end{align*}
 
 **When Age = Mature:**
 
-- $P(\text{Mature}) = \frac{17}{50}$
+- $P(\text{Mature}) = \frac{17+1}{50+3} = \frac{18}{53}$
 - $P(\text{Golden Fur}|\text{Mature}) = \frac{3 + 12 + 1}{17 + 2} = \frac{16}{19}$
 - $P(\text{Long Claws}|\text{Mature}) = \frac{12 + 2 + 1}{17 + 2} = \frac{15}{19}$
 
 \begin{align*}
 P(\text{Mature}|\text{Golden Fur} \cap \text{Long Claws}) &= P(\text{Mature}) \cdot P(\text{Golden Fur}|\text{Mature}) \cdot P(\text{Long Claws}|\text{Mature})\\
-&= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{17}{50}\\
-&= \frac{408}{1805}
+&= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{18}{53}\\
+&= \frac{4320}{19133}
 \end{align*}
 
 When age is Mature then it has the highest probability, which means we predict the new cheetah is mature.
