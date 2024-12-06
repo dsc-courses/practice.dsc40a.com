@@ -164,15 +164,21 @@ respectively.
 
 # BEGIN SOLUTION
 
-Slope of $T_{abs}(h)$ < slope of $Y_{abs}(h)$ < slope of $X_{abs}(h)$
+Slope of $X_{abs}(h)$ < slope of $T_{abs}(h)$ < slope of $Y_{abs}(h)$
 
 There is a key insight to make here: the slope of the mean absolute error is influenced by the distribution of points above and below $h$.
 
 $T_{abs}(h)$ represents the combined dataset (both the $x$'s and the $y$'s), so the slope reflects the overall balance between the two datasets. This means the distribution of points above and below $h$ will be smoothed out. As a result the slope will be the least steep.
 
+You can also think of it as: $x_1, y_1, y_2, h_p, y_3, y_4, x_2, x_3$. The slope of $T_{abs}(h)$ is $-\frac{1}{7}$.
+
 $Y_{abs}(h)$ represents only the $y$'s. There are 4 $y$ values and we know these points are closer together than the $x$ values. Because the $y$ values are more concentrated the slope will be larger! (Recall that the mean for these 4 points is 6).
 
+You can also think of it as: $y_1, y_2, h_p, y_3, y_4$. The slope of $Y_{abs}(h)$ is $0$.
+
 $X_{abs}(h)$represents only the $x$'s. There are 3 $x$ values and we know these points are farther apart than the $y$ values. Because the $x$ values are more spread out the slope will be smaller! (Recall that the mean for these 3 points is 6).
+
+You can also think of it as: $x_1, h_p, x_2, x_3$. The slope of $X_{abs}(h)$ is $-\frac{1}{3}$.
 
 <average>38</average>
 
