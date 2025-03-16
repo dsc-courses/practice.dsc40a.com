@@ -111,7 +111,7 @@ and compute the following:
 
 which gives:
 
-$$\displaystyle\frac{\displaystyle\frac{32}{100} \cdot \displaystyle\frac{8}{32} \cdot \displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot \displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} = \displaystyle\frac{\displaystyle\frac{1}{35}}{\displaystyle\frac{1}{25}} = \displaystyle\frac{7}{5}$$.
+$$\displaystyle\frac{\displaystyle\frac{32}{100} \cdot \displaystyle\frac{8}{32} \cdot \displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot \displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} = \displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}} = \displaystyle\frac{7}{5}$$.
 
 # END SOLUTION
 
