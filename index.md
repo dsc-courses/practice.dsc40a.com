@@ -87,9 +87,9 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
   <tr>
       <th scope="row">Summer 2025</th>
       <td>Sawyer Robinson</td>
-      <td><a href="ss2-25-midterm/index.html">Midterm</a>
+      <td><a href="ss1-25-midterm/index.html">Midterm</a>
       </td>
-    </tr>
+  </tr>
   <tr>
       <th scope="row">Fall 2024</th>
       <td>Gal Mishne</td>
