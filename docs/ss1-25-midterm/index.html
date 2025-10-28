@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Summer Session 2025 Midterm Exam</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Summer Session 2025 Midterm Exam</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Sawyer Robinson</p>
+<p>This exam was take-home.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 1</i></p>
+<p>Let <span class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> be a
+dataset of scalar input-output pairs, and consider the simple linear
+regression model</p>
+<p><span class="math display">
+f(a, b;\, x) = ax + b,\qquad a, b\in\mathbb{R}.
+</span></p>
+<p>Let <span class="math inline">\gamma &gt; 0</span> be a fixed
+constant which is understood to be separate from the training data and
+the weights. Define the <span class="math inline">\gamma</span>-risk
+according to the formula</p>
+<p><span class="math display">
+R_{\gamma}(a, b) = \gamma a^2 + \frac{1}{n}\sum_{i=1}^{n} (y_i - (ax_i +
+b))^2.
+</span></p>
+<p>Find closed-form expressions for the global minimizers <span
+class="math inline">a^\ast, b^\ast</span> of the <span
+class="math inline">\gamma</span>-risk for the training data <span
+class="math inline">\{(x_i,y_i)\}_{i=1}^n</span>. In your solution, you
+should clearly label and explain each step.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 2a-e</i></p>
+<p>Consider a dataset <span class="math inline">\{(\vec{x}_i,
+y_i)\}_{i=1}^{n}</span> where each <span class="math inline">\vec{x}_i
+\in \mathbb{R}^{d}</span> and <span class="math inline">y_i \in
+\mathbb{R}</span> for which you decide to fit a multiple linear
+regression model:</p>
+<p><span class="math display">
+f_1(\vec{w}, b;\, \vec{x}) = \vec{w}^\top x +
+b,\qquad\vec{w}\in\mathbb{R}^d,\;b\in\mathbb{R}.
+</span></p>
+<p>After minimizing the MSE, the resulting model has an optimal
+empirical risk value denoted <span class="math inline">R_1</span>.</p>
+<p>Due to fairness constraints related to the nature of the input
+features, your boss informs you that the last two weights must be the
+same: <span class="math inline">\vec{w}^{(d-1)} =\vec{w}^{(d)}</span>.
+Your colleague suggests a simple fix by removing the last two weights
+and features:</p>
+<p><span class="math display">
+f_2(\vec{w}, b;\, \vec{x}) = \vec{w}^{(1)}\vec{x}^{(1)}
++  \vec{w}^{(2)}\vec{x}^{(2)} + \dotsc + \vec{w}^{(d-2)}\vec{x}^{(d-2)}
++ b.
+</span></p>
+<p>After training, the resulting model has an optimal empirical risk
+value denoted <span class="math inline">R_2</span>. On the other hand,
+you propose the approach of grouping the last two features and using the
+model formula</p>
+<p><span class="math display">
+f_3(\vec{w}, b;\, \vec{x}) = \vec{w}^{(1)}\vec{x}^{(1)}
++  \vec{w}^{(2)}\vec{x}^{(2)} + \dotsc
++  \vec{w}^{(d-1)}\left(\vec{x}^{(d-1)} + \vec{x}^{(d)}\right) + b.
+</span></p>
+<p>After training, the final model has an optimal empirical risk value
+denoted <span class="math inline">R_3</span>.</p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Carefully apply Theorem 2.3.2 (“Optimal Model Parameters for Multiple
+Linear Regression”) to find an expression for the optimal parameters
+<span class="math inline">b^\ast, \vec{w}^\ast</span> which minimize the
+mean squared error for the model <span class="math inline">f_2</span>
+and the training data <span class="math inline">\{(\vec{x}_i,
+y_i)\}_{i=1}^{n}</span>. Your answer may contain the design matrix <span
+class="math inline">\mathbf{Z}</span>, or any suitably modified version,
+as needed.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Using the comparison operators <span class="math inline">\{ =, \leq,
+\geq, &lt;, &gt;\}</span>, rank the optimal risk values <span
+class="math inline">R_1, R_2, R_3</span> from least to greatest. Justify
+your answer.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>Returning to the original model <span class="math inline">f_1</span>,
+suppose you were asked instead to eliminate the intercept term, leading
+to the model formula</p>
+<p><span class="math display">
+f_4(\vec{w};\, \vec{x}) = \vec{w}^\top x.
+</span></p>
+<p>Once again, you train this model by minimizing the associated mean
+squared error and obtain an optimal MSE denoted <span
+class="math inline">R_4</span>.</p>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>Explain why <span class="math inline">R_1 \leq R_4</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.4">Problem 2.4</h3>
+<p>Assume the following centering conditions hold:</p>
+<p><span class="math display">
+\sum_{i=1}^{n} \vec{x}_i^{(j)} = 0\text{ for each }1\leq j\leq d,\text{
+and }\sum_{i=1}^n y_i = 0.
+</span></p>
+<p>Prove <span class="math inline">R_1 = R_4</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_4" aria-expanded="true" aria-controls="collapse2_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_4" class="accordion-collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-2.5">Problem 2.5</h3>
+<p>Use the setting of <span class="math inline">d=1</span> (a.k.a.
+simple linear regression) to draw a sketch which illustrates why the
+result in Part (d) makes sense geometrically.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_5" aria-expanded="true" aria-controls="collapse2_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_5" class="accordion-collapse collapse"
+aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 3a-c</i></p>
+<p>Let <span class="math inline">\{x_i\}_{i=1}^n</span> be a training
+dataset of scalar values, and suppose we wish to use the constant
+model</p>
+<p><span class="math display">
+f(c;\, x) = c,\qquad c\in\mathbb{R}.
+</span></p>
+<p>In various situations it can be useful to emphasize some training
+examples over others (e.g., due to data quality). For this purpose,
+suppose <span class="math inline">\alpha_1, \alpha_2, \dotsc, \alpha_n
+&gt; 0</span> are fixed positive weights which are understood as
+separate from the training data and model parameters.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>Find a formula for the minimizer <span
+class="math inline">c_1^\ast</span> of the risk function</p>
+<p><span class="math display">
+R_{1}(c) = \frac{1}{n} \sum_{i=1}^n \alpha_i(c - x_i)^2.
+</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>Find a formula for the minimizer <span
+class="math inline">c_2^\ast</span> of the risk function</p>
+<p><span class="math display">
+R_{2}(c) = \frac{1}{n} \sum_{i=1}^n \alpha_i |c - x_i|.
+</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>Which risk function is more sensitive to outliers?</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 4a-d</i></p>
+<p>An automotive research team wants to build a predictive model that
+simultaneously estimates two performance metrics of passenger cars:</p>
+<ol type="1">
+<li><strong>City fuel consumption</strong> (in <span
+class="math inline">\text{L}/100\text{ km}</span>),</li>
+<li><strong>Highway fuel consumption</strong> (in <span
+class="math inline">\text{L}/100\text{ km}</span>).</li>
+</ol>
+<p>To capture mechanical and aerodynamic factors, the engineers record
+the following <strong>four</strong> features for each vehicle (all
+measured on the current model year):</p>
+<ol type="1">
+<li><strong>Engine displacement (L)</strong></li>
+<li><strong>Vehicle mass (kg)</strong></li>
+<li><strong>Peak horsepower</strong></li>
+<li><strong>Drag coefficient</strong></li>
+</ol>
+<p>They propose the general linear model</p>
+<p><span class="math display">
+f(\mathbf W,\vec b;\,\vec x) = \mathbf W\,\vec x+\vec
+b,\qquad\mathbf{W}\in\mathbb{R}^{2\times 4},\; \vec{b}\in\mathbb{R}^2,
+</span></p>
+<p>where <span class="math inline">\vec x\in\mathbb{R}^{4}</span>
+denotes the feature vector for a given car. Data for eight different
+cars are listed below.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_1</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_2</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_3</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_4</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_5</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_6</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_7</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_8</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Engine disp. (L)</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">1.8</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">1.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mass (kg)</td>
+<td style="text-align: right;">1300</td>
+<td style="text-align: right;">1450</td>
+<td style="text-align: right;">1600</td>
+<td style="text-align: right;">1250</td>
+<td style="text-align: right;">1700</td>
+<td style="text-align: right;">1350</td>
+<td style="text-align: right;">1500</td>
+<td style="text-align: right;">1200</td>
+</tr>
+<tr>
+<td style="text-align: left;">Horsepower</td>
+<td style="text-align: right;">140</td>
+<td style="text-align: right;">165</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">130</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">155</td>
+<td style="text-align: right;">190</td>
+<td style="text-align: right;">115</td>
+</tr>
+<tr>
+<td style="text-align: left;">Drag coeff.</td>
+<td style="text-align: right;">0.28</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">0.32</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">0.33</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">0.26</td>
+</tr>
+<tr>
+<td style="text-align: left;">City L/100km</td>
+<td style="text-align: right;">8.5</td>
+<td style="text-align: right;">9.2</td>
+<td style="text-align: right;">10.8</td>
+<td style="text-align: right;">7.8</td>
+<td style="text-align: right;">11.5</td>
+<td style="text-align: right;">8.9</td>
+<td style="text-align: right;">9.8</td>
+<td style="text-align: right;">7.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">HWY L/100km</td>
+<td style="text-align: right;">6.0</td>
+<td style="text-align: right;">6.5</td>
+<td style="text-align: right;">7.5</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">6.2</td>
+<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">5.4</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>Write down the design matrix <span class="math inline">\mathbf
+Z</span> and the target matrix <span class="math inline">\mathbf
+Y</span> from the data in the table.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>Compute the weight matrix <span class="math inline">\mathbf
+W^{\ast}</span> and bias vector <span class="math inline">\vec
+b^{\ast}</span> that minimize the MSE for the given dataset. You can use
+Python for the computations where needed. You do not need to submit your
+code, but you do need to write down all matrices and vectors relevant to
+your computations (round your answers to three decimal places).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>With <span class="math inline">(\mathbf W^{\ast},\vec
+b^{\ast})</span>, predict the two fuel consumption values for each of
+the eight cars and report the overall MSE between the predictions and
+the true targets.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>The team now measures two additional vehicles:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_9</span></th>
+<th style="text-align: right;"><span
+class="math inline">\vec{x}_{10}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Engine disp. (L)</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mass (kg)</td>
+<td style="text-align: right;">1400</td>
+<td style="text-align: right;">1150</td>
+</tr>
+<tr>
+<td style="text-align: left;">Horsepower</td>
+<td style="text-align: right;">170</td>
+<td style="text-align: right;">110</td>
+</tr>
+<tr>
+<td style="text-align: left;">Drag coeff.</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">0.25</td>
+</tr>
+<tr>
+<td style="text-align: left;">City L/100km</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: right;">7.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">HWY L/100km</td>
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">5.2</td>
+</tr>
+</tbody>
+</table>
+<p>Use your trained model to predict fuel consumption for these two
+cars. Compute the mean-squared error for the two testing examples and
+state whether you would recommend the model to the engineers.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 5a-c</i></p>
+<p>Let <span class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> be a
+dataset of scalar input-output pairs.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>Suppose we model <span class="math inline">y</span> using a simple
+linear regression model of the form</p>
+<p><span class="math display">
+f(\vec{\theta};\, x) = \vec{\theta}^{(0)} + \vec{\theta}^{(1)}x,
+\qquad\vec{\theta}\in\mathbb{R}^2.
+</span></p>
+<p>Prove that the line of best fit (with respect to MSE) passes through
+the point <span class="math inline">(\overline{x},
+\overline{y})</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>Suppose we model <span class="math inline">y</span> using a simple
+polynomial regression model of the form</p>
+<p><span class="math display">
+f(\vec{\theta};\, x) = \vec{\theta}^{(0)} + \vec{\theta}^{(1)}x+
+\vec{\theta}^{(2)}x^2, \qquad\vec{\theta}\in\mathbb{R}^3.
+</span></p>
+<p>Prove that the curve of best fit (with respect to MSE) passes through
+the point <span class="math inline">(\overline{x}, \overline{y} +
+\vec\theta^{\ast(2)}((\overline{x})^2 - \overline{x^2}))</span>,
+where</p>
+<p><span class="math display">
+\overline{x^2} = \frac{1}{n}\sum_{i=1}^n x_i^2.
+</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Using the same model as (b), suppose we minimize MSE and find optimal
+parameters <span class="math inline">\vec{\theta}^\ast</span>. Further
+suppose we apply a shifting and scaling operation to the training
+targets, defining</p>
+<p><span class="math display">
+\widetilde{y_i} = \alpha(y_i - \beta),\qquad\alpha,\beta\in\mathbb{R}.
+</span></p>
+<p>Find formulas for the new optimal parameters, denoted <span
+class="math inline">\vec{\widetilde{\theta}}^\ast</span>, in terms of
+the old parameters and <span class="math inline">\alpha,
+\beta</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>

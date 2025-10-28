@@ -108,6 +108,8 @@ def stitch(files, show_solution, toc=False):
         pass
 
     for i, path in enumerate(paths):
+        path = path.replace('\\', '/')
+        path = os.path.normpath(path)
         # This case only happens for discussion worksheets, when we provide a question along with a "data info" sheet just for that question
         if ', ' in path:
             question_path, info_path = path.split(', ')

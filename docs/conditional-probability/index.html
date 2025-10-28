@@ -8,37 +8,50 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
-   var mathElements = document.getElementsByClassName("math");
-   var macros = [];
-   for (var i = 0; i < mathElements.length; i++) {
-    var texText = mathElements[i].firstChild;
-    if (mathElements[i].tagName == "SPAN") {
-     katex.render(texText.data, mathElements[i], {
-      displayMode: mathElements[i].classList.contains('display'),
-      throwOnError: false,
-      macros: macros,
-      fleqn: false
-     });
-  }}});
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Conditional Probability - Bayes Theorem, Conditional Independence, &amp; Naive Bayes</h1>
+<h1 class="title">Conditional Probability - Bayes Theorem, Conditional
+Independence, &amp; Naive Bayes</h1>
 </header>
-<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!-- add after bootstrap.min.css --> <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/> <!-- add after bootstrap.min.js or bootstrap.bundle.min.js --> <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
 <!-- for difficulty gauges-->
 <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,26 +68,48 @@
 <p>This page contains all problems about Conditional Probability.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024 Final</a>, Problem 8</i></p>
-<p>The San Diego Safari Park has one of the world’s most successful cheetah breeding programs. To support this, they keep track of their cheetahs’ characteristics. For each cheetah, the Safari Park keeps track of:</p>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 8</i></p>
+<p>The San Diego Safari Park has one of the world’s most successful
+cheetah breeding programs. To support this, they keep track of their
+cheetahs’ characteristics. For each cheetah, the Safari Park keeps track
+of:</p>
 <ul>
-<li><p>Whether <strong>color</strong> of the cheetah’s fur; golden or dark.</p></li>
-<li><p>The <strong>length</strong> of the cheetah’s claws; short or long.</p></li>
-<li><p>The cheetah’s <strong>development</strong>; whether it is young, adolescent, or mature.</p></li>
+<li><p>Whether <strong>color</strong> of the cheetah’s fur; golden or
+dark.</p></li>
+<li><p>The <strong>length</strong> of the cheetah’s claws; short or
+long.</p></li>
+<li><p>The cheetah’s <strong>development</strong>; whether it is young,
+adolescent, or mature.</p></li>
 </ul>
-<p>We’re given the following information about the cheetahs in the park:</p>
+<p>We’re given the following information about the cheetahs in the
+park:</p>
 <ul>
 <li><p><span class="math inline">P(\text{Young}) = 0.25</span></p></li>
-<li><p><span class="math inline">P(\text{Adolescent}) = 0.40</span></p></li>
+<li><p><span class="math inline">P(\text{Adolescent}) =
+0.40</span></p></li>
 <li><p><span class="math inline">P(\text{Mature}) = 0.35</span></p></li>
-<li><p><span class="math inline">P(\text{Short Claws} \mid \text{Young}) = 0.70</span></p></li>
-<li><p><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) = 0.80</span></p></li>
-<li><p><span class="math inline">P(\text{Long Claws} \mid \text{Adolescent}) = 0.40</span></p></li>
-<li><p><span class="math inline">P(\text{Golden Fur} \mid \text{Adolescent}) = 0.50</span></p></li>
-<li><p><span class="math inline">P(\text{Long Claws} \mid \text{Mature}) = 1</span></p></li>
-<li><p><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) = 0.10</span></p></li>
+<li><p><span class="math inline">P(\text{Short Claws} \mid \text{Young})
+= 0.70</span></p></li>
+<li><p><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) =
+0.80</span></p></li>
+<li><p><span class="math inline">P(\text{Long Claws} \mid
+\text{Adolescent}) = 0.40</span></p></li>
+<li><p><span class="math inline">P(\text{Golden Fur} \mid
+\text{Adolescent}) = 0.50</span></p></li>
+<li><p><span class="math inline">P(\text{Long Claws} \mid \text{Mature})
+= 1</span></p></li>
+<li><p><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) =
+0.10</span></p></li>
 </ul>
-<p>A new cheetah is observed with <strong>dark fur</strong> and <strong>short claws</strong>. Assuming conditional independence of features (color, length) within a class (development), calculate the probability that this cheetah is <strong>young</strong> using Bayes’ Theorem. In this question, you may leave your answers unsimplified, in terms of fractions, exponents, factorials, the permutation formula <span class="math inline">P(n, k)</span>, and the binomial coefficient <span class="math inline">{n \choose k}</span>.</p>
+<p>A new cheetah is observed with <strong>dark fur</strong> and
+<strong>short claws</strong>. Assuming conditional independence of
+features (color, length) within a class (development), calculate the
+probability that this cheetah is <strong>young</strong> using Bayes’
+Theorem. In this question, you may leave your answers unsimplified, in
+terms of fractions, exponents, factorials, the permutation formula <span
+class="math inline">P(n, k)</span>, and the binomial coefficient <span
+class="math inline">{n \choose k}</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading1">
@@ -82,47 +117,80 @@
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1" class="accordion-collapse collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+<div id="collapse1" class="accordion-collapse collapse"
+aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{7}{13}</span></p>
-<p>To calculate the probability that a cheetah is young given that it has dark fur and short claws we can use Bayes’ Theorem!</p>
-<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap \text{Short Claws})}</span></p>
-<p>We first need to calculate: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Young})</span>.</p>
-<p>We can do this using the equation: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Young}) = P(\text{Dark Fur} | \text{Young}) \cdot P(\text{Short Claws} | \text{Young})</span>.</p>
+<p>To calculate the probability that a cheetah is young given that it
+has dark fur and short claws we can use Bayes’ Theorem!</p>
+<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short
+Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap
+\text{Short Claws})}</span></p>
+<p>We first need to calculate: <span class="math inline">P(\text{Dark
+Fur} \cap \text{Short Claws} | \text{Young})</span>.</p>
+<p>We can do this using the equation: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} |
+\text{Young}) = P(\text{Dark Fur} | \text{Young}) \cdot P(\text{Short
+Claws} | \text{Young})</span>.</p>
 <p>We are given:</p>
 <ul>
-<li><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) = 0.80</span></li>
-<li><span class="math inline">P(\text{Short Claws} \mid \text{Young}) = 0.70</span></li>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Young}) =
+0.80</span></li>
+<li><span class="math inline">P(\text{Short Claws} \mid \text{Young}) =
+0.70</span></li>
 </ul>
-<p>This means: <span class="math display">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Young}) = 0.8 \cdot 0.7 = 0.56</span></p>
-<p>Notice the denominator of our Bayes’ Theorem is <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws})</span> this means we need to probability of seeing Dark Fur or Short Claws regardless of the development stage.</p>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) = 0.8 \cdot 0.7 = 0.56</span></p>
+<p>Notice the denominator of our Bayes’ Theorem is <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws})</span>
+this means we need to probability of seeing Dark Fur or Short Claws
+regardless of the development stage.</p>
 <p>This follows the equation for the law of total probability:</p>
-<p></p>
-<p>This means we need to calculate: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent})</span> and <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature})</span>.</p>
+<p><span class="math display">\begin{align*}
+P(\text{Dark Fur} \cap \text{Short Claws}) &amp;= P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) * P(\text{Young})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) *
+P(\text{Adolescent})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) *
+P(\text{Mature})
+\end{align*}</span></p>
+<p>This means we need to calculate: <span class="math inline">P(\text{Dark Fur} \cap \text{Short Claws} |
+\text{Adolescent})</span> and <span class="math inline">P(\text{Dark
+Fur} \cap \text{Short Claws} | \text{Mature})</span>.</p>
 <p><strong>For Adolescent we are given:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Golden Fur} \mid \text{Adolescent}) = 0.50</span></li>
-<li><span class="math inline">P(\text{Long Claws} \mid \text{Adolescent}) = 0.40</span></li>
+<li><span class="math inline">P(\text{Golden Fur} \mid
+\text{Adolescent}) = 0.50</span></li>
+<li><span class="math inline">P(\text{Long Claws} \mid
+\text{Adolescent}) = 0.40</span></li>
 </ul>
-<p>We have to take the compliments of these qualities to get short claws and dark fur!</p>
+<p>We have to take the compliments of these qualities to get short claws
+and dark fur!</p>
 <ul>
-<li><span class="math inline">P(\text{Dark Fur} \mid \text{Adolescent}) = 1 - P(\text{Golden Fur} \mid \text{Adolescent}) = 1 - 0.50 = 0.5</span></li>
-<li><span class="math inline">P(\text{Short Claws} \mid \text{Adolescent}) = 1 - P(\text{Long Claws} \mid \text{Adolescent}) = 1 - 0.40 = 0.6</span></li>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Adolescent})
+= 1 - P(\text{Golden Fur} \mid \text{Adolescent}) = 1 - 0.50 =
+0.5</span></li>
+<li><span class="math inline">P(\text{Short Claws} \mid
+\text{Adolescent}) = 1 - P(\text{Long Claws} \mid \text{Adolescent}) = 1
+- 0.40 = 0.6</span></li>
 </ul>
-<p>This means: <span class="math display">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) = 0.5 \cdot 0.6 = 0.3</span></p>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Adolescent}) = 0.5 \cdot 0.6 = 0.3</span></p>
 <p><strong>For Mature we are given:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Long Claws} \mid \text{Mature}) = 1</span></li>
-<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) = 0.10</span></li>
+<li><span class="math inline">P(\text{Long Claws} \mid \text{Mature}) =
+1</span></li>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) =
+0.10</span></li>
 </ul>
 <p>We have to take the compliments of long claws to get short claws!</p>
 <ul>
-<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) = 1 - P(\text{Golden Fur} \mid \text{Mature}) = 1 - 1 = 0</span></li>
+<li><span class="math inline">P(\text{Dark Fur} \mid \text{Mature}) = 1
+- P(\text{Golden Fur} \mid \text{Mature}) = 1 - 1 = 0</span></li>
 </ul>
-<p>This means: <span class="math display">P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) = 0 \cdot 0.1 = 0</span></p>
+<p>This means: <span class="math display">P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Mature}) = 0 \cdot 0.1 = 0</span></p>
 <p>To finally calculate the denominator we need these probabilities:</p>
 <ul>
 <li><span class="math inline">P(\text{Young}) = 0.25</span></li>
@@ -130,9 +198,22 @@ Click to view the solution.
 <li><span class="math inline">P(\text{Mature}) = 0.35</span></li>
 </ul>
 <p>Now we can simply plug our numbers into the equation!</p>
-<p></p>
+<p><span class="math display">\begin{align*}
+P(\text{Dark Fur} \cap \text{Short Claws}) &amp;= P(\text{Dark Fur} \cap
+\text{Short Claws} | \text{Young}) * P(\text{Young})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Adolescent}) *
+P(\text{Adolescent})\\
+&amp;+ P(\text{Dark Fur} \cap \text{Short Claws} | \text{Mature}) *
+P(\text{Mature})\\
+&amp;= 0.56 \cdot 0.25 + 0.3 * 0.4 + 0 * 0.35 \\
+&amp;= 0.14 + 0.12\\
+&amp;= 0.26
+\end{align*}</span></p>
 <p>Now we have all the components to answer the question:</p>
-<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap \text{Short Claws})} = \frac{0.56 \cdot 0.25}{0.26} = \frac{7}{13}</span></p>
+<p><span class="math display">\frac{P(\text{Dark Fur} \cap \text{Short
+Claws} | \text{Young}) \cdot P(\text{Young})}{P(\text{Dark Fur} \cap
+\text{Short Claws})} = \frac{0.56 \cdot 0.25}{0.26} =
+\frac{7}{13}</span></p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -144,12 +225,23 @@ Click to view the solution.
 </div>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024 Final</a>, Problem 9</i></p>
-<p>Information about a sample of <span class="math inline">50</span> cheetahs in the San Diego Safari Park is summarized in the table below.</p>
+<p><i>Source: <a href="../ss2-24-final/index.html">Summer Session 2 2024
+Final</a>, Problem 9</i></p>
+<p>Information about a sample of <span class="math inline">50</span>
+cheetahs in the San Diego Safari Park is summarized in the table
+below.</p>
 <p><br></p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+<col style="width: 9%" />
+</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>Golden Fur</th>
 <th></th>
@@ -159,7 +251,7 @@ Click to view the solution.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td></td>
 <td><strong>Short Claws</strong></td>
 <td><strong>Long Claws</strong></td>
@@ -167,7 +259,7 @@ Click to view the solution.
 <td><strong>Long Claws</strong></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Young</strong></td>
 <td>2</td>
 <td>0</td>
@@ -175,7 +267,7 @@ Click to view the solution.
 <td>4</td>
 <td>16</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>Adolescent</strong></td>
 <td>6</td>
 <td>3</td>
@@ -183,7 +275,7 @@ Click to view the solution.
 <td>6</td>
 <td>17</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>Mature</strong></td>
 <td>3</td>
 <td>12</td>
@@ -191,7 +283,7 @@ Click to view the solution.
 <td>2</td>
 <td>17</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>Sum of Column</strong></td>
 <td>11</td>
 <td>15</td>
@@ -202,9 +294,21 @@ Click to view the solution.
 </tbody>
 </table>
 <p><br></p>
-<p>For instance, we’re told that <span class="math inline">10</span> cheetahs with dark fur and short claws are young and that there were <span class="math inline">11</span> cheetahs with golden fur and short claws.</p>
-<p>Given its other characteristics, San Diego Safari Park would like to use this information to predict whether a new cheetah to the Park is young, adolescent, or mature.</p>
-<p>A new cheetah is observed with <strong>golden fur</strong> and <strong>long claws</strong>. Using the data in the table and assuming conditional independence of features, use the Naive Bayes formula <strong>with smoothing</strong> to determine which developmental stage is most likely for the new cheetah. In this question, you may leave your answers unsimplified, in terms of fractions, exponents, factorials, the permutation formula <span class="math inline">P(n, k)</span>, and the binomial coefficient <span class="math inline">{n \choose k}</span>.</p>
+<p>For instance, we’re told that <span class="math inline">10</span>
+cheetahs with dark fur and short claws are young and that there were
+<span class="math inline">11</span> cheetahs with golden fur and short
+claws.</p>
+<p>Given its other characteristics, San Diego Safari Park would like to
+use this information to predict whether a new cheetah to the Park is
+young, adolescent, or mature.</p>
+<p>A new cheetah is observed with <strong>golden fur</strong> and
+<strong>long claws</strong>. Using the data in the table and assuming
+conditional independence of features, use the Naive Bayes formula
+<strong>with smoothing</strong> to determine which developmental stage
+is most likely for the new cheetah. In this question, you may leave your
+answers unsimplified, in terms of fractions, exponents, factorials, the
+permutation formula <span class="math inline">P(n, k)</span>, and the
+binomial coefficient <span class="math inline">{n \choose k}</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2">
@@ -212,39 +316,77 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2" class="accordion-collapse collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+<div id="collapse2" class="accordion-collapse collapse"
+aria-labelledby="heading2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>Mature</p>
-<p>To figure out if the new cheetah is young, adolescent, or mature we need to find the probabilities for each stage of development.</p>
-<p>This means we need to find the probability of a young cheetah having golden fur and long claws, the probability of a adolenscent cheetah having golden fur and long claws, and the probability of a mature cheetah having golden fur and long claws.</p>
-<p>Let Age represent either Young, Adolescent, or Mature. We need to then follow the equation: <span class="math display">P(\text{Age}|\text{Golden Fur} \cap \text{Long Claws}) = P(\text{Age}) \cdot P(\text{Golden Fur}|\text{Age}) \cdot P(\text{Long Claws}|\text{Age})</span> for all the different ages.</p>
+<p>To figure out if the new cheetah is young, adolescent, or mature we
+need to find the probabilities for each stage of development.</p>
+<p>This means we need to find the probability of a young cheetah having
+golden fur and long claws, the probability of a adolenscent cheetah
+having golden fur and long claws, and the probability of a mature
+cheetah having golden fur and long claws.</p>
+<p>Let Age represent either Young, Adolescent, or Mature. We need to
+then follow the equation: <span class="math display">P(\text{Age}|\text{Golden Fur} \cap \text{Long
+Claws}) = P(\text{Age}) \cdot P(\text{Golden Fur}|\text{Age}) \cdot
+P(\text{Long Claws}|\text{Age})</span> for all the different ages.</p>
 <p>Recall we will also be using smoothing! This means:</p>
-<p><span class="math display">P(\text{Feature}|\text{Class}) = \frac{\text{Count of Features in Class} + 1}{\text{Total in Class} + \text{Number of Possible Feature Values}}</span></p>
+<p><span class="math display">P(\text{Feature}|\text{Class}) =
+\frac{\text{Count of Features in Class} + 1}{\text{Total in Class} +
+\text{Number of Possible Feature Values}}</span></p>
 <p><strong>When Age = Young:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Young}) = \frac{16+1}{50+3} = \frac{17}{53}</span></li>
-<li><span class="math inline">P(\text{Golden Fur}|\text{Young}) = \frac{2 + 0 + 1}{16 + 2} = \frac{3}{18}</span></li>
-<li><span class="math inline">P(\text{Long Claws}|\text{Young}) = \frac{0 + 1}{16 + 2} = \frac{5}{18}</span></li>
+<li><span class="math inline">P(\text{Young}) = \frac{16+1}{50+3} =
+\frac{17}{53}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Young}) =
+\frac{2 + 0 + 1}{16 + 2} = \frac{3}{18}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Young}) =
+\frac{0 + 1}{16 + 2} = \frac{5}{18}</span></li>
 </ul>
-<p></p>
+<p><span class="math display">\begin{align*}
+P(\text{Young}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Young}) \cdot P(\text{Golden Fur}|\text{Young}) \cdot
+P(\text{Long Claws}|\text{Young})\\
+&amp;= \frac{3}{18} \cdot \frac{5}{18} \cdot \frac{17}{53}\\
+&amp;= \frac{85}{5724}
+\end{align*}</span></p>
 <p><strong>When Age = Adolescent:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Adolescent}) = \frac{17 + 1}{50 + 3} = \frac{18}{53}</span></li>
-<li><span class="math inline">P(\text{Golden Fur}|\text{Adolescent}) = \frac{6 + 3 + 1}{17 + 2} = \frac{10}{19}</span></li>
-<li><span class="math inline">P(\text{Long Claws}|\text{Adolescent}) = \frac{3 + 6 + 1}{17 + 2} = \frac{10}{19}</span></li>
+<li><span class="math inline">P(\text{Adolescent}) = \frac{17 + 1}{50 +
+3} = \frac{18}{53}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Adolescent}) =
+\frac{6 + 3 + 1}{17 + 2} = \frac{10}{19}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Adolescent}) =
+\frac{3 + 6 + 1}{17 + 2} = \frac{10}{19}</span></li>
 </ul>
-<p></p>
+<p><span class="math display">\begin{align*}
+P(\text{Adolescent}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Adolescent}) \cdot P(\text{Golden Fur}|\text{Adolescent}) \cdot
+P(\text{Long Claws}|\text{Adolescent})\\
+&amp;= \frac{10}{19} \cdot \frac{10}{19} \cdot \frac{18}{53}\\
+&amp;= \frac{1800}{19133}
+\end{align*}</span></p>
 <p><strong>When Age = Mature:</strong></p>
 <ul>
-<li><span class="math inline">P(\text{Mature}) = \frac{17+1}{50+3} = \frac{18}{53}</span></li>
-<li><span class="math inline">P(\text{Golden Fur}|\text{Mature}) = \frac{3 + 12 + 1}{17 + 2} = \frac{16}{19}</span></li>
-<li><span class="math inline">P(\text{Long Claws}|\text{Mature}) = \frac{12 + 2 + 1}{17 + 2} = \frac{15}{19}</span></li>
+<li><span class="math inline">P(\text{Mature}) = \frac{17+1}{50+3} =
+\frac{18}{53}</span></li>
+<li><span class="math inline">P(\text{Golden Fur}|\text{Mature}) =
+\frac{3 + 12 + 1}{17 + 2} = \frac{16}{19}</span></li>
+<li><span class="math inline">P(\text{Long Claws}|\text{Mature}) =
+\frac{12 + 2 + 1}{17 + 2} = \frac{15}{19}</span></li>
 </ul>
-<p></p>
-<p>When age is Mature then it has the highest probability, which means we predict the new cheetah is mature.</p>
+<p><span class="math display">\begin{align*}
+P(\text{Mature}|\text{Golden Fur} \cap \text{Long Claws}) &amp;=
+P(\text{Mature}) \cdot P(\text{Golden Fur}|\text{Mature}) \cdot
+P(\text{Long Claws}|\text{Mature})\\
+&amp;= \frac{16}{19} \cdot \frac{15}{19} \cdot \frac{18}{53}\\
+&amp;= \frac{4320}{19133}
+\end{align*}</span></p>
+<p>When age is Mature then it has the highest probability, which means
+we predict the new cheetah is mature.</p>
 <hr/>
 <h5>Difficulty: ⭐️⭐️⭐️</h5>
 <p>
@@ -256,11 +398,15 @@ Click to view the solution.
 </div>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final Part 2</a>, Problem 3</i></p>
-<p>Consider three events <span class="math inline">A, B,</span> and <span class="math inline">C</span> in the same sample space.</p>
+<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
+Part 2</a>, Problem 3</i></p>
+<p>Consider three events <span class="math inline">A, B,</span> and
+<span class="math inline">C</span> in the same sample space.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>Which of the following is equivalent to <span class="math inline">P((A\cap B)|(B \cap C))</span>? <strong>Select all that apply.</strong></p>
+<p>Which of the following is equivalent to <span
+class="math inline">P((A\cap B)|(B \cap C))</span>? <strong>Select all
+that apply.</strong></p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">P(A|(B \cap C))</span></p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">P(A \cap B \cap C)</span></p></li>
@@ -275,32 +421,54 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse" aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">P(A|(B \cap C))</span> and <span class="math inline">P((A \cap C)|(B \cap C))</span></p>
-<p>Recall the formula for conditional probability is <span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span>. We are going to use this fact to figure out which of the following are the same as <span class="math inline">P((A\cap B)|(B \cap C))</span>.</p>
-<p>We should first expand <span class="math inline">P((A\cap B)|(B \cap C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) = \frac{P(A \cap B) \cap P(B \cap C)}{P(B \cap C)}</span>. We can further simplify the numerator to be <span class="math inline">(A \cap B) \cap (B \cap C) \rightarrow A \cap B \cap C</span>. This means we get <span class="math inline">P((A\cap B)|(B \cap C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) = \frac{P(A \cap B \cap C)}{P(B \cap C)}</span>.</p>
-<p>Now we can go through each of the options and figure out if, when put inside the formula for conditional probability, we get <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>.</p>
+<p>Recall the formula for conditional probability is <span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span>. We are
+going to use this fact to figure out which of the following are the same
+as <span class="math inline">P((A\cap B)|(B \cap C))</span>.</p>
+<p>We should first expand <span class="math inline">P((A\cap B)|(B \cap
+C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) =
+\frac{P(A \cap B) \cap P(B \cap C)}{P(B \cap C)}</span>. We can further
+simplify the numerator to be <span class="math inline">(A \cap B) \cap
+(B \cap C) \rightarrow A \cap B \cap C</span>. This means we get <span class="math inline">P((A\cap B)|(B \cap C))</span> by doing: <span class="math inline">P((A\cap B)|(B \cap C)) = \frac{P(A \cap B \cap
+C)}{P(B \cap C)}</span>.</p>
+<p>Now we can go through each of the options and figure out if, when put
+inside the formula for conditional probability, we get <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>.</p>
 <p><br/></p>
-<p><span class="math inline">P(A|(B \cap C))</span> <span class="math display">P(A|(B \cap C)) = \frac{P(A)P(B \cap C)}{P(B \cap C)}= \frac{P(A \cap (B \cap C))}{P(B \cap C)} = \frac{P(A \cap B \cap C)}{P(B \cap C)}</span> This matches <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>!</p>
+<p><span class="math inline">P(A|(B \cap C))</span> <span class="math display">P(A|(B \cap C)) = \frac{P(A)P(B \cap C)}{P(B \cap
+C)}= \frac{P(A \cap (B \cap C))}{P(B \cap C)} = \frac{P(A \cap B \cap
+C)}{P(B \cap C)}</span> This matches <span class="math inline">\frac{P(A
+\cap B \cap C)}{P(B \cap C)}</span>!</p>
 <p><br/></p>
 <p><span class="math inline">P(A \cap B \cap C)</span></p>
-<p>We can see that there is no way for this to equal <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span> because it is missing the denominator.</p>
+<p>We can see that there is no way for this to equal <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>
+because it is missing the denominator.</p>
 <p><br/> <span class="math inline">P((B \cap C)|(A \cap B))</span></p>
-<p><span class="math display">P((B \cap C)|(A \cap B)) = \frac{P(B \cap C)P(A \cap B)}{P(A \cap B)}= \frac{P(A \cap B \cap C)}{P(A \cap B)}</span> This does not match <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>.</p>
+<p><span class="math display">P((B \cap C)|(A \cap B)) = \frac{P(B \cap
+C)P(A \cap B)}{P(A \cap B)}= \frac{P(A \cap B \cap C)}{P(A \cap
+B)}</span> This does not match <span class="math inline">\frac{P(A \cap
+B \cap C)}{P(B \cap C)}</span>.</p>
 <p><br/></p>
-<p><span class="math inline">P((A \cap C)|(B \cap C))</span> <span class="math display">P((A \cap C)|(B \cap C)) = \frac{P(A \cap C)P(B \cap C)}{P(B \cap C)} = \frac{P(A \cap B \cap C)}{P(B \cap C)}</span> This matches <span class="math inline">\frac{P(A \cap B \cap C)}{P(B \cap C)}</span>!</p>
-<p><br/> Since options 1 and 4 are correct the answer cannot be None of the Above!</p>
+<p><span class="math inline">P((A \cap C)|(B \cap C))</span> <span class="math display">P((A \cap C)|(B \cap C)) = \frac{P(A \cap C)P(B
+\cap C)}{P(B \cap C)} = \frac{P(A \cap B \cap C)}{P(B \cap C)}</span>
+This matches <span class="math inline">\frac{P(A \cap B \cap C)}{P(B
+\cap C)}</span>!</p>
+<p><br/> Since options 1 and 4 are correct the answer cannot be None of
+the Above!</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>Suppose <span class="math inline">P((A \cap B)|C) = P(A|(B \cap C))*P(B)</span>. Which of the following pairs of events <strong>must be independent</strong>?</p>
+<p>Suppose <span class="math inline">P((A \cap B)|C) = P(A|(B \cap
+C))*P(B)</span>. Which of the following pairs of events <strong>must be
+independent</strong>?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">A, B</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">A, C</span></p></li>
@@ -314,18 +482,32 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse" aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">B, C</span></p>
-<p>We are going to rewrite the following in the hopes of being able to simplify things later. To do this we will once again use the formula for conditional probability: <span class="math inline">P(A|B) = \frac{P(A \cap B)}{P(B)}</span></p>
-<p>Let’s look at the left side of <span class="math inline">P((A \cap B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
-<p><span class="math display">P((A \cap B)|C) = \frac{P(A \cap B)P(C)}{P(C)} = \frac{P(A \cap B \cap C)}{P(C)}</span></p>
-<p>Let’s now look at the right side of <span class="math inline">P((A \cap B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
-<p><span class="math display">P(A|(B \cap C))*P(B) = \frac{P(A)P(B \cap C)}{P(B \cap C)} * P(B) = \frac{P(A \cap B \cap C)}{P(B \cap C)}* P(B) = \frac{P(A \cap B \cap C) * P(B)}{P(B \cap C)}</span></p>
-<p>Now we can look at them together! <span class="math inline">\frac{P(A \cap B \cap C)}{P(C)} = \frac{P(A \cap B \cap C) * P(B)}{P(B \cap C)}</span>. We can cross multiply to clear the fractions: <span class="math inline">P(A \cap B \cap C) * P(B \cap C) = P(A \cap B \cap C) * P(B) * P(C)</span>. Assuming that <span class="math inline">P(A \cap B \cap C) \neq 0</span> we can divide both sides by <span class="math inline">P(A \cap B \cap C)</span>. We end up with <span class="math inline">P(B \cap C) = P(B) * P(C)</span>, which demonstrates to us that <span class="math inline">B</span> and <span class="math inline">C</span> are independent of one another.</p>
+<p>We are going to rewrite the following in the hopes of being able to
+simplify things later. To do this we will once again use the formula for
+conditional probability: <span class="math inline">P(A|B) = \frac{P(A
+\cap B)}{P(B)}</span></p>
+<p>Let’s look at the left side of <span class="math inline">P((A \cap
+B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
+<p><span class="math display">P((A \cap B)|C) = \frac{P(A \cap
+B)P(C)}{P(C)} = \frac{P(A \cap B \cap C)}{P(C)}</span></p>
+<p>Let’s now look at the right side of <span class="math inline">P((A
+\cap B)|C) = P(A|(B \cap C))*P(B)</span>.</p>
+<p><span class="math display">P(A|(B \cap C))*P(B) = \frac{P(A)P(B \cap
+C)}{P(B \cap C)} * P(B) = \frac{P(A \cap B \cap C)}{P(B \cap C)}* P(B) =
+\frac{P(A \cap B \cap C) * P(B)}{P(B \cap C)}</span></p>
+<p>Now we can look at them together! <span class="math inline">\frac{P(A
+\cap B \cap C)}{P(C)} = \frac{P(A \cap B \cap C) * P(B)}{P(B \cap
+C)}</span>. We can cross multiply to clear the fractions: <span class="math inline">P(A \cap B \cap C) * P(B \cap C) = P(A \cap B \cap
+C) * P(B) * P(C)</span>. Assuming that <span class="math inline">P(A
+\cap B \cap C) \neq 0</span> we can divide both sides by <span class="math inline">P(A \cap B \cap C)</span>. We end up with <span class="math inline">P(B \cap C) = P(B) * P(C)</span>, which demonstrates
+to us that <span class="math inline">B</span> and <span class="math inline">C</span> are independent of one another.</p>
 </div>
 </div>
 </div>
@@ -333,13 +515,24 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm 2</a>, Problem 4</i></p>
-<p>Suppose that there are three possible experience levels in chess (beginner, intermediate, advanced). Only <strong>10%</strong> of beginner players beat Avi at a game of chess, while <strong>50%</strong> of intermediate players and <strong>80%</strong> of advanced players do.</p>
-<p>Avi signs up to participate in a certain chess tournament called the Avocado Cup. Aside from Avi, <strong>50%</strong> of the players in the tournament are beginners, <strong>40%</strong> are intermediate, and <strong>10%</strong> are advanced.</p>
-<p>The tournament proceeds in rounds. In the first round of the tournament, players are <strong>randomly paired up</strong> for a game of chess.</p>
+<p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
+2</a>, Problem 4</i></p>
+<p>Suppose that there are three possible experience levels in chess
+(beginner, intermediate, advanced). Only <strong>10%</strong> of
+beginner players beat Avi at a game of chess, while <strong>50%</strong>
+of intermediate players and <strong>80%</strong> of advanced players
+do.</p>
+<p>Avi signs up to participate in a certain chess tournament called the
+Avocado Cup. Aside from Avi, <strong>50%</strong> of the players in the
+tournament are beginners, <strong>40%</strong> are intermediate, and
+<strong>10%</strong> are advanced.</p>
+<p>The tournament proceeds in rounds. In the first round of the
+tournament, players are <strong>randomly paired up</strong> for a game
+of chess.</p>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>What is the probability that Avi wins in the first round of the tournament?</p>
+<p>What is the probability that Avi wins in the first round of the
+tournament?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">33 \%</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">50 \%</span></p></li>
@@ -354,16 +547,27 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse" aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">67 \%</span></p>
-<p>We know the percentages of players that beat Avi (meaning Avi loses) and the percentages of different types of players inside the Avocado Cup.</p>
-<p>We can use the percentage of players that beat Avi to figure out the percentage of times Avi wins by writing <span class="math inline">1 - p</span>.</p>
-<p>Avi wins against beginners with a likelihood of <span class="math inline">1 - 0.1 = 0.9</span>, against intermediate players with a likelihood of <span class="math inline">1 - 0.4 = 0.6</span>, and against advanced players with a likelihood of <span class="math inline">1 - 0.8 = 0.2</span>.</p>
-<p>Now we can multiply the probabilities of Avi winning with their respective probabilities of different players’ types to find the probability Avi that will win in the first round! We can do this because you can imagine we are multiplying the probability Avi wins with the amount of people in the tournament of that level.</p>
+<p>We know the percentages of players that beat Avi (meaning Avi loses)
+and the percentages of different types of players inside the Avocado
+Cup.</p>
+<p>We can use the percentage of players that beat Avi to figure out the
+percentage of times Avi wins by writing <span class="math inline">1 -
+p</span>.</p>
+<p>Avi wins against beginners with a likelihood of <span class="math inline">1 - 0.1 = 0.9</span>, against intermediate players
+with a likelihood of <span class="math inline">1 - 0.4 = 0.6</span>, and
+against advanced players with a likelihood of <span class="math inline">1 - 0.8 = 0.2</span>.</p>
+<p>Now we can multiply the probabilities of Avi winning with their
+respective probabilities of different players’ types to find the
+probability Avi that will win in the first round! We can do this because
+you can imagine we are multiplying the probability Avi wins with the
+amount of people in the tournament of that level.</p>
 <p><span class="math display">\begin{align*}
 0.9 \cdot 0.5 &amp;= 0.45 \\
 0.4 \cdot 0.5 &amp;= 0.2 \\
@@ -376,7 +580,10 @@ Click to view the solution.
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>It turns out that, sadly, Avi loses to his opponent in the first round. What is the probability that Avi’s opponent is an advanced player? Choose the <strong>closest answer</strong> among the choices listed.</p>
+<p>It turns out that, sadly, Avi loses to his opponent in the first
+round. What is the probability that Avi’s opponent is an advanced
+player? Choose the <strong>closest answer</strong> among the choices
+listed.</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">15 \%</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">25 \%</span></p></li>
@@ -390,39 +597,55 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse" aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">25 \%</span></p>
 <ul>
-<li>Let <span class="math inline">P(A)</span> be the probability of Avi playing against an advanced player</li>
-<li>Let <span class="math inline">P(B)</span> be the probability of Avi losing a match</li>
-<li>Let <span class="math inline">P(C)</span> be the probability of Avi playing against an intermediate player</li>
-<li>Let <span class="math inline">P(D)</span> be the probability of Avi playing against a beginner player</li>
+<li>Let <span class="math inline">P(A)</span> be the probability of Avi
+playing against an advanced player</li>
+<li>Let <span class="math inline">P(B)</span> be the probability of Avi
+losing a match</li>
+<li>Let <span class="math inline">P(C)</span> be the probability of Avi
+playing against an intermediate player</li>
+<li>Let <span class="math inline">P(D)</span> be the probability of Avi
+playing against a beginner player</li>
 </ul>
-<p>We can use Bayes’ theorem to help us find the probability that Avi lost the match to an advanced player (<span class="math inline">P(A|B)</span>). Recall Bayes’ theorem is:</p>
+<p>We can use Bayes’ theorem to help us find the probability that Avi
+lost the match to an advanced player (<span class="math inline">P(A|B)</span>). Recall Bayes’ theorem is:</p>
 <p><span class="math display">
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 </span></p>
-<p>We are given the probability that Avi loses the match against an advanced player <span class="math inline">P(B|A) = 0.8</span> and the probability of Avi playing against an advanced player <span class="math inline">P(A) = 0.1</span>.</p>
+<p>We are given the probability that Avi loses the match against an
+advanced player <span class="math inline">P(B|A) = 0.8</span> and the
+probability of Avi playing against an advanced player <span class="math inline">P(A) = 0.1</span>.</p>
 <p>We can calculate the probability of Avi losing a match <span class="math inline">P(B)</span> with the law of total probability: <span class="math display">
 P(B) = P(B|A) \cdot P(A) + P(B|C) \cdot P(C) + P(B|D) \cdot P(D)
 </span></p>
-<p>We know the probability of Avi losing to an intermediate player: <span class="math inline">P(B|C) = 0.5</span>, the probability of Avi losing to a beginner player: <span class="math inline">P(B|D) = 0.1</span>, the probability of an intermediate player being the opponent: <span class="math inline">P(C) = 0.4</span>, and the probability of a beginner player being the opponent: <span class="math inline">P(D) = 0.5</span></p>
-<p>Plugging in what we know into the law of total probability equation we get: <span class="math display">\begin{align*}
+<p>We know the probability of Avi losing to an intermediate player:
+<span class="math inline">P(B|C) = 0.5</span>, the probability of Avi
+losing to a beginner player: <span class="math inline">P(B|D) =
+0.1</span>, the probability of an intermediate player being the
+opponent: <span class="math inline">P(C) = 0.4</span>, and the
+probability of a beginner player being the opponent: <span class="math inline">P(D) = 0.5</span></p>
+<p>Plugging in what we know into the law of total probability equation
+we get: <span class="math display">\begin{align*}
 P(B) &amp;= 0.8 \cdot 0.2 + 0.5 \cdot 0.4 + 0.1 \cdot 0.5 \\
 &amp;=0.08 + 0.2 + 0.05 \\
 &amp;= 0.33
 \end{align*}</span></p>
-<p>Or we can calculate <span class="math inline">P(B)</span> by using what we know in part A (<span class="math inline">67 \%</span>). <span class="math inline">1 - 0.67 = 0.33</span>.</p>
+<p>Or we can calculate <span class="math inline">P(B)</span> by using
+what we know in part A (<span class="math inline">67 \%</span>). <span class="math inline">1 - 0.67 = 0.33</span>.</p>
 <p>Back to Bayes’ theorem we have: <span class="math display">\begin{align*}
 P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
 &amp;= \frac{0.08}{0.33}\\
 &amp;= 0.24
 \end{align*}</span></p>
-<p><span class="math inline">0.24</span> is closest to <span class="math inline">0.25</span>, so <span class="math inline">25 \%</span>.</p>
+<p><span class="math inline">0.24</span> is closest to <span class="math inline">0.25</span>, so <span class="math inline">25
+\%</span>.</p>
 </div>
 </div>
 </div>
@@ -431,10 +654,21 @@ P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
 <hr />
 <h2 id="problem-5">Problem 5</h2>
 <!-- **Probability and Counting** -->
-<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>, Problem 7</i></p>
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 7</i></p>
 <p><br></p>
 <h3 id="problem-5.1">Problem 5.1</h3>
-<p>There is one box of bolts that contains some long and some short bolts. A manager is unable to open the box at present, so she asks her employees what is the composition of the box. One employee says that it contains 60 long bolts and 40 short bolts. Another says that it contains 10 long bolts and 20 short bolts. Unable to reconcile these opinions, the manager decides that each of the employees is correct with probability <span class="math inline">\frac{1}{2}</span>. Let <span class="math inline">B_1</span> be the event that the box contains 60 long and 40 short bolts, and let <span class="math inline">B_2</span> be the event that the box contains 10 long and 20 short bolts. What is the probability that the first bolt selected is long?</p>
+<p>There is one box of bolts that contains some long and some short
+bolts. A manager is unable to open the box at present, so she asks her
+employees what is the composition of the box. One employee says that it
+contains 60 long bolts and 40 short bolts. Another says that it contains
+10 long bolts and 20 short bolts. Unable to reconcile these opinions,
+the manager decides that each of the employees is correct with
+probability <span class="math inline">\frac{1}{2}</span>. Let <span
+class="math inline">B_1</span> be the event that the box contains 60
+long and 40 short bolts, and let <span class="math inline">B_2</span> be
+the event that the box contains 10 long and 20 short bolts. What is the
+probability that the first bolt selected is long?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_1">
@@ -442,16 +676,21 @@ P(A|B) &amp;= \frac{0.8 \cdot 0.1}{0.33} \\
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse" aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math display">P(\text{long}) = \frac{7}{15}</span></p>
-<p>We are given that: <span class="math display">P(B_1)=P(B_2)=\frac{1}{2}</span> <span class="math display">P(\text{long}|B_1) = \frac{60}{60 + 40} = \frac{3}{5}</span> <span class="math display">P(\text{long}|B_2) = \frac{10}{10 + 20} = \frac{1}{3}</span></p>
+<p>We are given that: <span class="math display">P(B_1)=P(B_2)=\frac{1}{2}</span> <span class="math display">P(\text{long}|B_1) = \frac{60}{60 + 40} =
+\frac{3}{5}</span> <span class="math display">P(\text{long}|B_2) =
+\frac{10}{10 + 20} = \frac{1}{3}</span></p>
 <p>Using the law of total probability:</p>
-<p><span class="math display">P(\text{long})=P(\text{long}|B_1) \cdot P(B_1)+P(\text{long}|B_2) \cdot P(B_2)
-= \frac{3}{5} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{2} = \frac{7}{15}</span></p>
+<p><span class="math display">P(\text{long})=P(\text{long}|B_1) \cdot
+P(B_1)+P(\text{long}|B_2) \cdot P(B_2)
+= \frac{3}{5} \cdot \frac{1}{2} + \frac{1}{3} \cdot \frac{1}{2} =
+\frac{7}{15}</span></p>
 </div>
 </div>
 </div>
@@ -459,7 +698,12 @@ Click to view the solution.
 <p><br></p>
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
-<p>How many ways can one arrange the letters <span class="math inline">A</span>, <span class="math inline">B</span>, <span class="math inline">C</span>, <span class="math inline">D</span>, <span class="math inline">E</span> such that <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> are all together (in any order)?</p>
+<p>How many ways can one arrange the letters <span
+class="math inline">A</span>, <span class="math inline">B</span>, <span
+class="math inline">C</span>, <span class="math inline">D</span>, <span
+class="math inline">E</span> such that <span
+class="math inline">A</span>, <span class="math inline">B</span>, and
+<span class="math inline">C</span> are all together (in any order)?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_2">
@@ -467,24 +711,47 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse" aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>There are <span class="math inline">3! \cdot 3!</span> permutations.</p>
-<p>We can treat the group of <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> (in any order) as a single block of letters which we can call <span class="math inline">X</span>. This will gurantee that any permutation we find will satisfy our condition of having <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> being all together.</p>
-<p>Our problem now has <span class="math inline">3! = 6</span> permutations of our new letter bank: <span class="math inline">X</span>, <span class="math inline">D</span>, and <span class="math inline">E</span>.</p>
-<p><span class="math display">XDE</span> <span class="math display">XED</span> <span class="math display">DXE</span> <span class="math display">EXD</span> <span class="math display">DEX</span> <span class="math display">EDX</span></p>
-<p>Let’s call these 6 permutations “structures”. For each of these structures, there are <span class="math inline">3! = 6</span> rearrangements of the letters <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> <em>inside</em> of <span class="math inline">X</span>.</p>
-<p>So, with <span class="math inline">3!</span> different arrangements of <span class="math inline">D</span>, <span class="math inline">E</span> and our block of letters (<span class="math inline">X</span>), and with each of those arrangements individually having <span class="math inline">3!</span> ways to re-order the group of <span class="math inline">ABC</span>, the overall number of permutations of <span class="math inline">ABCDE</span> where <span class="math inline">ABC</span> are all together, in any order, is <span class="math inline">3! \cdot 3!</span>.</p>
+<p>There are <span class="math inline">3! \cdot 3!</span>
+permutations.</p>
+<p>We can treat the group of <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> (in
+any order) as a single block of letters which we can call <span class="math inline">X</span>. This will gurantee that any permutation we
+find will satisfy our condition of having <span class="math inline">A</span>, <span class="math inline">B</span>, and
+<span class="math inline">C</span> being all together.</p>
+<p>Our problem now has <span class="math inline">3! = 6</span>
+permutations of our new letter bank: <span class="math inline">X</span>,
+<span class="math inline">D</span>, and <span class="math inline">E</span>.</p>
+<p><span class="math display">XDE</span> <span class="math display">XED</span> <span class="math display">DXE</span>
+<span class="math display">EXD</span> <span class="math display">DEX</span> <span class="math display">EDX</span></p>
+<p>Let’s call these 6 permutations “structures”. For each of these
+structures, there are <span class="math inline">3! = 6</span>
+rearrangements of the letters <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span>
+<em>inside</em> of <span class="math inline">X</span>.</p>
+<p>So, with <span class="math inline">3!</span> different arrangements
+of <span class="math inline">D</span>, <span class="math inline">E</span> and our block of letters (<span class="math inline">X</span>), and with each of those arrangements
+individually having <span class="math inline">3!</span> ways to re-order
+the group of <span class="math inline">ABC</span>, the overall number of
+permutations of <span class="math inline">ABCDE</span> where <span class="math inline">ABC</span> are all together, in any order, is <span class="math inline">3! \cdot 3!</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.3">Problem 5.3</h3>
-<p>Two chess players <span class="math inline">A</span> and <span class="math inline">B</span> play a series of chess matches against each other until one of them wins 3 matches. Every match ends when one of the players <em>wins</em> against the other, that is, the game does not ever end in draw/tie. For example, one series of matches ends when the outcomes of the first four games are: <span class="math inline">A</span> wins, <span class="math inline">A</span> wins, <span class="math inline">B</span> wins, <span class="math inline">A</span> wins. In how many different ways can the series occur?</p>
+<p>Two chess players <span class="math inline">A</span> and <span
+class="math inline">B</span> play a series of chess matches against each
+other until one of them wins 3 matches. Every match ends when one of the
+players <em>wins</em> against the other, that is, the game does not ever
+end in draw/tie. For example, one series of matches ends when the
+outcomes of the first four games are: <span class="math inline">A</span>
+wins, <span class="math inline">A</span> wins, <span
+class="math inline">B</span> wins, <span class="math inline">A</span>
+wins. In how many different ways can the series occur?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_3">
@@ -492,20 +759,38 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_3" class="accordion-collapse collapse collapse" aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>There are <span class="math inline">20</span> ways the series can be won.</p>
-<p>The series ends when the last game in the series is the third win by either player. Overall, there must be at least 3 games to end a series (all wins by the same player) and at most 5 games to end a series (each player has two wins, and then a final win by either player) before either player wins 3 games. Let’s assume player <span class="math inline">A</span> always wins, and then we’ll multiply the number of options by two to account for the possibilities where player <span class="math inline">B</span> wins instead.</p>
+<p>There are <span class="math inline">20</span> ways the series can be
+won.</p>
+<p>The series ends when the last game in the series is the third win by
+either player. Overall, there must be at least 3 games to end a series
+(all wins by the same player) and at most 5 games to end a series (each
+player has two wins, and then a final win by either player) before
+either player wins 3 games. Let’s assume player <span class="math inline">A</span> always wins, and then we’ll multiply the
+number of options by two to account for the possibilities where player
+<span class="math inline">B</span> wins instead.</p>
 <p>Breaking it down:</p>
 <ul>
-<li><p>For a series that ends in 3 games - there is a single option (all wins by player <span class="math inline">A</span>).</p></li>
-<li><p>For a series that ends in 4 games, we’ve assumed the last game is a player <span class="math inline">A</span> win to end the series, therefore the 3 preceding games have <span class="math inline">{3 \choose 2}</span> options for player <span class="math inline">A</span> winning 2 of the 3 preceding games.</p></li>
-<li><p>For a series that ends in 5 games, we’ve assumed the last game is a player <span class="math inline">A</span> win to end the series, therefore the 4 preceding games have <span class="math inline">{4 \choose 2}</span> options for player <span class="math inline">A</span> winning 2 of the 4 preceding games.</p></li>
+<li><p>For a series that ends in 3 games - there is a single option (all
+wins by player <span class="math inline">A</span>).</p></li>
+<li><p>For a series that ends in 4 games, we’ve assumed the last game is
+a player <span class="math inline">A</span> win to end the series,
+therefore the 3 preceding games have <span class="math inline">{3
+\choose 2}</span> options for player <span class="math inline">A</span>
+winning 2 of the 3 preceding games.</p></li>
+<li><p>For a series that ends in 5 games, we’ve assumed the last game is
+a player <span class="math inline">A</span> win to end the series,
+therefore the 4 preceding games have <span class="math inline">{4
+\choose 2}</span> options for player <span class="math inline">A</span>
+winning 2 of the 4 preceding games.</p></li>
 </ul>
-<p>Overall, the number of ways the series can occur is: <span class="math inline">2 \cdot (1 + {3 \choose 2} + {4 \choose 2}) = 20</span></p>
+<p>Overall, the number of ways the series can occur is: <span class="math inline">2 \cdot (1 + {3 \choose 2} + {4 \choose 2}) =
+20</span></p>
 </div>
 </div>
 </div>
@@ -514,11 +799,19 @@ Click to view the solution.
 <hr />
 <h2 id="problem-6">Problem 6</h2>
 <!-- \[**Bayes theorem**\] -->
-<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>, Problem 8</i></p>
-<p>Let’s say <span class="math inline">1\%</span> of the population has a certain genetic defect.</p>
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 8</i></p>
+<p>Let’s say <span class="math inline">1\%</span> of the population has
+a certain genetic defect.</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
-<p>A test has been developed such that <span class="math inline">90\%</span> of administered tests accurately detect the gene (true positives). What needs to be the false positive rate (probability that the administered test is positive even though the patient doesn’t have a genetic defect) such that the probability that a patient having the genetic defect given a positive result is <span class="math inline">90\%</span>?</p>
+<p>A test has been developed such that <span
+class="math inline">90\%</span> of administered tests accurately detect
+the gene (true positives). What needs to be the false positive rate
+(probability that the administered test is positive even though the
+patient doesn’t have a genetic defect) such that the probability that a
+patient having the genetic defect given a positive result is <span
+class="math inline">90\%</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_1">
@@ -526,24 +819,32 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse" aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The false positive rate should be <span class="math inline">\approx 0.001</span> to satisfy this condition.</p>
-<p>Let <span class="math inline">A</span> be the event a patient has a genetic defect. Let <span class="math inline">B</span> be the event a patient got a positive test result.</p>
+<p>The false positive rate should be <span class="math inline">\approx
+0.001</span> to satisfy this condition.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
 <p>We know:</p>
 <ul>
 <li><p><span class="math inline">P(A) = 0.01</span></p></li>
-<li><p>The true positive rate (probability of a positive test result given someone has the genetic defect) can be modeled by <span class="math inline">P(B|A)=0.9</span></p></li>
-<li><p>The false positive rate (probability of positive test result given someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = p</span></p></li>
+<li><p>The true positive rate (probability of a positive test result
+given someone has the genetic defect) can be modeled by <span class="math inline">P(B|A)=0.9</span></p></li>
+<li><p>The false positive rate (probability of positive test result
+given someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = p</span></p></li>
 </ul>
 <p>We want:</p>
 <ul>
-<li>The probability that a patient having the genetic defect given a positive result (<span class="math inline">P(A|B)</span>) is <span class="math inline">90\%</span></li>
+<li>The probability that a patient having the genetic defect given a
+positive result (<span class="math inline">P(A|B)</span>) is <span class="math inline">90\%</span></li>
 </ul>
-<p>Let’s set up a relationship between what we know and what we want by using Bayes’ Theorem:</p>
+<p>Let’s set up a relationship between what we know and what we want by
+using Bayes’ Theorem:</p>
 <p><span class="math display">\begin{aligned}
 P(A|B) &amp;= \frac{ P(B|A)P(A)}{P(B)} \\
 &amp;=\frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
@@ -552,17 +853,23 @@ P(A|B) &amp;= \frac{ P(B|A)P(A)}{P(B)} \\
 <p>Rearranging the terms:</p>
 <p><span class="math display">\begin{aligned}
 0.9 \cdot 0.01 &amp; = 0.9 \cdot (0.9 \cdot 0.01 + p \cdot 0.99)\\
-0.1 \cdot 0.9 \cdot 0.01 &amp; = 0.9 \cdot p \cdot 0.99 \\ 
+0.1 \cdot 0.9 \cdot 0.01 &amp; = 0.9 \cdot p \cdot 0.99 \\
 p = P(B|\bar{A}) &amp;=\frac{0.1 \cdot 0.01}{0.99} \approx 0.001
 \end{aligned}</span></p>
-<p>We’ve found that the probability of a false positive (positive result for someone who doesn’t have the genetic defect) needs to be <span class="math inline">\approx 0.001</span> to satisfy our condition.</p>
+<p>We’ve found that the probability of a false positive (positive result
+for someone who doesn’t have the genetic defect) needs to be <span class="math inline">\approx 0.001</span> to satisfy our condition.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.2">Problem 6.2</h3>
-<p>A test has been developed such that <span class="math inline">1\%</span> of administered tests are positive when the patient doesn’t have the genetic defect (false positives). What needs to be the true positive probability so that the the probability a patient has the genetic defect given a positive result is <span class="math inline">50\%</span>?</p>
+<p>A test has been developed such that <span
+class="math inline">1\%</span> of administered tests are positive when
+the patient doesn’t have the genetic defect (false positives). What
+needs to be the true positive probability so that the the probability a
+patient has the genetic defect given a positive result is <span
+class="math inline">50\%</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_2">
@@ -570,18 +877,23 @@ p = P(B|\bar{A}) &amp;=\frac{0.1 \cdot 0.01}{0.99} \approx 0.001
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse" aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>The probability of a true positive needs to be <span class="math inline">0.99</span> to satisfy our condition.</p>
-<p>Let <span class="math inline">A</span> be the event a patient has a genetic defect. Let <span class="math inline">B</span> be the event a patient got a positive test result.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
 <p>We know:</p>
 <ul>
 <li><p><span class="math inline">P(A) = 0.01</span></p></li>
-<li><p>The true positive rate (probability of positive test result if someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
-<li><p>The false positive rate (probability of positive test result if someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of positive test result if
+someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
+<li><p>The false positive rate (probability of positive test result if
+someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
 </ul>
 <p>We can set up Bayes’ Theorem again to gain more information:</p>
 <p><span class="math display">\begin{aligned}
@@ -591,7 +903,7 @@ P(A|B)  &amp;= \frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
 \end{aligned}</span></p>
 <p>Rearranging the terms: <span class="math display">\begin{aligned}
 p  &amp; = 0.5 \cdot (p  + 0.99)\\
-0.5 \cdot p  &amp; = 0.5 \cdot  0.99 \\ 
+0.5 \cdot p  &amp; = 0.5 \cdot  0.99 \\
 p = P(B|{A}) &amp;=0.99
 \end{aligned}</span></p>
 <p>We find that the probability of a true positive needs to be <span class="math inline">0.99</span> to satisfy our condition.</p>
@@ -601,7 +913,11 @@ p = P(B|{A}) &amp;=0.99
 </div>
 <p><br></p>
 <h3 id="problem-6.3">Problem 6.3</h3>
-<p><span class="math inline">1\%</span> of administered tests are positive when the patient doesn’t have the gene (false positives). Show that there is no true positive probability such that the probability of a patient having the genetic defect given a positive result can be <span class="math inline">90\%</span>.</p>
+<p><span class="math inline">1\%</span> of administered tests are
+positive when the patient doesn’t have the gene (false positives). Show
+that there is no true positive probability such that the probability of
+a patient having the genetic defect given a positive result can be <span
+class="math inline">90\%</span>.</p>
 <!-- (Hint: remember a
 probability $p$ needs to fulfill $0 \leq p \leq 1$.) -->
 <div id="accordionExample" class="accordion">
@@ -611,17 +927,22 @@ probability $p$ needs to fulfill $0 \leq p \leq 1$.) -->
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse" aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Let <span class="math inline">A</span> be the event a patient has a genetic defect. Let <span class="math inline">B</span> be the event a patient got a positive test result.</p>
+<p>Let <span class="math inline">A</span> be the event a patient has a
+genetic defect. Let <span class="math inline">B</span> be the event a
+patient got a positive test result.</p>
 <p>We know:</p>
 <ul>
 <li><p><span class="math inline">P(A) = 0.01</span></p></li>
-<li><p>The true positive rate (probability of positive test result if someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
-<li><p>The false positive rate (probability of positive test result if someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
+<li><p>The true positive rate (probability of positive test result if
+someone has the genetic defect) can be modeled by <span class="math inline">P(B|A) = p</span></p></li>
+<li><p>The false positive rate (probability of positive test result if
+someone doesn’t have the genetic defect) can be modeled by <span class="math inline">P(B|\bar{A}) = 0.01</span></p></li>
 </ul>
 <p>Let’s try solving as before:</p>
 <p><span class="math display">\begin{aligned}
@@ -631,11 +952,14 @@ P(A|B)  &amp;=\frac{ P(B|A)P(A)}{P(B|A)P(A)+ P(B|\bar{A})P(\bar{A})}\\
 \end{aligned}</span></p>
 <p>Rearranging the terms: <span class="math display">\begin{aligned}
 p  &amp; = 0.9 \cdot (p  + 0.99)\\
-0.1 \cdot p  &amp; = 0.9 \cdot  0.99 \\ 
+0.1 \cdot p  &amp; = 0.9 \cdot  0.99 \\
 p = P(B|{A}) &amp;= \frac{0.99 \cdot 0.9}{0.1} = 8.91 &gt; 1
 \end{aligned}</span></p>
-<p>We have found that <span class="math inline">p</span>, a probability value, must be greater than 1, which is impossible!</p>
-<p>Given the rate of false positives, we cannot find a true positive rate such that the probability of a patient having the genetic defect given a positive result is 0.9.</p>
+<p>We have found that <span class="math inline">p</span>, a probability
+value, must be greater than 1, which is impossible!</p>
+<p>Given the rate of false positives, we cannot find a true positive
+rate such that the probability of a patient having the genetic defect
+given a positive result is 0.9.</p>
 </div>
 </div>
 </div>
@@ -643,21 +967,31 @@ p = P(B|{A}) &amp;= \frac{0.99 \cdot 0.9}{0.1} = 8.91 &gt; 1
 <p><br></p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
-<p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm 2</a>, Problem 6</i></p>
-<p>The Avocado Cup is organized into rounds. In each round, players who win advance to the next round, and players who lose are eliminated. Rounds continue on like this until there is a single tournament winner.</p>
-<p>Define the following events in the sample space of possible outcomes of the Avocado Cup:</p>
+<p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
+2</a>, Problem 6</i></p>
+<p>The Avocado Cup is organized into rounds. In each round, players who
+win advance to the next round, and players who lose are eliminated.
+Rounds continue on like this until there is a single tournament
+winner.</p>
+<p>Define the following events in the sample space of possible outcomes
+of the Avocado Cup:</p>
 <ul>
-<li><p><span class="math inline">A =</span> Avi loses in the first round.</p></li>
-<li><p><span class="math inline">B =</span> Avi wins the tournament.</p></li>
-<li><p><span class="math inline">C =</span> Avi wins in the first round.</p></li>
+<li><p><span class="math inline">A =</span> Avi loses in the first
+round.</p></li>
+<li><p><span class="math inline">B =</span> Avi wins the
+tournament.</p></li>
+<li><p><span class="math inline">C =</span> Avi wins in the first
+round.</p></li>
 </ul>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
-<p>Which of the following statements is true? <strong>Select all that apply.</strong></p>
+<p>Which of the following statements is true? <strong>Select all that
+apply.</strong></p>
 <ul class="task-list">
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are independent.</p></li>
 <li><p><input type="checkbox" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally independent given <span class="math inline">C</span>.</p></li>
-<li><p><input type="checkbox" disabled="" /> <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span> form a partition of the sample space.</p></li>
+<li><p><input type="checkbox" disabled="" /> <span class="math inline">A</span>, <span class="math inline">B</span>, and <span class="math inline">C</span>
+form a partition of the sample space.</p></li>
 <li><p><input type="checkbox" disabled="" /> None of the above.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -667,23 +1001,39 @@ p = P(B|{A}) &amp;= \frac{0.99 \cdot 0.9}{0.1} = 8.91 &gt; 1
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse" aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>Only bubble 2: <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally independent given <span class="math inline">C</span>.</p>
-<p>We know that <span class="math inline">A</span> and <span class="math inline">B</span> are not independent because winning or losing the first match could affect if Avi wins the tournament.</p>
-<p>It is helpful to think about “if <span class="math inline">C</span> happens does it affect my knowledge of <span class="math inline">A</span> and <span class="math inline">B</span> happening”? If <span class="math inline">C</span> happens we know that <span class="math inline">A</span> cannot happen. If <span class="math inline">A</span> cannot happen then <span class="math inline">B</span> is independent of <span class="math inline">A</span>. This means <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally independent given <span class="math inline">C</span>.</p>
-<p>Recall a partition is a collection of non-empty, non-overlapping subsets of a sample space. We know that <span class="math inline">A</span> affects <span class="math inline">B</span>, which means that this statement cannot be true.</p>
-<p>Since the third option is true the answer cannot be “None of the above.”</p>
+<p>We know that <span class="math inline">A</span> and <span class="math inline">B</span> are not independent because winning or
+losing the first match could affect if Avi wins the tournament.</p>
+<p>It is helpful to think about “if <span class="math inline">C</span>
+happens does it affect my knowledge of <span class="math inline">A</span> and <span class="math inline">B</span>
+happening”? If <span class="math inline">C</span> happens we know that
+<span class="math inline">A</span> cannot happen. If <span class="math inline">A</span> cannot happen then <span class="math inline">B</span> is independent of <span class="math inline">A</span>. This means <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally independent given <span class="math inline">C</span>.</p>
+<p>Recall a partition is a collection of non-empty, non-overlapping
+subsets of a sample space. We know that <span class="math inline">A</span> affects <span class="math inline">B</span>,
+which means that this statement cannot be true.</p>
+<p>Since the third option is true the answer cannot be “None of the
+above.”</p>
 </div>
 </div>
 </div>
 </div>
 <p><br> <br></p>
 <h3 id="problem-7.2">Problem 7.2</h3>
-<p>The events <span class="math inline">A</span> and <span class="math inline">B</span> are mutually exclusive, or disjoint. More generally, for <strong>any</strong> two disjoint events <span class="math inline">A</span> and <span class="math inline">B</span>, show how to express <span class="math inline">P(\overline{A}|(A \cup B))</span> in terms of <span class="math inline">P(A)</span> and <span class="math inline">P(B)</span> <strong>only</strong>. For this problem only, <strong>show your work and justify each step.</strong></p>
+<p>The events <span class="math inline">A</span> and <span
+class="math inline">B</span> are mutually exclusive, or disjoint. More
+generally, for <strong>any</strong> two disjoint events <span
+class="math inline">A</span> and <span class="math inline">B</span>,
+show how to express <span class="math inline">P(\overline{A}|(A \cup
+B))</span> in terms of <span class="math inline">P(A)</span> and <span
+class="math inline">P(B)</span> <strong>only</strong>. For this problem
+only, <strong>show your work and justify each step.</strong></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading7_2">
@@ -691,16 +1041,31 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse" aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">P(\overline{A}|(A \cup B)) = \dfrac{P(B)}{P(A)+P(B)}</span></p>
-<p>There are several correct approaches to this problem. The simplest one comes from using the definition of conditional probability to write:</p>
-<p><span class="math display">P(\overline{A}|(A \cup B)) = \dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}</span> To evaluate the numerator, notice that since <span class="math inline">A</span> and <span class="math inline">B</span> are disjoint, any outcome that is not in <span class="math inline">A</span> but is in the union of <span class="math inline">A</span> and <span class="math inline">B</span> (<span class="math inline">A</span> or <span class="math inline">B</span>) must be in <span class="math inline">B</span>. The Venn diagram shown below illustrates this. Therefore, we can simplify this as <span class="math display">= \dfrac{P(B)}{P(A \cup B)} </span> and because we know <span class="math inline">A</span> and <span class="math inline">B</span> are disjoint, we can use the addition rule to expand the denominator as <span class="math display">= \dfrac{P(B)}{P(A)+P(B)}</span></p>
+<p><span class="math display">P(\overline{A}|(A \cup B)) =
+\dfrac{P(B)}{P(A)+P(B)}</span></p>
+<p>There are several correct approaches to this problem. The simplest
+one comes from using the definition of conditional probability to
+write:</p>
+<p><span class="math display">P(\overline{A}|(A \cup B)) =
+\dfrac{P(\overline{A}\cap (A \cup B))}{P(A \cup B)}</span> To evaluate
+the numerator, notice that since <span class="math inline">A</span> and
+<span class="math inline">B</span> are disjoint, any outcome that is not
+in <span class="math inline">A</span> but is in the union of <span class="math inline">A</span> and <span class="math inline">B</span>
+(<span class="math inline">A</span> or <span class="math inline">B</span>) must be in <span class="math inline">B</span>. The Venn diagram shown below illustrates
+this. Therefore, we can simplify this as <span class="math display">=
+\dfrac{P(B)}{P(A \cup B)} </span> and because we know <span class="math inline">A</span> and <span class="math inline">B</span> are
+disjoint, we can use the addition rule to expand the denominator as
+<span class="math display">= \dfrac{P(B)}{P(A)+P(B)}</span></p>
 <p>This is the desired final expression because it uses <span class="math inline">P(A)</span> and <span class="math inline">P(B)</span> only.</p>
-<p>In the Venn Diagram below, <span class="math inline">\overline{A}</span> is shaded in yellow, and <span class="math inline">A \cup B</span> is shaded in blue. Their overlap, <span class="math inline">\overline{A}\cap (A \cup B)</span>, is shaded in green, which is just <span class="math inline">B</span>.</p>
+<p>In the Venn Diagram below, <span class="math inline">\overline{A}</span> is shaded in yellow, and <span class="math inline">A \cup B</span> is shaded in blue. Their overlap,
+<span class="math inline">\overline{A}\cap (A \cup B)</span>, is shaded
+in green, which is just <span class="math inline">B</span>.</p>
 <center><img height="330" src="../assets/images/sp23-midterm2/venn.jpg" width="600"/></center>
 </div>
 </div>
@@ -709,21 +1074,36 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
-<p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm 2</a>, Problem 7</i></p>
-<p>Recall in the game Stringle, players try to guess a randomly generated string. There is a new Stringle string available each day.</p>
-<p>Each day’s Stringle string is a <strong>six-letter string</strong>, where each letter is chosen uniformly at random, <strong>with replacement</strong>, from among the 26 letters of the English alphabet. This means Stringle strings can have repeated letters, and they do not need to have any meaning as an English word.</p>
-<p>For this problem, we’ll say that there are six vowels: A, E, I, O, U, and Y. Consider the following three events:</p>
+<p><i>Source: <a href="../wi22-midterm2/index.html">Winter 2022 Midterm
+2</a>, Problem 7</i></p>
+<p>Recall in the game Stringle, players try to guess a randomly
+generated string. There is a new Stringle string available each day.</p>
+<p>Each day’s Stringle string is a <strong>six-letter string</strong>,
+where each letter is chosen uniformly at random, <strong>with
+replacement</strong>, from among the 26 letters of the English alphabet.
+This means Stringle strings can have repeated letters, and they do not
+need to have any meaning as an English word.</p>
+<p>For this problem, we’ll say that there are six vowels: A, E, I, O, U,
+and Y. Consider the following three events:</p>
 <ul>
-<li><p><span class="math inline">A</span> is the event that today’s Stringle string starts with a vowel.</p></li>
-<li><p><span class="math inline">B</span> is the event that today’s Stringle string starts with a letter in the first half of the alphabet (A through M, inclusive).</p></li>
-<li><p><span class="math inline">C</span> is the event that today’s Stringle string does not start with a Z.</p></li>
+<li><p><span class="math inline">A</span> is the event that today’s
+Stringle string starts with a vowel.</p></li>
+<li><p><span class="math inline">B</span> is the event that today’s
+Stringle string starts with a letter in the first half of the alphabet
+(A through M, inclusive).</p></li>
+<li><p><span class="math inline">C</span> is the event that today’s
+Stringle string does not start with a Z.</p></li>
 </ul>
 <p>Which of the following is true?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally</p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally dependent</p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are dependent. <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally independent</p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are dependent. <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally dependent</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally dependent</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are dependent. <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally independent</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A</span> and <span class="math inline">B</span> are dependent. <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally dependent</p></li>
 <li><p><input type="radio" disabled="" /> None of the above.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -733,17 +1113,30 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8" class="accordion-collapse collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionExample">
+<div id="collapse8" class="accordion-collapse collapse"
+aria-labelledby="heading8" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Bubble 1: <span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally dependent given <span class="math inline">C</span>.</p>
-<p>We can test if <span class="math inline">A</span> and <span class="math inline">B</span> are independent by using the equation: <span class="math inline">\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot \mathbb{P}(B)</span>.</p>
+<p>Bubble 1: <span class="math inline">A</span> and <span class="math inline">B</span> are independent. <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally dependent given <span class="math inline">C</span>.</p>
+<p>We can test if <span class="math inline">A</span> and <span class="math inline">B</span> are independent by using the equation:
+<span class="math inline">\mathbb{P}(A \cap B) = \mathbb{P}(A) \cdot
+\mathbb{P}(B)</span>.</p>
 <ul>
-<li>We know <span class="math inline">\mathbb{P}(A) = \frac{6}{26}</span> because there are six vowels the Stringle string can start with out of <span class="math inline">26</span> letters in the alphabet.</li>
-<li>We know <span class="math inline">\mathbb{P}(B) = \frac{13}{26} = \frac{1}{2}</span> because the letters A through M is numbered <span class="math inline">1</span> to <span class="math inline">13</span>, so there are <span class="math inline">13</span> possible letters out of <span class="math inline">26</span>.</li>
-<li>We know <span class="math inline">\mathbb{P}(A \cap B) = \frac{3}{26}</span> because the letters A, E, and I are between A and M and are also vowels out of all <span class="math inline">26</span> letters.</li>
+<li>We know <span class="math inline">\mathbb{P}(A) =
+\frac{6}{26}</span> because there are six vowels the Stringle string can
+start with out of <span class="math inline">26</span> letters in the
+alphabet.</li>
+<li>We know <span class="math inline">\mathbb{P}(B) = \frac{13}{26} =
+\frac{1}{2}</span> because the letters A through M is numbered <span class="math inline">1</span> to <span class="math inline">13</span>, so
+there are <span class="math inline">13</span> possible letters out of
+<span class="math inline">26</span>.</li>
+<li>We know <span class="math inline">\mathbb{P}(A \cap B) =
+\frac{3}{26}</span> because the letters A, E, and I are between A and M
+and are also vowels out of all <span class="math inline">26</span>
+letters.</li>
 </ul>
 <p>When plugging these values into the equation we get: <span class="math display">
 \begin{align*}
@@ -753,12 +1146,20 @@ Click to view the solution.
 \end{align*}
 </span></p>
 <p>This proves that <span class="math inline">A</span> and <span class="math inline">B</span> are independent.</p>
-<p>Recall we can test if something is conditionally independent by doing <span class="math inline">\mathbb{P}(A \cap B|C) = \mathbb{P}(A|C) \cdot \mathbb{P}(B|C)</span>.</p>
+<p>Recall we can test if something is conditionally independent by doing
+<span class="math inline">\mathbb{P}(A \cap B|C) = \mathbb{P}(A|C) \cdot
+\mathbb{P}(B|C)</span>.</p>
 <ul>
-<li>We know there are <span class="math inline">25</span> letters in the alphabet that are not equal to Z.</li>
-<li>We can calculate <span class="math inline">\mathbb{P}(A|C) = \frac{6}{25}</span> because there are six vowels out of the <span class="math inline">25</span> non-Z letters.</li>
-<li>We can calculate <span class="math inline">\mathbb{P}(B|C) = \frac{13}{25}</span> because there are <span class="math inline">13</span> letters out of the <span class="math inline">25</span> non-Z letters.</li>
-<li>We can calculate <span class="math inline">\mathbb{P}(A \cap B|C) = \frac{3}{25}</span> because the letters A, E, and I are between A and M and are also vowels out of <span class="math inline">25</span> non-Z letters.</li>
+<li>We know there are <span class="math inline">25</span> letters in the
+alphabet that are not equal to Z.</li>
+<li>We can calculate <span class="math inline">\mathbb{P}(A|C) =
+\frac{6}{25}</span> because there are six vowels out of the <span class="math inline">25</span> non-Z letters.</li>
+<li>We can calculate <span class="math inline">\mathbb{P}(B|C) =
+\frac{13}{25}</span> because there are <span class="math inline">13</span> letters out of the <span class="math inline">25</span> non-Z letters.</li>
+<li>We can calculate <span class="math inline">\mathbb{P}(A \cap B|C) =
+\frac{3}{25}</span> because the letters A, E, and I are between A and M
+and are also vowels out of <span class="math inline">25</span> non-Z
+letters.</li>
 </ul>
 <p>When plugging these values into the equation we get: <span class="math display">
 \begin{align*}
@@ -767,28 +1168,41 @@ Click to view the solution.
 \frac{3}{25} &amp;\neq \frac{78}{625}
 \end{align*}
 </span></p>
-<p>Since <span class="math inline">\mathbb{P}(A \cap B|C) \neq \mathbb{P}(A|C) \cdot \mathbb{P}(B|C)</span> this means that <span class="math inline">A</span> and <span class="math inline">B</span> are conditionally dependent given <span class="math inline">C</span>.</p>
+<p>Since <span class="math inline">\mathbb{P}(A \cap B|C) \neq
+\mathbb{P}(A|C) \cdot \mathbb{P}(B|C)</span> this means that <span class="math inline">A</span> and <span class="math inline">B</span> are
+conditionally dependent given <span class="math inline">C</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <hr />
 <h2 id="problem-9">Problem 9</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 9</i></p>
-<p>Delta’s flight operations center keeps track of weather conditions, as they tend to impact whether or not flights are late. For each flight, Delta keeps track of:</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 9</i></p>
+<p>Delta’s flight operations center keeps track of weather conditions,
+as they tend to impact whether or not flights are late. For each flight,
+Delta keeps track of:</p>
 <ul>
-<li><p>Whether or not there was <strong>precipitation</strong> — i.e., rain, snow, or hail.</p></li>
-<li><p>The <strong>wind conditions</strong> — either no winds, light winds, moderate winds, or heavy winds.</p></li>
-<li><p>The flight’s <strong>status</strong> — whether it was early, on time, or late.</p></li>
+<li><p>Whether or not there was <strong>precipitation</strong> — i.e.,
+rain, snow, or hail.</p></li>
+<li><p>The <strong>wind conditions</strong> — either no winds, light
+winds, moderate winds, or heavy winds.</p></li>
+<li><p>The flight’s <strong>status</strong> — whether it was early, on
+time, or late.</p></li>
 </ul>
 <p>Information about 100 flights is summarized in the table below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
-<p>For instance, we’re told that 6 flights in moderate winds and no precipitation landed late, and that there were 13 total flights in heavy winds and precipitation.</p>
-<p>Delta would like to use this information to predict whether a new flight will be early, on time, or late, given the weather conditions.</p>
+<p>For instance, we’re told that 6 flights in moderate winds and no
+precipitation landed late, and that there were 13 total flights in heavy
+winds and precipitation.</p>
+<p>Delta would like to use this information to predict whether a new
+flight will be early, on time, or late, given the weather
+conditions.</p>
 <p><br></p>
 <h3 id="problem-9.1">Problem 9.1</h3>
 <p><strong>Without smoothing</strong>, what is:</p>
-<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \: \text{early})</span></p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{7}</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{7}</span></p></li>
@@ -805,13 +1219,16 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse collapse" aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{2}{7}</span>.</p>
-<p>There are <span class="math inline">28</span> flights that landed early, and of those, <span class="math inline">5 + 3 = 8</span> were in heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
 </div>
 </div>
 </div>
@@ -819,7 +1236,8 @@ Click to view the solution.
 <p><br></p>
 <h3 id="problem-9.2">Problem 9.2</h3>
 <p><strong>With smoothing</strong>, what is:</p>
-<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \: \text{early})</span></p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{3}</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
@@ -836,26 +1254,39 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse collapse" aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{9}{32}</span>.</p>
-<p>There are <span class="math inline">28</span> flights that landed early, and of those, <span class="math inline">5 + 3 = 8</span> were in heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>. (The denominator is 28 + 4 since there are 4 possible wind conditions – none, light, moderate, and heavy.)</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>.
+(The denominator is 28 + 4 since there are 4 possible wind conditions –
+none, light, moderate, and heavy.)</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>For your convenience, the table from the previous page is repeated again below.</p>
+<p>For your convenience, the table from the previous page is repeated
+again below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 <p><br></p>
 <h3 id="problem-9.3">Problem 9.3</h3>
-<p>An airline’s late-to-early ratio, given a set of weather conditions, is defined as:</p>
-<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \: \text{conditions})}{\mathbb{P}(\text{early} \: | \: \text{conditions})}</span></p>
-<p>Using the assumptions of the Naïve Bayes classifier <strong>without smoothing</strong>, show that Delta’s late-early ratio for flights in <strong>heavy winds and precipitation</strong> is <span class="math inline">\bf{\frac{7}{5}}</span>.</p>
-<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of which you already found in <strong>part (a)</strong>.</em></p>
+<p>An airline’s late-to-early ratio, given a set of weather conditions,
+is defined as:</p>
+<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
+\text{conditions})}{\mathbb{P}(\text{early} \: | \:
+\text{conditions})}</span></p>
+<p>Using the assumptions of the Naïve Bayes classifier <strong>without
+smoothing</strong>, show that Delta’s late-early ratio for flights in
+<strong>heavy winds and precipitation</strong> is <span
+class="math inline">\bf{\frac{7}{5}}</span>.</p>
+<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of
+which you already found in <strong>part (a)</strong>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9_3">
@@ -863,24 +1294,41 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse collapse" aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>We can recognize that:</p>
-<p><span class="math display">\displaystyle\frac{P(\text{late | conditions})}{P(\text{early | conditions})} \\ = \displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation | late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot P(\text{precipitation | early})}</span></p>
+<p><span class="math display">\displaystyle\frac{P(\text{late |
+conditions})}{P(\text{early | conditions})} \\ =
+\displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late})
+\cdot P(\text{precipitation | late})}{P(\text{early}) \cdot
+P(\text{heavy winds | early}) \cdot P(\text{precipitation |
+early})}</span></p>
 <p>and compute the following:</p>
 <ul>
-<li><p><span class="math inline">P(\text{late}) = \frac{32}{100}</span></p></li>
-<li><p><span class="math inline">P(\text{heavy winds | late}) = \frac{8}{32}</span></p></li>
-<li><p><span class="math inline">P(\text{precipitation | late}) = \frac{16}{32}</span></p></li>
-<li><p><span class="math inline">P(\text{early}) = \frac{28}{100}</span></p></li>
-<li><p><span class="math inline">P(\text{heavy winds | early}) = \frac{8}{28}</span></p></li>
-<li><p><span class="math inline">P(\text{precipitation | early}) = \frac{10}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{late}) =
+\frac{32}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | late}) =
+\frac{8}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | late}) =
+\frac{16}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{early}) =
+\frac{28}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | early}) =
+\frac{8}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | early}) =
+\frac{10}{28}</span></p></li>
 </ul>
 <p>which gives:</p>
-<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100} \cdot \displaystyle\frac{8}{32} \cdot \displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot \displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} = \displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}} = \displaystyle\frac{7}{5}</span>.</p>
+<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100}
+\cdot \displaystyle\frac{8}{32} \cdot
+\displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot
+\displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} =
+\displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}}
+= \displaystyle\frac{7}{5}</span>.</p>
 </div>
 </div>
 </div>
@@ -888,19 +1336,34 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-10">Problem 10</h2>
-<p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm 2</a>, Problem 5</i></p>
-<p>You have a large historical dataset of all competitors in past years of the Avocado Cup chess tournament. Each year, hundreds of chess players compete in the tournament, and one person is crowned the winner. For each competitor in each year of the competition’s history, you have information on their</p>
+<p><i>Source: <a href="../sp23-midterm2/index.html">Spring 2023 Midterm
+2</a>, Problem 5</i></p>
+<p>You have a large historical dataset of all competitors in past years
+of the Avocado Cup chess tournament. Each year, hundreds of chess
+players compete in the tournament, and one person is crowned the winner.
+For each competitor in each year of the competition’s history, you have
+information on their</p>
 <ul>
 <li><p>experience level (beginner, intermediate, advanced),</p></li>
 <li><p>birth month (January through December), and</p></li>
-<li><p>whether or not they won the tournament that year (yes or no).</p></li>
+<li><p>whether or not they won the tournament that year (yes or
+no).</p></li>
 </ul>
-<p>Assume that birthdays of competitors are evenly distributed throughout the months.</p>
-<p>You want to predict who will win this year’s Avocado Cup. To do so, you use this historical data to train a Naive Bayes classifier and classify each competitor as a winner or non-winner, given their experience level and birth month. Which of the following reasons best explains <strong>why your classifier is ineffective</strong> in identifying the winner?</p>
+<p>Assume that birthdays of competitors are evenly distributed
+throughout the months.</p>
+<p>You want to predict who will win this year’s Avocado Cup. To do so,
+you use this historical data to train a Naive Bayes classifier and
+classify each competitor as a winner or non-winner, given their
+experience level and birth month. Which of the following reasons best
+explains <strong>why your classifier is ineffective</strong> in
+identifying the winner?</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> Because it uses a variable (birth month) that likely has nothing to do with a person’s chances of winning the tournament.</p></li>
-<li><p><input type="radio" disabled="" /> Because it uses a variable (experience level) that likely has a strong connection with a person’s chances of winning the tournament.</p></li>
-<li><p><input type="radio" disabled="" /> Because it uses a dataset where there are many more non-winners than winners.</p></li>
+<li><p><input type="radio" disabled="" /> Because it uses a variable (birth month) that likely has nothing to
+do with a person’s chances of winning the tournament.</p></li>
+<li><p><input type="radio" disabled="" /> Because it uses a variable (experience level) that likely has a
+strong connection with a person’s chances of winning the tournament.</p></li>
+<li><p><input type="radio" disabled="" /> Because it uses a dataset where there are many more non-winners than
+winners.</p></li>
 <li><p><input type="radio" disabled="" /> Because it uses a categorical response variable.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -910,31 +1373,45 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse10" class="accordion-collapse collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionExample">
+<div id="collapse10" class="accordion-collapse collapse"
+aria-labelledby="heading10" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Bubble 3: Because it uses a dataset where there are many more non-winners than winners.</p>
-<p>Each year there is only one winner, but then hundreds of non-winners! This skews the data and makes it harder to figure out if someone won or lost because of their birthday and level.</p>
+<p>Bubble 3: Because it uses a dataset where there are many more
+non-winners than winners.</p>
+<p>Each year there is only one winner, but then hundreds of non-winners!
+This skews the data and makes it harder to figure out if someone won or
+lost because of their birthday and level.</p>
 </div>
 </div>
 </div>
 </div>
 <hr />
 <h2 id="problem-11">Problem 11</h2>
-<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final Part 2</a>, Problem 5</i></p>
-<p>You’re interested in seeing the Milky Way in the night sky, which you have sometimes been able to do when conditions are right. For each night that you’ve attempted to see the Milky Way, you have a record of:</p>
+<p><i>Source: <a href="../sp23-final-pt2/index.html">Spring 2023 Final
+Part 2</a>, Problem 5</i></p>
+<p>You’re interested in seeing the Milky Way in the night sky, which you
+have sometimes been able to do when conditions are right. For each night
+that you’ve attempted to see the Milky Way, you have a record of:</p>
 <ul>
 <li>the setting (urban, suburban, or rural),</li>
 <li>the season (winter, spring, summer, or fall),</li>
 <li>the time (late night, or early morning), and</li>
 <li>the outcome (successful, or unsuccessful).</li>
 </ul>
-<p>These <span class="math inline">12</span> attempts are recorded in the table below.</p>
+<p>These <span class="math inline">12</span> attempts are recorded in
+the table below.</p>
 <table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>setting</strong>  </th>
 <th><strong>season</strong>  </th>
 <th><strong>time</strong>      </th>
@@ -942,73 +1419,73 @@ Click to view the solution.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>suburban</td>
 <td>winter</td>
 <td>late night</td>
 <td>successful</td>
 </tr>
-<tr class="even">
+<tr>
 <td>rural</td>
 <td>spring</td>
 <td>late night</td>
 <td>successful</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>urban</td>
 <td>winter</td>
 <td>early morning</td>
 <td>successful</td>
 </tr>
-<tr class="even">
+<tr>
 <td>rural</td>
 <td>winter</td>
 <td>early morning</td>
 <td>successful</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>rural</td>
 <td>summer</td>
 <td>late night</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="even">
+<tr>
 <td>urban</td>
 <td>winter</td>
 <td>late night</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>rural</td>
 <td>winter</td>
 <td>early morning</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="even">
+<tr>
 <td>rural</td>
 <td>spring</td>
 <td>late night</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>urban</td>
 <td>fall</td>
 <td>early morning</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="even">
+<tr>
 <td>suburban</td>
 <td>summer</td>
 <td>late night</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>urban</td>
 <td>winter</td>
 <td>late night</td>
 <td>unsuccessful</td>
 </tr>
-<tr class="even">
+<tr>
 <td>rural</td>
 <td>winter</td>
 <td>late night</td>
@@ -1016,13 +1493,18 @@ Click to view the solution.
 </tr>
 </tbody>
 </table>
-<p>You want to use a Naive Bayes classifier to predict whether you’ll be successful in seeing the Milky Way under the following conditions:</p>
+<p>You want to use a Naive Bayes classifier to predict whether you’ll be
+successful in seeing the Milky Way under the following conditions:</p>
 <ul>
 <li>the setting is urban,</li>
 <li>the season is winter, and</li>
 <li>the time is late night.</li>
 </ul>
-<p>Naive Bayes predicts that, under these conditions, the probability you are unsuccessful is <span class="math inline">k</span> times the probability you are successful, for an integer value of <span class="math inline">k</span>. What is <span class="math inline">k</span>?</p>
+<p>Naive Bayes predicts that, under these conditions, the probability
+you are unsuccessful is <span class="math inline">k</span> times the
+probability you are successful, for an integer value of <span
+class="math inline">k</span>. What is <span
+class="math inline">k</span>?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">k=1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">k=2</span></p></li>
@@ -1036,29 +1518,71 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse11" class="accordion-collapse collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionExample">
+<div id="collapse11" class="accordion-collapse collapse"
+aria-labelledby="heading11" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">k=3</span></p>
-<p>According to the Naive Bayes formula we will be solving these equations:  and </p>
-<p>This means we need to calculate our prior probabilities <span class="math inline">P(\text{successful})</span>, <span class="math inline">P(\text{unsucessful})</span>, <span class="math inline">P(\text{urban}|\text{successful})</span>, <span class="math inline">P(\text{urban}|\text{usuccessful})</span>, <span class="math inline">P(\text{winter}|\text{successful})</span>, <span class="math inline">P(\text{winter}|\text{unsuccessful})</span>, <span class="math inline">P(\text{late night}|\text{successful})</span>, and <span class="math inline">P(\text{late night}|\text{unsuccessful})</span>.</p>
-<p>We can calculate <span class="math inline">P(\text{successful})</span> by looking at the number of successful outcomes from all possible outcomes. We find <span class="math inline">P(\text{successful}) = \frac{4}{12} = \frac{1}{3}</span>.</p>
-<p>Similarily we can calculate <span class="math inline">P(\text{unsucessful})</span>. <span class="math inline">P(\text{unsucessful}) = \frac{8}{12} = \frac{2}{3}</span>.</p>
-<p>We can now calculate <span class="math inline">P(\text{urban}|\text{successful})</span> by looking at how many settings are urban when the outcome is successful. <span class="math inline">P(\text{urban}|\text{successful}) = \frac{1}{4}</span>.</p>
-<p>Similarily we can calculate <span class="math inline">P(\text{urban}|\text{unsuccessful})</span>. <span class="math inline">P(\text{urban}|\text{unsuccessful}) = \frac{3}{8}</span>.</p>
+<p>According to the Naive Bayes formula we will be solving these
+equations: <span class="math display">\begin{align*}
+&amp;P(\text{successful}|\text{urban, winter, late night})\\ &amp;=
+P(\text{successful}) * P(\text{urban}|\text{successful}) *
+P(\text{winter}|\text{successful}) * P(\text{late
+night}|\text{successful})
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{unsuccessful}|\text{urban, winter, late night}) \\
+&amp;= P(\text{unsuccessful}) * P(\text{urban}|\text{unsuccessful}) *
+P(\text{winter}|\text{unsuccessful}) * P(\text{late
+night}|\text{unsuccessful})
+\end{align*}</span></p>
+<p>This means we need to calculate our prior probabilities <span class="math inline">P(\text{successful})</span>, <span class="math inline">P(\text{unsucessful})</span>, <span class="math inline">P(\text{urban}|\text{successful})</span>, <span class="math inline">P(\text{urban}|\text{usuccessful})</span>, <span class="math inline">P(\text{winter}|\text{successful})</span>, <span class="math inline">P(\text{winter}|\text{unsuccessful})</span>, <span class="math inline">P(\text{late night}|\text{successful})</span>, and
+<span class="math inline">P(\text{late
+night}|\text{unsuccessful})</span>.</p>
+<p>We can calculate <span class="math inline">P(\text{successful})</span> by looking at the number
+of successful outcomes from all possible outcomes. We find <span class="math inline">P(\text{successful}) = \frac{4}{12} =
+\frac{1}{3}</span>.</p>
+<p>Similarily we can calculate <span class="math inline">P(\text{unsucessful})</span>. <span class="math inline">P(\text{unsucessful}) = \frac{8}{12} =
+\frac{2}{3}</span>.</p>
+<p>We can now calculate <span class="math inline">P(\text{urban}|\text{successful})</span> by looking
+at how many settings are urban when the outcome is successful. <span class="math inline">P(\text{urban}|\text{successful}) =
+\frac{1}{4}</span>.</p>
+<p>Similarily we can calculate <span class="math inline">P(\text{urban}|\text{unsuccessful})</span>. <span class="math inline">P(\text{urban}|\text{unsuccessful}) =
+\frac{3}{8}</span>.</p>
 <p>Following this same pattern we will find:</p>
-<p><span class="math inline">P(\text{winter}|\text{successful}) = \frac{3}{4}</span></p>
-<p><span class="math inline">P(\text{winter}|\text{unsuccessful}) = \frac{4}{8} = \frac{1}{2}</span></p>
-<p><span class="math inline">P(\text{late night}|\text{successful}) = \frac{2}{4} = \frac{1}{2}</span></p>
-<p><span class="math inline">P(\text{late night}|\text{unsuccessful}) = \frac{6}{8} = \frac{3}{4}</span></p>
-<p>From here all we need to do is plug our prior probnabilities into the equations we made earlier and solve!</p>
-<p></p>
+<p><span class="math inline">P(\text{winter}|\text{successful}) =
+\frac{3}{4}</span></p>
+<p><span class="math inline">P(\text{winter}|\text{unsuccessful}) =
+\frac{4}{8} = \frac{1}{2}</span></p>
+<p><span class="math inline">P(\text{late night}|\text{successful}) =
+\frac{2}{4} = \frac{1}{2}</span></p>
+<p><span class="math inline">P(\text{late night}|\text{unsuccessful}) =
+\frac{6}{8} = \frac{3}{4}</span></p>
+<p>From here all we need to do is plug our prior probnabilities into the
+equations we made earlier and solve!</p>
+<p><span class="math display">\begin{align*}
+&amp; P(\text{successful}|\text{urban, winter, late night})\\&amp;=
+P(\text{successful}) * P(\text{urban}|\text{successful}) *
+P(\text{winter}|\text{successful}) * P(\text{late
+night}|\text{successful})\\
+&amp;= \frac{1}{3} * \frac{1}{4} * \frac{3}{4} * \frac{1}{2}\\
+&amp;= \frac{1}{32}
+\end{align*}</span></p>
 <p>and</p>
-<p></p>
-<p>We are told in the problem that “the probability you are unsuccessful is <span class="math inline">k</span> times the probability you are successful.”</p>
-<p>This means <span class="math inline">k * \frac{1}{32} = \frac{3}{32}</span>, which we can easily see shows <span class="math inline">k = 3</span>.</p>
+<p><span class="math display">\begin{align*}
+&amp; P(\text{unsuccessful}|\text{urban, winter, late night}) \\ &amp;=
+P(\text{unsuccessful}) * P(\text{urban}|\text{unsuccessful}) *
+P(\text{winter}|\text{unsuccessful}) * P(\text{late
+night}|\text{unsuccessful})\\
+&amp;= \frac{2}{3} * \frac{3}{8} * \frac{1}{2} * \frac{3}{4}\\
+&amp;= \frac{3}{32}
+\end{align*}</span></p>
+<p>We are told in the problem that “the probability you are unsuccessful
+is <span class="math inline">k</span> times the probability you are
+successful.”</p>
+<p>This means <span class="math inline">k * \frac{1}{32} =
+\frac{3}{32}</span>, which we can easily see shows <span class="math inline">k = 3</span>.</p>
 </div>
 </div>
 </div>
@@ -1066,12 +1590,19 @@ Click to view the solution.
 <hr />
 <h2 id="problem-12">Problem 12</h2>
 <!-- **Naive Bayes Classifier** -->
-<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>, Problem 9</i></p>
-<p>In the following "Symptoms" dataset, the task is to diagnose whether a person is sick. We use a representation based on four features per subject to describe an individual person. These features are "running nose", "coughing", and "fever", each of which can take the value true (‘+’) or false (‘–’).</p>
+<p><i>Source: <a href="../wi23-final/index.html">Winter 2023 Final</a>,
+Problem 9</i></p>
+<p>In the following "Symptoms" dataset, the task is to diagnose whether
+a person is sick. We use a representation based on four features per
+subject to describe an individual person. These features are "running
+nose", "coughing", and "fever", each of which can take the value true
+(‘+’) or false (‘–’).</p>
 <center><img src="../assets/images/wi23-final/symptoms.png" width="500"></center>
 <p><br></p>
 <h3 id="problem-12.1">Problem 12.1</h3>
-<p>What is the predicted class for a person with running nose but no coughing, and no fever: sick, or healthy? Use a Naive Bayes classifier.</p>
+<p>What is the predicted class for a person with running nose but no
+coughing, and no fever: sick, or healthy? Use a Naive Bayes
+classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading12_1">
@@ -1079,24 +1610,33 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_1" class="accordion-collapse collapse collapse" aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
+<div id="collapse12_1" class="accordion-collapse collapse"
+aria-labelledby="heading12_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>The predicted class is Healthy(<span class="math inline">-</span>).</p>
-<p>If <span class="math inline">p_+</span> and <span class="math inline">p_-</span> are the numerators of the Naive Bayes comparison that represent a Sick(<span class="math inline">+</span>) prediction and a Healthy(<span class="math inline">-</span>) prediction, respectively, we have to compare: <span class="math display">\begin{aligned}
-    p_+=P(N,\bar C,\bar F|+)P(+)\quad \text{and}\quad p_-=P(N,\bar C,\bar F|-)P(-).
+<p>If <span class="math inline">p_+</span> and <span class="math inline">p_-</span> are the numerators of the Naive Bayes
+comparison that represent a Sick(<span class="math inline">+</span>)
+prediction and a Healthy(<span class="math inline">-</span>) prediction,
+respectively, we have to compare: <span class="math display">\begin{aligned}
+    p_+=P(N,\bar C,\bar F|+)P(+)\quad \text{and}\quad p_-=P(N,\bar
+C,\bar F|-)P(-).
 \end{aligned}</span></p>
 <p>We can find: <span class="math display">\begin{aligned}
     &amp;P(+)=\frac35\\
     &amp;P(-)=\frac25 \\
-    &amp;P(N,\bar C,\bar F|+)=P(N|+)P(\bar C|+)P(\bar F|+)=\frac23\times \frac13\times\frac13=\frac{2}{27}\\
-    &amp;P(N,\bar C,\bar F|-)=P(N|-)P(\bar C|-)P(\bar F|-)=\frac12\times \frac12\times 1=\frac{1}{4}.
+    &amp;P(N,\bar C,\bar F|+)=P(N|+)P(\bar C|+)P(\bar F|+)=\frac23\times
+\frac13\times\frac13=\frac{2}{27}\\
+    &amp;P(N,\bar C,\bar F|-)=P(N|-)P(\bar C|-)P(\bar F|-)=\frac12\times
+\frac12\times 1=\frac{1}{4}.
 \end{aligned}</span></p>
 <p>Then we can build up our comparison: <span class="math display">\begin{aligned}
-    p_+&amp;= P(+)P(N,\bar C,\bar F|+) = \frac35\times\frac{2}{27}=\frac{2}{45}\quad \\
-    p_-&amp;= P(-)P(N,\bar C,\bar F|-) = \frac25\times\frac{1}{4}=\frac{1}{10}\\
+    p_+&amp;= P(+)P(N,\bar C,\bar F|+) =
+\frac35\times\frac{2}{27}=\frac{2}{45}\quad \\
+    p_-&amp;= P(-)P(N,\bar C,\bar F|-) =
+\frac25\times\frac{1}{4}=\frac{1}{10}\\
     p_-&amp;&gt;p_+
 \end{aligned}</span></p>
 <p>So, the predicted class is Healthy(<span class="math inline">-</span>).</p>
@@ -1107,7 +1647,8 @@ Click to view the solution.
 <p><br></p>
 <p><br></p>
 <h3 id="problem-12.2">Problem 12.2</h3>
-<p>What is the predicted class for a person with a running nose and fever, but no coughing? Use a Naive Bayes classifier.</p>
+<p>What is the predicted class for a person with a running nose and
+fever, but no coughing? Use a Naive Bayes classifier.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading12_2">
@@ -1115,16 +1656,25 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_2" class="accordion-collapse collapse collapse" aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
+<div id="collapse12_2" class="accordion-collapse collapse"
+aria-labelledby="heading12_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>The predicted class is Sick(<span class="math inline">+</span>).</p>
-<p>From the dataset we see <span class="math inline">P(F|-)=0</span>, so we know: <span class="math display">P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=0</span></p>
-<p>This will make <span class="math inline">p_- = P(N,\bar C, F|-)P(-) = 0</span></p>
-<p>Contrast this against <span class="math inline">P(F|+), P(N|+),</span> and <span class="math inline">P(\bar C|+)</span>, which are all nonzero values, making <span class="math inline">P(N,\bar C, F|+)</span>, (and therefore <span class="math inline">p_+</span>) nonzero.</p>
-<p>So <span class="math inline">p_+&gt;p_-</span>. This means our predicted class is Sick(<span class="math inline">+</span>).</p>
+<p>From the dataset we see <span class="math inline">P(F|-)=0</span>, so
+we know: <span class="math display">P(N,\bar C, F|-)=P(N|-)P(\bar
+C|-)P(F|-)=0</span></p>
+<p>This will make <span class="math inline">p_- = P(N,\bar C, F|-)P(-) =
+0</span></p>
+<p>Contrast this against <span class="math inline">P(F|+),
+P(N|+),</span> and <span class="math inline">P(\bar C|+)</span>, which
+are all nonzero values, making <span class="math inline">P(N,\bar C,
+F|+)</span>, (and therefore <span class="math inline">p_+</span>)
+nonzero.</p>
+<p>So <span class="math inline">p_+&gt;p_-</span>. This means our
+predicted class is Sick(<span class="math inline">+</span>).</p>
 </div>
 </div>
 </div>
@@ -1132,7 +1682,10 @@ Click to view the solution.
 <p><br></p>
 <p><br></p>
 <h3 id="problem-12.3">Problem 12.3</h3>
-<p>To deal with cases of unseen features, we used “smoothing" in class. If we use the”smoothing" method discussed in class, then what is the probability of a person having running nose and fever, but no coughing if that person was diagnosed "healthy"?</p>
+<p>To deal with cases of unseen features, we used “smoothing" in class.
+If we use the”smoothing" method discussed in class, then what is the
+probability of a person having running nose and fever, but no coughing
+if that person was diagnosed “healthy"?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading12_3">
@@ -1140,18 +1693,31 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_3" class="accordion-collapse collapse collapse" aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
+<div id="collapse12_3" class="accordion-collapse collapse"
+aria-labelledby="heading12_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>With smoothing, the result is <span class="math inline">\dfrac{1}{16}</span>.</p>
-<p>To apply smoothing, we add <span class="math inline">1</span> to the numerator, and add the number of possible categories of the given event, healthiness (which would be <span class="math inline">2</span> possible options in this case: sick, or healthy) to the denominator of our <em>conditional</em> probabilities. That way, other probabilities avoid being multiplied by zero. Let’s smooth our three conditional probabilities:</p>
-<p><span class="math display">P(N|-)= \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}</span> <span class="math display">P(\bar C|-)= \frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}</span></p>
-<p><span class="math inline">P(F|-)=0</span> is a zero probability that also needs to be smoothed. The smoothed version becomes: <span class="math display">P(F|-)= \frac{0}{2} \to \frac{0 + 1}{2 + 2} = \frac{1}{4}</span></p>
-<p>We carry on evaluating <span class="math inline">P(N,\bar C, F|-)</span>, just as the problem asks.</p>
+<p>To apply smoothing, we add <span class="math inline">1</span> to the
+numerator, and add the number of possible categories of the given event,
+healthiness (which would be <span class="math inline">2</span> possible
+options in this case: sick, or healthy) to the denominator of our
+<em>conditional</em> probabilities. That way, other probabilities avoid
+being multiplied by zero. Let’s smooth our three conditional
+probabilities:</p>
+<p><span class="math display">P(N|-)= \frac{1}{2} \to \frac{1 + 1}{2 +
+2} = \frac{2}{4}</span> <span class="math display">P(\bar C|-)=
+\frac{1}{2} \to \frac{1 + 1}{2 + 2} = \frac{2}{4}</span></p>
+<p><span class="math inline">P(F|-)=0</span> is a zero probability that
+also needs to be smoothed. The smoothed version becomes: <span class="math display">P(F|-)= \frac{0}{2} \to \frac{0 + 1}{2 + 2} =
+\frac{1}{4}</span></p>
+<p>We carry on evaluating <span class="math inline">P(N,\bar C,
+F|-)</span>, just as the problem asks.</p>
 <p><span class="math display">\begin{aligned}
-          P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=\frac24\times \frac24\times \frac14=\frac{1}{16}.
+          P(N,\bar C, F|-)=P(N|-)P(\bar C|-)P(F|-)=\frac24\times
+\frac24\times \frac14=\frac{1}{16}.
 \end{aligned}</span></p>
 </div>
 </div>
@@ -1159,7 +1725,11 @@ Click to view the solution.
 </div>
 <p><br></p>
 <h3 id="problem-12.4">Problem 12.4</h3>
-<p>In part (a), what are the <strong>odds</strong> of a person being "sick" who has running nose but no coughing, and no fever? <em>(Hint: the formula for the odds of an event <span class="math inline">A</span> is <span class="math inline">\text{odds}(A) = \frac{P(A)}{1 - P(A)}</span>)</em></p>
+<p>In part (a), what are the <strong>odds</strong> of a person being
+“sick" who has running nose but no coughing, and no fever? <em>(Hint:
+the formula for the odds of an event <span class="math inline">A</span>
+is <span class="math inline">\text{odds}(A) = \frac{P(A)}{1 -
+P(A)}</span>)</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading12_4">
@@ -1167,18 +1737,23 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_4" class="accordion-collapse collapse collapse" aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
+<div id="collapse12_4" class="accordion-collapse collapse"
+aria-labelledby="heading12_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">\text{Odds of being sick}=\frac27</span></p>
-<p>Using previous information, we have that the probability of a person being sick with a running nose but no coughing and no fever is:</p>
+<p><span class="math display">\text{Odds of being
+sick}=\frac27</span></p>
+<p>Using previous information, we have that the probability of a person
+being sick with a running nose but no coughing and no fever is:</p>
 <p><span class="math display">\begin{aligned}
-P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar F)}=\frac{\frac{2}{45}}{\frac{1}{5}}=\frac29. 
+P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar
+F)}=\frac{\frac{2}{45}}{\frac{1}{5}}=\frac29.
 \end{aligned}</span></p>
 <p><span class="math display">\begin{aligned}
-\text{Odds of being sick}=\frac{P(+|N,\bar C,\bar F)}{1-P(+|N,\bar C,\bar F)}=\frac27.   
+\text{Odds of being sick}=\frac{P(+|N,\bar C,\bar F)}{1-P(+|N,\bar
+C,\bar F)}=\frac27.   
 \end{aligned}</span></p>
 </div>
 </div>
@@ -1187,7 +1762,14 @@ P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar F)}=\frac{\frac{2}{45}}{\frac{1}
 <p><br></p>
 <p><br></p>
 <h3 id="problem-12.5">Problem 12.5</h3>
-<p>Say someone fit a logistic regression model to a dataset containing <span class="math inline">n</span> points <span class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where <span class="math inline">x_i</span>s are features and <span class="math inline">y_i\in\{-1,+1\}</span> are labels. The estimated parameters are <span class="math inline">w_0,~w_1</span>, that is, given feature <span class="math inline">x</span>, the predicted probability of belonging to class <span class="math inline">y=+1</span> is</p>
+<p>Say someone fit a logistic regression model to a dataset containing
+<span class="math inline">n</span> points <span
+class="math inline">(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)</span> where
+<span class="math inline">x_i</span>s are features and <span
+class="math inline">y_i\in\{-1,+1\}</span> are labels. The estimated
+parameters are <span class="math inline">w_0,~w_1</span>, that is, given
+feature <span class="math inline">x</span>, the predicted probability of
+belonging to class <span class="math inline">y=+1</span> is</p>
 <p><span class="math display">\begin{aligned}
         P(y=+1|x)=\frac{1}{1+\exp(-w_0-w_1x)}.
 \end{aligned}</span></p>
@@ -1199,7 +1781,8 @@ P(+|N,\bar C,\bar F)=\frac{p_+}{P(N,\bar C,\bar F)}=\frac{\frac{2}{45}}{\frac{1}
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse12_5" class="accordion-collapse collapse collapse" aria-labelledby="heading12_5" data-bs-parent="#accordionExample">
+<div id="collapse12_5" class="accordion-collapse collapse"
+aria-labelledby="heading12_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -1213,19 +1796,34 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-13">Problem 13</h2>
-<p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final Part 2</a>, Problem 3</i></p>
-<p>With the help of the Alien from Bayesian Galaxy, Issac built a Little Hadron Collider in his garage to continue testing some fundamental principles of nature. The alien set up a fixed target at one end of the collider, and ask Issac to shoot quarks from the other end. Everytime the quark hit the target, the Alien will tell Issac whether a new hadron is formed or not. Due to the energy limitation in Issac’s garage, he could only generate up, down, top, and bottom quarks (Strange and Charm quark would have consumed too much energy). For each quark Issac created, he has a record of:</p>
+<p><i>Source: <a href="../wi24-final-pt2/index.html">Winter 2024 Final
+Part 2</a>, Problem 3</i></p>
+<p>With the help of the Alien from Bayesian Galaxy, Issac built a Little
+Hadron Collider in his garage to continue testing some fundamental
+principles of nature. The alien set up a fixed target at one end of the
+collider, and ask Issac to shoot quarks from the other end. Everytime
+the quark hit the target, the Alien will tell Issac whether a new hadron
+is formed or not. Due to the energy limitation in Issac’s garage, he
+could only generate up, down, top, and bottom quarks (Strange and Charm
+quark would have consumed too much energy). For each quark Issac
+created, he has a record of:</p>
 <ul>
-<li><p>the type <code>up</code>, <code>down</code>, <code>top</code>, <code>bottom</code></p></li>
-<li><p>the state <code>particle</code>, <code>antiparticle</code></p></li>
-<li><p>the color charge <code>red</code>, <code>green</code>, <code>blue</code>, and</p></li>
-<li><p>the outcome <code>hadron formed</code>, <code>hadron not formed</code></p></li>
+<li><p>the type <code>up</code>, <code>down</code>, <code>top</code>,
+<code>bottom</code></p></li>
+<li><p>the state <code>particle</code>,
+<code>antiparticle</code></p></li>
+<li><p>the color charge <code>red</code>, <code>green</code>,
+<code>blue</code>, and</p></li>
+<li><p>the outcome <code>hadron formed</code>,
+<code>hadron not formed</code></p></li>
 </ul>
-<p>Issac created <span class="math inline">10</span> quarks, and these <span class="math inline">10</span> quarks are recorded in the table below.</p>
+<p>Issac created <span class="math inline">10</span> quarks, and these
+<span class="math inline">10</span> quarks are recorded in the table
+below.</p>
 <div class="center">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;"><strong>type</strong></th>
 <th style="text-align: left;"><strong>state</strong></th>
 <th style="text-align: left;"><strong>color</strong></th>
@@ -1233,61 +1831,61 @@ Click to view the solution.
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">down</td>
 <td style="text-align: left;">particle</td>
 <td style="text-align: left;">green</td>
 <td style="text-align: left;">formed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">top</td>
 <td style="text-align: left;">particle</td>
 <td style="text-align: left;">red</td>
 <td style="text-align: left;">formed</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">top</td>
 <td style="text-align: left;">antiparticle</td>
 <td style="text-align: left;">blue</td>
 <td style="text-align: left;">formed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">up</td>
 <td style="text-align: left;">particle</td>
 <td style="text-align: left;">red</td>
 <td style="text-align: left;">formed</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">up</td>
 <td style="text-align: left;">antiparticle</td>
 <td style="text-align: left;">blue</td>
 <td style="text-align: left;">formed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">bottom</td>
 <td style="text-align: left;">antiparticle</td>
 <td style="text-align: left;">red</td>
 <td style="text-align: left;">not formed</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">down</td>
 <td style="text-align: left;">antiparticle</td>
 <td style="text-align: left;">blue</td>
 <td style="text-align: left;">not formed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">down</td>
 <td style="text-align: left;">particle</td>
 <td style="text-align: left;">blue</td>
 <td style="text-align: left;">not formed</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">top</td>
 <td style="text-align: left;">particle</td>
 <td style="text-align: left;">green</td>
 <td style="text-align: left;">not formed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">up</td>
 <td style="text-align: left;">antiparticle</td>
 <td style="text-align: left;">green</td>
@@ -1296,7 +1894,9 @@ Click to view the solution.
 </tbody>
 </table>
 </div>
-<p>Since the alien is from Bayesian galaxy, they want Issac to develop a Naive Bayes classifier to predict whether he’ll be successful in forming a hadron under the following quark conditions:</p>
+<p>Since the alien is from Bayesian galaxy, they want Issac to develop a
+Naive Bayes classifier to predict whether he’ll be successful in forming
+a hadron under the following quark conditions:</p>
 <ul>
 <li>the type is <code>up</code></li>
 <li>the state is <code>particle</code></li>
@@ -1304,7 +1904,11 @@ Click to view the solution.
 </ul>
 <p><br></p>
 <h3 id="problem-13.1">Problem 13.1</h3>
-<p>Naive Bayes predicts that, given a <code>up-particle-blue</code> quark, the probability a hadron formed is <span class="math inline">k</span> times the probability a hadron is not formed, for an integer value of <span class="math inline">k</span>. What is <span class="math inline">k</span>?</p>
+<p>Naive Bayes predicts that, given a <code>up-particle-blue</code>
+quark, the probability a hadron formed is <span
+class="math inline">k</span> times the probability a hadron is not
+formed, for an integer value of <span class="math inline">k</span>. What
+is <span class="math inline">k</span>?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
@@ -1318,34 +1922,83 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse13_1" class="accordion-collapse collapse collapse" aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
+<div id="collapse13_1" class="accordion-collapse collapse"
+aria-labelledby="heading13_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">k = 3</span></p>
-<p>Following the equation for Naive Bayes we will create the folllowing two formulas:  and </p>
+<p>Following the equation for Naive Bayes we will create the folllowing
+two formulas: <span class="math display">\begin{align*}
+&amp;P(\text{formed hadron}|\text{up, particle, blue})\\
+&amp;=P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) *
+P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed
+hadron})
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{not formed hadron}|\text{up, particle, blue})\\
+&amp;=P(\text{not formed hadron}) * P(\text{up}|\text{not formed
+hadron}) * P(\text{particle}|\text{not formed hadron}) *
+P(\text{blue}|\text{not formed hadron})
+\end{align*}</span></p>
 <p>Now all we have to do is calculate the prior probabilities!</p>
-<p>We can calculate <span class="math inline">P(\text{formed hadron})</span> by looking at the number of times a <code>formed hadron</code> happens out of the total number of outcomes. We can see this probability is <span class="math inline">P(\text{formed hadron}) = \frac{5}{10} = \frac{1}{2}</span>.</p>
-<p>Similarily we can calculate for a <code>not formed hadron</code> <span class="math inline">P(\text{not formed hadron}) = \frac{5}{10} = \frac{1}{2}</span>.</p>
-<p>We can calculate <span class="math inline">P(\text{up}|\text{formed hadron})</span> by looking at the number of times <code>up</code> appears out of all <code>formed hadron</code>s. This will give us something like: <span class="math inline">P(\text{up}|\text{formed hadron}) = \frac{2}{5}</span>.</p>
-<p>We can use this same method to calculate <span class="math inline">P(\text{up}|\text{not formed hadron})</span> by looking at the number of times <code>up</code> appears out of all <code>not formed hadron</code>s. <span class="math inline">P(\text{up}|\text{not formed hadron}) = \frac{1}{5}</span></p>
-<p>If you continue finding the conditional probabilities you will find:</p>
+<p>We can calculate <span class="math inline">P(\text{formed
+hadron})</span> by looking at the number of times a
+<code>formed hadron</code> happens out of the total number of outcomes.
+We can see this probability is <span class="math inline">P(\text{formed
+hadron}) = \frac{5}{10} = \frac{1}{2}</span>.</p>
+<p>Similarily we can calculate for a <code>not formed hadron</code>
+<span class="math inline">P(\text{not formed hadron}) = \frac{5}{10} =
+\frac{1}{2}</span>.</p>
+<p>We can calculate <span class="math inline">P(\text{up}|\text{formed
+hadron})</span> by looking at the number of times <code>up</code>
+appears out of all <code>formed hadron</code>s. This will give us
+something like: <span class="math inline">P(\text{up}|\text{formed
+hadron}) = \frac{2}{5}</span>.</p>
+<p>We can use this same method to calculate <span class="math inline">P(\text{up}|\text{not formed hadron})</span> by
+looking at the number of times <code>up</code> appears out of all
+<code>not formed hadron</code>s. <span class="math inline">P(\text{up}|\text{not formed hadron}) =
+\frac{1}{5}</span></p>
+<p>If you continue finding the conditional probabilities you will
+find:</p>
 <ul>
-<li><span class="math inline">P(\text{particle}|\text{formed hadron}) = \frac{3}{5}</span></li>
-<li><span class="math inline">P(\text{particle}|\text{not formed hadron}) = \frac{2}{5}</span></li>
-<li><span class="math inline">P(\text{blue}|\text{formed hadron}) = \frac{2}{5}</span></li>
-<li><span class="math inline">P(\text{blue}|\text{not formed hadron}) = \frac{2}{5}</span></li>
+<li><span class="math inline">P(\text{particle}|\text{formed hadron}) =
+\frac{3}{5}</span></li>
+<li><span class="math inline">P(\text{particle}|\text{not formed
+hadron}) = \frac{2}{5}</span></li>
+<li><span class="math inline">P(\text{blue}|\text{formed hadron}) =
+\frac{2}{5}</span></li>
+<li><span class="math inline">P(\text{blue}|\text{not formed hadron}) =
+\frac{2}{5}</span></li>
 </ul>
-<p>Now we simply plug and chug using the equations we had before!  and </p>
-<p>Now the only thing left to do is calculate <span class="math inline">k</span>. We can do this by solving the equation <span class="math inline">k * \frac{2}{125} = \frac{6}{125}</span>. You should find <span class="math inline">k=3</span>.</p>
+<p>Now we simply plug and chug using the equations we had before! <span class="math display">\begin{align*}
+&amp;P(\text{formed hadron}|\text{up, particle, blue})\\
+&amp;= P(\text{formed hadron}) * P(\text{up}|\text{formed hadron}) *
+P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed
+hadron})\\
+&amp;= \frac{1}{2} * \frac{2}{5} * \frac{3}{5} * \frac{2}{5}\\
+&amp;= \frac{6}{125}
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{not formed hadron}|\text{up, particle, blue})\\
+&amp;= P(\text{not formed hadron}) * P(\text{up}|\text{not formed
+hadron}) * P(\text{particle}|\text{not formed hadron}) *
+P(\text{blue}|\text{not formed hadron})\\
+&amp;= \frac{1}{2} * \frac{1}{5} * \frac{2}{5} * \frac{2}{5}\\
+&amp;= \frac{2}{125}
+\end{align*}</span></p>
+<p>Now the only thing left to do is calculate <span class="math inline">k</span>. We can do this by solving the equation
+<span class="math inline">k * \frac{2}{125} = \frac{6}{125}</span>. You
+should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-13.2">Problem 13.2</h3>
-<p>What would be the value of <span class="math inline">k</span> if you change <code>up</code> quark in the previous collision to <code>top</code> quark, but keep everything else the same (i.e. <code>top-particle-blue</code> quark)?</p>
+<p>What would be the value of <span class="math inline">k</span> if you
+change <code>up</code> quark in the previous collision to
+<code>top</code> quark, but keep everything else the same (i.e.
+<code>top-particle-blue</code> quark)?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
@@ -1359,16 +2012,42 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse13_2" class="accordion-collapse collapse collapse" aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
+<div id="collapse13_2" class="accordion-collapse collapse"
+aria-labelledby="heading13_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">k = 3</span></p>
-<p>All we have to do for this problem, after completing the first part, is to see how <span class="math inline">P(\text{top}|\text{formed hadron})</span> and <span class="math inline">P(\text{top}|\text{not formed hadron})</span> changes our previous equations.</p>
-<p>We calculate these two probabilites by looking at the number of formed/not formed hadrons respectively and counting how many of those are in the <code>top</code> position. You will find <span class="math inline">P(\text{top}|\text{formed hadron}) = \frac{2}{5}</span> and <span class="math inline">P(\text{top}|\text{not formed hadron}) = \frac{1}{5}</span>. These are the same as our conditional probabilities when in the <code>up</code> position! Which means <span class="math inline">k=3</span> again.</p>
-<p>If you want to go through the entire calculation again it can be found below:  and </p>
-<p>We can do this by solving the equation <span class="math inline">k * \frac{2}{125} = \frac{6}{125}</span>. You should find <span class="math inline">k=3</span>.</p>
+<p>All we have to do for this problem, after completing the first part,
+is to see how <span class="math inline">P(\text{top}|\text{formed
+hadron})</span> and <span class="math inline">P(\text{top}|\text{not
+formed hadron})</span> changes our previous equations.</p>
+<p>We calculate these two probabilites by looking at the number of
+formed/not formed hadrons respectively and counting how many of those
+are in the <code>top</code> position. You will find <span class="math inline">P(\text{top}|\text{formed hadron}) =
+\frac{2}{5}</span> and <span class="math inline">P(\text{top}|\text{not
+formed hadron}) = \frac{1}{5}</span>. These are the same as our
+conditional probabilities when in the <code>up</code> position! Which
+means <span class="math inline">k=3</span> again.</p>
+<p>If you want to go through the entire calculation again it can be
+found below: <span class="math display">\begin{align*}
+&amp;P(\text{formed hadron}|\text{top, particle, blue})\\
+&amp;= P(\text{formed hadron}) * P(\text{top}|\text{formed hadron}) *
+P(\text{particle}|\text{formed hadron}) * P(\text{blue}|\text{formed
+hadron})\\
+&amp;= \frac{1}{2} * \frac{2}{5} * \frac{3}{5} * \frac{2}{5}\\
+&amp;= \frac{6}{125}
+\end{align*}</span> and <span class="math display">\begin{align*}
+&amp;P(\text{not formed hadron}|\text{top, particle, blue})\\
+&amp;= P(\text{not formed hadron}) * P(\text{top}|\text{not formed
+hadron}) * P(\text{particle}|\text{not formed hadron}) *
+P(\text{blue}|\text{not formed hadron})\\
+&amp;= \frac{1}{2} * \frac{1}{5} * \frac{2}{5} * \frac{2}{5}\\
+&amp;= \frac{2}{125}
+\end{align*}</span></p>
+<p>We can do this by solving the equation <span class="math inline">k *
+\frac{2}{125} = \frac{6}{125}</span>. You should find <span class="math inline">k=3</span>.</p>
 </div>
 </div>
 </div>
@@ -1376,21 +2055,32 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-14">Problem 14</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 9</i></p>
-<p>Delta’s flight operations center keeps track of weather conditions, as they tend to impact whether or not flights are late. For each flight, Delta keeps track of:</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 9</i></p>
+<p>Delta’s flight operations center keeps track of weather conditions,
+as they tend to impact whether or not flights are late. For each flight,
+Delta keeps track of:</p>
 <ul>
-<li><p>Whether or not there was <strong>precipitation</strong> — i.e., rain, snow, or hail.</p></li>
-<li><p>The <strong>wind conditions</strong> — either no winds, light winds, moderate winds, or heavy winds.</p></li>
-<li><p>The flight’s <strong>status</strong> — whether it was early, on time, or late.</p></li>
+<li><p>Whether or not there was <strong>precipitation</strong> — i.e.,
+rain, snow, or hail.</p></li>
+<li><p>The <strong>wind conditions</strong> — either no winds, light
+winds, moderate winds, or heavy winds.</p></li>
+<li><p>The flight’s <strong>status</strong> — whether it was early, on
+time, or late.</p></li>
 </ul>
 <p>Information about 100 flights is summarized in the table below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
-<p>For instance, we’re told that 6 flights in moderate winds and no precipitation landed late, and that there were 13 total flights in heavy winds and precipitation.</p>
-<p>Delta would like to use this information to predict whether a new flight will be early, on time, or late, given the weather conditions.</p>
+<p>For instance, we’re told that 6 flights in moderate winds and no
+precipitation landed late, and that there were 13 total flights in heavy
+winds and precipitation.</p>
+<p>Delta would like to use this information to predict whether a new
+flight will be early, on time, or late, given the weather
+conditions.</p>
 <p><br></p>
 <h3 id="problem-14.1">Problem 14.1</h3>
 <p><strong>Without smoothing</strong>, what is:</p>
-<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \: \text{early})</span></p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{7}</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{7}</span></p></li>
@@ -1407,13 +2097,16 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14_1" class="accordion-collapse collapse collapse" aria-labelledby="heading14_1" data-bs-parent="#accordionExample">
+<div id="collapse14_1" class="accordion-collapse collapse"
+aria-labelledby="heading14_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{2}{7}</span>.</p>
-<p>There are <span class="math inline">28</span> flights that landed early, and of those, <span class="math inline">5 + 3 = 8</span> were in heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
 </div>
 </div>
 </div>
@@ -1421,7 +2114,8 @@ Click to view the solution.
 <p><br></p>
 <h3 id="problem-14.2">Problem 14.2</h3>
 <p><strong>With smoothing</strong>, what is:</p>
-<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \: \text{early})</span></p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{3}</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
@@ -1438,26 +2132,39 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14_2" class="accordion-collapse collapse collapse" aria-labelledby="heading14_2" data-bs-parent="#accordionExample">
+<div id="collapse14_2" class="accordion-collapse collapse"
+aria-labelledby="heading14_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{9}{32}</span>.</p>
-<p>There are <span class="math inline">28</span> flights that landed early, and of those, <span class="math inline">5 + 3 = 8</span> were in heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>. (The denominator is 28 + 4 since there are 4 possible wind conditions – none, light, moderate, and heavy.)</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>.
+(The denominator is 28 + 4 since there are 4 possible wind conditions –
+none, light, moderate, and heavy.)</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>For your convenience, the table from the previous page is repeated again below.</p>
+<p>For your convenience, the table from the previous page is repeated
+again below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 <p><br></p>
 <h3 id="problem-14.3">Problem 14.3</h3>
-<p>An airline’s late-to-early ratio, given a set of weather conditions, is defined as:</p>
-<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \: \text{conditions})}{\mathbb{P}(\text{early} \: | \: \text{conditions})}</span></p>
-<p>Using the assumptions of the Naïve Bayes classifier <strong>without smoothing</strong>, show that Delta’s late-early ratio for flights in <strong>heavy winds and precipitation</strong> is <span class="math inline">\bf{\frac{7}{5}}</span>.</p>
-<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of which you already found in <strong>part (a)</strong>.</em></p>
+<p>An airline’s late-to-early ratio, given a set of weather conditions,
+is defined as:</p>
+<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
+\text{conditions})}{\mathbb{P}(\text{early} \: | \:
+\text{conditions})}</span></p>
+<p>Using the assumptions of the Naïve Bayes classifier <strong>without
+smoothing</strong>, show that Delta’s late-early ratio for flights in
+<strong>heavy winds and precipitation</strong> is <span
+class="math inline">\bf{\frac{7}{5}}</span>.</p>
+<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of
+which you already found in <strong>part (a)</strong>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading14_3">
@@ -1465,24 +2172,41 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse14_3" class="accordion-collapse collapse collapse" aria-labelledby="heading14_3" data-bs-parent="#accordionExample">
+<div id="collapse14_3" class="accordion-collapse collapse"
+aria-labelledby="heading14_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>We can recognize that:</p>
-<p><span class="math display">\displaystyle\frac{P(\text{late | conditions})}{P(\text{early | conditions})} \\ = \displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation | late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot P(\text{precipitation | early})}</span></p>
+<p><span class="math display">\displaystyle\frac{P(\text{late |
+conditions})}{P(\text{early | conditions})} \\ =
+\displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late})
+\cdot P(\text{precipitation | late})}{P(\text{early}) \cdot
+P(\text{heavy winds | early}) \cdot P(\text{precipitation |
+early})}</span></p>
 <p>and compute the following:</p>
 <ul>
-<li><p><span class="math inline">P(\text{late}) = \frac{32}{100}</span></p></li>
-<li><p><span class="math inline">P(\text{heavy winds | late}) = \frac{8}{32}</span></p></li>
-<li><p><span class="math inline">P(\text{precipitation | late}) = \frac{16}{32}</span></p></li>
-<li><p><span class="math inline">P(\text{early}) = \frac{28}{100}</span></p></li>
-<li><p><span class="math inline">P(\text{heavy winds | early}) = \frac{8}{28}</span></p></li>
-<li><p><span class="math inline">P(\text{precipitation | early}) = \frac{10}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{late}) =
+\frac{32}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | late}) =
+\frac{8}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | late}) =
+\frac{16}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{early}) =
+\frac{28}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | early}) =
+\frac{8}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | early}) =
+\frac{10}{28}</span></p></li>
 </ul>
 <p>which gives:</p>
-<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100} \cdot \displaystyle\frac{8}{32} \cdot \displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot \displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} = \displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}} = \displaystyle\frac{7}{5}</span>.</p>
+<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100}
+\cdot \displaystyle\frac{8}{32} \cdot
+\displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot
+\displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} =
+\displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}}
+= \displaystyle\frac{7}{5}</span>.</p>
 </div>
 </div>
 </div>
@@ -1490,7 +2214,11 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
-<h4 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋 Feedback: Find an error? Still confused? Have a suggestion? <a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know here</u></a>.</h4>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
 <hr />
 </body>
 </html>

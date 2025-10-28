@@ -8,37 +8,49 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
   <link rel="stylesheet" href="../assets/theme.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
-   var mathElements = document.getElementsByClassName("math");
-   var macros = [];
-   for (var i = 0; i < mathElements.length; i++) {
-    var texText = mathElements[i].firstChild;
-    if (mathElements[i].tagName == "SPAN") {
-     katex.render(texText.data, mathElements[i], {
-      displayMode: mathElements[i].classList.contains('display'),
-      throwOnError: false,
-      macros: macros,
-      fleqn: false
-     });
-  }}});
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
   </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Spring 2024 Final Exam</h1>
 </header>
-<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> <!-- add after bootstrap.min.css --> <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/> <!-- add after bootstrap.min.js or bootstrap.bundle.min.js --> <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
 <!-- for difficulty gauges-->
 <script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -53,16 +65,23 @@
 <p><a href="../index.html">← return to practice.dsc40a.com</a></p>
 <hr />
 <p><strong>Instructor(s):</strong> Suraj Rampure</p>
-<p>This exam was administered in person. Students had <strong>180 minutes</strong> to take this exam.</p>
+<p>This exam was administered in person. Students had <strong>180
+minutes</strong> to take this exam.</p>
 <hr />
 <h2 id="problem-1">Problem 1</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 1</i></p>
-<p>Consider a dataset of <span class="math inline">n</span> <strong>integers</strong>, <span class="math inline">y_1, y_2, ..., y_n</span>, whose histogram is given below:</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 1</i></p>
+<p>Consider a dataset of <span class="math inline">n</span>
+<strong>integers</strong>, <span class="math inline">y_1, y_2, ...,
+y_n</span>, whose histogram is given below:</p>
 <center><img src='../assets/images/sp24-final/hist-dist.png' width=900></center>
 <p><br></p>
 <h3 id="problem-1.1">Problem 1.1</h3>
-<p>Which of the following is closest to the constant prediction <span class="math inline">h^*</span> that minimizes:</p>
-<p><span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n \begin{cases} 0 &amp; y_i = h \\ 1 &amp; y_i \neq h \end{cases}</span></p>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes:</p>
+<p><span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n
+\begin{cases} 0 &amp; y_i = h \\ 1 &amp; y_i \neq h
+\end{cases}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
@@ -79,20 +98,25 @@
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_1" class="accordion-collapse collapse collapse" aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">30.</span></p>
-<p>The minimizer of empirical risk for the constant model when using zero-one loss is the mode.</p>
+<p>The minimizer of empirical risk for the constant model when using
+zero-one loss is the mode.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.2">Problem 1.2</h3>
-<p>Which of the following is closest to the constant prediction <span class="math inline">h^*</span> that minimizes: <span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n |y_i - h|</span></p>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes: <span
+class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n |y_i -
+h|</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
@@ -109,20 +133,27 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_2" class="accordion-collapse collapse collapse" aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">7.</span></p>
-<p>The minimizer of empirical risk for the constant model when using absolute loss is the median. If the bar at 30 wasn’t there, the median would be 6, but the existence of that bar drags the “halfway” point up slightly, to 7.</p>
+<p>The minimizer of empirical risk for the constant model when using
+absolute loss is the median. If the bar at 30 wasn’t there, the median
+would be 6, but the existence of that bar drags the “halfway” point up
+slightly, to 7.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.3">Problem 1.3</h3>
-<p>Which of the following is closest to the constant prediction <span class="math inline">h^*</span> that minimizes: <span class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n (y_i - h)^2</span></p>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes: <span
+class="math display">\displaystyle \frac{1}{n} \sum_{i = 1}^n (y_i -
+h)^2</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
@@ -139,20 +170,30 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_3" class="accordion-collapse collapse collapse" aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">11.</span></p>
-<p>The minimizer of empirical risk for the constant model when using squared loss is the mean. The mean is heavily influenced by the presence of outliers, of which there are many at 30, dragging the mean up to 11. While you can’t calculate the mean here, given the large right tail, this question can be answered by understanding that the mean must be larger than the median, which is 7, and 11 is the next biggest option.</p>
+<p>The minimizer of empirical risk for the constant model when using
+squared loss is the mean. The mean is heavily influenced by the presence
+of outliers, of which there are many at 30, dragging the mean up to 11.
+While you can’t calculate the mean here, given the large right tail,
+this question can be answered by understanding that the mean must be
+larger than the median, which is 7, and 11 is the next biggest
+option.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-1.4">Problem 1.4</h3>
-<p>Which of the following is closest to the constant prediction <span class="math inline">h^*</span> that minimizes: <span class="math display">\displaystyle \lim_{p \rightarrow \infty} \frac{1}{n} \sum_{i = 1}^n |y_i - h|^p</span></p>
+<p>Which of the following is closest to the constant prediction <span
+class="math inline">h^*</span> that minimizes: <span
+class="math display">\displaystyle \lim_{p \rightarrow \infty}
+\frac{1}{n} \sum_{i = 1}^n |y_i - h|^p</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">1</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">5</span></p></li>
@@ -169,13 +210,15 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse1_4" class="accordion-collapse collapse collapse" aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">15.</span></p>
-<p>The minimizer of empirical risk for the constant model when using infinity loss is the midrange, i.e. halfway between the min and max.</p>
+<p>The minimizer of empirical risk for the constant model when using
+infinity loss is the midrange, i.e. halfway between the min and max.</p>
 </div>
 </div>
 </div>
@@ -183,14 +226,31 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-2">Problem 2</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 2</i></p>
-<p>Consider a dataset of 3 values, <span class="math inline">y_1 &lt; y_2 &lt; y_3</span>, with a mean of 2. Let <span class="math inline">Y_\text{abs}(h) = \frac{1}{3} \sum_{i = 1}^3 |y_i - h|</span> represent the mean absolute error of a constant prediction <span class="math inline">h</span> on this dataset of 3 values.</p>
-<p>Similarly, consider another dataset of 5 values, <span class="math inline">z_1 &lt; z_2 &lt; z_3 &lt; z_4 &lt; z_5</span>, with a mean of 12. Let <span class="math inline">Z_\text{abs}(h) = \frac{1}{5} \sum_{i = 1}^5 |z_i - h|</span> represent the mean absolute error of a constant prediction <span class="math inline">h</span> on this dataset of 5 values.</p>
-<p>Suppose that <span class="math inline">y_3 &lt; z_1</span>, and that <span class="math inline">T_\text{abs}(h)</span> represents the mean absolute error of a constant prediction <span class="math inline">h</span> on the combined dataset of 8 values, <span class="math inline">y_1, ..., y_3, z_1, ..., z_5</span>.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 2</i></p>
+<p>Consider a dataset of 3 values, <span class="math inline">y_1 &lt;
+y_2 &lt; y_3</span>, with a mean of 2. Let <span
+class="math inline">Y_\text{abs}(h) = \frac{1}{3} \sum_{i = 1}^3 |y_i -
+h|</span> represent the mean absolute error of a constant prediction
+<span class="math inline">h</span> on this dataset of 3 values.</p>
+<p>Similarly, consider another dataset of 5 values, <span
+class="math inline">z_1 &lt; z_2 &lt; z_3 &lt; z_4 &lt; z_5</span>, with
+a mean of 12. Let <span class="math inline">Z_\text{abs}(h) =
+\frac{1}{5} \sum_{i = 1}^5 |z_i - h|</span> represent the mean absolute
+error of a constant prediction <span class="math inline">h</span> on
+this dataset of 5 values.</p>
+<p>Suppose that <span class="math inline">y_3 &lt; z_1</span>, and that
+<span class="math inline">T_\text{abs}(h)</span> represents the mean
+absolute error of a constant prediction <span
+class="math inline">h</span> on the combined dataset of 8 values, <span
+class="math inline">y_1, ..., y_3, z_1, ..., z_5</span>.</p>
 <p><br></p>
 <h3 id="problem-2.1">Problem 2.1</h3>
 <p>Fill in the blanks:</p>
-<p><strong>“{ i } minimizes <span class="math inline">Y_\text{abs}(h)</span>, { ii } minimizes <span class="math inline">Z_\text{abs}(h)</span>, and { iii } minimizes <span class="math inline">T_\text{abs}(h)</span>.”</strong></p>
+<p><strong>“{ i } minimizes <span
+class="math inline">Y_\text{abs}(h)</span>, { ii } minimizes <span
+class="math inline">Z_\text{abs}(h)</span>, and { iii } minimizes <span
+class="math inline">T_\text{abs}(h)</span>.”</strong></p>
 <ol type="1">
 <li>What goes in blank { i }?</li>
 </ol>
@@ -228,15 +288,26 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_1" class="accordion-collapse collapse collapse" aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>The values of the three blanks are: <span class="math inline">y_2</span>, <span class="math inline">z_3</span>, and any value between <span class="math inline">z_1</span> and <span class="math inline">z_2</span> (inclusive).</p>
-<p>For the first blank, we know the median of the y-dataset minimizes mean absolute error of a constant prediction on the y-dataset. Since <span class="math inline">y_1 &lt; y_2 &lt; y_3</span>, <span class="math inline">y_2</span> is the unique minimizer.</p>
-<p>For the second blank, we can also use the fact that the median of the z-dataset minimizes mean absolute error of a constant prediction on the z-dataset. Since <span class="math inline">z_1 &lt; z_2 &lt; z_3 &lt; z_4 &lt; z_5</span>, <span class="math inline">z_3</span> is the unique minimizer.</p>
-<p>For the third blank, we know that when there are an odd number of data points in a dataset, any values between the middle two (inclusive) minimize mean absolute error. Here, the middle two in the full dataset of 8 are <span class="math inline">z_1</span> and <span class="math inline">z_2</span>.</p>
+<p>The values of the three blanks are: <span class="math inline">y_2</span>, <span class="math inline">z_3</span>,
+and any value between <span class="math inline">z_1</span> and <span class="math inline">z_2</span> (inclusive).</p>
+<p>For the first blank, we know the median of the y-dataset minimizes
+mean absolute error of a constant prediction on the y-dataset. Since
+<span class="math inline">y_1 &lt; y_2 &lt; y_3</span>, <span class="math inline">y_2</span> is the unique minimizer.</p>
+<p>For the second blank, we can also use the fact that the median of the
+z-dataset minimizes mean absolute error of a constant prediction on the
+z-dataset. Since <span class="math inline">z_1 &lt; z_2 &lt; z_3 &lt;
+z_4 &lt; z_5</span>, <span class="math inline">z_3</span> is the unique
+minimizer.</p>
+<p>For the third blank, we know that when there are an odd number of
+data points in a dataset, any values between the middle two (inclusive)
+minimize mean absolute error. Here, the middle two in the full dataset
+of 8 are <span class="math inline">z_1</span> and <span class="math inline">z_2</span>.</p>
 </div>
 </div>
 </div>
@@ -244,8 +315,13 @@ Click to view the solution.
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
 <p>For any <span class="math inline">h</span>, it is true that:</p>
-<p><span class="math display">T_\text{abs}(h) = \alpha Y_\text{abs}(h) + \beta Z_\text{abs}(h)</span></p>
-<p>for some constants <span class="math inline">\alpha</span> and <span class="math inline">\beta</span>. What are the values of <span class="math inline">\alpha</span> and <span class="math inline">\beta</span>? Give your answers as integers or simplified fractions with no variables.</p>
+<p><span class="math display">T_\text{abs}(h) = \alpha Y_\text{abs}(h) +
+\beta Z_\text{abs}(h)</span></p>
+<p>for some constants <span class="math inline">\alpha</span> and <span
+class="math inline">\beta</span>. What are the values of <span
+class="math inline">\alpha</span> and <span
+class="math inline">\beta</span>? Give your answers as integers or
+simplified fractions with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_2">
@@ -253,18 +329,28 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_2" class="accordion-collapse collapse collapse" aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\alpha = \frac{3}{8}</span>, <span class="math inline">\beta = \frac{5}{8}</span>.</p>
-<p>To find <span class="math inline">\alpha</span> and <span class="math inline">\beta</span>, we need to construct a similar-looking equation to the one above. We can start by looking at our equation for <span class="math inline">T_\text{abs}(h)</span>:</p>
-<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \sum_{i = 1}^8 |t_i - h|</span></p>
-<p>Now, we can split the sum on the right hand side into two sums, one for our <span class="math inline">y</span> data points and one for our <span class="math inline">z</span> data points:</p>
-<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \left(\sum_{i = 1}^3 |y_i - h| + \sum_{i = 1}^5 |z_i - h|\right)</span></p>
+<p>To find <span class="math inline">\alpha</span> and <span class="math inline">\beta</span>, we need to construct a similar-looking
+equation to the one above. We can start by looking at our equation for
+<span class="math inline">T_\text{abs}(h)</span>:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \sum_{i =
+1}^8 |t_i - h|</span></p>
+<p>Now, we can split the sum on the right hand side into two sums, one
+for our <span class="math inline">y</span> data points and one for our
+<span class="math inline">z</span> data points:</p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8}
+\left(\sum_{i = 1}^3 |y_i - h| + \sum_{i = 1}^5 |z_i -
+h|\right)</span></p>
 <p>Each of these two mini sums can be represented in terms of <span class="math inline">Y_\text{abs}(h)</span> and <span class="math inline">Z_\text{abs}(h)</span>:</p>
-<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \left(3 \cdot Y_\text{abs}(h) + 5 \cdot Z_\text{abs}(h)\right)</span> <span class="math display">T_\text{abs}(h) = \frac38 \cdot Y_\text{abs}(h) + \frac58 \cdot Z_\text{abs}(h)</span></p>
+<p><span class="math display">T_\text{abs}(h) = \frac{1}{8} \left(3
+\cdot Y_\text{abs}(h) + 5 \cdot Z_\text{abs}(h)\right)</span> <span class="math display">T_\text{abs}(h) = \frac38 \cdot Y_\text{abs}(h) +
+\frac58 \cdot Z_\text{abs}(h)</span></p>
 <p>By looking at this final equation we’ve built, it is clear that <span class="math inline">\alpha = \frac{3}{8}</span> and <span class="math inline">\beta = \frac{5}{8}</span>.</p>
 </div>
 </div>
@@ -272,8 +358,10 @@ Click to view the solution.
 </div>
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
-<p>Show that <span class="math inline">Y_\text{abs}(z_1) = z_1 - 2</span>.</p>
-<p><em>Hint: Use the fact that you know the mean of <span class="math inline">y_1, y_2, y_3</span>.</em></p>
+<p>Show that <span class="math inline">Y_\text{abs}(z_1) = z_1 -
+2</span>.</p>
+<p><em>Hint: Use the fact that you know the mean of <span
+class="math inline">y_1, y_2, y_3</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading2_3">
@@ -281,25 +369,36 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_3" class="accordion-collapse collapse collapse" aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>We can start by plugging <span class="math inline">z_1</span> into <span class="math inline">Y_\text{abs}(h)</span>:</p>
-<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left( | z - y_1 | + | z - y_2 | + |z - y_3| \right)</span></p>
-<p>Since <span class="math display">z_1 &gt; y_3 &gt; y_2 &gt; y_1</span>, all of the absolute values can be dropped and we can write:</p>
-<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left( (z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)</span></p>
+<p>We can start by plugging <span class="math inline">z_1</span> into
+<span class="math inline">Y_\text{abs}(h)</span>:</p>
+<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left( | z
+- y_1 | + | z - y_2 | + |z - y_3| \right)</span></p>
+<p>Since <span class="math display">z_1 &gt; y_3 &gt; y_2 &gt;
+y_1</span>, all of the absolute values can be dropped and we can
+write:</p>
+<p><span class="math display">Y_\text{abs}(z_1) = \frac{1}{3} \left(
+(z_1 - y_1) + (z_1 - y_2) + (z_3 - y_3) \right)</span></p>
 <p>This can be simplified to:</p>
-<p><span class="math display">Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1 - (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot \bar{y}\right) = z_1 - \bar{y} = z_1 - 2</span>.</p>
+<p><span class="math display">Y_\text{abs}(h) = \frac{1}{3} \left( 3z_1
+- (y_1 + y_2 + y_3) \right) = \frac{1}{3} \left( 3z_1 - 3 \cdot
+\bar{y}\right) = z_1 - \bar{y} = z_1 - 2</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-2.4">Problem 2.4</h3>
-<p>Suppose the mean absolute deviation from the median in the full dataset of 8 values is 6. What is the value of <span class="math inline">z_1</span>?</p>
-<p><em>Hint: You’ll need to use the results from earlier parts of this question.</em></p>
+<p>Suppose the mean absolute deviation from the median in the full
+dataset of 8 values is 6. What is the value of <span
+class="math inline">z_1</span>?</p>
+<p><em>Hint: You’ll need to use the results from earlier parts of this
+question.</em></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">3</span></p></li>
@@ -316,18 +415,40 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse2_4" class="accordion-collapse collapse collapse" aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
+<div id="collapse2_4" class="accordion-collapse collapse"
+aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">3</span>.</p>
-<p>We are given that <span class="math inline">T_\text{abs}(\text{median}) = 6</span>. This means that any value (inclusive) between <span class="math inline">z_1</span> and <span class="math inline">z_2</span> minimize <span class="math inline">T_\text{abs}(h)</span>, with the output being always being 6. So, <span class="math inline">T_\text{abs}(z_1) = 6</span>. Let’s see what happens when we plug this into <span class="math inline">T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) + \frac{5}{8} Z_\text{abs}(h)</span> from earlier:</p>
-<p><span class="math display">T_\text{abs}(z_1) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)</span></p>
-<p>If we could write <span class="math inline">Y_\text{abs}(z_1)</span> and <span class="math inline">Z_\text{abs}(z_1)</span> in terms of <span class="math inline">z_1</span>, we could solve for <span class="math inline">z_1</span> and our work would be done, so let’s do that. <span class="math inline">Y_\text{abs}(z_1) = z_1 - 2</span> from earlier. <span class="math inline">Z_\text{abs}(z_1)</span> simplifies as follows (knowing that <span class="math inline">\bar{z} = 12</span>):</p>
-<p><span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \sum_{i = 1}^5 |z_i - z_1|</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left(|z_1 - z_1| + |z_2 - z_1| + |z_3 - z_1| + |z_4 - z_1| + |z_5 - z_1|\right)</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left(0 + (z_2 + z_3 + z_4 + z_5) - 4z_1\right)</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_2 + z_3 + z_4 + z_5) - 4z_1 + (z_1 - z_1)\right)</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_1 + z_2 + z_3 + z_4 + z_5) - 5z_1\right)</span> <span class="math display">Z_\text{abs}(z_1) = \bar{z} - z_1</span> <span class="math display">Z_\text{abs}(z_1) = (12) - z_1</span></p>
+<p>We are given that <span class="math inline">T_\text{abs}(\text{median}) = 6</span>. This means
+that any value (inclusive) between <span class="math inline">z_1</span>
+and <span class="math inline">z_2</span> minimize <span class="math inline">T_\text{abs}(h)</span>, with the output being always
+being 6. So, <span class="math inline">T_\text{abs}(z_1) = 6</span>.
+Let’s see what happens when we plug this into <span class="math inline">T_\text{abs}(h) = \frac{3}{8} Y_\text{abs}(h) +
+\frac{5}{8} Z_\text{abs}(h)</span> from earlier:</p>
+<p><span class="math display">T_\text{abs}(z_1) = \frac{3}{8}
+Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8}
+Z_\text{abs}(z_1)</span></p>
+<p>If we could write <span class="math inline">Y_\text{abs}(z_1)</span>
+and <span class="math inline">Z_\text{abs}(z_1)</span> in terms of <span class="math inline">z_1</span>, we could solve for <span class="math inline">z_1</span> and our work would be done, so let’s do
+that. <span class="math inline">Y_\text{abs}(z_1) = z_1 - 2</span> from
+earlier. <span class="math inline">Z_\text{abs}(z_1)</span> simplifies
+as follows (knowing that <span class="math inline">\bar{z} =
+12</span>):</p>
+<p><span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \sum_{i =
+1}^5 |z_i - z_1|</span> <span class="math display">Z_\text{abs}(z_1) =
+\frac{1}{5} \left(|z_1 - z_1| + |z_2 - z_1| + |z_3 - z_1| + |z_4 - z_1|
++ |z_5 - z_1|\right)</span> <span class="math display">Z_\text{abs}(z_1)
+= \frac{1}{5} \left(0 + (z_2 + z_3 + z_4 + z_5) - 4z_1\right)</span>
+<span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_2 +
+z_3 + z_4 + z_5) - 4z_1 + (z_1 - z_1)\right)</span> <span class="math display">Z_\text{abs}(z_1) = \frac{1}{5} \left((z_1 + z_2 +
+z_3 + z_4 + z_5) - 5z_1\right)</span> <span class="math display">Z_\text{abs}(z_1) = \bar{z} - z_1</span> <span class="math display">Z_\text{abs}(z_1) = (12) - z_1</span></p>
 <p>Subbing back into our main equation:</p>
-<p><span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) + \frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">6 = \frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1)</span> <span class="math display">z_1 = 3</span></p>
+<p><span class="math display">(6) = \frac{3}{8} Y_\text{abs}(z_1) +
+\frac{5}{8} Z_\text{abs}(z_1)</span> <span class="math display">6 =
+\frac{3}{8}(z_1 - 2) + \frac{5}{8}(12 - z_1)</span> <span class="math display">z_1 = 3</span></p>
 </div>
 </div>
 </div>
@@ -335,15 +456,35 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 3</i></p>
-<p>Suppose we’re given a dataset of <span class="math inline">n</span> points, <span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)</span>, where <span class="math inline">\bar{x}</span> is the mean of <span class="math inline">x_1, x_2, ..., x_n</span> and <span class="math inline">\bar{y}</span> is the mean of <span class="math inline">y_1, y_2, ..., y_n</span>.</p>
-<p>Using this dataset, we create a <em>transformed</em> dataset of <span class="math inline">n</span> points, <span class="math inline">(x_1&#39;, y_1&#39;), (x_2&#39;, y_2&#39;), ..., (x_n&#39;, y_n&#39;)</span>, where:</p>
-<p><span class="math display">x_i&#39; = 4x_i - 3 \qquad y_i&#39; = y_i + 24</span></p>
-<p>That is, the transformed dataset is of the form <span class="math inline">(4x_1 - 3, y_1 + 24), ..., (4x_n - 3, y_n + 24)</span>.</p>
-<p>We decide to fit a simple linear hypothesis function <span class="math inline">H(x&#39;) = w_0 + w_1x&#39;</span> on the transformed dataset using squared loss. We find that <span class="math inline">w_0^* = 7</span> and <span class="math inline">w_1^* = 2</span>, so <span class="math inline">H^*(x&#39;) = 7 + 2x&#39;</span>.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 3</i></p>
+<p>Suppose we’re given a dataset of <span class="math inline">n</span>
+points, <span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_n,
+y_n)</span>, where <span class="math inline">\bar{x}</span> is the mean
+of <span class="math inline">x_1, x_2, ..., x_n</span> and <span
+class="math inline">\bar{y}</span> is the mean of <span
+class="math inline">y_1, y_2, ..., y_n</span>.</p>
+<p>Using this dataset, we create a <em>transformed</em> dataset of <span
+class="math inline">n</span> points, <span
+class="math inline">(x_1&#39;, y_1&#39;), (x_2&#39;, y_2&#39;), ...,
+(x_n&#39;, y_n&#39;)</span>, where:</p>
+<p><span class="math display">x_i&#39; = 4x_i - 3 \qquad y_i&#39; = y_i
++ 24</span></p>
+<p>That is, the transformed dataset is of the form <span
+class="math inline">(4x_1 - 3, y_1 + 24), ..., (4x_n - 3, y_n +
+24)</span>.</p>
+<p>We decide to fit a simple linear hypothesis function <span
+class="math inline">H(x&#39;) = w_0 + w_1x&#39;</span> on the
+transformed dataset using squared loss. We find that <span
+class="math inline">w_0^* = 7</span> and <span class="math inline">w_1^*
+= 2</span>, so <span class="math inline">H^*(x&#39;) = 7 +
+2x&#39;</span>.</p>
 <p><br></p>
 <h3 id="problem-3.1">Problem 3.1</h3>
-<p>Suppose we were to fit a simple linear hypothesis function through the original dataset, <span class="math inline">(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)</span>, again using squared loss. What would the optimal slope be?</p>
+<p>Suppose we were to fit a simple linear hypothesis function through
+the original dataset, <span class="math inline">(x_1, y_1), (x_2, y_2),
+..., (x_n, y_n)</span>, again using squared loss. What would the optimal
+slope be?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">2</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">4</span></p></li>
@@ -360,22 +501,35 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_1" class="accordion-collapse collapse collapse" aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">8.</span></p>
-<p>Relative to the dataset with <span class="math inline">x'</span>, the dataset with <span class="math inline">x</span> has an <span class="math inline">x</span>-variable that’s “compressed” by a factor of 4, so the slope increases by a factor of 4 to <span class="math inline">2 \cdot 4 = 8</span>.</p>
-<p>Concretely, this can be shown by looking at the formula <span class="math inline">2 = r\frac{SD(y')}{SD(x')}</span>, recognizing that <span class="math inline">SD(y') = SD(y)</span> since the <span class="math inline">y</span> values have the same spread in both datasets, and that <span class="math inline">SD(x') = 4 SD(x)</span>.</p>
+<p>Relative to the dataset with <span class="math inline">x'</span>,
+the dataset with <span class="math inline">x</span> has an <span class="math inline">x</span>-variable that’s “compressed” by a factor of
+4, so the slope increases by a factor of 4 to <span class="math inline">2 \cdot 4 = 8</span>.</p>
+<p>Concretely, this can be shown by looking at the formula <span class="math inline">2 = r\frac{SD(y')}{SD(x')}</span>,
+recognizing that <span class="math inline">SD(y') = SD(y)</span>
+since the <span class="math inline">y</span> values have the same spread
+in both datasets, and that <span class="math inline">SD(x') = 4
+SD(x)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
-<p>Recall, the hypothesis function <span class="math inline">H^*</span> was fit on the transformed dataset,</p>
-<p><span class="math inline">(x_1&#39;, y_1&#39;), (x_2&#39;, y_2&#39;), ..., (x_n&#39;, y_n&#39;)</span>. <span class="math inline">H^*</span> happens to pass through the point <span class="math inline">(\bar{x}, \bar{y})</span>. What is the value of <span class="math inline">\bar{x}</span>? Give your answer as an integer with no variables.</p>
+<p>Recall, the hypothesis function <span class="math inline">H^*</span>
+was fit on the transformed dataset,</p>
+<p><span class="math inline">(x_1&#39;, y_1&#39;), (x_2&#39;, y_2&#39;),
+..., (x_n&#39;, y_n&#39;)</span>. <span class="math inline">H^*</span>
+happens to pass through the point <span class="math inline">(\bar{x},
+\bar{y})</span>. What is the value of <span
+class="math inline">\bar{x}</span>? Give your answer as an integer with
+no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading3_2">
@@ -383,17 +537,28 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse3_2" class="accordion-collapse collapse collapse" aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">5</span>.</p>
-<p>The key idea is that the regression line always passes through <span class="math inline">(\text{mean } x, \text{mean } y)</span> in the dataset we used to fit it. So, we know that: <span class="math inline">2 \bar{x'} + 7 = \bar{y'}</span>. This first equation can be rewritten as: <span class="math inline">2 \cdot (4\bar{x} - 3) + 7 = \bar{y} + 24</span>.</p>
-<p>We’re also told this line passes through <span class="math inline">(\bar{x}, \bar{y})</span>, which means that it’s also true that: <span class="math inline">2 \bar{x} + 7 = \bar{y}</span>.</p>
+<p>The key idea is that the regression line always passes through <span class="math inline">(\text{mean } x, \text{mean } y)</span> in the
+dataset we used to fit it. So, we know that: <span class="math inline">2
+\bar{x'} + 7 = \bar{y'}</span>. This first equation can be
+rewritten as: <span class="math inline">2 \cdot (4\bar{x} - 3) + 7 =
+\bar{y} + 24</span>.</p>
+<p>We’re also told this line passes through <span class="math inline">(\bar{x}, \bar{y})</span>, which means that it’s
+also true that: <span class="math inline">2 \bar{x} + 7 =
+\bar{y}</span>.</p>
 <p>Now we have a system of two equations:</p>
-<p><span class="math inline">\begin{cases} 2 \cdot (4\bar{x} - 3) + 7 = \bar{y} + 24 \\ 2 \bar{x} + 7 = \bar{y} \end{cases}</span></p>
-<p><span class="math inline">\dots</span> and solving our system of two equations gives: <span class="math display">\bar{x} = 5</span>.</p>
+<p><span class="math inline">\begin{cases}
+2 \cdot (4\bar{x} - 3) + 7 = \bar{y} + 24 \\
+2 \bar{x} + 7 = \bar{y}
+\end{cases}</span></p>
+<p><span class="math inline">\dots</span> and solving our system of two
+equations gives: <span class="math display">\bar{x} = 5</span>.</p>
 </div>
 </div>
 </div>
@@ -401,14 +566,25 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 4</i></p>
-<p>Consider the vectors <span class="math inline">\vec{u}</span> and <span class="math inline">\vec{v}</span>, defined below.</p>
-<p><span class="math display">\vec{u} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \qquad \vec{v} = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}</span></p>
-<p>We define <span class="math inline">X \in \mathbb{R}^{3 \times 2}</span> to be the matrix whose first column is <span class="math inline">\vec u</span> and whose second column is <span class="math inline">\vec v</span>.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 4</i></p>
+<p>Consider the vectors <span class="math inline">\vec{u}</span> and
+<span class="math inline">\vec{v}</span>, defined below.</p>
+<p><span class="math display">\vec{u} = \begin{bmatrix} 1 \\ 0 \\ 0
+\end{bmatrix} \qquad \vec{v} = \begin{bmatrix} 0 \\ 1 \\ 1
+\end{bmatrix}</span></p>
+<p>We define <span class="math inline">X \in \mathbb{R}^{3 \times
+2}</span> to be the matrix whose first column is <span
+class="math inline">\vec u</span> and whose second column is <span
+class="math inline">\vec v</span>.</p>
 <p><br></p>
 <h3 id="problem-4.1">Problem 4.1</h3>
-<p>In this part only, let <span class="math inline">\vec{y} = \begin{bmatrix} -1 \\ k \\ 252 \end{bmatrix}</span>.</p>
-<p>Find a scalar <span class="math inline">k</span> such that <span class="math inline">\vec{y}</span> is in <span class="math inline">\text{span}(\vec u, \vec v)</span>. Give your answer as a constant with no variables.</p>
+<p>In this part only, let <span class="math inline">\vec{y} =
+\begin{bmatrix} -1 \\ k \\ 252 \end{bmatrix}</span>.</p>
+<p>Find a scalar <span class="math inline">k</span> such that <span
+class="math inline">\vec{y}</span> is in <span
+class="math inline">\text{span}(\vec u, \vec v)</span>. Give your answer
+as a constant with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_1">
@@ -416,21 +592,29 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_1" class="accordion-collapse collapse collapse" aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">252</span>.</p>
-<p>Vectors in <span class="math inline">\text{span}(\vec u, \vec v)</span> must have an equal 2nd and 3rd component, and the third component is 252, so the second must be as well.</p>
+<p>Vectors in <span class="math inline">\text{span}(\vec u, \vec
+v)</span> must have an equal 2nd and 3rd component, and the third
+component is 252, so the second must be as well.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.2">Problem 4.2</h3>
-<p>Show that: <span class="math display">(X^TX)^{-1}X^T = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \end{bmatrix}</span></p>
-<p><em>Hint: If <span class="math inline">A = \begin{bmatrix} a_1 &amp; 0 \\ 0 &amp; a_2 \end{bmatrix}</span>, then <span class="math inline">A^{-1} = \begin{bmatrix} \frac{1}{a_1} &amp; 0 \\ 0 &amp; \frac{1}{a_2} \end{bmatrix}</span>.</em></p>
+<p>Show that: <span class="math display">(X^TX)^{-1}X^T =
+\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp;
+\frac{1}{2} \end{bmatrix}</span></p>
+<p><em>Hint: If <span class="math inline">A = \begin{bmatrix} a_1 &amp;
+0 \\ 0 &amp; a_2 \end{bmatrix}</span>, then <span
+class="math inline">A^{-1} = \begin{bmatrix} \frac{1}{a_1} &amp; 0 \\ 0
+&amp; \frac{1}{a_2} \end{bmatrix}</span>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_2">
@@ -438,18 +622,25 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_2" class="accordion-collapse collapse collapse" aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>We can construct the following series of matrices to get <span class="math inline">(X^TX)^{-1}X^T</span>.</p>
 <ul>
-<li><span class="math inline">X = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ 0 &amp; 1 \end{bmatrix}</span></li>
-<li><span class="math inline">X^T = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \end{bmatrix}</span></li>
-<li><span class="math inline">X^TX = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 2 \end{bmatrix}</span></li>
-<li><span class="math inline">(X^TX)^{-1} = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; \frac{1}{2} \end{bmatrix}</span></li>
-<li><span class="math inline">(X^TX)^{-1}X^T = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \end{bmatrix}</span></li>
+<li><span class="math inline">X = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1
+\\ 0 &amp; 1 \end{bmatrix}</span></li>
+<li><span class="math inline">X^T = \begin{bmatrix} 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 1 \end{bmatrix}</span></li>
+<li><span class="math inline">X^TX = \begin{bmatrix} 1 &amp; 0 \\ 0
+&amp; 2 \end{bmatrix}</span></li>
+<li><span class="math inline">(X^TX)^{-1} = \begin{bmatrix} 1 &amp; 0 \\
+0 &amp; \frac{1}{2} \end{bmatrix}</span></li>
+<li><span class="math inline">(X^TX)^{-1}X^T = \begin{bmatrix} 1 &amp; 0
+&amp; 0 \\ 0 &amp; \frac{1}{2} &amp; \frac{1}{2}
+\end{bmatrix}</span></li>
 </ul>
 </div>
 </div>
@@ -457,8 +648,14 @@ Click to view the solution.
 </div>
 <p><br></p>
 <h3 id="problem-4.3">Problem 4.3</h3>
-<p>In parts (c) and (d) only, let <span class="math inline">\vec{y} = \begin{bmatrix} 4 \\ 2 \\ 8 \end{bmatrix}</span>.</p>
-<p>Find scalars <span class="math inline">a</span> and <span class="math inline">b</span> such that <span class="math inline">a \vec u + b \vec v</span> is the vector in <span class="math inline">\text{span}(\vec u, \vec v)</span> that is as close to <span class="math inline">\vec{y}</span> as possible. Give your answers as constants with no variables.</p>
+<p>In parts (c) and (d) only, let <span class="math inline">\vec{y} =
+\begin{bmatrix} 4 \\ 2 \\ 8 \end{bmatrix}</span>.</p>
+<p>Find scalars <span class="math inline">a</span> and <span
+class="math inline">b</span> such that <span class="math inline">a \vec
+u + b \vec v</span> is the vector in <span
+class="math inline">\text{span}(\vec u, \vec v)</span> that is as close
+to <span class="math inline">\vec{y}</span> as possible. Give your
+answers as constants with no variables.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading4_3">
@@ -466,21 +663,34 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_3" class="accordion-collapse collapse collapse" aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">a = 4</span>, <span class="math inline">b = 5</span>.</p>
-<p>The result from the part (b) implies that when using the normal equations to find coefficients for <span class="math inline">\vec u</span> and <span class="math inline">\vec v</span> – which we know from lecture produce an error vector whose length is minimized – the coefficient on <span class="math inline">\vec u</span> must be <span class="math inline">y_1</span> and the coefficient on <span class="math inline">\vec v</span> must be <span class="math inline">\frac{y_2 + y_3}{2}</span>. This can be shown by taking the result from part (b), <span class="math inline">\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; \frac{1}{2} &amp; \frac{1}{2} \end{bmatrix}</span>, and multiplying it by the vector <span class="math inline">\vec y = \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}</span>.</p>
-<p>Here, <span class="math inline">y_1 = 4</span>, so <span class="math inline">a = 4</span>. We also know <span class="math inline">y_2 = 2</span> and <span class="math inline">y_3 = 8</span>, so <span class="math inline">b = \frac{2+8}{2} = 5</span>.</p>
+<p><span class="math inline">a = 4</span>, <span class="math inline">b =
+5</span>.</p>
+<p>The result from the part (b) implies that when using the normal
+equations to find coefficients for <span class="math inline">\vec
+u</span> and <span class="math inline">\vec v</span> – which we know
+from lecture produce an error vector whose length is minimized – the
+coefficient on <span class="math inline">\vec u</span> must be <span class="math inline">y_1</span> and the coefficient on <span class="math inline">\vec v</span> must be <span class="math inline">\frac{y_2 + y_3}{2}</span>. This can be shown by
+taking the result from part (b), <span class="math inline">\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp;
+\frac{1}{2} &amp; \frac{1}{2} \end{bmatrix}</span>, and multiplying it
+by the vector <span class="math inline">\vec y = \begin{bmatrix} y_1 \\
+y_2 \\ y_3 \end{bmatrix}</span>.</p>
+<p>Here, <span class="math inline">y_1 = 4</span>, so <span class="math inline">a = 4</span>. We also know <span class="math inline">y_2 = 2</span> and <span class="math inline">y_3 =
+8</span>, so <span class="math inline">b = \frac{2+8}{2} = 5</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.4">Problem 4.4</h3>
-<p>Let <span class="math inline">\vec{e} = \vec{y} - (a \vec u + b \vec v)</span>, where <span class="math inline">a</span> and <span class="math inline">b</span> are the values you found in part (c).</p>
+<p>Let <span class="math inline">\vec{e} = \vec{y} - (a \vec u + b \vec
+v)</span>, where <span class="math inline">a</span> and <span
+class="math inline">b</span> are the values you found in part (c).</p>
 <p>What is <span class="math inline">\lVert \vec{e} \rVert</span>?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">0</span></p></li>
@@ -497,26 +707,36 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_4" class="accordion-collapse collapse collapse" aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">3 \sqrt{2}</span>.</p>
-<p>The correct value of <span class="math inline">a \vec u + b \vec v = \begin{bmatrix} 4 \\ 5 \\ 5\end{bmatrix}</span>. Then, <span class="math inline">\vec{e} = \begin{bmatrix} 4 \\ 2 \\ 8 \end{bmatrix} - \begin{bmatrix} 4 \\ 5 \\ 5 \end{bmatrix} = \begin{bmatrix} 0 \\ -3 \\ 3 \end{bmatrix}</span>, which has a length of <span class="math inline">\sqrt{0^2 + (-3)^2 + 3^2} = 3\sqrt{2}</span>.</p>
+<p>The correct value of <span class="math inline">a \vec u + b \vec v =
+\begin{bmatrix} 4 \\ 5 \\ 5\end{bmatrix}</span>. Then, <span class="math inline">\vec{e} = \begin{bmatrix} 4 \\ 2 \\ 8 \end{bmatrix}
+- \begin{bmatrix} 4 \\ 5 \\ 5 \end{bmatrix} = \begin{bmatrix} 0 \\ -3 \\
+3 \end{bmatrix}</span>, which has a length of <span class="math inline">\sqrt{0^2 + (-3)^2 + 3^2} = 3\sqrt{2}</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.5">Problem 4.5</h3>
-<p>Is it true that, for any vector <span class="math inline">\vec{y} \in \mathbb{R}^3</span>, we can find scalars <span class="math inline">c</span> and <span class="math inline">d</span> such that the sum of the entries in the vector <span class="math inline">\vec{y} - (c \vec u + d \vec v)</span> is 0?</p>
+<p>Is it true that, for any vector <span class="math inline">\vec{y} \in
+\mathbb{R}^3</span>, we can find scalars <span
+class="math inline">c</span> and <span class="math inline">d</span> such
+that the sum of the entries in the vector <span
+class="math inline">\vec{y} - (c \vec u + d \vec v)</span> is 0?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> Yes, because <span class="math inline">\vec{u}</span> and <span class="math inline">\vec{v}</span> are linearly independent.</p></li>
 <li><p><input type="radio" disabled="" /> Yes, because <span class="math inline">\vec{u}</span> and <span class="math inline">\vec{v}</span> are orthogonal.</p></li>
 <li><p><input type="radio" disabled="" /> Yes, but for a reason that isn’t listed here.</p></li>
-<li><p><input type="radio" disabled="" /> No, because <span class="math inline">\vec{y}</span> is not necessarily in</p></li>
-<li><p><input type="radio" disabled="" /> No, because neither <span class="math inline">\vec{u}</span> nor <span class="math inline">\vec{v}</span> is equal to the vector</p></li>
+<li><p><input type="radio" disabled="" /> No, because <span class="math inline">\vec{y}</span> is not
+necessarily in</p></li>
+<li><p><input type="radio" disabled="" /> No, because neither <span class="math inline">\vec{u}</span> nor
+<span class="math inline">\vec{v}</span> is equal to the vector</p></li>
 <li><p><input type="radio" disabled="" /> No, but for a reason that isn’t listed here.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -526,20 +746,35 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_5" class="accordion-collapse collapse collapse" aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
+<div id="collapse4_5" class="accordion-collapse collapse"
+aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>Yes, but for a reason that isn’t listed here.</p>
-<p>Here’s the full reason: 1. We can use the normal equations to find <span class="math inline">c</span> and <span class="math inline">d</span>, no matter what <span class="math inline">\vec{y}</span> is. 2. The error vector <span class="math inline">\vec e</span> that results from using the normal equations is such that <span class="math inline">\vec e</span> is orthogonal to the span of the columns of <span class="math inline">X</span>. 3. The columns of <span class="math inline">X</span> are just <span class="math inline">\vec u</span> and <span class="math inline">\vec v</span>. So, <span class="math inline">\vec e</span> is orthogonal to any linear combination of <span class="math inline">\vec u</span> and <span class="math inline">\vec v</span>. 4. One of the many linear combinations of <span class="math inline">\vec u</span> and <span class="math inline">\vec v</span> is <span class="math inline">\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</span>. 5. This means that the vector <span class="math inline">\vec e</span> is orthogonal to <span class="math inline">\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</span>, which means that <span class="math inline">\vec{1}^T \vec{e} = 0 \implies \sum_{i = 1}^3 e_i = 0</span>.</p>
+<p>Here’s the full reason: 1. We can use the normal equations to find
+<span class="math inline">c</span> and <span class="math inline">d</span>, no matter what <span class="math inline">\vec{y}</span> is. 2. The error vector <span class="math inline">\vec e</span> that results from using the normal
+equations is such that <span class="math inline">\vec e</span> is
+orthogonal to the span of the columns of <span class="math inline">X</span>. 3. The columns of <span class="math inline">X</span> are just <span class="math inline">\vec
+u</span> and <span class="math inline">\vec v</span>. So, <span class="math inline">\vec e</span> is orthogonal to any linear
+combination of <span class="math inline">\vec u</span> and <span class="math inline">\vec v</span>. 4. One of the many linear
+combinations of <span class="math inline">\vec u</span> and <span class="math inline">\vec v</span> is <span class="math inline">\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} +
+\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 1 \\ 1
+\end{bmatrix}</span>. 5. This means that the vector <span class="math inline">\vec e</span> is orthogonal to <span class="math inline">\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}</span>,
+which means that <span class="math inline">\vec{1}^T \vec{e} = 0
+\implies \sum_{i = 1}^3 e_i = 0</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-4.6">Problem 4.6</h3>
-<p>Suppose that <span class="math inline">Q \in \mathbb{R}^{100 \times 12}</span>, <span class="math inline">\vec{s} \in \mathbb{R}^{100}</span>, and <span class="math inline">\vec{f} \in \mathbb{R}^{12}</span>. What are the dimensions of the following product?</p>
+<p>Suppose that <span class="math inline">Q \in \mathbb{R}^{100 \times
+12}</span>, <span class="math inline">\vec{s} \in
+\mathbb{R}^{100}</span>, and <span class="math inline">\vec{f} \in
+\mathbb{R}^{12}</span>. What are the dimensions of the following
+product?</p>
 <p><span class="math display">\vec{s}^T Q \vec{f}</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> scalar</p></li>
@@ -557,7 +792,8 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse4_6" class="accordion-collapse collapse collapse" aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
+<div id="collapse4_6" class="accordion-collapse collapse"
+aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
@@ -576,11 +812,19 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-5">Problem 5</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 5</i></p>
-<p>Let <span class="math inline">\vec{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</span>. Consider the function <span class="math inline">g(\vec{x}) = (x_1 - 3)^2 + (x_1^2 - x_2)^2</span>.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 5</i></p>
+<p>Let <span class="math inline">\vec{x} = \begin{bmatrix} x_1 \\ x_2
+\end{bmatrix}</span>. Consider the function <span
+class="math inline">g(\vec{x}) = (x_1 - 3)^2 + (x_1^2 -
+x_2)^2</span>.</p>
 <p><br></p>
 <h3 id="problem-5.1">Problem 5.1</h3>
-<p>Find <span class="math inline">\nabla g(\vec{x})</span>, the gradient of <span class="math inline">g(\vec{x})</span>, and use it to show that <span class="math inline">\nabla g\left( \begin{bmatrix} -1 \\ 1 \end{bmatrix} \right) = \begin{bmatrix} -8 \\ 0 \end{bmatrix}</span>.</p>
+<p>Find <span class="math inline">\nabla g(\vec{x})</span>, the gradient
+of <span class="math inline">g(\vec{x})</span>, and use it to show that
+<span class="math inline">\nabla g\left( \begin{bmatrix} -1 \\ 1
+\end{bmatrix} \right) = \begin{bmatrix} -8 \\ 0
+\end{bmatrix}</span>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_1">
@@ -588,21 +832,38 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_1" class="accordion-collapse collapse collapse" aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">\nabla g(\vec{x}) = \begin{bmatrix} 2x_1 -6 + 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2) \end{bmatrix}</span></p>
-<p>We can find <span class="math inline">\nabla g(\vec{x})</span> by finding the partial derivatives of <span class="math inline">g(\vec{x})</span>:</p>
-<p><span class="math display">\frac{\partial g}{\partial x_1} = 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1)</span> <span class="math display">\frac{\partial g}{\partial x_2} = 2(x_1^2 - x_2)(-1)</span> <span class="math display">\nabla g(\vec{x}) = \begin{bmatrix} 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1) \\ 2(x_1^2 - x_2)(-1) \end{bmatrix}</span> <span class="math display">\nabla g\left(\begin{bmatrix} - 1 \\ 1 \end{bmatrix}\right) = \begin{bmatrix} 2(-1 - 4) + 2((-1)^2 - 1)(2(-1)) \\ 2((-1)^2 - 1) \end{bmatrix} = \begin{bmatrix} -8 \\ 0 \end{bmatrix}</span>.</p>
+<p><span class="math display">\nabla g(\vec{x}) = \begin{bmatrix} 2x_1
+-6 + 4x_1(4x_1^2 - x_2) \\ -2(x_1^2 - x_2) \end{bmatrix}</span></p>
+<p>We can find <span class="math inline">\nabla g(\vec{x})</span> by
+finding the partial derivatives of <span class="math inline">g(\vec{x})</span>:</p>
+<p><span class="math display">\frac{\partial g}{\partial x_1} = 2(x_1 -
+3) + 2(x_1^2 - x_2)(2 x_1)</span> <span class="math display">\frac{\partial g}{\partial x_2} = 2(x_1^2 -
+x_2)(-1)</span> <span class="math display">\nabla g(\vec{x}) =
+\begin{bmatrix} 2(x_1 - 3) + 2(x_1^2 - x_2)(2 x_1) \\ 2(x_1^2 - x_2)(-1)
+\end{bmatrix}</span> <span class="math display">\nabla
+g\left(\begin{bmatrix} - 1 \\ 1 \end{bmatrix}\right) = \begin{bmatrix}
+2(-1 - 4) + 2((-1)^2 - 1)(2(-1)) \\ 2((-1)^2 - 1) \end{bmatrix} =
+\begin{bmatrix} -8 \\ 0 \end{bmatrix}</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
-<p>We’d like to find the vector <span class="math inline">\vec{x}^*</span> that minimizes <span class="math inline">g(\vec{x})</span> using gradient descent. Perform one iteration of gradient descent by hand, using the initial guess <span class="math inline">\vec{x}^{(0)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}</span> and the learning rate <span class="math inline">\alpha = \frac{1}{2}</span>. In other words, what is <span class="math inline">\vec{x}^{(1)}</span>?</p>
+<p>We’d like to find the vector <span
+class="math inline">\vec{x}^*</span> that minimizes <span
+class="math inline">g(\vec{x})</span> using gradient descent. Perform
+one iteration of gradient descent by hand, using the initial guess <span
+class="math inline">\vec{x}^{(0)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix}</span> and the learning rate <span
+class="math inline">\alpha = \frac{1}{2}</span>. In other words, what is
+<span class="math inline">\vec{x}^{(1)}</span>?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading5_2">
@@ -610,27 +871,42 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_2" class="accordion-collapse collapse collapse" aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math display">\vec x^{(1)} = \begin{bmatrix} 3 \\ 1 \end{bmatrix}</span></p>
-<p>Here’s the general form of gradient descent: <span class="math display">\vec x^{(1)} = \vec{x}^{(0)} - \alpha \nabla g(\vec{x}^{(0)})</span></p>
-<p>We can substitute <span class="math inline">\alpha = \frac{1}{2}</span> and <span class="math inline">x^{(0)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix}</span> to get: <span class="math display">\vec x^{(1)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} - \frac{1}{2} \nabla g(\vec x ^{(0)})</span> <span class="math display">\vec x^{(1)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0 \end{bmatrix}</span></p>
-<p><span class="math display">\vec{x}^{(1)} = \begin{bmatrix} -1 \\ 1 \end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0 \end{bmatrix} = \begin{bmatrix} 3 \\ 1 \end{bmatrix}</span></p>
+<p><span class="math display">\vec x^{(1)} = \begin{bmatrix} 3 \\ 1
+\end{bmatrix}</span></p>
+<p>Here’s the general form of gradient descent: <span class="math display">\vec x^{(1)} = \vec{x}^{(0)} - \alpha \nabla
+g(\vec{x}^{(0)})</span></p>
+<p>We can substitute <span class="math inline">\alpha =
+\frac{1}{2}</span> and <span class="math inline">x^{(0)} =
+\begin{bmatrix} -1 \\ 1 \end{bmatrix}</span> to get: <span class="math display">\vec x^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \nabla g(\vec x ^{(0)})</span> <span class="math display">\vec x^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0
+\end{bmatrix}</span></p>
+<p><span class="math display">\vec{x}^{(1)} = \begin{bmatrix} -1 \\ 1
+\end{bmatrix} - \frac{1}{2} \begin{bmatrix} -8 \\ 0 \end{bmatrix} =
+\begin{bmatrix} 3 \\ 1 \end{bmatrix}</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-5.3">Problem 5.3</h3>
-<p>Consider the function <span class="math inline">f(t) = (t - 3)^2 + (t^2 - 1)^2</span>. Select the true statement below.</p>
+<p>Consider the function <span class="math inline">f(t) = (t - 3)^2 +
+(t^2 - 1)^2</span>. Select the true statement below.</p>
 <ul class="task-list">
-<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex and has a global minimum.</p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex, but has a global minimum.</p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex, but doesn’t have a global minimum.</p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex and doesn’t have a global minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex and has a global
+minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex, but has a global
+minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is convex, but doesn’t have a
+global minimum.</p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">f(t)</span> is not convex and doesn’t have
+a global minimum.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -639,15 +915,24 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse5_3" class="accordion-collapse collapse collapse" aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">f(t)</span> is not convex, but has a global minimum.</p>
-<p>It is seen that <span class="math inline">f(t)</span> isn’t convex, which can be verified using the second derivative test: <span class="math display">f'(t) = 2(t - 3) + 2(t^2 - 1) 2t = 2t - 6 + 4t^3 - 4t = 4t^3 - 2t - 6</span> <span class="math display">f''(t) = 12t^2 - 2</span></p>
-<p>Clearly, <span class="math inline">f''(t) &lt; 0</span> for many values of <span class="math inline">t</span> (e.g. <span class="math inline">t = 0</span>), so <span class="math inline">f(t)</span> is not always convex.</p>
-<p>However, <span class="math inline">f(t)</span> does have a global minimum – its output is never less than 0. This is because it can be expressed as the sum of two squares, <span class="math inline">(t - 3)^2</span> and <span class="math inline">(t^2 - 1)^2</span>, respectively, both of which are greater than or equal to 0.</p>
+<p><span class="math inline">f(t)</span> is not convex, but has a global
+minimum.</p>
+<p>It is seen that <span class="math inline">f(t)</span> isn’t convex,
+which can be verified using the second derivative test: <span class="math display">f'(t) = 2(t - 3) + 2(t^2 - 1) 2t = 2t - 6 +
+4t^3 - 4t = 4t^3 - 2t - 6</span> <span class="math display">f''(t) = 12t^2 - 2</span></p>
+<p>Clearly, <span class="math inline">f''(t) &lt; 0</span> for
+many values of <span class="math inline">t</span> (e.g. <span class="math inline">t = 0</span>), so <span class="math inline">f(t)</span> is not always convex.</p>
+<p>However, <span class="math inline">f(t)</span> does have a global
+minimum – its output is never less than 0. This is because it can be
+expressed as the sum of two squares, <span class="math inline">(t -
+3)^2</span> and <span class="math inline">(t^2 - 1)^2</span>,
+respectively, both of which are greater than or equal to 0.</p>
 </div>
 </div>
 </div>
@@ -655,20 +940,28 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 6</i></p>
-<p>Atlanta, Detroit, and Minneapolis are the three largest hub airports for Delta Airlines. You survey a sample of <span class="math inline">n</span> students at UCSD, and find that:</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 6</i></p>
+<p>Atlanta, Detroit, and Minneapolis are the three largest hub airports
+for Delta Airlines. You survey a sample of <span
+class="math inline">n</span> students at UCSD, and find that:</p>
 <ul>
 <li><p>20 students have been to Atlanta.</p></li>
 <li><p>16 students have been to Detroit.</p></li>
 <li><p>10 students have been to Minneapolis.</p></li>
 <li><p>1 student hasn’t been to any of these three cities.</p></li>
-<li><p>Of the 10 students who have been to Minneapolis, none have been to Detroit and 5 have been to Atlanta.</p></li>
+<li><p>Of the 10 students who have been to Minneapolis, none have been
+to Detroit and 5 have been to Atlanta.</p></li>
 </ul>
-<p>Suppose you select one student at random from your sample of <span class="math inline">n</span>.</p>
+<p>Suppose you select one student at random from your sample of <span
+class="math inline">n</span>.</p>
 <p><br></p>
 <h3 id="problem-6.1">Problem 6.1</h3>
-<p>Suppose the event that the selected student has been to Atlanta and the event that the selected student has been to Detroit are independent.</p>
-<p>What is the value of <span class="math inline">n</span>? Your answer should be an <strong>integer</strong>.</p>
+<p>Suppose the event that the selected student has been to Atlanta and
+the event that the selected student has been to Detroit are
+independent.</p>
+<p>What is the value of <span class="math inline">n</span>? Your answer
+should be an <strong>integer</strong>.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_1">
@@ -676,28 +969,45 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_1" class="accordion-collapse collapse collapse" aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">32</span>.</p>
-<p>There are a few ways to approach the problem, all of which involve a similar sequence of calculations – specifically, the principle of inclusion-exclusion for 3 sets.</p>
-<p>The key is remembering that there are two unknowns: the number of people overall, <span class="math inline">n</span>, and the number of people who have been to both Atlanta and Detroit, which we’ll call <span class="math inline">k</span>.</p>
-<p>Many students drew Venn Diagrams, but ultimately they don’t help answer the question directly; one needs to use the independence between Atlanta and Detroit.</p>
+<p>There are a few ways to approach the problem, all of which involve a
+similar sequence of calculations – specifically, the principle of
+inclusion-exclusion for 3 sets.</p>
+<p>The key is remembering that there are two unknowns: the number of
+people overall, <span class="math inline">n</span>, and the number of
+people who have been to both Atlanta and Detroit, which we’ll call <span class="math inline">k</span>.</p>
+<p>Many students drew Venn Diagrams, but ultimately they don’t help
+answer the question directly; one needs to use the independence between
+Atlanta and Detroit.</p>
 <p>One way to proceed is:</p>
-<p><span class="math display">1 = \frac{20}{n} + \frac{16}{n} + \frac{10}{n} + \frac{1}{n} - \frac{5}{n} - \frac{k}{n}</span>,</p>
-<p>where <span class="math inline">\frac{k}{n} = \frac{20}{n} \cdot \frac{16}{n}</span>. <strong>This is the key step!</strong></p>
-<p>Simplifying gives <span class="math inline">1 = \frac{42}{n} - \frac{320}{n^2}</span>, which is equivalent to <span class="math inline">n^2 - 42n + 320 = 0</span>.</p>
-<p>This factors into <span class="math inline">(n - 32)(n - 10) = 0</span>, so <span class="math inline">n = 32</span>.</p>
+<p><span class="math display">1 = \frac{20}{n} + \frac{16}{n} +
+\frac{10}{n} + \frac{1}{n} - \frac{5}{n} - \frac{k}{n}</span>,</p>
+<p>where <span class="math inline">\frac{k}{n} = \frac{20}{n} \cdot
+\frac{16}{n}</span>. <strong>This is the key step!</strong></p>
+<p>Simplifying gives <span class="math inline">1 = \frac{42}{n} -
+\frac{320}{n^2}</span>, which is equivalent to <span class="math inline">n^2 - 42n + 320 = 0</span>.</p>
+<p>This factors into <span class="math inline">(n - 32)(n - 10) =
+0</span>, so <span class="math inline">n = 32</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.2">Problem 6.2</h3>
-<p>Now, suppose the event that the selected student has been to Atlanta and the event that the selected student has been to Detroit are not independent, meaning that <span class="math inline">n</span> is no longer necessarily your answer from part (a).</p>
-<p>The event that the selected student has been to Atlanta and the event that the selected student has been to Minneapolis are conditionally independent given that the selected student <strong>has not</strong> been to Detroit.</p>
+<p>Now, suppose the event that the selected student has been to Atlanta
+and the event that the selected student has been to Detroit are not
+independent, meaning that <span class="math inline">n</span> is no
+longer necessarily your answer from part (a).</p>
+<p>The event that the selected student has been to Atlanta and the event
+that the selected student has been to Minneapolis are conditionally
+independent given that the selected student <strong>has not</strong>
+been to Detroit.</p>
 <p>Now, what is the value of <span class="math inline">n</span>?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">12</span></p></li>
@@ -715,39 +1025,58 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_2" class="accordion-collapse collapse collapse" aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">28</span>.</p>
-<p>Without any assumptions on the value of <span class="math inline">k</span>, the number of people who have been to Atlanta and Detroit, it can be shown that:</p>
+<p>Without any assumptions on the value of <span class="math inline">k</span>, the number of people who have been to
+Atlanta and Detroit, it can be shown that:</p>
 <p><span class="math display">n = 42 - k</span></p>
-<p>Using the conditional independence assumption given in this part, we have that <span class="math inline">\frac{20-k}{n - 16} \cdot \frac{10}{n - 16} = \frac{5}{n - 16}</span>, which simplifies to <span class="math inline">2(20 - k) = n - 16 \implies n = 56 - 2k</span>.</p>
+<p>Using the conditional independence assumption given in this part, we
+have that <span class="math inline">\frac{20-k}{n - 16} \cdot
+\frac{10}{n - 16} = \frac{5}{n - 16}</span>, which simplifies to <span class="math inline">2(20 - k) = n - 16 \implies n = 56 - 2k</span>.</p>
 <p>We now have a system of equations: <span class="math display">\begin{cases}
 n = 42 - k \\
 n = 56 - 2k
 \end{cases}</span></p>
-<p>Solving this system of equations for <span class="math inline">n</span> gives <span class="math inline">n = 28</span>.</p>
+<p>Solving this system of equations for <span class="math inline">n</span> gives <span class="math inline">n =
+28</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-6.3">Problem 6.3</h3>
-<p>Consider the events <span class="math inline">A</span>, <span class="math inline">D</span>, and <span class="math inline">M</span>, defined as follows:</p>
+<p>Consider the events <span class="math inline">A</span>, <span
+class="math inline">D</span>, and <span class="math inline">M</span>,
+defined as follows:</p>
 <ul>
-<li><p><span class="math inline">A</span>: The event that the selected student has been to Atlanta.</p></li>
-<li><p><span class="math inline">D</span>: The event that the selected student has been to Detroit.</p></li>
-<li><p><span class="math inline">M</span>: The event that the selected student has been to Minneapolis.</p></li>
+<li><p><span class="math inline">A</span>: The event that the selected
+student has been to Atlanta.</p></li>
+<li><p><span class="math inline">D</span>: The event that the selected
+student has been to Detroit.</p></li>
+<li><p><span class="math inline">M</span>: The event that the selected
+student has been to Minneapolis.</p></li>
 </ul>
-<p>Let <span class="math inline">A^c</span>, <span class="math inline">D^c</span>, and <span class="math inline">M^c</span> represent the complements of events <span class="math inline">A</span>, <span class="math inline">D</span>, and <span class="math inline">M</span>, respectively. (In class, we used <span class="math inline">\bar{A}</span> to represent the complement, but that’s hard to read on the exam.)</p>
-<p>Which of the following combinations of sets form a partition of the sample space?</p>
+<p>Let <span class="math inline">A^c</span>, <span
+class="math inline">D^c</span>, and <span class="math inline">M^c</span>
+represent the complements of events <span class="math inline">A</span>,
+<span class="math inline">D</span>, and <span
+class="math inline">M</span>, respectively. (In class, we used <span
+class="math inline">\bar{A}</span> to represent the complement, but
+that’s hard to read on the exam.)</p>
+<p>Which of the following combinations of sets form a partition of the
+sample space?</p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">A</span>   <span class="math inline">D</span>   <span class="math inline">M</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D^c \cap M^c</span>   <span class="math inline">D</span>   <span class="math inline">M</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D</span>   <span class="math inline">D^c</span>   <span class="math inline">A^c \cap D \cap M^c</span></p></li>
-<li><p><input type="radio" disabled="" /> <span class="math inline">A^c</span>   <span class="math inline">A \cap D</span>   <span class="math inline">A \cap M</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A \cap D</span>   <span class="math inline">D^c</span>   <span class="math inline">A^c \cap D
+\cap M^c</span></p></li>
+<li><p><input type="radio" disabled="" /> <span class="math inline">A^c</span>   <span class="math inline">A
+\cap D</span>   <span class="math inline">A \cap M</span></p></li>
 <li><p><input type="radio" disabled="" /> None of the above.</p></li>
 </ul>
 <div id="accordionExample" class="accordion">
@@ -757,12 +1086,15 @@ n = 56 - 2k
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse6_3" class="accordion-collapse collapse collapse" aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p>Option 3 is correct (<span class="math inline">A \cap D</span>   <span class="math inline">D^c</span>   <span class="math inline">A^c \cap D \cap M^c</span>).</p>
+<p>Option 3 is correct (<span class="math inline">A \cap D</span>  
+<span class="math inline">D^c</span>   <span class="math inline">A^c
+\cap D \cap M^c</span>).</p>
 </div>
 </div>
 </div>
@@ -770,10 +1102,19 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-7">Problem 7</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 7</i></p>
-<p>Delta has released a line of trading cards. Each trading card has a picture of a plane and a color. There are 12 plane types, and for each plane type there are three possible colors (gold, silver, and platinum), meaning there are 36 trading cards total.</p>
-<p>After your next flight, a pilot hands you a set of <strong>6</strong> cards, drawn at random <strong>without replacement</strong> from the set of 36 possible cards. The order of cards in a set does not matter.</p>
-<p>In this question, you may leave your answers unsimplified, in terms of fractions, exponents, the permutation formula <span class="math inline">P(n, k)</span>, and the binomial coefficient <span class="math inline">{n \choose k}</span>.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 7</i></p>
+<p>Delta has released a line of trading cards. Each trading card has a
+picture of a plane and a color. There are 12 plane types, and for each
+plane type there are three possible colors (gold, silver, and platinum),
+meaning there are 36 trading cards total.</p>
+<p>After your next flight, a pilot hands you a set of <strong>6</strong>
+cards, drawn at random <strong>without replacement</strong> from the set
+of 36 possible cards. The order of cards in a set does not matter.</p>
+<p>In this question, you may leave your answers unsimplified, in terms
+of fractions, exponents, the permutation formula <span
+class="math inline">P(n, k)</span>, and the binomial coefficient <span
+class="math inline">{n \choose k}</span>.</p>
 <p><br></p>
 <h3 id="problem-7.1">Problem 7.1</h3>
 <p>How many sets of 6 cards are there in total?</p>
@@ -784,13 +1125,18 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_1" class="accordion-collapse collapse collapse" aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">{36 \choose 6} = \frac{36!}{6!30!} = \frac{36 \cdot 35 \cdot 34 \cdot 33 \cdot 32 \cdot 31}{6!} = \frac{P(36, 6)}{6!}</span>. Any of these answers, or anything equivalent to them, are correct.</p>
-<p>There are 36 cards, and we must choose of 6 of them at random without replacement such that order matters.</p>
+<p><span class="math inline">{36 \choose 6} = \frac{36!}{6!30!} =
+\frac{36 \cdot 35 \cdot 34 \cdot 33 \cdot 32 \cdot 31}{6!} = \frac{P(36,
+6)}{6!}</span>. Any of these answers, or anything equivalent to them,
+are correct.</p>
+<p>There are 36 cards, and we must choose of 6 of them at random without
+replacement such that order matters.</p>
 </div>
 </div>
 </div>
@@ -805,13 +1151,18 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_2" class="accordion-collapse collapse collapse" aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">{12 \choose 6} \cdot 3^6</span>. Anything equivalent to this answer is also correct.</p>
-<p>Since we’re asking for the number of hands with unique types, we first pick 6 different types, which can be done <span class="math inline">{12 \choose 6}</span> ways. Then, for each chosen type, there are <span class="math inline">{3 \choose 1} = 3</span> ways of selecting the color. So, the colors can be chosen in <span class="math inline">3 \cdot 3 \cdot ... \cdot 3 = 3^6</span> ways.</p>
+<p><span class="math inline">{12 \choose 6} \cdot 3^6</span>. Anything
+equivalent to this answer is also correct.</p>
+<p>Since we’re asking for the number of hands with unique types, we
+first pick 6 different types, which can be done <span class="math inline">{12 \choose 6}</span> ways. Then, for each chosen
+type, there are <span class="math inline">{3 \choose 1} = 3</span> ways
+of selecting the color. So, the colors can be chosen in <span class="math inline">3 \cdot 3 \cdot ... \cdot 3 = 3^6</span> ways.</p>
 </div>
 </div>
 </div>
@@ -826,20 +1177,26 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_3" class="accordion-collapse collapse collapse" aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">{12 \choose 2} = 66</span>. Anything equivalent to this answer is also correct.</p>
-<p>Once we pick 2 unique plane types, we need to choose 3 different colors per type, out of a set of 3 possibilities. This can be done, for each type, in <span class="math inline">{3 \choose 3} = 1</span> way.</p>
+<p><span class="math inline">{12 \choose 2} = 66</span>. Anything
+equivalent to this answer is also correct.</p>
+<p>Once we pick 2 unique plane types, we need to choose 3 different
+colors per type, out of a set of 3 possibilities. This can be done, for
+each type, in <span class="math inline">{3 \choose 3} = 1</span>
+way.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-7.4">Problem 7.4</h3>
-<p>How many sets of 6 cards have exactly 3 unique plane types, such that each plane type appears twice?</p>
+<p>How many sets of 6 cards have exactly 3 unique plane types, such that
+each plane type appears twice?</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading7_4">
@@ -847,13 +1204,18 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_4" class="accordion-collapse collapse collapse" aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
+<div id="collapse7_4" class="accordion-collapse collapse"
+aria-labelledby="heading7_4" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3 = {12 \choose 3} 3^3</span>. Anything equivalent to this answer is also correct.</p>
-<p>First, we choose 3 distinct types, which can be done in $<span class="math inline">{12 \choose 3}</span> ways. Then, for each type, we choose 2 colors, which can be done in <span class="math inline">{3 \choose 2}</span> ways per type.</p>
+<p><span class="math inline">{12 \choose 3} \cdot  {3 \choose 2}^3 = {12
+\choose 3} 3^3</span>. Anything equivalent to this answer is also
+correct.</p>
+<p>First, we choose 3 distinct types, which can be done in $<span class="math inline">{12 \choose 3}</span> ways. Then, for each type, we
+choose 2 colors, which can be done in <span class="math inline">{3
+\choose 2}</span> ways per type.</p>
 </div>
 </div>
 </div>
@@ -861,7 +1223,8 @@ Click to view the solution.
 <p><br></p>
 <h3 id="problem-7.5">Problem 7.5</h3>
 <p>How many sets of 6 cards have exactly 3 unique plane types?</p>
-<p><em>Hint: You’ll need to consider multiple cases, one of which you addressed in part (d).</em></p>
+<p><em>Hint: You’ll need to consider multiple cases, one of which you
+addressed in part (d).</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading7_5">
@@ -869,14 +1232,36 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse7_5" class="accordion-collapse collapse collapse" aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
+<div id="collapse7_5" class="accordion-collapse collapse"
+aria-labelledby="heading7_5" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3 + {12 \choose 1}{11 \choose 1}{3 \choose 2}{10 \choose 1}{3 \choose 1}</span>. Anything equivalent to this answer is also correct.</p>
-<p>If we select 6 cards and end up with 3 unique plane types, there are two possibilities: - We get 2 of each type (e.g. xx yy zz). This is the case in part (d), so the total number of sets of 6 cards that fall here are <span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3</span>. - We get 3 of one type, 2 of another, and 1 of the last one (e.g. xxx yy z). - xxx: There are 12 options for the type that appears 3 times, so that can be selected in <span class="math inline">{12 \choose 1}</span> ways. We must take all 3 of that types colors, which can be done in <span class="math inline">{3 \choose 3} = 1</span> way. - yy: There are now 11 options for the type that appears 2 times, and for that type, we must take 2 of its three colors, so there are <span class="math inline">{11 \choose 1}{3 \choose 2}</span> options. - z: There are now 10 options for the type that appears once, and for that type, we must take 1 of its three colors, so there are <span class="math inline">{10 \choose 1}{3 \choose 1}</span> options. - So, the total number of options for this case is <span class="math inline">{12 \choose 1}{11 \choose 1}{3 \choose 2}{10 \choose 1}{3 \choose 1} = P(12, 3) 3^2 = {12 \choose 3} 3^3 \cdot 2</span>.</p>
-<p>So, the total number of options is <span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3 + {12 \choose 1}{11 \choose 1}{3 \choose 2}{10 \choose 1}{3 \choose 1}</span>, which can be simplified in various ways, including to <span class="math inline">{12 \choose 3}3^4</span>. Any of these ways received full credit, as long as they showed all work and logic.</p>
+<p><span class="math inline">{12 \choose 3} \cdot {3 \choose 2}^3 + {12
+\choose 1}{11 \choose 1}{3 \choose 2}{10 \choose 1}{3 \choose 1}</span>.
+Anything equivalent to this answer is also correct.</p>
+<p>If we select 6 cards and end up with 3 unique plane types, there are
+two possibilities: - We get 2 of each type (e.g. xx yy zz). This is the
+case in part (d), so the total number of sets of 6 cards that fall here
+are <span class="math inline">{12 \choose 3} \cdot {3 \choose
+2}^3</span>. - We get 3 of one type, 2 of another, and 1 of the last one
+(e.g. xxx yy z). - xxx: There are 12 options for the type that appears 3
+times, so that can be selected in <span class="math inline">{12 \choose
+1}</span> ways. We must take all 3 of that types colors, which can be
+done in <span class="math inline">{3 \choose 3} = 1</span> way. - yy:
+There are now 11 options for the type that appears 2 times, and for that
+type, we must take 2 of its three colors, so there are <span class="math inline">{11 \choose 1}{3 \choose 2}</span> options. - z:
+There are now 10 options for the type that appears once, and for that
+type, we must take 1 of its three colors, so there are <span class="math inline">{10 \choose 1}{3 \choose 1}</span> options. - So,
+the total number of options for this case is <span class="math inline">{12 \choose 1}{11 \choose 1}{3 \choose 2}{10 \choose
+1}{3 \choose 1} = P(12, 3) 3^2 = {12 \choose 3} 3^3 \cdot 2</span>.</p>
+<p>So, the total number of options is <span class="math inline">{12
+\choose 3} \cdot {3 \choose 2}^3 + {12 \choose 1}{11 \choose 1}{3
+\choose 2}{10 \choose 1}{3 \choose 1}</span>, which can be simplified in
+various ways, including to <span class="math inline">{12 \choose
+3}3^4</span>. Any of these ways received full credit, as long as they
+showed all work and logic.</p>
 </div>
 </div>
 </div>
@@ -884,13 +1269,26 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 8</i></p>
-<p>Delta has released a line of trading cards. Each trading card has a picture of a plane and a color. There are 12 plane types, and for each plane type there are three possible colors (gold, silver, and platinum), meaning there are 36 trading cards total.</p>
-<p>Now, suppose that each time you board a flight, a pilot hands you 1 card drawn at random from the set of possible cards. You fly 9 times, which gives you <strong>9</strong> cards drawn at random <strong>with replacement</strong> from the set of possible cards.</p>
-<p>In this question, you may leave your answers unsimplified, in terms of fractions, exponents, the permutation formula <span class="math inline">P(n, k)</span>, and the binomial coefficient <span class="math inline">{n \choose k}</span>.</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 8</i></p>
+<p>Delta has released a line of trading cards. Each trading card has a
+picture of a plane and a color. There are 12 plane types, and for each
+plane type there are three possible colors (gold, silver, and platinum),
+meaning there are 36 trading cards total.</p>
+<p>Now, suppose that each time you board a flight, a pilot hands you 1
+card drawn at random from the set of possible cards. You fly 9 times,
+which gives you <strong>9</strong> cards drawn at random <strong>with
+replacement</strong> from the set of possible cards.</p>
+<p>In this question, you may leave your answers unsimplified, in terms
+of fractions, exponents, the permutation formula <span
+class="math inline">P(n, k)</span>, and the binomial coefficient <span
+class="math inline">{n \choose k}</span>.</p>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
-<p>Given that you receive a gold-colored card at least once, what is the probability that you receive a gold-colored card exactly 5 times? Show your work, and put a <span class="math inline">\boxed{\text{box}}</span> around your final answer.</p>
+<p>Given that you receive a gold-colored card at least once, what is the
+probability that you receive a gold-colored card exactly 5 times? Show
+your work, and put a <span class="math inline">\boxed{\text{box}}</span>
+around your final answer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_1">
@@ -898,23 +1296,39 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_1" class="accordion-collapse collapse collapse" aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\displaystyle\frac{{9 \choose 5} \left( \frac{1}{3} \right)^5 \left( \frac{2}{3} \right)^4}{1 - \left( \frac{2}{3} \right)^9}</span>. Anything equivalent to this answer received full credit.</p>
-<p>This boils down to recognizing that <span class="math inline">P(\text{exactly 5 gold cards | at least one gold card}) = \frac{P(\text{exactly 5 gold cards})}{P(\text{at least one gold card})}</span>, then breaking down the numerator and denominator.</p>
-<p>The numerator, <span class="math inline">P(\text{exactly 5 gold cards})</span>, is equal to <span class="math inline">{9 \choose 5} \left( \frac{1}{3} \right)^5 \left( \frac{2}{3} \right)^4</span>.</p>
-<p>The denominator, <span class="math inline">P(\text{at least one gold card})</span>, is equal to <span class="math inline">1 - P(\text{no gold cards}) = 1 - \left( \frac{2}{3} \right)^9</span>.</p>
+<p><span class="math inline">\displaystyle\frac{{9 \choose 5} \left(
+\frac{1}{3} \right)^5 \left( \frac{2}{3} \right)^4}{1 - \left(
+\frac{2}{3} \right)^9}</span>. Anything equivalent to this answer
+received full credit.</p>
+<p>This boils down to recognizing that <span class="math inline">P(\text{exactly 5 gold cards | at least one gold
+card}) = \frac{P(\text{exactly 5 gold cards})}{P(\text{at least one gold
+card})}</span>, then breaking down the numerator and denominator.</p>
+<p>The numerator, <span class="math inline">P(\text{exactly 5 gold
+cards})</span>, is equal to <span class="math inline">{9 \choose 5}
+\left( \frac{1}{3} \right)^5 \left( \frac{2}{3} \right)^4</span>.</p>
+<p>The denominator, <span class="math inline">P(\text{at least one gold
+card})</span>, is equal to <span class="math inline">1 - P(\text{no gold
+cards}) = 1 - \left( \frac{2}{3} \right)^9</span>.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
 <h3 id="problem-8.2">Problem 8.2</h3>
-<p>The <em>Airbus A350</em>, the <em>Boeing 767</em>, and the <em>Airbus A330</em> are 3 of the 12 plane types that Delta made trading cards for.</p>
-<p>What is the probability that you receive 2 <em>Airbus A350</em> cards, 4 <em>Boeing 767</em> cards, and 3 <em>Airbus A330</em> cards? Show your work, and put a <span class="math inline">\boxed{\text{box}}</span> around your final answer.</p>
+<p>The <em>Airbus A350</em>, the <em>Boeing 767</em>, and the <em>Airbus
+A330</em> are 3 of the 12 plane types that Delta made trading cards
+for.</p>
+<p>What is the probability that you receive 2 <em>Airbus A350</em>
+cards, 4 <em>Boeing 767</em> cards, and 3 <em>Airbus A330</em> cards?
+Show your work, and put a <span
+class="math inline">\boxed{\text{box}}</span> around your final
+answer.</p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_2">
@@ -922,14 +1336,25 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse8_2" class="accordion-collapse collapse collapse" aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<p><span class="math inline">\displaystyle\frac{9!}{2!4!3!} (\frac{1}{12})^9</span>. Anything equivalent to this answer received full credit, such as ${9 }{5 }{3 } ()^9 $ or <span class="math inline">{9 \choose 3}{6 \choose 4} (\frac{1}{12})^9</span>.</p>
-<p>On one individual draw, the probability of receiving one particular plane type is <span class="math inline">\frac{3}{36} = \frac{1}{12}</span>, so the probability of seeing a particular sequence of 9 plane types – like A350, B767, A330, A330, B767, A350, A330, B767, B767 – is <span class="math inline">(\frac{1}{12})^9</span>.</p>
-<p>But, we need to account for the number of ways we can arrange 2 A350, 4 B767, and 3 A330 cards, which is <span class="math inline">\frac{9!}{2!4!3!} = {9 \choose 2} {7 \choose 4}{3 \choose 3}</span> (which can also be expressed a few other ways, too).</p>
+<p><span class="math inline">\displaystyle\frac{9!}{2!4!3!}
+(\frac{1}{12})^9</span>. Anything equivalent to this answer received
+full credit, such as ${9 }{5 }{3 } ()^9 $ or <span class="math inline">{9 \choose 3}{6 \choose 4}
+(\frac{1}{12})^9</span>.</p>
+<p>On one individual draw, the probability of receiving one particular
+plane type is <span class="math inline">\frac{3}{36} =
+\frac{1}{12}</span>, so the probability of seeing a particular sequence
+of 9 plane types – like A350, B767, A330, A330, B767, A350, A330, B767,
+B767 – is <span class="math inline">(\frac{1}{12})^9</span>.</p>
+<p>But, we need to account for the number of ways we can arrange 2 A350,
+4 B767, and 3 A330 cards, which is <span class="math inline">\frac{9!}{2!4!3!} = {9 \choose 2} {7 \choose 4}{3
+\choose 3}</span> (which can also be expressed a few other ways,
+too).</p>
 </div>
 </div>
 </div>
@@ -937,21 +1362,32 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="problem-9">Problem 9</h2>
-<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>, Problem 9</i></p>
-<p>Delta’s flight operations center keeps track of weather conditions, as they tend to impact whether or not flights are late. For each flight, Delta keeps track of:</p>
+<p><i>Source: <a href="../sp24-final/index.html">Spring 2024 Final</a>,
+Problem 9</i></p>
+<p>Delta’s flight operations center keeps track of weather conditions,
+as they tend to impact whether or not flights are late. For each flight,
+Delta keeps track of:</p>
 <ul>
-<li><p>Whether or not there was <strong>precipitation</strong> — i.e., rain, snow, or hail.</p></li>
-<li><p>The <strong>wind conditions</strong> — either no winds, light winds, moderate winds, or heavy winds.</p></li>
-<li><p>The flight’s <strong>status</strong> — whether it was early, on time, or late.</p></li>
+<li><p>Whether or not there was <strong>precipitation</strong> — i.e.,
+rain, snow, or hail.</p></li>
+<li><p>The <strong>wind conditions</strong> — either no winds, light
+winds, moderate winds, or heavy winds.</p></li>
+<li><p>The flight’s <strong>status</strong> — whether it was early, on
+time, or late.</p></li>
 </ul>
 <p>Information about 100 flights is summarized in the table below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
-<p>For instance, we’re told that 6 flights in moderate winds and no precipitation landed late, and that there were 13 total flights in heavy winds and precipitation.</p>
-<p>Delta would like to use this information to predict whether a new flight will be early, on time, or late, given the weather conditions.</p>
+<p>For instance, we’re told that 6 flights in moderate winds and no
+precipitation landed late, and that there were 13 total flights in heavy
+winds and precipitation.</p>
+<p>Delta would like to use this information to predict whether a new
+flight will be early, on time, or late, given the weather
+conditions.</p>
 <p><br></p>
 <h3 id="problem-9.1">Problem 9.1</h3>
 <p><strong>Without smoothing</strong>, what is:</p>
-<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \: \text{early})</span></p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{2}{7}</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{5}{7}</span></p></li>
@@ -968,13 +1404,16 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_1" class="accordion-collapse collapse collapse" aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{2}{7}</span>.</p>
-<p>There are <span class="math inline">28</span> flights that landed early, and of those, <span class="math inline">5 + 3 = 8</span> were in heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\frac{8}{28} = \frac{2}{7}</span>.</p>
 </div>
 </div>
 </div>
@@ -982,7 +1421,8 @@ Click to view the solution.
 <p><br></p>
 <h3 id="problem-9.2">Problem 9.2</h3>
 <p><strong>With smoothing</strong>, what is:</p>
-<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \: \text{early})</span></p>
+<p><span class="math display">\mathbb{P}(\text{heavy winds} \: | \:
+\text{early})</span></p>
 <ul class="task-list">
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{1}{3}</span></p></li>
 <li><p><input type="radio" disabled="" /> <span class="math inline">\frac{3}{8}</span></p></li>
@@ -999,26 +1439,39 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_2" class="accordion-collapse collapse collapse" aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
+<div id="collapse9_2" class="accordion-collapse collapse"
+aria-labelledby="heading9_2" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p><span class="math inline">\frac{9}{32}</span>.</p>
-<p>There are <span class="math inline">28</span> flights that landed early, and of those, <span class="math inline">5 + 3 = 8</span> were in heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>. (The denominator is 28 + 4 since there are 4 possible wind conditions – none, light, moderate, and heavy.)</p>
+<p>There are <span class="math inline">28</span> flights that landed
+early, and of those, <span class="math inline">5 + 3 = 8</span> were in
+heavy winds, which means our estimate is <span class="math inline">\displaystyle\frac{8+1}{28+4} = \frac{9}{32}</span>.
+(The denominator is 28 + 4 since there are 4 possible wind conditions –
+none, light, moderate, and heavy.)</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<p>For your convenience, the table from the previous page is repeated again below.</p>
+<p>For your convenience, the table from the previous page is repeated
+again below.</p>
 <center><img src='../assets/images/sp24-final/naive-bayes.png' width=900></center>
 <p><br></p>
 <h3 id="problem-9.3">Problem 9.3</h3>
-<p>An airline’s late-to-early ratio, given a set of weather conditions, is defined as:</p>
-<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \: \text{conditions})}{\mathbb{P}(\text{early} \: | \: \text{conditions})}</span></p>
-<p>Using the assumptions of the Naïve Bayes classifier <strong>without smoothing</strong>, show that Delta’s late-early ratio for flights in <strong>heavy winds and precipitation</strong> is <span class="math inline">\bf{\frac{7}{5}}</span>.</p>
-<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of which you already found in <strong>part (a)</strong>.</em></p>
+<p>An airline’s late-to-early ratio, given a set of weather conditions,
+is defined as:</p>
+<p><span class="math display">\frac{\mathbb{P}(\text{late} \: | \:
+\text{conditions})}{\mathbb{P}(\text{early} \: | \:
+\text{conditions})}</span></p>
+<p>Using the assumptions of the Naïve Bayes classifier <strong>without
+smoothing</strong>, show that Delta’s late-early ratio for flights in
+<strong>heavy winds and precipitation</strong> is <span
+class="math inline">\bf{\frac{7}{5}}</span>.</p>
+<p><em>Hint: You’ll end up needing to compute 6 probabilities, one of
+which you already found in <strong>part (a)</strong>.</em></p>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading9_3">
@@ -1026,24 +1479,41 @@ Click to view the solution.
 Click to view the solution.
 </button>
 </h2>
-<div id="collapse9_3" class="accordion-collapse collapse collapse" aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
+<div id="collapse9_3" class="accordion-collapse collapse"
+aria-labelledby="heading9_3" data-bs-parent="#accordionExample">
 <div class="accordion-body">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
 <p>We can recognize that:</p>
-<p><span class="math display">\displaystyle\frac{P(\text{late | conditions})}{P(\text{early | conditions})} \\ = \displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late}) \cdot P(\text{precipitation | late})}{P(\text{early}) \cdot P(\text{heavy winds | early}) \cdot P(\text{precipitation | early})}</span></p>
+<p><span class="math display">\displaystyle\frac{P(\text{late |
+conditions})}{P(\text{early | conditions})} \\ =
+\displaystyle\frac{P(\text{late}) \cdot P(\text{heavy winds | late})
+\cdot P(\text{precipitation | late})}{P(\text{early}) \cdot
+P(\text{heavy winds | early}) \cdot P(\text{precipitation |
+early})}</span></p>
 <p>and compute the following:</p>
 <ul>
-<li><p><span class="math inline">P(\text{late}) = \frac{32}{100}</span></p></li>
-<li><p><span class="math inline">P(\text{heavy winds | late}) = \frac{8}{32}</span></p></li>
-<li><p><span class="math inline">P(\text{precipitation | late}) = \frac{16}{32}</span></p></li>
-<li><p><span class="math inline">P(\text{early}) = \frac{28}{100}</span></p></li>
-<li><p><span class="math inline">P(\text{heavy winds | early}) = \frac{8}{28}</span></p></li>
-<li><p><span class="math inline">P(\text{precipitation | early}) = \frac{10}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{late}) =
+\frac{32}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | late}) =
+\frac{8}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | late}) =
+\frac{16}{32}</span></p></li>
+<li><p><span class="math inline">P(\text{early}) =
+\frac{28}{100}</span></p></li>
+<li><p><span class="math inline">P(\text{heavy winds | early}) =
+\frac{8}{28}</span></p></li>
+<li><p><span class="math inline">P(\text{precipitation | early}) =
+\frac{10}{28}</span></p></li>
 </ul>
 <p>which gives:</p>
-<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100} \cdot \displaystyle\frac{8}{32} \cdot \displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot \displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} = \displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}} = \displaystyle\frac{7}{5}</span>.</p>
+<p><span class="math display">\displaystyle\frac{\displaystyle\frac{32}{100}
+\cdot \displaystyle\frac{8}{32} \cdot
+\displaystyle\frac{16}{32}}{\displaystyle\frac{28}{100} \cdot
+\displaystyle\frac{8}{28} \cdot \displaystyle\frac{10}{28}} =
+\displaystyle\frac{\displaystyle\frac{1}{25}}{\displaystyle\frac{1}{35}}
+= \displaystyle\frac{7}{5}</span>.</p>
 </div>
 </div>
 </div>
@@ -1051,7 +1521,11 @@ Click to view the solution.
 <p><br></p>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
-<h4 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋 Feedback: Find an error? Still confused? Have a suggestion? <a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know here</u></a>.</h4>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
 <hr />
 </body>
 </html>
