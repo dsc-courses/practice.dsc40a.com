@@ -2337,6 +2337,143 @@ equations gives: <span class="math display">\bar{x} = 5</span>.</p>
 </div>
 <p><br></p>
 <hr />
+<h2 id="problem-14">Problem 14</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 1</i></p>
+<p>Let <span class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> be a
+dataset of scalar input-output pairs, and consider the simple linear
+regression model</p>
+<p><span class="math display">
+f(a, b;\, x) = ax + b,\qquad a, b\in\mathbb{R}.
+</span></p>
+<p>Let <span class="math inline">\gamma &gt; 0</span> be a fixed
+constant which is understood to be separate from the training data and
+the weights. Define the <span class="math inline">\gamma</span>-risk
+according to the formula</p>
+<p><span class="math display">
+R_{\gamma}(a, b) = \gamma a^2 + \frac{1}{n}\sum_{i=1}^{n} (y_i - (ax_i +
+b))^2.
+</span></p>
+<p>Find closed-form expressions for the global minimizers <span
+class="math inline">a^\ast, b^\ast</span> of the <span
+class="math inline">\gamma</span>-risk for the training data <span
+class="math inline">\{(x_i,y_i)\}_{i=1}^n</span>. In your solution, you
+should clearly label and explain each step.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading14">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="true" aria-controls="collapse14">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse14" class="accordion-collapse collapse"
+aria-labelledby="heading14" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="problem-15">Problem 15</h2>
+<p><i>Source: <a href="../ss1-25-midterm/index.html">Summer Session 1
+2025 Midterm</a>, Problem 5a-c</i></p>
+<p>Let <span class="math inline">\{(x_i,y_i)\}_{i=1}^n</span> be a
+dataset of scalar input-output pairs.</p>
+<p><br></p>
+<h3 id="problem-15.1">Problem 15.1</h3>
+<p>Suppose we model <span class="math inline">y</span> using a simple
+linear regression model of the form</p>
+<p><span class="math display">
+f(\vec{\theta};\, x) = \vec{\theta}^{(0)} + \vec{\theta}^{(1)}x,
+\qquad\vec{\theta}\in\mathbb{R}^2.
+</span></p>
+<p>Prove that the line of best fit (with respect to MSE) passes through
+the point <span class="math inline">(\overline{x},
+\overline{y})</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading15_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_1" aria-expanded="true" aria-controls="collapse15_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse15_1" class="accordion-collapse collapse"
+aria-labelledby="heading15_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-15.2">Problem 15.2</h3>
+<p>Suppose we model <span class="math inline">y</span> using a simple
+polynomial regression model of the form</p>
+<p><span class="math display">
+f(\vec{\theta};\, x) = \vec{\theta}^{(0)} + \vec{\theta}^{(1)}x+
+\vec{\theta}^{(2)}x^2, \qquad\vec{\theta}\in\mathbb{R}^3.
+</span></p>
+<p>Prove that the curve of best fit (with respect to MSE) passes through
+the point <span class="math inline">(\overline{x}, \overline{y} +
+\vec\theta^{\ast(2)}((\overline{x})^2 - \overline{x^2}))</span>,
+where</p>
+<p><span class="math display">
+\overline{x^2} = \frac{1}{n}\sum_{i=1}^n x_i^2.
+</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading15_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_2" aria-expanded="true" aria-controls="collapse15_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse15_2" class="accordion-collapse collapse"
+aria-labelledby="heading15_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-15.3">Problem 15.3</h3>
+<p>Using the same model as (b), suppose we minimize MSE and find optimal
+parameters <span class="math inline">\vec{\theta}^\ast</span>. Further
+suppose we apply a shifting and scaling operation to the training
+targets, defining</p>
+<p><span class="math display">
+\widetilde{y_i} = \alpha(y_i - \beta),\qquad\alpha,\beta\in\mathbb{R}.
+</span></p>
+<p>Find formulas for the new optimal parameters, denoted <span
+class="math inline">\vec{\widetilde{\theta}}^\ast</span>, in terms of
+the old parameters and <span class="math inline">\alpha,
+\beta</span>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading15_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15_3" aria-expanded="true" aria-controls="collapse15_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse15_3" class="accordion-collapse collapse"
+aria-labelledby="heading15_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
 id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
