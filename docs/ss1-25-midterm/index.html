@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Summer Session 2025 Midterm Exam</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -102,6 +105,163 @@ aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h3 id="solution">Solution</h3>
+<h4 id="step-1-compute-partial-derivatives">Step 1: Compute Partial
+Derivatives</h4>
+<p>We compute the partial derivatives of <span class="math inline">R_\gamma(a, b)</span> with respect to both
+parameters.</p>
+<p><strong>Partial derivative with respect to <span class="math inline">a</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\frac{\partial R_\gamma}{\partial a} &amp;= 2\gamma a + \frac{1}{n}
+\sum_{i=1}^{n} 2(y_i - ax_i - b)(-x_i)\\
+&amp;= 2\gamma a - \frac{2}{n} \sum_{i=1}^{n} x_i (y_i - ax_i - b)
+\end{align*}
+</span></p>
+<p><strong>Partial derivative with respect to <span class="math inline">b</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\frac{\partial R_\gamma}{\partial b} &amp;= \frac{1}{n} \sum_{i=1}^{n}
+2(y_i - ax_i - b)(-1)\\
+&amp;= -\frac{2}{n} \sum_{i=1}^{n} (y_i - ax_i - b)
+\end{align*}
+</span></p>
+<h4 id="step-2-set-partial-derivatives-to-zero-normal-equations">Step 2:
+Set Partial Derivatives to Zero (Normal Equations)</h4>
+<p><strong>From <span class="math inline">\frac{\partial
+R_\gamma}{\partial b} = 0</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+-\frac{2}{n} \sum_{i=1}^{n} (y_i - ax_i - b) &amp;= 0\\
+\sum_{i=1}^{n} y_i - a\sum_{i=1}^{n} x_i - nb &amp;= 0\\
+nb &amp;= \sum_{i=1}^{n} y_i - a\sum_{i=1}^{n} x_i\\
+b &amp;= \frac{1}{n}\sum_{i=1}^{n} y_i - \frac{a}{n}\sum_{i=1}^{n} x_i\\
+b &amp;= \bar{y} - a\bar{x}
+\end{align*}
+</span></p>
+<p>where <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^{n}
+x_i</span> and <span class="math inline">\bar{y} =
+\frac{1}{n}\sum_{i=1}^{n} y_i</span>.</p>
+<p><strong>From <span class="math inline">\frac{\partial
+R_\gamma}{\partial a} = 0</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+2\gamma a - \frac{2}{n} \sum_{i=1}^{n} x_i (y_i - ax_i - b) &amp;= 0\\
+\gamma a - \frac{1}{n} \sum_{i=1}^{n} x_i y_i +
+\frac{a}{n}\sum_{i=1}^{n} x_i^2 + \frac{b}{n}\sum_{i=1}^{n} x_i &amp;=
+0\\
+n\gamma a + a\sum_{i=1}^{n} x_i^2 + b\sum_{i=1}^{n} x_i &amp;=
+\sum_{i=1}^{n} x_i y_i
+\end{align*}
+</span></p>
+<h4 id="step-3-solve-for-a-by-substituting-b-bary---abarx">Step 3: Solve
+for <span class="math inline">a^*</span> by Substituting <span class="math inline">b = \bar{y} - a\bar{x}</span></h4>
+<p>Substituting <span class="math inline">b = \bar{y} - a\bar{x}</span>
+into the equation above:</p>
+<p><span class="math display">
+\begin{align*}
+n\gamma a + a\sum_{i=1}^{n} x_i^2 + (\bar{y} - a\bar{x})\sum_{i=1}^{n}
+x_i &amp;= \sum_{i=1}^{n} x_i y_i\\
+n\gamma a + a\sum_{i=1}^{n} x_i^2 + \bar{y} \cdot n\bar{x} - a\bar{x}
+\cdot n\bar{x} &amp;= \sum_{i=1}^{n} x_i y_i\\
+n\gamma a + a\sum_{i=1}^{n} x_i^2 - an\bar{x}^2 &amp;= \sum_{i=1}^{n}
+x_i y_i - n\bar{x}\bar{y}\\
+a\left(n\gamma + \sum_{i=1}^{n} x_i^2 - n\bar{x}^2\right) &amp;=
+\sum_{i=1}^{n} x_i y_i - n\bar{x}\bar{y}
+\end{align*}
+</span></p>
+<p>Note that <span class="math inline">\sum_{i=1}^{n} x_i^2 - n\bar{x}^2
+= \sum_{i=1}^{n} (x_i - \bar{x})^2</span> and <span class="math inline">\sum_{i=1}^{n} x_i y_i - n\bar{x}\bar{y} =
+\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})</span>.</p>
+<p>Therefore:</p>
+<p><span class="math display">
+a^* = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i -
+\bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2 + n\gamma}
+</span></p>
+<p>And:</p>
+<p><span class="math display">
+b^* = \bar{y} - a^*\bar{x}
+</span></p>
+<h4 id="step-4-verify-that-a-b-is-a-minimizer-second-derivative-test">Step
+4: Verify that <span class="math inline">(a^*, b^*)</span> is a
+Minimizer (Second Derivative Test)</h4>
+<p>To confirm that the critical point is a minimizer, we compute the
+Hessian matrix and verify that it is positive definite.</p>
+<p><strong>What is the Hessian matrix?</strong></p>
+<p>The Hessian matrix <span class="math inline">H</span> is a square
+matrix containing all second-order partial derivatives of a function.
+For a function <span class="math inline">R_\gamma(a, b)</span> with two
+variables, the Hessian is:</p>
+<p><span class="math display">
+H = \begin{pmatrix}
+\frac{\partial^2 R_\gamma}{\partial a^2} &amp; \frac{\partial^2
+R_\gamma}{\partial a \partial b}\\
+\frac{\partial^2 R_\gamma}{\partial b \partial a} &amp; \frac{\partial^2
+R_\gamma}{\partial b^2}
+\end{pmatrix}
+</span></p>
+<p><strong>How does the Hessian determine convexity and
+minima?</strong></p>
+<ul>
+<li>If <span class="math inline">H</span> is <strong>positive
+definite</strong> everywhere, then <span class="math inline">R_\gamma</span> is strictly convex, which means any
+critical point is a global minimum.</li>
+<li>For a <span class="math inline">2 \times 2</span> matrix, <span class="math inline">H</span> is positive definite if and only if:
+<ol type="1">
+<li><span class="math inline">H_{11} &gt; 0</span> (the top-left entry
+is positive), and</li>
+<li><span class="math inline">\det(H) &gt; 0</span> (the determinant is
+positive)</li>
+</ol></li>
+</ul>
+<p><strong>Second partial derivatives:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\frac{\partial^2 R_\gamma}{\partial a^2} &amp;= 2\gamma +
+\frac{2}{n}\sum_{i=1}^{n} x_i^2\\
+\frac{\partial^2 R_\gamma}{\partial b^2} &amp;=
+\frac{2}{n}\sum_{i=1}^{n} 1 = 2\\
+\frac{\partial^2 R_\gamma}{\partial a \partial b} &amp;=
+\frac{2}{n}\sum_{i=1}^{n} x_i = 2\bar{x}
+\end{align*}
+</span></p>
+<p>The Hessian matrix is:</p>
+<p><span class="math display">
+H = \begin{pmatrix}
+2\gamma + \frac{2}{n}\sum_{i=1}^{n} x_i^2 &amp; 2\bar{x}\\
+2\bar{x} &amp; 2
+\end{pmatrix}
+</span></p>
+<p>For the Hessian to be positive definite, we need:</p>
+<ol type="1">
+<li><p><span class="math inline">H_{11} = 2\gamma +
+\frac{2}{n}\sum_{i=1}^{n} x_i^2 &gt; 0</span>. This is true since <span class="math inline">\gamma &gt; 0</span> and all terms are
+non-negative.</p></li>
+<li><p><span class="math inline">\det(H) &gt; 0</span>:</p></li>
+</ol>
+<p><span class="math display">
+\begin{align*}
+\det(H) &amp;= 2\left(2\gamma + \frac{2}{n}\sum_{i=1}^{n} x_i^2\right) -
+4\bar{x}^2\\
+&amp;= 4\gamma + \frac{4}{n}\sum_{i=1}^{n} x_i^2 - 4\bar{x}^2\\
+&amp;= 4\gamma + \frac{4}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2\\
+&amp;&gt; 0
+\end{align*}
+</span></p>
+<p>since <span class="math inline">\gamma &gt; 0</span>.</p>
+<p>Therefore, the Hessian is positive definite, confirming that <span class="math inline">(a^*, b^*)</span> is indeed a global minimizer of
+<span class="math inline">R_\gamma(a, b)</span>.</p>
+<h3 id="final-answer">Final Answer</h3>
+<p><span class="math display">
+\boxed{a^* = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i -
+\bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2 + n\gamma}}
+</span></p>
+<p><span class="math display">
+\boxed{b^* = \bar{y} - a^*\bar{x}}
+</span></p>
+<p>where <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^{n}
+x_i</span> and <span class="math inline">\bar{y} =
+\frac{1}{n}\sum_{i=1}^{n} y_i</span>.</p>
 </div>
 </div>
 </div>
@@ -165,6 +325,76 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Solution</strong></p>
+<p>We begin by rewriting the model <span class="math inline">f_2</span>
+more explicitly. The model <span class="math inline">f_2</span> has
+<span class="math inline">d-2</span> weight parameters (excluding the
+intercept <span class="math inline">b</span>): <span class="math display">
+f_2(\vec{w}, b; \vec{x}) = \sum_{j=1}^{d-2} \vec{w}^{(j)} x^{(j)} + b,
+\quad \vec{w} \in \mathbb{R}^{d-2}, \, b \in \mathbb{R}.
+</span></p>
+<p>To apply Theorem 2.3.2, we need to construct the appropriate design
+matrix and parameter vector.</p>
+<p><strong>Step 1: Define the modified design matrix</strong></p>
+<p>Let <span class="math inline">\mathbf{Z}_2 \in \mathbb{R}^{n \times
+(d-1)}</span> be the modified design matrix where each row corresponds
+to a training example with only the first <span class="math inline">d-2</span> features plus a column of ones for the
+intercept: <span class="math display">
+\mathbf{Z}_2 = \begin{bmatrix}
+1 &amp; x_1^{(1)} &amp; x_1^{(2)} &amp; \cdots &amp; x_1^{(d-2)} \\
+1 &amp; x_2^{(1)} &amp; x_2^{(2)} &amp; \cdots &amp; x_2^{(d-2)} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_n^{(1)} &amp; x_n^{(2)} &amp; \cdots &amp; x_n^{(d-2)}
+\end{bmatrix} \in \mathbb{R}^{n \times (d-1)}.
+</span></p>
+<p><strong>Step 2: Define the parameter vector and target
+vector</strong></p>
+<p>Let <span class="math inline">\vec{\theta} \in
+\mathbb{R}^{d-1}</span> be the combined parameter vector: <span class="math display">
+\vec{\theta} = \begin{bmatrix} b \\ \vec{w}^{(1)} \\ \vec{w}^{(2)} \\
+\vdots \\ \vec{w}^{(d-2)} \end{bmatrix}.
+</span></p>
+<p>Let <span class="math inline">\mathbf{Y} \in \mathbb{R}^n</span> be
+the target vector: <span class="math display">
+\mathbf{Y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}.
+</span></p>
+<p><strong>Step 3: Express the MSE</strong></p>
+<p>The mean squared error can be written as: <span class="math display">
+\text{MSE}(\vec{\theta}) = \frac{1}{n} \sum_{i=1}^n \left( y_i -
+\mathbf{Z}_{2,i}^{\top} \vec{\theta} \right)^2 = \frac{1}{n}
+\|\mathbf{Y} - \mathbf{Z}_2 \vec{\theta}\|_2^2.
+</span></p>
+<p><strong>Step 4: Apply Theorem 2.3.2</strong></p>
+<p>To minimize the MSE, we take the gradient with respect to <span class="math inline">\vec{\theta}</span> and set it equal to zero: <span class="math display">
+\frac{\partial \text{MSE}}{\partial \vec{\theta}} = -\frac{2}{n}
+\mathbf{Z}_2^{\top} (\mathbf{Y} - \mathbf{Z}_2 \vec{\theta}) = 0.
+</span></p>
+<p>This simplifies to the normal equation: <span class="math display">
+\mathbf{Z}_2^{\top} \mathbf{Z}_2 \vec{\theta} = \mathbf{Z}_2^{\top}
+\mathbf{Y}.
+</span></p>
+<p>Assuming <span class="math inline">\mathbf{Z}_2^{\top}
+\mathbf{Z}_2</span> is invertible (which holds when <span class="math inline">\mathbf{Z}_2</span> has full column rank), the
+unique minimizer is: <span class="math display">
+\vec{\theta}^* = \left( \mathbf{Z}_2^{\top} \mathbf{Z}_2 \right)^{-1}
+\mathbf{Z}_2^{\top} \mathbf{Y}.
+</span></p>
+<p><strong>Step 5: Extract optimal parameters</strong></p>
+<p>The optimal parameters are obtained by decomposing <span class="math inline">\vec{\theta}^*</span>: <span class="math display">
+\begin{bmatrix} b^* \\ \vec{w}^* \end{bmatrix} = \vec{\theta}^* = \left(
+\mathbf{Z}_2^{\top} \mathbf{Z}_2 \right)^{-1} \mathbf{Z}_2^{\top}
+\mathbf{Y},
+</span> where <span class="math inline">b^*</span> is the first
+component and <span class="math inline">\vec{w}^* \in
+\mathbb{R}^{d-2}</span> consists of the remaining components.</p>
+<p><strong>Final Answer:</strong> <span class="math display">
+\boxed{\begin{bmatrix} b^* \\ \vec{w}^* \end{bmatrix} = \left(
+\mathbf{Z}_2^{\top} \mathbf{Z}_2 \right)^{-1} \mathbf{Z}_2^{\top}
+\mathbf{Y}}
+</span> where <span class="math inline">\mathbf{Z}_2 \in \mathbb{R}^{n
+\times (d-1)}</span> is the design matrix containing a column of ones
+followed by the first <span class="math inline">d-2</span> features of
+each training example.</p>
 </div>
 </div>
 </div>
@@ -188,6 +418,56 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p><strong>Answer:</strong> <span class="math inline">R_1 \leq R_3 \leq
+R_2</span></p>
+<p><strong>Justification:</strong></p>
+<p>To compare these three models, we need to analyze their flexibility
+and representational capacity.</p>
+<p><strong>Comparing <span class="math inline">R_1</span> and <span class="math inline">R_3</span>:</strong></p>
+<p>Model <span class="math inline">f_1</span> is the most general model
+with <span class="math inline">d</span> independent weight parameters
+plus an intercept, giving it <span class="math inline">(d+1)</span>
+total parameters.</p>
+<p>Model <span class="math inline">f_3</span> can be rewritten as: <span class="math display">f_3(\vec{w}, b; \vec{x}) = \vec{w}^{(1)}x^{(1)} +
+\ldots + \vec{w}^{(d-2)}x^{(d-2)} + \vec{w}^{(d-1)}x^{(d-1)} +
+\vec{w}^{(d-1)}x^{(d)} + b</span></p>
+<p>This is equivalent to <span class="math inline">f_1</span> with the
+constraint that <span class="math inline">w^{(d-1)} = w^{(d)}</span>. In
+other words, <span class="math inline">f_3</span> is a constrained
+version of <span class="math inline">f_1</span>.</p>
+<p>Since <span class="math inline">f_1</span> includes all possible
+models that <span class="math inline">f_3</span> can represent (by
+setting <span class="math inline">w^{(d-1)} = w^{(d)}</span> in <span class="math inline">f_1</span>), the minimum achievable MSE for <span class="math inline">f_1</span> must be at least as good as (or better
+than) that of <span class="math inline">f_3</span>. Therefore:</p>
+<p><span class="math display">R_1 \leq R_3</span></p>
+<p><strong>Comparing <span class="math inline">R_3</span> and <span class="math inline">R_2</span>:</strong></p>
+<p>Model <span class="math inline">f_2</span> completely removes the
+last two features from the model, using only features <span class="math inline">x^{(1)}, \ldots, x^{(d-2)}</span>.</p>
+<p>Model <span class="math inline">f_3</span> uses all <span class="math inline">d</span> features but groups the last two with a
+shared coefficient <span class="math inline">\vec{w}^{(d-1)}</span>.</p>
+<p>We can show that <span class="math inline">f_3</span> is more
+flexible than <span class="math inline">f_2</span> by noting that <span class="math inline">f_2</span> is a special case of <span class="math inline">f_3</span>. Specifically, if we set <span class="math inline">\vec{w}^{(d-1)} = 0</span> in model <span class="math inline">f_3</span>, we get:</p>
+<p><span class="math display">f_3(\vec{w}, b; \vec{x}) =
+\vec{w}^{(1)}x^{(1)} + \ldots + \vec{w}^{(d-2)}x^{(d-2)} + 0 \cdot
+(x^{(d-1)} + x^{(d)}) + b = f_2(\vec{w}, b; \vec{x})</span></p>
+<p>Since <span class="math inline">f_3</span> can represent any model
+that <span class="math inline">f_2</span> can represent (plus additional
+models where <span class="math inline">\vec{w}^{(d-1)} \neq 0</span>),
+the minimum achievable MSE for <span class="math inline">f_3</span> must
+be at least as good as that of <span class="math inline">f_2</span>.
+Therefore:</p>
+<p><span class="math display">R_3 \leq R_2</span></p>
+<p><strong>Final Ranking:</strong></p>
+<p>Combining these results, we have:</p>
+<p><span class="math display">R_1 \leq R_3 \leq R_2</span></p>
+<p>This ranking makes intuitive sense: <span class="math inline">f_1</span> is the most flexible model with the most
+parameters, allowing it to fit the training data best (lowest MSE).
+Model <span class="math inline">f_3</span> is moderately flexible,
+incorporating information from all features but with a constraint on the
+last two weights. Model <span class="math inline">f_2</span> is the
+least flexible, as it discards potentially useful information by
+completely removing the last two features.</p>
 </div>
 </div>
 </div>
