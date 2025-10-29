@@ -50,8 +50,8 @@ To explain up-front:
 - When taking an exam for practice, we recommend having a copy of the DSC 10 reference sheet open in another tab, as well as a second copy of the exam, so you can access the data descriptions.
 
 
-### Troubleshooting tips 
-#### yaml `ModuleNotFoundError` 
+## Troubleshooting tips 
+#### 1.yaml `ModuleNotFoundError` 
 ```
 python run.py
 Traceback (most recent call last):
@@ -109,7 +109,7 @@ hint: See PEP 668 for the detailed specification.
 - Taken DSC 80,
 Use DSC 80 environment either in terminal or in VS code. 
 
-#### Pathname issue 
+#### 2.Pathname issue 
 ```
 File "practice.dsc40a.com/run.py", line 549, in <module>
     write_all_pages()
