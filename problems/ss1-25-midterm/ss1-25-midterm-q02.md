@@ -168,6 +168,19 @@ Once again, you train this model by minimizing the associated mean squared error
 Explain why $R_1 \leq R_4$.
 
 # BEGIN SOLN
+## Solution
+
+Model $f_1(\vec{w}, b; \vec{x}) = \vec{w}^\top \vec{x} + b$ includes an intercept term $b$, while model $f_4(\vec{w}; \vec{x}) = \vec{w}^\top x$ does not have an intercept.
+
+This means $f_1$ is a more flexible model with one additional parameter compared to $f_4$. The intercept/bias term allows the model to shift all predictions up or down, enabling it to better match the target values.
+
+Importantly, $f_1$ can always replicate the behavior of $f_4$ by simply setting $b = 0$. Therefore, $f_1$ can do at least as well as $f_4$, and possibly better if a non-zero intercept improves the fit.
+
+Since $R_1$ represents the optimal (minimized) mean squared error for model $f_1$ and $R_4$ represents the optimal mean squared error for model $f_4$, we have:
+
+$$R_1 \leq R_4$$
+
+The MSE of $f_1$ must be less than or equal to the MSE of $f_4$.
 # END SOLN
 
 # END SUBPROB
@@ -183,6 +196,49 @@ $$
 Prove $R_1 = R_4$.
 
 # BEGIN SOLN
+## Solution
+
+We need to show that under the centering conditions, the optimal risk for model $$f_1$$ (with intercept) equals the optimal risk for model $$f_4$$ (without intercept).
+
+### Step 1: Express the Mean Squared Error for Model $$f_1$$
+
+For model $$f_1$$, the mean squared error is:
+$$\text{MSE}_1(\vec{w}, b) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b)^2$$
+
+### Step 2: Find the Optimal Intercept $$b^*$$
+
+To minimize the MSE with respect to $$b$$, we take the partial derivative:
+$$\frac{\partial \text{MSE}_1}{\partial b} = \frac{\partial}{\partial b} \left( \frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b)^2 \right)$$
+
+$$= -\frac{2}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b)$$
+
+Setting this equal to zero:
+$$-\frac{2}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b) = 0$$
+
+$$\sum_{i=1}^{n} y_i - \sum_{i=1}^{n} \vec{w}^{\top} \vec{x}_i - nb = 0$$
+
+### Step 3: Apply the Centering Conditions
+
+Using the centering condition $$\sum_{i=1}^{n} y_i = 0$$:
+$$\sum_{i=1}^{n} \vec{w}^{\top} \vec{x}_i = \vec{w}^{\top} \sum_{i=1}^{n} \vec{x}_i$$
+
+Since $$\sum_{i=1}^{n} \vec{x}_i^{(j)} = 0$$ for each feature $$j$$, we have $$\sum_{i=1}^{n} \vec{x}_i = \vec{0}$$, so:
+$$\vec{w}^{\top} \sum_{i=1}^{n} \vec{x}_i = \vec{w}^{\top} \vec{0} = 0$$
+
+Therefore:
+$$0 - 0 - nb = 0$$
+$$b^* = 0$$
+
+### Step 4: Conclude $$R_1 = R_4$$
+
+Since the optimal intercept $$b^* = 0$$ for model $$f_1$$ under the centering conditions, the optimal model becomes:
+$$f_1(\vec{w}^*, b^*; \vec{x}) = \vec{w}^{* \top} \vec{x} + 0 = \vec{w}^{* \top} \vec{x}$$
+
+This is exactly the form of model $$f_4$$. Therefore, both models optimize over the same family of functions (linear functions through the origin), and thus achieve the same optimal risk:
+$$R_1 = \min_{\vec{w}, b} \frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b)^2 = \min_{\vec{w}} \frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i)^2 = R_4$$
+
+Therefore, $$R_1 = R_4$$. ∎
+
 # END SOLN
 
 # END SUBPROB
@@ -192,6 +248,53 @@ Prove $R_1 = R_4$.
 Use the setting of $d=1$ (a.k.a. simple linear regression) to draw a sketch which illustrates why the result in Part (d) makes sense geometrically.
 
 # BEGIN SOLN
+## Solution
+
+### Geometric Interpretation
+
+When $$d = 1$$, we have simple linear regression with a single feature:
+- Model $$f_1$$: $$y = ax + b$$ (line with intercept)
+- Model $$f_4$$: $$y = ax$$ (line through the origin)
+
+The centering conditions become:
+- $$\sum_{i=1}^n x_i = 0$$ (features are centered)
+- $$\sum_{i=1}^n y_i = 0$$ (targets are centered)
+
+This means the data has mean $$(\bar{x}, \bar{y}) = (0, 0)$$, so the data cloud is centered at the origin.
+
+### Key Insight
+
+When fitting a line $$y = ax + b$$ to data centered at the origin using least squares, the optimal intercept is:
+
+$$b^* = \bar{y} - a^* \bar{x} = 0 - a^* \cdot 0 = 0$$
+
+This means the best-fit line for $$f_1$$ automatically passes through the origin, making it identical to the best-fit line for $$f_4$$.
+
+### Sketch
+
+```
+        y
+        |
+        |    •
+        |  •
+        |•     •
+    ----•-------•---- x
+      • |   •
+    •   |
+        |
+```
+
+**Explanation of sketch:**
+- The data points (•) are scattered around the origin $$(0, 0)$$ because they are centered
+- Both $$f_1$$ and $$f_4$$ will fit the same line through the origin (represented by the diagonal line)
+- For $$f_1$$: The optimal intercept $$b^* = 0$$ because the centroid of the data is at $$(0, 0)$$, and the least squares line always passes through the centroid
+- For $$f_4$$: The model is constrained to pass through the origin
+- Since both models produce the same fitted line, they achieve the same minimum MSE: $$R_1 = R_4$$
+
+### Why This Makes Sense
+
+The centering conditions ensure that the "natural" best-fit line for $$f_1$$ passes through the origin, eliminating the advantage that $$f_1$$ normally has over $$f_4$$ due to the flexibility of choosing the intercept. Therefore, both models perform equally well on centered data.
+
 # END SOLN
 
 # END SUBPROB

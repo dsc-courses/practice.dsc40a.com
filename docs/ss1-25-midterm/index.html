@@ -498,6 +498,24 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>Model <span class="math inline">f_1(\vec{w}, b; \vec{x}) =
+\vec{w}^\top \vec{x} + b</span> includes an intercept term <span class="math inline">b</span>, while model <span class="math inline">f_4(\vec{w}; \vec{x}) = \vec{w}^\top x</span> does
+not have an intercept.</p>
+<p>This means <span class="math inline">f_1</span> is a more flexible
+model with one additional parameter compared to <span class="math inline">f_4</span>. The intercept/bias term allows the model
+to shift all predictions up or down, enabling it to better match the
+target values.</p>
+<p>Importantly, <span class="math inline">f_1</span> can always
+replicate the behavior of <span class="math inline">f_4</span> by simply
+setting <span class="math inline">b = 0</span>. Therefore, <span class="math inline">f_1</span> can do at least as well as <span class="math inline">f_4</span>, and possibly better if a non-zero
+intercept improves the fit.</p>
+<p>Since <span class="math inline">R_1</span> represents the optimal
+(minimized) mean squared error for model <span class="math inline">f_1</span> and <span class="math inline">R_4</span>
+represents the optimal mean squared error for model <span class="math inline">f_4</span>, we have:</p>
+<p><span class="math display">R_1 \leq R_4</span></p>
+<p>The MSE of <span class="math inline">f_1</span> must be less than or
+equal to the MSE of <span class="math inline">f_4</span>.</p>
 </div>
 </div>
 </div>
@@ -523,6 +541,50 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>We need to show that under the centering conditions, the optimal risk
+for model <span class="math display">f_1</span> (with intercept) equals
+the optimal risk for model <span class="math display">f_4</span>
+(without intercept).</p>
+<h3 id="step-1-express-the-mean-squared-error-for-model-f_1">Step 1:
+Express the Mean Squared Error for Model <span class="math display">f_1</span></h3>
+<p>For model <span class="math display">f_1</span>, the mean squared
+error is: <span class="math display">\text{MSE}_1(\vec{w}, b) =
+\frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i -
+b)^2</span></p>
+<h3 id="step-2-find-the-optimal-intercept-b">Step 2: Find the Optimal
+Intercept <span class="math display">b^*</span></h3>
+<p>To minimize the MSE with respect to <span class="math display">b</span>, we take the partial derivative: <span class="math display">\frac{\partial \text{MSE}_1}{\partial b} =
+\frac{\partial}{\partial b} \left( \frac{1}{n} \sum_{i=1}^{n} (y_i -
+\vec{w}^{\top} \vec{x}_i - b)^2 \right)</span></p>
+<p><span class="math display">= -\frac{2}{n} \sum_{i=1}^{n} (y_i -
+\vec{w}^{\top} \vec{x}_i - b)</span></p>
+<p>Setting this equal to zero: <span class="math display">-\frac{2}{n}
+\sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b) = 0</span></p>
+<p><span class="math display">\sum_{i=1}^{n} y_i - \sum_{i=1}^{n}
+\vec{w}^{\top} \vec{x}_i - nb = 0</span></p>
+<h3 id="step-3-apply-the-centering-conditions">Step 3: Apply the
+Centering Conditions</h3>
+<p>Using the centering condition <span class="math display">\sum_{i=1}^{n} y_i = 0</span>: <span class="math display">\sum_{i=1}^{n} \vec{w}^{\top} \vec{x}_i =
+\vec{w}^{\top} \sum_{i=1}^{n} \vec{x}_i</span></p>
+<p>Since <span class="math display">\sum_{i=1}^{n} \vec{x}_i^{(j)} =
+0</span> for each feature <span class="math display">j</span>, we have
+<span class="math display">\sum_{i=1}^{n} \vec{x}_i = \vec{0}</span>,
+so: <span class="math display">\vec{w}^{\top} \sum_{i=1}^{n} \vec{x}_i =
+\vec{w}^{\top} \vec{0} = 0</span></p>
+<p>Therefore: <span class="math display">0 - 0 - nb = 0</span> <span class="math display">b^* = 0</span></p>
+<h3 id="step-4-conclude-r_1-r_4">Step 4: Conclude <span class="math display">R_1 = R_4</span></h3>
+<p>Since the optimal intercept <span class="math display">b^* = 0</span>
+for model <span class="math display">f_1</span> under the centering
+conditions, the optimal model becomes: <span class="math display">f_1(\vec{w}^*, b^*; \vec{x}) = \vec{w}^{* \top}
+\vec{x} + 0 = \vec{w}^{* \top} \vec{x}</span></p>
+<p>This is exactly the form of model <span class="math display">f_4</span>. Therefore, both models optimize over
+the same family of functions (linear functions through the origin), and
+thus achieve the same optimal risk: <span class="math display">R_1 =
+\min_{\vec{w}, b} \frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top}
+\vec{x}_i - b)^2 = \min_{\vec{w}} \frac{1}{n} \sum_{i=1}^{n} (y_i -
+\vec{w}^{\top} \vec{x}_i)^2 = R_4</span></p>
+<p>Therefore, <span class="math display">R_1 = R_4</span>. ∎</p>
 </div>
 </div>
 </div>
@@ -545,6 +607,53 @@ aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<h3 id="geometric-interpretation">Geometric Interpretation</h3>
+<p>When <span class="math display">d = 1</span>, we have simple linear
+regression with a single feature: - Model <span class="math display">f_1</span>: <span class="math display">y = ax +
+b</span> (line with intercept) - Model <span class="math display">f_4</span>: <span class="math display">y =
+ax</span> (line through the origin)</p>
+<p>The centering conditions become: - <span class="math display">\sum_{i=1}^n x_i = 0</span> (features are centered)
+- <span class="math display">\sum_{i=1}^n y_i = 0</span> (targets are
+centered)</p>
+<p>This means the data has mean <span class="math display">(\bar{x},
+\bar{y}) = (0, 0)</span>, so the data cloud is centered at the
+origin.</p>
+<h3 id="key-insight">Key Insight</h3>
+<p>When fitting a line <span class="math display">y = ax + b</span> to
+data centered at the origin using least squares, the optimal intercept
+is:</p>
+<p><span class="math display">b^* = \bar{y} - a^* \bar{x} = 0 - a^*
+\cdot 0 = 0</span></p>
+<p>This means the best-fit line for <span class="math display">f_1</span> automatically passes through the origin,
+making it identical to the best-fit line for <span class="math display">f_4</span>.</p>
+<h3 id="sketch">Sketch</h3>
+<pre><code>        y
+        |
+        |    •
+        |  •
+        |•     •
+    ----•-------•---- x
+      • |   •
+    •   |
+        |</code></pre>
+<p><strong>Explanation of sketch:</strong> - The data points (•) are
+scattered around the origin <span class="math display">(0, 0)</span>
+because they are centered - Both <span class="math display">f_1</span>
+and <span class="math display">f_4</span> will fit the same line through
+the origin (represented by the diagonal line) - For <span class="math display">f_1</span>: The optimal intercept <span class="math display">b^* = 0</span> because the centroid of the data is
+at <span class="math display">(0, 0)</span>, and the least squares line
+always passes through the centroid - For <span class="math display">f_4</span>: The model is constrained to pass
+through the origin - Since both models produce the same fitted line,
+they achieve the same minimum MSE: <span class="math display">R_1 =
+R_4</span></p>
+<h3 id="why-this-makes-sense">Why This Makes Sense</h3>
+<p>The centering conditions ensure that the “natural” best-fit line for
+<span class="math display">f_1</span> passes through the origin,
+eliminating the advantage that <span class="math display">f_1</span>
+normally has over <span class="math display">f_4</span> due to the
+flexibility of choosing the intercept. Therefore, both models perform
+equally well on centered data.</p>
 </div>
 </div>
 </div>
