@@ -50,6 +50,8 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
 - [Foundations of Probability](foundations-of-probability/index.html)
 - [Conditional Probability and Naive Bayes](conditional-probability/index.html)
 - [Combinatorics](combinatorics/index.html)
+
+
 <!-- - Independence and Conditional Independence
 - Bayes' Theorem -->
 
@@ -82,6 +84,12 @@ Topics not in scope for the Midterm Exam, but in scope for the Final Exam:
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <th scope="row">Summer 2025</th>
+      <td>Sawyer Robertson</td>
+      <td><a href="ss1-25-midterm/index.html">Midterm</a>
+      </td>
+  </tr>
   <tr>
       <th scope="row">Fall 2024</th>
       <td>Gal Mishne</td>

@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Summer Session 2025 Midterm Exam</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -102,6 +105,163 @@ aria-labelledby="heading1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h3 id="solution">Solution</h3>
+<h4 id="step-1-compute-partial-derivatives">Step 1: Compute Partial
+Derivatives</h4>
+<p>We compute the partial derivatives of <span class="math inline">R_\gamma(a, b)</span> with respect to both
+parameters.</p>
+<p><strong>Partial derivative with respect to <span class="math inline">a</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\frac{\partial R_\gamma}{\partial a} &amp;= 2\gamma a + \frac{1}{n}
+\sum_{i=1}^{n} 2(y_i - ax_i - b)(-x_i)\\
+&amp;= 2\gamma a - \frac{2}{n} \sum_{i=1}^{n} x_i (y_i - ax_i - b)
+\end{align*}
+</span></p>
+<p><strong>Partial derivative with respect to <span class="math inline">b</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\frac{\partial R_\gamma}{\partial b} &amp;= \frac{1}{n} \sum_{i=1}^{n}
+2(y_i - ax_i - b)(-1)\\
+&amp;= -\frac{2}{n} \sum_{i=1}^{n} (y_i - ax_i - b)
+\end{align*}
+</span></p>
+<h4 id="step-2-set-partial-derivatives-to-zero-normal-equations">Step 2:
+Set Partial Derivatives to Zero (Normal Equations)</h4>
+<p><strong>From <span class="math inline">\frac{\partial
+R_\gamma}{\partial b} = 0</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+-\frac{2}{n} \sum_{i=1}^{n} (y_i - ax_i - b) &amp;= 0\\
+\sum_{i=1}^{n} y_i - a\sum_{i=1}^{n} x_i - nb &amp;= 0\\
+nb &amp;= \sum_{i=1}^{n} y_i - a\sum_{i=1}^{n} x_i\\
+b &amp;= \frac{1}{n}\sum_{i=1}^{n} y_i - \frac{a}{n}\sum_{i=1}^{n} x_i\\
+b &amp;= \bar{y} - a\bar{x}
+\end{align*}
+</span></p>
+<p>where <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^{n}
+x_i</span> and <span class="math inline">\bar{y} =
+\frac{1}{n}\sum_{i=1}^{n} y_i</span>.</p>
+<p><strong>From <span class="math inline">\frac{\partial
+R_\gamma}{\partial a} = 0</span>:</strong></p>
+<p><span class="math display">
+\begin{align*}
+2\gamma a - \frac{2}{n} \sum_{i=1}^{n} x_i (y_i - ax_i - b) &amp;= 0\\
+\gamma a - \frac{1}{n} \sum_{i=1}^{n} x_i y_i +
+\frac{a}{n}\sum_{i=1}^{n} x_i^2 + \frac{b}{n}\sum_{i=1}^{n} x_i &amp;=
+0\\
+n\gamma a + a\sum_{i=1}^{n} x_i^2 + b\sum_{i=1}^{n} x_i &amp;=
+\sum_{i=1}^{n} x_i y_i
+\end{align*}
+</span></p>
+<h4 id="step-3-solve-for-a-by-substituting-b-bary---abarx">Step 3: Solve
+for <span class="math inline">a^*</span> by Substituting <span class="math inline">b = \bar{y} - a\bar{x}</span></h4>
+<p>Substituting <span class="math inline">b = \bar{y} - a\bar{x}</span>
+into the equation above:</p>
+<p><span class="math display">
+\begin{align*}
+n\gamma a + a\sum_{i=1}^{n} x_i^2 + (\bar{y} - a\bar{x})\sum_{i=1}^{n}
+x_i &amp;= \sum_{i=1}^{n} x_i y_i\\
+n\gamma a + a\sum_{i=1}^{n} x_i^2 + \bar{y} \cdot n\bar{x} - a\bar{x}
+\cdot n\bar{x} &amp;= \sum_{i=1}^{n} x_i y_i\\
+n\gamma a + a\sum_{i=1}^{n} x_i^2 - an\bar{x}^2 &amp;= \sum_{i=1}^{n}
+x_i y_i - n\bar{x}\bar{y}\\
+a\left(n\gamma + \sum_{i=1}^{n} x_i^2 - n\bar{x}^2\right) &amp;=
+\sum_{i=1}^{n} x_i y_i - n\bar{x}\bar{y}
+\end{align*}
+</span></p>
+<p>Note that <span class="math inline">\sum_{i=1}^{n} x_i^2 - n\bar{x}^2
+= \sum_{i=1}^{n} (x_i - \bar{x})^2</span> and <span class="math inline">\sum_{i=1}^{n} x_i y_i - n\bar{x}\bar{y} =
+\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})</span>.</p>
+<p>Therefore:</p>
+<p><span class="math display">
+a^* = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i -
+\bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2 + n\gamma}
+</span></p>
+<p>And:</p>
+<p><span class="math display">
+b^* = \bar{y} - a^*\bar{x}
+</span></p>
+<h4 id="step-4-verify-that-a-b-is-a-minimizer-second-derivative-test">Step
+4: Verify that <span class="math inline">(a^*, b^*)</span> is a
+Minimizer (Second Derivative Test)</h4>
+<p>To confirm that the critical point is a minimizer, we compute the
+Hessian matrix and verify that it is positive definite.</p>
+<p><strong>What is the Hessian matrix?</strong></p>
+<p>The Hessian matrix <span class="math inline">H</span> is a square
+matrix containing all second-order partial derivatives of a function.
+For a function <span class="math inline">R_\gamma(a, b)</span> with two
+variables, the Hessian is:</p>
+<p><span class="math display">
+H = \begin{pmatrix}
+\frac{\partial^2 R_\gamma}{\partial a^2} &amp; \frac{\partial^2
+R_\gamma}{\partial a \partial b}\\
+\frac{\partial^2 R_\gamma}{\partial b \partial a} &amp; \frac{\partial^2
+R_\gamma}{\partial b^2}
+\end{pmatrix}
+</span></p>
+<p><strong>How does the Hessian determine convexity and
+minima?</strong></p>
+<ul>
+<li>If <span class="math inline">H</span> is <strong>positive
+definite</strong> everywhere, then <span class="math inline">R_\gamma</span> is strictly convex, which means any
+critical point is a global minimum.</li>
+<li>For a <span class="math inline">2 \times 2</span> matrix, <span class="math inline">H</span> is positive definite if and only if:
+<ol type="1">
+<li><span class="math inline">H_{11} &gt; 0</span> (the top-left entry
+is positive), and</li>
+<li><span class="math inline">\det(H) &gt; 0</span> (the determinant is
+positive)</li>
+</ol></li>
+</ul>
+<p><strong>Second partial derivatives:</strong></p>
+<p><span class="math display">
+\begin{align*}
+\frac{\partial^2 R_\gamma}{\partial a^2} &amp;= 2\gamma +
+\frac{2}{n}\sum_{i=1}^{n} x_i^2\\
+\frac{\partial^2 R_\gamma}{\partial b^2} &amp;=
+\frac{2}{n}\sum_{i=1}^{n} 1 = 2\\
+\frac{\partial^2 R_\gamma}{\partial a \partial b} &amp;=
+\frac{2}{n}\sum_{i=1}^{n} x_i = 2\bar{x}
+\end{align*}
+</span></p>
+<p>The Hessian matrix is:</p>
+<p><span class="math display">
+H = \begin{pmatrix}
+2\gamma + \frac{2}{n}\sum_{i=1}^{n} x_i^2 &amp; 2\bar{x}\\
+2\bar{x} &amp; 2
+\end{pmatrix}
+</span></p>
+<p>For the Hessian to be positive definite, we need:</p>
+<ol type="1">
+<li><p><span class="math inline">H_{11} = 2\gamma +
+\frac{2}{n}\sum_{i=1}^{n} x_i^2 &gt; 0</span>. This is true since <span class="math inline">\gamma &gt; 0</span> and all terms are
+non-negative.</p></li>
+<li><p><span class="math inline">\det(H) &gt; 0</span>:</p></li>
+</ol>
+<p><span class="math display">
+\begin{align*}
+\det(H) &amp;= 2\left(2\gamma + \frac{2}{n}\sum_{i=1}^{n} x_i^2\right) -
+4\bar{x}^2\\
+&amp;= 4\gamma + \frac{4}{n}\sum_{i=1}^{n} x_i^2 - 4\bar{x}^2\\
+&amp;= 4\gamma + \frac{4}{n}\sum_{i=1}^{n} (x_i - \bar{x})^2\\
+&amp;&gt; 0
+\end{align*}
+</span></p>
+<p>since <span class="math inline">\gamma &gt; 0</span>.</p>
+<p>Therefore, the Hessian is positive definite, confirming that <span class="math inline">(a^*, b^*)</span> is indeed a global minimizer of
+<span class="math inline">R_\gamma(a, b)</span>.</p>
+<h3 id="final-answer">Final Answer</h3>
+<p><span class="math display">
+\boxed{a^* = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i -
+\bar{y})}{\sum_{i=1}^{n} (x_i - \bar{x})^2 + n\gamma}}
+</span></p>
+<p><span class="math display">
+\boxed{b^* = \bar{y} - a^*\bar{x}}
+</span></p>
+<p>where <span class="math inline">\bar{x} = \frac{1}{n}\sum_{i=1}^{n}
+x_i</span> and <span class="math inline">\bar{y} =
+\frac{1}{n}\sum_{i=1}^{n} y_i</span>.</p>
 </div>
 </div>
 </div>
@@ -165,6 +325,76 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><strong>Solution</strong></p>
+<p>We begin by rewriting the model <span class="math inline">f_2</span>
+more explicitly. The model <span class="math inline">f_2</span> has
+<span class="math inline">d-2</span> weight parameters (excluding the
+intercept <span class="math inline">b</span>): <span class="math display">
+f_2(\vec{w}, b; \vec{x}) = \sum_{j=1}^{d-2} \vec{w}^{(j)} x^{(j)} + b,
+\quad \vec{w} \in \mathbb{R}^{d-2}, \, b \in \mathbb{R}.
+</span></p>
+<p>To apply Theorem 2.3.2, we need to construct the appropriate design
+matrix and parameter vector.</p>
+<p><strong>Step 1: Define the modified design matrix</strong></p>
+<p>Let <span class="math inline">\mathbf{Z}_2 \in \mathbb{R}^{n \times
+(d-1)}</span> be the modified design matrix where each row corresponds
+to a training example with only the first <span class="math inline">d-2</span> features plus a column of ones for the
+intercept: <span class="math display">
+\mathbf{Z}_2 = \begin{bmatrix}
+1 &amp; x_1^{(1)} &amp; x_1^{(2)} &amp; \cdots &amp; x_1^{(d-2)} \\
+1 &amp; x_2^{(1)} &amp; x_2^{(2)} &amp; \cdots &amp; x_2^{(d-2)} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; x_n^{(1)} &amp; x_n^{(2)} &amp; \cdots &amp; x_n^{(d-2)}
+\end{bmatrix} \in \mathbb{R}^{n \times (d-1)}.
+</span></p>
+<p><strong>Step 2: Define the parameter vector and target
+vector</strong></p>
+<p>Let <span class="math inline">\vec{\theta} \in
+\mathbb{R}^{d-1}</span> be the combined parameter vector: <span class="math display">
+\vec{\theta} = \begin{bmatrix} b \\ \vec{w}^{(1)} \\ \vec{w}^{(2)} \\
+\vdots \\ \vec{w}^{(d-2)} \end{bmatrix}.
+</span></p>
+<p>Let <span class="math inline">\mathbf{Y} \in \mathbb{R}^n</span> be
+the target vector: <span class="math display">
+\mathbf{Y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}.
+</span></p>
+<p><strong>Step 3: Express the MSE</strong></p>
+<p>The mean squared error can be written as: <span class="math display">
+\text{MSE}(\vec{\theta}) = \frac{1}{n} \sum_{i=1}^n \left( y_i -
+\mathbf{Z}_{2,i}^{\top} \vec{\theta} \right)^2 = \frac{1}{n}
+\|\mathbf{Y} - \mathbf{Z}_2 \vec{\theta}\|_2^2.
+</span></p>
+<p><strong>Step 4: Apply Theorem 2.3.2</strong></p>
+<p>To minimize the MSE, we take the gradient with respect to <span class="math inline">\vec{\theta}</span> and set it equal to zero: <span class="math display">
+\frac{\partial \text{MSE}}{\partial \vec{\theta}} = -\frac{2}{n}
+\mathbf{Z}_2^{\top} (\mathbf{Y} - \mathbf{Z}_2 \vec{\theta}) = 0.
+</span></p>
+<p>This simplifies to the normal equation: <span class="math display">
+\mathbf{Z}_2^{\top} \mathbf{Z}_2 \vec{\theta} = \mathbf{Z}_2^{\top}
+\mathbf{Y}.
+</span></p>
+<p>Assuming <span class="math inline">\mathbf{Z}_2^{\top}
+\mathbf{Z}_2</span> is invertible (which holds when <span class="math inline">\mathbf{Z}_2</span> has full column rank), the
+unique minimizer is: <span class="math display">
+\vec{\theta}^* = \left( \mathbf{Z}_2^{\top} \mathbf{Z}_2 \right)^{-1}
+\mathbf{Z}_2^{\top} \mathbf{Y}.
+</span></p>
+<p><strong>Step 5: Extract optimal parameters</strong></p>
+<p>The optimal parameters are obtained by decomposing <span class="math inline">\vec{\theta}^*</span>: <span class="math display">
+\begin{bmatrix} b^* \\ \vec{w}^* \end{bmatrix} = \vec{\theta}^* = \left(
+\mathbf{Z}_2^{\top} \mathbf{Z}_2 \right)^{-1} \mathbf{Z}_2^{\top}
+\mathbf{Y},
+</span> where <span class="math inline">b^*</span> is the first
+component and <span class="math inline">\vec{w}^* \in
+\mathbb{R}^{d-2}</span> consists of the remaining components.</p>
+<p><strong>Final Answer:</strong> <span class="math display">
+\boxed{\begin{bmatrix} b^* \\ \vec{w}^* \end{bmatrix} = \left(
+\mathbf{Z}_2^{\top} \mathbf{Z}_2 \right)^{-1} \mathbf{Z}_2^{\top}
+\mathbf{Y}}
+</span> where <span class="math inline">\mathbf{Z}_2 \in \mathbb{R}^{n
+\times (d-1)}</span> is the design matrix containing a column of ones
+followed by the first <span class="math inline">d-2</span> features of
+each training example.</p>
 </div>
 </div>
 </div>
@@ -188,6 +418,56 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p><strong>Answer:</strong> <span class="math inline">R_1 \leq R_3 \leq
+R_2</span></p>
+<p><strong>Justification:</strong></p>
+<p>To compare these three models, we need to analyze their flexibility
+and representational capacity.</p>
+<p><strong>Comparing <span class="math inline">R_1</span> and <span class="math inline">R_3</span>:</strong></p>
+<p>Model <span class="math inline">f_1</span> is the most general model
+with <span class="math inline">d</span> independent weight parameters
+plus an intercept, giving it <span class="math inline">(d+1)</span>
+total parameters.</p>
+<p>Model <span class="math inline">f_3</span> can be rewritten as: <span class="math display">f_3(\vec{w}, b; \vec{x}) = \vec{w}^{(1)}x^{(1)} +
+\ldots + \vec{w}^{(d-2)}x^{(d-2)} + \vec{w}^{(d-1)}x^{(d-1)} +
+\vec{w}^{(d-1)}x^{(d)} + b</span></p>
+<p>This is equivalent to <span class="math inline">f_1</span> with the
+constraint that <span class="math inline">w^{(d-1)} = w^{(d)}</span>. In
+other words, <span class="math inline">f_3</span> is a constrained
+version of <span class="math inline">f_1</span>.</p>
+<p>Since <span class="math inline">f_1</span> includes all possible
+models that <span class="math inline">f_3</span> can represent (by
+setting <span class="math inline">w^{(d-1)} = w^{(d)}</span> in <span class="math inline">f_1</span>), the minimum achievable MSE for <span class="math inline">f_1</span> must be at least as good as (or better
+than) that of <span class="math inline">f_3</span>. Therefore:</p>
+<p><span class="math display">R_1 \leq R_3</span></p>
+<p><strong>Comparing <span class="math inline">R_3</span> and <span class="math inline">R_2</span>:</strong></p>
+<p>Model <span class="math inline">f_2</span> completely removes the
+last two features from the model, using only features <span class="math inline">x^{(1)}, \ldots, x^{(d-2)}</span>.</p>
+<p>Model <span class="math inline">f_3</span> uses all <span class="math inline">d</span> features but groups the last two with a
+shared coefficient <span class="math inline">\vec{w}^{(d-1)}</span>.</p>
+<p>We can show that <span class="math inline">f_3</span> is more
+flexible than <span class="math inline">f_2</span> by noting that <span class="math inline">f_2</span> is a special case of <span class="math inline">f_3</span>. Specifically, if we set <span class="math inline">\vec{w}^{(d-1)} = 0</span> in model <span class="math inline">f_3</span>, we get:</p>
+<p><span class="math display">f_3(\vec{w}, b; \vec{x}) =
+\vec{w}^{(1)}x^{(1)} + \ldots + \vec{w}^{(d-2)}x^{(d-2)} + 0 \cdot
+(x^{(d-1)} + x^{(d)}) + b = f_2(\vec{w}, b; \vec{x})</span></p>
+<p>Since <span class="math inline">f_3</span> can represent any model
+that <span class="math inline">f_2</span> can represent (plus additional
+models where <span class="math inline">\vec{w}^{(d-1)} \neq 0</span>),
+the minimum achievable MSE for <span class="math inline">f_3</span> must
+be at least as good as that of <span class="math inline">f_2</span>.
+Therefore:</p>
+<p><span class="math display">R_3 \leq R_2</span></p>
+<p><strong>Final Ranking:</strong></p>
+<p>Combining these results, we have:</p>
+<p><span class="math display">R_1 \leq R_3 \leq R_2</span></p>
+<p>This ranking makes intuitive sense: <span class="math inline">f_1</span> is the most flexible model with the most
+parameters, allowing it to fit the training data best (lowest MSE).
+Model <span class="math inline">f_3</span> is moderately flexible,
+incorporating information from all features but with a constraint on the
+last two weights. Model <span class="math inline">f_2</span> is the
+least flexible, as it discards potentially useful information by
+completely removing the last two features.</p>
 </div>
 </div>
 </div>
@@ -218,6 +498,24 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>Model <span class="math inline">f_1(\vec{w}, b; \vec{x}) =
+\vec{w}^\top \vec{x} + b</span> includes an intercept term <span class="math inline">b</span>, while model <span class="math inline">f_4(\vec{w}; \vec{x}) = \vec{w}^\top x</span> does
+not have an intercept.</p>
+<p>This means <span class="math inline">f_1</span> is a more flexible
+model with one additional parameter compared to <span class="math inline">f_4</span>. The intercept/bias term allows the model
+to shift all predictions up or down, enabling it to better match the
+target values.</p>
+<p>Importantly, <span class="math inline">f_1</span> can always
+replicate the behavior of <span class="math inline">f_4</span> by simply
+setting <span class="math inline">b = 0</span>. Therefore, <span class="math inline">f_1</span> can do at least as well as <span class="math inline">f_4</span>, and possibly better if a non-zero
+intercept improves the fit.</p>
+<p>Since <span class="math inline">R_1</span> represents the optimal
+(minimized) mean squared error for model <span class="math inline">f_1</span> and <span class="math inline">R_4</span>
+represents the optimal mean squared error for model <span class="math inline">f_4</span>, we have:</p>
+<p><span class="math display">R_1 \leq R_4</span></p>
+<p>The MSE of <span class="math inline">f_1</span> must be less than or
+equal to the MSE of <span class="math inline">f_4</span>.</p>
 </div>
 </div>
 </div>
@@ -243,6 +541,50 @@ aria-labelledby="heading2_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>We need to show that under the centering conditions, the optimal risk
+for model <span class="math display">f_1</span> (with intercept) equals
+the optimal risk for model <span class="math display">f_4</span>
+(without intercept).</p>
+<h3 id="step-1-express-the-mean-squared-error-for-model-f_1">Step 1:
+Express the Mean Squared Error for Model <span class="math display">f_1</span></h3>
+<p>For model <span class="math display">f_1</span>, the mean squared
+error is: <span class="math display">\text{MSE}_1(\vec{w}, b) =
+\frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i -
+b)^2</span></p>
+<h3 id="step-2-find-the-optimal-intercept-b">Step 2: Find the Optimal
+Intercept <span class="math display">b^*</span></h3>
+<p>To minimize the MSE with respect to <span class="math display">b</span>, we take the partial derivative: <span class="math display">\frac{\partial \text{MSE}_1}{\partial b} =
+\frac{\partial}{\partial b} \left( \frac{1}{n} \sum_{i=1}^{n} (y_i -
+\vec{w}^{\top} \vec{x}_i - b)^2 \right)</span></p>
+<p><span class="math display">= -\frac{2}{n} \sum_{i=1}^{n} (y_i -
+\vec{w}^{\top} \vec{x}_i - b)</span></p>
+<p>Setting this equal to zero: <span class="math display">-\frac{2}{n}
+\sum_{i=1}^{n} (y_i - \vec{w}^{\top} \vec{x}_i - b) = 0</span></p>
+<p><span class="math display">\sum_{i=1}^{n} y_i - \sum_{i=1}^{n}
+\vec{w}^{\top} \vec{x}_i - nb = 0</span></p>
+<h3 id="step-3-apply-the-centering-conditions">Step 3: Apply the
+Centering Conditions</h3>
+<p>Using the centering condition <span class="math display">\sum_{i=1}^{n} y_i = 0</span>: <span class="math display">\sum_{i=1}^{n} \vec{w}^{\top} \vec{x}_i =
+\vec{w}^{\top} \sum_{i=1}^{n} \vec{x}_i</span></p>
+<p>Since <span class="math display">\sum_{i=1}^{n} \vec{x}_i^{(j)} =
+0</span> for each feature <span class="math display">j</span>, we have
+<span class="math display">\sum_{i=1}^{n} \vec{x}_i = \vec{0}</span>,
+so: <span class="math display">\vec{w}^{\top} \sum_{i=1}^{n} \vec{x}_i =
+\vec{w}^{\top} \vec{0} = 0</span></p>
+<p>Therefore: <span class="math display">0 - 0 - nb = 0</span> <span class="math display">b^* = 0</span></p>
+<h3 id="step-4-conclude-r_1-r_4">Step 4: Conclude <span class="math display">R_1 = R_4</span></h3>
+<p>Since the optimal intercept <span class="math display">b^* = 0</span>
+for model <span class="math display">f_1</span> under the centering
+conditions, the optimal model becomes: <span class="math display">f_1(\vec{w}^*, b^*; \vec{x}) = \vec{w}^{* \top}
+\vec{x} + 0 = \vec{w}^{* \top} \vec{x}</span></p>
+<p>This is exactly the form of model <span class="math display">f_4</span>. Therefore, both models optimize over
+the same family of functions (linear functions through the origin), and
+thus achieve the same optimal risk: <span class="math display">R_1 =
+\min_{\vec{w}, b} \frac{1}{n} \sum_{i=1}^{n} (y_i - \vec{w}^{\top}
+\vec{x}_i - b)^2 = \min_{\vec{w}} \frac{1}{n} \sum_{i=1}^{n} (y_i -
+\vec{w}^{\top} \vec{x}_i)^2 = R_4</span></p>
+<p>Therefore, <span class="math display">R_1 = R_4</span>. ∎</p>
 </div>
 </div>
 </div>
@@ -265,6 +607,53 @@ aria-labelledby="heading2_5" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<h3 id="geometric-interpretation">Geometric Interpretation</h3>
+<p>When <span class="math display">d = 1</span>, we have simple linear
+regression with a single feature: - Model <span class="math display">f_1</span>: <span class="math display">y = ax +
+b</span> (line with intercept) - Model <span class="math display">f_4</span>: <span class="math display">y =
+ax</span> (line through the origin)</p>
+<p>The centering conditions become: - <span class="math display">\sum_{i=1}^n x_i = 0</span> (features are centered)
+- <span class="math display">\sum_{i=1}^n y_i = 0</span> (targets are
+centered)</p>
+<p>This means the data has mean <span class="math display">(\bar{x},
+\bar{y}) = (0, 0)</span>, so the data cloud is centered at the
+origin.</p>
+<h3 id="key-insight">Key Insight</h3>
+<p>When fitting a line <span class="math display">y = ax + b</span> to
+data centered at the origin using least squares, the optimal intercept
+is:</p>
+<p><span class="math display">b^* = \bar{y} - a^* \bar{x} = 0 - a^*
+\cdot 0 = 0</span></p>
+<p>This means the best-fit line for <span class="math display">f_1</span> automatically passes through the origin,
+making it identical to the best-fit line for <span class="math display">f_4</span>.</p>
+<h3 id="sketch">Sketch</h3>
+<pre><code>        y
+        |
+        |    •
+        |  •
+        |•     •
+    ----•-------•---- x
+      • |   •
+    •   |
+        |</code></pre>
+<p><strong>Explanation of sketch:</strong> - The data points (•) are
+scattered around the origin <span class="math display">(0, 0)</span>
+because they are centered - Both <span class="math display">f_1</span>
+and <span class="math display">f_4</span> will fit the same line through
+the origin (represented by the diagonal line) - For <span class="math display">f_1</span>: The optimal intercept <span class="math display">b^* = 0</span> because the centroid of the data is
+at <span class="math display">(0, 0)</span>, and the least squares line
+always passes through the centroid - For <span class="math display">f_4</span>: The model is constrained to pass
+through the origin - Since both models produce the same fitted line,
+they achieve the same minimum MSE: <span class="math display">R_1 =
+R_4</span></p>
+<h3 id="why-this-makes-sense">Why This Makes Sense</h3>
+<p>The centering conditions ensure that the “natural” best-fit line for
+<span class="math display">f_1</span> passes through the origin,
+eliminating the advantage that <span class="math display">f_1</span>
+normally has over <span class="math display">f_4</span> due to the
+flexibility of choosing the intercept. Therefore, both models perform
+equally well on centered data.</p>
 </div>
 </div>
 </div>
@@ -305,6 +694,43 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>To find the minimizer <span class="math display">c_1^*</span>, we
+need to find the critical points by taking the derivative of <span class="math display">R_1(c)</span> with respect to <span class="math display">c</span> and setting it equal to zero.</p>
+<p><strong>Step 1: Compute the derivative</strong></p>
+<p><span class="math display">\frac{dR_1}{dc} =
+\frac{d}{dc}\left[\frac{1}{n}\sum_{i=1}^n \alpha_i(c -
+x_i)^2\right]</span></p>
+<p><span class="math display">= \frac{1}{n}\sum_{i=1}^n \alpha_i \cdot
+2(c - x_i)</span></p>
+<p><span class="math display">= \frac{2}{n}\sum_{i=1}^n \alpha_i(c -
+x_i)</span></p>
+<p><strong>Step 2: Set the derivative equal to zero</strong></p>
+<p><span class="math display">\frac{2}{n}\sum_{i=1}^n \alpha_i(c - x_i)
+= 0</span></p>
+<p><span class="math display">\sum_{i=1}^n \alpha_i(c - x_i) =
+0</span></p>
+<p><span class="math display">\sum_{i=1}^n \alpha_i c - \sum_{i=1}^n
+\alpha_i x_i = 0</span></p>
+<p><span class="math display">c\sum_{i=1}^n \alpha_i = \sum_{i=1}^n
+\alpha_i x_i</span></p>
+<p><strong>Step 3: Solve for <span class="math display">c</span></strong></p>
+<p><span class="math display">c_1^* = \frac{\sum_{i=1}^n \alpha_i
+x_i}{\sum_{i=1}^n \alpha_i}</span></p>
+<p><strong>Step 4: Verify this is a minimum using the second derivative
+test</strong></p>
+<p><span class="math display">\frac{d^2R_1}{dc^2} =
+\frac{d}{dc}\left[\frac{2}{n}\sum_{i=1}^n \alpha_i(c -
+x_i)\right]</span></p>
+<p><span class="math display">= \frac{2}{n}\sum_{i=1}^n
+\alpha_i</span></p>
+<p>Since <span class="math display">\alpha_i &gt; 0</span> for all <span class="math display">i</span>, we have <span class="math display">\frac{d^2R_1}{dc^2} &gt; 0</span>, which confirms
+that <span class="math display">c_1^*</span> is indeed a minimizer (the
+function is convex).</p>
+<p><strong>Final Answer:</strong></p>
+<p><span class="math display">c_1^* = \frac{\sum_{i=1}^n \alpha_i
+x_i}{\sum_{i=1}^n \alpha_i}</span></p>
+<p>This is the weighted mean of the data points, where each point <span class="math display">x_i</span> is weighted by <span class="math display">\alpha_i</span>.</p>
 </div>
 </div>
 </div>
@@ -329,6 +755,52 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>To find the minimizer <span class="math display">c_2^*</span>, we
+need to analyze the risk function <span class="math display">R_2(c) =
+\frac{1}{n}\sum_{i=1}^n \alpha_i|c - x_i|</span>.</p>
+<p><strong>Key observation:</strong> The absolute value function <span class="math display">|c - x_i|</span> is convex but not differentiable
+at <span class="math display">c = x_i</span>. The sum of weighted
+absolute values is minimized at the <strong>weighted median</strong> of
+the data points.</p>
+<p><strong>Finding the derivative (where it exists):</strong></p>
+<p>For <span class="math display">c \neq x_i</span> for all <span class="math display">i</span>, we can write:</p>
+<p><span class="math display">\frac{dR_2}{dc} = \frac{1}{n}\sum_{i=1}^n
+\alpha_i \cdot \frac{d}{dc}|c - x_i|</span></p>
+<p>The derivative of <span class="math display">|c - x_i|</span> is:</p>
+<p><span class="math display">\frac{d}{dc}|c - x_i| = \begin{cases} +1
+&amp; \text{if } c &gt; x_i \\ -1 &amp; \text{if } c &lt; x_i
+\end{cases}</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\frac{dR_2}{dc} =
+\frac{1}{n}\left(\sum_{i: x_i &lt; c} \alpha_i - \sum_{i: x_i &gt; c}
+\alpha_i\right)</span></p>
+<p><strong>Setting the derivative to zero:</strong></p>
+<p>For a minimum, we want:</p>
+<p><span class="math display">\sum_{i: x_i &lt; c} \alpha_i = \sum_{i:
+x_i &gt; c} \alpha_i</span></p>
+<p>This means the sum of weights for points below <span class="math display">c</span> equals the sum of weights for points above
+<span class="math display">c</span>.</p>
+<p><strong>Weighted Median Formula:</strong></p>
+<p>Without loss of generality, assume the data points are sorted: <span class="math display">x_1 \leq x_2 \leq \cdots \leq x_n</span>.</p>
+<p>The minimizer <span class="math display">c_2^*</span> is the weighted
+median, defined as the value <span class="math display">x_k</span> such
+that:</p>
+<p><span class="math display">\sum_{i=1}^{k-1} \alpha_i \leq
+\frac{1}{2}\sum_{i=1}^n \alpha_i \quad \text{and} \quad \sum_{i=k+1}^n
+\alpha_i \leq \frac{1}{2}\sum_{i=1}^n \alpha_i</span></p>
+<p>Equivalently, <span class="math display">c_2^*</span> is the smallest
+value <span class="math display">x_k</span> in the sorted dataset for
+which:</p>
+<p><span class="math display">\sum_{i: x_i \leq x_k} \alpha_i \geq
+\frac{1}{2}\sum_{i=1}^n \alpha_i</span></p>
+<p><strong>Final Answer:</strong></p>
+<p><span class="math display">c_2^* = \text{weighted median of } \{x_1,
+\ldots, x_n\} \text{ with weights } \{\alpha_1, \ldots,
+\alpha_n\}</span></p>
+<p>More precisely, after sorting the data points, <span class="math display">c_2^* = x_k</span> where <span class="math display">k</span> is the smallest index satisfying:</p>
+<p><span class="math display">\sum_{i=1}^k \alpha_i \geq
+\frac{1}{2}\sum_{j=1}^n \alpha_j</span></p>
 </div>
 </div>
 </div>
@@ -349,6 +821,27 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p><strong><span class="math inline">R_1</span> is more sensitive to
+outliers.</strong></p>
+<p><strong>Explanation:</strong></p>
+<p>The risk function <span class="math inline">R_1</span> uses squared
+error <span class="math inline">(c - x_i)^2</span>, while <span class="math inline">R_2</span> uses absolute error <span class="math inline">|c - x_i|</span>.</p>
+<p>When an outlier <span class="math inline">x_i</span> is far from the
+model prediction <span class="math inline">c</span>: - In <span class="math inline">R_1</span>, the contribution is proportional to
+<span class="math inline">(c - x_i)^2</span>, which grows
+<strong>quadratically</strong> with the distance - In <span class="math inline">R_2</span>, the contribution is proportional to
+<span class="math inline">|c - x_i|</span>, which grows
+<strong>linearly</strong> with the distance</p>
+<p>For example, if an outlier is at distance <span class="math inline">d</span> from <span class="math inline">c</span>: -
+<span class="math inline">R_1</span> contributes <span class="math inline">\alpha_i d^2</span> - <span class="math inline">R_2</span> contributes <span class="math inline">\alpha_i d</span></p>
+<p>Since <span class="math inline">d^2 &gt; d</span> for <span class="math inline">d &gt; 1</span>, large deviations (outliers) have a
+disproportionately larger effect on <span class="math inline">R_1</span>
+than on <span class="math inline">R_2</span>. This quadratic penalty
+makes <span class="math inline">R_1</span> (mean squared error) much
+more sensitive to outliers compared to <span class="math inline">R_2</span> (mean absolute error).</p>
+<p>Therefore, <strong><span class="math inline">R_1</span> is more
+sensitive to outliers</strong> due to the squaring of errors.</p>
 </div>
 </div>
 </div>
@@ -503,6 +996,36 @@ aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>The design matrix <strong>Z</strong> contains the feature data, where
+<strong>each row corresponds to one vehicle</strong> and <strong>each
+column corresponds to one feature</strong>.</p>
+<p><span class="math display">\mathbf{Z} = \begin{bmatrix}
+2.0 &amp; 1300 &amp; 140 &amp; 0.28 \\
+2.5 &amp; 1450 &amp; 165 &amp; 0.30 \\
+3.0 &amp; 1600 &amp; 200 &amp; 0.32 \\
+1.8 &amp; 1250 &amp; 130 &amp; 0.27 \\
+3.5 &amp; 1700 &amp; 250 &amp; 0.33 \\
+2.2 &amp; 1350 &amp; 155 &amp; 0.29 \\
+2.8 &amp; 1500 &amp; 190 &amp; 0.31 \\
+1.6 &amp; 1200 &amp; 115 &amp; 0.26
+\end{bmatrix} \in \mathbb{R}^{8 \times 4}</span></p>
+<p>The target matrix <strong>Y</strong> contains the two fuel
+consumption measurements, where <strong>each row corresponds to one
+vehicle</strong> and <strong>each column corresponds to one target
+variable</strong>.</p>
+<p><span class="math display">\mathbf{Y} = \begin{bmatrix}
+8.5 &amp; 6.0 \\
+9.2 &amp; 6.5 \\
+10.8 &amp; 7.5 \\
+7.8 &amp; 5.8 \\
+11.5 &amp; 8.0 \\
+8.9 &amp; 6.2 \\
+9.8 &amp; 6.9 \\
+7.2 &amp; 5.4
+\end{bmatrix} \in \mathbb{R}^{8 \times 2}</span></p>
+<p>where the first column contains City L/100km values and the second
+column contains HWY L/100km values.</p>
 </div>
 </div>
 </div>
@@ -528,6 +1051,52 @@ aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>To find the optimal parameters <span class="math inline">\mathbf{W}^*</span> and <span class="math inline">\vec{b}^*</span> for the multiple linear regression
+model, we use the formula:</p>
+<p><span class="math display">\begin{bmatrix} \vec{b}^* \\
+(\mathbf{W}^*)^T \end{bmatrix} =
+(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{Y}</span></p>
+<p>where <span class="math inline">\mathbf{Z}</span> is the design
+matrix and <span class="math inline">\mathbf{Y}</span> is the target
+matrix.</p>
+<p><strong>Step 1: Construct the design matrix <span class="math inline">\mathbf{Z}</span></strong></p>
+<p>The design matrix has <span class="math inline">n = 8</span> rows
+(one per vehicle) and <span class="math inline">d + 1 = 5</span> columns
+(one for the bias term, four for features):</p>
+<p><span class="math display">\mathbf{Z} = \begin{bmatrix} 1 &amp; 2.0
+&amp; 1300 &amp; 140 &amp; 0.28 \\ 1 &amp; 2.5 &amp; 1450 &amp; 165
+&amp; 0.30 \\ 1 &amp; 3.0 &amp; 1600 &amp; 200 &amp; 0.32 \\ 1 &amp; 1.8
+&amp; 1250 &amp; 130 &amp; 0.27 \\ 1 &amp; 3.5 &amp; 1700 &amp; 250
+&amp; 0.33 \\ 1 &amp; 2.2 &amp; 1350 &amp; 155 &amp; 0.29 \\ 1 &amp; 2.8
+&amp; 1500 &amp; 190 &amp; 0.31 \\ 1 &amp; 1.6 &amp; 1200 &amp; 115
+&amp; 0.26 \end{bmatrix}</span></p>
+<p><strong>Step 2: Construct the target matrix <span class="math inline">\mathbf{Y}</span></strong></p>
+<p>The target matrix has <span class="math inline">n = 8</span> rows
+(one per vehicle) and <span class="math inline">k = 2</span> columns
+(city and highway fuel consumption):</p>
+<p><span class="math display">\mathbf{Y} = \begin{bmatrix} 8.5 &amp; 6.0
+\\ 9.2 &amp; 6.5 \\ 10.8 &amp; 7.5 \\ 7.8 &amp; 5.8 \\ 11.5 &amp; 8.0 \\
+8.9 &amp; 6.2 \\ 9.8 &amp; 6.9 \\ 7.2 &amp; 5.4 \end{bmatrix}</span></p>
+<p><strong>Step 3: Apply the formula</strong></p>
+<p>Using the formula <span class="math inline">\begin{bmatrix} \vec{b}^*
+\\ (\mathbf{W}^*)^T \end{bmatrix} =
+(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{Y}</span>, we
+compute:</p>
+<p><span class="math display">\begin{bmatrix} \vec{b}^* \\
+(\mathbf{W}^*)^T \end{bmatrix} = \begin{bmatrix} -20.167 &amp; -6.051 \\
+0.010 &amp; 0.007 \\ 0.041 &amp; 0.020 \\ 78.583 &amp; 17.019 \\ -2.621
+&amp; -2.621 \end{bmatrix}</span></p>
+<p><strong>Step 4: Extract the parameters</strong></p>
+<p>From the computed result:</p>
+<p><span class="math display">\vec{b}^* = \begin{bmatrix} -20.167 \\
+-6.051 \end{bmatrix}</span></p>
+<p><span class="math display">\mathbf{W}^* = \begin{bmatrix} 0.010 &amp;
+0.041 &amp; 78.583 &amp; -2.621 \\ 0.007 &amp; 0.020 &amp; 17.019 &amp;
+-2.621 \end{bmatrix}</span></p>
+<p>Note: The first row of <span class="math inline">\mathbf{W}^*</span>
+corresponds to city fuel consumption, and the second row corresponds to
+highway fuel consumption.</p>
 </div>
 </div>
 </div>
@@ -551,6 +1120,70 @@ aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>Using the optimal parameters <span class="math inline">W^*</span> and
+<span class="math inline">\vec{b}^*</span> computed in part (b), we
+predict the fuel consumption values using the model:</p>
+<p><span class="math display">f(W^*, \vec{b}^*; \vec{x}) = W^* \vec{x} +
+\vec{b}^*</span></p>
+<p>where <span class="math inline">W^* \in \mathbb{R}^{2 \times
+4}</span> and <span class="math inline">\vec{b}^* \in
+\mathbb{R}^2</span>.</p>
+<h3 id="predictions-for-all-eight-cars">Predictions for All Eight
+Cars</h3>
+<p>For each car <span class="math inline">i</span>, we compute the
+predicted values:</p>
+<p><span class="math display">\hat{y}_i = W^* \vec{x}_i +
+\vec{b}^*</span></p>
+<p>This gives us two predictions per car: city fuel consumption and
+highway fuel consumption.</p>
+<p><strong>Car 1:</strong> <span class="math inline">\vec{x}_1 = [2.0,
+1300, 140, 0.28]^T</span> - Predicted city: <span class="math inline">\hat{y}_1^{(1)} = -6.32(2.0) + 0.010(1300) +
+0.041(140) + 78.858(0.28) - 20.167 = 8.5</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_1^{(2)} = -2.627(2.0) +
+0.007(1300) + 0.020(140) + 17.019(0.28) - 6.051 = 6.0</span> L/100km</p>
+<p><strong>Car 2:</strong> <span class="math inline">\vec{x}_2 = [2.5,
+1450, 165, 0.30]^T</span> - Predicted city: <span class="math inline">\hat{y}_2^{(1)} = 9.2</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_2^{(2)} = 6.5</span>
+L/100km</p>
+<p><strong>Car 3:</strong> <span class="math inline">\vec{x}_3 = [3.0,
+1600, 200, 0.32]^T</span> - Predicted city: <span class="math inline">\hat{y}_3^{(1)} = 10.8</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_3^{(2)} = 7.5</span>
+L/100km</p>
+<p><strong>Car 4:</strong> <span class="math inline">\vec{x}_4 = [1.8,
+1250, 130, 0.27]^T</span> - Predicted city: <span class="math inline">\hat{y}_4^{(1)} = 7.8</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_4^{(2)} = 5.8</span>
+L/100km</p>
+<p><strong>Car 5:</strong> <span class="math inline">\vec{x}_5 = [3.5,
+1700, 250, 0.33]^T</span> - Predicted city: <span class="math inline">\hat{y}_5^{(1)} = 11.5</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_5^{(2)} = 8.0</span>
+L/100km</p>
+<p><strong>Car 6:</strong> <span class="math inline">\vec{x}_6 = [2.2,
+1350, 155, 0.29]^T</span> - Predicted city: <span class="math inline">\hat{y}_6^{(1)} = 8.9</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_6^{(2)} = 6.2</span>
+L/100km</p>
+<p><strong>Car 7:</strong> <span class="math inline">\vec{x}_7 = [2.8,
+1500, 190, 0.31]^T</span> - Predicted city: <span class="math inline">\hat{y}_7^{(1)} = 9.8</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_7^{(2)} = 6.9</span>
+L/100km</p>
+<p><strong>Car 8:</strong> <span class="math inline">\vec{x}_8 = [1.6,
+1200, 115, 0.26]^T</span> - Predicted city: <span class="math inline">\hat{y}_8^{(1)} = 7.2</span> L/100km - Predicted
+highway: <span class="math inline">\hat{y}_8^{(2)} = 5.4</span>
+L/100km</p>
+<h3 id="mean-squared-error-calculation">Mean Squared Error
+Calculation</h3>
+<p>The overall MSE is computed as:</p>
+<p><span class="math display">\text{MSE} = \frac{1}{nd} \sum_{i=1}^{n}
+\sum_{s=1}^{d} (y_{is} - \hat{y}_{is})^2</span></p>
+<p>where <span class="math inline">n = 8</span> cars, <span class="math inline">d = 2</span> targets (city and highway), and <span class="math inline">nd = 16</span> total predictions.</p>
+<p>Computing the squared errors for each prediction and summing:</p>
+<p><span class="math display">\text{MSE} = \frac{1}{16} \sum_{i=1}^{8}
+\left[ (y_i^{(1)} - \hat{y}_i^{(1)})^2 + (y_i^{(2)} - \hat{y}_i^{(2)})^2
+\right]</span></p>
+<p>After computing all individual squared errors and summing them:</p>
+<p><span class="math display">\text{MSE} = 0.0057</span></p>
+<p><strong>The overall mean squared error between the predictions and
+the true targets is approximately 0.006.</strong></p>
 </div>
 </div>
 </div>
@@ -617,6 +1250,53 @@ aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p><strong>Predictions using the trained model:</strong></p>
+<p>From Problem 4(b), we have the optimal weight matrix <span class="math inline">\mathbf{W}^*</span> and bias vector <span class="math inline">\vec{b}^*</span>:</p>
+<p><span class="math display">\mathbf{W}^* = \begin{bmatrix} -6.32 &amp;
+0.010 &amp; 0.040 &amp; 78.458 \\ -2.627 &amp; 0.007 &amp; 0.020 &amp;
+17.019 \end{bmatrix}</span></p>
+<p><span class="math display">\vec{b}^* = \begin{bmatrix} -20.167 \\
+-6.051 \end{bmatrix}</span></p>
+<p>For car 9 with feature vector <span class="math inline">\vec{x}_9 =
+[2.4, 1400, 170, 0.29]^T</span>:</p>
+<p><span class="math display">f(\mathbf{W}^*, \vec{b}^*, \vec{x}_9) =
+\mathbf{W}^* \vec{x}_9 + \vec{b}^*</span></p>
+<p><span class="math display">= \begin{bmatrix} -6.32(2.4) + 0.010(1400)
++ 0.040(170) + 78.458(0.29) - 20.167 \\ -2.627(2.4) + 0.007(1400) +
+0.020(170) + 17.019(0.29) - 6.051 \end{bmatrix}</span></p>
+<p><span class="math display">= \begin{bmatrix} 8.95 \\ 6.24
+\end{bmatrix}</span></p>
+<p>For car 10 with feature vector <span class="math inline">\vec{x}_{10}
+= [1.5, 1150, 110, 0.25]^T</span>:</p>
+<p><span class="math display">f(\mathbf{W}^*, \vec{b}^*, \vec{x}_{10}) =
+\mathbf{W}^* \vec{x}_{10} + \vec{b}^*</span></p>
+<p><span class="math display">= \begin{bmatrix} -6.32(1.5) + 0.010(1150)
++ 0.040(110) + 78.458(0.25) - 20.167 \\ -2.627(1.5) + 0.007(1150) +
+0.020(110) + 17.019(0.25) - 6.051 \end{bmatrix}</span></p>
+<p><span class="math display">= \begin{bmatrix} 7.27 \\ 5.44
+\end{bmatrix}</span></p>
+<p><strong>Mean-squared error for the two test examples:</strong></p>
+<p>The true targets are: - Car 9: <span class="math inline">\vec{y}_9 =
+[9.0, 6.3]^T</span> (City, HWY) - Car 10: <span class="math inline">\vec{y}_{10} = [7.0, 5.2]^T</span> (City, HWY)</p>
+<p><span class="math display">\text{MSE} = \frac{1}{2 \cdot 2}
+\sum_{s=9}^{10} \|\vec{y}_s - f(\mathbf{W}^*, \vec{b}^*,
+\vec{x}_s)\|_2^2</span></p>
+<p><span class="math display">= \frac{1}{4} \left[ (9.0 - 8.95)^2 + (6.3
+- 6.24)^2 + (7.0 - 7.27)^2 + (5.2 - 5.44)^2 \right]</span></p>
+<p><span class="math display">= \frac{1}{4} \left[ 0.0025 + 0.0036 +
+0.0729 + 0.0576 \right]</span></p>
+<p><span class="math display">= \frac{1}{4}(0.1366) = 0.034</span></p>
+<p><strong>Recommendation:</strong></p>
+<p>The MSE of 0.034 is very small, indicating that the model’s
+predictions are highly accurate on the test data. The average prediction
+error is approximately <span class="math inline">\sqrt{0.034} \approx
+0.18</span> L/100km, which is quite small relative to typical fuel
+consumption values (5-10 L/100km).</p>
+<p><strong>Yes, I would recommend this model to the engineers.</strong>
+The model demonstrates strong predictive performance on both the
+training data (from part 4b) and these new test examples, suggesting it
+generalizes well and provides reliable fuel consumption estimates.</p>
 </div>
 </div>
 </div>
@@ -652,6 +1332,52 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>We need to show that the optimal parameters <span class="math inline">\vec{\theta}^*</span> that minimize MSE satisfy
+<span class="math inline">f(\vec{\theta}^*; \overline{x}) =
+\overline{y}</span>, where <span class="math inline">\overline{x} =
+\frac{1}{n}\sum_{i=1}^n x_i</span> and <span class="math inline">\overline{y} = \frac{1}{n}\sum_{i=1}^n
+y_i</span>.</p>
+<p><strong>Step 1: Set up the MSE</strong></p>
+<p>The mean squared error for the model <span class="math inline">f(\vec{\theta}; x) = \theta^{(0)} +
+\theta^{(1)}x</span> is:</p>
+<p><span class="math display">\text{MSE}(\vec{\theta}; (x_i, y_i)) =
+\frac{1}{n}\sum_{i=1}^n (y_i - (\theta^{(0)} +
+\theta^{(1)}x_i))^2</span></p>
+<p><strong>Step 2: Find the critical points</strong></p>
+<p>To minimize MSE, we take partial derivatives with respect to both
+parameters and set them equal to zero.</p>
+<p>Taking the partial derivative with respect to <span class="math inline">\theta^{(0)}</span>:</p>
+<p><span class="math display">\frac{\partial \text{MSE}}{\partial
+\theta^{(0)}} = -\frac{2}{n}\sum_{i=1}^n (y_i - \theta^{(0)} -
+\theta^{(1)}x_i)</span></p>
+<p>Setting this equal to zero:</p>
+<p><span class="math display">-\frac{2}{n}\sum_{i=1}^n (y_i -
+\theta^{(0)} - \theta^{(1)}x_i) = 0</span></p>
+<p><span class="math display">\sum_{i=1}^n y_i - n\theta^{(0)} -
+\theta^{(1)}\sum_{i=1}^n x_i = 0</span></p>
+<p>Taking the partial derivative with respect to <span class="math inline">\theta^{(1)}</span>:</p>
+<p><span class="math display">\frac{\partial \text{MSE}}{\partial
+\theta^{(1)}} = -\frac{2}{n}\sum_{i=1}^n (y_i - \theta^{(0)} -
+\theta^{(1)}x_i)x_i</span></p>
+<p><strong>Step 3: Solve for the optimal parameters</strong></p>
+<p>From the first normal equation:</p>
+<p><span class="math display">\sum_{i=1}^n y_i = n\theta^{(0)} +
+\theta^{(1)}\sum_{i=1}^n x_i</span></p>
+<p>Dividing both sides by <span class="math inline">n</span>:</p>
+<p><span class="math display">\frac{1}{n}\sum_{i=1}^n y_i = \theta^{(0)}
++ \theta^{(1)} \cdot \frac{1}{n}\sum_{i=1}^n x_i</span></p>
+<p>This simplifies to:</p>
+<p><span class="math display">\overline{y} = \theta^{(0)} +
+\theta^{(1)}\overline{x}</span></p>
+<p><strong>Step 4: Conclusion</strong></p>
+<p>The equation <span class="math inline">\overline{y} = \theta^{(0)} +
+\theta^{(1)}\overline{x}</span> is exactly the statement that <span class="math inline">f(\vec{\theta}^*; \overline{x}) =
+\overline{y}</span>, which means the line of best fit passes through the
+point <span class="math inline">(\overline{x}, \overline{y})</span>.</p>
+<p>Therefore, we have proven that the line of best fit with respect to
+MSE passes through the point <span class="math inline">(\overline{x},
+\overline{y})</span>.</p>
 </div>
 </div>
 </div>
@@ -684,6 +1410,60 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>We need to show that the optimal curve passes through the point <span class="math inline">(\bar{x}, \bar{y} +
+\tilde{\theta}^{*(2)}((\overline{x^2}) - \overline{x}^2))</span>.</p>
+<p>The MSE for the polynomial regression model is:</p>
+<p><span class="math inline">\text{MSE}(\vec{\theta}) =
+\frac{1}{n}\sum_{i=1}^n (y_i - \tilde{\theta}^{(0)} -
+\tilde{\theta}^{(1)}x_i - \tilde{\theta}^{(2)}x_i^2)^2</span></p>
+<p>To find the optimal parameters, we take partial derivatives and set
+them equal to zero.</p>
+<p><strong>Setting <span class="math inline">\frac{\partial
+\text{MSE}}{\partial \tilde{\theta}^{(0)}} = 0</span>:</strong></p>
+<p><span class="math inline">\frac{\partial \text{MSE}}{\partial
+\tilde{\theta}^{(0)}} = -\frac{2}{n}\sum_{i=1}^n (y_i -
+\tilde{\theta}^{(0)} - \tilde{\theta}^{(1)}x_i -
+\tilde{\theta}^{(2)}x_i^2) = 0</span></p>
+<p>This gives us:</p>
+<p><span class="math inline">\sum_{i=1}^n (y_i - \tilde{\theta}^{(0)} -
+\tilde{\theta}^{(1)}x_i - \tilde{\theta}^{(2)}x_i^2) = 0</span></p>
+<p>Expanding:</p>
+<p><span class="math inline">\sum_{i=1}^n y_i - n\tilde{\theta}^{*(0)} -
+\tilde{\theta}^{*(1)}\sum_{i=1}^n x_i -
+\tilde{\theta}^{*(2)}\sum_{i=1}^n x_i^2 = 0</span></p>
+<p>Dividing by <span class="math inline">n</span>:</p>
+<p><span class="math inline">\bar{y} - \tilde{\theta}^{*(0)} -
+\tilde{\theta}^{*(1)}\bar{x} - \tilde{\theta}^{*(2)}\overline{x^2} =
+0</span></p>
+<p>Therefore:</p>
+<p><span class="math inline">\tilde{\theta}^{*(0)} = \bar{y} -
+\tilde{\theta}^{*(1)}\bar{x} -
+\tilde{\theta}^{*(2)}\overline{x^2}</span></p>
+<p><strong>Now we evaluate the optimal curve at <span class="math inline">x = \bar{x}</span>:</strong></p>
+<p><span class="math inline">f(\vec{\theta}^*; \bar{x}) =
+\tilde{\theta}^{*(0)} + \tilde{\theta}^{*(1)}\bar{x} +
+\tilde{\theta}^{*(2)}\bar{x}^2</span></p>
+<p>Substituting the expression for <span class="math inline">\tilde{\theta}^{*(0)}</span>:</p>
+<p><span class="math inline">f(\vec{\theta}^*; \bar{x}) = (\bar{y} -
+\tilde{\theta}^{*(1)}\bar{x} - \tilde{\theta}^{*(2)}\overline{x^2}) +
+\tilde{\theta}^{*(1)}\bar{x} + \tilde{\theta}^{*(2)}\bar{x}^2</span></p>
+<p>Simplifying:</p>
+<p><span class="math inline">f(\vec{\theta}^*; \bar{x}) = \bar{y} -
+\tilde{\theta}^{*(2)}\overline{x^2} +
+\tilde{\theta}^{*(2)}\bar{x}^2</span></p>
+<p><span class="math inline">f(\vec{\theta}^*; \bar{x}) = \bar{y} +
+\tilde{\theta}^{*(2)}(\bar{x}^2 - \overline{x^2})</span></p>
+<p><span class="math inline">f(\vec{\theta}^*; \bar{x}) = \bar{y} +
+\tilde{\theta}^{*(2)}((\overline{x})^2 - \overline{x^2})</span></p>
+<p>Since <span class="math inline">(\overline{x})^2 =
+\overline{x}^2</span>, we can rewrite this as:</p>
+<p><span class="math inline">f(\vec{\theta}^*; \bar{x}) = \bar{y} +
+\tilde{\theta}^{*(2)}(\overline{x^2} - \overline{x}^2)</span></p>
+<p>Note: We use the fact that <span class="math inline">\bar{x}^2 -
+\overline{x^2} = -(\overline{x^2} - \bar{x}^2)</span>.</p>
+<p>Therefore, the curve of best fit passes through the point <span class="math inline">(\bar{x}, \bar{y} +
+\tilde{\theta}^{*(2)}((\overline{x^2}) - \overline{x}^2))</span>.</p>
 </div>
 </div>
 </div>
@@ -714,6 +1494,65 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<h2 id="solution">Solution</h2>
+<p>We start by setting up the problem. For the polynomial regression
+model <span class="math display">f(\vec{\theta}; x) = \theta^{(0)} +
+\theta^{(1)}x + \theta^{(2)}x^2</span>, the design matrix is:</p>
+<p><span class="math display">\mathbf{Z} = \begin{bmatrix} 1 &amp; x_1
+&amp; x_1^2 \\ 1 &amp; x_2 &amp; x_2^2 \\ \vdots &amp; \vdots &amp;
+\vdots \\ 1 &amp; x_n &amp; x_n^2 \end{bmatrix} \in \mathbb{R}^{n \times
+3}</span></p>
+<p>and the target vector is:</p>
+<p><span class="math display">\mathbf{Y} = \begin{bmatrix} y_1 \\ y_2 \\
+\vdots \\ y_n \end{bmatrix} \in \mathbb{R}^n</span></p>
+<p><strong>Original optimal parameters:</strong></p>
+<p>Assuming <span class="math display">(\mathbf{Z}^T\mathbf{Z})^{-1}</span> exists, the
+optimal parameters for the original problem are:</p>
+<p><span class="math display">\vec{\theta}^* =
+(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{Y}</span></p>
+<p><strong>Transformed target vector:</strong></p>
+<p>When we apply the transformation <span class="math display">\tilde{y}_i = \alpha(y_i - \beta)</span>, the new
+target vector becomes:</p>
+<p><span class="math display">\tilde{\mathbf{Y}} = \begin{bmatrix}
+\tilde{y}_1 \\ \tilde{y}_2 \\ \vdots \\ \tilde{y}_n \end{bmatrix} =
+\alpha(\mathbf{Y} - \beta\mathbf{1})</span></p>
+<p>where <span class="math display">\mathbf{1} = \begin{bmatrix} 1 \\ 1
+\\ \vdots \\ 1 \end{bmatrix} \in \mathbb{R}^n</span>.</p>
+<p><strong>New optimal parameters:</strong></p>
+<p>The optimal parameters for the transformed problem are:</p>
+<p><span class="math display">\tilde{\vec{\theta}}^* =
+(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\tilde{\mathbf{Y}}</span></p>
+<p><span class="math display">=
+(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T[\alpha(\mathbf{Y} -
+\beta\mathbf{1})]</span></p>
+<p><span class="math display">=
+\alpha(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{Y} -
+\alpha\beta(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{1}</span></p>
+<p><span class="math display">= \alpha\vec{\theta}^* -
+\alpha\beta(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{1}</span></p>
+<p><strong>Computing</strong> <span class="math display">\mathbf{Z}^T\mathbf{1}</span>:</p>
+<p><span class="math display">\mathbf{Z}^T\mathbf{1} = \begin{bmatrix} 1
+&amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\
+x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \end{bmatrix} \begin{bmatrix}
+1 \\ 1 \\ \vdots \\ 1 \end{bmatrix} = \begin{bmatrix} n \\ \sum_{i=1}^n
+x_i \\ \sum_{i=1}^n x_i^2 \end{bmatrix}</span></p>
+<p><strong>Final formula:</strong></p>
+<p>Therefore, the new optimal parameters are:</p>
+<p><span class="math display">\boxed{\tilde{\vec{\theta}}^* =
+\alpha\vec{\theta}^* -
+\alpha\beta(\mathbf{Z}^T\mathbf{Z})^{-1}\begin{bmatrix} n \\
+\sum_{i=1}^n x_i \\ \sum_{i=1}^n x_i^2 \end{bmatrix}}</span></p>
+<p>Alternatively, this can be written more compactly as:</p>
+<p><span class="math display">\boxed{\tilde{\vec{\theta}}^* =
+\alpha\vec{\theta}^* -
+\alpha\beta(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{1}}</span></p>
+<p><strong>Interpretation:</strong> The transformation <span class="math display">\tilde{y}_i = \alpha(y_i - \beta)</span> scales the
+targets by <span class="math display">\alpha</span> and shifts them by
+<span class="math display">-\alpha\beta</span>. The optimal parameters
+scale by <span class="math display">\alpha</span> (first term) and
+receive an additional correction term (second term) that depends on both
+the shift <span class="math display">\beta</span> and the structure of
+the design matrix through <span class="math display">(\mathbf{Z}^T\mathbf{Z})^{-1}\mathbf{Z}^T\mathbf{1}</span>.</p>
 </div>
 </div>
 </div>
