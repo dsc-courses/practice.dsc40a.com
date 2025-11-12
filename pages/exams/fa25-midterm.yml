@@ -1,0 +1,8 @@
+title: 'Fall 2025 Midterm'
+instructors: Gal Mishne
+context: This exam was administered in person. They had a two sided 11in by 8.5in cheat sheet. Students had **50 minutes** to take this exam.
+show_solution: true
+problems:
+  - fa25-midterm\fa25-midterm-q01
+  - fa25-midterm\fa25-midterm-q02
+  - fa25-midterm\fa25-midterm-q03
