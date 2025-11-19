@@ -12,6 +12,9 @@ Show that the probability $P(E_1 \vert \bar{A})$ can be calculated using
 the above terms (i.e., no probability terms are missing in order to make
 this calculation).
 
+
+
+# BEGIN SOLUTION
 ::: responsebox
 3.5in True.
 $$P(E_1 \vert \bar{A}) =  \frac{P(\bar{A} \cap E_1)}{P(\bar{A})}$$ For
@@ -25,9 +28,6 @@ Using the law of total probability:
 $$P(A) = P(A \vert E_1) P(E_1) +  P(A \vert E_2) P(E_2) + P(A \vert E_3) P(E_3)$$
 which we can calculate using $$P(E_3)=1-P(E_2)-P(E_1)$$
 :::
-
-# BEGIN SOLUTION
-
 # END SOLUTION
 
 # END SUBPROB
@@ -47,10 +47,7 @@ indicate whether the equation is correct.
    $\bigcirc$ TRUE   $\bigcirc$ FALSE
   ----------------- ------------------
 
-::: responsebox
-1in TRUE -
-$P(\bar{E_1} \vert A) = 1 - P({E_1} \vert A) =  P(E_2 \vert A) + P(E_3 \vert A)$.
-:::
+
 
 **(ii)** $P(\bar{A} \vert E_1) = 1 - P(\bar{E}_1 \vert \bar{A})$
 
@@ -58,10 +55,7 @@ $P(\bar{E_1} \vert A) = 1 - P({E_1} \vert A) =  P(E_2 \vert A) + P(E_3 \vert A)$
    $\bigcirc$ TRUE   $\bigcirc$ FALSE
   ----------------- ------------------
 
-::: responsebox
-1in FALSE:
-$P(\bar{A} \vert E_1) = 1- P({A} \vert E_1) \neq 1 - P(\bar{E}_1 \vert \bar{A})$
-:::
+
 
 **(iii)** $P(\bar{E_1} \vert A) = 1 - P(\bar{E}_1 \vert \bar{A})$
 
@@ -69,13 +63,23 @@ $P(\bar{A} \vert E_1) = 1- P({A} \vert E_1) \neq 1 - P(\bar{E}_1 \vert \bar{A})$
    $\bigcirc$ TRUE   $\bigcirc$ FALSE
   ----------------- ------------------
 
-::: responsebox
-1in FALSE:
-$P(\bar{E_1} \vert A) = 1 - P({E}_1 \vert {A}) \neq 1 - P(\bar{E}_1 \vert \bar{A})$
-:::
+
 
 # BEGIN SOLUTION
+::: responsebox
+i. TRUE -
+$P(\bar{E_1} \vert A) = 1 - P({E_1} \vert A) =  P(E_2 \vert A) + P(E_3 \vert A)$.
+:::
 
+::: responsebox
+ii. FALSE:
+$P(\bar{A} \vert E_1) = 1- P({A} \vert E_1) \neq 1 - P(\bar{E}_1 \vert \bar{A})$
+:::
+
+::: responsebox
+iii. FALSE:
+$P(\bar{E_1} \vert A) = 1 - P({E}_1 \vert {A}) \neq 1 - P(\bar{E}_1 \vert \bar{A})$
+:::
 # END SOLUTION
 
 # END SUBPROB
@@ -90,6 +94,9 @@ Which of the following statements concerning $E_1,E_2,E_3$ are true?
   $\bigcirc$ $E1$, $E_2$ and $E_3$ are independent events   $\bigcirc$ $P(E_1 \cup E_3) = 1$
   --------------------------------------------------------- -----------------------------------------------------------
 
+
+
+# BEGIN SOLUTION
 ::: responsebox
 3in
 
@@ -104,9 +111,6 @@ Incorrect: $P(E_1 \cup E_3) = 1 - P(E_2) < 1$ since $E_2$ is non empty.
 Incorrect $E1$, $E_2$ and $E_3$ are not independent since
 $P(E_1,E_2,E_3) = P(E_1 \cap E_2 \cap E_3) = P(\emptyset)= 0 \neq P(E_1)P(E_2)P(E_3)>0$
 :::
-
-# BEGIN SOLUTION
-
 # END SOLUTION
 
 # END SUBPROB
@@ -126,6 +130,9 @@ statement is true.*
   $\bigcirc$ If $E_1 \subseteq A$, then $E_3$ and $A$ are independent events.
   -----------------------------------------------------------------------------
 
+
+
+# BEGIN SOLUTION
 ::: responsebox
 2in
 
@@ -142,9 +149,6 @@ anything about the relationship between $P(E_1)$ and $P(E_2)$.
 If $E_1 \subseteq A$ these are not independent events since
 $P(E_1 | A) = 1 \neq P(E_1)$.
 :::
-
-# BEGIN SOLUTION
-
 # END SOLUTION
 
 # END SUBPROB

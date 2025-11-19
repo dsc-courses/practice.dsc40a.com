@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Fall 2024 Final</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -285,27 +288,21 @@ aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>2in To minimize the function <span class="math inline">R(h) =
+\sum_{i=1}^n a_i (y_i - h)^2</span>, we differentiate <span class="math inline">R(h)</span> with respect to <span class="math inline">h</span> and set the derivative equal to zero: <span class="math display">\frac{dR(h)}{dh} = \frac{d}{dh} \sum_{i=1}^n a_i
+(y_i - h)^2 = -2 \sum_{i=1}^n a_i (y_i - h).</span> Setting <span class="math inline">\frac{dR(h)}{dh} = 0</span>, we get: <span class="math display">\sum_{i=1}^n a_i y_i - \sum_{i=1}^n a_i h =
+0.</span> Simplifying: <span class="math display">h \sum_{i=1}^n a_i =
+\sum_{i=1}^n a_i y_i.</span> Solving for <span class="math inline">h^\ast</span>: <span class="math display">h^\ast =
+\frac{\sum_{i=1}^n a_i y_i}{\sum_{i=1}^n a_i}.</span> Thus, the optimal
+temperature <span class="math inline">h^\ast</span> is the weighted
+average of the preferred temperatures.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-<p>2in To minimize the function <span class="math inline">R(h) =
-\sum_{i=1}^n a_i (y_i - h)^2</span>, we differentiate <span
-class="math inline">R(h)</span> with respect to <span
-class="math inline">h</span> and set the derivative equal to zero: <span
-class="math display">\frac{dR(h)}{dh} = \frac{d}{dh} \sum_{i=1}^n a_i
-(y_i - h)^2 = -2 \sum_{i=1}^n a_i (y_i - h).</span> Setting <span
-class="math inline">\frac{dR(h)}{dh} = 0</span>, we get: <span
-class="math display">\sum_{i=1}^n a_i y_i - \sum_{i=1}^n a_i h =
-0.</span> Simplifying: <span class="math display">h \sum_{i=1}^n a_i =
-\sum_{i=1}^n a_i y_i.</span> Solving for <span
-class="math inline">h^\ast</span>: <span class="math display">h^\ast =
-\frac{\sum_{i=1}^n a_i y_i}{\sum_{i=1}^n a_i}.</span> Thus, the optimal
-temperature <span class="math inline">h^\ast</span> is the weighted
-average of the preferred temperatures.</p>
-</div>
 <p><br></p>
 <h3 id="problem-2.2">Problem 2.2</h3>
 <p>Suppose that the family which lives in house <span
@@ -329,30 +326,23 @@ aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>2in Let <span class="math inline">h'</span> denote the new
+optimal temperature. The new weight for house <span class="math inline">1</span> becomes <span class="math inline">a_1'
+= a_1 + 1</span>. Using the formula for <span class="math inline">h^\ast</span>, the new optimal temperature is: <span class="math display">h' = \frac{(a_1 + 1)y_1 + \sum_{i=2}^n a_i
+y_i}{(a_1 + 1) + \sum_{i=2}^n a_i}.</span> Expanding <span class="math inline">h'</span>: <span class="math display">h' =
+\frac{a_1 y_1 + y_1 + \sum_{i=2}^n a_i y_i}{a_1 + 1 + \sum_{i=2}^n a_i}=
+\frac{ y_1 + \sum_{i=1}^n a_i y_i}{  1 + \sum_{i=1}^n a_i}.</span>
+Factoring out the original terms for <span class="math inline">h^\ast</span>: <span class="math display">h' =
+\frac{h^\ast \sum_{i=1}^n a_i + y_1}{\sum_{i=1}^n a_i + 1}.</span> This
+relates the new optimal temperature <span class="math inline">h'</span> to the original <span class="math inline">h^\ast</span> by accounting for the additional
+weight and the corresponding preference.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-<p>2in Let <span class="math inline">h&#39;</span> denote the new
-optimal temperature. The new weight for house <span
-class="math inline">1</span> becomes <span class="math inline">a_1&#39;
-= a_1 + 1</span>. Using the formula for <span
-class="math inline">h^\ast</span>, the new optimal temperature is: <span
-class="math display">h&#39; = \frac{(a_1 + 1)y_1 + \sum_{i=2}^n a_i
-y_i}{(a_1 + 1) + \sum_{i=2}^n a_i}.</span> Expanding <span
-class="math inline">h&#39;</span>: <span class="math display">h&#39; =
-\frac{a_1 y_1 + y_1 + \sum_{i=2}^n a_i y_i}{a_1 + 1 + \sum_{i=2}^n a_i}=
-\frac{ y_1 + \sum_{i=1}^n a_i y_i}{  1 + \sum_{i=1}^n a_i}.</span>
-Factoring out the original terms for <span
-class="math inline">h^\ast</span>: <span class="math display">h&#39; =
-\frac{h^\ast \sum_{i=1}^n a_i + y_1}{\sum_{i=1}^n a_i + 1}.</span> This
-relates the new optimal temperature <span
-class="math inline">h&#39;</span> to the original <span
-class="math inline">h^\ast</span> by accounting for the additional
-weight and the corresponding preference.</p>
-</div>
 <p><br></p>
 <h3 id="problem-2.3">Problem 2.3</h3>
 <p>You and your colleagues are discussing new and improved ways to set
@@ -395,27 +385,22 @@ aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
 <div class="responsebox">
 <p>3in Note that for any choice of <span class="math inline">h</span>,
-we have the following inequalities: <span
-class="math display">\sum_{i=1}^n c_i (y_i - h)^2\leq \sum_{i=1}^n b_i
-(y_i - h)^2 &lt;\sum_{i=1}^n a_i (y_i - h)^2.</span> since <span
-class="math inline">c_i \leq 1</span> for all <span
-class="math inline">i</span>, <span class="math inline">b_i = 1</span>
-for all <span class="math inline">i</span>, and <span
-class="math inline">a_i\geq 1</span> for all <span
-class="math inline">i</span>. Therefore the minimum values for each such
+we have the following inequalities: <span class="math display">\sum_{i=1}^n c_i (y_i - h)^2\leq \sum_{i=1}^n b_i
+(y_i - h)^2 &lt;\sum_{i=1}^n a_i (y_i - h)^2.</span> since <span class="math inline">c_i \leq 1</span> for all <span class="math inline">i</span>, <span class="math inline">b_i = 1</span>
+for all <span class="math inline">i</span>, and <span class="math inline">a_i\geq 1</span> for all <span class="math inline">i</span>. Therefore the minimum values for each such
 function with respect to <span class="math inline">h</span> will follow
 these inequalities. That is, <span class="math display">C\leq B &lt;
 A.</span></p>
 <p>(Note we also accepted solution <span class="math inline">C\leq B
 \leq A</span> for those who forgot about the baby ;) )</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 <hr />
 <h2 id="problem-3">Problem 3</h2>
 <p>[(10 points)]</p>
@@ -456,87 +441,59 @@ aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>First, we calculate the missing values:</p>
+<p><span class="math display">\sum_{i=1}^3 y_i = 2 + 4 + 6 =
+12</span></p>
+<p><span class="math display">\sum_{i=1}^3 x_i^2 = 1^2 + 2^2 + 3^2 = 1 +
+4 + 9 = 14</span></p>
+<p>The completed table is:</p>
+<table>
+<tbody>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 x_i</span></td>
+<td>6</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 y_i</span></td>
+<td>12</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 x_iy_i</span></td>
+<td>28</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 x_i^2</span></td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<h3 id="finding-optimal-parameters">Finding Optimal Parameters</h3>
+<p>To calculate the optimal parameters, we use the least squares
+formulas:</p>
+<p><span class="math display">w_1^* = \frac{\sum_{i=1}^3 x_iy_i -
+\frac{1}{3}\sum_{i=1}^3 x_i \sum_{i=1}^3 y_i}{\sum_{i=1}^3 x_i^2 -
+\frac{1}{3}\left(\sum_{i=1}^3 x_i\right)^2}</span></p>
+<p>Substituting the values from our table:</p>
+<p><span class="math display">w_1^* = \frac{28 - \frac{1}{3}(6 \cdot
+12)}{14 - \frac{1}{3}(6^2)} = \frac{28 - 24}{14 - 12} = \frac{4}{2} =
+2</span></p>
+<p>Now we calculate <span class="math inline">w_0^*</span>:</p>
+<p><span class="math display">w_0^* = \frac{1}{3}\sum_{i=1}^3 y_i -
+w_1^* \cdot \frac{1}{3}\sum_{i=1}^3 x_i</span></p>
+<p>Substituting values:</p>
+<p><span class="math display">w_0^* = \frac{12}{3} - 2 \cdot \frac{6}{3}
+= 4 - 4 = 0</span></p>
+<h3 id="final-answer">Final Answer</h3>
+<p>The optimal parameters are:</p>
+<p><span class="math display">w_0^* = 0, \quad w_1^* = 2</span></p>
+<p>This means the linear model is <span class="math inline">h(x) =
+2x</span>, which perfectly fits the data since each hour of work
+corresponds to exactly 2 jars sold.</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="center">
-<table style="width:97%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 63%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-x_i</span></th>
-<th style="text-align: center;">6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-y_i</span></td>
-<td style="text-align: center;"><hr /></td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-x_iy_i</span></td>
-<td style="text-align: center;">28</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-x_i^2</span></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="responsebox">
-<p>3.2in</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-x_i</span></th>
-<th style="text-align: center;">6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-y_i</span></td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-x_iy_i</span></td>
-<td style="text-align: center;">28</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^3
-x_i^2</span></td>
-<td style="text-align: center;">14</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>To calculate the optimal parameters:</p>
-<p><span class="math display">w_1^\ast = \frac{\sum_{i=1}^3 x_i y_i -
-\frac{1}{3} \sum_{i=1}^3 x_i \sum_{i=1}^3 y_i}{\sum_{i=1}^3 x_i^2 -
-\frac{1}{3} \left( \sum_{i=1}^3 x_i \right)^2}</span> Substituting
-values: <span class="math display">w_1^\ast = \frac{28 - \frac{1}{3}(6
-\cdot 12)}{14 - \frac{1}{3}(6^2)} = \frac{28 - 24}{14 - 12} =
-\frac{4}{2} = 2</span></p>
-<p><span class="math display">w_0^\ast = \frac{1}{3} \sum_{i=1}^3 y_i -
-w_1^\ast \cdot \frac{1}{3} \sum_{i=1}^3 x_i</span> Substituting values:
-<span class="math display">w_0^\ast = \frac{12}{3} - 2 \cdot \frac{6}{3}
-= 4 - 4 = 0</span></p>
-<p>Thus, the optimal parameters are: <span class="math display">w_0^\ast
-= 0, \quad w_1^\ast = 2</span></p>
-</div>
 <p><br></p>
 <h3 id="problem-3.2">Problem 3.2</h3>
 <p>On a fourth weekend, due to a festival, she couldn’t set up her stall
@@ -565,87 +522,59 @@ aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>First, we fill in the table with the updated sums including the
+fourth data point:</p>
+<table>
+<thead>
+<tr>
+<th>Sum</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} x_i</span></td>
+<td>6</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} y_i</span></td>
+<td>14</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} x_i y_i</span></td>
+<td>28</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} x_i^2</span></td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Calculating the new slope</strong> <span class="math inline">w_1'</span>:</p>
+<p>The formula for the optimal slope is:</p>
+<p><span class="math display">w_1' = \frac{\sum_{i=1}^{4} x_i y_i -
+\frac{1}{4} \sum_{i=1}^{4} x_i \sum_{i=1}^{4} y_i}{\sum_{i=1}^{4} x_i^2
+- \frac{1}{4} \left(\sum_{i=1}^{4} x_i\right)^2}</span></p>
+<p>Substituting values:</p>
+<p><span class="math display">w_1' = \frac{28 - \frac{1}{4}(6 \cdot
+14)}{14 - \frac{1}{4}(6^2)} = \frac{28 - 21}{14 - 9} = \frac{7}{5} =
+1.4</span></p>
+<p><strong>Calculating the new intercept</strong> <span class="math inline">w_0'</span>:</p>
+<p>The formula for the optimal intercept is:</p>
+<p><span class="math display">w_0' = \frac{1}{4} \sum_{i=1}^{4} y_i
+- w_1' \cdot \frac{1}{4} \sum_{i=1}^{4} x_i</span></p>
+<p>Substituting values:</p>
+<p><span class="math display">w_0' = \frac{14}{4} - 1.4 \cdot
+\frac{6}{4} = 3.5 - 2.1 = 1.4</span></p>
+<p><strong>Final Answer:</strong></p>
+<p>The new optimal parameters are:</p>
+<p><span class="math display">w_0' = 1.4, \quad w_1' =
+1.4</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="center">
-<table style="width:97%;">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 63%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-x_i</span></th>
-<th style="text-align: center;"><hr /></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-y_i</span></td>
-<td style="text-align: center;">14</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-x_iy_i</span></td>
-<td style="text-align: center;">28</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-x_i^2</span></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="responsebox">
-<p>2.25in</p>
-<div class="center">
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-x_i</span></th>
-<th style="text-align: center;">6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-y_i</span></td>
-<td style="text-align: center;">14</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-x_iy_i</span></td>
-<td style="text-align: center;">28</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\sum_{i=1}^4
-x_i^2</span></td>
-<td style="text-align: center;">14</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>To calculate the new parameters:</p>
-<p><span class="math display">w_1&#39; = \frac{\sum_{i=1}^4 x_i y_i -
-\frac{1}{4} \sum_{i=1}^4 x_i \sum_{i=1}^4 y_i}{\sum_{i=1}^4 x_i^2 -
-\frac{1}{4} \left( \sum_{i=1}^4 x_i \right)^2}</span> Substituting
-values: <span class="math display">w_1&#39; = \frac{28 - \frac{1}{4}(6
-\cdot 14)}{14 - \frac{1}{4}(6^2)} = \frac{28 - 21}{14 - 9} = \frac{7}{5}
-= 1.4</span></p>
-<p><span class="math display">w_0&#39; = \frac{1}{4} \sum_{i=1}^4 y_i -
-w_1&#39; \cdot \frac{1}{4} \sum_{i=1}^4 x_i</span> Substituting values:
-<span class="math display">w_0&#39; = \frac{14}{4} - 1.4 \cdot
-\frac{6}{4} = 3.5 - 2.1 = 1.4</span></p>
-<p>Thus, the new parameters are: <span class="math display">w_0&#39; =
-1.4, \quad w_1&#39; = 1.4</span></p>
-</div>
 <p><br></p>
 <h3 id="problem-3.3">Problem 3.3</h3>
 <p>On each axis below draw: <strong>(i)</strong> the scatterplot of the
@@ -664,18 +593,9 @@ aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p><img src="../../assets/images/fa24-final/q3c-soln.png"/></p>
 </div>
 </div>
-</div>
-</div>
-<p><br></p>
-<div class="center">
-
-</div>
-<div class="responsebox">
-<p>2in</p>
-<div class="center">
-
 </div>
 </div>
 <p><br></p>
@@ -697,17 +617,15 @@ aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>The dataset with Weekends 1, 2, 3, and 4 will have a greater mean
+squared error. This is because the added outlier (Weekend 4) does not
+follow the original perfect linear trend and introduces a discrepancy
+between the data points and the new line of best fit</p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-<p>2in The dataset with Weekends 1, 2, 3, and 4 will have a greater mean
-squared error. This is because the added outlier (Weekend 4) does not
-follow the original perfect linear trend and introduces a discrepancy
-between the data points and the new line of best fit.</p>
-</div>
 <hr />
 <h2 id="problem-4">Problem 4</h2>
 <p>Consider the usual setup for a multiple regression problem, as
@@ -986,33 +904,28 @@ aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
 <div class="responsebox">
 <p>5in The gradient of the loss function <span class="math inline">L(h,
-y_i)</span> with respect to <span class="math inline">h</span> is: <span
-class="math display">\frac{\partial L}{\partial h} = (h -
+y_i)</span> with respect to <span class="math inline">h</span> is: <span class="math display">\frac{\partial L}{\partial h} = (h -
 y_i)</span></p>
-<p>For <span class="math inline">y_i = 2</span>, this becomes: <span
-class="math display">\frac{\partial L}{\partial h} = (h - 2)</span></p>
+<p>For <span class="math inline">y_i = 2</span>, this becomes: <span class="math display">\frac{\partial L}{\partial h} = (h - 2)</span></p>
 <p><strong>Step 1:</strong> Starting at <span class="math inline">h_0 =
 0</span>, <span class="math display">\frac{\partial L}{\partial
-h}\bigg|_{h = h_0} = (0 - 2) = -2</span> Update <span
-class="math inline">h</span> using the gradient descent rule: <span
-class="math display">h_1 = h_0 - \eta \cdot \frac{\partial L}{\partial
+h}\bigg|_{h = h_0} = (0 - 2) = -2</span> Update <span class="math inline">h</span> using the gradient descent rule: <span class="math display">h_1 = h_0 - \eta \cdot \frac{\partial L}{\partial
 h} = 0 - 0.5 \cdot (-2) = 0 + 1 = 1</span></p>
 <p><strong>Step 2:</strong> Using <span class="math inline">h_1 =
 1</span>, <span class="math display">\frac{\partial L}{\partial
-h}\bigg|_{h = h_1} = (1 - 2) = -1</span> Update <span
-class="math inline">h</span>: <span class="math display">h_2 = h_1 -
+h}\bigg|_{h = h_1} = (1 - 2) = -1</span> Update <span class="math inline">h</span>: <span class="math display">h_2 = h_1 -
 \eta \cdot \frac{\partial L}{\partial h} = 1 - 0.5 \cdot (-1) = 1 + 0.5
 = 1.5</span></p>
 <p>Thus, the predicted heights are: <span class="math display">h_1 = 1,
 \quad h_2 = 1.5</span></p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 <p><br></p>
 <h3 id="problem-5.2">Problem 5.2</h3>
 <p>On the axis below, plot a rough sketch of the following objects:</p>
@@ -1035,18 +948,7 @@ aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
-<div class="center">
-
-</div>
-<h1 id="begin-solution">BEGIN SOLUTION</h1>
-<div class="center">
-
-</div>
+<p><img src="../../assets/images/fa24-final/q5b-soln.png"/></p>
 <p>The graph above shows:</p>
 <ul>
 <li><p>The loss function <span class="math inline">L(h, y_i) =
@@ -1058,7 +960,11 @@ points.</p></li>
 <li><p>The optimal height <span class="math inline">h^\ast = 2</span>
 shown as a dashed vertical line.</p></li>
 </ul>
-<h1 id="end-solution">END SOLUTION</h1>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 <p><br></p>
 <h3 id="problem-5.3">Problem 5.3</h3>
 <p>Determine whether the gradient descent algorithm will converge to the
@@ -1077,11 +983,6 @@ aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-</div>
-</div>
-</div>
-</div>
-<p><br></p>
 <div class="responsebox">
 <p>2in The loss function <span class="math inline">L(h, y_i) =
 \frac{1}{2}(h - y_i)^2 + 3</span> is a convex function because it is a
@@ -1092,6 +993,11 @@ L}{\partial h^2} = 1 &gt; 0</span></p>
 the learning rate <span class="math inline">\eta</span> is small enough,
 which is the case here.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
 <hr />
 <h2 id="problem-6">Problem 6</h2>
 <p>[(12 points)] A sample space <span class="math inline">S</span> is
@@ -1108,21 +1014,6 @@ complement of A.</p>
 <p>Show that the probability <span class="math inline">P(E_1 \vert
 \bar{A})</span> can be calculated using the above terms (i.e., no
 probability terms are missing in order to make this calculation).</p>
-<div class="responsebox">
-<p>3.5in True. <span class="math display">P(E_1 \vert \bar{A})
-=  \frac{P(\bar{A} \cap E_1)}{P(\bar{A})}</span> For the numerator <span
-class="math display">P(\bar{A} \cap E_1) = P(\bar{A} \vert E_1)  * P(
-E_1)</span> which we can calculate as <span
-class="math display">P(\bar{A} \vert E_1) = 1-P(A \vert E_1)</span>
-<span class="math display">P(A \vert E_1) = \frac{P(A \cap
-E_1)}{P(E_1)}</span> Therefore <span class="math inline">P(\bar{A} \cap
-E_1)  = P(E_1)-P(A \cap E_1)</span>. For the denominator we use the
-complement <span class="math display">P(\bar{A}) = 1-P(A)</span></p>
-<p>Using the law of total probability: <span class="math display">P(A) =
-P(A \vert E_1) P(E_1) +  P(A \vert E_2) P(E_2) + P(A \vert E_3)
-P(E_3)</span> which we can calculate using <span
-class="math display">P(E_3)=1-P(E_2)-P(E_1)</span></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_1">
@@ -1136,6 +1027,18 @@ aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>3.5in True. <span class="math display">P(E_1 \vert \bar{A})
+=  \frac{P(\bar{A} \cap E_1)}{P(\bar{A})}</span> For the numerator <span class="math display">P(\bar{A} \cap E_1) = P(\bar{A} \vert E_1)  * P(
+E_1)</span> which we can calculate as <span class="math display">P(\bar{A} \vert E_1) = 1-P(A \vert E_1)</span>
+<span class="math display">P(A \vert E_1) = \frac{P(A \cap
+E_1)}{P(E_1)}</span> Therefore <span class="math inline">P(\bar{A} \cap
+E_1)  = P(E_1)-P(A \cap E_1)</span>. For the denominator we use the
+complement <span class="math display">P(\bar{A}) = 1-P(A)</span></p>
+<p>Using the law of total probability: <span class="math display">P(A) =
+P(A \vert E_1) P(E_1) +  P(A \vert E_2) P(E_2) + P(A \vert E_3)
+P(E_3)</span> which we can calculate using <span class="math display">P(E_3)=1-P(E_2)-P(E_1)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -1161,10 +1064,6 @@ class="math inline">\bigcirc</span> FALSE</td>
 </tr>
 </tbody>
 </table>
-<div class="responsebox">
-<p>1in TRUE - <span class="math inline">P(\bar{E_1} \vert A) = 1 -
-P({E_1} \vert A) =  P(E_2 \vert A) + P(E_3 \vert A)</span>.</p>
-</div>
 <p><strong>(ii)</strong> <span class="math inline">P(\bar{A} \vert E_1)
 = 1 - P(\bar{E}_1 \vert \bar{A})</span></p>
 <table>
@@ -1177,10 +1076,6 @@ class="math inline">\bigcirc</span> FALSE</td>
 </tr>
 </tbody>
 </table>
-<div class="responsebox">
-<p>1in FALSE: <span class="math inline">P(\bar{A} \vert E_1) = 1- P({A}
-\vert E_1) \neq 1 - P(\bar{E}_1 \vert \bar{A})</span></p>
-</div>
 <p><strong>(iii)</strong> <span class="math inline">P(\bar{E_1} \vert A)
 = 1 - P(\bar{E}_1 \vert \bar{A})</span></p>
 <table>
@@ -1193,10 +1088,6 @@ class="math inline">\bigcirc</span> FALSE</td>
 </tr>
 </tbody>
 </table>
-<div class="responsebox">
-<p>1in FALSE: <span class="math inline">P(\bar{E_1} \vert A) = 1 -
-P({E}_1 \vert {A}) \neq 1 - P(\bar{E}_1 \vert \bar{A})</span></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_2">
@@ -1210,6 +1101,24 @@ aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<ol type="i">
+<li>TRUE - <span class="math inline">P(\bar{E_1} \vert A) = 1 - P({E_1}
+\vert A) =  P(E_2 \vert A) + P(E_3 \vert A)</span>.</li>
+</ol>
+</div>
+<div class="responsebox">
+<ol start="2" type="i">
+<li>FALSE: <span class="math inline">P(\bar{A} \vert E_1) = 1- P({A}
+\vert E_1) \neq 1 - P(\bar{E}_1 \vert \bar{A})</span></li>
+</ol>
+</div>
+<div class="responsebox">
+<ol start="3" type="i">
+<li>FALSE: <span class="math inline">P(\bar{E_1} \vert A) = 1 - P({E}_1
+\vert {A}) \neq 1 - P(\bar{E}_1 \vert \bar{A})</span></li>
+</ol>
+</div>
 </div>
 </div>
 </div>
@@ -1239,23 +1148,6 @@ are independent events</td>
 </tr>
 </tbody>
 </table>
-<div class="responsebox">
-<p>3in</p>
-<p>Correct: <span class="math inline">\overline{E_1} \cup \overline{E_2}
-= (E_2 \cup E_3) \cup (E_1 \cup E_3) = S \rightarrow P(\overline{E_1}
-\cup \overline{E_2}) = 1</span>.</p>
-<p>Incorrect: <span class="math inline">P(\overline{E_1} \cap
-\overline{E_2}) = P((E_2 \cup E3) \cap (E_1 \cup E_3)) = P(E_3) \neq
-0</span></p>
-<p>Incorrect: <span class="math inline">P(E_1 \cup E_3) = 1 - P(E_2)
-&lt; 1</span> since <span class="math inline">E_2</span> is non
-empty.</p>
-<p>Incorrect <span class="math inline">E1</span>, <span
-class="math inline">E_2</span> and <span class="math inline">E_3</span>
-are not independent since <span class="math inline">P(E_1,E_2,E_3) =
-P(E_1 \cap E_2 \cap E_3) = P(\emptyset)= 0 \neq
-P(E_1)P(E_2)P(E_3)&gt;0</span></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_3">
@@ -1269,6 +1161,22 @@ aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>3in</p>
+<p>Correct: <span class="math inline">\overline{E_1} \cup \overline{E_2}
+= (E_2 \cup E_3) \cup (E_1 \cup E_3) = S \rightarrow P(\overline{E_1}
+\cup \overline{E_2}) = 1</span>.</p>
+<p>Incorrect: <span class="math inline">P(\overline{E_1} \cap
+\overline{E_2}) = P((E_2 \cup E3) \cap (E_1 \cup E_3)) = P(E_3) \neq
+0</span></p>
+<p>Incorrect: <span class="math inline">P(E_1 \cup E_3) = 1 - P(E_2)
+&lt; 1</span> since <span class="math inline">E_2</span> is non
+empty.</p>
+<p>Incorrect <span class="math inline">E1</span>, <span class="math inline">E_2</span> and <span class="math inline">E_3</span>
+are not independent since <span class="math inline">P(E_1,E_2,E_3) =
+P(E_1 \cap E_2 \cap E_3) = P(\emptyset)= 0 \neq
+P(E_1)P(E_2)P(E_3)&gt;0</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -1312,24 +1220,6 @@ are independent events.</td>
 </tr>
 </tbody>
 </table>
-<div class="responsebox">
-<p>2in</p>
-<p>Correct: <span class="math inline">P(E_1) = \sum_{s \in E_1}
-p(s)</span> and <span class="math inline">P(A) = \sum_{s \in A}
-p(s)</span>. Since <span class="math inline">\forall s \in E_1: s \in
-A</span>, then <span class="math inline">P(E_1)\leq P(A)</span>.</p>
-<p>The converse is not true: <span class="math inline">P(E_1)\leq
-P(A)</span> can be true without <span class="math inline">E_1 \subseteq
-A</span>.</p>
-<p>When <span class="math inline">E_1 \subseteq A</span> then <span
-class="math inline">P(E_1)=P(E_1 \cap A)</span> however we don’t know
-anything about the relationship between <span
-class="math inline">P(E_1)</span> and <span
-class="math inline">P(E_2)</span>.</p>
-<p>If <span class="math inline">E_1 \subseteq A</span> these are not
-independent events since <span class="math inline">P(E_1 | A) = 1 \neq
-P(E_1)</span>.</p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading6_4">
@@ -1343,6 +1233,21 @@ aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>2in</p>
+<p>Correct: <span class="math inline">P(E_1) = \sum_{s \in E_1}
+p(s)</span> and <span class="math inline">P(A) = \sum_{s \in A}
+p(s)</span>. Since <span class="math inline">\forall s \in E_1: s \in
+A</span>, then <span class="math inline">P(E_1)\leq P(A)</span>.</p>
+<p>The converse is not true: <span class="math inline">P(E_1)\leq
+P(A)</span> can be true without <span class="math inline">E_1 \subseteq
+A</span>.</p>
+<p>When <span class="math inline">E_1 \subseteq A</span> then <span class="math inline">P(E_1)=P(E_1 \cap A)</span> however we don’t know
+anything about the relationship between <span class="math inline">P(E_1)</span> and <span class="math inline">P(E_2)</span>.</p>
+<p>If <span class="math inline">E_1 \subseteq A</span> these are not
+independent events since <span class="math inline">P(E_1 | A) = 1 \neq
+P(E_1)</span>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1371,18 +1276,17 @@ aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>1in There are <span class="math inline">{8\choose 2}</span> ways to
+pick the two socks from the drawer, of which exactly four pairs are
+matching. Therefore the probability is <span class="math display">\frac{4}{{8\choose 2}} = \frac{(4)(2)}{(8)(7)} =
+\frac{1}{7}.</span></p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-<p>1in There are <span class="math inline">{8\choose 2}</span> ways to
-pick the two socks from the drawer, of which exactly four pairs are
-matching. Therefore the probability is <span
-class="math display">\frac{4}{{8\choose 2}} = \frac{(4)(2)}{(8)(7)} =
-\frac{1}{7}.</span></p>
-</div>
 <p><br></p>
 <h3 id="problem-7.2">Problem 7.2</h3>
 <p>After wearing the socks on Monday he places them in a laundry basket
@@ -1403,59 +1307,50 @@ aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>We can condition on whether the socks were matching on Monday and use
+this information to our advantage. Specifically,</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}] &amp;= P[\text{match on Tues.}|\text{match on
+Mon.}]P[\text{match on Mon.}] \\
+&amp;+ P[\text{match on Tues.}|\text{don't match on
+Mon.}]P[\text{don't match on Mon.}] \\
+&amp;= P[\text{match on Tues.}|\text{match on Mon.}]\frac{1}{7} \\
+&amp;+ P[\text{match on Tues.}|\text{don't match on Mon.}]\left(1 -
+\frac{1}{7}\right)
+\end{align*}
+</span></p>
+<p>If the socks were matching on Monday, there are now three pairs of
+matching socks in the drawer. So we have, by the same logic as
+before,</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}|\text{match on Mon.}] &amp;=
+\frac{3}{\binom{6}{2}} = \frac{(3)(2)}{(6)(5)} = \frac{1}{5}.
+\end{align*}
+</span></p>
+<p>If the socks were not matching on Monday, there are now two pairs of
+matching socks plus two mismatching socks. The total number of pairs is
+still <span class="math inline">\binom{6}{2}</span> but now only two
+such pairs match. Therefore,</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}|\text{don't match on Mon.}] &amp;=
+\frac{2}{\binom{6}{2}} = \frac{(2)(2)}{(6)(5)} = \frac{2}{15}.
+\end{align*}
+</span></p>
+<p>Thus in conclusion we have</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}] &amp;= \frac{1}{5}\cdot\frac{1}{7} +
+\frac{2}{15}\cdot\frac{6}{7}.
+\end{align*}
+</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-3in We can condition on whether the socks were matching on Monday and
-use this information to our advantage. Specifically, $$
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{match on Tues.}}\right] &amp; =
-\mathbb{P}\left[{\text{match on Tues.}|\text{match on
-Mon.}}\right]\mathbb{P}\left[{\text{match on
-Mon.}}\right]              \\
-                                           &amp;
-+  \mathbb{P}\left[{\text{match on Tues.}|\text{don&#39;t match on
-Mon.}}\right]\mathbb{P}\left[{\text{don&#39;t match on Mon.}}\right] \\
-                                           &amp; =
-\mathbb{P}\left[{\text{match on Tues.}|\text{match on
-Mon.}}\right]\frac{1}{7}                            \\
-                                           &amp; +
-\mathbb{P}\left[{\text{match on Tues.}|\text{don&#39;t match on
-Mon.}}\right](1 - \frac{1}{7})                
-            
-\end{aligned}</span>
-<span class="math display"> If the socks were matching on Monday, there
-are now
-three pairs of matching socks in the drawer. So we have, by the same
-logic as before, </span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{match on Tues.}|\text{match on
-Mon.}}\right] &amp; = \frac{3}{{6\choose 2}} = \frac{(3)(2)}{(6)(5)} =
-\frac{1}{5}.
-            
-\end{aligned}</span>
-<span class="math display"> If the socks were not matching on Monday,
-there are now
-two pairs of matching socks plus two mismatching socks. The total number
-of pairs is still ${6\choose 2}$ but now only two such pairs match.
-Therefore, </span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{match on Tues.}|\text{don&#39;t
-match on Mon.}}\right] &amp; = \frac{2}{{6\choose 2}}
-=\frac{(2)(2)}{(6)(5)} = \frac{2}{15}.
-            
-\end{aligned}</span>
-<span class="math display"> Thus in conclusion we have </span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{match on Tues.}}\right] &amp; =
-\frac{1}{5}\frac{1}{7} + \frac{2}{15}\frac{6}{7}.
-            
-\end{aligned}</span>
-<p>$$</p>
-</div>
 <p><br></p>
 <h3 id="problem-7.3">Problem 7.3</h3>
 <p>(<span class="math inline">\times</span><!-- -->6) On Tuesday evening
@@ -1478,75 +1373,47 @@ aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<p>Based on the setup, Robert must have worn exactly one striped sock on
+both Monday and Tuesday, and then wore either a single striped sock or a
+pair of striped socks on Wednesday. By the definition of conditional
+probability, we have</p>
+<p><span class="math display">P(\text{1 striped on Mon.} \cap \text{1
+striped on Tues.}) = P(\text{1 striped on Tues.} \mid \text{1 striped on
+Mon.}) \times P(\text{1 striped on Mon.})</span></p>
+<p>For Monday, there are <span class="math inline">\binom{2}{1}\binom{6}{1} = 12</span> possible pairs
+of socks so that exactly one is striped. Thus the probability is given
+by</p>
+<p><span class="math display">P(\text{1 striped Mon.}) =
+\frac{12}{\binom{8}{2}} = \frac{(12)(2)}{(8)(7)} =
+\frac{3}{7}.</span></p>
+<p>Alternatively, you could write this as 1 minus the probability of
+getting either no striped socks or two striped socks. For the second
+part, by similar logic, we have</p>
+<p><span class="math display">P(\text{1 striped on Tues.} \mid \text{1
+striped on Mon.}) = \frac{\binom{1}{1}\binom{5}{1}}{\binom{6}{2}} =
+\frac{(5)(2)}{(6)(5)} = \frac{1}{3}.</span></p>
+<p>Therefore we have</p>
+<p><span class="math display">P(\text{1 striped on Mon.} \cap \text{1
+striped on Tues.}) = \frac{3}{7} \cdot \frac{1}{3} =
+\frac{1}{7}.</span></p>
+<p>For Wednesday, he can select either one or two striped socks. Earlier
+we counted 12 pairs which contain exactly one striped sock, so there are
+13 which contain either one or two. Thus</p>
+<p><span class="math display">P(\text{1 or 2 striped on Weds.}) =
+\frac{13}{\binom{8}{2}} = \frac{13}{28}.</span></p>
+<p>By the independence assumption, we have</p>
+<p><span class="math display">\begin{align}
+&amp;P(\text{1 striped on Mon.} \cap \text{1 striped on Tues.} \cap
+\geq\text{1 striped Weds.}) \\
+&amp;= P(\text{1 striped on Mon.} \cap \text{1 striped on Tues.}) \times
+P(\geq\text{1 striped Weds.}) \\
+&amp;= \frac{13}{(7)(28)}
+\end{align}</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-4in Based on the setup, Robert must have worn exactly one striped sock
-on both Monday and Tuesday, and then wore either a single striped sock
-or a pair of striped socks on Wednesday. By the definition of
-conditional probability, we have $$
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{1 striped on Mon.}\cap \text{1
-striped on Tues.}}\right] &amp; = \mathbb{P}\left[{\text{1 striped on
-Tues.} | \text{1 striped on Mon.} }\right] \\
-                                                                            &amp;
-\times \mathbb{P}\left[{\text{1 striped on
-Mon.}}\right]                         
-            
-\end{aligned}</span>
-<span class="math display"> For Monday, there are ${2\choose 1}{6\choose
-1} = 12$
-possible pairs of socks so that exactly one is striped. Thus the
-probability is given by </span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{1 striped Mon.}}\right] &amp; =
-\frac{12}{{8\choose 2}} = \frac{(12)(2)}{(8)(7)} = \frac{3}{7}.
-            
-\end{aligned}</span>
-<span class="math display"> Alternatively, you could write this as 1
-minus the
-probability of getting either no striped socks or two striped socks. For
-the second part, by similar logic, we have </span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{1 striped on Tues.} | \text{1
-striped on Mon.} }\right] &amp; = \frac{{1\choose 1}{5\choose
-1}}{{6\choose 2}} = \frac{(5)(2)}{(6)(5)} = \frac{1}{3}.
-            
-\end{aligned}</span>
-<span class="math display"> Therefore we have </span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{1 striped on Mon.}\cap \text{1
-striped on Tues.}}\right] = \frac{3}{7}\frac{1}{3} = \frac{1}{7}.
-            
-\end{aligned}</span>
-<span class="math display"> For Wednesday, he can select either one or
-two striped
-socks. Earlier we counted $12$ pairs which contain exactly one striped
-sock, so there are $13$ which contain either one or two. Thus
-</span>
-<span class="math display">\begin{aligned}
-                \mathbb{P}\left[{\text{ 1 or 2 striped on Weds.}}\right]
-&amp; = \frac{13}{{8\choose 2}} = \frac{13}{28}.
-            
-\end{aligned}</span>
-<span class="math display"> By the independence assumption, we have
-</span>
-<span class="math display">\begin{aligned}
-                  &amp; \mathbb{P}\left[{\text{1 striped on Mon.}\cap
-\text{1 striped on Tues.} \cap \geq\text{1 striped Weds.}}\right] \\
-                  &amp; =  \mathbb{P}\left[{\text{1 striped on Mon.}\cap
-\text{1 striped on Tues.}}\right]                              \\
-                  &amp; \times \mathbb{P}\left[{\geq\text{1 striped
-Weds.}}\right]                                                      \\
-                  &amp; =
-\frac{13}{(7)(28)}                                                                        
-            
-\end{aligned}</span>
-<p>$$</p>
-</div>
 <hr />
 <h2 id="problem-8">Problem 8</h2>
 <p>[(11 points)]</p>
@@ -1559,23 +1426,8 @@ but over the years you have lost some of your dishes so that now you
 only have 28. A lost dish is indicated by dish being missing in the
 image (for example you lost the blue flowers dessert place or the red
 dots mug).</p>
-<div class="center">
-<figure>
-<img src="prob_plates.png" style="width:75.0%" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
-</div>
+<p><img src="../../assets/images/fa24-final/q8.png" /></p>
 <p>You come home and find a single item in the kitchen sick.</p>
-<div class="responsebox">
-<p>1.5in Note this question is based on Lecture 23, slides 15, 20, 21
-where we have replaced a deck of cards with patterned dishes.</p>
-<p>In both b) and c) many made the mistake of selecting disjoint events
-A and B such the <span class="math inline">A \cap B = \emptyset</span>
-(or <span class="math inline">A \cap B|C = \emptyset</span> in c) ) but
-<span class="math inline">P(A),P(B)&gt;0</span>. Mutually exclusive
-events with non-zero probability are not independent (lecture 23, slide
-13).</p>
-</div>
 <p><br></p>
 <h3 id="problem-8.1">Problem 8.1</h3>
 <p>Let <span class="math inline">A</span> be the event that the item has
@@ -1605,6 +1457,16 @@ aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>1.5in Note this question is based on Lecture 23, slides 15, 20, 21
+where we have replaced a deck of cards with patterned dishes.</p>
+<p>In both b) and c) many made the mistake of selecting disjoint events
+A and B such the <span class="math inline">A \cap B = \emptyset</span>
+(or <span class="math inline">A \cap B|C = \emptyset</span> in c) ) but
+<span class="math inline">P(A),P(B)&gt;0</span>. Mutually exclusive
+events with non-zero probability are not independent (lecture 23, slide
+13).</p>
+</div>
 </div>
 </div>
 </div>
@@ -1616,6 +1478,19 @@ two events <span class="math inline">A</span> and <span
 class="math inline">B</span> which are <em>independent</em>. Prove that
 they are independent. <em>To receive full credit, your events should not
 have probabilities equal to zero or to one.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
 <div class="responsebox">
 <p>2in</p>
 <p>There were multiple correct options here.</p>
@@ -1632,25 +1507,11 @@ full set (for example spoon). Then <span class="math display">P(A) =
 single pattern), for example: Let A be the event that the item is red
 and let B be the event that the item is a spoon. There are 14 red
 dishes: <span class="math inline">P(A)=\frac{14}{28}=\frac{1}{2}</span>
-and there are 4 spoons: <span
-class="math inline">P(B)=\frac{4}{28}=\frac{1}{7}</span>. There are 2
+and there are 4 spoons: <span class="math inline">P(B)=\frac{4}{28}=\frac{1}{7}</span>. There are 2
 red spoons: <span class="math inline">P(A,B)
 =\frac{2}{28}=\frac{1}{14}</span>. <span class="math display">P(A,B)=
 \frac{1}{14} =\frac{1}{7}* \frac{1}{2} =P(B)*P(A)</span></p>
 </div>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading8_2">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse8_2" class="accordion-collapse collapse"
-aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
 </div>
 </div>
 </div>
@@ -1665,42 +1526,6 @@ class="math inline">B</span> are <em>conditionally independent</em>
 given <span class="math inline">C</span>. Prove that they are
 conditionally independent. <em>To receive full credit, your events
 should not have probabilities equal to zero or to one.</em></p>
-<div class="responsebox">
-<p>2in As in b) there are many correct solutions here (some of you were
-very creative).</p>
-<p>One strategy here is to consider the events in a) which weren’t
-independent and see if we can condition it on event C, so that they are.
-Let <span class="math inline">A</span> be the event that the item has
-stripes, and let <span class="math inline">B</span> be the event that
-the item is a cup (glass, wineglass or mug). Notice if we set <span
-class="math inline">C</span> to be the event that the item is blue, none
-of the blue cups are missing.</p>
-<p>Then, there are 3 blue striped cups: <span
-class="math inline">P(A\cap B|C)= \frac{3}{14}</span>. There are seven
-blue striped dishes <span
-class="math inline">P(A|C)=\frac{7}{14}=\frac{1}{2}</span> and there are
-6 blue cups: <span
-class="math inline">P(B|C)=\frac{6}{14}=\frac{3}{7}</span>. <span
-class="math display">P(A\cap B|C)= \frac{3}{14}
-=\frac{1}{2}*\frac{3}{7}=P(A|C)*P(B|C)</span></p>
-<p>Some other popular answers:</p>
-<p>A = dots, B = plates, C= red (this also works for A = solid)</p>
-<p><span class="math display">P(A|C) = \frac{7}{14}=\frac{1}{2}</span>
-<span class="math display">P(B|C) = \frac{4}{14}=\frac{2}{7}</span>
-<span class="math display">P(A \cap B|C) = \frac{2}{14}</span></p>
-<p>A = stripe, B = knife, C= blue (this also works for A = flowers,
-and/or B = spoon) <span class="math display">P(A|C) =
-\frac{7}{14}=\frac{1}{2}</span> <span class="math display">P(B|C) =
-\frac{2}{14}=\frac{1}{7}</span> <span class="math display">P(A \cap B|C)
-= \frac{1}{14}</span></p>
-<p>We did accept cases (with some deduction) where <span
-class="math display">P(A |C) =0</span> <span
-class="math display">P(B|C)&gt;0</span> <span class="math display">P(A
-\cap B |C) =0</span></p>
-<p>or <span class="math display">P(A |C) =1</span> <span
-class="math display">P(B|C)&gt;0</span> <span class="math display">P(A
-\cap B |C) = P(B|C)</span></p>
-</div>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header" id="heading8_3">
@@ -1714,6 +1539,34 @@ aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
+<div class="responsebox">
+<p>2in As in b) there are many correct solutions here (some of you were
+very creative).</p>
+<p>One strategy here is to consider the events in a) which weren’t
+independent and see if we can condition it on event C, so that they are.
+Let <span class="math inline">A</span> be the event that the item has
+stripes, and let <span class="math inline">B</span> be the event that
+the item is a cup (glass, wineglass or mug). Notice if we set <span class="math inline">C</span> to be the event that the item is blue, none
+of the blue cups are missing.</p>
+<p>Then, there are 3 blue striped cups: <span class="math inline">P(A\cap B|C)= \frac{3}{14}</span>. There are seven
+blue striped dishes <span class="math inline">P(A|C)=\frac{7}{14}=\frac{1}{2}</span> and there are
+6 blue cups: <span class="math inline">P(B|C)=\frac{6}{14}=\frac{3}{7}</span>. <span class="math display">P(A\cap B|C)= \frac{3}{14}
+=\frac{1}{2}*\frac{3}{7}=P(A|C)*P(B|C)</span></p>
+<p>Some other popular answers:</p>
+<p>A = dots, B = plates, C= red (this also works for A = solid)</p>
+<p><span class="math display">P(A|C) = \frac{7}{14}=\frac{1}{2}</span>
+<span class="math display">P(B|C) = \frac{4}{14}=\frac{2}{7}</span>
+<span class="math display">P(A \cap B|C) = \frac{2}{14}</span></p>
+<p>A = stripe, B = knife, C= blue (this also works for A = flowers,
+and/or B = spoon) <span class="math display">P(A|C) =
+\frac{7}{14}=\frac{1}{2}</span> <span class="math display">P(B|C) =
+\frac{2}{14}=\frac{1}{7}</span> <span class="math display">P(A \cap B|C)
+= \frac{1}{14}</span></p>
+<p>We did accept cases (with some deduction) where <span class="math display">P(A |C) =0</span> <span class="math display">P(B|C)&gt;0</span> <span class="math display">P(A
+\cap B |C) =0</span></p>
+<p>or <span class="math display">P(A |C) =1</span> <span class="math display">P(B|C)&gt;0</span> <span class="math display">P(A
+\cap B |C) = P(B|C)</span></p>
+</div>
 </div>
 </div>
 </div>
@@ -1726,6 +1579,27 @@ classifier to determine whether a book is science fiction (sci-fi),
 romance or thriller based on details of the plot. You have a dataset of
 18 books and 4 features {“Happy conclusion",”Spaceships",“Murder
 investigation",”Sidekick" } to train a Naïve Bayes classifier.</p>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>(<span class="math inline">\times</span><!-- -->8) A new book has
+been released which has ’Happy conclusion", “sidekick" but
+not”Spaceships" or “murder investigation". Is this book a sci-fi,
+thriller or romance? Use the Naive Bayes Classifier without smoothing.
+Be sure to clearly state your prediction as one of the three genres.
+<em>Show all your calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
 <div class="center">
 <table>
 <tbody>
@@ -1900,165 +1774,56 @@ investigation",”Sidekick" } to train a Naïve Bayes classifier.</p>
 </tbody>
 </table>
 </div>
-<p><br></p>
-<h3 id="problem-9.1">Problem 9.1</h3>
-<p>(<span class="math inline">\times</span><!-- -->8) A new book has
-been released which has ’Happy conclusion", “sidekick" but
-not”Spaceships" or “murder investigation". Is this book a sci-fi,
-thriller or romance? Use the Naive Bayes Classifier without smoothing.
-Be sure to clearly state your prediction as one of the three genres.
-<em>Show all your calculations.</em></p>
-<div id="accordionExample" class="accordion">
-<div class="accordion-item">
-<h2 class="accordion-header" id="heading9_1">
-<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
-Click to view the solution.
-</button>
-</h2>
-<div id="collapse9_1" class="accordion-collapse collapse"
-aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
-<div class="accordion-body">
-<header id="title-block-header">
-<h1 class="title"> </h1>
-</header>
+<p>We estimate the following probabilities from the table:</p>
+<p><span class="math display">\begin{aligned}
+P(\text{Happy} \,|\,\text{romance})         &amp; = 6/6=1     \\
+P(\text{sidekick} \,|\,\text{romance})      &amp; = 3/6=1/2   \\
+P(\text{No Murder} \,|\,\text{romance})     &amp; = 4/6=2/3   \\
+P(\text{No Spaceships} \,|\,\text{romance}) &amp; = 5/6       \\
+P(\text{romance})                             &amp; = 6/20=3/10 \\[1em]
+P(\text{Happy} \,|\,\text{sci-fi})          &amp; = 5/10      \\
+P(\text{sidekick} \,|\,\text{sci-fi})       &amp; = 8/10=4/5  \\
+P(\text{No Murder} \,|\,\text{sci-fi})      &amp; = 8/10=4/5  \\
+P(\text{No Spaceships} \,|\,\text{sci-fi})  &amp; = 1/10      \\
+P(\text{sci-fi})                              &amp; = 10/20=1/2 \\[1em]
+P(\text{No Murder} \,|\,\text{thriller})    &amp; = 0/4
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+&amp; P(\text{romance} \mid \text{Happy,Sidekick, No Murder, No
+Spaceships}) \\
+&amp; \qquad \propto P(\text{Happy}\mid\text{romance}) \times
+P(\text{sidekick}\mid\text{romance}) \\
+&amp; \qquad \qquad \times P(\text{No Murder}\mid\text{romance}) \times
+P(\text{No Spaceships}\mid\text{romance}) \times P(\text{romance}) \\
+&amp; \qquad = 1 \cdot \frac{1}{2}  \cdot \frac{2}{3} \cdot \frac{5}{6}
+\cdot \frac{3}{10} = \frac{1}{2} \cdot \frac{1}{3} \cdot \frac{1}{2} =
+\frac{1}{12}
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+&amp; P(\text{sci-fi} \mid \text{Happy,Sidekick, No Murder, No
+Spaceships}) \\
+&amp; \qquad \propto P(\text{Happy}\mid\text{sci-fi}) \times
+P(\text{sidekick}\mid\text{sci-fi}) \\
+&amp; \qquad \qquad \times P(\text{No Murder}\mid\text{sci-fi}) \times
+P(\text{No Spaceships}\mid\text{sci-fi}) \times P(\text{sci-fi}) \\
+&amp; \qquad = \frac{5}{10} \cdot \frac{4}{5} \cdot \frac{4}{5} \cdot
+\frac{1}{10} \cdot \frac{1}{2} = \frac{4}{5} \cdot \frac{1}{5} \cdot
+\frac{1}{10} = \frac{2}{125}
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+&amp; P(\text{thriller} \mid \text{Happy,Sidekick, No Murder, No
+Spaceships}) \\
+&amp; \qquad \propto P(\text{Happy}\mid\text{thriller}) \times
+P(\text{sidekick}\mid\text{thriller}) \\
+&amp; \qquad \qquad \times P(\text{No Murder}\mid\text{thriller}) \times
+P(\text{No Spaceships}\mid\text{thriller}) \times P(\text{thriller}) \\
+&amp; \qquad = 0
+\end{aligned}</span></p>
 </div>
 </div>
 </div>
 </div>
 <p><br></p>
-<div class="responsebox">
-<p>2in</p>
-</div>
-<div class="responsebox">
-8in We estimate the following probabilities from the table: $$
-<span class="math display">\begin{aligned}
-                P(\text{Happy} \,|\,\text{romance})         &amp; =
-6/6=1     \\
-                P(\text{sidekick} \,|\,\text{romance})      &amp; =
-3/6=1/2   \\
-                P(\text{No Murder} \,|\,\text{romance})     &amp; =
-4/6=2/3   \\
-                P(\text{No Spaceships} \,|\,\text{romance}) &amp; =
-5/6       \\
-                P(\text{romance})                             &amp; =
-6/20=3/10 \\[1em]
-                P(\text{Happy} \,|\,\text{sci-fi})          &amp; =
-5/10      \\
-                P(\text{sidekick} \,|\,\text{sci-fi})       &amp; =
-8/10=4/5  \\
-                P(\text{No Murder} \,|\,\text{sci-fi})      &amp; =
-8/10=4/5  \\
-                P(\text{No Spaceships} \,|\,\text{sci-fi})  &amp; =
-1/10      \\
-                P(\text{sci-fi})                              &amp; =
-10/20=1/2 \\[1em]
-                P(\text{No Murder} \,|\,\text{thriller})    &amp; =
-0/4       
-            
-\end{aligned}</span>
-<p>$$</p>
-Therefore: $$
-<span class="math display">\begin{aligned}
-                  &amp; P(\text{romance} \,|\,\text{Happy,Sidekick,
-Murder, No Spaceships}) \\
-                  &amp;                                                                       
-                \qquad
-                \propto
-                P(\text{Happy}\,|\,\text{romance})\\
-                  &amp; \qquad
-\qquad                                                         
-                \times
-                P(\text{sidekick}\,|\,\text{romance})\\
-                  &amp; \qquad
-\qquad                                                         
-                \times
-                P(\text{No Murder}\,|\,\text{romance})\\
-                  &amp; \qquad
-\qquad                                                         
-                \times
-                P(\text{No Spaceships}\,|\,\text{romance})\\
-                  &amp; \qquad
-\qquad                                                         
-                \times
-                P(\text{romance})\\
-                  &amp;
-=                                                                     
-                1 \cdot \frac{1}{2}  \cdot \frac{2}{3} \cdot \frac{5}{6}
-\cdot \frac{3}{10}  
-                = \frac{1}{2}   \cdot \frac{1}{3} \cdot \frac{1}{2}  =
-                \frac{1}{12}
-            
-\end{aligned}</span>
-<p>$$</p>
-$$
-<span class="math display">\begin{aligned}
-                  &amp; P(\text{sci-fi} \,|\,\text{Happy,Sidekick,
-Murder, No Spaceships}) \\
-                  &amp;                                                                      
-                \qquad
-                \propto
-                P(\text{Happy}\,|\,\text{sci-fi})\\
-                  &amp; \qquad
-\qquad                                                        
-                \times
-                P(\text{sidekick}\,|\,\text{sci-fi})\\
-                  &amp; \qquad
-\qquad                                                        
-                \times
-                P(\text{Murder}\,|\,\text{sci-fi})\\
-                  &amp; \qquad
-\qquad                                                        
-                \times
-                P(\text{No Spaceships}\,|\,\text{sci-fi})\\
-                  &amp; \qquad
-\qquad                                                        
-                \times
-                P(\text{sci-fi})\\
-                  &amp;
-=                                                                    
-                \frac{5}{10} \cdot \frac{4}{5} \cdot \frac{4}{5} \cdot
-\frac{1}{10}
-                \cdot \frac{1}{2}
-                =
-                \frac{4}{5} \cdot \frac{1}{5} \cdot \frac{1}{10}
-                =
-                \frac{2}{125}
-            
-\end{aligned}</span>
-<p>$$</p>
-$$
-<span class="math display">\begin{aligned}
-                  &amp; P(\text{thriller} \,|\,\text{Happy,Sidekick,
-Murder, No Spaceships}) \\
-                  &amp;                                                                        
-                \qquad
-                \propto
-                P(\text{Happy}\,|\,\text{thriller})\\
-                  &amp; \qquad
-\qquad                                                          
-                \times
-                P(\text{sidekick}\,|\,\text{thriller})\\
-                  &amp; \qquad
-\qquad                                                          
-                \times
-                P(\text{No Murder}\,|\,\text{thriller})\\
-                  &amp; \qquad
-\qquad                                                          
-                \times
-                P(\text{No Spaceships}\,|\,\text{thriller})\\
-                  &amp; \qquad
-\qquad                                                          
-                \times
-                P(\text{thriller})\\
-                  &amp;
-=                                                                      
-                0
-            
-\end{aligned}</span>
-<p>$$</p>
-<p>Since the first probability is the largest, our prediction is that
-the book was romance.</p>
-</div>
 <hr />
 <h2 id="section"><span class="math display"> </span></h2>
 <h4
