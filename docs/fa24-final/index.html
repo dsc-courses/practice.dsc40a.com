@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Fall 2024 Final</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../assets/theme.css" />
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Fall 2024 Final</h1>
+</header>
+<p><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- add after bootstrap.min.css -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+<!-- add after bootstrap.min.js or bootstrap.bundle.min.js -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script></p>
+<!-- for difficulty gauges-->
+<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B947E6J6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B947E6J6H4');
+</script>
+<p><a href="../index.html">← return to practice.dsc40a.com</a></p>
+<hr />
+<p><strong>Instructor(s):</strong> Gal Mishne</p>
+<p>This exam was administered in person. They had a two sided 11in by
+8.5in cheat sheet. Students had <strong>50 minutes</strong> to take this
+exam.</p>
+<hr />
+<h2 id="problem-1">Problem 1</h2>
+<p>For each statement below, fill in the circle indicating the word(s)
+or phrase(s) which would make the statement correct if added to the
+sentence. In several statements, <span
+class="math inline">(y_i)_{i=1}^n</span> denotes a dataset of real
+numbers. <em>You do not need to show your work for full credit, but
+partial credit may be awarded for supporting calculations and
+reasoning.</em></p>
+<p><br></p>
+<h3 id="problem-1.1">Problem 1.1</h3>
+<p>If <span class="math inline">x^\ast</span> is a maximizer for <span
+class="math inline">f(x)</span> and <span class="math inline">f(x)\geq
+0</span> for all <span class="math inline">x</span>, then <span
+class="math inline">x^\ast</span> is a ________ for <span
+class="math inline">g(x)=3-f(x)^2</span>.</p>
+<p><span class="math inline">\bigcirc</span> minimizer <span
+class="math inline">\bigcirc</span> maximizer <span
+class="math inline">\bigcirc</span> neither</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_1" aria-expanded="true" aria-controls="collapse1_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_1" class="accordion-collapse collapse"
+aria-labelledby="heading1_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The correct answer is <strong>minimizer</strong>. Note that <span class="math inline">g(x) = 3-f(x)^2</span> is a monotone decreasing
+function for <span class="math inline">x\geq 0</span>. Therefore, since
+<span class="math inline">f(x) \leq f(x^\ast)</span> for all <span class="math inline">x</span>, <span class="math inline">g(f(x)) \geq
+g(f(x^\ast))</span> for all <span class="math inline">x</span> and this
+<span class="math inline">x^\ast</span> is a minimizer for <span class="math inline">3-f^2</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.2">Problem 1.2</h3>
+<p>Suppose we wish to find a constant predictor for <span
+class="math inline">y</span> using either squared or absolute loss. In
+high-stakes scenarios where outliers are rare but of great importance,
+it is better to use the ________ function.</p>
+<p><span class="math inline">\bigcirc</span> absolute loss <span
+class="math inline">\bigcirc</span> squared loss</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_2" aria-expanded="true" aria-controls="collapse1_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_2" class="accordion-collapse collapse"
+aria-labelledby="heading1_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The answer is <strong>squared</strong> loss, since it is more
+sensitive to outliers.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.3">Problem 1.3</h3>
+<p>Let <span class="math inline">(1, 3, 4, 1, 2, -1)</span> be a dataset
+of real numbers. The derivative of the empirical risk for the absolute
+loss <span class="math inline">L_{abs}(h)</span> of a constant predictor
+<span class="math inline">h</span> for the dataset is ________ when
+<span class="math inline">h=2.5</span>.</p>
+<p><span class="math inline">\bigcirc</span> positive <span
+class="math inline">\bigcirc</span> negative <span
+class="math inline">\bigcirc</span> zero</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_3" aria-expanded="true" aria-controls="collapse1_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_3" class="accordion-collapse collapse"
+aria-labelledby="heading1_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The derivative of empirical risk for absolute loss is given by <span class="math display">R'(h) = \frac{1}{n}\sum_{i=1}^n\mathrm{sign}(h
+- y_i).</span></p>
+<p>See lectures 3-4 for a derivation. Thus <span class="math display">R'(2.5) = \frac{1}{6}(1 -1 -1 +1 +1 +1) =
+\frac{1}{3} &gt; 0 .</span></p>
+<p>So the correct answer is <strong>positive</strong>.</p>
+<p>Alternative solution: Order the dataset: <span class="math inline">(-1,1, 1, 2, 3, 4 )</span>. The loss is minimized in
+the range [1,2]. The point <span class="math inline">h=2.5</span> is to
+the right of this minimum and therefore the function is increasing at
+this point and the derivative must be positive.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.4">Problem 1.4</h3>
+<p>Assume a dataset <span class="math inline">\{y_i\}_{i=1}^n</span>
+satisfies <span class="math inline">y_i\in[0,1]</span> for all <span
+class="math inline">i</span>. Let <span
+class="math inline">h^\ast</span> denote the optimal constant predictor
+for the dataset with respect to squared loss. Assume we sample a new
+data point <span class="math inline">y_{n+1}</span> where <span
+class="math inline">y_{n+1}=y_4 - 2</span>. Then the new minimizer <span
+class="math inline">h&#39;</span> is ________ the old minimizer <span
+class="math inline">h^\ast</span>.</p>
+<p><span class="math inline">\bigcirc</span> greater than <span
+class="math inline">\bigcirc</span> less than <span
+class="math inline">\bigcirc</span> equal to</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_4" aria-expanded="true" aria-controls="collapse1_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_4" class="accordion-collapse collapse"
+aria-labelledby="heading1_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We have that <span class="math inline">h^\ast</span> is the mean of
+the original data, and <span class="math inline">h'</span> is the
+mean of the new data. Therefore <span class="math display">\begin{aligned}
+h' &amp; = \frac{1}{n+1}\sum_{i=1}^{n+1}y_i =
+\frac{1}{n+1}(y_1+\cdots+y_n + (y_4 - 2)) \\
+&amp; = \frac{1}{n+1}(n h^\ast + (y_4 - 2)) \\
+&amp; = \frac{n}{n+1}h^\ast + \frac{y_4 - 2}{n+1}
+\end{aligned}</span></p>
+<p>Note that <span class="math inline">y_4 - 2 \leq 1 - 2 = -1 &lt;
+0</span>, so that <span class="math display">\begin{aligned}
+\frac{n}{n+1}h^\ast + \frac{y_4 - 2}{n+1} &lt; \frac{n}{n+1}h^\ast &lt;
+h^\ast
+\end{aligned}</span></p>
+<p>Therefore the correct answer is <strong>less than</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-1.5">Problem 1.5</h3>
+<p>Let <span class="math inline">\epsilon &gt; 0</span> be any positive
+real number. Define the smooth loss by the formula <span
+class="math display">L_{\epsilon}(h, y_i) = \sqrt{|y_i - h|^2+
+\epsilon^2}.</span></p>
+<p>Then the optimal <em>value</em> of the empirical risk of <span
+class="math inline">L_{\epsilon}</span> is ________ the optimal
+<em>value</em> of the empirical risk of the absolute loss function.</p>
+<p><span class="math inline">\bigcirc</span> greater than <span
+class="math inline">\bigcirc</span> less than <span
+class="math inline">\bigcirc</span> equal to</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading1_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1_5" aria-expanded="true" aria-controls="collapse1_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse1_5" class="accordion-collapse collapse"
+aria-labelledby="heading1_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Note that <span class="math display">L_{\epsilon}(h, y_i) =
+\sqrt{|y_i - h|^2+ \epsilon^2} &gt;\sqrt{|y_i - h|^2} = |y_i-h| =
+L_{abs}(h, y_i).</span></p>
+<p>Therefore the minimum value of <span class="math inline">L_{\epsilon}</span> is <strong>greater</strong> than
+the minimum value of <span class="math inline">L_{abs}</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-2">Problem 2</h2>
+<p>[(12 points)] Suppose you are designing a central temperature control
+system for a network of <span class="math inline">n\geq 1</span> houses
+in a small town. Each house <span class="math inline">i</span> has a
+preferred temperature <span class="math inline">y_i</span>, and the
+importance of satisfying house <span class="math inline">i</span>’s
+preference is represented by a weight <span class="math inline">a_i &gt;
+0</span>, which represents the number of residents in each house.</p>
+<p>The system is set to maintain a single uniform temperature <span
+class="math inline">h</span> across all houses. To minimize
+dissatisfaction, you aim to minimize the weighted squared error:</p>
+<p><span class="math display">R(h) = \frac{1}{n}\sum_{i=1}^n a_i (y_i -
+h)^2.</span></p>
+<p><br></p>
+<h3 id="problem-2.1">Problem 2.1</h3>
+<p>Find a formula for the optimal temperature <span
+class="math inline">h^\ast</span> in terms of the various preferred
+temperatures <span class="math inline">y_1,\dotsc, y_n</span>. <em>Show
+all your calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_1" aria-expanded="true" aria-controls="collapse2_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_1" class="accordion-collapse collapse"
+aria-labelledby="heading2_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>2in To minimize the function <span class="math inline">R(h) =
+\sum_{i=1}^n a_i (y_i - h)^2</span>, we differentiate <span class="math inline">R(h)</span> with respect to <span class="math inline">h</span> and set the derivative equal to zero: <span class="math display">\frac{dR(h)}{dh} = \frac{d}{dh} \sum_{i=1}^n a_i
+(y_i - h)^2 = -2 \sum_{i=1}^n a_i (y_i - h).</span> Setting <span class="math inline">\frac{dR(h)}{dh} = 0</span>, we get: <span class="math display">\sum_{i=1}^n a_i y_i - \sum_{i=1}^n a_i h =
+0.</span> Simplifying: <span class="math display">h \sum_{i=1}^n a_i =
+\sum_{i=1}^n a_i y_i.</span> Solving for <span class="math inline">h^\ast</span>: <span class="math display">h^\ast =
+\frac{\sum_{i=1}^n a_i y_i}{\sum_{i=1}^n a_i}.</span> Thus, the optimal
+temperature <span class="math inline">h^\ast</span> is the weighted
+average of the preferred temperatures.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-2.2">Problem 2.2</h3>
+<p>Suppose that the family which lives in house <span
+class="math inline">1</span> has a baby, and their weight <span
+class="math inline">a_1</span> increases by one. Assuming their
+preferred temperature does not change, find an expression which relates
+the <em>new</em> optimal temperature <span
+class="math inline">h&#39;</span> to the old optimal temperature <span
+class="math inline">h^\ast</span> you found in (a). <em>Show all your
+calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_2" aria-expanded="true" aria-controls="collapse2_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_2" class="accordion-collapse collapse"
+aria-labelledby="heading2_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>2in Let <span class="math inline">h'</span> denote the new
+optimal temperature. The new weight for house <span class="math inline">1</span> becomes <span class="math inline">a_1'
+= a_1 + 1</span>. Using the formula for <span class="math inline">h^\ast</span>, the new optimal temperature is: <span class="math display">h' = \frac{(a_1 + 1)y_1 + \sum_{i=2}^n a_i
+y_i}{(a_1 + 1) + \sum_{i=2}^n a_i}.</span> Expanding <span class="math inline">h'</span>: <span class="math display">h' =
+\frac{a_1 y_1 + y_1 + \sum_{i=2}^n a_i y_i}{a_1 + 1 + \sum_{i=2}^n a_i}=
+\frac{ y_1 + \sum_{i=1}^n a_i y_i}{  1 + \sum_{i=1}^n a_i}.</span>
+Factoring out the original terms for <span class="math inline">h^\ast</span>: <span class="math display">h' =
+\frac{h^\ast \sum_{i=1}^n a_i + y_1}{\sum_{i=1}^n a_i + 1}.</span> This
+relates the new optimal temperature <span class="math inline">h'</span> to the original <span class="math inline">h^\ast</span> by accounting for the additional
+weight and the corresponding preference.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-2.3">Problem 2.3</h3>
+<p>You and your colleagues are discussing new and improved ways to set
+the weights used in the cost function. Your team comes up with three
+alternatives for setting the weights:</p>
+<ul>
+<li><p><span class="math inline">a_i = (\text{the number of residents in
+house $i$})</span>,</p></li>
+<li><p><span class="math inline">b_i = 1</span> for all houses,</p></li>
+<li><p><span class="math inline">c_i = 1/(\text{the number of windows in
+house $i$})</span>.</p></li>
+</ul>
+<p>Assume each house is occupied by at least one person and has at least
+one window. Let</p>
+<ul>
+<li><p><span class="math inline">A</span> denote the optimal risk of
+<span class="math inline">R(h)</span> with respect to the weights <span
+class="math inline">a_i</span></p></li>
+<li><p><span class="math inline">B</span> denote the optimal risk of
+<span class="math inline">R(h)</span> with respect to the weights <span
+class="math inline">b_i</span></p></li>
+<li><p><span class="math inline">C</span> denote the optimal risk of
+<span class="math inline">R(h)</span> with respect to the weights <span
+class="math inline">c_i</span></p></li>
+</ul>
+<p><strong>Using the relations</strong> <span
+class="math inline">&lt;,\leq,&gt;,\geq,=</span>, rank the numbers <span
+class="math inline">A,B,C</span> from least to greatest. <em>Explain
+your reasoning and don’t forget about the baby!</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading2_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2_3" aria-expanded="true" aria-controls="collapse2_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse2_3" class="accordion-collapse collapse"
+aria-labelledby="heading2_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>3in Note that for any choice of <span class="math inline">h</span>,
+we have the following inequalities: <span class="math display">\sum_{i=1}^n c_i (y_i - h)^2\leq \sum_{i=1}^n b_i
+(y_i - h)^2 &lt;\sum_{i=1}^n a_i (y_i - h)^2.</span> since <span class="math inline">c_i \leq 1</span> for all <span class="math inline">i</span>, <span class="math inline">b_i = 1</span>
+for all <span class="math inline">i</span>, and <span class="math inline">a_i\geq 1</span> for all <span class="math inline">i</span>. Therefore the minimum values for each such
+function with respect to <span class="math inline">h</span> will follow
+these inequalities. That is, <span class="math display">C\leq B &lt;
+A.</span></p>
+<p>(Note we also accepted solution <span class="math inline">C\leq B
+\leq A</span> for those who forgot about the baby ;) )</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-3">Problem 3</h2>
+<p>[(10 points)]</p>
+<p>A local farmers’ market vendor sells homemade jam jars and is
+analyzing the relationship between the number of hours she spends at the
+market and the number of jam jars sold. Over three weekends, she
+collects the following data:</p>
+<ul>
+<li><p><strong>Weekend 1</strong>: Worked for 1 hour, sold 2
+jars.</p></li>
+<li><p><strong>Weekend 2</strong>: Worked for 2 hours, sold 4
+jars.</p></li>
+<li><p><strong>Weekend 3</strong>: Worked for 3 hours, sold 6
+jars.</p></li>
+</ul>
+<p>Noticing a perfect linear trend, she decides to model this
+relationship using linear regression. Let <span class="math inline">x_1
+= 1, x_2=2, x_3=3</span> denote the number of hours she worked on the
+corresponding weekend and let <span class="math inline">y_1 = 2, y_2=4,
+y_3=6</span> denote the number of jars sold.</p>
+<p><br></p>
+<h3 id="problem-3.1">Problem 3.1</h3>
+<p>First, fill in the blanks in the table below which gathers relevant
+information for least squares regression. Then, find the optimal
+parameters <span class="math inline">w_0^\ast</span> and <span
+class="math inline">w_1^\ast</span> for a simple least squares linear
+model for her jar sales. <em>Show all your calculations.</em></p>
+<table>
+<thead>
+<tr>
+<th>Summation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} x_i</span></td>
+<td>6</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} y_i</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} x_i y_i</span></td>
+<td>28</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} x_i^2</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_1" aria-expanded="true" aria-controls="collapse3_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_1" class="accordion-collapse collapse"
+aria-labelledby="heading3_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>First, we calculate the missing values:</p>
+<p><span class="math display">\sum_{i=1}^3 y_i = 2 + 4 + 6 =
+12</span></p>
+<p><span class="math display">\sum_{i=1}^3 x_i^2 = 1^2 + 2^2 + 3^2 = 1 +
+4 + 9 = 14</span></p>
+<p>The completed table is:</p>
+<table>
+<thead>
+<tr>
+<th>Summation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 x_i</span></td>
+<td>6</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 y_i</span></td>
+<td>12</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 x_iy_i</span></td>
+<td>28</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^3 x_i^2</span></td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<h3 id="finding-optimal-parameters">Finding Optimal Parameters</h3>
+<p>To calculate the optimal parameters, we use the least squares
+formulas:</p>
+<p><span class="math display">w_1^* = \frac{\sum_{i=1}^3 x_iy_i -
+\frac{1}{3}\sum_{i=1}^3 x_i \sum_{i=1}^3 y_i}{\sum_{i=1}^3 x_i^2 -
+\frac{1}{3}\left(\sum_{i=1}^3 x_i\right)^2}</span></p>
+<p>Substituting the values from our table:</p>
+<p><span class="math display">w_1^* = \frac{28 - \frac{1}{3}(6 \cdot
+12)}{14 - \frac{1}{3}(6^2)} = \frac{28 - 24}{14 - 12} = \frac{4}{2} =
+2</span></p>
+<p>Now we calculate <span class="math inline">w_0^*</span>:</p>
+<p><span class="math display">w_0^* = \frac{1}{3}\sum_{i=1}^3 y_i -
+w_1^* \cdot \frac{1}{3}\sum_{i=1}^3 x_i</span></p>
+<p>Substituting values:</p>
+<p><span class="math display">w_0^* = \frac{12}{3} - 2 \cdot \frac{6}{3}
+= 4 - 4 = 0</span></p>
+<h3 id="final-answer">Final Answer</h3>
+<p>The optimal parameters are:</p>
+<p><span class="math display">w_0^* = 0, \quad w_1^* = 2</span></p>
+<p>This means the linear model is <span class="math inline">h(x) =
+2x</span>, which perfectly fits the data since each hour of work
+corresponds to exactly 2 jars sold.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-3.2">Problem 3.2</h3>
+<p>On a fourth weekend, due to a festival, she couldn’t set up her stall
+but managed to sell 2 jars to early customers who contacted her
+directly. This data point is:</p>
+<ul>
+<li><strong>Weekend 4</strong>: Worked for 0 hours, sold 2 jars.</li>
+</ul>
+<p>She now wants to understand how this outlier affects her overall
+analysis. Fill out the table below based on the new data point <span
+class="math inline">x_4 = 0, y_4=2</span> and then find the
+<strong>new</strong> optimal parameters <span
+class="math inline">w_0&#39;</span> and <span
+class="math inline">w_1&#39;</span> for a simple least squares linear
+model. <em>Show all your calculations.</em></p>
+<table>
+<thead>
+<tr>
+<th>Summation</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} x_i</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} y_i</span></td>
+<td>14</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} x_i y_i</span></td>
+<td>28</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{3} x_i^2</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_2" aria-expanded="true" aria-controls="collapse3_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_2" class="accordion-collapse collapse"
+aria-labelledby="heading3_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>First, we fill in the table with the updated sums including the
+fourth data point:</p>
+<table>
+<thead>
+<tr>
+<th>Sum</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} x_i</span></td>
+<td>6</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} y_i</span></td>
+<td>14</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} x_i y_i</span></td>
+<td>28</td>
+</tr>
+<tr>
+<td><span class="math inline">\sum_{i=1}^{4} x_i^2</span></td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Calculating the new slope</strong> <span class="math inline">w_1'</span>:</p>
+<p>The formula for the optimal slope is:</p>
+<p><span class="math display">w_1' = \frac{\sum_{i=1}^{4} x_i y_i -
+\frac{1}{4} \sum_{i=1}^{4} x_i \sum_{i=1}^{4} y_i}{\sum_{i=1}^{4} x_i^2
+- \frac{1}{4} \left(\sum_{i=1}^{4} x_i\right)^2}</span></p>
+<p>Substituting values:</p>
+<p><span class="math display">w_1' = \frac{28 - \frac{1}{4}(6 \cdot
+14)}{14 - \frac{1}{4}(6^2)} = \frac{28 - 21}{14 - 9} = \frac{7}{5} =
+1.4</span></p>
+<p><strong>Calculating the new intercept</strong> <span class="math inline">w_0'</span>:</p>
+<p>The formula for the optimal intercept is:</p>
+<p><span class="math display">w_0' = \frac{1}{4} \sum_{i=1}^{4} y_i
+- w_1' \cdot \frac{1}{4} \sum_{i=1}^{4} x_i</span></p>
+<p>Substituting values:</p>
+<p><span class="math display">w_0' = \frac{14}{4} - 1.4 \cdot
+\frac{6}{4} = 3.5 - 2.1 = 1.4</span></p>
+<p><strong>Final Answer:</strong></p>
+<p>The new optimal parameters are:</p>
+<p><span class="math display">w_0' = 1.4, \quad w_1' =
+1.4</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-3.3">Problem 3.3</h3>
+<p>On each axis below draw: <strong>(i)</strong> the scatterplot of the
+corresponding data, and <strong>(ii)</strong> the line of best fit you
+found for the corresponding dataset in the preceding parts.</p>
+<p><img src="../../assets/images/fa24-final/q3c.png"
+style="width:80.0%" /></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_3" aria-expanded="true" aria-controls="collapse3_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_3" class="accordion-collapse collapse"
+aria-labelledby="heading3_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><img src="../../assets/images/fa24-final/q3c-soln.png" style="width:80.0%"/></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-3.4">Problem 3.4</h3>
+<p>Based on the pictures in part <strong>(c)</strong>, which dataset has
+greater mean squared error with respect to its optimal parameters? Why?
+<em>You do not need to calculate the errors by hand to answer this
+question. Explain your reasoning.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading3_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3_4" aria-expanded="true" aria-controls="collapse3_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse3_4" class="accordion-collapse collapse"
+aria-labelledby="heading3_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The dataset with Weekends 1, 2, 3, and 4 will have a greater mean
+squared error. This is because the added outlier (Weekend 4) does not
+follow the original perfect linear trend and introduces a discrepancy
+between the data points and the new line of best fit</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-4">Problem 4</h2>
+<p>Consider the usual setup for a multiple regression problem, as
+follows. Let <span class="math inline">\vec{x}_1,\vec{x}_2,\dotsc,
+\vec{x}_{n}\in\mathbb{R}^d</span> be a collection of feature vectors in
+<span class="math inline">\mathbb{R}^d</span>, and let <span
+class="math inline">X\in\mathbb{R}^{n\times (d+1)}</span> be the
+corresponding design matrix. Each <span
+class="math inline">\vec{x}_i</span> has a label <span
+class="math inline">y_i\in\mathbb{R}</span>, and let <span
+class="math inline">\vec{y}\in\mathbb{R}^n</span> be the vector of
+labels. We wish to fit the data and labels with a linear model <span
+class="math display">H(\vec{x}) = w_0 + w_1\vec{x}^{(1)} +
+w_2\vec{x}^{(2)}+\dotsc+ w_d\vec{x}^{(d)} \  =
+\vec{w}^T\mathrm{Aug}(\vec{x}).</span> where <span
+class="math inline">\vec{w}\in\mathbb{R}^{d+1}</span> is the vector of
+coefficients with intercept. Let <span
+class="math inline">\vec{w}^\ast</span> denote the optimal parameter
+vector with respect to mean squared error.</p>
+<p>For each statement below, fill in the circle indicating the word(s)
+or phrase(s) which would make the statement correct if added to the
+sentence. <em>You do not need to show your work for full credit, but
+partial credit may be awarded for supporting calculations and
+reasoning.</em></p>
+<p><br></p>
+<h3 id="problem-4.1">Problem 4.1</h3>
+<p>At <span class="math inline">\vec{w}^\ast</span>, the residual vector
+<span class="math inline">\vec{y}-X\vec{w}^\ast</span> is ________ to
+the column space of the design matrix <span
+class="math inline">X</span>.</p>
+<p><span class="math inline">\bigcirc</span> neither <span
+class="math inline">\bigcirc</span> orthogonal <span
+class="math inline">\bigcirc</span> parallel</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_1" aria-expanded="true" aria-controls="collapse4_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_1" class="accordion-collapse collapse"
+aria-labelledby="heading4_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>At <span class="math inline">\vec{w}^\ast</span>, the residual vector
+<span class="math inline">\vec{y} - X\vec{w}^\ast</span> is
+<strong>orthogonal</strong> to the column space of <span class="math inline">X</span>. This is derived from the normal equations:
+<span class="math display">X^T(\vec{y} - X\vec{w}^\ast) = 0,</span>
+which imply that the residuals are perpendicular to the space spanned by
+the columns of <span class="math inline">X</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.2">Problem 4.2</h3>
+<p>The optimal parameter vector <span class="math inline">w^\ast</span>
+is found by setting the ________ of the mean squared error equal to
+________ and solving the resulting equation.</p>
+<p><span class="math inline">\bigcirc</span> (residuals, <span
+class="math inline">\vec{y}</span>) <span
+class="math inline">\bigcirc</span> (gradient, the zero vector) <span
+class="math inline">\bigcirc</span> (predicted labels, <span
+class="math inline">X\vec{w}</span>)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_2" aria-expanded="true" aria-controls="collapse4_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_2" class="accordion-collapse collapse"
+aria-labelledby="heading4_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The optimal parameter vector <span class="math inline">\vec{w}^\ast</span> is found by setting the
+<strong>gradient</strong> of the mean squared error to <strong>the zero
+vector</strong>. The gradient is: <span class="math display">\nabla_w \|
+\vec{y} - X\vec{w} \|^2 = -2X^T(\vec{y} - X\vec{w}),</span> and solving
+<span class="math inline">X^T(X\vec{w} - \vec{y}) = 0</span> leads to
+the normal equation, which gives the minimum.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.3">Problem 4.3</h3>
+<p>If the features in <span class="math inline">X</span> are linearly
+________, the matrix <span class="math inline">X^TX</span> will be
+________, making the normal equation solution possibly undefined.</p>
+<p><span class="math inline">\bigcirc</span> (dependent, nonsingular)
+<span class="math inline">\bigcirc</span> (independent, singular) <span
+class="math inline">\bigcirc</span> (dependent, noninvertible)</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_3" aria-expanded="true" aria-controls="collapse4_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_3" class="accordion-collapse collapse"
+aria-labelledby="heading4_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>If the features in <span class="math inline">X</span> are linearly
+<strong>dependent</strong>, the matrix <span class="math inline">X^TX</span> will be <strong>singular
+(noninvertible)</strong>. Linear dependence implies that the columns of
+<span class="math inline">X</span> are not linearly independent, leading
+to a determinant of zero for <span class="math inline">X^TX</span>,
+which makes solving the normal equations impossible.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.4">Problem 4.4</h3>
+<p>If <span class="math inline">\vec{c}\in\mathbb{R}^d</span> is a fixed
+vector, and we define <span class="math inline">\vec{z}_i&#39; =
+\vec{x}_i + \vec{c}</span>, then the <em>new</em> optimal parameter
+vector <span class="math inline">\vec{w}&#39;</span> for the data <span
+class="math inline">\{\vec{z}_i\}_{i=1}^{n}</span> and labels <span
+class="math inline">\vec{y}</span> is equal to ________.</p>
+<p><span class="math inline">\bigcirc</span> <span
+class="math inline">\vec{w}^\ast + \mathrm{Aug}(\vec{c})</span> <span
+class="math inline">\bigcirc</span> <span
+class="math inline">\vec{w}^\ast</span> <span
+class="math inline">\bigcirc</span> <span
+class="math inline">\vec{w}^\ast</span> except possibly for <span
+class="math inline">w_0</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_4" aria-expanded="true" aria-controls="collapse4_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_4" class="accordion-collapse collapse"
+aria-labelledby="heading4_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The new optimal parameter vector <span class="math inline">\vec{w}'</span> is <strong><span class="math inline">\vec{w}^\ast</span> except possibly for <span class="math inline">w_0</span></strong>. Adding <span class="math inline">\vec{c}</span> shifts the features, leaving <span class="math inline">w_1, w_2, \dots, w_d</span> unchanged but altering
+the intercept: <span class="math display">w_0' = w_0 - \vec{w}^T
+\vec{c}.</span></p>
+<p>(Think of the simple linear regression model - if we shift all the
+<span class="math inline">x_i</span>’s by constant <span class="math inline">c</span> this doesn’t affect the slope <span class="math inline">w_1</span> but does affect the intercept <span class="math inline">w_0</span>.)</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>For the remaining two parts, fill in the circle which contains the
+<strong>gradient</strong> of each function. <em>You do not need to show
+your work for full credit, but partial credit may be awarded for
+supporting calculations and reasoning.</em></p>
+<p><br></p>
+<h3 id="problem-4.5">Problem 4.5</h3>
+<p>Calculate the gradient with respect to <span
+class="math inline">\vec{x}</span> of <span
+class="math inline">F(\vec{x}) =
+\vec{w}^T\mathrm{Aug}(\vec{x})</span>.</p>
+<p><span class="math inline">\bigcirc</span> <span
+class="math inline">\begin{bmatrix} w_1 &amp; w_2 &amp; \dotsc &amp; w_d
+\end{bmatrix}^T</span> <span class="math inline">\bigcirc</span> <span
+class="math inline">\vec{x}</span> <span
+class="math inline">\bigcirc</span> <span
+class="math inline">\begin{bmatrix} w_0 &amp; w_1 &amp; \dotsc &amp; w_d
+\end{bmatrix}^T</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_5">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_5" aria-expanded="true" aria-controls="collapse4_5">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_5" class="accordion-collapse collapse"
+aria-labelledby="heading4_5" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>The gradient of <span class="math inline">F(\vec{x}) =
+\vec{w}^T\mathrm{Aug}(\vec{x})</span> with respect to <span class="math inline">\vec{x}</span> is <span class="math inline">\begin{bmatrix} w_1 &amp; w_2 &amp; \dotsc &amp; w_d
+\end{bmatrix}^T</span>. The first slot in <span class="math inline">\mathrm{Aug}(\vec{x})</span> is a constant <span class="math inline">1</span>, which cancels out when
+differentiating.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-4.6">Problem 4.6</h3>
+<p>Calculate the gradient with respect to <span
+class="math inline">\vec{w}</span> of <span
+class="math inline">F(\vec{w}) = \|\vec{y}-X\vec{w}\|^2</span>.</p>
+<p><span class="math inline">\bigcirc</span> <span
+class="math inline">-2X^TX\vec{w}</span> <span
+class="math inline">\bigcirc</span> <span
+class="math inline">-2(\vec{y}-X\vec{w})</span> <span
+class="math inline">\bigcirc</span> <span
+class="math inline">-2X^T(\vec{y}-X\vec{w})</span></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading4_6">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4_6" aria-expanded="true" aria-controls="collapse4_6">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse4_6" class="accordion-collapse collapse"
+aria-labelledby="heading4_6" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>First expand the squared norm: <span class="math display">F(\vec{w})
+= (\vec{y} - X\vec{w})^T (\vec{y} - X\vec{w})</span></p>
+<p>The gradient of <span class="math inline">F(\vec{w})</span> with
+respect to <span class="math inline">\vec{w}</span> is: <span class="math display">\nabla_{\vec{w}} F(\vec{w}) = \nabla_{\vec{w}}
+\left[ \vec{y}^T\vec{y} - 2\vec{y}^T X\vec{w} + \vec{w}^T X^T X \vec{w}
+\right]</span></p>
+<p>Since <span class="math inline">\vec{y}^T\vec{y}</span> does not
+depend on <span class="math inline">\vec{w}</span>, its derivative is
+zero. The derivative of <span class="math inline">-2\vec{y}^T
+X\vec{w}</span> is: <span class="math display">\nabla_{\vec{w}} \left(
+-2\vec{y}^T X\vec{w} \right) = -2 X^T \vec{y}</span></p>
+<p>The derivative of <span class="math inline">\vec{w}^T X^T X
+\vec{w}</span> is (HW4 Problem 2): <span class="math display">\nabla_{\vec{w}} \left( \vec{w}^T X^T X \vec{w}
+\right) = 2 X^T X \vec{w}</span></p>
+<p>Combine the derivatives: <span class="math display">\nabla_{\vec{w}}
+F(\vec{w}) = -2 X^T \vec{y} + 2 X^T X \vec{w}</span></p>
+<p>Finally, simplify the expression: <span class="math display">\nabla_{\vec{w}} F(\vec{w}) = 2 X^T X \vec{w} - 2
+X^T \vec{y} = 2 X^T (X\vec{w} - \vec{y})</span></p>
+<p>Therefore, <span class="math display">\nabla_{\vec{w}} F(\vec{w}) =
+-2 X^T (\vec{y} - X\vec{w})</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-5">Problem 5</h2>
+<p>[(12 points)]</p>
+<p>You are analyzing the performance of a machine learning model that
+predicts the height <span class="math inline">h</span> of basketballs
+after being thrown. The model’s error is measured using a loss function
+<span class="math inline">L(h, y_i)</span>, defined for a specific
+observation <span class="math inline">y_i</span> (the true height of an
+object) as: <span class="math display">L(h, y_i) = \frac{1}{2}(h -
+y_i)^2 + 3</span> Here, <span class="math inline">h</span> represents
+the predicted height, and <span class="math inline">y_i = 2</span> is
+the true height of the object for this task.</p>
+<p><br></p>
+<h3 id="problem-5.1">Problem 5.1</h3>
+<p>() Starting from an initial predicted height <span
+class="math inline">h_0 = 0</span>, perform <em>two steps</em> of the
+gradient descent algorithm with a learning rate of <span
+class="math inline">\eta = 0.5</span> to obtain predicted heights <span
+class="math inline">h_1, h_2</span>. <em>Show all your
+calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_1" aria-expanded="true" aria-controls="collapse5_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_1" class="accordion-collapse collapse"
+aria-labelledby="heading5_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>5in The gradient of the loss function <span class="math inline">L(h,
+y_i)</span> with respect to <span class="math inline">h</span> is: <span class="math display">\frac{\partial L}{\partial h} = (h -
+y_i)</span></p>
+<p>For <span class="math inline">y_i = 2</span>, this becomes: <span class="math display">\frac{\partial L}{\partial h} = (h - 2)</span></p>
+<p><strong>Step 1:</strong> Starting at <span class="math inline">h_0 =
+0</span>, <span class="math display">\frac{\partial L}{\partial
+h}\bigg|_{h = h_0} = (0 - 2) = -2</span> Update <span class="math inline">h</span> using the gradient descent rule: <span class="math display">h_1 = h_0 - \eta \cdot \frac{\partial L}{\partial
+h} = 0 - 0.5 \cdot (-2) = 0 + 1 = 1</span></p>
+<p><strong>Step 2:</strong> Using <span class="math inline">h_1 =
+1</span>, <span class="math display">\frac{\partial L}{\partial
+h}\bigg|_{h = h_1} = (1 - 2) = -1</span> Update <span class="math inline">h</span>: <span class="math display">h_2 = h_1 -
+\eta \cdot \frac{\partial L}{\partial h} = 1 - 0.5 \cdot (-1) = 1 + 0.5
+= 1.5</span></p>
+<p>Thus, the predicted heights are: <span class="math display">h_1 = 1,
+\quad h_2 = 1.5</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-5.2">Problem 5.2</h3>
+<p>On the axis below, plot a rough sketch of the following objects:</p>
+<ul>
+<li><p><span class="math inline">h_0, h_1, h_2</span></p></li>
+<li><p><span class="math inline">L(h, y_i)</span></p></li>
+<li><p>The optimal height <span
+class="math inline">h^\ast</span>.</p></li>
+</ul>
+<p><img src="../../assets/images/fa24-final/q5b.png"
+style="width:50.0%" /></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_2" aria-expanded="true" aria-controls="collapse5_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_2" class="accordion-collapse collapse"
+aria-labelledby="heading5_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p><img src="../../assets/images/fa24-final/q5b-soln.png"/></p>
+<p>The graph above shows:</p>
+<ul>
+<li><p>The loss function <span class="math inline">L(h, y_i) =
+\frac{1}{2}(h - 2)^2 + 3</span> as a blue curve.</p></li>
+<li><p>The initial point <span class="math inline">h_0 = 0</span>, the
+first update <span class="math inline">h_1 = 1</span>, and the second
+update <span class="math inline">h_2 = 1.5</span> marked as red
+points.</p></li>
+<li><p>The optimal height <span class="math inline">h^\ast = 2</span>
+shown as a dashed vertical line.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-5.3">Problem 5.3</h3>
+<p>Determine whether the gradient descent algorithm will converge to the
+minimum of the loss function <span class="math inline">L(h, y_i)</span>.
+<em>Explain your reasoning.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading5_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5_3" aria-expanded="true" aria-controls="collapse5_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse5_3" class="accordion-collapse collapse"
+aria-labelledby="heading5_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>2in The loss function <span class="math inline">L(h, y_i) =
+\frac{1}{2}(h - y_i)^2 + 3</span> is a convex function because it is a
+quadratic function of <span class="math inline">h</span> with a positive
+second derivative: <span class="math display">\frac{\partial^2
+L}{\partial h^2} = 1 &gt; 0</span></p>
+<p>Gradient descent will converge to the minimum of a convex function if
+the learning rate <span class="math inline">\eta</span> is small enough,
+which is the case here.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-6">Problem 6</h2>
+<p>[(12 points)] A sample space <span class="math inline">S</span> is
+partitioned by three disjoint non-empty events <span
+class="math inline">E_1 \cup E_2 \cup E_3=S</span>. Let <span
+class="math inline">A \subset S</span> be an event and assume you are
+given the following probabilities: <span
+class="math display">P(E_1),\hspace{.1in}P(E_2),\hspace{.1in}P(A \vert
+E_2),\hspace{.1in}P(A \vert E_3),\hspace{.1in}\text{ and }P(A \cap
+E_1).</span> <span class="math inline">\bar{A}</span> denotes the
+complement of A.</p>
+<p><br></p>
+<h3 id="problem-6.1">Problem 6.1</h3>
+<p>Show that the probability <span class="math inline">P(E_1 \vert
+\bar{A})</span> can be calculated using the above terms (i.e., no
+probability terms are missing in order to make this calculation).</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_1" aria-expanded="true" aria-controls="collapse6_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_1" class="accordion-collapse collapse"
+aria-labelledby="heading6_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>True. <span class="math display">P(E_1 \vert \bar{A})
+=  \frac{P(\bar{A} \cap E_1)}{P(\bar{A})}</span> For the numerator <span class="math display">P(\bar{A} \cap E_1) = P(\bar{A} \vert E_1)  * P(
+E_1)</span> which we can calculate as <span class="math display">P(\bar{A} \vert E_1) = 1-P(A \vert E_1)</span>
+<span class="math display">P(A \vert E_1) = \frac{P(A \cap
+E_1)}{P(E_1)}</span> Therefore <span class="math inline">P(\bar{A} \cap
+E_1)  = P(E_1)-P(A \cap E_1)</span>. For the denominator we use the
+complement <span class="math display">P(\bar{A}) = 1-P(A)</span></p>
+<p>Using the law of total probability: <span class="math display">P(A) =
+P(A \vert E_1) P(E_1) +  P(A \vert E_2) P(E_2) + P(A \vert E_3)
+P(E_3)</span> which we can calculate using <span class="math display">P(E_3)=1-P(E_2)-P(E_1)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><em>For parts <strong>(b)</strong>, <strong>(c)</strong>, and
+<strong>(d)</strong>, you do not need to show your work for full credit,
+but partial credit may be awarded for supporting calculations and
+reasoning.</em></p>
+<p><br></p>
+<h3 id="problem-6.2">Problem 6.2</h3>
+<p>For the following statements, circle either <strong>TRUE</strong> or
+<strong>FALSE</strong> to indicate whether the equation is correct.</p>
+<p><strong>(i)</strong> <span class="math inline">P(\bar{E_1} \vert A)
+=  P(E_2 \vert A) + P(E_3 \vert A)</span></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\bigcirc</span> TRUE</td>
+<td style="text-align: center;"><span
+class="math inline">\bigcirc</span> FALSE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(ii)</strong> <span class="math inline">P(\bar{A} \vert E_1)
+= 1 - P(\bar{E}_1 \vert \bar{A})</span></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\bigcirc</span> TRUE</td>
+<td style="text-align: center;"><span
+class="math inline">\bigcirc</span> FALSE</td>
+</tr>
+</tbody>
+</table>
+<p><strong>(iii)</strong> <span class="math inline">P(\bar{E_1} \vert A)
+= 1 - P(\bar{E}_1 \vert \bar{A})</span></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;"><span
+class="math inline">\bigcirc</span> TRUE</td>
+<td style="text-align: center;"><span
+class="math inline">\bigcirc</span> FALSE</td>
+</tr>
+</tbody>
+</table>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_2" aria-expanded="true" aria-controls="collapse6_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_2" class="accordion-collapse collapse"
+aria-labelledby="heading6_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<ol type="i">
+<li>TRUE - <span class="math inline">P(\bar{E_1} \vert A) = 1 - P({E_1}
+\vert A) =  P(E_2 \vert A) + P(E_3 \vert A)</span>.</li>
+</ol>
+</div>
+<div class="responsebox">
+<ol start="2" type="i">
+<li>FALSE: <span class="math inline">P(\bar{A} \vert E_1) = 1- P({A}
+\vert E_1) \neq 1 - P(\bar{E}_1 \vert \bar{A})</span></li>
+</ol>
+</div>
+<div class="responsebox">
+<ol start="3" type="i">
+<li>FALSE: <span class="math inline">P(\bar{E_1} \vert A) = 1 - P({E}_1
+\vert {A}) \neq 1 - P(\bar{E}_1 \vert \bar{A})</span></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.3">Problem 6.3</h3>
+<p>Which of the following statements concerning <span
+class="math inline">E_1,E_2,E_3</span> are true? <em>Only one statement
+is true.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+<span class="math inline">P(\overline{E_1} \cap \overline{E_2}) =
+0</span></td>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+<span class="math inline">P(\overline{E_1} \cup \overline{E_2}) \neq
+0</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+<span class="math inline">E1</span>, <span
+class="math inline">E_2</span> and <span class="math inline">E_3</span>
+are independent events</td>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+<span class="math inline">P(E_1 \cup E_3) = 1</span></td>
+</tr>
+</tbody>
+</table>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_3" aria-expanded="true" aria-controls="collapse6_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_3" class="accordion-collapse collapse"
+aria-labelledby="heading6_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>Correct: <span class="math inline">\overline{E_1} \cup \overline{E_2}
+= (E_2 \cup E_3) \cup (E_1 \cup E_3) = S \rightarrow P(\overline{E_1}
+\cup \overline{E_2}) = 1</span>.</p>
+<p>Incorrect: <span class="math inline">P(\overline{E_1} \cap
+\overline{E_2}) = P((E_2 \cup E3) \cap (E_1 \cup E_3)) = P(E_3) \neq
+0</span></p>
+<p>Incorrect: <span class="math inline">P(E_1 \cup E_3) = 1 - P(E_2)
+&lt; 1</span> since <span class="math inline">E_2</span> is non
+empty.</p>
+<p>Incorrect <span class="math inline">E1</span>, <span class="math inline">E_2</span> and <span class="math inline">E_3</span>
+are not independent since <span class="math inline">P(E_1,E_2,E_3) =
+P(E_1 \cap E_2 \cap E_3) = P(\emptyset)= 0 \neq
+P(E_1)P(E_2)P(E_3)&gt;0</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-6.4">Problem 6.4</h3>
+<p>If the event <span class="math inline">E_1</span> is fully contained
+within event <span class="math inline">A</span>, i.e., every outcome in
+<span class="math inline">E_1</span> is also an outcome in <span
+class="math inline">A</span>, we write that <span
+class="math inline">E_1 \subseteq A</span>. Which if the following
+statements is true? <em>Only one statement is true.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+If <span class="math inline">E_1 \subseteq A</span>, then <span
+class="math inline">P(E_1)\leq P(A)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+If <span class="math inline">P(E_1)\leq P(A)</span>, then <span
+class="math inline">E_1 \subseteq A</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+If <span class="math inline">E_1 \subseteq A</span>, then <span
+class="math inline">P(E_1 \cap A)\leq P(E_2)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+If <span class="math inline">E_1 \subseteq A</span>, then <span
+class="math inline">E_1</span> and <span class="math inline">A</span>
+are independent events.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\bigcirc</span>
+If <span class="math inline">E_1 \subseteq A</span>, then <span
+class="math inline">E_3</span> and <span class="math inline">A</span>
+are independent events.</td>
+</tr>
+</tbody>
+</table>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading6_4">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6_4" aria-expanded="true" aria-controls="collapse6_4">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse6_4" class="accordion-collapse collapse"
+aria-labelledby="heading6_4" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>Correct: <span class="math inline">P(E_1) = \sum_{s \in E_1}
+p(s)</span> and <span class="math inline">P(A) = \sum_{s \in A}
+p(s)</span>. Since <span class="math inline">\forall s \in E_1: s \in
+A</span>, then <span class="math inline">P(E_1)\leq P(A)</span>.</p>
+<p>The converse is not true: <span class="math inline">P(E_1)\leq
+P(A)</span> can be true without <span class="math inline">E_1 \subseteq
+A</span>.</p>
+<p>When <span class="math inline">E_1 \subseteq A</span> then <span class="math inline">P(E_1)=P(E_1 \cap A)</span> however we don’t know
+anything about the relationship between <span class="math inline">P(E_1)</span> and <span class="math inline">P(E_2)</span>.</p>
+<p>If <span class="math inline">E_1 \subseteq A</span> these are not
+independent events since <span class="math inline">P(E_1 | A) = 1 \neq
+P(E_1)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-7">Problem 7</h2>
+<p>[(13 points)]</p>
+<p>Robert has a sock drawer containing exactly eight socks: one pair
+each of plain socks, dotted socks, striped socks, and plaid socks.</p>
+<p><br></p>
+<h3 id="problem-7.1">Problem 7.1</h3>
+<p>On Monday morning while getting ready, Robert selects two socks at
+random from the drawer. What is the probability that the socks are
+matching? <em>Explain your reasoning.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_1" aria-expanded="true" aria-controls="collapse7_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_1" class="accordion-collapse collapse"
+aria-labelledby="heading7_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>1in There are <span class="math inline">{8\choose 2}</span> ways to
+pick the two socks from the drawer, of which exactly four pairs are
+matching. Therefore the probability is <span class="math display">\frac{4}{{8\choose 2}} = \frac{(4)(2)}{(8)(7)} =
+\frac{1}{7}.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.2">Problem 7.2</h3>
+<p>After wearing the socks on Monday he places them in a laundry basket
+separate from the drawer. On Tuesday morning, as Robert gets ready, he
+selects another two socks at random from the six remaining in the
+drawer. What is the probability that the socks are matching on Tuesday?
+<em>Show all your calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_2" aria-expanded="true" aria-controls="collapse7_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_2" class="accordion-collapse collapse"
+aria-labelledby="heading7_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We can condition on whether the socks were matching on Monday and use
+this information to our advantage. Specifically,</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}] &amp;= P[\text{match on Tues.}|\text{match on
+Mon.}]P[\text{match on Mon.}] \\
+&amp;+ P[\text{match on Tues.}|\text{don't match on
+Mon.}]P[\text{don't match on Mon.}] \\
+&amp;= P[\text{match on Tues.}|\text{match on Mon.}]\frac{1}{7} \\
+&amp;+ P[\text{match on Tues.}|\text{don't match on Mon.}]\left(1 -
+\frac{1}{7}\right)
+\end{align*}
+</span></p>
+<p>If the socks were matching on Monday, there are now three pairs of
+matching socks in the drawer. So we have, by the same logic as
+before,</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}|\text{match on Mon.}] &amp;=
+\frac{3}{\binom{6}{2}} = \frac{(3)(2)}{(6)(5)} = \frac{1}{5}.
+\end{align*}
+</span></p>
+<p>If the socks were not matching on Monday, there are now two pairs of
+matching socks plus two mismatching socks. The total number of pairs is
+still <span class="math inline">\binom{6}{2}</span> but now only two
+such pairs match. Therefore,</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}|\text{don't match on Mon.}] &amp;=
+\frac{2}{\binom{6}{2}} = \frac{(2)(2)}{(6)(5)} = \frac{2}{15}.
+\end{align*}
+</span></p>
+<p>Thus in conclusion we have</p>
+<p><span class="math display">
+\begin{align*}
+P[\text{match on Tues.}] &amp;= \frac{1}{5}\cdot\frac{1}{7} +
+\frac{2}{15}\cdot\frac{6}{7}.
+\end{align*}
+</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<p><br></p>
+<h3 id="problem-7.3">Problem 7.3</h3>
+<p>(<span class="math inline">\times</span><!-- -->6) On Tuesday evening
+Robert does laundry so that when he gets ready on Wednesday morning all
+of the socks are clean again. As usual he selects another two socks at
+random, a selection which is independent of any of his choices on Monday
+or Tuesday. What is the probability that he wears at least one striped
+sock on Monday, Tuesday, <strong>and</strong> Wednesday? <em>Show all
+your calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading7_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7_3" aria-expanded="true" aria-controls="collapse7_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse7_3" class="accordion-collapse collapse"
+aria-labelledby="heading7_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>Based on the setup, Robert must have worn exactly one striped sock on
+both Monday and Tuesday, and then wore either a single striped sock or a
+pair of striped socks on Wednesday. By the definition of conditional
+probability, we have</p>
+<p><span class="math display">P(\text{1 striped on Mon.} \cap \text{1
+striped on Tues.}) = P(\text{1 striped on Tues.} \mid \text{1 striped on
+Mon.}) \times P(\text{1 striped on Mon.})</span></p>
+<p>For Monday, there are <span class="math inline">\binom{2}{1}\binom{6}{1} = 12</span> possible pairs
+of socks so that exactly one is striped. Thus the probability is given
+by</p>
+<p><span class="math display">P(\text{1 striped Mon.}) =
+\frac{12}{\binom{8}{2}} = \frac{(12)(2)}{(8)(7)} =
+\frac{3}{7}.</span></p>
+<p>Alternatively, you could write this as 1 minus the probability of
+getting either no striped socks or two striped socks. For the second
+part, by similar logic, we have</p>
+<p><span class="math display">P(\text{1 striped on Tues.} \mid \text{1
+striped on Mon.}) = \frac{\binom{1}{1}\binom{5}{1}}{\binom{6}{2}} =
+\frac{(5)(2)}{(6)(5)} = \frac{1}{3}.</span></p>
+<p>Therefore we have</p>
+<p><span class="math display">P(\text{1 striped on Mon.} \cap \text{1
+striped on Tues.}) = \frac{3}{7} \cdot \frac{1}{3} =
+\frac{1}{7}.</span></p>
+<p>For Wednesday, he can select either one or two striped socks. Earlier
+we counted 12 pairs which contain exactly one striped sock, so there are
+13 which contain either one or two. Thus</p>
+<p><span class="math display">P(\text{1 or 2 striped on Weds.}) =
+\frac{13}{\binom{8}{2}} = \frac{13}{28}.</span></p>
+<p>By the independence assumption, we have</p>
+<p><span class="math display">\begin{align}
+&amp;P(\text{1 striped on Mon.} \cap \text{1 striped on Tues.} \cap
+\geq\text{1 striped Weds.}) \\
+&amp;= P(\text{1 striped on Mon.} \cap \text{1 striped on Tues.}) \times
+P(\geq\text{1 striped Weds.}) \\
+&amp;= \frac{13}{(7)(28)}
+\end{align}</span></p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-8">Problem 8</h2>
+<p>[(11 points)]</p>
+<p>You have 4 sets of dishes each consisting of plates (dessert and
+dinner), cutlery (spoon fork and knife) and cups (glass, wineglass and
+mug). Two sets are red and two are blue and each set has a different
+pattern: dots, solid, stripes or flowers as in the picture below.
+Originally you had <span class="math inline">4 * 8 =32</span> dishes,
+but over the years you have lost some of your dishes so that now you
+only have 28. A lost dish is indicated by dish being missing in the
+image (for example you lost the blue flowers dessert place or the red
+dots mug).</p>
+<p><img src="../../assets/images/fa24-final/q8.png" /></p>
+<p>You come home and find a single item in the kitchen sick.</p>
+<p><br></p>
+<h3 id="problem-8.1">Problem 8.1</h3>
+<p>Let <span class="math inline">A</span> be the event that the item has
+stripes, and let <span class="math inline">B</span> be the event that
+the item is a cup (glass, wineglass or mug). Are these events
+independent? <em>Explain your reasoning.</em></p>
+<div class="responsebox">
+<p>This question is based on the deck of cards question we did in
+class.</p>
+<p>No, they are not. Knowing that the item is a cup makes it slightly
+more likely that the item has stripes.</p>
+<p><span class="math display">P(A)=7/28</span> <span
+class="math display">P(B)=10/28 = 5/14</span> <span
+class="math display">P(A \cap B = 3/28 \neq (7*5)/(28*14)=5/56</span>
+Therefore not independent</p>
+</div>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_1" aria-expanded="true" aria-controls="collapse8_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_1" class="accordion-collapse collapse"
+aria-labelledby="heading8_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>Note this question is based on Lecture 23, slides 15, 20, 21 where we
+have replaced a deck of cards with patterned dishes.</p>
+<p>In both b) and c) many made the mistake of selecting disjoint events
+A and B such the <span class="math inline">A \cap B = \emptyset</span>
+(or <span class="math inline">A \cap B|C = \emptyset</span> in c) ) but
+<span class="math inline">P(A),P(B)&gt;0</span>. Mutually exclusive
+events with non-zero probability are not independent (lecture 23, slide
+13).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.2">Problem 8.2</h3>
+<p>Regarding the identity of the item in the sink, give an example of
+two events <span class="math inline">A</span> and <span
+class="math inline">B</span> which are <em>independent</em>. Prove that
+they are independent. <em>To receive full credit, your events should not
+have probabilities equal to zero or to one.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_2">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_2" aria-expanded="true" aria-controls="collapse8_2">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_2" class="accordion-collapse collapse"
+aria-labelledby="heading8_2" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>There were multiple correct options here.</p>
+<p>One strategy is based on noticing that in every row there are 7
+dishes. Therefore for any dish for which we have all 4 patterns (dinner
+plate, spoon, knife, wine glass) you can select event A to be a pattern
+(for example dots) and B to be one of the dishes for which we have the
+full set (for example spoon). Then <span class="math display">P(A) =
+\frac{7}{28}=\frac{1}{4}</span> <span class="math display">P(B) =
+\frac{4}{28}=\frac{1}{7}</span> <span class="math display">P(A \cap B) =
+\frac{1}{28} = \frac{1}{7} \cdot \frac{1}{4}</span></p>
+<p>Also <span class="math display">P(B|A) = \frac{1}{7}=P(B)</span></p>
+<p>This can also be done for either the red or blue color (instead of a
+single pattern), for example: Let A be the event that the item is red
+and let B be the event that the item is a spoon. There are 14 red
+dishes: <span class="math inline">P(A)=\frac{14}{28}=\frac{1}{2}</span>
+and there are 4 spoons: <span class="math inline">P(B)=\frac{4}{28}=\frac{1}{7}</span>. There are 2
+red spoons: <span class="math inline">P(A,B)
+=\frac{2}{28}=\frac{1}{14}</span>. <span class="math display">P(A,B)=
+\frac{1}{14} =\frac{1}{7}* \frac{1}{2} =P(B)*P(A)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<h3 id="problem-8.3">Problem 8.3</h3>
+<p>Regarding the identity of the item in the sink, give an example of
+three events <span class="math inline">A</span>, <span
+class="math inline">B</span>, and <span class="math inline">C</span>
+such that <span class="math inline">A</span> and <span
+class="math inline">B</span> are <em>conditionally independent</em>
+given <span class="math inline">C</span>. Prove that they are
+conditionally independent. <em>To receive full credit, your events
+should not have probabilities equal to zero or to one.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading8_3">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8_3" aria-expanded="true" aria-controls="collapse8_3">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse8_3" class="accordion-collapse collapse"
+aria-labelledby="heading8_3" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<div class="responsebox">
+<p>As in b) there are many correct solutions here (some of you were very
+creative).</p>
+<p>One strategy here is to consider the events in a) which weren’t
+independent and see if we can condition it on event C, so that they are.
+Let <span class="math inline">A</span> be the event that the item has
+stripes, and let <span class="math inline">B</span> be the event that
+the item is a cup (glass, wineglass or mug). Notice if we set <span class="math inline">C</span> to be the event that the item is blue, none
+of the blue cups are missing.</p>
+<p>Then, there are 3 blue striped cups: <span class="math inline">P(A\cap B|C)= \frac{3}{14}</span>. There are seven
+blue striped dishes <span class="math inline">P(A|C)=\frac{7}{14}=\frac{1}{2}</span> and there are
+6 blue cups: <span class="math inline">P(B|C)=\frac{6}{14}=\frac{3}{7}</span>. <span class="math display">P(A\cap B|C)= \frac{3}{14}
+=\frac{1}{2}*\frac{3}{7}=P(A|C)*P(B|C)</span></p>
+<p>Some other popular answers:</p>
+<p>A = dots, B = plates, C= red (this also works for A = solid)</p>
+<p><span class="math display">P(A|C) = \frac{7}{14}=\frac{1}{2}</span>
+<span class="math display">P(B|C) = \frac{4}{14}=\frac{2}{7}</span>
+<span class="math display">P(A \cap B|C) = \frac{2}{14}</span></p>
+<p>A = stripe, B = knife, C= blue (this also works for A = flowers,
+and/or B = spoon) <span class="math display">P(A|C) =
+\frac{7}{14}=\frac{1}{2}</span> <span class="math display">P(B|C) =
+\frac{2}{14}=\frac{1}{7}</span> <span class="math display">P(A \cap B|C)
+= \frac{1}{14}</span></p>
+<p>We did accept cases (with some deduction) where <span class="math display">P(A |C) =0</span> <span class="math display">P(B|C)&gt;0</span> <span class="math display">P(A
+\cap B |C) =0</span></p>
+<p>or <span class="math display">P(A |C) =1</span> <span class="math display">P(B|C)&gt;0</span> <span class="math display">P(A
+\cap B |C) = P(B|C)</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="problem-9">Problem 9</h2>
+<p>[(8 points)] You work for Amazon and are implementing a book genre
+classifier to determine whether a book is science fiction (sci-fi),
+romance or thriller based on details of the plot. You have a dataset of
+18 books and 4 features {“Happy conclusion",”Spaceships",“Murder
+investigation",”Sidekick" } to train a Naïve Bayes classifier.</p>
+<div class="center">
+<table>
+<tbody>
+<tr>
+<td style="text-align: center;">Book #</td>
+<td style="text-align: center;">Genre</td>
+<td style="text-align: left;">Murder</td>
+<td style="text-align: left;">Sidekick</td>
+<td style="text-align: left;">Happy</td>
+<td style="text-align: left;">Spaceships</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">sci-fi</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">romance</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">romance</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">romance</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">romance</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">romance</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">romance</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">thriller</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">thriller</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">thriller</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">thriller</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="problem-9.1">Problem 9.1</h3>
+<p>(<span class="math inline">\times</span><!-- -->8) A new book has
+been released which has ’Happy conclusion", “sidekick" but
+not”Spaceships" or “murder investigation". Is this book a sci-fi,
+thriller or romance? Use the Naive Bayes Classifier without smoothing.
+Be sure to clearly state your prediction as one of the three genres.
+<em>Show all your calculations.</em></p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header" id="heading9_1">
+<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9_1" aria-expanded="true" aria-controls="collapse9_1">
+Click to view the solution.
+</button>
+</h2>
+<div id="collapse9_1" class="accordion-collapse collapse"
+aria-labelledby="heading9_1" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<p>We estimate the following probabilities from the table:</p>
+<p><span class="math display">\begin{aligned}
+P(\text{Happy} \,|\,\text{romance})         &amp; = 6/6=1     \\
+P(\text{sidekick} \,|\,\text{romance})      &amp; = 3/6=1/2   \\
+P(\text{No Murder} \,|\,\text{romance})     &amp; = 4/6=2/3   \\
+P(\text{No Spaceships} \,|\,\text{romance}) &amp; = 5/6       \\
+P(\text{romance})                             &amp; = 6/20=3/10 \\[1em]
+P(\text{Happy} \,|\,\text{sci-fi})          &amp; = 5/10      \\
+P(\text{sidekick} \,|\,\text{sci-fi})       &amp; = 8/10=4/5  \\
+P(\text{No Murder} \,|\,\text{sci-fi})      &amp; = 8/10=4/5  \\
+P(\text{No Spaceships} \,|\,\text{sci-fi})  &amp; = 1/10      \\
+P(\text{sci-fi})                              &amp; = 10/20=1/2 \\[1em]
+P(\text{No Murder} \,|\,\text{thriller})    &amp; = 0/4
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+&amp; P(\text{romance} \mid \text{Happy,Sidekick, No Murder, No
+Spaceships}) \\
+&amp; \qquad \propto P(\text{Happy}\mid\text{romance}) \times
+P(\text{sidekick}\mid\text{romance}) \\
+&amp; \qquad \qquad \times P(\text{No Murder}\mid\text{romance}) \times
+P(\text{No Spaceships}\mid\text{romance}) \times P(\text{romance}) \\
+&amp; \qquad = 1 \cdot \frac{1}{2}  \cdot \frac{2}{3} \cdot \frac{5}{6}
+\cdot \frac{3}{10} = \frac{1}{2} \cdot \frac{1}{3} \cdot \frac{1}{2} =
+\frac{1}{12}
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+&amp; P(\text{sci-fi} \mid \text{Happy,Sidekick, No Murder, No
+Spaceships}) \\
+&amp; \qquad \propto P(\text{Happy}\mid\text{sci-fi}) \times
+P(\text{sidekick}\mid\text{sci-fi}) \\
+&amp; \qquad \qquad \times P(\text{No Murder}\mid\text{sci-fi}) \times
+P(\text{No Spaceships}\mid\text{sci-fi}) \times P(\text{sci-fi}) \\
+&amp; \qquad = \frac{5}{10} \cdot \frac{4}{5} \cdot \frac{4}{5} \cdot
+\frac{1}{10} \cdot \frac{1}{2} = \frac{4}{5} \cdot \frac{1}{5} \cdot
+\frac{1}{10} = \frac{2}{125}
+\end{aligned}</span></p>
+<p><span class="math display">\begin{aligned}
+&amp; P(\text{thriller} \mid \text{Happy,Sidekick, No Murder, No
+Spaceships}) \\
+&amp; \qquad \propto P(\text{Happy}\mid\text{thriller}) \times
+P(\text{sidekick}\mid\text{thriller}) \\
+&amp; \qquad \qquad \times P(\text{No Murder}\mid\text{thriller}) \times
+P(\text{No Spaceships}\mid\text{thriller}) \times P(\text{thriller}) \\
+&amp; \qquad = 0
+\end{aligned}</span></p>
+<p>Since the first probability is the largest, our prediction is that
+the book was romance.</p>
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr />
+<h2 id="section"><span class="math display"> </span></h2>
+<h4
+id="feedback-find-an-error-still-confused-have-a-suggestion-let-us-know-here.">👋
+Feedback: Find an error? Still confused? Have a suggestion?
+<a href="https://forms.gle/WZ71FchnXU1K154d7">Let us know
+here</u></a>.</h4>
+<hr />
+</body>
+</html>
