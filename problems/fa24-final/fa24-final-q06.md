@@ -16,7 +16,7 @@ this calculation).
 
 # BEGIN SOLUTION
 ::: responsebox
-3.5in True.
+True.
 $$P(E_1 \vert \bar{A}) =  \frac{P(\bar{A} \cap E_1)}{P(\bar{A})}$$ For
 the numerator $$P(\bar{A} \cap E_1) = P(\bar{A} \vert E_1)  * P( E_1)$$
 which we can calculate as $$P(\bar{A} \vert E_1) = 1-P(A \vert E_1)$$
@@ -98,7 +98,7 @@ Which of the following statements concerning $E_1,E_2,E_3$ are true?
 
 # BEGIN SOLUTION
 ::: responsebox
-3in
+
 
 Correct:
 $\overline{E_1} \cup \overline{E_2} = (E_2 \cup E_3) \cup (E_1 \cup E_3) = S \rightarrow P(\overline{E_1} \cup \overline{E_2}) = 1$.
@@ -134,7 +134,7 @@ statement is true.*
 
 # BEGIN SOLUTION
 ::: responsebox
-2in
+
 
 Correct: $P(E_1) = \sum_{s \in E_1} p(s)$ and
 $P(A) = \sum_{s \in A} p(s)$. Since $\forall s \in E_1: s \in A$, then

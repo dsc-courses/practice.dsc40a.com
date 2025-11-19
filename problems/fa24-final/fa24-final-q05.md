@@ -52,6 +52,8 @@ On the axis below, plot a rough sketch of the following objects:
 
 -   The optimal height $h^\ast$.
 
+![](../../assets/images/fa24-final/q5b.png){width=50%}
+
 # BEGIN SOLUTION
 ![](../../assets/images/fa24-final/q5b-soln.png)
 

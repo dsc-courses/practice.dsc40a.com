@@ -24,7 +24,7 @@ that the item is a cup (glass, wineglass or mug). Are these events
 independent? *Explain your reasoning.*
 
 ::: responsebox
-1.5in This question is based on the deck of cards question we did in
+This question is based on the deck of cards question we did in
 class.
 
 No, they are not. Knowing that the item is a cup makes it slightly more
@@ -36,7 +36,7 @@ $$P(A \cap B = 3/28 \neq (7*5)/(28*14)=5/56$$ Therefore not independent
 
 # BEGIN SOLUTION
 ::: responsebox
-1.5in Note this question is based on Lecture 23, slides 15, 20, 21 where
+Note this question is based on Lecture 23, slides 15, 20, 21 where
 we have replaced a deck of cards with patterned dishes.
 
 In both b) and c) many made the mistake of selecting disjoint events A
@@ -60,7 +60,7 @@ probabilities equal to zero or to one.*
 # BEGIN SOLUTION
 
 ::: responsebox
-2in
+
 
 There were multiple correct options here.
 
@@ -99,7 +99,7 @@ to zero or to one.*
 
 # BEGIN SOLUTION
 ::: responsebox
-2in As in b) there are many correct solutions here (some of you were
+As in b) there are many correct solutions here (some of you were
 very creative).
 
 One strategy here is to consider the events in a) which weren't

@@ -6,17 +6,6 @@ romance or thriller based on details of the plot. You have a dataset of
 18 books and 4 features {"Happy conclusion\","Spaceships\","Murder
 investigation\","Sidekick\" } to train a Naïve Bayes classifier.
 
-
-
-# BEGIN SUBPROB
-
-($\times$`<!-- -->`{=html}8) A new book has been released which has
-'Happy conclusion\", "sidekick\" but not "Spaceships\" or "murder
-investigation\". Is this book a sci-fi, thriller or romance? Use the
-Naive Bayes Classifier without smoothing. Be sure to clearly state your
-prediction as one of the three genres. *Show all your calculations.*
-
-# BEGIN SOLUTION
 ::: center
   --------- ---------- -------- ---------- ------- ------------
    Book #    Genre     Murder   Sidekick   Happy   Spaceships
@@ -42,6 +31,17 @@ prediction as one of the three genres. *Show all your calculations.*
      20      thriller    Yes       Yes       Yes        No
   --------- ---------- -------- ---------- ------- ------------
 :::
+
+# BEGIN SUBPROB
+
+($\times$`<!-- -->`{=html}8) A new book has been released which has
+'Happy conclusion\", "sidekick\" but not "Spaceships\" or "murder
+investigation\". Is this book a sci-fi, thriller or romance? Use the
+Naive Bayes Classifier without smoothing. Be sure to clearly state your
+prediction as one of the three genres. *Show all your calculations.*
+
+# BEGIN SOLUTION
+
 
 We estimate the following probabilities from the table:
 
@@ -79,6 +79,8 @@ $$\begin{aligned}
 & \qquad \qquad \times P(\text{No Murder}\mid\text{thriller}) \times P(\text{No Spaceships}\mid\text{thriller}) \times P(\text{thriller}) \\
 & \qquad = 0
 \end{aligned}$$
+
+Since the first probability is the largest, our prediction is that the book was romance.
 
 # END SOLUTION
 
