@@ -25,12 +25,19 @@ information for least squares regression. Then, find the optimal
 parameters $w_0^\ast$ and $w_1^\ast$ for a simple least squares linear
 model for her jar sales. *Show all your calculations.*
 
-| Summation | Value |
-|-----------|-------|
-| $\sum_{i=1}^{3} x_i$ | 6 |
-| $\sum_{i=1}^{3} y_i$ |   |
-| $\sum_{i=1}^{3} x_i y_i$ | 28 |
-| $\sum_{i=1}^{3} x_i^2$ |   |
+$$\begin{array}{|c|c|}
+\hline
+\text{Summation} & \text{Value} \\
+\hline
+\sum_{i=1}^{3} x_i & 6 \\
+\hline
+\sum_{i=1}^{3} y_i &  \\
+\hline
+\sum_{i=1}^{3} x_i y_i & 28 \\
+\hline
+\sum_{i=1}^{3} x_i^2 &  \\
+\hline
+\end{array}$$
 
 # BEGIN SOLUTION
 First, we calculate the missing values:
@@ -41,12 +48,19 @@ $$\sum_{i=1}^3 x_i^2 = 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14$$
 
 The completed table is:
 
-| Summation | Value |
-|---|---|
-| $\sum_{i=1}^3 x_i$ | 6 |
-| $\sum_{i=1}^3 y_i$ | 12 |
-| $\sum_{i=1}^3 x_iy_i$ | 28 |
-| $\sum_{i=1}^3 x_i^2$ | 14 |
+$$\begin{array}{|c|c|}
+\hline
+\text{Summation} & \text{Value} \\
+\hline
+\sum_{i=1}^{3} x_i & 6 \\
+\hline
+\sum_{i=1}^{3} y_i & 12 \\
+\hline
+\sum_{i=1}^{3} x_i y_i & 28 \\
+\hline
+\sum_{i=1}^{3} x_i^2 & 14 \\
+\hline
+\end{array}$$
 
 ### Finding Optimal Parameters
 
@@ -94,22 +108,36 @@ $x_4 = 0, y_4=2$ and then find the **new** optimal parameters $w_0'$ and
 $w_1'$ for a simple least squares linear model. *Show all your
 calculations.*
 
-| Summation | Value |
-|-----------|-------|
-| $\sum_{i=1}^{3} x_i$ |  |
-| $\sum_{i=1}^{3} y_i$ | 14 |
-| $\sum_{i=1}^{3} x_i y_i$ | 28 |
-| $\sum_{i=1}^{3} x_i^2$ |   |
+$$\begin{array}{|c|c|}
+\hline
+\text{Summation} & \text{Value} \\
+\hline
+\sum_{i=1}^{4} x_i &  \\
+\hline
+\sum_{i=1}^{4} y_i & 14 \\
+\hline
+\sum_{i=1}^{4} x_i y_i & 28 \\
+\hline
+\sum_{i=1}^{4} x_i^2 &  \\
+\hline
+\end{array}$$
 
 # BEGIN SOLUTION
 First, we fill in the table with the updated sums including the fourth data point:
 
-| Sum | Value |
-|-----|-------|
-| $\sum_{i=1}^{4} x_i$ | 6 |
-| $\sum_{i=1}^{4} y_i$ | 14 |
-| $\sum_{i=1}^{4} x_i y_i$ | 28 |
-| $\sum_{i=1}^{4} x_i^2$ | 14 |
+$$\begin{array}{|c|c|}
+\hline
+\text{Summation} & \text{Value} \\
+\hline
+\sum_{i=1}^{4} x_i & 6 \\
+\hline
+\sum_{i=1}^{4} y_i & 14 \\
+\hline
+\sum_{i=1}^{4} x_i y_i & 28 \\
+\hline
+\sum_{i=1}^{4} x_i^2 & 14 \\
+\hline
+\end{array}$$
 
 **Calculating the new slope** $w_1'$:
 
