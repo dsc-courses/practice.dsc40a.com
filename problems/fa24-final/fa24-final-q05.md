@@ -18,11 +18,6 @@ $\eta = 0.5$ to obtain predicted heights $h_1, h_2$. *Show all your
 calculations.*
 
 # BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
-
 ::: responsebox
 5in The gradient of the loss function $L(h, y_i)$ with respect to $h$
 is: $$\frac{\partial L}{\partial h} = (h - y_i)$$
@@ -41,6 +36,11 @@ $$h_2 = h_1 - \eta \cdot \frac{\partial L}{\partial h} = 1 - 0.5 \cdot (-1) = 1 
 
 Thus, the predicted heights are: $$h_1 = 1, \quad h_2 = 1.5$$
 :::
+# END SOLUTION
+
+# END SUBPROB
+
+
 
 # BEGIN SUBPROB
 
@@ -52,19 +52,10 @@ On the axis below, plot a rough sketch of the following objects:
 
 -   The optimal height $h^\ast$.
 
-# BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
-
-::: center
-:::
+![](../../assets/images/fa24-final/q5b.png){width=50%}
 
 # BEGIN SOLUTION
-
-::: center
-:::
+![](../../assets/images/fa24-final/q5b-soln.png)
 
 The graph above shows:
 
@@ -78,16 +69,16 @@ The graph above shows:
 
 # END SOLUTION
 
+# END SUBPROB
+
+
+
 # BEGIN SUBPROB
 
 Determine whether the gradient descent algorithm will converge to the
 minimum of the loss function $L(h, y_i)$. *Explain your reasoning.*
 
 # BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 ::: responsebox
 2in The loss function $L(h, y_i) = \frac{1}{2}(h - y_i)^2 + 3$ is a
@@ -98,5 +89,11 @@ $$\frac{\partial^2 L}{\partial h^2} = 1 > 0$$
 Gradient descent will converge to the minimum of a convex function if
 the learning rate $\eta$ is small enough, which is the case here.
 :::
+
+# END SOLUTION
+
+# END SUBPROB
+
+
 
 # END PROB

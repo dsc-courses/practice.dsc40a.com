@@ -20,10 +20,6 @@ calculations.*
 
 # BEGIN SOLUTION
 
-# END SOLUTION
-
-# END SUBPROB
-
 ::: responsebox
 2in To minimize the function $R(h) = \sum_{i=1}^n a_i (y_i - h)^2$, we
 differentiate $R(h)$ with respect to $h$ and set the derivative equal to
@@ -37,6 +33,12 @@ optimal temperature $h^\ast$ is the weighted average of the preferred
 temperatures.
 :::
 
+# END SOLUTION
+
+# END SUBPROB
+
+
+
 # BEGIN SUBPROB
 
 Suppose that the family which lives in house $1$ has a baby, and their
@@ -46,10 +48,6 @@ temperature $h'$ to the old optimal temperature $h^\ast$ you found in
 (a). *Show all your calculations.*
 
 # BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
 
 ::: responsebox
 2in Let $h'$ denote the new optimal temperature. The new weight for
@@ -64,6 +62,11 @@ This relates the new optimal temperature $h'$ to the original $h^\ast$
 by accounting for the additional weight and the corresponding
 preference.
 :::
+# END SOLUTION
+
+# END SUBPROB
+
+
 
 # BEGIN SUBPROB
 
@@ -94,11 +97,6 @@ least to greatest. *Explain your reasoning and don't forget about the
 baby!*
 
 # BEGIN SOLUTION
-
-# END SOLUTION
-
-# END SUBPROB
-
 ::: responsebox
 3in Note that for any choice of $h$, we have the following inequalities:
 $$\sum_{i=1}^n c_i (y_i - h)^2\leq \sum_{i=1}^n b_i (y_i - h)^2 <\sum_{i=1}^n a_i (y_i - h)^2.$$
@@ -109,5 +107,10 @@ respect to $h$ will follow these inequalities. That is, $$C\leq B < A.$$
 (Note we also accepted solution $C\leq B \leq A$ for those who forgot
 about the baby ;) )
 :::
+# END SOLUTION
+
+# END SUBPROB
+
+
 
 # END PROB

@@ -42,109 +42,51 @@ prediction as one of the three genres. *Show all your calculations.*
 
 # BEGIN SOLUTION
 
+
+We estimate the following probabilities from the table:
+
+$$\begin{aligned}
+P(\text{Happy} \,|\,\text{romance})         & = 6/6=1     \\
+P(\text{sidekick} \,|\,\text{romance})      & = 3/6=1/2   \\
+P(\text{No Murder} \,|\,\text{romance})     & = 4/6=2/3   \\
+P(\text{No Spaceships} \,|\,\text{romance}) & = 5/6       \\
+P(\text{romance})                             & = 6/20=3/10 \\[1em]
+P(\text{Happy} \,|\,\text{sci-fi})          & = 5/10      \\
+P(\text{sidekick} \,|\,\text{sci-fi})       & = 8/10=4/5  \\
+P(\text{No Murder} \,|\,\text{sci-fi})      & = 8/10=4/5  \\
+P(\text{No Spaceships} \,|\,\text{sci-fi})  & = 1/10      \\
+P(\text{sci-fi})                              & = 10/20=1/2 \\[1em]
+P(\text{No Murder} \,|\,\text{thriller})    & = 0/4
+\end{aligned}$$
+
+$$\begin{aligned}
+& P(\text{romance} \mid \text{Happy,Sidekick, No Murder, No Spaceships}) \\
+& \qquad \propto P(\text{Happy}\mid\text{romance}) \times P(\text{sidekick}\mid\text{romance}) \\
+& \qquad \qquad \times P(\text{No Murder}\mid\text{romance}) \times P(\text{No Spaceships}\mid\text{romance}) \times P(\text{romance}) \\
+& \qquad = 1 \cdot \frac{1}{2}  \cdot \frac{2}{3} \cdot \frac{5}{6} \cdot \frac{3}{10} = \frac{1}{2} \cdot \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{12}
+\end{aligned}$$
+
+$$\begin{aligned}
+& P(\text{sci-fi} \mid \text{Happy,Sidekick, No Murder, No Spaceships}) \\
+& \qquad \propto P(\text{Happy}\mid\text{sci-fi}) \times P(\text{sidekick}\mid\text{sci-fi}) \\
+& \qquad \qquad \times P(\text{No Murder}\mid\text{sci-fi}) \times P(\text{No Spaceships}\mid\text{sci-fi}) \times P(\text{sci-fi}) \\
+& \qquad = \frac{5}{10} \cdot \frac{4}{5} \cdot \frac{4}{5} \cdot \frac{1}{10} \cdot \frac{1}{2} = \frac{4}{5} \cdot \frac{1}{5} \cdot \frac{1}{10} = \frac{2}{125}
+\end{aligned}$$
+
+$$\begin{aligned}
+& P(\text{thriller} \mid \text{Happy,Sidekick, No Murder, No Spaceships}) \\
+& \qquad \propto P(\text{Happy}\mid\text{thriller}) \times P(\text{sidekick}\mid\text{thriller}) \\
+& \qquad \qquad \times P(\text{No Murder}\mid\text{thriller}) \times P(\text{No Spaceships}\mid\text{thriller}) \times P(\text{thriller}) \\
+& \qquad = 0
+\end{aligned}$$
+
+Since the first probability is the largest, our prediction is that the book was romance.
+
 # END SOLUTION
 
 # END SUBPROB
 
-::: responsebox
-2in
-:::
 
-::: responsebox
-8in We estimate the following probabilities from the table:
-$$\begin{aligned}
-                P(\text{Happy} \,|\,\text{romance})         & = 6/6=1     \\
-                P(\text{sidekick} \,|\,\text{romance})      & = 3/6=1/2   \\
-                P(\text{No Murder} \,|\,\text{romance})     & = 4/6=2/3   \\
-                P(\text{No Spaceships} \,|\,\text{romance}) & = 5/6       \\
-                P(\text{romance})                             & = 6/20=3/10 \\[1em]
-                P(\text{Happy} \,|\,\text{sci-fi})          & = 5/10      \\
-                P(\text{sidekick} \,|\,\text{sci-fi})       & = 8/10=4/5  \\
-                P(\text{No Murder} \,|\,\text{sci-fi})      & = 8/10=4/5  \\
-                P(\text{No Spaceships} \,|\,\text{sci-fi})  & = 1/10      \\
-                P(\text{sci-fi})                              & = 10/20=1/2 \\[1em]
-                P(\text{No Murder} \,|\,\text{thriller})    & = 0/4       
-            
-\end{aligned}$$
 
-Therefore: $$\begin{aligned}
-                  & P(\text{romance} \,|\,\text{Happy,Sidekick, Murder, No Spaceships}) \\
-                  &                                                                       
-                \qquad 
-                \propto
-                P(\text{Happy}\,|\,\text{romance})\\
-                  & \qquad \qquad                                                         
-                \times
-                P(\text{sidekick}\,|\,\text{romance})\\
-                  & \qquad \qquad                                                         
-                \times
-                P(\text{No Murder}\,|\,\text{romance})\\
-                  & \qquad \qquad                                                         
-                \times
-                P(\text{No Spaceships}\,|\,\text{romance})\\
-                  & \qquad \qquad                                                         
-                \times
-                P(\text{romance})\\
-                  & =                                                                     
-                1 \cdot \frac{1}{2}  \cdot \frac{2}{3} \cdot \frac{5}{6} \cdot \frac{3}{10}  
-                = \frac{1}{2}   \cdot \frac{1}{3} \cdot \frac{1}{2}  =
-                \frac{1}{12}
-            
-\end{aligned}$$
-
-$$\begin{aligned}
-                  & P(\text{sci-fi} \,|\,\text{Happy,Sidekick, Murder, No Spaceships}) \\
-                  &                                                                      
-                \qquad 
-                \propto
-                P(\text{Happy}\,|\,\text{sci-fi})\\
-                  & \qquad \qquad                                                        
-                \times
-                P(\text{sidekick}\,|\,\text{sci-fi})\\
-                  & \qquad \qquad                                                        
-                \times
-                P(\text{Murder}\,|\,\text{sci-fi})\\
-                  & \qquad \qquad                                                        
-                \times
-                P(\text{No Spaceships}\,|\,\text{sci-fi})\\
-                  & \qquad \qquad                                                        
-                \times
-                P(\text{sci-fi})\\
-                  & =                                                                    
-                \frac{5}{10} \cdot \frac{4}{5} \cdot \frac{4}{5} \cdot \frac{1}{10}
-                \cdot \frac{1}{2}
-                =
-                \frac{4}{5} \cdot \frac{1}{5} \cdot \frac{1}{10} 
-                =
-                \frac{2}{125}
-            
-\end{aligned}$$
-
-$$\begin{aligned}
-                  & P(\text{thriller} \,|\,\text{Happy,Sidekick, Murder, No Spaceships}) \\
-                  &                                                                        
-                \qquad 
-                \propto
-                P(\text{Happy}\,|\,\text{thriller})\\
-                  & \qquad \qquad                                                          
-                \times
-                P(\text{sidekick}\,|\,\text{thriller})\\
-                  & \qquad \qquad                                                          
-                \times
-                P(\text{No Murder}\,|\,\text{thriller})\\
-                  & \qquad \qquad                                                          
-                \times
-                P(\text{No Spaceships}\,|\,\text{thriller})\\
-                  & \qquad \qquad                                                          
-                \times
-                P(\text{thriller})\\
-                  & =                                                                      
-                0
-            
-\end{aligned}$$
-
-Since the first probability is the largest, our prediction is that the
-book was romance.
-:::
 
 # END PROB

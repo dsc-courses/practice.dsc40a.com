@@ -11,21 +11,11 @@ some of your dishes so that now you only have 28. A lost dish is
 indicated by dish being missing in the image (for example you lost the
 blue flowers dessert place or the red dots mug).
 
-::: center
-![image](prob_plates.png){width="75%"}
-:::
+![](../../assets/images/fa24-final/q8.png)
 
 You come home and find a single item in the kitchen sick.
 
-::: responsebox
-1.5in Note this question is based on Lecture 23, slides 15, 20, 21 where
-we have replaced a deck of cards with patterned dishes.
 
-In both b) and c) many made the mistake of selecting disjoint events A
-and B such the $A \cap B = \emptyset$ (or $A \cap B|C = \emptyset$ in c)
-) but $P(A),P(B)>0$. Mutually exclusive events with non-zero probability
-are not independent (lecture 23, slide 13).
-:::
 
 # BEGIN SUBPROB
 
@@ -34,7 +24,7 @@ that the item is a cup (glass, wineglass or mug). Are these events
 independent? *Explain your reasoning.*
 
 ::: responsebox
-1.5in This question is based on the deck of cards question we did in
+This question is based on the deck of cards question we did in
 class.
 
 No, they are not. Knowing that the item is a cup makes it slightly more
@@ -45,7 +35,15 @@ $$P(A \cap B = 3/28 \neq (7*5)/(28*14)=5/56$$ Therefore not independent
 :::
 
 # BEGIN SOLUTION
+::: responsebox
+Note this question is based on Lecture 23, slides 15, 20, 21 where
+we have replaced a deck of cards with patterned dishes.
 
+In both b) and c) many made the mistake of selecting disjoint events A
+and B such the $A \cap B = \emptyset$ (or $A \cap B|C = \emptyset$ in c)
+) but $P(A),P(B)>0$. Mutually exclusive events with non-zero probability
+are not independent (lecture 23, slide 13).
+:::
 # END SOLUTION
 
 # END SUBPROB
@@ -57,8 +55,12 @@ events $A$ and $B$ which are *independent*. Prove that they are
 independent. *To receive full credit, your events should not have
 probabilities equal to zero or to one.*
 
+
+
+# BEGIN SOLUTION
+
 ::: responsebox
-2in
+
 
 There were multiple correct options here.
 
@@ -81,8 +83,6 @@ $P(A,B) =\frac{2}{28}=\frac{1}{14}$.
 $$P(A,B)= \frac{1}{14} =\frac{1}{7}* \frac{1}{2} =P(B)*P(A)$$
 :::
 
-# BEGIN SOLUTION
-
 # END SOLUTION
 
 # END SUBPROB
@@ -95,8 +95,11 @@ independent* given $C$. Prove that they are conditionally independent.
 *To receive full credit, your events should not have probabilities equal
 to zero or to one.*
 
+
+
+# BEGIN SOLUTION
 ::: responsebox
-2in As in b) there are many correct solutions here (some of you were
+As in b) there are many correct solutions here (some of you were
 very creative).
 
 One strategy here is to consider the events in a) which weren't
@@ -127,9 +130,6 @@ $$P(B|C)>0$$ $$P(A \cap B |C) =0$$
 
 or $$P(A |C) =1$$ $$P(B|C)>0$$ $$P(A \cap B |C) = P(B|C)$$
 :::
-
-# BEGIN SOLUTION
-
 # END SOLUTION
 
 # END SUBPROB
