@@ -84,10 +84,10 @@ To explain up-front:
 **NOTE: Unless youve messed up tremendously and feel like you have to recompile everything, do not run ``python run.py` without arguments; this will take some 5-10 minutes regenerating every MD file for every exam and topic! 
 
 ## 3.3 Sample walk through 
-When you are assigned an exam, this is typically what's the best to do: 
+When you are adding a new exam, this is typically what youll do. 
 1. If you are not familar with git and worry about messing up, create a separate branch so your will not risk exploding the practice site accidentally. 💥 Only merge your changes to main when you make sure everything works. 
 2. In the page folder, create exam file in `pages/exams`. By topic, update the topic file in `pages/topics`. 
-3. If running `utils/latex-to-md.py` fails, create MD file mannually for all the exam questions. 
+3. Follow the steps in the video, run `utils/latex-to-md.py`. If running `utils/latex-to-md.py` fails, create MD file mannually for all the exam questions. 
 4. In case latex to md fails, you will possibly also have to add the new file to `docs/index.html`. Add a new entry like this: 
 ```html
 <tr>
